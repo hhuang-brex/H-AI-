@@ -40,8 +40,9 @@ The body is human-readable markdown. Use `[[node-id]]` to link. Dangling links a
 
 ### Topics
 - [[llm-evaluation]] — measuring whether LLM systems do what they should without bankrupting the team.
+- [[llm-output-design]] — how an LLM emits to the world; per-surface decisions.
 
-### Concepts
+### Concepts — Eval
 - [[test-pyramid-llm]] — porting the classic pyramid to LLM apps.
 - [[llm-as-judge]] — calibration, bias, multi-vote, cascading.
 - [[prod-shadow-replay]] — closing the gap between frozen datasets and live traffic.
@@ -49,6 +50,13 @@ The body is human-readable markdown. Use `[[node-id]]` to link. Dangling links a
 - [[agent-trajectory-eval]] — multi-turn, tool sequences, end-state.
 - [[golden-snapshot-eval]] — pre-LLM deterministic checks.
 - [[adversarial-eval]] — red-team / safety / prompt injection.
+
+### Concepts — Output Design
+- [[forced-tool-call-output]] — when to force schema vs. let the model write free-text.
+- [[output-surface-taxonomy]] — classify each surface explicitly; per-surface decisions.
+- [[schema-vs-validator]] — schema-enforced output vs. free-text + post-hoc validator.
+- [[streaming-vs-structured]] — token-by-token UX vs. structured output trade-off.
+- [[hard-surface-irrevocability]] — irrevocable output channels as a first-class category.
 
 ### Projects
 - [[agent-eval-case-study]] — generalized agent platform eval system (2026-06-05 snapshot).
@@ -58,7 +66,8 @@ The body is human-readable markdown. Use `[[node-id]]` to link. Dangling links a
 - [[references-eval-reading-list]] — frontier-lab + practitioner posts (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, …).
 
 ### Threads
-- [[2026-06-05-eval-analysis]] — origin of the eval nodes above.
+- [[2026-06-05-eval-analysis]] — origin of the eval nodes.
+- [[2026-06-07-forced-tool-call-fan-out]] — origin of the output-design nodes.
 
 ## Why this shape
 

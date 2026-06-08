@@ -1,0 +1,69 @@
+---
+id: forced-tool-call-output
+type: concept
+tags: [llm, output, schema, structured-output, tool-use]
+related:
+  - [[llm-output-design]]
+  - [[output-surface-taxonomy]]
+  - [[schema-vs-validator]]
+  - [[streaming-vs-structured]]
+  - [[hard-surface-irrevocability]]
+  - [[agent-trajectory-eval]]
+status: living
+created: 2026-06-07
+---
+
+# Forced Tool-Call as Output Channel
+
+Force the LLM to emit user-facing output through a tool-call with a fixed schema instead of generating free-text. Also called *structured output enforcement*, *tool-as-output-channel*, *constrained generation as a wire contract*.
+
+## Mental model
+
+A typed RPC for LLM output. The model still chooses content; the schema chooses shape. Stylistic flexibility lives inside string fields (`merchant_name`, `question_text`); structural failures (missing field, 200-word essay) become impossible at the output layer.
+
+## When to use it
+
+Strongest signal is when **all three** of these hold:
+
+| Property | Test |
+|---|---|
+| Hard output surface | Is the output irrevocable on send? See [[hard-surface-irrevocability]]. |
+| Enumerable structure | Can you list the templates / shapes? Usually 5–10 covers all real cases. |
+| Failure cost ≫ rigidity cost | If the model wrote a slightly more boring sentence, who cares? If it wrote a wrong one, what breaks? |
+
+If all three are present, schema enforcement is almost certainly correct.
+
+## When *not* to use it
+
+1. **Open-ended conversational turns where flexibility is the product.** Mid-conversation Q&A; the user can ask anything; you can't enumerate. Force-schema here = picking a schema that anticipates every question. You can't.
+2. **Genuinely emergent structure.** If you find yourself adding `escape_hatch_freetext: string` and routing logic on it, you're ramming open-ended work into a closed-form gate. Schema is illusion of safety. Use [[schema-vs-validator]] free-text path instead.
+3. **Downstream consumer is human, not wire.** Draft UI, internal scratchpad, debug output — the human is the validator; schema is friction with no payoff.
+4. **Model is bad at *your* schema.** Modern frontier models are well-tuned for tool-use, but novel field names or deeply nested objects can degrade output quality. Run the eval before committing.
+5. **Streaming token-by-token UX is required.** See [[streaming-vs-structured]].
+
+## Layered design within one feature
+
+A single feature often has multiple turn types — the right answer is to split mechanisms:
+
+| Turn type | Surface | Mechanism |
+|---|---|---|
+| First-touch transactional notification | Irrevocable (SMS, email, push) | Forced tool-call |
+| Follow-up conversational turns | Same surface | Free-text + validator |
+| Internal tool inputs / scratchpad | Wire to other tools | Already structured |
+
+Forcing schema everywhere kills conversational UX; forcing free-text everywhere lets shaped failures reach customers. The mechanism is per-turn, not per-feature.
+
+## Why it's emerging as best practice
+
+- Tool-use APIs only became reliable around mid-2024; before that, forced JSON was unreliable enough that free-text + validation was the safer default.
+- Early LLM apps inherited a "smart text generator" mental model and a free-text default that was never re-examined.
+- Once a team has been bitten — a malformed customer message, a wrong webhook payload — the asymmetry of failure cost vs. rigidity cost becomes obvious in retrospect.
+
+## Cost of adoption
+
+Conceptually different from a prompt fix. Migrating a "produce text matching this rubric" skill to "produce a structured object with these fields" cycles through prompt rewrite, eval-case retuning, downstream renderer (the code that turns the object into the user-visible string), and schema versioning. Two-week project, not a two-day patch.
+
+## See also
+
+- [[output-surface-taxonomy]] — the prerequisite practice; you can't decide *when* to force schema until you've enumerated *which surfaces exist*.
+- [[agent-trajectory-eval]] — once schema is enforced, mechanical evals can pin tool-call shape (`input.equals`, schema-validity) and demote LLM-judges to where they belong.
