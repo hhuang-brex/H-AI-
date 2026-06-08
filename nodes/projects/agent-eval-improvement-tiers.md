@@ -17,7 +17,7 @@ source-thread: [[2026-06-05-eval-analysis]]
 
 # Agent Eval — Improvement Tiers
 
-Ranked by leverage. Each tier independently shippable. Diagnoses [[agent-eval-case-study]].
+Ranked by leverage. Each tier independently shippable. Diagnoses [agent-eval-case-study](agent-eval-case-study.md).
 
 ## Diagnostic in one sentence
 
@@ -25,7 +25,7 @@ The eval pyramid is **inverted**: the cheap deterministic layer is one file, and
 
 ## Tier 1 — Widen the cheap bottom
 
-1. Pre-LLM unit tests for tool-catalog rendering, skill loader, system reminders, redaction. See [[golden-snapshot-eval]].
+1. Pre-LLM unit tests for tool-catalog rendering, skill loader, system reminders, redaction. See [golden-snapshot-eval](../concepts/golden-snapshot-eval.md).
 2. Token-budget snapshot tests (`assert tokens(systemPrompt) ≤ N`) — bloat becomes a CI fail, not a customer report.
 3. Schema-validity scorer — every emitted tool call parses against its operation's schema.
 
@@ -38,15 +38,15 @@ The eval pyramid is **inverted**: the cheap deterministic layer is one file, and
 ## Tier 3 — Tame the expensive top
 
 1. **Cascading judge**: cheap model first, escalate to frontier model on fail/low-confidence — typically ~5–10× cost reduction.
-2. **N-of-3 cheap-model majority** instead of 1× frontier — catches single-judge variance, ~cost-neutral. See [[llm-as-judge]].
+2. **N-of-3 cheap-model majority** instead of 1× frontier — catches single-judge variance, ~cost-neutral. See [llm-as-judge](../concepts/llm-as-judge.md).
 3. Pin judge + agent model in dataset metadata. Model upgrades become deliberate rebaselines.
-4. Reallocate nightly reps: plain 50 → 10–15, fixture-backed 1 → 3–5. See [[cost-aware-eval]].
+4. Reallocate nightly reps: plain 50 → 10–15, fixture-backed 1 → 3–5. See [cost-aware-eval](../concepts/cost-aware-eval.md).
 
 ## Tier 4 — Online signal
 
-1. Daily prod-replay shadow. See [[prod-shadow-replay]].
+1. Daily prod-replay shadow. See [prod-shadow-replay](../concepts/prod-shadow-replay.md).
 2. Feedback → eval pipeline: every customer-reported bug auto-creates a redacted regression case.
-3. 20–30 case adversarial dataset. See [[adversarial-eval]].
+3. 20–30 case adversarial dataset. See [adversarial-eval](../concepts/adversarial-eval.md).
 
 ## Tier 5 — Operational hygiene
 

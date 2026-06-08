@@ -30,7 +30,7 @@ Generic safety is *broader* than needed in most spots and *narrower* than needed
 
 ## Categories of domain rails
 
-1. **Action rails** — what the bot may not do. Tied to [[action-authority]] tiering.
+1. **Action rails** — what the bot may not do. Tied to [action-authority](action-authority.md) tiering.
 2. **Speech rails** — what the bot may not claim or assert (regulated advice, prohibited categories).
 3. **Disclosure rails** — what must be said when (mandatory disclaimers, identity disclosure as bot, citation requirements).
 4. **Trigger rails** — situations that mandate a specific response path (distress signals → escalation; fraud signals → security flow; minor-suspected → halt + verify).
@@ -62,7 +62,7 @@ These can't be handled by the same "polite refusal" path used for out-of-scope. 
 
 ## Adversarial coverage
 
-Domain rails are exactly what a small, permanent adversarial dataset is for — see [[adversarial-eval]]. Each rail should have:
+Domain rails are exactly what a small, permanent adversarial dataset is for — see [adversarial-eval](adversarial-eval.md). Each rail should have:
 
 - Positive cases (rail must trigger).
 - Near-miss cases (rail must not over-trigger).
@@ -77,7 +77,7 @@ Domain rails are exactly what a small, permanent adversarial dataset is for — 
 
 ## See also
 
-- [[scope-and-refusal]] — overlap; refusal is one rail mechanism among many.
-- [[escalation-handoff]] — the relief valve for distress/urgency rails.
-- [[persona-tone-compliance]] — overlap on disclosure and prohibited language.
-- [[adversarial-eval]] — how to test rails systematically.
+- [scope-and-refusal](scope-and-refusal.md) — overlap; refusal is one rail mechanism among many.
+- [escalation-handoff](escalation-handoff.md) — the relief valve for distress/urgency rails.
+- [persona-tone-compliance](persona-tone-compliance.md) — overlap on disclosure and prohibited language.
+- [adversarial-eval](adversarial-eval.md) — how to test rails systematically.

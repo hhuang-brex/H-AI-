@@ -27,7 +27,7 @@ Strongest signal is when **all three** of these hold:
 
 | Property | Test |
 |---|---|
-| Hard output surface | Is the output irrevocable on send? See [[hard-surface-irrevocability]]. |
+| Hard output surface | Is the output irrevocable on send? See [hard-surface-irrevocability](hard-surface-irrevocability.md). |
 | Enumerable structure | Can you list the templates / shapes? Usually 5–10 covers all real cases. |
 | Failure cost ≫ rigidity cost | If the model wrote a slightly more boring sentence, who cares? If it wrote a wrong one, what breaks? |
 
@@ -36,10 +36,10 @@ If all three are present, schema enforcement is almost certainly correct.
 ## When *not* to use it
 
 1. **Open-ended conversational turns where flexibility is the product.** Mid-conversation Q&A; the user can ask anything; you can't enumerate. Force-schema here = picking a schema that anticipates every question. You can't.
-2. **Genuinely emergent structure.** If you find yourself adding `escape_hatch_freetext: string` and routing logic on it, you're ramming open-ended work into a closed-form gate. Schema is illusion of safety. Use [[schema-vs-validator]] free-text path instead.
+2. **Genuinely emergent structure.** If you find yourself adding `escape_hatch_freetext: string` and routing logic on it, you're ramming open-ended work into a closed-form gate. Schema is illusion of safety. Use [schema-vs-validator](schema-vs-validator.md) free-text path instead.
 3. **Downstream consumer is human, not wire.** Draft UI, internal scratchpad, debug output — the human is the validator; schema is friction with no payoff.
 4. **Model is bad at *your* schema.** Modern frontier models are well-tuned for tool-use, but novel field names or deeply nested objects can degrade output quality. Run the eval before committing.
-5. **Streaming token-by-token UX is required.** See [[streaming-vs-structured]].
+5. **Streaming token-by-token UX is required.** See [streaming-vs-structured](streaming-vs-structured.md).
 
 ## Layered design within one feature
 
@@ -65,5 +65,5 @@ Conceptually different from a prompt fix. Migrating a "produce text matching thi
 
 ## See also
 
-- [[output-surface-taxonomy]] — the prerequisite practice; you can't decide *when* to force schema until you've enumerated *which surfaces exist*.
-- [[agent-trajectory-eval]] — once schema is enforced, mechanical evals can pin tool-call shape (`input.equals`, schema-validity) and demote LLM-judges to where they belong.
+- [output-surface-taxonomy](output-surface-taxonomy.md) — the prerequisite practice; you can't decide *when* to force schema until you've enumerated *which surfaces exist*.
+- [agent-trajectory-eval](agent-trajectory-eval.md) — once schema is enforced, mechanical evals can pin tool-call shape (`input.equals`, schema-validity) and demote LLM-judges to where they belong.

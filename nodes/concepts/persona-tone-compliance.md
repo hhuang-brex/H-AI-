@@ -37,7 +37,7 @@ Mandatory disclaimers, prohibited claims, required hedges, regulated phrasing. E
 These belong in **structurally enforced** layers, not in the prompt. Approaches:
 
 - **Output filters / templates** that prepend or append required language for matched intents.
-- **Forced tool-call** ([[forced-tool-call-output]]) where the schema includes a `disclaimer` field that downstream rendering always includes.
+- **Forced tool-call** ([forced-tool-call-output](forced-tool-call-output.md)) where the schema includes a `disclaimer` field that downstream rendering always includes.
 - **Refusal policy** with exact mandated language for prohibited claims.
 
 Prompt-only enforcement leaks. Model occasionally drops the disclaimer when it feels "redundant"; that's the violation.
@@ -67,6 +67,6 @@ Multi-turn conversations are where persona breaks. The bot's first reply is on-b
 
 ## See also
 
-- [[scope-and-refusal]] — refusal language is part of the compliance contract.
-- [[safety-rails-domain-specific]] — overlaps; compliance is the legal subset.
-- [[grounding-and-citation]] — citation requirements are often compliance-driven.
+- [scope-and-refusal](scope-and-refusal.md) — refusal language is part of the compliance contract.
+- [safety-rails-domain-specific](safety-rails-domain-specific.md) — overlaps; compliance is the legal subset.
+- [grounding-and-citation](grounding-and-citation.md) — citation requirements are often compliance-driven.

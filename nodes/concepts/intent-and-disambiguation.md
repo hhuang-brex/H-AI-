@@ -57,6 +57,6 @@ Most domain bots over-invest in slot-filling for transactional flows and under-i
 
 ## See also
 
-- [[repair-and-clarification]] — when the bot misunderstood; how recovery turns differ.
-- [[scope-and-refusal]] — when the right answer is "I can't help with that," not "let me try."
-- [[action-authority]] — high-authority intents need stronger disambiguation.
+- [repair-and-clarification](repair-and-clarification.md) — when the bot misunderstood; how recovery turns differ.
+- [scope-and-refusal](scope-and-refusal.md) — when the right answer is "I can't help with that," not "let me try."
+- [action-authority](action-authority.md) — high-authority intents need stronger disambiguation.

@@ -31,7 +31,7 @@ Evaluating an agent — not just an LLM — means evaluating the *trajectory*: t
 
 ## End-state evaluation (Anthropic multi-agent post)
 
-For genuinely nondeterministic agents, judging "did the final state satisfy the rubric?" is more tractable than judging every step. Pair with [[llm-as-judge]] rubrics: factual accuracy, citation accuracy, completeness, tool efficiency.
+For genuinely nondeterministic agents, judging "did the final state satisfy the rubric?" is more tractable than judging every step. Pair with [llm-as-judge](llm-as-judge.md) rubrics: factual accuracy, citation accuracy, completeness, tool efficiency.
 
 ## Multi-turn drift
 
@@ -39,6 +39,6 @@ Single-turn cases miss the failure mode where state from turn N contaminates tur
 
 ## References
 
-- Anthropic, *Building Effective Agents* — [[references-eval-reading-list]]
-- Anthropic, *How We Built Our Multi-Agent Research System* — [[references-eval-reading-list]]
-- LangSmith, *Evaluate a Complex Agent* — [[references-eval-reading-list]]
+- Anthropic, *Building Effective Agents* — [references-eval-reading-list](../references/references-eval-reading-list.md)
+- Anthropic, *How We Built Our Multi-Agent Research System* — [references-eval-reading-list](../references/references-eval-reading-list.md)
+- LangSmith, *Evaluate a Complex Agent* — [references-eval-reading-list](../references/references-eval-reading-list.md)

@@ -28,7 +28,7 @@ Designing a chatbot for a real domain — financial services, healthcare, develo
 
 1. **What the bot is *for*** (the domain) — fintech assistant, medical triage, code assistant, support deflection. Determines vocabulary, knowledge sources, and failure cost.
 2. **How the bot *talks*** (conversation design) — turn structure, clarification, repair, persona. The subject of this topic.
-3. **How the bot *emits*** (output design) — see [[llm-output-design]]. Per-surface mechanism choices.
+3. **How the bot *emits*** (output design) — see [llm-output-design](llm-output-design.md). Per-surface mechanism choices.
 
 Conversation design (axis 2) is what happens between the model deciding "what to say" and the surface decision "how to say it on this channel." Domain (axis 1) sits above and reshapes both.
 
@@ -36,10 +36,10 @@ Conversation design (axis 2) is what happens between the model deciding "what to
 
 A generic chatbot tries to be helpful and fluent. A domain chatbot has stronger commitments:
 
-- **It must refuse** when asked something out of scope, even if it could fluently bluff. See [[scope-and-refusal]].
-- **It must cite** when stating a domain fact, because hallucination is a compliance event. See [[grounding-and-citation]].
-- **It must escalate** when the user's situation crosses a risk line, even if the bot could plausibly continue. See [[escalation-handoff]].
-- **Its "persona" is a constraint set**, not a style preference. Regulated language, prohibited claims, mandatory disclaimers. See [[persona-tone-compliance]].
+- **It must refuse** when asked something out of scope, even if it could fluently bluff. See [scope-and-refusal](../concepts/scope-and-refusal.md).
+- **It must cite** when stating a domain fact, because hallucination is a compliance event. See [grounding-and-citation](../concepts/grounding-and-citation.md).
+- **It must escalate** when the user's situation crosses a risk line, even if the bot could plausibly continue. See [escalation-handoff](../concepts/escalation-handoff.md).
+- **Its "persona" is a constraint set**, not a style preference. Regulated language, prohibited claims, mandatory disclaimers. See [persona-tone-compliance](../concepts/persona-tone-compliance.md).
 
 A pattern that works for "general assistant" — be flexible, attempt every question, sound natural — is the wrong default in any domain where wrong answers have asymmetric cost.
 
@@ -47,22 +47,22 @@ A pattern that works for "general assistant" — be flexible, attempt every ques
 
 | Decision | Failure mode if wrong | Concept |
 |---|---|---|
-| Did we understand the user? | Acting on the wrong intent | [[intent-and-disambiguation]] |
-| Where do facts come from? | Hallucinated authority | [[grounding-and-citation]] |
-| What can the bot do, not just say? | Unauthorized action | [[action-authority]] |
-| When does a human take over? | Trapped user, missed urgency | [[escalation-handoff]] |
-| What's in / out of scope? | Bluffing past a refusal threshold | [[scope-and-refusal]] |
-| What persists across turns and sessions? | Privacy leak / state contamination | [[conversation-memory]] |
-| How does domain knowledge enter the prompt? | Stale / wrong / overflowed context | [[domain-knowledge-injection]] |
-| What voice / tone / disclaimers? | Compliance violation | [[persona-tone-compliance]] |
-| How does the bot recover when it misunderstood? | User repeats and gives up | [[repair-and-clarification]] |
-| Who speaks when? | Robotic turn-taking; missed proactivity | [[turn-taking-and-proactivity]] |
-| What domain-specific guardrails apply? | Generic safety isn't enough | [[safety-rails-domain-specific]] |
+| Did we understand the user? | Acting on the wrong intent | [intent-and-disambiguation](../concepts/intent-and-disambiguation.md) |
+| Where do facts come from? | Hallucinated authority | [grounding-and-citation](../concepts/grounding-and-citation.md) |
+| What can the bot do, not just say? | Unauthorized action | [action-authority](../concepts/action-authority.md) |
+| When does a human take over? | Trapped user, missed urgency | [escalation-handoff](../concepts/escalation-handoff.md) |
+| What's in / out of scope? | Bluffing past a refusal threshold | [scope-and-refusal](../concepts/scope-and-refusal.md) |
+| What persists across turns and sessions? | Privacy leak / state contamination | [conversation-memory](../concepts/conversation-memory.md) |
+| How does domain knowledge enter the prompt? | Stale / wrong / overflowed context | [domain-knowledge-injection](../concepts/domain-knowledge-injection.md) |
+| What voice / tone / disclaimers? | Compliance violation | [persona-tone-compliance](../concepts/persona-tone-compliance.md) |
+| How does the bot recover when it misunderstood? | User repeats and gives up | [repair-and-clarification](../concepts/repair-and-clarification.md) |
+| Who speaks when? | Robotic turn-taking; missed proactivity | [turn-taking-and-proactivity](../concepts/turn-taking-and-proactivity.md) |
+| What domain-specific guardrails apply? | Generic safety isn't enough | [safety-rails-domain-specific](../concepts/safety-rails-domain-specific.md) |
 
-Every node above is a separable decision with its own failure mode and its own evaluation strategy ([[llm-evaluation]]).
+Every node above is a separable decision with its own failure mode and its own evaluation strategy ([llm-evaluation](llm-evaluation.md)).
 
 ## How this connects to the rest of the graph
 
-- **Output side:** Conversation design produces *what* to say; [[llm-output-design]] decides *how* to emit it on each surface. The two compose; neither replaces the other.
-- **Eval side:** Each conversation-design decision needs eval coverage. Mechanical checks on intent classification, grounded-fact citation, refusal correctness, escalation triggers; LLM-judged checks on tone and helpfulness. See [[agent-trajectory-eval]] and [[llm-as-judge]].
+- **Output side:** Conversation design produces *what* to say; [llm-output-design](llm-output-design.md) decides *how* to emit it on each surface. The two compose; neither replaces the other.
+- **Eval side:** Each conversation-design decision needs eval coverage. Mechanical checks on intent classification, grounded-fact citation, refusal correctness, escalation triggers; LLM-judged checks on tone and helpfulness. See [agent-trajectory-eval](../concepts/agent-trajectory-eval.md) and [llm-as-judge](../concepts/llm-as-judge.md).
 - **Per-surface:** A domain bot usually has multiple surfaces (chat UI, SMS notification, voice fallback). Conversation-design decisions are mostly surface-agnostic; output-design decisions are not.

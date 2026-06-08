@@ -39,4 +39,4 @@ A real trade-off, not a preference. Token-by-token streaming and constrained-sha
 
 ## Decision
 
-If a surface needs both streaming UX and structured wire output, you almost always want **two surfaces** — see [[output-surface-taxonomy]]. The chat UI gets free-text + validator; the wire-facing render is computed downstream from the same agent state.
+If a surface needs both streaming UX and structured wire output, you almost always want **two surfaces** — see [output-surface-taxonomy](output-surface-taxonomy.md). The chat UI gets free-text + validator; the wire-facing render is computed downstream from the same agent state.

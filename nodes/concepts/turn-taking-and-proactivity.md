@@ -39,7 +39,7 @@ The pattern: proactivity is **earned by relevance**. Generic proactive turns fee
 
 ## Initiative on confirmation
 
-Tied to [[action-authority]]. Tier-2/3 actions need confirmation — *who* asks?
+Tied to [action-authority](action-authority.md). Tier-2/3 actions need confirmation — *who* asks?
 
 - **User-initiated** action: bot proposes, asks "Should I?", waits.
 - **Bot-suggested** action (proactive): bot must explicitly hand the decision to the user, never implicitly proceed.
@@ -73,6 +73,6 @@ Most bots never close. They keep "Anything else?"-ing forever. Real conversation
 
 ## See also
 
-- [[repair-and-clarification]] — repair turns shift initiative.
-- [[escalation-handoff]] — escalation reverses turn flow temporarily.
-- [[intent-and-disambiguation]] — opening turn is shaped by what the bot can usefully ask.
+- [repair-and-clarification](repair-and-clarification.md) — repair turns shift initiative.
+- [escalation-handoff](escalation-handoff.md) — escalation reverses turn flow temporarily.
+- [intent-and-disambiguation](intent-and-disambiguation.md) — opening turn is shaped by what the bot can usefully ask.

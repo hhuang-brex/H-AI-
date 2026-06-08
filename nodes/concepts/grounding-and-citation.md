@@ -37,7 +37,7 @@ Most teams stop at (1) and assume (2) and (3) follow. They don't. The model can 
 | **Source preview cards** (chat UI) | Conversational; user can click through |
 | **"According to your policy …"** prose | Conversational, source identity matters |
 | **Confidence-only** ("I'm fairly sure but verify") | When sources are paraphrased and direct citation hurts UX |
-| **No citation, refuse instead** | When the corpus didn't cover the question — see [[scope-and-refusal]] |
+| **No citation, refuse instead** | When the corpus didn't cover the question — see [scope-and-refusal](scope-and-refusal.md) |
 
 ## "I don't know" as a first-class behavior
 
@@ -58,6 +58,6 @@ Symptoms that the bot is bluffing:
 
 ## See also
 
-- [[domain-knowledge-injection]] — how knowledge enters the prompt in the first place.
-- [[scope-and-refusal]] — refusal as the correct grounded answer.
-- [[safety-rails-domain-specific]] — some claims are forbidden regardless of grounding.
+- [domain-knowledge-injection](domain-knowledge-injection.md) — how knowledge enters the prompt in the first place.
+- [scope-and-refusal](scope-and-refusal.md) — refusal as the correct grounded answer.
+- [safety-rails-domain-specific](safety-rails-domain-specific.md) — some claims are forbidden regardless of grounding.

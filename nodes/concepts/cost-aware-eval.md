@@ -17,7 +17,7 @@ Eval cost is a budget. Spend it where the signal is.
 
 ## Sample-size math (Anthropic, 2024)
 
-You don't need 10k samples to know whether two models differ. With paired-difference tests on the same dataset, **a few hundred samples** typically resolves a 2–5pp gap with adequate power. See [[references-eval-reading-list]].
+You don't need 10k samples to know whether two models differ. With paired-difference tests on the same dataset, **a few hundred samples** typically resolves a 2–5pp gap with adequate power. See [references-eval-reading-list](../references/references-eval-reading-list.md).
 
 Practical implication: if nightly runs 50 reps × 12 datasets × multiple cases, ask whether the *variance* you're chasing actually needs that many samples or whether you're paying for noise that calibration would remove.
 
@@ -37,5 +37,5 @@ Practical implication: if nightly runs 50 reps × 12 datasets × multiple cases,
 
 ## References
 
-- Anthropic, *A Statistical Approach to Model Evaluations* — [[references-eval-reading-list]]
-- OpenAI Cookbook, *Getting Started with OpenAI Evals* — [[references-eval-reading-list]]
+- Anthropic, *A Statistical Approach to Model Evaluations* — [references-eval-reading-list](../references/references-eval-reading-list.md)
+- OpenAI Cookbook, *Getting Started with OpenAI Evals* — [references-eval-reading-list](../references/references-eval-reading-list.md)

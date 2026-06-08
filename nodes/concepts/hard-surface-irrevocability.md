@@ -38,7 +38,7 @@ An output is on a **hard surface** if:
 ## Implications
 
 - **Asymmetric failure cost.** Stylistic rigidity is invisible per-recipient; a wrong message is a customer-trust event with cascading remediation cost (ticket, PR, engineering hours, possibly legal). Asymmetry is often 1:1000+.
-- **Drives mechanism choice.** Hard surface ⇒ default to schema enforcement, see [[forced-tool-call-output]].
+- **Drives mechanism choice.** Hard surface ⇒ default to schema enforcement, see [forced-tool-call-output](forced-tool-call-output.md).
 - **Drives review process.** Adding a new hard surface should require the same scrutiny as adding a new public API endpoint.
 
 ## Beyond LLMs

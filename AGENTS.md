@@ -8,7 +8,8 @@ Contract for any agent (or human) adding to this knowledge graph. Following this
 2. **Frontmatter is mandatory** and must validate against the schema below.
 3. **`id` equals the filename** (without `.md`). Both are `kebab-case`.
 4. **Folder is determined by `type`**, not by topic.
-5. **`related:` links liberally.** A `[[name]]` that doesn't yet resolve is fine — it marks intent for a future node, not an error.
+5. **`related:` links liberally** in frontmatter using `[[id]]` form. A name that doesn't yet resolve is fine — it marks intent for a future node, not an error.
+6. **Body links use standard markdown** — `[id](relative/path.md)` — so they navigate on github.com without an extension.
 
 ## Frontmatter schema
 
@@ -44,10 +45,21 @@ source-thread: [[thread-id]]           # optional; for nodes derived from a thre
 
 ## Linking conventions
 
-- Use `[[id]]` for internal links. The renderer (Obsidian/Foam/static-site) resolves them.
-- Prefer many small links over one mega-link. The graph is more useful when edges are specific.
-- Do **not** use absolute paths (`./nodes/...`) — that breaks portability between renderers.
-- External URLs go inline in the body or in a `references` node.
+Two link forms with different purposes — both supported, used in different places:
+
+| Where | Form | Purpose |
+|---|---|---|
+| Frontmatter `related:` | `[[id]]` (wiki-link) | Machine-readable edge list. Stable across folder moves; graph indexers consume this. |
+| Frontmatter `source-thread:` | `[[id]]` | Same — edge list. |
+| Body prose | `[id](relative/path.md)` (markdown link) | Navigable on github.com directly. No Obsidian/Foam extension required. |
+
+Rules:
+
+- **Prefer many small links over one mega-link.** The graph is more useful when edges are specific.
+- **Use the visible label = the node `id`** in body links unless the surrounding sentence requires a different surface form. Keeps the graph readable.
+- **Do not use absolute paths** (`/nodes/...`) — relative paths only.
+- **External URLs** go inline in body, or in a `references`-type node.
+- **Dangling links** are intentional in `related:` (mark intent for a future node). In the body, link only to nodes that exist; if you mean to point at a node you'll write later, add it to `related:` instead and revisit when the node lands.
 
 ## Style
 
@@ -61,8 +73,8 @@ source-thread: [[thread-id]]           # optional; for nodes derived from a thre
 
 1. Decide `type`. Pick the folder.
 2. Choose `id` — kebab-case, distinctive enough to be globally unique.
-3. Write frontmatter first; let it force you to commit to type/tags/relations.
-4. Draft body. Cross-link aggressively, including to nodes you intend to write later.
+3. Write frontmatter first; let it force you to commit to type/tags/relations. Use `[[id]]` form in `related:`.
+4. Draft body. Cross-link aggressively to existing nodes using `[id](relative/path.md)` markdown links.
 5. Update `README.md`'s index.
 6. If the node was derived from a conversation, also create or update a `thread` node and set `source-thread:`.
 

@@ -42,5 +42,5 @@ Every customer-reported bug should auto-create a redacted regression case. The t
 
 ## References
 
-- Hamel Husain, *A Field Guide to Rapidly Improving AI Products* — [[references-eval-reading-list]]
-- Phillip Carter, *So We Shipped an AI Product. Did It Work?* — [[references-eval-reading-list]]
+- Hamel Husain, *A Field Guide to Rapidly Improving AI Products* — [references-eval-reading-list](../references/references-eval-reading-list.md)
+- Phillip Carter, *So We Shipped an AI Product. Did It Work?* — [references-eval-reading-list](../references/references-eval-reading-list.md)

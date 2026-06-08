@@ -23,12 +23,12 @@ A multi-section analysis covering: when forced tool-call is the right pattern, w
 
 ## Outputs from this thread
 
-- [[llm-output-design]] — new umbrella topic.
-- [[forced-tool-call-output]] — the core pattern (when / when-not).
-- [[output-surface-taxonomy]] — the meta-practice that makes the pattern decidable.
-- [[schema-vs-validator]] — the alternative mechanism and how to choose between them.
-- [[streaming-vs-structured]] — the streaming UX trade-off, separable concept.
-- [[hard-surface-irrevocability]] — "irrevocable output channel" as a first-class category.
+- [llm-output-design](../nodes/topics/llm-output-design.md) — new umbrella topic.
+- [forced-tool-call-output](../nodes/concepts/forced-tool-call-output.md) — the core pattern (when / when-not).
+- [output-surface-taxonomy](../nodes/concepts/output-surface-taxonomy.md) — the meta-practice that makes the pattern decidable.
+- [schema-vs-validator](../nodes/concepts/schema-vs-validator.md) — the alternative mechanism and how to choose between them.
+- [streaming-vs-structured](../nodes/concepts/streaming-vs-structured.md) — the streaming UX trade-off, separable concept.
+- [hard-surface-irrevocability](../nodes/concepts/hard-surface-irrevocability.md) — "irrevocable output channel" as a first-class category.
 
 ## Key insights captured
 

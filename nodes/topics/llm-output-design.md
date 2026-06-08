@@ -23,12 +23,12 @@ A forced tool-call is to LLM output what a typed RPC is to a network call. You w
 
 ## The decision is per-surface, not per-feature
 
-The recurring mistake is choosing one output mechanism for the whole agent. Real systems have many output surfaces — SMS, chat UI, logs, tool inputs, partner webhooks, voice — and each one has a different failure cost, a different consumer, and different latency requirements. See [[output-surface-taxonomy]].
+The recurring mistake is choosing one output mechanism for the whole agent. Real systems have many output surfaces — SMS, chat UI, logs, tool inputs, partner webhooks, voice — and each one has a different failure cost, a different consumer, and different latency requirements. See [output-surface-taxonomy](../concepts/output-surface-taxonomy.md).
 
 ## Sub-topics
 
-- [[forced-tool-call-output]] — when to force the schema; when free-text is correct.
-- [[output-surface-taxonomy]] — the meta-practice of classifying surfaces explicitly.
-- [[schema-vs-validator]] — schema-enforced output vs. free-text + post-hoc validator.
-- [[streaming-vs-structured]] — partial-token UX vs. structured output, and why they're at odds.
-- [[hard-surface-irrevocability]] — when "send" is unrecoverable, and what that implies.
+- [forced-tool-call-output](../concepts/forced-tool-call-output.md) — when to force the schema; when free-text is correct.
+- [output-surface-taxonomy](../concepts/output-surface-taxonomy.md) — the meta-practice of classifying surfaces explicitly.
+- [schema-vs-validator](../concepts/schema-vs-validator.md) — schema-enforced output vs. free-text + post-hoc validator.
+- [streaming-vs-structured](../concepts/streaming-vs-structured.md) — partial-token UX vs. structured output, and why they're at odds.
+- [hard-surface-irrevocability](../concepts/hard-surface-irrevocability.md) — when "send" is unrecoverable, and what that implies.

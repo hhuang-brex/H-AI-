@@ -20,7 +20,7 @@ When and how a domain bot hands off to a human. The escalation path is part of t
 
 Five distinct trigger classes, each with its own detection logic:
 
-1. **Authority exceeded** — request is in a tier the bot doesn't have. Deterministic; tied to [[action-authority]].
+1. **Authority exceeded** — request is in a tier the bot doesn't have. Deterministic; tied to [action-authority](action-authority.md).
 2. **Capability exceeded** — request is in-domain but bot doesn't know how. "I can't, let me get someone who can."
 3. **Confidence collapse** — repeated misunderstanding, stuck loop, low-similarity retrieval. The bot detects its own inability to progress.
 4. **User signal** — explicit ("can I talk to a human?"), implicit (frustration markers, profanity uptick), or distress (urgent / safety language). Distress signals override everything else, including in-flight actions.
@@ -47,7 +47,7 @@ Generic handoffs transfer only the chat transcript. Humans then re-ask everythin
 
 ## Reverse handoff (human → bot)
 
-Often forgotten: when the human resolves the immediate issue, the bot should be able to take over again for follow-up tasks. The conversation memory ([[conversation-memory]]) must survive the human turn-segment, and the human's actions must be visible to the bot's later responses.
+Often forgotten: when the human resolves the immediate issue, the bot should be able to take over again for follow-up tasks. The conversation memory ([conversation-memory](conversation-memory.md)) must survive the human turn-segment, and the human's actions must be visible to the bot's later responses.
 
 ## Eval
 
@@ -57,6 +57,6 @@ Often forgotten: when the human resolves the immediate issue, the bot should be 
 
 ## See also
 
-- [[action-authority]] — tier 4 actions auto-escalate.
-- [[scope-and-refusal]] — refusal and escalation are different; refusal closes, escalation routes.
-- [[safety-rails-domain-specific]] — distress signals trigger immediate escalation paths.
+- [action-authority](action-authority.md) — tier 4 actions auto-escalate.
+- [scope-and-refusal](scope-and-refusal.md) — refusal and escalation are different; refusal closes, escalation routes.
+- [safety-rails-domain-specific](safety-rails-domain-specific.md) — distress signals trigger immediate escalation paths.

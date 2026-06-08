@@ -13,7 +13,7 @@ created: 2026-06-07
 
 # Output Surface Taxonomy
 
-The meta-practice that makes [[forced-tool-call-output]] decidable: enumerate every place the LLM can emit, classify each one, document the per-surface decision somewhere central.
+The meta-practice that makes [forced-tool-call-output](forced-tool-call-output.md) decidable: enumerate every place the LLM can emit, classify each one, document the per-surface decision somewhere central.
 
 ## Why this is the prerequisite
 
@@ -48,6 +48,6 @@ Run this exercise once per agent; the columns differ per company and surface, bu
 
 ## See also
 
-- [[forced-tool-call-output]] — when the row's answer is "schema-forced".
-- [[schema-vs-validator]] — when the row's answer is "free-text + validator".
-- [[hard-surface-irrevocability]] — the column that drives most decisions.
+- [forced-tool-call-output](forced-tool-call-output.md) — when the row's answer is "schema-forced".
+- [schema-vs-validator](schema-vs-validator.md) — when the row's answer is "free-text + validator".
+- [hard-surface-irrevocability](hard-surface-irrevocability.md) — the column that drives most decisions.

@@ -26,13 +26,13 @@ Anything not serving (1)–(3) is overhead.
 
 ## Sub-topics
 
-- [[test-pyramid-llm]] — how to layer cheap deterministic checks under expensive LLM-judged ones.
-- [[llm-as-judge]] — calibration, multi-vote, cascading judges, bias.
-- [[prod-shadow-replay]] — closing the gap between frozen datasets and live traffic.
-- [[cost-aware-eval]] — sample-size math and budget assertions.
-- [[agent-trajectory-eval]] — multi-turn, tool-call sequences, end-state vs step.
-- [[adversarial-eval]] — red-team / safety / prompt injection.
+- [test-pyramid-llm](../concepts/test-pyramid-llm.md) — how to layer cheap deterministic checks under expensive LLM-judged ones.
+- [llm-as-judge](../concepts/llm-as-judge.md) — calibration, multi-vote, cascading judges, bias.
+- [prod-shadow-replay](../concepts/prod-shadow-replay.md) — closing the gap between frozen datasets and live traffic.
+- [cost-aware-eval](../concepts/cost-aware-eval.md) — sample-size math and budget assertions.
+- [agent-trajectory-eval](../concepts/agent-trajectory-eval.md) — multi-turn, tool-call sequences, end-state vs step.
+- [adversarial-eval](../concepts/adversarial-eval.md) — red-team / safety / prompt injection.
 
 ## Canonical references
 
-See [[references-eval-reading-list]] for the curated frontier-lab + practitioner reading list.
+See [references-eval-reading-list](../references/references-eval-reading-list.md) for the curated frontier-lab + practitioner reading list.

@@ -40,6 +40,6 @@ Using an LLM to score another LLM's output. Unavoidable for subjective verdicts;
 
 ## References
 
-- Eugene Yan, *Evaluating LLM-Evaluators* — [[references-eval-reading-list]]
-- Hamel Husain, *Creating an LLM-as-Judge That Drives Business Results* — [[references-eval-reading-list]]
-- Shankar et al., *Who Validates the Validators?* — [[references-eval-reading-list]]
+- Eugene Yan, *Evaluating LLM-Evaluators* — [references-eval-reading-list](../references/references-eval-reading-list.md)
+- Hamel Husain, *Creating an LLM-as-Judge That Drives Business Results* — [references-eval-reading-list](../references/references-eval-reading-list.md)
+- Shankar et al., *Who Validates the Validators?* — [references-eval-reading-list](../references/references-eval-reading-list.md)

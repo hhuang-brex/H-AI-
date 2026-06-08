@@ -29,5 +29,5 @@ Regression cases assume cooperative users. Adversarial cases assume the user is 
 
 ## References
 
-- Anthropic, *Challenges in Red Teaming AI Systems* — [[references-eval-reading-list]]
-- OpenAI, *Advancing Red Teaming with People and AI* — [[references-eval-reading-list]]
+- Anthropic, *Challenges in Red Teaming AI Systems* — [references-eval-reading-list](../references/references-eval-reading-list.md)
+- OpenAI, *Advancing Red Teaming with People and AI* — [references-eval-reading-list](../references/references-eval-reading-list.md)

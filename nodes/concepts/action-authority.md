@@ -26,7 +26,7 @@ Most domains support a tiered model:
 | **1 — Low-risk write** | Update a draft note, attach a tag | Implicit confirmation (action visible, easy undo) |
 | **2 — Reversible state change** | Cancel pending request, change preference | Explicit "OK?" before acting |
 | **3 — Irreversible / high-stakes** | Send money, confirm a refund, delete a record | Confirmation + summary + cool-off window or human approval |
-| **4 — Out of authority** | Anything regulated, cross-account, or above a threshold | Hand off; never act. See [[escalation-handoff]] |
+| **4 — Out of authority** | Anything regulated, cross-account, or above a threshold | Hand off; never act. See [escalation-handoff](escalation-handoff.md) |
 
 Per-action authority is the design contract. Per-action evaluation is how you verify the bot honors it.
 
@@ -37,7 +37,7 @@ Prompting "always confirm before acting on tier-3 actions" is leaky — the mode
 - Tier 3 tools require a `confirmed_by_user: true` argument; the tool's wrapper rejects calls without it.
 - Tier 4 tools simply don't exist in the bot's toolset — the only path is escalation.
 
-This is the same principle as [[forced-tool-call-output]] for outputs: shift the constraint from "I asked the model to" to "the surface refuses to accept malformed actions."
+This is the same principle as [forced-tool-call-output](forced-tool-call-output.md) for outputs: shift the constraint from "I asked the model to" to "the surface refuses to accept malformed actions."
 
 ## Common anti-patterns
 
@@ -50,10 +50,10 @@ This is the same principle as [[forced-tool-call-output]] for outputs: shift the
 
 - **Authority-respect evaluator** — for each tier, run cases that should and shouldn't trigger an action; assert the bot acts only when authorized.
 - **Confirmation evaluator** — assert tier-2/3 actions are preceded by a confirmation turn, and abort on "no" / silence.
-- **Tool-call invariants** — schema-level: tier-3 tools fail at the boundary if `confirmed_by_user` is absent. See [[golden-snapshot-eval]] / schema-validity scorer.
+- **Tool-call invariants** — schema-level: tier-3 tools fail at the boundary if `confirmed_by_user` is absent. See [golden-snapshot-eval](golden-snapshot-eval.md) / schema-validity scorer.
 
 ## See also
 
-- [[escalation-handoff]] — the relief valve for tier 4 and unclassified situations.
-- [[forced-tool-call-output]] — the structural enforcement principle this borrows.
-- [[intent-and-disambiguation]] — disambiguation requirements scale with authority.
+- [escalation-handoff](escalation-handoff.md) — the relief valve for tier 4 and unclassified situations.
+- [forced-tool-call-output](forced-tool-call-output.md) — the structural enforcement principle this borrows.
+- [intent-and-disambiguation](intent-and-disambiguation.md) — disambiguation requirements scale with authority.

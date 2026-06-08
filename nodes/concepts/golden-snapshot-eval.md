@@ -32,4 +32,4 @@ A wrong tool description that always makes the agent pick the wrong tool burns o
 
 ## References
 
-- See [[test-pyramid-llm]] and [[cost-aware-eval]].
+- See [test-pyramid-llm](test-pyramid-llm.md) and [cost-aware-eval](cost-aware-eval.md).

@@ -44,7 +44,7 @@ For long sessions, the transcript exceeds context window. Two strategies:
 1. **Rolling summary.** Compress older turns into a summary; keep recent turns verbatim. Cheap, lossy, biased toward "what the summarizer thought important."
 2. **Structured state.** Maintain explicit slot values (intent, filled fields, commitments, escalations). Verbatim transcript fades; structured state is the durable memory.
 
-Structured state scales better in domains because most useful memory is enumerable — exactly the same logic as [[forced-tool-call-output]] applied to memory.
+Structured state scales better in domains because most useful memory is enumerable — exactly the same logic as [forced-tool-call-output](forced-tool-call-output.md) applied to memory.
 
 ## Privacy / right-to-forget
 
@@ -63,6 +63,6 @@ In regulated domains, memory has legal constraints:
 
 ## See also
 
-- [[domain-knowledge-injection]] — how external knowledge enters the prompt; memory is the *internal* counterpart.
-- [[escalation-handoff]] — handoff payloads draw from session memory; coverage gaps surface here.
-- [[repair-and-clarification]] — repair turns rely on remembering what the bot said wrong.
+- [domain-knowledge-injection](domain-knowledge-injection.md) — how external knowledge enters the prompt; memory is the *internal* counterpart.
+- [escalation-handoff](escalation-handoff.md) — handoff payloads draw from session memory; coverage gaps surface here.
+- [repair-and-clarification](repair-and-clarification.md) — repair turns rely on remembering what the bot said wrong.

@@ -54,10 +54,10 @@ Users often push back on refusals. The bot must hold the line on policy refusals
 - **Scope classification** — labeled in/adjacent/out cases; measure precision/recall.
 - **Refusal-tone evaluator** — LLM-judge with a rubric specific to each refusal kind.
 - **Persistence under push-back** — multi-turn cases where the user restates; assert policy refusals hold and capability refusals can soften appropriately.
-- **No-bluff** — out-of-scope cases must not produce confident in-domain-shaped answers. Tied to [[grounding-and-citation]].
+- **No-bluff** — out-of-scope cases must not produce confident in-domain-shaped answers. Tied to [grounding-and-citation](grounding-and-citation.md).
 
 ## See also
 
-- [[grounding-and-citation]] — refusal is the right answer when the corpus doesn't cover it.
-- [[escalation-handoff]] — capability refusals often route to escalation.
-- [[safety-rails-domain-specific]] — some refusals are legally mandated.
+- [grounding-and-citation](grounding-and-citation.md) — refusal is the right answer when the corpus doesn't cover it.
+- [escalation-handoff](escalation-handoff.md) — capability refusals often route to escalation.
+- [safety-rails-domain-specific](safety-rails-domain-specific.md) — some refusals are legally mandated.

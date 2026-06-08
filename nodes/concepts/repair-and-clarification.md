@@ -43,7 +43,7 @@ Generic chatbots collapse all three into "Sorry, let me try again." That answers
 
 ## Repair for high-authority actions
 
-If the bot took a tier-2/3 action ([[action-authority]]) and the user signals it was wrong, repair includes:
+If the bot took a tier-2/3 action ([action-authority](action-authority.md)) and the user signals it was wrong, repair includes:
 
 1. **Halt** any in-flight action immediately.
 2. **Reverse** what's reversible; surface what isn't.
@@ -52,7 +52,7 @@ If the bot took a tier-2/3 action ([[action-authority]]) and the user signals it
 
 ## Where memory matters
 
-Repair turns rely on [[conversation-memory]]. The bot must know what it said, what action it took, and what the user's prior turn was, to repair coherently. Sessions that compress aggressively often break here.
+Repair turns rely on [conversation-memory](conversation-memory.md). The bot must know what it said, what action it took, and what the user's prior turn was, to repair coherently. Sessions that compress aggressively often break here.
 
 ## Eval
 
@@ -62,6 +62,6 @@ Repair turns rely on [[conversation-memory]]. The bot must know what it said, wh
 
 ## See also
 
-- [[intent-and-disambiguation]] — disambiguation prevents many repairs from being needed.
-- [[conversation-memory]] — the substrate repair runs on.
-- [[turn-taking-and-proactivity]] — repair changes who should speak next.
+- [intent-and-disambiguation](intent-and-disambiguation.md) — disambiguation prevents many repairs from being needed.
+- [conversation-memory](conversation-memory.md) — the substrate repair runs on.
+- [turn-taking-and-proactivity](turn-taking-and-proactivity.md) — repair changes who should speak next.

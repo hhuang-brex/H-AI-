@@ -32,7 +32,7 @@ Most production domain bots use **all four** together. The skill is choosing per
 - **User account state (balances, plan, status)** → Structured injection at request time. RAG would be wrong (semantically searching for the user's balance is silly).
 - **Domain vocabulary, common abbreviations, formatting conventions** → System prompt or fine-tune. Stable, small, every call.
 - **Long-tail facts the model could reasonably know** → Parametric memory + grounding check. Don't pay retrieval cost on every "what's APR?" — but verify before quoting numbers.
-- **Tool list and capabilities** → System prompt / catalog. Tied to [[golden-snapshot-eval]] for drift control.
+- **Tool list and capabilities** → System prompt / catalog. Tied to [golden-snapshot-eval](golden-snapshot-eval.md) for drift control.
 
 ## Anti-patterns
 
@@ -43,19 +43,19 @@ Most production domain bots use **all four** together. The skill is choosing per
 
 ## Cost dimension
 
-Knowledge injection is where token budgets blow up. Every retrieved chunk, every line of system prompt, every structured state field is paid on every request × every user × every turn. See [[cost-aware-eval]].
+Knowledge injection is where token budgets blow up. Every retrieved chunk, every line of system prompt, every structured state field is paid on every request × every user × every turn. See [cost-aware-eval](cost-aware-eval.md).
 
 A useful audit: snapshot the actual prompt for a representative production call. Look at what's in there. Most teams find 30-50% of tokens are knowledge that's stale, redundant, or never referenced by the model.
 
 ## Eval
 
 - **Retrieval recall** — for labeled questions, assert the right passage is in top-K.
-- **Faithfulness** — covered in [[grounding-and-citation]], but tied here because the eval depends on retrieval being right.
+- **Faithfulness** — covered in [grounding-and-citation](grounding-and-citation.md), but tied here because the eval depends on retrieval being right.
 - **State injection correctness** — assert the right user/account state is in the prompt for each request type.
 - **Token-budget snapshot** — assert system prompt + injected context stays under a budget.
 
 ## See also
 
-- [[grounding-and-citation]] — the consumer of injected knowledge; why it must be cited.
-- [[conversation-memory]] — internal counterpart; memory is what the bot remembers, injection is what it's told.
-- [[cost-aware-eval]] — the ceiling on how much you can inject.
+- [grounding-and-citation](grounding-and-citation.md) — the consumer of injected knowledge; why it must be cited.
+- [conversation-memory](conversation-memory.md) — internal counterpart; memory is what the bot remembers, injection is what it's told.
+- [cost-aware-eval](cost-aware-eval.md) — the ceiling on how much you can inject.

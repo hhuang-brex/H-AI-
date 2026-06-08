@@ -63,5 +63,5 @@ Routing: presence of a fixtures manifest in a dataset folder ⇒ run a "seed-and
 
 ## See also
 
-- [[agent-eval-improvement-tiers]] — ranked plan to address the issues above.
-- [[2026-06-05-eval-analysis]] — origin thread.
+- [agent-eval-improvement-tiers](agent-eval-improvement-tiers.md) — ranked plan to address the issues above.
+- [2026-06-05-eval-analysis](../../threads/2026-06-05-eval-analysis.md) — origin thread.

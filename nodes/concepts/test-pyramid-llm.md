@@ -38,11 +38,11 @@ If a regression can be caught one layer down for an order of magnitude less mone
 
 ## Anti-patterns
 
-- **Repetition allocated to the wrong layer.** Running mechanical assertions 50× nightly while running expensive fixture-backed cases 1× — flake budget is in the wrong place. See [[agent-eval-case-study]].
+- **Repetition allocated to the wrong layer.** Running mechanical assertions 50× nightly while running expensive fixture-backed cases 1× — flake budget is in the wrong place. See [agent-eval-case-study](../projects/agent-eval-case-study.md).
 - **No bottom layer at all.** Without snapshot tests for prompt/catalog assembly, every catalog regression burns an LLM call to find.
-- **Single-vote LLM judge as the gate.** A single judge's variance can exceed your alarm threshold. See [[llm-as-judge]].
+- **Single-vote LLM judge as the gate.** A single judge's variance can exceed your alarm threshold. See [llm-as-judge](llm-as-judge.md).
 
 ## References
 
-- Hamel Husain, *Your AI Product Needs Evals* — [[references-eval-reading-list]]
-- Eugene Yan, *Patterns for LLM Systems* — [[references-eval-reading-list]]
+- Hamel Husain, *Your AI Product Needs Evals* — [references-eval-reading-list](../references/references-eval-reading-list.md)
+- Eugene Yan, *Patterns for LLM Systems* — [references-eval-reading-list](../references/references-eval-reading-list.md)

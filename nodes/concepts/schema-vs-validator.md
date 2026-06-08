@@ -32,7 +32,7 @@ Two mechanisms for keeping LLM output well-formed. They are not interchangeable;
 | Output goes to an irrevocable, structured surface (SMS, webhook, email) | Schema |
 | Output is conversational, mid-dialogue, open-ended | Validator |
 | Model is unfamiliar with the schema; eval shows quality regression | Validator (and revisit schema later) |
-| Streaming token-by-token UX is part of the product | Validator (see [[streaming-vs-structured]]) |
+| Streaming token-by-token UX is part of the product | Validator (see [streaming-vs-structured](streaming-vs-structured.md)) |
 | Failure is "ugly but recoverable" | Validator |
 | Failure is "customer-visible, irreversible, ticket-cascading" | Schema |
 
@@ -49,4 +49,4 @@ Neither catches the other's class. A schema can guarantee `merchant_name: string
 
 - **Schema as content gate.** Adding `length_must_be_under_160_chars: bool` to the schema and trusting the model to set it correctly. The schema enforces presence, not truth — use a validator.
 - **Validator as structure gate.** Regex-parsing free-text to reconstruct fields. Brittle, redundant, defers the inevitable schema migration.
-- **Choosing for the whole agent.** Mechanism is per-surface. See [[output-surface-taxonomy]].
+- **Choosing for the whole agent.** Mechanism is per-surface. See [output-surface-taxonomy](output-surface-taxonomy.md).

@@ -16,9 +16,9 @@ Conversation goal: understand a representative agent platform's eval logic from 
 
 ## Outputs from this thread
 
-- [[agent-eval-case-study]] — generalized map of how the system evaluates agents today.
-- [[agent-eval-improvement-tiers]] — five-tier ranked plan with a "if only three" shortlist.
-- [[references-eval-reading-list]] — frontier-lab + practitioner reading list, Anthropic + OpenAI prioritized.
+- [agent-eval-case-study](../nodes/projects/agent-eval-case-study.md) — generalized map of how the system evaluates agents today.
+- [agent-eval-improvement-tiers](../nodes/projects/agent-eval-improvement-tiers.md) — five-tier ranked plan with a "if only three" shortlist.
+- [references-eval-reading-list](../nodes/references/references-eval-reading-list.md) — frontier-lab + practitioner reading list, Anthropic + OpenAI prioritized.
 
 ## Key insights captured
 
