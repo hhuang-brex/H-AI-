@@ -41,6 +41,7 @@ The body is human-readable markdown. Use `[[node-id]]` to link. Dangling links a
 ### Topics
 - [[llm-evaluation]] — measuring whether LLM systems do what they should without bankrupting the team.
 - [[llm-output-design]] — how an LLM emits to the world; per-surface decisions.
+- [[domain-chatbot-design]] — how a chatbot converses inside a specific domain.
 
 ### Concepts — Eval
 - [[test-pyramid-llm]] — porting the classic pyramid to LLM apps.
@@ -58,6 +59,19 @@ The body is human-readable markdown. Use `[[node-id]]` to link. Dangling links a
 - [[streaming-vs-structured]] — token-by-token UX vs. structured output trade-off.
 - [[hard-surface-irrevocability]] — irrevocable output channels as a first-class category.
 
+### Concepts — Domain Chatbot Conversation Design
+- [[intent-and-disambiguation]] — turning ambiguous input into actionable intent; clarification vs. assumption.
+- [[grounding-and-citation]] — anchoring claims in domain sources; refusal as the right answer.
+- [[action-authority]] — what the bot can *do*; tiered authority enforced at the tool layer.
+- [[escalation-handoff]] — when and how to hand off to a human; preserving context.
+- [[scope-and-refusal]] — in-domain vs. out-of-domain; three kinds of refusal.
+- [[conversation-memory]] — three horizons; what to remember, what not to.
+- [[domain-knowledge-injection]] — RAG, prompt-stuffing, structured state, fine-tuning per knowledge type.
+- [[persona-tone-compliance]] — voice as a constraint set, not a style preference.
+- [[repair-and-clarification]] — recovery turns are not initial turns.
+- [[turn-taking-and-proactivity]] — initiative, long operations, closing.
+- [[safety-rails-domain-specific]] — generic safety is the baseline, not the answer.
+
 ### Projects
 - [[agent-eval-case-study]] — generalized agent platform eval system (2026-06-05 snapshot).
 - [[agent-eval-improvement-tiers]] — ranked improvement plan for the case study above.
@@ -68,6 +82,7 @@ The body is human-readable markdown. Use `[[node-id]]` to link. Dangling links a
 ### Threads
 - [[2026-06-05-eval-analysis]] — origin of the eval nodes.
 - [[2026-06-07-forced-tool-call-fan-out]] — origin of the output-design nodes.
+- [[2026-06-08-domain-chatbot-fan-out]] — origin of the conversation-design nodes.
 
 ## Why this shape
 
