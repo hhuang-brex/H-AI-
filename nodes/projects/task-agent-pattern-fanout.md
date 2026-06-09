@@ -8,7 +8,7 @@ related:
   - [[llm-evaluation]]
   - [[forced-tool-call-output]]
   - [[output-surface-taxonomy]]
-status: proposal
+status: archived
 created: 2026-06-09
 ---
 

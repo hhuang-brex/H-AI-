@@ -1,3 +1,8 @@
+---
+title: AGENTS contract
+nav_order: 99
+---
+
 # AGENTS.md
 
 Contract for any agent (or human) adding to this knowledge graph. Following this keeps the repo machine-parseable and the graph navigable.

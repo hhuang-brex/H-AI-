@@ -1,15 +1,23 @@
+---
+title: Home
+nav_order: 1
+---
+
 # H-AI-
 
 > Hai's knowledge graph. Every file is one node. Every link is one edge.
 
 A working knowledge base that is **readable for humans** (browse the markdown on github.com or any renderer) and **parseable for agents** (YAML frontmatter, stable IDs, predictable folders). Designed to grow into a navigable graph rather than a pile of notes.
 
+**Browse the rendered site:** [hhuang-brex.github.io/H-AI-](https://hhuang-brex.github.io/H-AI-/)
+
 ## Layout
 
 ```
 H-AI-/
-├── README.md              ← you are here
+├── README.md              ← you are here (and the site homepage)
 ├── AGENTS.md              ← contract for agents adding/editing nodes
+├── _config.yml            ← Jekyll config (powers the rendered site)
 ├── nodes/
 │   ├── topics/            ← broad areas; entry points (e.g. llm-evaluation)
 │   ├── concepts/          ← reusable patterns/ideas (e.g. llm-as-judge)
@@ -18,23 +26,7 @@ H-AI-/
 └── threads/               ← time-stamped conversation summaries
 ```
 
-## Node anatomy
-
-Each node is one markdown file with this frontmatter:
-
-```yaml
----
-id: kebab-case-slug          # also the filename
-type: topic | concept | project | reference | thread
-tags: [...]
-related:
-  - [[other-node-id]]         # wiki-link form: machine-readable edge list
-status: living | snapshot | proposal | archived
-created: YYYY-MM-DD
----
-```
-
-The body is human-readable markdown. Frontmatter `related:` keeps the wiki-link form (`[[id]]`) for graph indexers; **the body uses standard markdown links** (`[id](relative/path.md)`) so navigation works on github.com without extensions. Dangling links are fine — they mark intent.
+Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). Body prose uses standard markdown links so navigation works on github.com and on the rendered site. Schema reference and editing rules: [`AGENTS.md`](./AGENTS.md).
 
 ## Current entry points
 
