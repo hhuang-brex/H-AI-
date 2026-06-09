@@ -43,6 +43,7 @@ The body is human-readable markdown. Frontmatter `related:` keeps the wiki-link 
 - [llm-output-design](nodes/topics/llm-output-design.md) — how an LLM emits to the world; per-surface decisions.
 - [domain-chatbot-design](nodes/topics/domain-chatbot-design.md) — how a chatbot converses inside a specific domain.
 - [sms-multi-thread-chatbot](nodes/topics/sms-multi-thread-chatbot.md) — multi-thread chatbot design when the only channel is flat SMS.
+- [chatbot-pagination](nodes/topics/chatbot-pagination.md) — handling large result sets in a chatbot; UX shape and tool shape chosen jointly.
 
 ### Concepts — Eval
 - [test-pyramid-llm](nodes/concepts/test-pyramid-llm.md) — porting the classic pyramid to LLM apps.
@@ -82,6 +83,11 @@ The body is human-readable markdown. Frontmatter `related:` keeps the wiki-link 
 - [sms-state-machine](nodes/concepts/sms-state-machine.md) — five states per thread; the durable substrate.
 - [sms-recovery-and-reentry](nodes/concepts/sms-recovery-and-reentry.md) — five recovery scenarios; not "sorry, could you clarify?"
 
+### Concepts — Chatbot Pagination
+- [truncated-pyramid-results](nodes/concepts/truncated-pyramid-results.md) — summary first, select-N exemplars, refinement buttons (NN/g).
+- [paginated-tool-contract](nodes/concepts/paginated-tool-contract.md) — opaque cursors, verbosity enum, filter parameters; ~3× token savings.
+- [code-execution-sandbox-pattern](nodes/concepts/code-execution-sandbox-pattern.md) — keep large rows out of model context entirely.
+
 ### Projects
 - [agent-eval-case-study](nodes/projects/agent-eval-case-study.md) — generalized agent platform eval system (2026-06-05 snapshot).
 - [agent-eval-improvement-tiers](nodes/projects/agent-eval-improvement-tiers.md) — ranked improvement plan for the case study above.
@@ -90,6 +96,7 @@ The body is human-readable markdown. Frontmatter `related:` keeps the wiki-link 
 ### References
 - [references-eval-reading-list](nodes/references/references-eval-reading-list.md) — frontier-lab + practitioner posts on LLM eval (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, …).
 - [references-domain-chatbot-design](nodes/references/references-domain-chatbot-design.md) — chatbot design reading list (Anthropic, OpenAI, Microsoft Bot Service, Google CDS, Rasa, Voiceflow, Husain, Yan, Hall, Intercom Fin).
+- [references-chatbot-pagination](nodes/references/references-chatbot-pagination.md) — pagination reading list (Anthropic Writing Tools / Code Execution, MCP cursor spec, NN/g UX patterns).
 
 ### Threads
 - [2026-06-05-eval-analysis](threads/2026-06-05-eval-analysis.md) — origin of the eval nodes.
@@ -98,6 +105,7 @@ The body is human-readable markdown. Frontmatter `related:` keeps the wiki-link 
 - [2026-06-08-sms-multi-thread-fan-out](threads/2026-06-08-sms-multi-thread-fan-out.md) — origin of the SMS multi-thread nodes.
 - [2026-06-08-domain-chatbot-research](threads/2026-06-08-domain-chatbot-research.md) — verified reading-list research thread.
 - [2026-06-09-dspy-domain-chatbot-research](threads/2026-06-09-dspy-domain-chatbot-research.md) — deep-research on documented DSPy chatbot case studies.
+- [2026-06-09-chatbot-pagination-research](threads/2026-06-09-chatbot-pagination-research.md) — deep-research on chatbot pagination UX + technical patterns.
 
 ## Why this shape
 
