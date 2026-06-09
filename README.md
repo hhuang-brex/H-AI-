@@ -87,13 +87,15 @@ The body is human-readable markdown. Frontmatter `related:` keeps the wiki-link 
 - [agent-eval-improvement-tiers](nodes/projects/agent-eval-improvement-tiers.md) — ranked improvement plan for the case study above.
 
 ### References
-- [references-eval-reading-list](nodes/references/references-eval-reading-list.md) — frontier-lab + practitioner posts (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, …).
+- [references-eval-reading-list](nodes/references/references-eval-reading-list.md) — frontier-lab + practitioner posts on LLM eval (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, …).
+- [references-domain-chatbot-design](nodes/references/references-domain-chatbot-design.md) — chatbot design reading list (Anthropic, OpenAI, Microsoft Bot Service, Google CDS, Rasa, Voiceflow, Husain, Yan, Hall, Intercom Fin).
 
 ### Threads
 - [2026-06-05-eval-analysis](threads/2026-06-05-eval-analysis.md) — origin of the eval nodes.
 - [2026-06-07-forced-tool-call-fan-out](threads/2026-06-07-forced-tool-call-fan-out.md) — origin of the output-design nodes.
 - [2026-06-08-domain-chatbot-fan-out](threads/2026-06-08-domain-chatbot-fan-out.md) — origin of the conversation-design nodes.
 - [2026-06-08-sms-multi-thread-fan-out](threads/2026-06-08-sms-multi-thread-fan-out.md) — origin of the SMS multi-thread nodes.
+- [2026-06-08-domain-chatbot-research](threads/2026-06-08-domain-chatbot-research.md) — verified reading-list research thread.
 
 ## Why this shape
 
