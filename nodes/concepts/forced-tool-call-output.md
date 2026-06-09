@@ -8,6 +8,8 @@ related:
   - [[schema-vs-validator]]
   - [[streaming-vs-structured]]
   - [[hard-surface-irrevocability]]
+  - [[template-rendered-output]]
+  - [[layered-defense-pipeline]]
   - [[agent-trajectory-eval]]
 status: living
 created: 2026-06-07
@@ -16,6 +18,24 @@ created: 2026-06-07
 # Forced Tool-Call as Output Channel
 
 Force the LLM to emit user-facing output through a tool-call with a fixed schema instead of generating free-text. Also called *structured output enforcement*, *tool-as-output-channel*, *constrained generation as a wire contract*.
+
+## The failure mode this addresses
+
+The dominant production failure for chatbots is not hallucination — it's the **almost-right sentence**. The bot writes something that sounds correct, scores reasonable on faithfulness evals, and gets through casual review, but is wrong on a detail that matters: signs as a person; promises a time; reassures incorrectly. Standard evals miss it because the prose looks fine.
+
+Forced tool-call removes the model's ability to *write* the failing class of sentences, instead of trying to *catch* them after generation.
+
+## Stronger variant: template-rendered output
+
+Schema enforcement still lets the LLM write prose inside string fields. For the strictest hard surfaces, a stronger pattern exists: **the LLM never writes the user-facing string at all** — it picks one tool from a closed palette (a classifier output) and code-owned templates render the actual reply. See [template-rendered-output](template-rendered-output.md). This is the right level when the failure cost truly dominates and the templates are enumerable (typically 8–12 per agent).
+
+The two patterns are points on a spectrum, not alternatives:
+
+| Discipline | Model writes | Used when |
+|---|---|---|
+| Free-text + validator (see [schema-vs-validator](schema-vs-validator.md)) | Free prose | Conversational, mid-dialogue |
+| **Forced tool-call (this node)** | **Structured object with string fields** | **Hard surface; structure enumerable; some content flexibility wanted** |
+| Template-rendered ([template-rendered-output](template-rendered-output.md)) | Enum/classifier output, no prose | Hard surface; almost-right is unacceptable; 8–12 templates cover all cases |
 
 ## Mental model
 
@@ -66,4 +86,6 @@ Conceptually different from a prompt fix. Migrating a "produce text matching thi
 ## See also
 
 - [output-surface-taxonomy](output-surface-taxonomy.md) — the prerequisite practice; you can't decide *when* to force schema until you've enumerated *which surfaces exist*.
+- [template-rendered-output](template-rendered-output.md) — the stricter variant: classifier + code-owned templates, no model prose at all.
+- [layered-defense-pipeline](layered-defense-pipeline.md) — the runtime architecture (regex → forced tool → templates → heterogeneous recheck) that makes this safe in production.
 - [agent-trajectory-eval](agent-trajectory-eval.md) — once schema is enforced, mechanical evals can pin tool-call shape (`input.equals`, schema-validity) and demote LLM-judges to where they belong.

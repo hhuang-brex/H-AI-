@@ -26,6 +26,7 @@ Curated for senior engineers building domain-specific chatbots over chat / SMS /
 - **Conversational Design** — Erika Hall, A Book Apart, 2018. https://abookapart.com/products/conversational-design — Pre-LLM, but the chapter on what makes interactions feel like conversation (not transactions) is the most-cited reference in modern conversation-design work.
 - 🔑 **Design and control conversation flow** — Microsoft Learn (Bot Service docs). https://learn.microsoft.com/en-us/azure/bot-service/bot-service-design-conversation-flow — Procedural flow vs. interruption handling vs. expiry; vocabulary every chatbot designer ends up needing.
 - 🔑 **Design the user experience** — Microsoft Learn (Bot Service docs). https://learn.microsoft.com/en-us/azure/bot-service/bot-service-design-user-experience — Rich controls vs. text vs. speech; when natural language understanding is overkill ("ask specific questions" is the underrated advice).
+- **Forced Tool Calling in Production Chatbots** — Ikki, May 2026. https://www.ikki.io/blog/forced-tool-calling-production-chatbots — The strongest practitioner statement of the template-rendered output pattern: regex gate → forced tool call → code-owned templates → heterogeneous-model safety recheck. Concrete production-tested numbers (15–25% regex catches, 75–90% prompt-cache hit, 0.5–2% silent overrides). See [template-rendered-output](../concepts/template-rendered-output.md) and [layered-defense-pipeline](../concepts/layered-defense-pipeline.md).
 
 ## (b) Intent classification, NLU, slot-filling
 

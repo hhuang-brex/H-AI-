@@ -7,6 +7,7 @@ related:
   - [[test-pyramid-llm]]
   - [[cost-aware-eval]]
   - [[agent-eval-case-study]]
+  - [[layered-defense-pipeline]]
 status: living
 created: 2026-06-05
 ---
@@ -37,6 +38,19 @@ Using an LLM to score another LLM's output. Unavoidable for subjective verdicts;
 - Replace single sonnet judge with **3× haiku majority** — typically catches single-judge variance and is roughly cost-neutral.
 - **Pin agent + judge model** in dataset metadata so a model upgrade is a deliberate rebaseline, not a silent baseline shift.
 - **Same-family judge** is a known hazard; if budget allows, judge with a different family for high-stakes cases.
+
+## Adjacent pattern: heterogeneous-model safety recheck
+
+Distinct from judge calibration — but worth knowing because it's often confused with multi-vote. Some chatbot architectures use a *runtime* recheck: when the primary classifier picks a high-risk option (e.g., "stay silent"), a different-family model re-classifies the same input and can override.
+
+| Property | Multi-vote judge (this node) | Heterogeneous safety recheck |
+|---|---|---|
+| When it runs | Eval time, on outputs to score | Runtime, on a specific decision branch |
+| What it measures | Quality / correctness of an answer | Whether to override a decision |
+| Why same-model fails | Self-enhancement, correlated noise | Same model re-renders the same mistake |
+| Why different-family helps | Independent vote | Uncorrelated blind spots → catches what either alone misses |
+
+The recheck is *not* a multi-vote judge; it's a runtime branch with override authority. See [layered-defense-pipeline](layered-defense-pipeline.md) for the full architecture.
 
 ## References
 
