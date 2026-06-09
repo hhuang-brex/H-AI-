@@ -85,6 +85,7 @@ The body is human-readable markdown. Frontmatter `related:` keeps the wiki-link 
 ### Projects
 - [agent-eval-case-study](nodes/projects/agent-eval-case-study.md) — generalized agent platform eval system (2026-06-05 snapshot).
 - [agent-eval-improvement-tiers](nodes/projects/agent-eval-improvement-tiers.md) — ranked improvement plan for the case study above.
+- [dspy-domain-chatbot-cases](nodes/projects/dspy-domain-chatbot-cases.md) — verified DSPy domain-chatbot success examples (JetBlue, Dr.Copilot, etc.; 2026-06-09 snapshot).
 
 ### References
 - [references-eval-reading-list](nodes/references/references-eval-reading-list.md) — frontier-lab + practitioner posts on LLM eval (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, …).
@@ -96,6 +97,7 @@ The body is human-readable markdown. Frontmatter `related:` keeps the wiki-link 
 - [2026-06-08-domain-chatbot-fan-out](threads/2026-06-08-domain-chatbot-fan-out.md) — origin of the conversation-design nodes.
 - [2026-06-08-sms-multi-thread-fan-out](threads/2026-06-08-sms-multi-thread-fan-out.md) — origin of the SMS multi-thread nodes.
 - [2026-06-08-domain-chatbot-research](threads/2026-06-08-domain-chatbot-research.md) — verified reading-list research thread.
+- [2026-06-09-dspy-domain-chatbot-research](threads/2026-06-09-dspy-domain-chatbot-research.md) — deep-research on documented DSPy chatbot case studies.
 
 ## Why this shape
 
