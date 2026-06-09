@@ -54,6 +54,12 @@ In regulated domains, memory has legal constraints:
 - Some categories (health, payment data) shouldn't be stored at all — even in summaries.
 - Audit: what memory contributed to which response? Often required for compliance review.
 
+## Recency in long sessions
+
+Long agentic sessions have a structural problem distinct from "what to remember": the model attends most strongly to recent context. A rule placed in the system prompt 300 turns ago competes with thousands of intervening tokens. See [recency-bias-prompt-design](recency-bias-prompt-design.md).
+
+Practical implication: rules that *must hold* in long sessions need either (a) reinforcement injected at the point they apply (see [operator-trust-injection](operator-trust-injection.md)) or (b) durable structured state the model reads on every turn. Trusting a single placement in the system prompt is the failure mode.
+
 ## Eval
 
 - **State preservation** — multi-turn cases where information given on turn 1 must survive to turn 5. Assert it.
@@ -66,3 +72,5 @@ In regulated domains, memory has legal constraints:
 - [domain-knowledge-injection](domain-knowledge-injection.md) — how external knowledge enters the prompt; memory is the *internal* counterpart.
 - [escalation-handoff](escalation-handoff.md) — handoff payloads draw from session memory; coverage gaps surface here.
 - [repair-and-clarification](repair-and-clarification.md) — repair turns rely on remembering what the bot said wrong.
+- [operator-trust-injection](operator-trust-injection.md) — runtime mid-conversation context that has to compete with existing memory.
+- [recency-bias-prompt-design](recency-bias-prompt-design.md) — why placement and reinforcement matter as much as what's stored.

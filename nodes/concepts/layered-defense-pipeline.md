@@ -118,3 +118,4 @@ Every decision emits a structured event. Track:
 - [forced-tool-call-output](forced-tool-call-output.md) — the schema-enforcement principle layer 2 implements.
 - [llm-as-judge](llm-as-judge.md) — heterogeneous recheck is adjacent but distinct from judge-calibration patterns.
 - [escalation-handoff](escalation-handoff.md) — the recheck override path lands here when it fires.
+- [operator-trust-injection](operator-trust-injection.md) — the output-filter layer of *that* pattern is the same defense-in-depth principle as the recheck layer here.

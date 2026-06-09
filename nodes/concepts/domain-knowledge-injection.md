@@ -7,15 +7,17 @@ related:
   - [[grounding-and-citation]]
   - [[conversation-memory]]
   - [[cost-aware-eval]]
+  - [[operator-trust-injection]]
+  - [[recency-bias-prompt-design]]
 status: living
 created: 2026-06-08
 ---
 
 # Domain Knowledge Injection
 
-How domain knowledge enters the prompt. Not a single technique — four mechanisms with different cost / freshness / accuracy / reach trade-offs, used in combination.
+How domain knowledge enters the prompt. Not a single technique — **five mechanisms** with different cost / freshness / accuracy / reach trade-offs, used in combination.
 
-## The four mechanisms
+## The five mechanisms
 
 | Mechanism | Refresh latency | Cost per request | Reach | Best for |
 |---|---|---|---|---|
@@ -23,8 +25,9 @@ How domain knowledge enters the prompt. Not a single technique — four mechanis
 | **Retrieval (RAG)** | Index update | Retrieval + token cost | Large corpus, scoped per call | Documents, policies, FAQs, large knowledge bases |
 | **Structured state injection** | Real-time | Token cost only | Specific to user/account | Account state, balances, preferences, current values |
 | **Fine-tuning / continued pretraining** | Training cycle | Training + slightly cheaper inference | Implicit, baked-in | Style, vocabulary, taxonomy familiarity |
+| **[Mid-conversation operator-trust injection](operator-trust-injection.md)** | Per turn | Token cost + reinforcement overhead | This-turn, this-conversation | System events, runtime hints, confidentiality reminders that arrive *during* a session |
 
-Most production domain bots use **all four** together. The skill is choosing per knowledge-type.
+Most production domain bots use **all five** together. The skill is choosing per knowledge-type.
 
 ## Decision per knowledge type
 
@@ -59,3 +62,5 @@ A useful audit: snapshot the actual prompt for a representative production call.
 - [grounding-and-citation](grounding-and-citation.md) — the consumer of injected knowledge; why it must be cited.
 - [conversation-memory](conversation-memory.md) — internal counterpart; memory is what the bot remembers, injection is what it's told.
 - [cost-aware-eval](cost-aware-eval.md) — the ceiling on how much you can inject.
+- [operator-trust-injection](operator-trust-injection.md) — the runtime, mid-conversation case (mechanism #5 above).
+- [recency-bias-prompt-design](recency-bias-prompt-design.md) — placement matters; rules near the end and reinforcements near the injection point earn more weight.

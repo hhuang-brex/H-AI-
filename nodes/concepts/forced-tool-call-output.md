@@ -88,4 +88,5 @@ Conceptually different from a prompt fix. Migrating a "produce text matching thi
 - [output-surface-taxonomy](output-surface-taxonomy.md) — the prerequisite practice; you can't decide *when* to force schema until you've enumerated *which surfaces exist*.
 - [template-rendered-output](template-rendered-output.md) — the stricter variant: classifier + code-owned templates, no model prose at all.
 - [layered-defense-pipeline](layered-defense-pipeline.md) — the runtime architecture (regex → forced tool → templates → heterogeneous recheck) that makes this safe in production.
+- [operator-trust-injection](operator-trust-injection.md) — adjacent but distinct: when the failure is *operator-message echo* rather than free-text drift, schema enforcement isn't the right tool. Use the wrapper-tag + recency-reinforcement pattern instead.
 - [agent-trajectory-eval](agent-trajectory-eval.md) — once schema is enforced, mechanical evals can pin tool-call shape (`input.equals`, schema-validity) and demote LLM-judges to where they belong.
