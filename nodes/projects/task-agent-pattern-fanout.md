@@ -63,7 +63,7 @@ EDITED (one See-also bullet each)
 
 ### `task-agent-pattern` (topic)
 
-**Front-matter:** `type: topic`, `status: living`, related to [[domain-chatbot-design]], [[llm-output-design]], [[llm-evaluation]], the three new concepts.
+**Front-matter:** `type: topic`, `status: living`, related to [domain-chatbot-design](../topics/domain-chatbot-design.md), [llm-output-design](../topics/llm-output-design.md), [llm-evaluation](../topics/llm-evaluation.md), the three new concepts.
 
 **Body sections:**
 
@@ -81,7 +81,7 @@ EDITED (one See-also bullet each)
 
 ### `decision-engine-contract` (concept)
 
-**Front-matter:** related to [[task-agent-pattern]], [[forced-tool-call-output]], [[template-rendered-output]], [[engine-vs-conversation-routing]], [[decision-audit-trail]].
+**Front-matter:** related to [task-agent-pattern](../topics/task-agent-pattern.md), [forced-tool-call-output](../concepts/forced-tool-call-output.md), [template-rendered-output](../concepts/template-rendered-output.md), [engine-vs-conversation-routing](../concepts/engine-vs-conversation-routing.md), [decision-audit-trail](../concepts/decision-audit-trail.md).
 
 **Body sections:**
 
@@ -89,15 +89,15 @@ EDITED (one See-also bullet each)
 2. **Same shape across surfaces.** A surface change should never require a contract change.
 3. **`decision` is null when the next-action is unsure.** Confident classification produces both decision + classify/approve. Unsure paths produce only the next-action.
 4. **Confidence is a field, not a separate branch.** Surfaces apply their own thresholds.
-5. **Reasoning is audit-only.** Never crosses to user-facing output. Same hard line as [[operator-trust-injection]].
+5. **Reasoning is audit-only.** Never crosses to user-facing output. Same hard line as [operator-trust-injection](../concepts/operator-trust-injection.md).
 6. **Abstain is a first-class value, not an error.**
-7. **`model_version` and `input_fingerprint` are mandatory.** They make the decision replayable and auditable. Tied to [[decision-audit-trail]].
+7. **`model_version` and `input_fingerprint` are mandatory.** They make the decision replayable and auditable. Tied to [decision-audit-trail](../concepts/decision-audit-trail.md).
 8. **Anti-patterns.** Dynamically-shaped output per surface; reasoning crossing into user reply; abstain modeled as exception/error; missing model_version.
 9. **Eval.** Schema-validity scorer over every emitted contract; confidence calibration; abstain-recall against labeled "should-have-abstained" cases.
 
 ### `engine-vs-conversation-routing` (concept)
 
-**Front-matter:** related to [[task-agent-pattern]], [[decision-engine-contract]], [[intent-and-disambiguation]], [[escalation-handoff]], [[output-surface-taxonomy]].
+**Front-matter:** related to [task-agent-pattern](../topics/task-agent-pattern.md), [decision-engine-contract](../concepts/decision-engine-contract.md), [intent-and-disambiguation](../concepts/intent-and-disambiguation.md), [escalation-handoff](../concepts/escalation-handoff.md), [output-surface-taxonomy](../concepts/output-surface-taxonomy.md).
 
 **Body sections:**
 
@@ -111,7 +111,7 @@ EDITED (one See-also bullet each)
 
 ### `decision-audit-trail` (concept)
 
-**Front-matter:** related to [[task-agent-pattern]], [[decision-engine-contract]], [[prod-shadow-replay]], [[cost-aware-eval]], [[agent-eval-improvement-tiers]].
+**Front-matter:** related to [task-agent-pattern](../topics/task-agent-pattern.md), [decision-engine-contract](../concepts/decision-engine-contract.md), [prod-shadow-replay](../concepts/prod-shadow-replay.md), [cost-aware-eval](../concepts/cost-aware-eval.md), [agent-eval-improvement-tiers](agent-eval-improvement-tiers.md).
 
 **Body sections:**
 

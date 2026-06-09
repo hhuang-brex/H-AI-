@@ -60,3 +60,4 @@ Most domain bots over-invest in slot-filling for transactional flows and under-i
 - [repair-and-clarification](repair-and-clarification.md) — when the bot misunderstood; how recovery turns differ.
 - [scope-and-refusal](scope-and-refusal.md) — when the right answer is "I can't help with that," not "let me try."
 - [action-authority](action-authority.md) — high-authority intents need stronger disambiguation.
+- [engine-vs-conversation-routing](engine-vs-conversation-routing.md) — engine-vs-chat is a higher-altitude intent classifier; this node covers *within-engine* intent disambiguation.

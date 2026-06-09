@@ -66,3 +66,4 @@ Every node above is a separable decision with its own failure mode and its own e
 - **Output side:** Conversation design produces *what* to say; [llm-output-design](llm-output-design.md) decides *how* to emit it on each surface. The two compose; neither replaces the other.
 - **Eval side:** Each conversation-design decision needs eval coverage. Mechanical checks on intent classification, grounded-fact citation, refusal correctness, escalation triggers; LLM-judged checks on tone and helpfulness. See [agent-trajectory-eval](../concepts/agent-trajectory-eval.md) and [llm-as-judge](../concepts/llm-as-judge.md).
 - **Per-surface:** A domain bot usually has multiple surfaces (chat UI, SMS notification, voice fallback). Conversation-design decisions are mostly surface-agnostic; output-design decisions are not.
+- [task-agent-pattern](task-agent-pattern.md) — higher-altitude framing where chat is one surface of a decision engine.

@@ -60,3 +60,4 @@ The eval pyramid is **inverted**: the cheap deterministic layer is one file, and
 1. Tier 1.1 + 1.3 (pre-LLM unit + schema-validity scorer).
 2. Tier 3.2 (multi-vote cheap-model judge).
 3. Tier 4.1 (prod-replay shadow).
+- [decision-audit-trail](../concepts/decision-audit-trail.md) — audit-driven drift detection slots into Tier 4 (online signal).

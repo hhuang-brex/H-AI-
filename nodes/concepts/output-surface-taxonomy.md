@@ -51,3 +51,4 @@ Run this exercise once per agent; the columns differ per company and surface, bu
 - [forced-tool-call-output](forced-tool-call-output.md) — when the row's answer is "schema-forced".
 - [schema-vs-validator](schema-vs-validator.md) — when the row's answer is "free-text + validator".
 - [hard-surface-irrevocability](hard-surface-irrevocability.md) — the column that drives most decisions.
+- [task-agent-pattern](../topics/task-agent-pattern.md) and [decision-engine-contract](decision-engine-contract.md) — what the surface taxonomy routes to in a task-agent system.

@@ -112,3 +112,4 @@ Worth it specifically when "a wrong sentence is expensive."
 - [layered-defense-pipeline](layered-defense-pipeline.md) — the runtime architecture this slots into.
 - [schema-vs-validator](schema-vs-validator.md) — the spectrum of mechanisms; template-rendered is the strict end.
 - [persona-tone-compliance](persona-tone-compliance.md) — templates are how compliance language becomes a hard contract instead of a prompt-level wish.
+- [decision-engine-contract](decision-engine-contract.md) and [engine-vs-conversation-routing](engine-vs-conversation-routing.md) — templates render decisions and next-actions in the task-agent pattern.

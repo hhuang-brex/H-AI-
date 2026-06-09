@@ -90,3 +90,4 @@ Conceptually different from a prompt fix. Migrating a "produce text matching thi
 - [layered-defense-pipeline](layered-defense-pipeline.md) — the runtime architecture (regex → forced tool → templates → heterogeneous recheck) that makes this safe in production.
 - [operator-trust-injection](operator-trust-injection.md) — adjacent but distinct: when the failure is *operator-message echo* rather than free-text drift, schema enforcement isn't the right tool. Use the wrapper-tag + recency-reinforcement pattern instead.
 - [agent-trajectory-eval](agent-trajectory-eval.md) — once schema is enforced, mechanical evals can pin tool-call shape (`input.equals`, schema-validity) and demote LLM-judges to where they belong.
+- [decision-engine-contract](decision-engine-contract.md) — the contract IS a forced-tool-call output. Names the specific shape decision engines need.

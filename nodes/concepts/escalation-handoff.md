@@ -60,3 +60,4 @@ Often forgotten: when the human resolves the immediate issue, the bot should be 
 - [action-authority](action-authority.md) — tier 4 actions auto-escalate.
 - [scope-and-refusal](scope-and-refusal.md) — refusal and escalation are different; refusal closes, escalation routes.
 - [safety-rails-domain-specific](safety-rails-domain-specific.md) — distress signals trigger immediate escalation paths.
+- [engine-vs-conversation-routing](engine-vs-conversation-routing.md) — `escalate` is one of the engine's next-action values that lands here.

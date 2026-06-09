@@ -44,6 +44,12 @@ The body is human-readable markdown. Frontmatter `related:` keeps the wiki-link 
 - [domain-chatbot-design](nodes/topics/domain-chatbot-design.md) — how a chatbot converses inside a specific domain.
 - [sms-multi-thread-chatbot](nodes/topics/sms-multi-thread-chatbot.md) — multi-thread chatbot design when the only channel is flat SMS.
 - [chatbot-pagination](nodes/topics/chatbot-pagination.md) — handling large result sets in a chatbot; UX shape and tool shape chosen jointly.
+- [task-agent-pattern](nodes/topics/task-agent-pattern.md) — engine-primary framing where chat is one surface among several.
+
+### Concepts — Task-Agent Pattern
+- [decision-engine-contract](nodes/concepts/decision-engine-contract.md) — layered output (decision + confidence + next-action) as the wire format every surface consumes.
+- [engine-vs-conversation-routing](nodes/concepts/engine-vs-conversation-routing.md) — when the engine handles vs. when the chat layer handles; the bridge between them.
+- [decision-audit-trail](nodes/concepts/decision-audit-trail.md) — durable per-decision record (fingerprint + version + reasoning + override history); the substrate replay/drift run on.
 
 ### Concepts — Eval
 - [test-pyramid-llm](nodes/concepts/test-pyramid-llm.md) — porting the classic pyramid to LLM apps.
@@ -114,6 +120,7 @@ The body is human-readable markdown. Frontmatter `related:` keeps the wiki-link 
 - [2026-06-09-chatbot-pagination-research](threads/2026-06-09-chatbot-pagination-research.md) — deep-research on chatbot pagination UX + technical patterns.
 - [2026-06-09-ikki-forced-tool-calling](threads/2026-06-09-ikki-forced-tool-calling.md) — audit against Ikki's "Forced Tool Calling in Production Chatbots" post.
 - [2026-06-09-operator-trust-injection](threads/2026-06-09-operator-trust-injection.md) — adding operator-trust-injection + recency-bias-prompt-design from Anthropic-engineer-recommended patterns.
+- [2026-06-09-task-agent-pattern](threads/2026-06-09-task-agent-pattern.md) — origin of the task-agent-pattern cluster.
 
 ## Why this shape
 
