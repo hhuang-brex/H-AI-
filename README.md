@@ -23,6 +23,7 @@ H-AI-/
 │   ├── concepts/          ← reusable patterns/ideas (e.g. llm-as-judge)
 │   ├── projects/          ← project-specific snapshots (e.g. agent-eval-case-study)
 │   └── references/        ← external posts/papers reading lists
+├── product/               ← end-to-end product specs synthesized from threads
 └── threads/               ← time-stamped conversation summaries
 ```
 
@@ -97,6 +98,9 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [agent-eval-improvement-tiers](nodes/projects/agent-eval-improvement-tiers.md) — ranked improvement plan for the case study above.
 - [dspy-domain-chatbot-cases](nodes/projects/dspy-domain-chatbot-cases.md) — verified DSPy domain-chatbot success examples (JetBlue, Dr.Copilot, etc.; 2026-06-09 snapshot).
 
+### Product specs
+- [spender-agent](product/spender-agent.md) — task agent that documents transactions by maintaining an EA-grade model of the principal's economic life. Two-loop workflow over universal-context primitive, AI-proposes / user-corrects authority. (2026-06-09 proposal.)
+
 ### References
 - [references-eval-reading-list](nodes/references/references-eval-reading-list.md) — frontier-lab + practitioner posts on LLM eval (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, …).
 - [references-domain-chatbot-design](nodes/references/references-domain-chatbot-design.md) — chatbot design reading list (Anthropic, OpenAI, Microsoft Bot Service, Google CDS, Rasa, Voiceflow, Husain, Yan, Hall, Intercom Fin).
@@ -113,6 +117,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [2026-06-09-ikki-forced-tool-calling](threads/2026-06-09-ikki-forced-tool-calling.md) — audit against Ikki's "Forced Tool Calling in Production Chatbots" post.
 - [2026-06-09-operator-trust-injection](threads/2026-06-09-operator-trust-injection.md) — adding operator-trust-injection + recency-bias-prompt-design from Anthropic-engineer-recommended patterns.
 - [2026-06-09-task-agent-pattern](threads/2026-06-09-task-agent-pattern.md) — origin of the task-agent-pattern cluster.
+- [2026-06-09-spender-agent-ea-workflow](threads/2026-06-09-spender-agent-ea-workflow.md) — first-principles synthesis from IAF-1611 root-cause to spender-agent product spec.
 
 ## Why this shape
 
