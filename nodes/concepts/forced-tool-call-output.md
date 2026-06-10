@@ -83,11 +83,22 @@ Forcing schema everywhere kills conversational UX; forcing free-text everywhere 
 
 Conceptually different from a prompt fix. Migrating a "produce text matching this rubric" skill to "produce a structured object with these fields" cycles through prompt rewrite, eval-case retuning, downstream renderer (the code that turns the object into the user-visible string), and schema versioning. Two-week project, not a two-day patch.
 
+## Hard constraint: extended thinking on Anthropic
+
+Worth knowing before you design: **Anthropic extended thinking does NOT support `tool_choice: "any"` or named tools** — only `auto` or `none`. Forcing tool use with extended thinking returns an error. An agent that wants both this pattern AND native reasoning has to drop one per turn. Common resolutions:
+
+- Use forced tool-call only on first-touch / hard-surface turns; conversational turns use `auto` + thinking.
+- Run reasoning in a separate pass; render via forced tool-call without thinking.
+- On OpenAI / DeepSeek the constraint is different — check current docs.
+
+See [native-thinking-vs-prompted-reasoning](native-thinking-vs-prompted-reasoning.md) for the broader trade-off and replacement patterns.
+
 ## See also
 
 - [output-surface-taxonomy](output-surface-taxonomy.md) — the prerequisite practice; you can't decide *when* to force schema until you've enumerated *which surfaces exist*.
 - [template-rendered-output](template-rendered-output.md) — the stricter variant: classifier + code-owned templates, no model prose at all.
 - [layered-defense-pipeline](layered-defense-pipeline.md) — the runtime architecture (regex → forced tool → templates → heterogeneous recheck) that makes this safe in production.
 - [operator-trust-injection](operator-trust-injection.md) — adjacent but distinct: when the failure is *operator-message echo* rather than free-text drift, schema enforcement isn't the right tool. Use the wrapper-tag + recency-reinforcement pattern instead.
+- [native-thinking-vs-prompted-reasoning](native-thinking-vs-prompted-reasoning.md) — the forced-tool-choice + extended-thinking incompatibility above; broader reasoning-mode trade-off.
 - [agent-trajectory-eval](agent-trajectory-eval.md) — once schema is enforced, mechanical evals can pin tool-call shape (`input.equals`, schema-validity) and demote LLM-judges to where they belong.
 - [decision-engine-contract](decision-engine-contract.md) — the contract IS a forced-tool-call output. Names the specific shape decision engines need.
