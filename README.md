@@ -64,6 +64,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [hard-surface-irrevocability](nodes/concepts/hard-surface-irrevocability.md) — irrevocable output channels as a first-class category.
 - [native-thinking-vs-prompted-reasoning](nodes/concepts/native-thinking-vs-prompted-reasoning.md) — frontier labs have moved away from prompted `<reasoning>` tags; native thinking APIs are the default.
 - [llm-observability](nodes/concepts/llm-observability.md) — debugging "why did the model respond this way?" — what frontier APIs actually return (mostly summaries), platform feature reality, OTel state.
+- [cot-as-forensic-artifact](nodes/concepts/cot-as-forensic-artifact.md) — the *why* behind reasoning instrumentation: CoT is forensic, not explanatory; unfaithful 60–75% of the time yet uniquely surfaces alignment-faking, scheming, situational awareness.
 
 ### Concepts — Domain Chatbot Conversation Design
 - [intent-and-disambiguation](nodes/concepts/intent-and-disambiguation.md) — turning ambiguous input into actionable intent; clarification vs. assumption.
@@ -100,6 +101,8 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [agent-eval-case-study](nodes/projects/agent-eval-case-study.md) — generalized agent platform eval system (2026-06-05 snapshot).
 - [agent-eval-improvement-tiers](nodes/projects/agent-eval-improvement-tiers.md) — ranked improvement plan for the case study above.
 - [dspy-domain-chatbot-cases](nodes/projects/dspy-domain-chatbot-cases.md) — verified DSPy domain-chatbot success examples (JetBlue, Dr.Copilot, etc.; 2026-06-09 snapshot).
+- [worked-example-anthropic-thinking](nodes/projects/worked-example-anthropic-thinking.md) — Python code: capturing reasoning, signature continuity, forced-tool-call constraint, hidden billing.
+- [worked-example-openai-responses](nodes/projects/worked-example-openai-responses.md) — Python code: Responses API, server-stateful + stateless multi-turn, `incomplete:max_output_tokens` handling.
 
 ### Products
 End-to-end design specs for systems we'd build (synthesized from threads). See [`product/`](product/).
@@ -127,6 +130,7 @@ End-to-end design specs for systems we'd build (synthesized from threads). See [
 - [2026-06-09-spender-agent-ea-workflow](threads/2026-06-09-spender-agent-ea-workflow.md) — origin of the spender-agent product spec.
 - [2026-06-09-reasoning-mode-research](threads/2026-06-09-reasoning-mode-research.md) — deep-research on prompted `<reasoning>` vs. native thinking APIs.
 - [2026-06-10-llm-observability-research](threads/2026-06-10-llm-observability-research.md) — deep-research on "why did the model respond this way?" debugging workflow.
+- [2026-06-10-reasoning-rationale-research](threads/2026-06-10-reasoning-rationale-research.md) — deep-research on faithfulness, alignment-faking, scheming evaluations — the *why* for instrumenting reasoning.
 - [2026-06-09-spender-agent-ea-workflow](threads/2026-06-09-spender-agent-ea-workflow.md) — first-principles synthesis from IAF-1611 root-cause to spender-agent product spec.
 
 ## Why this shape

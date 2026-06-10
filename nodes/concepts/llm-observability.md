@@ -9,6 +9,7 @@ related:
   - [[cost-aware-eval]]
   - [[agent-eval-improvement-tiers]]
   - [[forced-tool-call-output]]
+  - [[cot-as-forensic-artifact]]
 status: living
 created: 2026-06-10
 source-thread: [[2026-06-10-llm-observability-research]]
