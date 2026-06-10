@@ -63,6 +63,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [streaming-vs-structured](nodes/concepts/streaming-vs-structured.md) — token-by-token UX vs. structured output trade-off.
 - [hard-surface-irrevocability](nodes/concepts/hard-surface-irrevocability.md) — irrevocable output channels as a first-class category.
 - [native-thinking-vs-prompted-reasoning](nodes/concepts/native-thinking-vs-prompted-reasoning.md) — frontier labs have moved away from prompted `<reasoning>` tags; native thinking APIs are the default.
+- [llm-observability](nodes/concepts/llm-observability.md) — debugging "why did the model respond this way?" — what frontier APIs actually return (mostly summaries), platform feature reality, OTel state.
 
 ### Concepts — Domain Chatbot Conversation Design
 - [intent-and-disambiguation](nodes/concepts/intent-and-disambiguation.md) — turning ambiguous input into actionable intent; clarification vs. assumption.
@@ -125,6 +126,7 @@ End-to-end design specs for systems we'd build (synthesized from threads). See [
 - [2026-06-09-task-agent-pattern](threads/2026-06-09-task-agent-pattern.md) — origin of the task-agent-pattern cluster.
 - [2026-06-09-spender-agent-ea-workflow](threads/2026-06-09-spender-agent-ea-workflow.md) — origin of the spender-agent product spec.
 - [2026-06-09-reasoning-mode-research](threads/2026-06-09-reasoning-mode-research.md) — deep-research on prompted `<reasoning>` vs. native thinking APIs.
+- [2026-06-10-llm-observability-research](threads/2026-06-10-llm-observability-research.md) — deep-research on "why did the model respond this way?" debugging workflow.
 - [2026-06-09-spender-agent-ea-workflow](threads/2026-06-09-spender-agent-ea-workflow.md) — first-principles synthesis from IAF-1611 root-cause to spender-agent product spec.
 
 ## Why this shape

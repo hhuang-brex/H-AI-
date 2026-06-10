@@ -9,6 +9,7 @@ related:
   - [[decision-engine-contract]]
   - [[domain-knowledge-injection]]
   - [[recency-bias-prompt-design]]
+  - [[llm-observability]]
 status: living
 created: 2026-06-09
 source-thread: [[2026-06-09-reasoning-mode-research]]
@@ -38,6 +39,17 @@ Even when the *cost per token* of native thinking and inline-prompted reasoning 
 3. **Inter-tool reasoning, automatic.** Adaptive thinking enables reasoning *between tool calls* without a beta header on Fable 5 / Mythos 5 / Opus 4.7+; OpenAI's Responses API with `previous_response_id` persists reasoning across the tool loop. Vendor-reported lift from this: TAU-Bench Retail 73.9% → 78.2% just by switching to the API that persists reasoning.
 
 4. **Faithfulness / training pressure separation.** OpenAI's stated rationale for hiding raw CoT: *"the model must have freedom to express its thoughts in unaltered form, so we cannot train any policy compliance or user preferences onto the chain of thought."* Inline-prompted reasoning is in the same channel as user-facing output, so the same training pressures apply. Native thinking is structurally insulated.
+
+## What "developer access to thinking" actually means in 2026
+
+A correction to a common over-reading of the section above: when this node says "read the thinking blocks," what developers actually receive depends on the lab and is rarely the raw chain of thought. The detail matters for instrumentation:
+
+- **Anthropic Claude 4 / Fable 5 / Mythos 5** default returns `display: "summarized"` thinking blocks — *summaries produced by a separate summarizer model*. Raw thinking is sales-gated. With `display: "omitted"`, the `signature` field carries opaque encrypted reasoning across turns.
+- **OpenAI Responses API** explicitly does NOT expose raw reasoning tokens — only opt-in summaries (`reasoning.summary = auto/concise/detailed`). For stateless callers, `include: ["reasoning.encrypted_content"]` round-trips reasoning across turns; the content is opaque.
+- **Google Gemini** returns summary `parts` via `includeThoughts: true`; raw thoughts are not API-accessible.
+- **DeepSeek deepseek-reasoner** is the outlier — verbatim `reasoning_content` is returned, but echoing it back in subsequent calls returns a 400.
+
+For the practical day-1 instrumentation workflow, see [llm-observability](llm-observability.md).
 
 ## The hard incompatibility worth knowing
 

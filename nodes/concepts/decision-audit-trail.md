@@ -8,6 +8,7 @@ related:
   - [[prod-shadow-replay]]
   - [[cost-aware-eval]]
   - [[agent-eval-improvement-tiers]]
+  - [[llm-observability]]
 status: living
 created: 2026-06-09
 ---
@@ -32,6 +33,7 @@ A task-agent system has decisions, and the decision is what people will ask abou
   timestamp:          "iso8601",
   decision:           "full layered output from contract",
   reasoning:          "model's stated rationale; audit-only",
+  reasoning_continuity_payload: "opaque; preserved verbatim for round-trip",
   consumer_surface:   "chat | api | batch | draft_ui",
   override_history:   [
     { timestamp, actor, original_decision, new_decision, reason }
@@ -43,6 +45,8 @@ A task-agent system has decisions, and the decision is what people will ask abou
 ```
 
 `override_history` captures humans correcting the engine. Empty when no override happened. `replay_decision` captures running the same `input_fingerprint` against a newer `model_version` later — the diff between original and replay is the drift signal.
+
+`reasoning_continuity_payload` is the lab-specific opaque blob needed to round-trip reasoning across multi-turn agent loops: Anthropic's `signature` on thinking blocks (especially under `display: omitted`), OpenAI's `previous_response_id` or full reasoning-item list, DeepSeek's `reasoning_content` strip-before-resend marker. Store as opaque per-turn; never display; preserve exact bytes. Without it, multi-turn reasoning is lost across the loop. See [llm-observability](llm-observability.md) for the protocol per lab.
 
 ## Why this earns its own node
 
