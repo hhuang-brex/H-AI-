@@ -33,7 +33,7 @@ Plus the announced-content case: bot replies "What receipt?" to a text that was 
 
 - **Not** voice. Voice has solved this with VAD + EOT classifiers (LiveKit, Pipecat); text needs the architectural port, not the voice infrastructure.
 - **Not** rich-chat (Slack, Intercom). Those have typing indicators that change the design space; out of scope here.
-- **Not** full conversational repair. [[sms-recovery-and-reentry]] handles the broader "user is confused" cases. This spec only covers the intra-burst buffering window.
+- **Not** full conversational repair. [sms-recovery-and-reentry](../concepts/sms-recovery-and-reentry.md) handles the broader "user is confused" cases. This spec only covers the intra-burst buffering window.
 - **Not** carrier-level reassembly. Twilio `NumSegments` and Bandwidth `segmentCount` only handle single-message segmentation; user-intent-level bursts must be handled in app code.
 
 ## Out of scope (might land later)
@@ -46,7 +46,7 @@ Plus the announced-content case: bot replies "What receipt?" to a text that was 
 
 ## What ships
 
-A new `buffering` state in [[sms-state-machine]] with three detection layers, dynamic timeout, per-user serialization, audit-trail integration, and eval coverage for edge cases E1–E10.
+A new `buffering` state in [sms-state-machine](../concepts/sms-state-machine.md) with three detection layers, dynamic timeout, per-user serialization, audit-trail integration, and eval coverage for edge cases E1–E10.
 
 ## Architecture
 
@@ -181,7 +181,7 @@ EDIT_MARKERS = re.compile(
 
 ### L2 — Small semantic classifier
 
-Two prompt modes, both implemented as forced tool-calls (per [[forced-tool-call-output]]):
+Two prompt modes, both implemented as forced tool-calls (per [forced-tool-call-output](../concepts/forced-tool-call-output.md)):
 
 **Default — turn completeness:**
 
@@ -270,7 +270,7 @@ def compute_flush_at(buffer):
 | E4 | "Never mind" mid-buffer | EDIT_MARKERS + L2 returns `cancel`; buffer cleared; brief ack sent |
 | E5 | Race: bot starts processing as new message arrives | Per-user row-level lock during `buffering → processing`; new message joins in-flight if not locked, else new buffer |
 | E6 | Crash mid-buffer | Redis TTL = `CEILING_S + ANNOUNCED_EXTENSION_S + buffer`; scheduled-flush worker scans for expired buffers on startup |
-| E7 | Carrier delays a burst message past hard ceiling | Detect via carrier-supplied origin timestamp vs. arrival; route to existing turn if not yet processed; else start recovery flow ([[sms-recovery-and-reentry]]) |
+| E7 | Carrier delays a burst message past hard ceiling | Detect via carrier-supplied origin timestamp vs. arrival; route to existing turn if not yet processed; else start recovery flow ([sms-recovery-and-reentry](../concepts/sms-recovery-and-reentry.md)) |
 | E8 | Adversarial spam (60 messages in 5 min) | Hard cap on buffer message count (default 20); past that, force-flush with "let me work with what you've sent" ack |
 | E9 | Delivery-failed image while AWAITING_ANNOUNCED_CONTENT | Covered by E3 + ceiling fallback |
 | E10 | Intent edit mid-buffer ("actually I meant the Tuesday one") | EDIT_MARKERS triggers edit-kind classifier (`add`/`cancel`/`replace`); buffer mutated accordingly; superseded content kept in audit |
@@ -291,7 +291,7 @@ Lock granularity: `user_id × thread_id`, not just `user_id`. A user with two op
 |---|---|---|
 | Buffer state record | Redis | Low-latency lookups per inbound; TTL-based GC; durable enough for crash recovery |
 | Per-user lock | Redis (Redlock or single-instance) | Same store as buffer; atomic SET-NX |
-| Classifier audit | [[decision-audit-trail]] (Postgres) | Long-term audit, replay, drift detection |
+| Classifier audit | [decision-audit-trail](../concepts/decision-audit-trail.md) (Postgres) | Long-term audit, replay, drift detection |
 | Final processed turn | Existing message store | No change to current schema |
 
 If your stack is Postgres-only (no Redis), buffer state can live in a dedicated table with `LISTEN/NOTIFY` for flush-now triggers and a periodic worker for timeouts. Slightly higher latency, more familiar to debug.
@@ -367,10 +367,45 @@ Total: ~17 dev-days for the full surface. Items 1–4 alone (~10 days) handle th
 
 ## Cross-links to existing graph
 
-- [[sms-state-machine]] — gains a new `buffering` state. Prior states (`open`, `awaiting-user`, `awaiting-system`, `dormant`, `expired`) unchanged in semantics.
-- [[flat-channel-thread-tracking]] — runs *after* buffer flush. Operates on the merged turn, not individual messages.
-- [[async-conversation-pacing]] — second-scale buffering complements day-scale pacing. Same recency principle, different timescale.
-- [[sms-recovery-and-reentry]] — E7 (carrier delay) is a new recovery scenario worth adding to that node.
-- [[decision-audit-trail]] — L2 classifier decisions persisted; tunes thresholds and detects drift.
-- [[forced-tool-call-output]] — both L2 prompt modes use forced tool-calls.
-- [[cot-as-forensic-artifact]] — classifier reasoning summary captured for audit; never user-facing.
+- [sms-state-machine](../concepts/sms-state-machine.md) — gains a new `buffering` state. Prior states (`open`, `awaiting-user`, `awaiting-system`, `dormant`, `expired`) unchanged in semantics.
+- [flat-channel-thread-tracking](../concepts/flat-channel-thread-tracking.md) — runs *after* buffer flush. Operates on the merged turn, not individual messages.
+- [async-conversation-pacing](../concepts/async-conversation-pacing.md) — second-scale buffering complements day-scale pacing. Same recency principle, different timescale.
+- [sms-recovery-and-reentry](../concepts/sms-recovery-and-reentry.md) — E7 (carrier delay) is a new recovery scenario worth adding to that node.
+- [decision-audit-trail](../concepts/decision-audit-trail.md) — L2 classifier decisions persisted; tunes thresholds and detects drift.
+- [forced-tool-call-output](../concepts/forced-tool-call-output.md) — both L2 prompt modes use forced tool-calls.
+- [cot-as-forensic-artifact](../concepts/cot-as-forensic-artifact.md) — classifier reasoning summary captured for audit; never user-facing.
+
+## References (verified primary sources)
+
+### Voice-AI semantic end-of-turn — the architectural pattern this spec ports
+
+- **LiveKit Turn Detector — official docs**. https://docs.livekit.io/agents/build/turns/turn-detector/ — Documents the open-weights 0.5B Qwen2.5-Instruct (multilingual, 396 MB on disk) and 135M SmolLM v2 (English) classifiers, default `min_delay=0.5s` / `max_delay=3.0s` parameters, dynamic timeout scaled by classifier confidence.
+- **LiveKit blog — "Improved end-of-turn model cuts voice AI interruptions 39%"**. https://livekit.com/blog/improved-end-of-turn-model-cuts-voice-ai-interruptions-39/ — Vendor benchmark: v0.4.1-intl achieves 39.23% relative reduction in false-positive interruptions vs v0.3.0-intl at fixed 99.3% true-positive rate (aggregate error 18.66% → 11.34%) with no latency increase.
+- **LiveKit blog — "Using a transformer to improve end-of-turn detection"**. https://livekit.com/blog/using-a-transformer-to-improve-end-of-turn-detection/ — 135M SmolLM v2 model: 85% reduction in unintentional interruptions, only 3% false-negative rate on "turn not over" — the asymmetric error tuning principle this spec adopts.
+- **LiveKit Agents — Turn Detector plugin (GitHub)**. https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-turn-detector — Plugin README documents the architecture: Qwen2.5-0.5B-Instruct distilled from a Qwen2.5-7B teacher.
+- **Pipecat Smart Turn v3 (GitHub)**. https://github.com/pipecat-ai/smart-turn — Independent vendor implementation: 8M-param Whisper Tiny + linear classifier head, 23 languages, 16kHz mono PCM input up to 8s, 10–100 ms CPU inference (~65 ms on Pipecat Cloud).
+- **Deepgram — Endpointing**. https://developers.deepgram.com/docs/endpointing — 10ms default, 300–500ms for conversational. Critical caveat: *"Do not use `speech_final: true` alone to capture full transcripts"* — long utterances produce multiple `is_final: true` responses before `speech_final: true`. The buffer-and-stitch principle.
+
+### SMS platform docs — what the carriers do (and don't do) for you
+
+- **Twilio Messaging — Receive an inbound message webhook**. https://www.twilio.com/docs/messaging/guides/webhook-request — Each inbound message triggers a single synchronous HTTP webhook with `Body`, `NumMedia`, `MediaUrl{N}`, `MediaContentType{N}` parameters. **No platform-level buffering across separate inbound messages.** This spec exists because the platform doesn't solve it.
+- **Bandwidth — Messaging API: Inbound webhook event**. https://dev.bandwidth.com/docs/messaging/webhooks/incoming/ — `segmentCount` field reports carrier-level concatenation of a single oversized message, NOT user-intent-level multi-message bursts. For MMS, `segmentCount` is always 1. Refutes the common assumption that carrier reassembly is sufficient.
+
+### Anthropic / OpenAI tooling that the classifier layer uses
+
+- **Anthropic — Tool use overview**. https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview — Tool-call billing model and forced tool-call mechanics; underpins the L2 classifier's structured-output discipline.
+- **Anthropic — Claude Haiku 4.5 model card**. https://docs.anthropic.com/en/docs/about-claude/models/all-models — Model id `claude-haiku-4-5-20251001`, latency and cost characteristics for the L2 classifier choice.
+
+### Cross-lab consensus (the broader context for instrumenting reasoning)
+
+- **Korbak et al. — "Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety"** (41 authors, July 2025). https://arxiv.org/abs/2507.11473 — While the spec's L2 classifier is not itself a safety monitor, the audit-trail discipline (every classifier decision logged, calibration drift tracked) follows the same forensic-not-explanatory framing established by this paper and detailed in [cot-as-forensic-artifact](../concepts/cot-as-forensic-artifact.md).
+
+### Refuted patterns (worth knowing not to cite)
+
+The deep-research workflow explicitly refuted these as production guidance — they appeared in secondary search results but did not survive 3-vote adversarial verification. **Do not cite as production patterns**:
+
+- "BuilderBot 1.5s debounce window" — vote 0–3, no primary-source production deployment found.
+- "OpenClaw WeCom 2-second debounce" — vote 0–3, plugin docs only, not production guidance.
+- "Carrier-level concatenation handles split-thought bursts" — vote 1–2, conflates transport segmentation with user-intent splitting.
+
+The honest finding from the research: **no major chatbot team (Intercom Fin, Klarna AI, ChatGPT mobile, Slack AI, Discord, Notion AI, Glean, Stripe, Cursor, Replit, Linear, WhatsApp Business) has published canonical guidance on SMS split-message handling.** This spec exists to fill that gap by porting the voice-AI pattern, not by following a documented chatbot-team precedent.
