@@ -10,6 +10,7 @@ related:
   - [[recency-bias-prompt-design]]
   - [[forced-tool-call-output]]
   - [[output-surface-taxonomy]]
+  - [[native-thinking-vs-prompted-reasoning]]
 status: living
 created: 2026-06-09
 ---
@@ -86,10 +87,12 @@ Belt-and-suspenders: strip `<automated_system_event>` / `<scratchpad>` / similar
 
 If the model needs to *reason* about an operator event before replying (e.g., "this is a distress signal, escalate"), give it a place that doesn't render to the user:
 
-- **Extended thinking** (Claude's first-class thinking blocks) — preferred when available.
-- **`<scratchpad>` tag** the harness strips before rendering — the fallback when extended thinking isn't on.
+- **Native thinking** (Anthropic adaptive thinking, OpenAI reasoning items, DeepSeek `reasoning_content`) — strongly preferred where available. Reasoning is in a separate channel from `content`; the harness reads or omits without parsing. See [native-thinking-vs-prompted-reasoning](native-thinking-vs-prompted-reasoning.md).
+- **`<scratchpad>` tag the harness strips before rendering** — the fallback when thinking is off or for non-reasoning models.
 
 Critically: the user-facing answer goes in a *separate* `<reply>` tag. The reasoning is invisible; the answer is the only thing rendered.
+
+**Late-2025 caveat:** Claude Fable 5 can refuse prompted reasoning extraction with `stop_details.category: "reasoning_extraction"`. If your harness is asking the model to emit reasoning in response text on Fable 5, switch to native thinking and read thinking blocks instead — the docs explicitly direct apps to do this.
 
 ## Anti-patterns
 
