@@ -3,6 +3,7 @@ id: engine-vs-conversation-routing
 type: concept
 tags: [task-agent, routing, decision-engine, intent, agents]
 related:
+  - [[multi-agent-delegation]]
   - [[task-agent-pattern]]
   - [[decision-engine-contract]]
   - [[intent-and-disambiguation]]

@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-11",
   "node_count": 112,
-  "edge_count": 673,
+  "edge_count": 674,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -1286,6 +1286,7 @@
       ],
       "source_thread": null,
       "related": [
+        "multi-agent-delegation",
         "task-agent-pattern",
         "decision-engine-contract",
         "intent-and-disambiguation",
@@ -4575,6 +4576,11 @@
     {
       "from": "engine-vs-conversation-routing",
       "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "engine-vs-conversation-routing",
+      "to": "multi-agent-delegation",
       "kind": "related"
     },
     {
