@@ -135,3 +135,12 @@ These updates are pending the user's call on whether to propagate based on unver
 - **Re-run the workflow with a narrower scope** — drop the verify-via-3-votes layer or split the question to avoid the stall. Specifically: a single-angle search for "HuggingFace turn-detection text classifier" should be cheap and fast.
 - **Empirical test**: take 100 SMS-style burst inputs, run them through TEN Turn Detection vs. Haiku-tool-call, measure agreement rate. If TEN matches Haiku within ~5%, the open-source classifier is the right choice for production.
 - **The "nanobot's Mochat" provenance question from [2026-06-10-github-buffering-references](2026-06-10-github-buffering-references.md)** remains unresolved.
+
+## Resolution (2026-06-11 follow-up)
+
+User picked **"TurnGPT only, drop HF entries"** — verify what we can, propagate only the verified portion.
+
+- **TurnGPT verified ✅** via `gh repo view ErikEkstedt/TurnGPT` + `gh api .../readme`. MIT license, 69 stars, last pushed 2024-05-18, GPT-2/DialoGPT-small base, `<ts>` turn-shift token id 50257, projection head over next N tokens, README verbatim confirms text-input ("text as commonly returned from ASR services"). Added to [sms-message-buffering-spec](../nodes/projects/sms-message-buffering-spec.md)'s "Open-source chatbot prior art" + new "Academic prior art on text EOT classification" subsection.
+- **HF entries dropped from spec ❌** — TEN_Turn_Detection, livekit/turn-detector, dangvansam/Qwen3-0.6B, PuristanLabs1/urdu-distilbert, rishuXori/gemma-3-1b-FT, justpluso/turn-detection, MrEzzat/arabic-eou-detector, giangndm/end-of-turn-detector. Failure mode: huggingface.co traffic from this network is intercepted by Brex Okta SSO + Cloudflare Access, blocking unauthenticated WebFetch / curl / subagent access. Redirect chain hits `brex.okta.com/oauth2/authorize`. This is network policy, not a missing tool. The HF list remains in this thread for future verification from a non-Brex network.
+
+The spec's L2 novelty claim is now refined: TurnGPT (EMNLP 2020) establishes that text-input semantic EOT classification is a known academic technique, so the L2 *concept* isn't novel — but the spec's specific composition (pretrained-LLM forced tool-call vs. fine-tuned LM with projection head, chat-channel application vs. SDS, composed with forward-reference detection + announced-content + intent-edit handling) remains the contribution.
