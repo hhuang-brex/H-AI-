@@ -92,12 +92,13 @@ Rules:
 
 ## Workflow for adding a node
 
-1. Decide `type`. Pick the folder.
+1. Decide `type` (and `kind` if `type: project`). Pick the folder.
 2. Choose `id` — kebab-case, distinctive enough to be globally unique.
-3. Write frontmatter first; let it force you to commit to type/tags/relations. Use `[[id]]` form in `related:`.
+3. Write frontmatter first (including `summary`); let it force you to commit to type/tags/relations. Use `[[id]]` form in `related:`.
 4. Draft body. Cross-link aggressively to existing nodes using `[id](relative/path.md)` markdown links.
-5. Update `README.md`'s index.
+5. Run `/usr/bin/python3 tools/build-graph.py` — regenerates the README index, `threads/INDEX.md`, and `graph.json`. Read the warnings on stderr; fix anything surprising.
 6. If the node was derived from a conversation, also create or update a `thread` node and set `source-thread:`.
+7. `git add` your node + the regenerated artifacts (`README.md`, `graph.json`, `threads/INDEX.md`). Commit.
 
 ## Workflow for editing a node
 

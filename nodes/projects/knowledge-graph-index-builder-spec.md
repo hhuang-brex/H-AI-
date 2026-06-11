@@ -40,7 +40,7 @@ End README index drift permanently. Every node, every edge, every cluster groupi
 
 ## Architecture
 
-`tools/build-graph.py` is a single-file Python 3 script with no third-party dependencies beyond `PyYAML` (already implicitly used by the inline scripts). Reads from disk, writes to disk, prints warnings to stderr. Exits 0 unconditionally.
+`tools/build-graph.py` is a single-file Python 3 script with **zero third-party dependencies** — it ships with a small hand-rolled frontmatter parser scoped to this repo's schema (scalar fields, inline `[a, b, c]` lists, block lists, `[[id]]` wiki-link scalars, quoted strings; no nested maps or multi-line scalars, since none are used). System `/usr/bin/python3` is enough; no `pip install` step. Reads from disk, writes to disk, prints warnings to stderr. Exits 0 unconditionally.
 
 ### Phases
 
