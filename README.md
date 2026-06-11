@@ -194,6 +194,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 
 **Worked examples**
 - [worked-example-anthropic-thinking](nodes/projects/worked-example-anthropic-thinking.md) — Python code: capturing reasoning, signature continuity, forced-tool-call constraint, hidden billing.
+- [worked-example-chatting-task-agent](nodes/projects/worked-example-chatting-task-agent.md) — annotated code for one end-to-end chatting task agent — control loop, tools, planning, context, HITL, execution safety, persistence — threading the agent concept cluster into a single runnable shape.
 - [worked-example-openai-responses](nodes/projects/worked-example-openai-responses.md) — Python code: Responses API, server-stateful + stateless multi-turn, `incomplete:max_output_tokens` handling.
 
 **Products**

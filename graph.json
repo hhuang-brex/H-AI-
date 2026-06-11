@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-11",
-  "node_count": 112,
-  "edge_count": 674,
+  "node_count": 113,
+  "edge_count": 692,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -514,6 +514,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "worked-example-chatting-task-agent",
         "agent-state-persistence",
         "tool-use-design",
         "agent-control-loop",
@@ -569,6 +570,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "worked-example-chatting-task-agent",
         "multi-agent-delegation",
         "agent-state-persistence",
         "action-execution-safety",
@@ -658,6 +660,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "worked-example-chatting-task-agent",
         "agent-control-loop",
         "action-execution-safety",
         "run-state-model",
@@ -945,6 +948,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "worked-example-chatting-task-agent",
         "agent-control-loop",
         "tool-use-design",
         "context-assembly-per-turn",
@@ -1522,6 +1526,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "worked-example-chatting-task-agent",
         "agent-control-loop",
         "task-agent-pattern",
         "confirm-before-act",
@@ -1896,6 +1901,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "worked-example-chatting-task-agent",
         "agent-control-loop",
         "task-planning",
         "context-engineering",
@@ -2853,6 +2859,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "worked-example-chatting-task-agent",
         "task-agent-pattern",
         "agent-control-loop",
         "tool-use-design",
@@ -3050,6 +3057,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "worked-example-chatting-task-agent",
         "action-execution-safety",
         "task-agent-pattern",
         "agent-control-loop",
@@ -3168,6 +3176,38 @@
         "native-thinking-vs-prompted-reasoning",
         "decision-audit-trail",
         "forced-tool-call-output"
+      ]
+    },
+    {
+      "id": "worked-example-chatting-task-agent",
+      "type": "project",
+      "kind": "worked-example",
+      "path": "nodes/projects/worked-example-chatting-task-agent.md",
+      "title": "Worked Example \u2014 A Chatting Task Agent",
+      "summary": "annotated code for one end-to-end chatting task agent \u2014 control loop, tools, planning, context, HITL, execution safety, persistence \u2014 threading the agent concept cluster into a single runnable shape.",
+      "tags": [
+        "worked-example",
+        "agent",
+        "control-loop",
+        "code",
+        "chat",
+        "engineering-excellence"
+      ],
+      "status": "snapshot",
+      "created": "2026-06-11",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "agent-control-loop",
+        "tool-use-design",
+        "task-planning",
+        "context-engineering",
+        "human-in-the-loop-control",
+        "action-execution-safety",
+        "agent-state-persistence",
+        "multi-agent-delegation",
+        "perceive-reason-act-loop",
+        "idempotency-keys"
       ]
     },
     {
@@ -3699,6 +3739,11 @@
       "kind": "related"
     },
     {
+      "from": "action-execution-safety",
+      "to": "worked-example-chatting-task-agent",
+      "kind": "related"
+    },
+    {
       "from": "adversarial-eval",
       "to": "agent-eval-case-study",
       "kind": "related"
@@ -3776,6 +3821,11 @@
     {
       "from": "agent-control-loop",
       "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
+      "to": "worked-example-chatting-task-agent",
       "kind": "related"
     },
     {
@@ -3901,6 +3951,11 @@
     {
       "from": "agent-state-persistence",
       "to": "run-state-model",
+      "kind": "related"
+    },
+    {
+      "from": "agent-state-persistence",
+      "to": "worked-example-chatting-task-agent",
       "kind": "related"
     },
     {
@@ -4191,6 +4246,11 @@
     {
       "from": "context-engineering",
       "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "worked-example-chatting-task-agent",
       "kind": "related"
     },
     {
@@ -4839,6 +4899,11 @@
       "kind": "related"
     },
     {
+      "from": "human-in-the-loop-control",
+      "to": "worked-example-chatting-task-agent",
+      "kind": "related"
+    },
+    {
       "from": "idempotency-keys",
       "to": "action-execution-safety",
       "kind": "related"
@@ -5216,6 +5281,11 @@
     {
       "from": "multi-agent-delegation",
       "to": "when-to-delegate",
+      "kind": "related"
+    },
+    {
+      "from": "multi-agent-delegation",
+      "to": "worked-example-chatting-task-agent",
       "kind": "related"
     },
     {
@@ -6249,6 +6319,11 @@
       "kind": "related"
     },
     {
+      "from": "task-planning",
+      "to": "worked-example-chatting-task-agent",
+      "kind": "related"
+    },
+    {
       "from": "template-rendered-output",
       "to": "forced-tool-call-output",
       "kind": "related"
@@ -6454,6 +6529,11 @@
       "kind": "related"
     },
     {
+      "from": "tool-use-design",
+      "to": "worked-example-chatting-task-agent",
+      "kind": "related"
+    },
+    {
       "from": "truncated-pyramid-results",
       "to": "chatbot-pagination",
       "kind": "related"
@@ -6541,6 +6621,56 @@
     {
       "from": "worked-example-anthropic-thinking",
       "to": "native-thinking-vs-prompted-reasoning",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-chatting-task-agent",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-chatting-task-agent",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-chatting-task-agent",
+      "to": "agent-state-persistence",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-chatting-task-agent",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-chatting-task-agent",
+      "to": "human-in-the-loop-control",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-chatting-task-agent",
+      "to": "idempotency-keys",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-chatting-task-agent",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-chatting-task-agent",
+      "to": "perceive-reason-act-loop",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-chatting-task-agent",
+      "to": "task-planning",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-chatting-task-agent",
+      "to": "tool-use-design",
       "kind": "related"
     },
     {
