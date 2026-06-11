@@ -3,6 +3,8 @@ id: llm-evaluation
 type: topic
 tags: [eval, agents, llm, testing]
 related:
+  - [[simulated-user-eval]]
+  - [[execution-invariant-testing]]
   - [[test-pyramid-llm]]
   - [[llm-as-judge]]
   - [[prod-shadow-replay]]
@@ -36,6 +38,8 @@ Anything not serving (1)–(3) is overhead.
 - [cost-aware-eval](../concepts/cost-aware-eval.md) — sample-size math and budget assertions.
 - [agent-trajectory-eval](../concepts/agent-trajectory-eval.md) — multi-turn, tool-call sequences, end-state vs step.
 - [adversarial-eval](../concepts/adversarial-eval.md) — red-team / safety / prompt injection.
+- [execution-invariant-testing](../concepts/execution-invariant-testing.md) — assert agent safety properties (idempotency, crash-consistency, budget-bound) as deterministic tests.
+- [simulated-user-eval](../concepts/simulated-user-eval.md) — drive a chatting agent with a scripted/LLM-played user across multi-turn interruption and correction scenarios.
 
 ## Canonical references
 

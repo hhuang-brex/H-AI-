@@ -5,6 +5,8 @@ kind: worked-example
 tags: [worked-example, agent, control-loop, code, chat, engineering-excellence]
 summary: "annotated code for one end-to-end chatting task agent — control loop, tools, planning, context, HITL, execution safety, persistence — threading the agent concept cluster into a single runnable shape."
 related:
+  - [[simulated-user-eval]]
+  - [[execution-invariant-testing]]
   - [[agent-control-loop]]
   - [[tool-use-design]]
   - [[task-planning]]

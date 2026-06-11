@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-11",
-  "node_count": 113,
-  "edge_count": 692,
+  "node_count": 115,
+  "edge_count": 710,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -514,6 +514,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "execution-invariant-testing",
         "worked-example-chatting-task-agent",
         "agent-state-persistence",
         "tool-use-design",
@@ -660,6 +661,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "execution-invariant-testing",
         "worked-example-chatting-task-agent",
         "agent-control-loop",
         "action-execution-safety",
@@ -1330,6 +1332,39 @@
       ]
     },
     {
+      "id": "execution-invariant-testing",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/execution-invariant-testing.md",
+      "title": "Execution-Invariant Testing",
+      "summary": "asserting an agent's safety properties as tests \u2014 run-twice-equals-once, crash-anywhere-resumes-consistently, never-exceeds-budget \u2014 instead of hoping they hold.",
+      "tags": [
+        "eval",
+        "agent",
+        "testing",
+        "invariant",
+        "crash-injection",
+        "idempotency",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "action-execution-safety",
+        "agent-state-persistence",
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "action-execution-safety",
+        "agent-state-persistence",
+        "idempotency-keys",
+        "crash-recovery-consistency",
+        "golden-snapshot-eval"
+      ]
+    },
+    {
       "id": "flat-channel-thread-tracking",
       "type": "concept",
       "kind": null,
@@ -1526,6 +1561,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "simulated-user-eval",
         "worked-example-chatting-task-agent",
         "agent-control-loop",
         "task-agent-pattern",
@@ -1749,6 +1785,8 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "simulated-user-eval",
+        "execution-invariant-testing",
         "test-pyramid-llm",
         "llm-as-judge",
         "prod-shadow-replay",
@@ -2453,6 +2491,37 @@
         "grounding-and-citation",
         "escalation-handoff",
         "safety-rails-domain-specific"
+      ]
+    },
+    {
+      "id": "simulated-user-eval",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/simulated-user-eval.md",
+      "title": "Simulated-User Eval",
+      "summary": "evaluating a chatting agent by driving it with a scripted or LLM-played user across multi-turn scenarios \u2014 interruptions, corrections, abandonment \u2014 not just single-turn replies.",
+      "tags": [
+        "eval",
+        "agent",
+        "testing",
+        "simulated-user",
+        "multi-turn",
+        "conversation",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "human-in-the-loop-control",
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "agent-trajectory-eval",
+        "human-in-the-loop-control",
+        "mid-task-steering",
+        "llm-as-judge"
       ]
     },
     {
@@ -3198,6 +3267,8 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "simulated-user-eval",
+        "execution-invariant-testing",
         "agent-control-loop",
         "tool-use-design",
         "task-planning",
@@ -3710,6 +3781,11 @@
     },
     {
       "from": "action-execution-safety",
+      "to": "execution-invariant-testing",
+      "kind": "related"
+    },
+    {
+      "from": "action-execution-safety",
       "to": "hard-surface-irrevocability",
       "kind": "related"
     },
@@ -3941,6 +4017,11 @@
     {
       "from": "agent-state-persistence",
       "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "agent-state-persistence",
+      "to": "execution-invariant-testing",
       "kind": "related"
     },
     {
@@ -4689,6 +4770,36 @@
       "kind": "related"
     },
     {
+      "from": "execution-invariant-testing",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "execution-invariant-testing",
+      "to": "agent-state-persistence",
+      "kind": "related"
+    },
+    {
+      "from": "execution-invariant-testing",
+      "to": "crash-recovery-consistency",
+      "kind": "related"
+    },
+    {
+      "from": "execution-invariant-testing",
+      "to": "golden-snapshot-eval",
+      "kind": "related"
+    },
+    {
+      "from": "execution-invariant-testing",
+      "to": "idempotency-keys",
+      "kind": "related"
+    },
+    {
+      "from": "execution-invariant-testing",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
       "from": "flat-channel-thread-tracking",
       "to": "intent-and-disambiguation",
       "kind": "related"
@@ -4890,6 +5001,11 @@
     },
     {
       "from": "human-in-the-loop-control",
+      "to": "simulated-user-eval",
+      "kind": "related"
+    },
+    {
+      "from": "human-in-the-loop-control",
       "to": "stop-and-yield-conditions",
       "kind": "related"
     },
@@ -5080,6 +5196,11 @@
     },
     {
       "from": "llm-evaluation",
+      "to": "execution-invariant-testing",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
       "to": "golden-snapshot-eval",
       "kind": "related"
     },
@@ -5091,6 +5212,11 @@
     {
       "from": "llm-evaluation",
       "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "simulated-user-eval",
       "kind": "related"
     },
     {
@@ -5796,6 +5922,31 @@
     {
       "from": "scope-and-refusal",
       "to": "safety-rails-domain-specific",
+      "kind": "related"
+    },
+    {
+      "from": "simulated-user-eval",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "simulated-user-eval",
+      "to": "human-in-the-loop-control",
+      "kind": "related"
+    },
+    {
+      "from": "simulated-user-eval",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "simulated-user-eval",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "simulated-user-eval",
+      "to": "mid-task-steering",
       "kind": "related"
     },
     {
@@ -6645,6 +6796,11 @@
     },
     {
       "from": "worked-example-chatting-task-agent",
+      "to": "execution-invariant-testing",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-chatting-task-agent",
       "to": "human-in-the-loop-control",
       "kind": "related"
     },
@@ -6661,6 +6817,11 @@
     {
       "from": "worked-example-chatting-task-agent",
       "to": "perceive-reason-act-loop",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-chatting-task-agent",
+      "to": "simulated-user-eval",
       "kind": "related"
     },
     {

@@ -56,6 +56,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 
 **[action-execution-safety](nodes/topics/action-execution-safety.md)**
 - [dry-run-and-preview](nodes/concepts/dry-run-and-preview.md) — computing the full effect of an action without committing it, so the user (or the agent) can inspect exactly what will happen before it does.
+- [execution-invariant-testing](nodes/concepts/execution-invariant-testing.md) — asserting an agent's safety properties as tests — run-twice-equals-once, crash-anywhere-resumes-consistently, never-exceeds-budget — instead of hoping they hold.
 - [hard-surface-irrevocability](nodes/concepts/hard-surface-irrevocability.md) — irrevocable output channels as a first-class category.
 - [idempotency-keys](nodes/concepts/idempotency-keys.md) — making a side-effecting action safe to call more than once by keying it on a stable client-generated token, so retries and replays produce one effect.
 - [interrupt-and-resume](nodes/concepts/interrupt-and-resume.md) — stopping a run in flight — abort vs. pause — and resuming from durable state without redoing completed work or repeating side effects.
@@ -74,6 +75,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [conversation-memory](nodes/concepts/conversation-memory.md) — three horizons; what to remember, what not to.
 - [crash-recovery-consistency](nodes/concepts/crash-recovery-consistency.md) — resuming after a crash that landed mid-action — using write-ahead markers to decide whether the in-flight side effect fired, and reconciling to a consistent state.
 - [decision-audit-trail](nodes/concepts/decision-audit-trail.md) — durable per-decision record (fingerprint + version + reasoning + override history); the substrate replay/drift run on.
+- [execution-invariant-testing](nodes/concepts/execution-invariant-testing.md) — asserting an agent's safety properties as tests — run-twice-equals-once, crash-anywhere-resumes-consistently, never-exceeds-budget — instead of hoping they hold.
 - [interrupt-and-resume](nodes/concepts/interrupt-and-resume.md) — stopping a run in flight — abort vs. pause — and resuming from durable state without redoing completed work or repeating side effects.
 - [run-state-model](nodes/concepts/run-state-model.md) — the minimal durable shape that lets a run resume — goal, plan with per-step status, established facts, open commitments, and in-flight markers.
 
@@ -114,15 +116,18 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [hard-surface-irrevocability](nodes/concepts/hard-surface-irrevocability.md) — irrevocable output channels as a first-class category.
 - [interrupt-and-resume](nodes/concepts/interrupt-and-resume.md) — stopping a run in flight — abort vs. pause — and resuming from durable state without redoing completed work or repeating side effects.
 - [mid-task-steering](nodes/concepts/mid-task-steering.md) — handling a user message that arrives while the agent is working — classify it as redirect, refinement, abort, or chatter, then replan accordingly.
+- [simulated-user-eval](nodes/concepts/simulated-user-eval.md) — evaluating a chatting agent by driving it with a scripted or LLM-played user across multi-turn scenarios — interruptions, corrections, abandonment — not just single-turn replies.
 - [stop-and-yield-conditions](nodes/concepts/stop-and-yield-conditions.md) — the three ways a loop can end — done, blocked-needs-user, or failed — and why 'yield to user' is distinct from 'stop'.
 
 **[llm-evaluation](nodes/topics/llm-evaluation.md)**
 - [adversarial-eval](nodes/concepts/adversarial-eval.md) — red-team / safety / prompt injection.
 - [agent-trajectory-eval](nodes/concepts/agent-trajectory-eval.md) — multi-turn, tool sequences, end-state.
 - [cost-aware-eval](nodes/concepts/cost-aware-eval.md) — sample-size math and budget assertions.
+- [execution-invariant-testing](nodes/concepts/execution-invariant-testing.md) — asserting an agent's safety properties as tests — run-twice-equals-once, crash-anywhere-resumes-consistently, never-exceeds-budget — instead of hoping they hold.
 - [golden-snapshot-eval](nodes/concepts/golden-snapshot-eval.md) — pre-LLM deterministic checks.
 - [llm-as-judge](nodes/concepts/llm-as-judge.md) — calibration, bias, multi-vote, cascading.
 - [prod-shadow-replay](nodes/concepts/prod-shadow-replay.md) — closing the gap between frozen datasets and live traffic.
+- [simulated-user-eval](nodes/concepts/simulated-user-eval.md) — evaluating a chatting agent by driving it with a scripted or LLM-played user across multi-turn scenarios — interruptions, corrections, abandonment — not just single-turn replies.
 - [test-pyramid-llm](nodes/concepts/test-pyramid-llm.md) — porting the classic pyramid to LLM apps.
 
 **[llm-output-design](nodes/topics/llm-output-design.md)**

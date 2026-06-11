@@ -4,6 +4,7 @@ type: topic
 tags: [agent, human-in-the-loop, control, approval, steering, engineering-excellence]
 summary: "the interaction patterns that keep a human in an agent's action loop — confirm before acting, steer mid-task, interrupt and resume."
 related:
+  - [[simulated-user-eval]]
   - [[worked-example-chatting-task-agent]]
   - [[agent-control-loop]]
   - [[task-agent-pattern]]
