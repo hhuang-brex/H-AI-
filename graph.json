@@ -1,0 +1,4553 @@
+{
+  "generated": "2026-06-11",
+  "node_count": 81,
+  "edge_count": 461,
+  "nodes": [
+    {
+      "id": "2026-06-05-eval-analysis",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-05-eval-analysis.md",
+      "title": "Thread \u2014 Agent Eval Analysis (2026-06-05)",
+      "summary": "origin of the eval nodes.",
+      "tags": [
+        "eval",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-05",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "agent-eval-case-study",
+        "agent-eval-improvement-tiers",
+        "references-eval-reading-list"
+      ]
+    },
+    {
+      "id": "2026-06-07-forced-tool-call-fan-out",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-07-forced-tool-call-fan-out.md",
+      "title": "Thread \u2014 Forced Tool-Call Fan-Out (2026-06-07)",
+      "summary": "origin of the output-design nodes.",
+      "tags": [
+        "output",
+        "schema",
+        "design",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-07",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "llm-output-design",
+        "forced-tool-call-output",
+        "output-surface-taxonomy",
+        "schema-vs-validator",
+        "streaming-vs-structured",
+        "hard-surface-irrevocability"
+      ]
+    },
+    {
+      "id": "2026-06-08-domain-chatbot-fan-out",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-08-domain-chatbot-fan-out.md",
+      "title": "Thread \u2014 Domain Chatbot Conversation Design Fan-Out (2026-06-08)",
+      "summary": "origin of the conversation-design nodes.",
+      "tags": [
+        "chatbot",
+        "conversation-design",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-08",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "domain-chatbot-design",
+        "intent-and-disambiguation",
+        "grounding-and-citation",
+        "action-authority",
+        "escalation-handoff",
+        "scope-and-refusal",
+        "conversation-memory",
+        "domain-knowledge-injection",
+        "persona-tone-compliance",
+        "repair-and-clarification",
+        "turn-taking-and-proactivity",
+        "safety-rails-domain-specific"
+      ]
+    },
+    {
+      "id": "2026-06-08-domain-chatbot-research",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-08-domain-chatbot-research.md",
+      "title": "Thread \u2014 Domain Chatbot Design Research (2026-06-08)",
+      "summary": "verified reading-list research thread.",
+      "tags": [
+        "chatbot",
+        "research",
+        "reading-list",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-08",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "references-domain-chatbot-design",
+        "domain-chatbot-design",
+        "references-eval-reading-list"
+      ]
+    },
+    {
+      "id": "2026-06-08-sms-multi-thread-fan-out",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-08-sms-multi-thread-fan-out.md",
+      "title": "Thread \u2014 SMS Multi-Thread Chatbot Fan-Out (2026-06-08)",
+      "summary": "origin of the SMS multi-thread nodes.",
+      "tags": [
+        "sms",
+        "chatbot",
+        "multi-thread",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-08",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "sms-multi-thread-chatbot",
+        "flat-channel-thread-tracking",
+        "async-conversation-pacing",
+        "message-segmentation-160",
+        "thread-disambiguation-prompts",
+        "sms-context-windowing",
+        "sms-state-machine",
+        "sms-recovery-and-reentry"
+      ]
+    },
+    {
+      "id": "2026-06-09-chatbot-pagination-research",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-09-chatbot-pagination-research.md",
+      "title": "Thread \u2014 Chatbot Pagination Research (2026-06-09)",
+      "summary": "deep-research on chatbot pagination UX + technical patterns.",
+      "tags": [
+        "chatbot",
+        "pagination",
+        "research",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-09",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "chatbot-pagination",
+        "truncated-pyramid-results",
+        "paginated-tool-contract",
+        "code-execution-sandbox-pattern",
+        "references-chatbot-pagination"
+      ]
+    },
+    {
+      "id": "2026-06-09-dspy-domain-chatbot-research",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-09-dspy-domain-chatbot-research.md",
+      "title": "Thread \u2014 DSPy Domain-Chatbot Success Examples (2026-06-09)",
+      "summary": "deep-research on documented DSPy chatbot case studies.",
+      "tags": [
+        "dspy",
+        "chatbot",
+        "research",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-09",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "dspy-domain-chatbot-cases",
+        "domain-chatbot-design",
+        "references-domain-chatbot-design"
+      ]
+    },
+    {
+      "id": "2026-06-09-ikki-forced-tool-calling",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-09-ikki-forced-tool-calling.md",
+      "title": "Thread \u2014 Audit Against Ikki's \"Forced Tool Calling in Production Chatbots\" (2026-06-09)",
+      "summary": "audit against Ikki's \\\"Forced Tool Calling in Production Chatbots\\\" post.",
+      "tags": [
+        "chatbot",
+        "forced-tool-call",
+        "templates",
+        "layered-defense",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-09",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "template-rendered-output",
+        "layered-defense-pipeline",
+        "forced-tool-call-output",
+        "llm-as-judge",
+        "references-domain-chatbot-design"
+      ]
+    },
+    {
+      "id": "2026-06-09-operator-trust-injection",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-09-operator-trust-injection.md",
+      "title": "Thread \u2014 Operator-Trust Injection (2026-06-09)",
+      "summary": "adding operator-trust-injection + recency-bias-prompt-design from Anthropic-engineer-recommended patterns.",
+      "tags": [
+        "chatbot",
+        "prompt-engineering",
+        "operator-trust",
+        "anthropic",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-09",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "operator-trust-injection",
+        "recency-bias-prompt-design",
+        "domain-knowledge-injection",
+        "layered-defense-pipeline"
+      ]
+    },
+    {
+      "id": "2026-06-09-reasoning-mode-research",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-09-reasoning-mode-research.md",
+      "title": "Thread \u2014 Reasoning Mode Research (2026-06-09)",
+      "summary": "deep-research on prompted `<reasoning>` vs. native thinking APIs.",
+      "tags": [
+        "reasoning",
+        "thinking",
+        "prompting",
+        "research",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-09",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "native-thinking-vs-prompted-reasoning",
+        "operator-trust-injection",
+        "forced-tool-call-output",
+        "decision-engine-contract"
+      ]
+    },
+    {
+      "id": "2026-06-09-spender-agent-ea-workflow",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-09-spender-agent-ea-workflow.md",
+      "title": "Thread \u2014 Spender Agent / EA Workflow Synthesis (2026-06-09)",
+      "summary": "first-principles synthesis from IAF-1611 root-cause to the spender-agent product spec.",
+      "tags": [
+        "task-agent",
+        "expense-documentation",
+        "ea-workflow",
+        "spender-agent",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-09",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "spender-agent",
+        "task-agent-pattern",
+        "decision-engine-contract",
+        "forced-tool-call-output",
+        "sms-multi-thread-chatbot"
+      ]
+    },
+    {
+      "id": "2026-06-09-task-agent-pattern",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-09-task-agent-pattern.md",
+      "title": "Thread \u2014 Task-Agent Pattern Fan-Out (2026-06-09)",
+      "summary": "origin of the task-agent-pattern cluster.",
+      "tags": [
+        "task-agent",
+        "decision-engine",
+        "fan-out",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-09",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "task-agent-pattern",
+        "decision-engine-contract",
+        "engine-vs-conversation-routing",
+        "decision-audit-trail",
+        "task-agent-pattern-fanout"
+      ]
+    },
+    {
+      "id": "2026-06-10-github-buffering-references",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-10-github-buffering-references.md",
+      "title": "Thread \u2014 GitHub Prior Art for Message Buffering (2026-06-10)",
+      "summary": "GitHub prior art for chatbot message buffering (clawbolt, Chatwoot, LiveKit).",
+      "tags": [
+        "sms",
+        "message-buffering",
+        "github",
+        "prior-art",
+        "research",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-10",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "sms-message-buffering-spec",
+        "sms-message-buffering-plan",
+        "2026-06-10-sms-message-buffering-research"
+      ]
+    },
+    {
+      "id": "2026-06-10-llm-observability-research",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-10-llm-observability-research.md",
+      "title": "Thread \u2014 LLM Observability Research (2026-06-10)",
+      "summary": "deep-research on \\\"why did the model respond this way?\\\" debugging workflow.",
+      "tags": [
+        "observability",
+        "debugging",
+        "audit",
+        "otel",
+        "research",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-10",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "llm-observability",
+        "decision-audit-trail",
+        "native-thinking-vs-prompted-reasoning",
+        "cost-aware-eval",
+        "prod-shadow-replay"
+      ]
+    },
+    {
+      "id": "2026-06-10-reasoning-rationale-research",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-10-reasoning-rationale-research.md",
+      "title": "Thread \u2014 Why Read Model Reasoning? (2026-06-10)",
+      "summary": "deep-research on faithfulness, alignment-faking, scheming evaluations \u2014 the *why* for instrumenting reasoning.",
+      "tags": [
+        "reasoning",
+        "observability",
+        "faithfulness",
+        "alignment",
+        "research",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-10",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "cot-as-forensic-artifact",
+        "worked-example-anthropic-thinking",
+        "worked-example-openai-responses",
+        "llm-observability"
+      ]
+    },
+    {
+      "id": "2026-06-10-sms-message-buffering-research",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-10-sms-message-buffering-research.md",
+      "title": "Thread \u2014 SMS Message Buffering Research (2026-06-10)",
+      "summary": "origin of the SMS message buffering spec; voice-AI EOT pattern as architectural reference.",
+      "tags": [
+        "sms",
+        "message-buffering",
+        "end-of-turn",
+        "research",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-10",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "sms-message-buffering-spec",
+        "sms-multi-thread-chatbot",
+        "sms-state-machine",
+        "forced-tool-call-output"
+      ]
+    },
+    {
+      "id": "2026-06-11-knowledge-graph-organization-review",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-11-knowledge-graph-organization-review.md",
+      "title": "Thread \u2014 Knowledge Graph Organization Review (2026-06-11)",
+      "summary": "audit of this repo as a knowledge graph; origin of the index-builder spec.",
+      "tags": [
+        "meta",
+        "knowledge-graph",
+        "organization",
+        "audit",
+        "tooling",
+        "build",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-11",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "knowledge-graph-index-builder-spec"
+      ]
+    },
+    {
+      "id": "2026-06-11-text-eot-classifier-salvage",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-11-text-eot-classifier-salvage.md",
+      "title": "Thread \u2014 Text EOT Classifier Salvage (2026-06-11)",
+      "summary": "text-EOT classifier salvage from a stalled deep-research workflow; TurnGPT verified, HF entries blocked by Brex SSO.",
+      "tags": [
+        "text-eot",
+        "classifier",
+        "github",
+        "huggingface",
+        "prior-art",
+        "research",
+        "salvaged",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-11",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "sms-message-buffering-spec",
+        "sms-message-buffering-plan",
+        "2026-06-10-github-buffering-references",
+        "2026-06-10-sms-message-buffering-research"
+      ]
+    },
+    {
+      "id": "action-authority",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/action-authority.md",
+      "title": "Action Authority",
+      "summary": "what the bot can *do*; tiered authority enforced at the tool layer.",
+      "tags": [
+        "chatbot",
+        "conversation-design",
+        "agents",
+        "authority",
+        "risk"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "domain-chatbot-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "domain-chatbot-design",
+        "escalation-handoff",
+        "forced-tool-call-output",
+        "safety-rails-domain-specific",
+        "intent-and-disambiguation"
+      ]
+    },
+    {
+      "id": "adversarial-eval",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/adversarial-eval.md",
+      "title": "Adversarial / Red-Team Eval",
+      "summary": "red-team / safety / prompt injection.",
+      "tags": [
+        "eval",
+        "red-team",
+        "safety",
+        "adversarial"
+      ],
+      "status": "living",
+      "created": "2026-06-05",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "agent-eval-case-study"
+      ]
+    },
+    {
+      "id": "agent-eval-case-study",
+      "type": "project",
+      "kind": "snapshot",
+      "path": "nodes/projects/agent-eval-case-study.md",
+      "title": "Agent Eval Case Study \u2014 Snapshot",
+      "summary": "generalized agent platform eval system (2026-06-05 snapshot).",
+      "tags": [
+        "eval",
+        "case-study",
+        "agents"
+      ],
+      "status": "snapshot",
+      "created": "2026-06-05",
+      "clusters": [],
+      "source_thread": "2026-06-05-eval-analysis",
+      "related": [
+        "llm-evaluation",
+        "test-pyramid-llm",
+        "llm-as-judge",
+        "prod-shadow-replay",
+        "cost-aware-eval",
+        "agent-trajectory-eval",
+        "adversarial-eval",
+        "agent-eval-improvement-tiers"
+      ]
+    },
+    {
+      "id": "agent-eval-improvement-tiers",
+      "type": "project",
+      "kind": "plan",
+      "path": "nodes/projects/agent-eval-improvement-tiers.md",
+      "title": "Agent Eval \u2014 Improvement Tiers",
+      "summary": "ranked improvement plan for the case study above.",
+      "tags": [
+        "eval",
+        "plan",
+        "agents"
+      ],
+      "status": "proposal",
+      "created": "2026-06-05",
+      "clusters": [],
+      "source_thread": "2026-06-05-eval-analysis",
+      "related": [
+        "agent-eval-case-study",
+        "test-pyramid-llm",
+        "llm-as-judge",
+        "prod-shadow-replay",
+        "cost-aware-eval",
+        "golden-snapshot-eval",
+        "adversarial-eval"
+      ]
+    },
+    {
+      "id": "agent-trajectory-eval",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/agent-trajectory-eval.md",
+      "title": "Agent Trajectory Eval",
+      "summary": "multi-turn, tool sequences, end-state.",
+      "tags": [
+        "eval",
+        "agent",
+        "trajectory",
+        "multi-turn"
+      ],
+      "status": "living",
+      "created": "2026-06-05",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "test-pyramid-llm",
+        "golden-snapshot-eval",
+        "agent-eval-case-study"
+      ]
+    },
+    {
+      "id": "async-conversation-pacing",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/async-conversation-pacing.md",
+      "title": "Async Conversation Pacing",
+      "summary": "gaps measured in days; re-anchoring; expiry; nudge policy.",
+      "tags": [
+        "sms",
+        "chatbot",
+        "async",
+        "pacing",
+        "timing"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "sms-multi-thread-chatbot"
+      ],
+      "source_thread": null,
+      "related": [
+        "sms-multi-thread-chatbot",
+        "sms-state-machine",
+        "turn-taking-and-proactivity",
+        "sms-recovery-and-reentry"
+      ]
+    },
+    {
+      "id": "chatbot-pagination",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/chatbot-pagination.md",
+      "title": "Chatbot Pagination",
+      "summary": "handling large result sets in a chatbot; UX shape and tool shape chosen jointly.",
+      "tags": [
+        "chatbot",
+        "pagination",
+        "ux",
+        "tool-use",
+        "conversation-design"
+      ],
+      "status": "living",
+      "created": "2026-06-09",
+      "clusters": [],
+      "source_thread": "2026-06-09-chatbot-pagination-research",
+      "related": [
+        "domain-chatbot-design",
+        "llm-output-design",
+        "truncated-pyramid-results",
+        "paginated-tool-contract",
+        "code-execution-sandbox-pattern",
+        "domain-knowledge-injection",
+        "cost-aware-eval",
+        "forced-tool-call-output",
+        "sms-multi-thread-chatbot"
+      ]
+    },
+    {
+      "id": "code-execution-sandbox-pattern",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/code-execution-sandbox-pattern.md",
+      "title": "Code-Execution Sandbox Pattern",
+      "summary": "keep large rows out of model context entirely.",
+      "tags": [
+        "chatbot",
+        "code-execution",
+        "sandbox",
+        "mcp",
+        "context-window"
+      ],
+      "status": "living",
+      "created": "2026-06-09",
+      "clusters": [
+        "chatbot-pagination"
+      ],
+      "source_thread": null,
+      "related": [
+        "chatbot-pagination",
+        "paginated-tool-contract",
+        "truncated-pyramid-results",
+        "domain-knowledge-injection",
+        "cost-aware-eval"
+      ]
+    },
+    {
+      "id": "conversation-memory",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/conversation-memory.md",
+      "title": "Conversation Memory",
+      "summary": "three horizons; what to remember, what not to.",
+      "tags": [
+        "chatbot",
+        "conversation-design",
+        "memory",
+        "context",
+        "privacy"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "domain-chatbot-design",
+        "sms-multi-thread-chatbot"
+      ],
+      "source_thread": null,
+      "related": [
+        "sms-multi-thread-chatbot",
+        "domain-chatbot-design",
+        "domain-knowledge-injection",
+        "escalation-handoff",
+        "repair-and-clarification"
+      ]
+    },
+    {
+      "id": "cost-aware-eval",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/cost-aware-eval.md",
+      "title": "Cost-Aware Eval Design",
+      "summary": "sample-size math and budget assertions.",
+      "tags": [
+        "eval",
+        "cost",
+        "statistics"
+      ],
+      "status": "living",
+      "created": "2026-06-05",
+      "clusters": [
+        "chatbot-pagination",
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "chatbot-pagination",
+        "llm-evaluation",
+        "test-pyramid-llm",
+        "llm-as-judge",
+        "agent-eval-case-study",
+        "llm-observability"
+      ]
+    },
+    {
+      "id": "cot-as-forensic-artifact",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/cot-as-forensic-artifact.md",
+      "title": "CoT as Forensic Artifact \u2014 Why Instrument Reasoning",
+      "summary": "the *why* behind reasoning instrumentation: CoT is forensic, not explanatory; unfaithful 60\u201375% of the time yet uniquely surfaces alignment-faking, scheming, situational awareness.",
+      "tags": [
+        "reasoning",
+        "observability",
+        "safety",
+        "audit",
+        "alignment",
+        "business-case"
+      ],
+      "status": "living",
+      "created": "2026-06-10",
+      "clusters": [
+        "llm-output-design"
+      ],
+      "source_thread": "2026-06-10-reasoning-rationale-research",
+      "related": [
+        "llm-output-design",
+        "llm-observability",
+        "native-thinking-vs-prompted-reasoning",
+        "decision-audit-trail",
+        "adversarial-eval",
+        "safety-rails-domain-specific"
+      ]
+    },
+    {
+      "id": "decision-audit-trail",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/decision-audit-trail.md",
+      "title": "Decision Audit Trail",
+      "summary": "durable per-decision record (fingerprint + version + reasoning + override history); the substrate replay/drift run on.",
+      "tags": [
+        "task-agent",
+        "audit",
+        "observability",
+        "decision-engine",
+        "replay"
+      ],
+      "status": "living",
+      "created": "2026-06-09",
+      "clusters": [
+        "task-agent-pattern"
+      ],
+      "source_thread": null,
+      "related": [
+        "task-agent-pattern",
+        "decision-engine-contract",
+        "prod-shadow-replay",
+        "cost-aware-eval",
+        "agent-eval-improvement-tiers",
+        "llm-observability"
+      ]
+    },
+    {
+      "id": "decision-engine-contract",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/decision-engine-contract.md",
+      "title": "Decision-Engine Contract",
+      "summary": "layered output (decision + confidence + next-action) as the wire format every surface consumes.",
+      "tags": [
+        "task-agent",
+        "decision-engine",
+        "contract",
+        "schema",
+        "output"
+      ],
+      "status": "living",
+      "created": "2026-06-09",
+      "clusters": [
+        "task-agent-pattern"
+      ],
+      "source_thread": null,
+      "related": [
+        "task-agent-pattern",
+        "forced-tool-call-output",
+        "template-rendered-output",
+        "engine-vs-conversation-routing",
+        "decision-audit-trail",
+        "output-surface-taxonomy"
+      ]
+    },
+    {
+      "id": "domain-chatbot-design",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/domain-chatbot-design.md",
+      "title": "Domain-Specific Chatbot Conversation Design",
+      "summary": "how a chatbot converses inside a specific domain.",
+      "tags": [
+        "chatbot",
+        "conversation-design",
+        "domain",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "llm-output-design",
+        "llm-evaluation",
+        "intent-and-disambiguation",
+        "grounding-and-citation",
+        "action-authority",
+        "escalation-handoff",
+        "scope-and-refusal",
+        "conversation-memory",
+        "domain-knowledge-injection",
+        "persona-tone-compliance",
+        "repair-and-clarification",
+        "turn-taking-and-proactivity",
+        "safety-rails-domain-specific",
+        "operator-trust-injection",
+        "recency-bias-prompt-design"
+      ]
+    },
+    {
+      "id": "domain-knowledge-injection",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/domain-knowledge-injection.md",
+      "title": "Domain Knowledge Injection",
+      "summary": "RAG, prompt-stuffing, structured state, fine-tuning per knowledge type.",
+      "tags": [
+        "chatbot",
+        "conversation-design",
+        "rag",
+        "knowledge",
+        "context",
+        "fine-tuning"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "chatbot-pagination",
+        "domain-chatbot-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "chatbot-pagination",
+        "domain-chatbot-design",
+        "grounding-and-citation",
+        "conversation-memory",
+        "cost-aware-eval",
+        "operator-trust-injection",
+        "recency-bias-prompt-design"
+      ]
+    },
+    {
+      "id": "dspy-domain-chatbot-cases",
+      "type": "project",
+      "kind": "snapshot",
+      "path": "nodes/projects/dspy-domain-chatbot-cases.md",
+      "title": "DSPy Domain-Chatbot Cases \u2014 Verified Snapshot",
+      "summary": "verified DSPy domain-chatbot success examples (JetBlue, Dr.Copilot, etc.; 2026-06-09 snapshot).",
+      "tags": [
+        "dspy",
+        "chatbot",
+        "case-study",
+        "llm",
+        "optimizer"
+      ],
+      "status": "snapshot",
+      "created": "2026-06-09",
+      "clusters": [],
+      "source_thread": "2026-06-09-dspy-domain-chatbot-research",
+      "related": [
+        "domain-chatbot-design",
+        "references-domain-chatbot-design",
+        "llm-as-judge",
+        "grounding-and-citation",
+        "domain-knowledge-injection"
+      ]
+    },
+    {
+      "id": "engine-vs-conversation-routing",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/engine-vs-conversation-routing.md",
+      "title": "Engine-vs-Conversation Routing",
+      "summary": "when the engine handles vs. when the chat layer handles; the bridge between them.",
+      "tags": [
+        "task-agent",
+        "routing",
+        "decision-engine",
+        "intent",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-06-09",
+      "clusters": [
+        "task-agent-pattern"
+      ],
+      "source_thread": null,
+      "related": [
+        "task-agent-pattern",
+        "decision-engine-contract",
+        "intent-and-disambiguation",
+        "escalation-handoff",
+        "output-surface-taxonomy",
+        "scope-and-refusal"
+      ]
+    },
+    {
+      "id": "escalation-handoff",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/escalation-handoff.md",
+      "title": "Escalation & Handoff",
+      "summary": "when and how to hand off to a human; preserving context.",
+      "tags": [
+        "chatbot",
+        "conversation-design",
+        "escalation",
+        "handoff",
+        "support"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "domain-chatbot-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "domain-chatbot-design",
+        "action-authority",
+        "scope-and-refusal",
+        "safety-rails-domain-specific",
+        "conversation-memory"
+      ]
+    },
+    {
+      "id": "flat-channel-thread-tracking",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/flat-channel-thread-tracking.md",
+      "title": "Flat-Channel Thread Tracking",
+      "summary": "picking the right thread without thread metadata; cheap-to-expensive detection ladder.",
+      "tags": [
+        "sms",
+        "chatbot",
+        "threading",
+        "routing",
+        "multi-thread"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "sms-multi-thread-chatbot"
+      ],
+      "source_thread": null,
+      "related": [
+        "sms-multi-thread-chatbot",
+        "thread-disambiguation-prompts",
+        "sms-state-machine",
+        "sms-context-windowing",
+        "intent-and-disambiguation"
+      ]
+    },
+    {
+      "id": "forced-tool-call-output",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/forced-tool-call-output.md",
+      "title": "Forced Tool-Call as Output Channel",
+      "summary": "when to force schema vs. let the model write free-text.",
+      "tags": [
+        "llm",
+        "output",
+        "schema",
+        "structured-output",
+        "tool-use"
+      ],
+      "status": "living",
+      "created": "2026-06-07",
+      "clusters": [
+        "chatbot-pagination",
+        "llm-output-design",
+        "task-agent-pattern"
+      ],
+      "source_thread": null,
+      "related": [
+        "task-agent-pattern",
+        "chatbot-pagination",
+        "llm-output-design",
+        "output-surface-taxonomy",
+        "schema-vs-validator",
+        "streaming-vs-structured",
+        "hard-surface-irrevocability",
+        "template-rendered-output",
+        "layered-defense-pipeline",
+        "agent-trajectory-eval"
+      ]
+    },
+    {
+      "id": "golden-snapshot-eval",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/golden-snapshot-eval.md",
+      "title": "Golden / Snapshot Eval",
+      "summary": "pre-LLM deterministic checks.",
+      "tags": [
+        "eval",
+        "snapshot",
+        "golden",
+        "deterministic"
+      ],
+      "status": "living",
+      "created": "2026-06-05",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "test-pyramid-llm",
+        "agent-trajectory-eval",
+        "cost-aware-eval"
+      ]
+    },
+    {
+      "id": "grounding-and-citation",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/grounding-and-citation.md",
+      "title": "Grounding & Citation",
+      "summary": "anchoring claims in domain sources; refusal as the right answer.",
+      "tags": [
+        "chatbot",
+        "conversation-design",
+        "grounding",
+        "citation",
+        "rag",
+        "hallucination"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "domain-chatbot-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "domain-chatbot-design",
+        "domain-knowledge-injection",
+        "scope-and-refusal",
+        "safety-rails-domain-specific"
+      ]
+    },
+    {
+      "id": "hard-surface-irrevocability",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/hard-surface-irrevocability.md",
+      "title": "Hard Surface / Irrevocability",
+      "summary": "irrevocable output channels as a first-class category.",
+      "tags": [
+        "output",
+        "design",
+        "system-design",
+        "reliability"
+      ],
+      "status": "living",
+      "created": "2026-06-07",
+      "clusters": [
+        "llm-output-design",
+        "sms-multi-thread-chatbot"
+      ],
+      "source_thread": null,
+      "related": [
+        "sms-multi-thread-chatbot",
+        "llm-output-design",
+        "output-surface-taxonomy",
+        "forced-tool-call-output"
+      ]
+    },
+    {
+      "id": "intent-and-disambiguation",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/intent-and-disambiguation.md",
+      "title": "Intent & Disambiguation",
+      "summary": "turning ambiguous input into actionable intent; clarification vs. assumption.",
+      "tags": [
+        "chatbot",
+        "conversation-design",
+        "intent",
+        "clarification"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "domain-chatbot-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "domain-chatbot-design",
+        "repair-and-clarification",
+        "scope-and-refusal",
+        "action-authority"
+      ]
+    },
+    {
+      "id": "knowledge-graph-index-builder-plan",
+      "type": "project",
+      "kind": "plan",
+      "path": "nodes/projects/knowledge-graph-index-builder-plan.md",
+      "title": "Knowledge Graph Index Builder \u2014 Implementation Plan",
+      "summary": "13-task implementation plan for `tools/build-graph.py`; sequenced as schema backfill \u2192 orphan-fix \u2192 script build \u2192 regeneration.",
+      "tags": [
+        "meta",
+        "knowledge-graph",
+        "tooling",
+        "build",
+        "index",
+        "automation",
+        "plan"
+      ],
+      "status": "proposal",
+      "created": "2026-06-11",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "knowledge-graph-index-builder-spec",
+        "2026-06-11-knowledge-graph-organization-review"
+      ]
+    },
+    {
+      "id": "knowledge-graph-index-builder-spec",
+      "type": "project",
+      "kind": "spec",
+      "path": "nodes/projects/knowledge-graph-index-builder-spec.md",
+      "title": "Knowledge Graph Index Builder \u2014 Spec",
+      "summary": "Eliminate README index drift by deriving the index, threads rollup, and a graph.json artifact from frontmatter via `tools/build-graph.py`.",
+      "tags": [
+        "meta",
+        "knowledge-graph",
+        "tooling",
+        "build",
+        "index",
+        "automation",
+        "spec"
+      ],
+      "status": "proposal",
+      "created": "2026-06-11",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "2026-06-11-knowledge-graph-organization-review"
+      ]
+    },
+    {
+      "id": "layered-defense-pipeline",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/layered-defense-pipeline.md",
+      "title": "Layered-Defense Pipeline",
+      "summary": "regex gate \u2192 forced tool \u2192 templates \u2192 heterogeneous-model recheck.",
+      "tags": [
+        "chatbot",
+        "architecture",
+        "defense-in-depth",
+        "classifier",
+        "safety"
+      ],
+      "status": "living",
+      "created": "2026-06-09",
+      "clusters": [
+        "llm-output-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-output-design",
+        "template-rendered-output",
+        "forced-tool-call-output",
+        "llm-as-judge",
+        "escalation-handoff",
+        "safety-rails-domain-specific",
+        "cost-aware-eval"
+      ]
+    },
+    {
+      "id": "llm-as-judge",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/llm-as-judge.md",
+      "title": "LLM-as-Judge",
+      "summary": "calibration, bias, multi-vote, cascading.",
+      "tags": [
+        "eval",
+        "judge",
+        "calibration"
+      ],
+      "status": "living",
+      "created": "2026-06-05",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "test-pyramid-llm",
+        "cost-aware-eval",
+        "agent-eval-case-study",
+        "layered-defense-pipeline"
+      ]
+    },
+    {
+      "id": "llm-evaluation",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/llm-evaluation.md",
+      "title": "LLM Evaluation",
+      "summary": "measuring whether LLM systems do what they should without bankrupting the team.",
+      "tags": [
+        "eval",
+        "agents",
+        "llm",
+        "testing"
+      ],
+      "status": "living",
+      "created": "2026-06-05",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "test-pyramid-llm",
+        "llm-as-judge",
+        "prod-shadow-replay",
+        "cost-aware-eval",
+        "agent-trajectory-eval",
+        "adversarial-eval",
+        "golden-snapshot-eval",
+        "agent-eval-case-study"
+      ]
+    },
+    {
+      "id": "llm-observability",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/llm-observability.md",
+      "title": "LLM Observability \u2014 Debugging \"Why Did the Model Respond This Way?\"",
+      "summary": "debugging \\\"why did the model respond this way?\\\" \u2014 what frontier APIs actually return (mostly summaries), platform feature reality, OTel state.",
+      "tags": [
+        "observability",
+        "debugging",
+        "audit",
+        "agents",
+        "otel",
+        "tracing"
+      ],
+      "status": "living",
+      "created": "2026-06-10",
+      "clusters": [
+        "llm-output-design"
+      ],
+      "source_thread": "2026-06-10-llm-observability-research",
+      "related": [
+        "llm-output-design",
+        "decision-audit-trail",
+        "native-thinking-vs-prompted-reasoning",
+        "prod-shadow-replay",
+        "cost-aware-eval",
+        "agent-eval-improvement-tiers",
+        "forced-tool-call-output",
+        "cot-as-forensic-artifact"
+      ]
+    },
+    {
+      "id": "llm-output-design",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/llm-output-design.md",
+      "title": "LLM Output Design",
+      "summary": "how an LLM emits to the world; per-surface decisions.",
+      "tags": [
+        "llm",
+        "output",
+        "design",
+        "schema",
+        "ux"
+      ],
+      "status": "living",
+      "created": "2026-06-07",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "forced-tool-call-output",
+        "output-surface-taxonomy",
+        "schema-vs-validator",
+        "streaming-vs-structured",
+        "hard-surface-irrevocability",
+        "template-rendered-output",
+        "layered-defense-pipeline",
+        "native-thinking-vs-prompted-reasoning",
+        "llm-observability",
+        "cot-as-forensic-artifact"
+      ]
+    },
+    {
+      "id": "message-segmentation-160",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/message-segmentation-160.md",
+      "title": "Message Segmentation & the 160-Character Reality",
+      "summary": "character limits, encoding switches, MMS/RCS fallback.",
+      "tags": [
+        "sms",
+        "chatbot",
+        "segmentation",
+        "character-limits",
+        "mms",
+        "rcs"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "sms-multi-thread-chatbot"
+      ],
+      "source_thread": null,
+      "related": [
+        "sms-multi-thread-chatbot",
+        "forced-tool-call-output",
+        "hard-surface-irrevocability"
+      ]
+    },
+    {
+      "id": "native-thinking-vs-prompted-reasoning",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/native-thinking-vs-prompted-reasoning.md",
+      "title": "Native Thinking vs. Prompted Reasoning",
+      "summary": "frontier labs have moved away from prompted `<reasoning>` tags; native thinking APIs are the default.",
+      "tags": [
+        "llm",
+        "reasoning",
+        "prompting",
+        "thinking",
+        "output-design",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-06-09",
+      "clusters": [
+        "llm-output-design"
+      ],
+      "source_thread": "2026-06-09-reasoning-mode-research",
+      "related": [
+        "llm-output-design",
+        "forced-tool-call-output",
+        "operator-trust-injection",
+        "decision-engine-contract",
+        "domain-knowledge-injection",
+        "recency-bias-prompt-design",
+        "llm-observability"
+      ]
+    },
+    {
+      "id": "operator-trust-injection",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/operator-trust-injection.md",
+      "title": "Operator-Trust Injection",
+      "summary": "mid-conversation operator-only messages without a developer role; self-describing wrapper + recency reinforcement + output hygiene + reply envelope.",
+      "tags": [
+        "chatbot",
+        "prompt-engineering",
+        "operator",
+        "trust",
+        "harness",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-06-09",
+      "clusters": [
+        "domain-chatbot-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "domain-chatbot-design",
+        "domain-knowledge-injection",
+        "layered-defense-pipeline",
+        "conversation-memory",
+        "recency-bias-prompt-design",
+        "forced-tool-call-output",
+        "output-surface-taxonomy",
+        "native-thinking-vs-prompted-reasoning"
+      ]
+    },
+    {
+      "id": "output-surface-taxonomy",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/output-surface-taxonomy.md",
+      "title": "Output Surface Taxonomy",
+      "summary": "classify each surface explicitly; per-surface decisions.",
+      "tags": [
+        "llm",
+        "output",
+        "design",
+        "taxonomy",
+        "system-design"
+      ],
+      "status": "living",
+      "created": "2026-06-07",
+      "clusters": [
+        "llm-output-design",
+        "task-agent-pattern"
+      ],
+      "source_thread": null,
+      "related": [
+        "task-agent-pattern",
+        "llm-output-design",
+        "forced-tool-call-output",
+        "schema-vs-validator",
+        "hard-surface-irrevocability"
+      ]
+    },
+    {
+      "id": "paginated-tool-contract",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/paginated-tool-contract.md",
+      "title": "Paginated Tool Contract",
+      "summary": "opaque cursors, verbosity enum, filter parameters; ~3\u00d7 token savings.",
+      "tags": [
+        "chatbot",
+        "tool-use",
+        "pagination",
+        "mcp",
+        "schema",
+        "tokens"
+      ],
+      "status": "living",
+      "created": "2026-06-09",
+      "clusters": [
+        "chatbot-pagination"
+      ],
+      "source_thread": null,
+      "related": [
+        "chatbot-pagination",
+        "truncated-pyramid-results",
+        "code-execution-sandbox-pattern",
+        "forced-tool-call-output",
+        "cost-aware-eval"
+      ]
+    },
+    {
+      "id": "persona-tone-compliance",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/persona-tone-compliance.md",
+      "title": "Persona, Tone & Compliance",
+      "summary": "voice as a constraint set, not a style preference.",
+      "tags": [
+        "chatbot",
+        "conversation-design",
+        "persona",
+        "tone",
+        "brand",
+        "compliance"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "domain-chatbot-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "domain-chatbot-design",
+        "scope-and-refusal",
+        "safety-rails-domain-specific",
+        "grounding-and-citation"
+      ]
+    },
+    {
+      "id": "prod-shadow-replay",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/prod-shadow-replay.md",
+      "title": "Prod Shadow / Replay",
+      "summary": "closing the gap between frozen datasets and live traffic.",
+      "tags": [
+        "eval",
+        "production",
+        "shadow",
+        "replay"
+      ],
+      "status": "living",
+      "created": "2026-06-05",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "test-pyramid-llm",
+        "agent-eval-case-study"
+      ]
+    },
+    {
+      "id": "recency-bias-prompt-design",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/recency-bias-prompt-design.md",
+      "title": "Recency-Bias Prompt Design",
+      "summary": "placement matters; rules near the end and reinforcements near the injection point earn more weight.",
+      "tags": [
+        "prompt-engineering",
+        "recency",
+        "long-context",
+        "agents",
+        "attention"
+      ],
+      "status": "living",
+      "created": "2026-06-09",
+      "clusters": [
+        "domain-chatbot-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "domain-chatbot-design",
+        "operator-trust-injection",
+        "conversation-memory",
+        "domain-knowledge-injection",
+        "layered-defense-pipeline"
+      ]
+    },
+    {
+      "id": "references-chatbot-pagination",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-chatbot-pagination.md",
+      "title": "Chatbot Pagination \u2014 Reading List",
+      "summary": "pagination reading list (Anthropic Writing Tools / Code Execution, MCP cursor spec, NN/g UX patterns).",
+      "tags": [
+        "reading-list",
+        "chatbot",
+        "pagination",
+        "tool-use",
+        "anthropic",
+        "mcp",
+        "nngroup"
+      ],
+      "status": "living",
+      "created": "2026-06-09",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "chatbot-pagination",
+        "truncated-pyramid-results",
+        "paginated-tool-contract",
+        "code-execution-sandbox-pattern"
+      ]
+    },
+    {
+      "id": "references-domain-chatbot-design",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-domain-chatbot-design.md",
+      "title": "Domain Chatbot Design \u2014 Reading List",
+      "summary": "chatbot design reading list (Anthropic, OpenAI, Microsoft Bot Service, Google CDS, Rasa, Voiceflow, Husain, Yan, Hall, Intercom Fin).",
+      "tags": [
+        "reading-list",
+        "chatbot",
+        "conversation-design",
+        "anthropic",
+        "openai",
+        "microsoft",
+        "google"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "domain-chatbot-design",
+        "sms-multi-thread-chatbot",
+        "intent-and-disambiguation",
+        "grounding-and-citation",
+        "escalation-handoff",
+        "scope-and-refusal",
+        "persona-tone-compliance",
+        "safety-rails-domain-specific",
+        "references-eval-reading-list"
+      ]
+    },
+    {
+      "id": "references-eval-reading-list",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-eval-reading-list.md",
+      "title": "LLM Eval \u2014 Frontier Lab + Practitioner Reading List",
+      "summary": "frontier-lab + practitioner posts on LLM eval (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, \u2026).",
+      "tags": [
+        "eval",
+        "reading-list",
+        "anthropic",
+        "openai"
+      ],
+      "status": "living",
+      "created": "2026-06-05",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "test-pyramid-llm",
+        "llm-as-judge",
+        "prod-shadow-replay",
+        "cost-aware-eval",
+        "agent-trajectory-eval",
+        "adversarial-eval"
+      ]
+    },
+    {
+      "id": "repair-and-clarification",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/repair-and-clarification.md",
+      "title": "Repair & Clarification",
+      "summary": "recovery turns are not initial turns.",
+      "tags": [
+        "chatbot",
+        "conversation-design",
+        "repair",
+        "recovery"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "domain-chatbot-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "domain-chatbot-design",
+        "intent-and-disambiguation",
+        "conversation-memory",
+        "turn-taking-and-proactivity"
+      ]
+    },
+    {
+      "id": "safety-rails-domain-specific",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/safety-rails-domain-specific.md",
+      "title": "Domain-Specific Safety Rails",
+      "summary": "generic safety is the baseline, not the answer.",
+      "tags": [
+        "chatbot",
+        "conversation-design",
+        "safety",
+        "guardrails",
+        "domain"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "domain-chatbot-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "domain-chatbot-design",
+        "scope-and-refusal",
+        "escalation-handoff",
+        "persona-tone-compliance",
+        "adversarial-eval",
+        "action-authority"
+      ]
+    },
+    {
+      "id": "schema-vs-validator",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/schema-vs-validator.md",
+      "title": "Schema vs. Validator",
+      "summary": "schema-enforced output vs. free-text + post-hoc validator.",
+      "tags": [
+        "llm",
+        "output",
+        "schema",
+        "validation",
+        "design-choice"
+      ],
+      "status": "living",
+      "created": "2026-06-07",
+      "clusters": [
+        "llm-output-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-output-design",
+        "forced-tool-call-output",
+        "output-surface-taxonomy",
+        "streaming-vs-structured"
+      ]
+    },
+    {
+      "id": "scope-and-refusal",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/scope-and-refusal.md",
+      "title": "Scope & Refusal",
+      "summary": "in-domain vs. out-of-domain; three kinds of refusal.",
+      "tags": [
+        "chatbot",
+        "conversation-design",
+        "scope",
+        "refusal",
+        "off-topic"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "domain-chatbot-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "domain-chatbot-design",
+        "grounding-and-citation",
+        "escalation-handoff",
+        "safety-rails-domain-specific"
+      ]
+    },
+    {
+      "id": "sms-context-windowing",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/sms-context-windowing.md",
+      "title": "SMS Context Windowing",
+      "summary": "what's in the prompt: per-thread, structured, bounded.",
+      "tags": [
+        "sms",
+        "chatbot",
+        "context",
+        "prompt-engineering",
+        "multi-thread"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "sms-multi-thread-chatbot"
+      ],
+      "source_thread": null,
+      "related": [
+        "sms-multi-thread-chatbot",
+        "flat-channel-thread-tracking",
+        "sms-state-machine",
+        "conversation-memory",
+        "domain-knowledge-injection",
+        "cost-aware-eval"
+      ]
+    },
+    {
+      "id": "sms-message-buffering-plan",
+      "type": "project",
+      "kind": "plan",
+      "path": "nodes/projects/sms-message-buffering-plan.md",
+      "title": "SMS Message Buffering \u2014 Implementation Plan",
+      "summary": "7-piece implementation plan for the spec above.",
+      "tags": [
+        "sms",
+        "message-buffering",
+        "end-of-turn",
+        "plan",
+        "proposal"
+      ],
+      "status": "proposal",
+      "created": "2026-06-10",
+      "clusters": [],
+      "source_thread": "2026-06-10-sms-message-buffering-research",
+      "related": [
+        "sms-message-buffering-spec",
+        "sms-state-machine",
+        "flat-channel-thread-tracking",
+        "decision-audit-trail",
+        "forced-tool-call-output"
+      ]
+    },
+    {
+      "id": "sms-message-buffering-spec",
+      "type": "project",
+      "kind": "spec",
+      "path": "nodes/projects/sms-message-buffering-spec.md",
+      "title": "SMS Message Buffering \u2014 Design Spec",
+      "summary": "handle users splitting one thought across multiple SMS messages; 3-layer detection (regex / Haiku classifier / dynamic timeout) with 10 edge cases.",
+      "tags": [
+        "sms",
+        "message-buffering",
+        "end-of-turn",
+        "dynamic-timeout",
+        "design",
+        "proposal"
+      ],
+      "status": "proposal",
+      "created": "2026-06-10",
+      "clusters": [],
+      "source_thread": "2026-06-10-sms-message-buffering-research",
+      "related": [
+        "sms-multi-thread-chatbot",
+        "sms-state-machine",
+        "flat-channel-thread-tracking",
+        "async-conversation-pacing",
+        "sms-recovery-and-reentry",
+        "decision-audit-trail",
+        "forced-tool-call-output",
+        "cot-as-forensic-artifact"
+      ]
+    },
+    {
+      "id": "sms-multi-thread-chatbot",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/sms-multi-thread-chatbot.md",
+      "title": "SMS Multi-Thread Chatbot Design",
+      "summary": "multi-thread chatbot design when the only channel is flat SMS.",
+      "tags": [
+        "sms",
+        "chatbot",
+        "multi-thread",
+        "flat-channel",
+        "conversation-design"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "domain-chatbot-design",
+        "llm-output-design",
+        "flat-channel-thread-tracking",
+        "async-conversation-pacing",
+        "message-segmentation-160",
+        "thread-disambiguation-prompts",
+        "sms-context-windowing",
+        "sms-state-machine",
+        "sms-recovery-and-reentry",
+        "hard-surface-irrevocability",
+        "conversation-memory"
+      ]
+    },
+    {
+      "id": "sms-recovery-and-reentry",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/sms-recovery-and-reentry.md",
+      "title": "SMS Recovery & Re-entry",
+      "summary": "five recovery scenarios; not \\\"sorry, could you clarify?\\\"",
+      "tags": [
+        "sms",
+        "chatbot",
+        "recovery",
+        "repair",
+        "multi-thread"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "sms-multi-thread-chatbot"
+      ],
+      "source_thread": null,
+      "related": [
+        "sms-multi-thread-chatbot",
+        "flat-channel-thread-tracking",
+        "thread-disambiguation-prompts",
+        "async-conversation-pacing",
+        "repair-and-clarification",
+        "sms-state-machine"
+      ]
+    },
+    {
+      "id": "sms-state-machine",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/sms-state-machine.md",
+      "title": "SMS Thread State Machine",
+      "summary": "five states per thread; the durable substrate.",
+      "tags": [
+        "sms",
+        "chatbot",
+        "state-machine",
+        "multi-thread",
+        "infrastructure"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "sms-multi-thread-chatbot"
+      ],
+      "source_thread": null,
+      "related": [
+        "sms-multi-thread-chatbot",
+        "flat-channel-thread-tracking",
+        "async-conversation-pacing",
+        "sms-context-windowing",
+        "action-authority",
+        "conversation-memory"
+      ]
+    },
+    {
+      "id": "spender-agent",
+      "type": "project",
+      "kind": "product",
+      "path": "nodes/projects/spender-agent.md",
+      "title": "Spender Agent \u2014 Product Spec",
+      "summary": "task agent that documents transactions by maintaining an EA-grade model of the principal's economic life. Two-loop architecture (slow context model + fast event handling) over a universal-context primitive; AI-proposes / user-corrects authority. (`kind: product`.)",
+      "tags": [
+        "task-agent",
+        "decision-engine",
+        "expense-documentation",
+        "ea-workflow",
+        "design"
+      ],
+      "status": "proposal",
+      "created": "2026-06-09",
+      "clusters": [],
+      "source_thread": "2026-06-09-spender-agent-ea-workflow",
+      "related": [
+        "task-agent-pattern",
+        "decision-engine-contract",
+        "engine-vs-conversation-routing",
+        "decision-audit-trail",
+        "forced-tool-call-output",
+        "sms-multi-thread-chatbot",
+        "flat-channel-thread-tracking",
+        "thread-disambiguation-prompts",
+        "hard-surface-irrevocability",
+        "operator-trust-injection",
+        "grounding-and-citation"
+      ]
+    },
+    {
+      "id": "streaming-vs-structured",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/streaming-vs-structured.md",
+      "title": "Streaming vs. Structured Output",
+      "summary": "token-by-token UX vs. structured output trade-off.",
+      "tags": [
+        "llm",
+        "output",
+        "streaming",
+        "ux",
+        "structured-output"
+      ],
+      "status": "living",
+      "created": "2026-06-07",
+      "clusters": [
+        "llm-output-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-output-design",
+        "forced-tool-call-output",
+        "schema-vs-validator"
+      ]
+    },
+    {
+      "id": "task-agent-pattern",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/task-agent-pattern.md",
+      "title": "Task-Agent Pattern",
+      "summary": "engine-primary framing where chat is one surface among several.",
+      "tags": [
+        "task-agent",
+        "decision-engine",
+        "agents",
+        "architecture"
+      ],
+      "status": "living",
+      "created": "2026-06-09",
+      "clusters": [],
+      "source_thread": "2026-06-09-task-agent-pattern",
+      "related": [
+        "domain-chatbot-design",
+        "llm-output-design",
+        "llm-evaluation",
+        "decision-engine-contract",
+        "engine-vs-conversation-routing",
+        "decision-audit-trail",
+        "output-surface-taxonomy",
+        "forced-tool-call-output"
+      ]
+    },
+    {
+      "id": "task-agent-pattern-fanout",
+      "type": "project",
+      "kind": "spec",
+      "path": "nodes/projects/task-agent-pattern-fanout.md",
+      "title": "Task-Agent Pattern Fan-Out \u2014 Design Spec",
+      "summary": "engine-primary framing where chat is one surface among several.",
+      "tags": [
+        "task-agent",
+        "decision-engine",
+        "fan-out",
+        "design",
+        "proposal"
+      ],
+      "status": "archived",
+      "created": "2026-06-09",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "domain-chatbot-design",
+        "llm-output-design",
+        "llm-evaluation",
+        "forced-tool-call-output",
+        "output-surface-taxonomy"
+      ]
+    },
+    {
+      "id": "template-rendered-output",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/template-rendered-output.md",
+      "title": "Template-Rendered Output",
+      "summary": "stricter sibling: classifier picks a tool, code-owned templates render the reply.",
+      "tags": [
+        "chatbot",
+        "output",
+        "schema",
+        "templates",
+        "classifier",
+        "deterministic"
+      ],
+      "status": "living",
+      "created": "2026-06-09",
+      "clusters": [
+        "llm-output-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-output-design",
+        "forced-tool-call-output",
+        "schema-vs-validator",
+        "layered-defense-pipeline",
+        "hard-surface-irrevocability",
+        "output-surface-taxonomy",
+        "persona-tone-compliance"
+      ]
+    },
+    {
+      "id": "test-pyramid-llm",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/test-pyramid-llm.md",
+      "title": "Test Pyramid for LLM Apps",
+      "summary": "porting the classic pyramid to LLM apps.",
+      "tags": [
+        "eval",
+        "testing",
+        "pyramid"
+      ],
+      "status": "living",
+      "created": "2026-06-05",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "llm-as-judge",
+        "cost-aware-eval",
+        "golden-snapshot-eval",
+        "agent-eval-case-study"
+      ]
+    },
+    {
+      "id": "thread-disambiguation-prompts",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/thread-disambiguation-prompts.md",
+      "title": "Thread Disambiguation Prompts",
+      "summary": "how to ask \\\"which thread?\\\" in 160 chars.",
+      "tags": [
+        "sms",
+        "chatbot",
+        "disambiguation",
+        "multi-thread",
+        "ux"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "sms-multi-thread-chatbot"
+      ],
+      "source_thread": null,
+      "related": [
+        "sms-multi-thread-chatbot",
+        "flat-channel-thread-tracking",
+        "intent-and-disambiguation",
+        "message-segmentation-160",
+        "repair-and-clarification"
+      ]
+    },
+    {
+      "id": "truncated-pyramid-results",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/truncated-pyramid-results.md",
+      "title": "Truncated-Pyramid Results",
+      "summary": "summary first, select-N exemplars, refinement buttons (NN/g).",
+      "tags": [
+        "chatbot",
+        "ux",
+        "pagination",
+        "progressive-disclosure",
+        "results"
+      ],
+      "status": "living",
+      "created": "2026-06-09",
+      "clusters": [
+        "chatbot-pagination"
+      ],
+      "source_thread": null,
+      "related": [
+        "chatbot-pagination",
+        "paginated-tool-contract",
+        "turn-taking-and-proactivity",
+        "domain-chatbot-design"
+      ]
+    },
+    {
+      "id": "turn-taking-and-proactivity",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/turn-taking-and-proactivity.md",
+      "title": "Turn-Taking & Proactivity",
+      "summary": "initiative, long operations, closing.",
+      "tags": [
+        "chatbot",
+        "conversation-design",
+        "turn-taking",
+        "proactivity",
+        "ux"
+      ],
+      "status": "living",
+      "created": "2026-06-08",
+      "clusters": [
+        "domain-chatbot-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "domain-chatbot-design",
+        "repair-and-clarification",
+        "escalation-handoff",
+        "intent-and-disambiguation"
+      ]
+    },
+    {
+      "id": "worked-example-anthropic-thinking",
+      "type": "project",
+      "kind": "worked-example",
+      "path": "nodes/projects/worked-example-anthropic-thinking.md",
+      "title": "Worked Example \u2014 Reading Reasoning from Anthropic Models",
+      "summary": "Python code: capturing reasoning, signature continuity, forced-tool-call constraint, hidden billing.",
+      "tags": [
+        "worked-example",
+        "anthropic",
+        "code",
+        "thinking",
+        "observability"
+      ],
+      "status": "living",
+      "created": "2026-06-10",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "cot-as-forensic-artifact",
+        "llm-observability",
+        "native-thinking-vs-prompted-reasoning",
+        "decision-audit-trail",
+        "forced-tool-call-output"
+      ]
+    },
+    {
+      "id": "worked-example-openai-responses",
+      "type": "project",
+      "kind": "worked-example",
+      "path": "nodes/projects/worked-example-openai-responses.md",
+      "title": "Worked Example \u2014 Reading Reasoning from OpenAI Models",
+      "summary": "Python code: Responses API, server-stateful + stateless multi-turn, `incomplete:max_output_tokens` handling.",
+      "tags": [
+        "worked-example",
+        "openai",
+        "code",
+        "reasoning",
+        "observability"
+      ],
+      "status": "living",
+      "created": "2026-06-10",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "cot-as-forensic-artifact",
+        "llm-observability",
+        "native-thinking-vs-prompted-reasoning",
+        "decision-audit-trail",
+        "worked-example-anthropic-thinking"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "2026-06-05-eval-analysis",
+      "to": "agent-eval-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-05-eval-analysis",
+      "to": "agent-eval-improvement-tiers",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-05-eval-analysis",
+      "to": "references-eval-reading-list",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-07-forced-tool-call-fan-out",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-07-forced-tool-call-fan-out",
+      "to": "hard-surface-irrevocability",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-07-forced-tool-call-fan-out",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-07-forced-tool-call-fan-out",
+      "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-07-forced-tool-call-fan-out",
+      "to": "schema-vs-validator",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-07-forced-tool-call-fan-out",
+      "to": "streaming-vs-structured",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-domain-chatbot-fan-out",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-domain-chatbot-fan-out",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-domain-chatbot-fan-out",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-domain-chatbot-fan-out",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-domain-chatbot-fan-out",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-domain-chatbot-fan-out",
+      "to": "grounding-and-citation",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-domain-chatbot-fan-out",
+      "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-domain-chatbot-fan-out",
+      "to": "persona-tone-compliance",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-domain-chatbot-fan-out",
+      "to": "repair-and-clarification",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-domain-chatbot-fan-out",
+      "to": "safety-rails-domain-specific",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-domain-chatbot-fan-out",
+      "to": "scope-and-refusal",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-domain-chatbot-fan-out",
+      "to": "turn-taking-and-proactivity",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-domain-chatbot-research",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-domain-chatbot-research",
+      "to": "references-domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-domain-chatbot-research",
+      "to": "references-eval-reading-list",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-sms-multi-thread-fan-out",
+      "to": "async-conversation-pacing",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-sms-multi-thread-fan-out",
+      "to": "flat-channel-thread-tracking",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-sms-multi-thread-fan-out",
+      "to": "message-segmentation-160",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-sms-multi-thread-fan-out",
+      "to": "sms-context-windowing",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-sms-multi-thread-fan-out",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-sms-multi-thread-fan-out",
+      "to": "sms-recovery-and-reentry",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-sms-multi-thread-fan-out",
+      "to": "sms-state-machine",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-08-sms-multi-thread-fan-out",
+      "to": "thread-disambiguation-prompts",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-chatbot-pagination-research",
+      "to": "chatbot-pagination",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-chatbot-pagination-research",
+      "to": "code-execution-sandbox-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-chatbot-pagination-research",
+      "to": "paginated-tool-contract",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-chatbot-pagination-research",
+      "to": "references-chatbot-pagination",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-chatbot-pagination-research",
+      "to": "truncated-pyramid-results",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-dspy-domain-chatbot-research",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-dspy-domain-chatbot-research",
+      "to": "dspy-domain-chatbot-cases",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-dspy-domain-chatbot-research",
+      "to": "references-domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-ikki-forced-tool-calling",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-ikki-forced-tool-calling",
+      "to": "layered-defense-pipeline",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-ikki-forced-tool-calling",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-ikki-forced-tool-calling",
+      "to": "references-domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-ikki-forced-tool-calling",
+      "to": "template-rendered-output",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-operator-trust-injection",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-operator-trust-injection",
+      "to": "layered-defense-pipeline",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-operator-trust-injection",
+      "to": "operator-trust-injection",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-operator-trust-injection",
+      "to": "recency-bias-prompt-design",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-reasoning-mode-research",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-reasoning-mode-research",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-reasoning-mode-research",
+      "to": "native-thinking-vs-prompted-reasoning",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-reasoning-mode-research",
+      "to": "operator-trust-injection",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-spender-agent-ea-workflow",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-spender-agent-ea-workflow",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-spender-agent-ea-workflow",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-spender-agent-ea-workflow",
+      "to": "spender-agent",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-spender-agent-ea-workflow",
+      "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-task-agent-pattern",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-task-agent-pattern",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-task-agent-pattern",
+      "to": "engine-vs-conversation-routing",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-task-agent-pattern",
+      "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-09-task-agent-pattern",
+      "to": "task-agent-pattern-fanout",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-github-buffering-references",
+      "to": "2026-06-10-sms-message-buffering-research",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-github-buffering-references",
+      "to": "sms-message-buffering-plan",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-github-buffering-references",
+      "to": "sms-message-buffering-spec",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-llm-observability-research",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-llm-observability-research",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-llm-observability-research",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-llm-observability-research",
+      "to": "native-thinking-vs-prompted-reasoning",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-llm-observability-research",
+      "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-reasoning-rationale-research",
+      "to": "cot-as-forensic-artifact",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-reasoning-rationale-research",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-reasoning-rationale-research",
+      "to": "worked-example-anthropic-thinking",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-reasoning-rationale-research",
+      "to": "worked-example-openai-responses",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-sms-message-buffering-research",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-sms-message-buffering-research",
+      "to": "sms-message-buffering-spec",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-sms-message-buffering-research",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-10-sms-message-buffering-research",
+      "to": "sms-state-machine",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-11-knowledge-graph-organization-review",
+      "to": "knowledge-graph-index-builder-spec",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-11-text-eot-classifier-salvage",
+      "to": "2026-06-10-github-buffering-references",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-11-text-eot-classifier-salvage",
+      "to": "2026-06-10-sms-message-buffering-research",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-11-text-eot-classifier-salvage",
+      "to": "sms-message-buffering-plan",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-11-text-eot-classifier-salvage",
+      "to": "sms-message-buffering-spec",
+      "kind": "related"
+    },
+    {
+      "from": "action-authority",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "action-authority",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "action-authority",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "action-authority",
+      "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "action-authority",
+      "to": "safety-rails-domain-specific",
+      "kind": "related"
+    },
+    {
+      "from": "adversarial-eval",
+      "to": "agent-eval-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "adversarial-eval",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "agent-eval-case-study",
+      "to": "2026-06-05-eval-analysis",
+      "kind": "source-thread"
+    },
+    {
+      "from": "agent-eval-case-study",
+      "to": "adversarial-eval",
+      "kind": "related"
+    },
+    {
+      "from": "agent-eval-case-study",
+      "to": "agent-eval-improvement-tiers",
+      "kind": "related"
+    },
+    {
+      "from": "agent-eval-case-study",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "agent-eval-case-study",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "agent-eval-case-study",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "agent-eval-case-study",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "agent-eval-case-study",
+      "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
+      "from": "agent-eval-case-study",
+      "to": "test-pyramid-llm",
+      "kind": "related"
+    },
+    {
+      "from": "agent-eval-improvement-tiers",
+      "to": "2026-06-05-eval-analysis",
+      "kind": "source-thread"
+    },
+    {
+      "from": "agent-eval-improvement-tiers",
+      "to": "adversarial-eval",
+      "kind": "related"
+    },
+    {
+      "from": "agent-eval-improvement-tiers",
+      "to": "agent-eval-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "agent-eval-improvement-tiers",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "agent-eval-improvement-tiers",
+      "to": "golden-snapshot-eval",
+      "kind": "related"
+    },
+    {
+      "from": "agent-eval-improvement-tiers",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "agent-eval-improvement-tiers",
+      "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
+      "from": "agent-eval-improvement-tiers",
+      "to": "test-pyramid-llm",
+      "kind": "related"
+    },
+    {
+      "from": "agent-trajectory-eval",
+      "to": "agent-eval-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "agent-trajectory-eval",
+      "to": "golden-snapshot-eval",
+      "kind": "related"
+    },
+    {
+      "from": "agent-trajectory-eval",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "agent-trajectory-eval",
+      "to": "test-pyramid-llm",
+      "kind": "related"
+    },
+    {
+      "from": "async-conversation-pacing",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "async-conversation-pacing",
+      "to": "sms-recovery-and-reentry",
+      "kind": "related"
+    },
+    {
+      "from": "async-conversation-pacing",
+      "to": "sms-state-machine",
+      "kind": "related"
+    },
+    {
+      "from": "async-conversation-pacing",
+      "to": "turn-taking-and-proactivity",
+      "kind": "related"
+    },
+    {
+      "from": "chatbot-pagination",
+      "to": "2026-06-09-chatbot-pagination-research",
+      "kind": "source-thread"
+    },
+    {
+      "from": "chatbot-pagination",
+      "to": "code-execution-sandbox-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "chatbot-pagination",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "chatbot-pagination",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "chatbot-pagination",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "chatbot-pagination",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "chatbot-pagination",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "chatbot-pagination",
+      "to": "paginated-tool-contract",
+      "kind": "related"
+    },
+    {
+      "from": "chatbot-pagination",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "chatbot-pagination",
+      "to": "truncated-pyramid-results",
+      "kind": "related"
+    },
+    {
+      "from": "code-execution-sandbox-pattern",
+      "to": "chatbot-pagination",
+      "kind": "related"
+    },
+    {
+      "from": "code-execution-sandbox-pattern",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "code-execution-sandbox-pattern",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "code-execution-sandbox-pattern",
+      "to": "paginated-tool-contract",
+      "kind": "related"
+    },
+    {
+      "from": "code-execution-sandbox-pattern",
+      "to": "truncated-pyramid-results",
+      "kind": "related"
+    },
+    {
+      "from": "conversation-memory",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "conversation-memory",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "conversation-memory",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "conversation-memory",
+      "to": "repair-and-clarification",
+      "kind": "related"
+    },
+    {
+      "from": "conversation-memory",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "cost-aware-eval",
+      "to": "agent-eval-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "cost-aware-eval",
+      "to": "chatbot-pagination",
+      "kind": "related"
+    },
+    {
+      "from": "cost-aware-eval",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "cost-aware-eval",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "cost-aware-eval",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "cost-aware-eval",
+      "to": "test-pyramid-llm",
+      "kind": "related"
+    },
+    {
+      "from": "cot-as-forensic-artifact",
+      "to": "2026-06-10-reasoning-rationale-research",
+      "kind": "source-thread"
+    },
+    {
+      "from": "cot-as-forensic-artifact",
+      "to": "adversarial-eval",
+      "kind": "related"
+    },
+    {
+      "from": "cot-as-forensic-artifact",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "cot-as-forensic-artifact",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "cot-as-forensic-artifact",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "cot-as-forensic-artifact",
+      "to": "native-thinking-vs-prompted-reasoning",
+      "kind": "related"
+    },
+    {
+      "from": "cot-as-forensic-artifact",
+      "to": "safety-rails-domain-specific",
+      "kind": "related"
+    },
+    {
+      "from": "decision-audit-trail",
+      "to": "agent-eval-improvement-tiers",
+      "kind": "related"
+    },
+    {
+      "from": "decision-audit-trail",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "decision-audit-trail",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "decision-audit-trail",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "decision-audit-trail",
+      "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
+      "from": "decision-audit-trail",
+      "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "decision-engine-contract",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "decision-engine-contract",
+      "to": "engine-vs-conversation-routing",
+      "kind": "related"
+    },
+    {
+      "from": "decision-engine-contract",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "decision-engine-contract",
+      "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "decision-engine-contract",
+      "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "decision-engine-contract",
+      "to": "template-rendered-output",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
+      "to": "grounding-and-citation",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
+      "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
+      "to": "operator-trust-injection",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
+      "to": "persona-tone-compliance",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
+      "to": "recency-bias-prompt-design",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
+      "to": "repair-and-clarification",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
+      "to": "safety-rails-domain-specific",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
+      "to": "scope-and-refusal",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
+      "to": "turn-taking-and-proactivity",
+      "kind": "related"
+    },
+    {
+      "from": "domain-knowledge-injection",
+      "to": "chatbot-pagination",
+      "kind": "related"
+    },
+    {
+      "from": "domain-knowledge-injection",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "domain-knowledge-injection",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "domain-knowledge-injection",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "domain-knowledge-injection",
+      "to": "grounding-and-citation",
+      "kind": "related"
+    },
+    {
+      "from": "domain-knowledge-injection",
+      "to": "operator-trust-injection",
+      "kind": "related"
+    },
+    {
+      "from": "domain-knowledge-injection",
+      "to": "recency-bias-prompt-design",
+      "kind": "related"
+    },
+    {
+      "from": "dspy-domain-chatbot-cases",
+      "to": "2026-06-09-dspy-domain-chatbot-research",
+      "kind": "source-thread"
+    },
+    {
+      "from": "dspy-domain-chatbot-cases",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "dspy-domain-chatbot-cases",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "dspy-domain-chatbot-cases",
+      "to": "grounding-and-citation",
+      "kind": "related"
+    },
+    {
+      "from": "dspy-domain-chatbot-cases",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "dspy-domain-chatbot-cases",
+      "to": "references-domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "engine-vs-conversation-routing",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "engine-vs-conversation-routing",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "engine-vs-conversation-routing",
+      "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "engine-vs-conversation-routing",
+      "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "engine-vs-conversation-routing",
+      "to": "scope-and-refusal",
+      "kind": "related"
+    },
+    {
+      "from": "engine-vs-conversation-routing",
+      "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "escalation-handoff",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "escalation-handoff",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "escalation-handoff",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "escalation-handoff",
+      "to": "safety-rails-domain-specific",
+      "kind": "related"
+    },
+    {
+      "from": "escalation-handoff",
+      "to": "scope-and-refusal",
+      "kind": "related"
+    },
+    {
+      "from": "flat-channel-thread-tracking",
+      "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "flat-channel-thread-tracking",
+      "to": "sms-context-windowing",
+      "kind": "related"
+    },
+    {
+      "from": "flat-channel-thread-tracking",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "flat-channel-thread-tracking",
+      "to": "sms-state-machine",
+      "kind": "related"
+    },
+    {
+      "from": "flat-channel-thread-tracking",
+      "to": "thread-disambiguation-prompts",
+      "kind": "related"
+    },
+    {
+      "from": "forced-tool-call-output",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "forced-tool-call-output",
+      "to": "chatbot-pagination",
+      "kind": "related"
+    },
+    {
+      "from": "forced-tool-call-output",
+      "to": "hard-surface-irrevocability",
+      "kind": "related"
+    },
+    {
+      "from": "forced-tool-call-output",
+      "to": "layered-defense-pipeline",
+      "kind": "related"
+    },
+    {
+      "from": "forced-tool-call-output",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "forced-tool-call-output",
+      "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "forced-tool-call-output",
+      "to": "schema-vs-validator",
+      "kind": "related"
+    },
+    {
+      "from": "forced-tool-call-output",
+      "to": "streaming-vs-structured",
+      "kind": "related"
+    },
+    {
+      "from": "forced-tool-call-output",
+      "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "forced-tool-call-output",
+      "to": "template-rendered-output",
+      "kind": "related"
+    },
+    {
+      "from": "golden-snapshot-eval",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "golden-snapshot-eval",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "golden-snapshot-eval",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "golden-snapshot-eval",
+      "to": "test-pyramid-llm",
+      "kind": "related"
+    },
+    {
+      "from": "grounding-and-citation",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "grounding-and-citation",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "grounding-and-citation",
+      "to": "safety-rails-domain-specific",
+      "kind": "related"
+    },
+    {
+      "from": "grounding-and-citation",
+      "to": "scope-and-refusal",
+      "kind": "related"
+    },
+    {
+      "from": "hard-surface-irrevocability",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "hard-surface-irrevocability",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "hard-surface-irrevocability",
+      "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "hard-surface-irrevocability",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "intent-and-disambiguation",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "intent-and-disambiguation",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "intent-and-disambiguation",
+      "to": "repair-and-clarification",
+      "kind": "related"
+    },
+    {
+      "from": "intent-and-disambiguation",
+      "to": "scope-and-refusal",
+      "kind": "related"
+    },
+    {
+      "from": "knowledge-graph-index-builder-plan",
+      "to": "2026-06-11-knowledge-graph-organization-review",
+      "kind": "related"
+    },
+    {
+      "from": "knowledge-graph-index-builder-plan",
+      "to": "knowledge-graph-index-builder-spec",
+      "kind": "related"
+    },
+    {
+      "from": "knowledge-graph-index-builder-spec",
+      "to": "2026-06-11-knowledge-graph-organization-review",
+      "kind": "related"
+    },
+    {
+      "from": "layered-defense-pipeline",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "layered-defense-pipeline",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "layered-defense-pipeline",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "layered-defense-pipeline",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "layered-defense-pipeline",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "layered-defense-pipeline",
+      "to": "safety-rails-domain-specific",
+      "kind": "related"
+    },
+    {
+      "from": "layered-defense-pipeline",
+      "to": "template-rendered-output",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-judge",
+      "to": "agent-eval-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-judge",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-judge",
+      "to": "layered-defense-pipeline",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-judge",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-judge",
+      "to": "test-pyramid-llm",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "adversarial-eval",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "agent-eval-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "golden-snapshot-eval",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "test-pyramid-llm",
+      "kind": "related"
+    },
+    {
+      "from": "llm-observability",
+      "to": "2026-06-10-llm-observability-research",
+      "kind": "source-thread"
+    },
+    {
+      "from": "llm-observability",
+      "to": "agent-eval-improvement-tiers",
+      "kind": "related"
+    },
+    {
+      "from": "llm-observability",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "llm-observability",
+      "to": "cot-as-forensic-artifact",
+      "kind": "related"
+    },
+    {
+      "from": "llm-observability",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "llm-observability",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "llm-observability",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "llm-observability",
+      "to": "native-thinking-vs-prompted-reasoning",
+      "kind": "related"
+    },
+    {
+      "from": "llm-observability",
+      "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
+      "from": "llm-output-design",
+      "to": "cot-as-forensic-artifact",
+      "kind": "related"
+    },
+    {
+      "from": "llm-output-design",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "llm-output-design",
+      "to": "hard-surface-irrevocability",
+      "kind": "related"
+    },
+    {
+      "from": "llm-output-design",
+      "to": "layered-defense-pipeline",
+      "kind": "related"
+    },
+    {
+      "from": "llm-output-design",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "llm-output-design",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "llm-output-design",
+      "to": "native-thinking-vs-prompted-reasoning",
+      "kind": "related"
+    },
+    {
+      "from": "llm-output-design",
+      "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "llm-output-design",
+      "to": "schema-vs-validator",
+      "kind": "related"
+    },
+    {
+      "from": "llm-output-design",
+      "to": "streaming-vs-structured",
+      "kind": "related"
+    },
+    {
+      "from": "llm-output-design",
+      "to": "template-rendered-output",
+      "kind": "related"
+    },
+    {
+      "from": "message-segmentation-160",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "message-segmentation-160",
+      "to": "hard-surface-irrevocability",
+      "kind": "related"
+    },
+    {
+      "from": "message-segmentation-160",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "native-thinking-vs-prompted-reasoning",
+      "to": "2026-06-09-reasoning-mode-research",
+      "kind": "source-thread"
+    },
+    {
+      "from": "native-thinking-vs-prompted-reasoning",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "native-thinking-vs-prompted-reasoning",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "native-thinking-vs-prompted-reasoning",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "native-thinking-vs-prompted-reasoning",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "native-thinking-vs-prompted-reasoning",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "native-thinking-vs-prompted-reasoning",
+      "to": "operator-trust-injection",
+      "kind": "related"
+    },
+    {
+      "from": "native-thinking-vs-prompted-reasoning",
+      "to": "recency-bias-prompt-design",
+      "kind": "related"
+    },
+    {
+      "from": "operator-trust-injection",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "operator-trust-injection",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "operator-trust-injection",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "operator-trust-injection",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "operator-trust-injection",
+      "to": "layered-defense-pipeline",
+      "kind": "related"
+    },
+    {
+      "from": "operator-trust-injection",
+      "to": "native-thinking-vs-prompted-reasoning",
+      "kind": "related"
+    },
+    {
+      "from": "operator-trust-injection",
+      "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "operator-trust-injection",
+      "to": "recency-bias-prompt-design",
+      "kind": "related"
+    },
+    {
+      "from": "output-surface-taxonomy",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "output-surface-taxonomy",
+      "to": "hard-surface-irrevocability",
+      "kind": "related"
+    },
+    {
+      "from": "output-surface-taxonomy",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "output-surface-taxonomy",
+      "to": "schema-vs-validator",
+      "kind": "related"
+    },
+    {
+      "from": "output-surface-taxonomy",
+      "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "paginated-tool-contract",
+      "to": "chatbot-pagination",
+      "kind": "related"
+    },
+    {
+      "from": "paginated-tool-contract",
+      "to": "code-execution-sandbox-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "paginated-tool-contract",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "paginated-tool-contract",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "paginated-tool-contract",
+      "to": "truncated-pyramid-results",
+      "kind": "related"
+    },
+    {
+      "from": "persona-tone-compliance",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "persona-tone-compliance",
+      "to": "grounding-and-citation",
+      "kind": "related"
+    },
+    {
+      "from": "persona-tone-compliance",
+      "to": "safety-rails-domain-specific",
+      "kind": "related"
+    },
+    {
+      "from": "persona-tone-compliance",
+      "to": "scope-and-refusal",
+      "kind": "related"
+    },
+    {
+      "from": "prod-shadow-replay",
+      "to": "agent-eval-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "prod-shadow-replay",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "prod-shadow-replay",
+      "to": "test-pyramid-llm",
+      "kind": "related"
+    },
+    {
+      "from": "recency-bias-prompt-design",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "recency-bias-prompt-design",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "recency-bias-prompt-design",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "recency-bias-prompt-design",
+      "to": "layered-defense-pipeline",
+      "kind": "related"
+    },
+    {
+      "from": "recency-bias-prompt-design",
+      "to": "operator-trust-injection",
+      "kind": "related"
+    },
+    {
+      "from": "references-chatbot-pagination",
+      "to": "chatbot-pagination",
+      "kind": "related"
+    },
+    {
+      "from": "references-chatbot-pagination",
+      "to": "code-execution-sandbox-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "references-chatbot-pagination",
+      "to": "paginated-tool-contract",
+      "kind": "related"
+    },
+    {
+      "from": "references-chatbot-pagination",
+      "to": "truncated-pyramid-results",
+      "kind": "related"
+    },
+    {
+      "from": "references-domain-chatbot-design",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "references-domain-chatbot-design",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "references-domain-chatbot-design",
+      "to": "grounding-and-citation",
+      "kind": "related"
+    },
+    {
+      "from": "references-domain-chatbot-design",
+      "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "references-domain-chatbot-design",
+      "to": "persona-tone-compliance",
+      "kind": "related"
+    },
+    {
+      "from": "references-domain-chatbot-design",
+      "to": "references-eval-reading-list",
+      "kind": "related"
+    },
+    {
+      "from": "references-domain-chatbot-design",
+      "to": "safety-rails-domain-specific",
+      "kind": "related"
+    },
+    {
+      "from": "references-domain-chatbot-design",
+      "to": "scope-and-refusal",
+      "kind": "related"
+    },
+    {
+      "from": "references-domain-chatbot-design",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "references-eval-reading-list",
+      "to": "adversarial-eval",
+      "kind": "related"
+    },
+    {
+      "from": "references-eval-reading-list",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "references-eval-reading-list",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "references-eval-reading-list",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "references-eval-reading-list",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "references-eval-reading-list",
+      "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
+      "from": "references-eval-reading-list",
+      "to": "test-pyramid-llm",
+      "kind": "related"
+    },
+    {
+      "from": "repair-and-clarification",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "repair-and-clarification",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "repair-and-clarification",
+      "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "repair-and-clarification",
+      "to": "turn-taking-and-proactivity",
+      "kind": "related"
+    },
+    {
+      "from": "safety-rails-domain-specific",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "safety-rails-domain-specific",
+      "to": "adversarial-eval",
+      "kind": "related"
+    },
+    {
+      "from": "safety-rails-domain-specific",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "safety-rails-domain-specific",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "safety-rails-domain-specific",
+      "to": "persona-tone-compliance",
+      "kind": "related"
+    },
+    {
+      "from": "safety-rails-domain-specific",
+      "to": "scope-and-refusal",
+      "kind": "related"
+    },
+    {
+      "from": "schema-vs-validator",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "schema-vs-validator",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "schema-vs-validator",
+      "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "schema-vs-validator",
+      "to": "streaming-vs-structured",
+      "kind": "related"
+    },
+    {
+      "from": "scope-and-refusal",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "scope-and-refusal",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "scope-and-refusal",
+      "to": "grounding-and-citation",
+      "kind": "related"
+    },
+    {
+      "from": "scope-and-refusal",
+      "to": "safety-rails-domain-specific",
+      "kind": "related"
+    },
+    {
+      "from": "sms-context-windowing",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "sms-context-windowing",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "sms-context-windowing",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "sms-context-windowing",
+      "to": "flat-channel-thread-tracking",
+      "kind": "related"
+    },
+    {
+      "from": "sms-context-windowing",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "sms-context-windowing",
+      "to": "sms-state-machine",
+      "kind": "related"
+    },
+    {
+      "from": "sms-message-buffering-plan",
+      "to": "2026-06-10-sms-message-buffering-research",
+      "kind": "source-thread"
+    },
+    {
+      "from": "sms-message-buffering-plan",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "sms-message-buffering-plan",
+      "to": "flat-channel-thread-tracking",
+      "kind": "related"
+    },
+    {
+      "from": "sms-message-buffering-plan",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "sms-message-buffering-plan",
+      "to": "sms-message-buffering-spec",
+      "kind": "related"
+    },
+    {
+      "from": "sms-message-buffering-plan",
+      "to": "sms-state-machine",
+      "kind": "related"
+    },
+    {
+      "from": "sms-message-buffering-spec",
+      "to": "2026-06-10-sms-message-buffering-research",
+      "kind": "source-thread"
+    },
+    {
+      "from": "sms-message-buffering-spec",
+      "to": "async-conversation-pacing",
+      "kind": "related"
+    },
+    {
+      "from": "sms-message-buffering-spec",
+      "to": "cot-as-forensic-artifact",
+      "kind": "related"
+    },
+    {
+      "from": "sms-message-buffering-spec",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "sms-message-buffering-spec",
+      "to": "flat-channel-thread-tracking",
+      "kind": "related"
+    },
+    {
+      "from": "sms-message-buffering-spec",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "sms-message-buffering-spec",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "sms-message-buffering-spec",
+      "to": "sms-recovery-and-reentry",
+      "kind": "related"
+    },
+    {
+      "from": "sms-message-buffering-spec",
+      "to": "sms-state-machine",
+      "kind": "related"
+    },
+    {
+      "from": "sms-multi-thread-chatbot",
+      "to": "async-conversation-pacing",
+      "kind": "related"
+    },
+    {
+      "from": "sms-multi-thread-chatbot",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "sms-multi-thread-chatbot",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "sms-multi-thread-chatbot",
+      "to": "flat-channel-thread-tracking",
+      "kind": "related"
+    },
+    {
+      "from": "sms-multi-thread-chatbot",
+      "to": "hard-surface-irrevocability",
+      "kind": "related"
+    },
+    {
+      "from": "sms-multi-thread-chatbot",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "sms-multi-thread-chatbot",
+      "to": "message-segmentation-160",
+      "kind": "related"
+    },
+    {
+      "from": "sms-multi-thread-chatbot",
+      "to": "sms-context-windowing",
+      "kind": "related"
+    },
+    {
+      "from": "sms-multi-thread-chatbot",
+      "to": "sms-recovery-and-reentry",
+      "kind": "related"
+    },
+    {
+      "from": "sms-multi-thread-chatbot",
+      "to": "sms-state-machine",
+      "kind": "related"
+    },
+    {
+      "from": "sms-multi-thread-chatbot",
+      "to": "thread-disambiguation-prompts",
+      "kind": "related"
+    },
+    {
+      "from": "sms-recovery-and-reentry",
+      "to": "async-conversation-pacing",
+      "kind": "related"
+    },
+    {
+      "from": "sms-recovery-and-reentry",
+      "to": "flat-channel-thread-tracking",
+      "kind": "related"
+    },
+    {
+      "from": "sms-recovery-and-reentry",
+      "to": "repair-and-clarification",
+      "kind": "related"
+    },
+    {
+      "from": "sms-recovery-and-reentry",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "sms-recovery-and-reentry",
+      "to": "sms-state-machine",
+      "kind": "related"
+    },
+    {
+      "from": "sms-recovery-and-reentry",
+      "to": "thread-disambiguation-prompts",
+      "kind": "related"
+    },
+    {
+      "from": "sms-state-machine",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "sms-state-machine",
+      "to": "async-conversation-pacing",
+      "kind": "related"
+    },
+    {
+      "from": "sms-state-machine",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "sms-state-machine",
+      "to": "flat-channel-thread-tracking",
+      "kind": "related"
+    },
+    {
+      "from": "sms-state-machine",
+      "to": "sms-context-windowing",
+      "kind": "related"
+    },
+    {
+      "from": "sms-state-machine",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "spender-agent",
+      "to": "2026-06-09-spender-agent-ea-workflow",
+      "kind": "source-thread"
+    },
+    {
+      "from": "spender-agent",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "spender-agent",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "spender-agent",
+      "to": "engine-vs-conversation-routing",
+      "kind": "related"
+    },
+    {
+      "from": "spender-agent",
+      "to": "flat-channel-thread-tracking",
+      "kind": "related"
+    },
+    {
+      "from": "spender-agent",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "spender-agent",
+      "to": "grounding-and-citation",
+      "kind": "related"
+    },
+    {
+      "from": "spender-agent",
+      "to": "hard-surface-irrevocability",
+      "kind": "related"
+    },
+    {
+      "from": "spender-agent",
+      "to": "operator-trust-injection",
+      "kind": "related"
+    },
+    {
+      "from": "spender-agent",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "spender-agent",
+      "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "spender-agent",
+      "to": "thread-disambiguation-prompts",
+      "kind": "related"
+    },
+    {
+      "from": "streaming-vs-structured",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "streaming-vs-structured",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "streaming-vs-structured",
+      "to": "schema-vs-validator",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "2026-06-09-task-agent-pattern",
+      "kind": "source-thread"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "engine-vs-conversation-routing",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern-fanout",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern-fanout",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern-fanout",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern-fanout",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern-fanout",
+      "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "template-rendered-output",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "template-rendered-output",
+      "to": "hard-surface-irrevocability",
+      "kind": "related"
+    },
+    {
+      "from": "template-rendered-output",
+      "to": "layered-defense-pipeline",
+      "kind": "related"
+    },
+    {
+      "from": "template-rendered-output",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "template-rendered-output",
+      "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "template-rendered-output",
+      "to": "persona-tone-compliance",
+      "kind": "related"
+    },
+    {
+      "from": "template-rendered-output",
+      "to": "schema-vs-validator",
+      "kind": "related"
+    },
+    {
+      "from": "test-pyramid-llm",
+      "to": "agent-eval-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "test-pyramid-llm",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "test-pyramid-llm",
+      "to": "golden-snapshot-eval",
+      "kind": "related"
+    },
+    {
+      "from": "test-pyramid-llm",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "test-pyramid-llm",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "thread-disambiguation-prompts",
+      "to": "flat-channel-thread-tracking",
+      "kind": "related"
+    },
+    {
+      "from": "thread-disambiguation-prompts",
+      "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "thread-disambiguation-prompts",
+      "to": "message-segmentation-160",
+      "kind": "related"
+    },
+    {
+      "from": "thread-disambiguation-prompts",
+      "to": "repair-and-clarification",
+      "kind": "related"
+    },
+    {
+      "from": "thread-disambiguation-prompts",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "truncated-pyramid-results",
+      "to": "chatbot-pagination",
+      "kind": "related"
+    },
+    {
+      "from": "truncated-pyramid-results",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "truncated-pyramid-results",
+      "to": "paginated-tool-contract",
+      "kind": "related"
+    },
+    {
+      "from": "truncated-pyramid-results",
+      "to": "turn-taking-and-proactivity",
+      "kind": "related"
+    },
+    {
+      "from": "turn-taking-and-proactivity",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "turn-taking-and-proactivity",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "turn-taking-and-proactivity",
+      "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "turn-taking-and-proactivity",
+      "to": "repair-and-clarification",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-anthropic-thinking",
+      "to": "cot-as-forensic-artifact",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-anthropic-thinking",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-anthropic-thinking",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-anthropic-thinking",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-anthropic-thinking",
+      "to": "native-thinking-vs-prompted-reasoning",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-openai-responses",
+      "to": "cot-as-forensic-artifact",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-openai-responses",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-openai-responses",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-openai-responses",
+      "to": "native-thinking-vs-prompted-reasoning",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-openai-responses",
+      "to": "worked-example-anthropic-thinking",
+      "kind": "related"
+    }
+  ]
+}

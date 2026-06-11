@@ -3,6 +3,7 @@ id: cost-aware-eval
 type: concept
 tags: [eval, cost, statistics]
 related:
+  - [[chatbot-pagination]]
   - [[llm-evaluation]]
   - [[test-pyramid-llm]]
   - [[llm-as-judge]]
