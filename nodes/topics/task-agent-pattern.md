@@ -3,6 +3,7 @@ id: task-agent-pattern
 type: topic
 tags: [task-agent, decision-engine, agents, architecture]
 related:
+  - [[multi-agent-delegation]]
   - [[agent-state-persistence]]
   - [[action-execution-safety]]
   - [[human-in-the-loop-control]]

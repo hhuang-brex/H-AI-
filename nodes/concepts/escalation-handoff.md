@@ -3,6 +3,7 @@ id: escalation-handoff
 type: concept
 tags: [chatbot, conversation-design, escalation, handoff, support]
 related:
+  - [[multi-agent-delegation]]
   - [[domain-chatbot-design]]
   - [[action-authority]]
   - [[scope-and-refusal]]

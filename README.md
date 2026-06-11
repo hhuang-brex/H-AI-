@@ -46,6 +46,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [human-in-the-loop-control](nodes/topics/human-in-the-loop-control.md) — the interaction patterns that keep a human in an agent's action loop — confirm before acting, steer mid-task, interrupt and resume.
 - [llm-evaluation](nodes/topics/llm-evaluation.md) — measuring whether LLM systems do what they should without bankrupting the team.
 - [llm-output-design](nodes/topics/llm-output-design.md) — how an LLM emits to the world; per-surface decisions.
+- [multi-agent-delegation](nodes/topics/multi-agent-delegation.md) — splitting work across sub-agents — when delegation earns its cost, how to isolate their context, and how to merge results without trusting them blindly.
 - [sms-multi-thread-chatbot](nodes/topics/sms-multi-thread-chatbot.md) — multi-thread chatbot design when the only channel is flat SMS.
 - [task-agent-pattern](nodes/topics/task-agent-pattern.md) — engine-primary framing where chat is one surface among several.
 - [task-planning](nodes/topics/task-planning.md) — turning a goal into an ordered set of actions and adapting when reality diverges from the plan.
@@ -135,6 +136,13 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [schema-vs-validator](nodes/concepts/schema-vs-validator.md) — schema-enforced output vs. free-text + post-hoc validator.
 - [streaming-vs-structured](nodes/concepts/streaming-vs-structured.md) — token-by-token UX vs. structured output trade-off.
 - [template-rendered-output](nodes/concepts/template-rendered-output.md) — stricter sibling: classifier picks a tool, code-owned templates render the reply.
+
+**[multi-agent-delegation](nodes/topics/multi-agent-delegation.md)**
+- [engine-vs-conversation-routing](nodes/concepts/engine-vs-conversation-routing.md) — when the engine handles vs. when the chat layer handles; the bridge between them.
+- [escalation-handoff](nodes/concepts/escalation-handoff.md) — when and how to hand off to a human; preserving context.
+- [result-aggregation-and-trust](nodes/concepts/result-aggregation-and-trust.md) — merging sub-agent outputs without trusting them blindly — dedup, conflict resolution, and adversarial verification of confident-but-wrong children.
+- [subagent-context-isolation](nodes/concepts/subagent-context-isolation.md) — giving a sub-agent exactly the scoped context it needs and a compact return contract — so children stay focused and don't leak state back to the parent.
+- [when-to-delegate](nodes/concepts/when-to-delegate.md) — the test for spawning a sub-agent — independent parallelism, context isolation, or adversarial separation — and why most decomposition shouldn't be agents.
 
 **[sms-multi-thread-chatbot](nodes/topics/sms-multi-thread-chatbot.md)**
 - [async-conversation-pacing](nodes/concepts/async-conversation-pacing.md) — gaps measured in days; re-anchoring; expiry; nudge policy.

@@ -4,6 +4,7 @@ type: topic
 tags: [agent, control-loop, react, orchestration, task-agent]
 summary: "the iteration that turns an LLM into an agent — perceive, reason, act, observe — plus when to stop, yield, and bound runaway."
 related:
+  - [[multi-agent-delegation]]
   - [[agent-state-persistence]]
   - [[action-execution-safety]]
   - [[human-in-the-loop-control]]

@@ -3,6 +3,7 @@ id: adversarial-eval
 type: concept
 tags: [eval, red-team, safety, adversarial]
 related:
+  - [[multi-agent-delegation]]
   - [[llm-evaluation]]
   - [[agent-eval-case-study]]
 status: living

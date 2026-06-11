@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-11",
-  "node_count": 108,
-  "edge_count": 646,
+  "node_count": 112,
+  "edge_count": 673,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -545,6 +545,7 @@
       ],
       "source_thread": null,
       "related": [
+        "multi-agent-delegation",
         "llm-evaluation",
         "agent-eval-case-study"
       ]
@@ -568,6 +569,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "multi-agent-delegation",
         "agent-state-persistence",
         "action-execution-safety",
         "human-in-the-loop-control",
@@ -1279,6 +1281,7 @@
       "status": "living",
       "created": "2026-06-09",
       "clusters": [
+        "multi-agent-delegation",
         "task-agent-pattern"
       ],
       "source_thread": null,
@@ -1308,10 +1311,12 @@
       "status": "living",
       "created": "2026-06-08",
       "clusters": [
-        "domain-chatbot-design"
+        "domain-chatbot-design",
+        "multi-agent-delegation"
       ],
       "source_thread": null,
       "related": [
+        "multi-agent-delegation",
         "domain-chatbot-design",
         "action-authority",
         "scope-and-refusal",
@@ -1871,6 +1876,36 @@
       ]
     },
     {
+      "id": "multi-agent-delegation",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/multi-agent-delegation.md",
+      "title": "Multi-Agent Delegation",
+      "summary": "splitting work across sub-agents \u2014 when delegation earns its cost, how to isolate their context, and how to merge results without trusting them blindly.",
+      "tags": [
+        "agent",
+        "multi-agent",
+        "delegation",
+        "sub-agent",
+        "orchestration",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "agent-control-loop",
+        "task-planning",
+        "context-engineering",
+        "when-to-delegate",
+        "subagent-context-isolation",
+        "result-aggregation-and-trust",
+        "escalation-handoff",
+        "engine-vs-conversation-routing"
+      ]
+    },
+    {
       "id": "native-thinking-vs-prompted-reasoning",
       "type": "concept",
       "kind": null,
@@ -2240,6 +2275,35 @@
         "intent-and-disambiguation",
         "conversation-memory",
         "turn-taking-and-proactivity"
+      ]
+    },
+    {
+      "id": "result-aggregation-and-trust",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/result-aggregation-and-trust.md",
+      "title": "Result Aggregation & Trust",
+      "summary": "merging sub-agent outputs without trusting them blindly \u2014 dedup, conflict resolution, and adversarial verification of confident-but-wrong children.",
+      "tags": [
+        "agent",
+        "multi-agent",
+        "aggregation",
+        "verification",
+        "trust",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "multi-agent-delegation"
+      ],
+      "source_thread": null,
+      "related": [
+        "multi-agent-delegation",
+        "subagent-context-isolation",
+        "adversarial-eval",
+        "llm-as-judge",
+        "grounding-and-citation"
       ]
     },
     {
@@ -2680,6 +2744,35 @@
       ]
     },
     {
+      "id": "subagent-context-isolation",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/subagent-context-isolation.md",
+      "title": "Sub-Agent Context Isolation",
+      "summary": "giving a sub-agent exactly the scoped context it needs and a compact return contract \u2014 so children stay focused and don't leak state back to the parent.",
+      "tags": [
+        "agent",
+        "multi-agent",
+        "context",
+        "isolation",
+        "prompt",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "multi-agent-delegation"
+      ],
+      "source_thread": null,
+      "related": [
+        "multi-agent-delegation",
+        "when-to-delegate",
+        "context-engineering",
+        "context-assembly-per-turn",
+        "result-aggregation-and-trust"
+      ]
+    },
+    {
       "id": "task-agent-pattern",
       "type": "topic",
       "kind": null,
@@ -2697,6 +2790,7 @@
       "clusters": [],
       "source_thread": "2026-06-09-task-agent-pattern",
       "related": [
+        "multi-agent-delegation",
         "agent-state-persistence",
         "action-execution-safety",
         "human-in-the-loop-control",
@@ -3018,6 +3112,35 @@
         "repair-and-clarification",
         "escalation-handoff",
         "intent-and-disambiguation"
+      ]
+    },
+    {
+      "id": "when-to-delegate",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/when-to-delegate.md",
+      "title": "When to Delegate",
+      "summary": "the test for spawning a sub-agent \u2014 independent parallelism, context isolation, or adversarial separation \u2014 and why most decomposition shouldn't be agents.",
+      "tags": [
+        "agent",
+        "multi-agent",
+        "delegation",
+        "cost",
+        "decision",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "multi-agent-delegation"
+      ],
+      "source_thread": null,
+      "related": [
+        "multi-agent-delegation",
+        "subagent-context-isolation",
+        "task-planning",
+        "agent-control-loop",
+        "step-budget-and-runaway-control"
       ]
     },
     {
@@ -3585,6 +3708,11 @@
       "kind": "related"
     },
     {
+      "from": "adversarial-eval",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
       "from": "agent-control-loop",
       "to": "action-execution-safety",
       "kind": "related"
@@ -3612,6 +3740,11 @@
     {
       "from": "agent-control-loop",
       "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
+      "to": "multi-agent-delegation",
       "kind": "related"
     },
     {
@@ -4476,6 +4609,11 @@
     },
     {
       "from": "escalation-handoff",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "escalation-handoff",
       "to": "safety-rails-domain-specific",
       "kind": "related"
     },
@@ -5035,6 +5173,46 @@
       "kind": "related"
     },
     {
+      "from": "multi-agent-delegation",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "multi-agent-delegation",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "multi-agent-delegation",
+      "to": "engine-vs-conversation-routing",
+      "kind": "related"
+    },
+    {
+      "from": "multi-agent-delegation",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "multi-agent-delegation",
+      "to": "result-aggregation-and-trust",
+      "kind": "related"
+    },
+    {
+      "from": "multi-agent-delegation",
+      "to": "subagent-context-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "multi-agent-delegation",
+      "to": "task-planning",
+      "kind": "related"
+    },
+    {
+      "from": "multi-agent-delegation",
+      "to": "when-to-delegate",
+      "kind": "related"
+    },
+    {
       "from": "native-thinking-vs-prompted-reasoning",
       "to": "2026-06-09-reasoning-mode-research",
       "kind": "source-thread"
@@ -5397,6 +5575,31 @@
     {
       "from": "repair-and-clarification",
       "to": "turn-taking-and-proactivity",
+      "kind": "related"
+    },
+    {
+      "from": "result-aggregation-and-trust",
+      "to": "adversarial-eval",
+      "kind": "related"
+    },
+    {
+      "from": "result-aggregation-and-trust",
+      "to": "grounding-and-citation",
+      "kind": "related"
+    },
+    {
+      "from": "result-aggregation-and-trust",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "result-aggregation-and-trust",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "result-aggregation-and-trust",
+      "to": "subagent-context-isolation",
       "kind": "related"
     },
     {
@@ -5875,6 +6078,31 @@
       "kind": "related"
     },
     {
+      "from": "subagent-context-isolation",
+      "to": "context-assembly-per-turn",
+      "kind": "related"
+    },
+    {
+      "from": "subagent-context-isolation",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "subagent-context-isolation",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "subagent-context-isolation",
+      "to": "result-aggregation-and-trust",
+      "kind": "related"
+    },
+    {
+      "from": "subagent-context-isolation",
+      "to": "when-to-delegate",
+      "kind": "related"
+    },
+    {
       "from": "task-agent-pattern",
       "to": "2026-06-09-task-agent-pattern",
       "kind": "source-thread"
@@ -5932,6 +6160,11 @@
     {
       "from": "task-agent-pattern",
       "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "multi-agent-delegation",
       "kind": "related"
     },
     {
@@ -6252,6 +6485,31 @@
     {
       "from": "turn-taking-and-proactivity",
       "to": "repair-and-clarification",
+      "kind": "related"
+    },
+    {
+      "from": "when-to-delegate",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "when-to-delegate",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "when-to-delegate",
+      "to": "step-budget-and-runaway-control",
+      "kind": "related"
+    },
+    {
+      "from": "when-to-delegate",
+      "to": "subagent-context-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "when-to-delegate",
+      "to": "task-planning",
       "kind": "related"
     },
     {
