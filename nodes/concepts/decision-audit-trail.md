@@ -3,6 +3,7 @@ id: decision-audit-trail
 type: concept
 tags: [task-agent, audit, observability, decision-engine, replay]
 related:
+  - [[agent-state-persistence]]
   - [[task-agent-pattern]]
   - [[decision-engine-contract]]
   - [[prod-shadow-replay]]

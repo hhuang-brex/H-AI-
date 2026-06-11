@@ -3,6 +3,7 @@ id: conversation-memory
 type: concept
 tags: [chatbot, conversation-design, memory, context, privacy]
 related:
+  - [[agent-state-persistence]]
   - [[context-engineering]]
   - [[sms-multi-thread-chatbot]]
   - [[domain-chatbot-design]]

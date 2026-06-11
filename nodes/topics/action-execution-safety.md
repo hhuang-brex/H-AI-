@@ -4,6 +4,7 @@ type: topic
 tags: [agent, execution, safety, idempotency, rollback, engineering-excellence]
 summary: "executing side-effecting actions safely — idempotency, dry-run preview, and rollback — so retries, crashes, and replans don't double-charge or corrupt state."
 related:
+  - [[agent-state-persistence]]
   - [[tool-use-design]]
   - [[agent-control-loop]]
   - [[idempotency-keys]]

@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-11",
-  "node_count": 104,
-  "edge_count": 617,
+  "node_count": 108,
+  "edge_count": 646,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -514,6 +514,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "agent-state-persistence",
         "tool-use-design",
         "agent-control-loop",
         "idempotency-keys",
@@ -567,6 +568,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "agent-state-persistence",
         "action-execution-safety",
         "human-in-the-loop-control",
         "task-agent-pattern",
@@ -631,6 +633,37 @@
         "cost-aware-eval",
         "golden-snapshot-eval",
         "adversarial-eval"
+      ]
+    },
+    {
+      "id": "agent-state-persistence",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/agent-state-persistence.md",
+      "title": "Agent State Persistence",
+      "summary": "the durable run state that lets an agent survive crashes, pause/resume across sessions, and recover to a consistent point \u2014 distinct from the audit log and conversation memory.",
+      "tags": [
+        "agent",
+        "state",
+        "persistence",
+        "checkpoint",
+        "resume",
+        "durability",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "agent-control-loop",
+        "action-execution-safety",
+        "run-state-model",
+        "checkpoint-and-replay",
+        "crash-recovery-consistency",
+        "decision-audit-trail",
+        "conversation-memory",
+        "interrupt-and-resume"
       ]
     },
     {
@@ -716,6 +749,35 @@
         "cost-aware-eval",
         "forced-tool-call-output",
         "sms-multi-thread-chatbot"
+      ]
+    },
+    {
+      "id": "checkpoint-and-replay",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/checkpoint-and-replay.md",
+      "title": "Checkpoint & Replay",
+      "summary": "when to write durable state \u2014 before every risky step \u2014 and how to rebuild a live run from the last checkpoint.",
+      "tags": [
+        "agent",
+        "state",
+        "checkpoint",
+        "replay",
+        "durability",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "agent-state-persistence"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-state-persistence",
+        "run-state-model",
+        "crash-recovery-consistency",
+        "idempotency-keys",
+        "prod-shadow-replay"
       ]
     },
     {
@@ -908,12 +970,14 @@
       "status": "living",
       "created": "2026-06-08",
       "clusters": [
+        "agent-state-persistence",
         "context-engineering",
         "domain-chatbot-design",
         "sms-multi-thread-chatbot"
       ],
       "source_thread": null,
       "related": [
+        "agent-state-persistence",
         "context-engineering",
         "sms-multi-thread-chatbot",
         "domain-chatbot-design",
@@ -981,6 +1045,36 @@
       ]
     },
     {
+      "id": "crash-recovery-consistency",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/crash-recovery-consistency.md",
+      "title": "Crash-Recovery Consistency",
+      "summary": "resuming after a crash that landed mid-action \u2014 using write-ahead markers to decide whether the in-flight side effect fired, and reconciling to a consistent state.",
+      "tags": [
+        "agent",
+        "state",
+        "recovery",
+        "consistency",
+        "crash",
+        "idempotency",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "agent-state-persistence"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-state-persistence",
+        "checkpoint-and-replay",
+        "idempotency-keys",
+        "rollback-and-compensation",
+        "interrupt-and-resume"
+      ]
+    },
+    {
       "id": "decision-audit-trail",
       "type": "concept",
       "kind": null,
@@ -997,10 +1091,12 @@
       "status": "living",
       "created": "2026-06-09",
       "clusters": [
+        "agent-state-persistence",
         "task-agent-pattern"
       ],
       "source_thread": null,
       "related": [
+        "agent-state-persistence",
         "task-agent-pattern",
         "decision-engine-contract",
         "prod-shadow-replay",
@@ -1505,10 +1601,12 @@
       "created": "2026-06-11",
       "clusters": [
         "action-execution-safety",
+        "agent-state-persistence",
         "human-in-the-loop-control"
       ],
       "source_thread": null,
       "related": [
+        "agent-state-persistence",
         "action-execution-safety",
         "human-in-the-loop-control",
         "mid-task-steering",
@@ -2175,6 +2273,35 @@
       ]
     },
     {
+      "id": "run-state-model",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/run-state-model.md",
+      "title": "Run-State Model",
+      "summary": "the minimal durable shape that lets a run resume \u2014 goal, plan with per-step status, established facts, open commitments, and in-flight markers.",
+      "tags": [
+        "agent",
+        "state",
+        "persistence",
+        "schema",
+        "resume",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "agent-state-persistence"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-state-persistence",
+        "checkpoint-and-replay",
+        "decision-audit-trail",
+        "goal-decomposition",
+        "context-compaction"
+      ]
+    },
+    {
       "id": "safety-rails-domain-specific",
       "type": "concept",
       "kind": null,
@@ -2570,6 +2697,7 @@
       "clusters": [],
       "source_thread": "2026-06-09-task-agent-pattern",
       "related": [
+        "agent-state-persistence",
         "action-execution-safety",
         "human-in-the-loop-control",
         "domain-chatbot-design",
@@ -3408,6 +3536,11 @@
     },
     {
       "from": "action-execution-safety",
+      "to": "agent-state-persistence",
+      "kind": "related"
+    },
+    {
+      "from": "action-execution-safety",
       "to": "dry-run-and-preview",
       "kind": "related"
     },
@@ -3454,6 +3587,11 @@
     {
       "from": "agent-control-loop",
       "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
+      "to": "agent-state-persistence",
       "kind": "related"
     },
     {
@@ -3592,6 +3730,46 @@
       "kind": "related"
     },
     {
+      "from": "agent-state-persistence",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "agent-state-persistence",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "agent-state-persistence",
+      "to": "checkpoint-and-replay",
+      "kind": "related"
+    },
+    {
+      "from": "agent-state-persistence",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "agent-state-persistence",
+      "to": "crash-recovery-consistency",
+      "kind": "related"
+    },
+    {
+      "from": "agent-state-persistence",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "agent-state-persistence",
+      "to": "interrupt-and-resume",
+      "kind": "related"
+    },
+    {
+      "from": "agent-state-persistence",
+      "to": "run-state-model",
+      "kind": "related"
+    },
+    {
       "from": "agent-trajectory-eval",
       "to": "agent-eval-case-study",
       "kind": "related"
@@ -3684,6 +3862,31 @@
     {
       "from": "chatbot-pagination",
       "to": "truncated-pyramid-results",
+      "kind": "related"
+    },
+    {
+      "from": "checkpoint-and-replay",
+      "to": "agent-state-persistence",
+      "kind": "related"
+    },
+    {
+      "from": "checkpoint-and-replay",
+      "to": "crash-recovery-consistency",
+      "kind": "related"
+    },
+    {
+      "from": "checkpoint-and-replay",
+      "to": "idempotency-keys",
+      "kind": "related"
+    },
+    {
+      "from": "checkpoint-and-replay",
+      "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
+      "from": "checkpoint-and-replay",
+      "to": "run-state-model",
       "kind": "related"
     },
     {
@@ -3858,6 +4061,11 @@
     },
     {
       "from": "conversation-memory",
+      "to": "agent-state-persistence",
+      "kind": "related"
+    },
+    {
+      "from": "conversation-memory",
       "to": "context-engineering",
       "kind": "related"
     },
@@ -3952,8 +4160,38 @@
       "kind": "related"
     },
     {
+      "from": "crash-recovery-consistency",
+      "to": "agent-state-persistence",
+      "kind": "related"
+    },
+    {
+      "from": "crash-recovery-consistency",
+      "to": "checkpoint-and-replay",
+      "kind": "related"
+    },
+    {
+      "from": "crash-recovery-consistency",
+      "to": "idempotency-keys",
+      "kind": "related"
+    },
+    {
+      "from": "crash-recovery-consistency",
+      "to": "interrupt-and-resume",
+      "kind": "related"
+    },
+    {
+      "from": "crash-recovery-consistency",
+      "to": "rollback-and-compensation",
+      "kind": "related"
+    },
+    {
       "from": "decision-audit-trail",
       "to": "agent-eval-improvement-tiers",
+      "kind": "related"
+    },
+    {
+      "from": "decision-audit-trail",
+      "to": "agent-state-persistence",
       "kind": "related"
     },
     {
@@ -4504,6 +4742,11 @@
     {
       "from": "interrupt-and-resume",
       "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "interrupt-and-resume",
+      "to": "agent-state-persistence",
       "kind": "related"
     },
     {
@@ -5182,6 +5425,31 @@
       "kind": "related"
     },
     {
+      "from": "run-state-model",
+      "to": "agent-state-persistence",
+      "kind": "related"
+    },
+    {
+      "from": "run-state-model",
+      "to": "checkpoint-and-replay",
+      "kind": "related"
+    },
+    {
+      "from": "run-state-model",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "run-state-model",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "run-state-model",
+      "to": "goal-decomposition",
+      "kind": "related"
+    },
+    {
       "from": "safety-rails-domain-specific",
       "to": "action-authority",
       "kind": "related"
@@ -5619,6 +5887,11 @@
     {
       "from": "task-agent-pattern",
       "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "agent-state-persistence",
       "kind": "related"
     },
     {
