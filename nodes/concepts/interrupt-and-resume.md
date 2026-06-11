@@ -4,6 +4,7 @@ type: concept
 tags: [agent, human-in-the-loop, interrupt, pause, resume, state, engineering-excellence]
 summary: "stopping a run in flight — abort vs. pause — and resuming from durable state without redoing completed work or repeating side effects."
 related:
+  - [[action-execution-safety]]
   - [[human-in-the-loop-control]]
   - [[mid-task-steering]]
   - [[stop-and-yield-conditions]]

@@ -37,6 +37,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 ## Current entry points
 
 ### Topics
+- [action-execution-safety](nodes/topics/action-execution-safety.md) — executing side-effecting actions safely — idempotency, dry-run preview, and rollback — so retries, crashes, and replans don't double-charge or corrupt state.
 - [agent-control-loop](nodes/topics/agent-control-loop.md) — the iteration that turns an LLM into an agent — perceive, reason, act, observe — plus when to stop, yield, and bound runaway.
 - [chatbot-pagination](nodes/topics/chatbot-pagination.md) — handling large result sets in a chatbot; UX shape and tool shape chosen jointly.
 - [context-engineering](nodes/topics/context-engineering.md) — the discipline of deciding what the model sees each turn — assembly, budget, and compaction — the master lever for agent cost, latency, and accuracy.
@@ -50,6 +51,14 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [tool-use-design](nodes/topics/tool-use-design.md) — how an agent acts on the world through tools — schema design, selection, and grounding results back into the loop.
 
 ### Concepts — by topic cluster
+
+**[action-execution-safety](nodes/topics/action-execution-safety.md)**
+- [dry-run-and-preview](nodes/concepts/dry-run-and-preview.md) — computing the full effect of an action without committing it, so the user (or the agent) can inspect exactly what will happen before it does.
+- [hard-surface-irrevocability](nodes/concepts/hard-surface-irrevocability.md) — irrevocable output channels as a first-class category.
+- [idempotency-keys](nodes/concepts/idempotency-keys.md) — making a side-effecting action safe to call more than once by keying it on a stable client-generated token, so retries and replays produce one effect.
+- [interrupt-and-resume](nodes/concepts/interrupt-and-resume.md) — stopping a run in flight — abort vs. pause — and resuming from durable state without redoing completed work or repeating side effects.
+- [rollback-and-compensation](nodes/concepts/rollback-and-compensation.md) — undoing a multi-step action that failed halfway — true rollback where possible, compensating actions where not — to avoid leaving the world half-changed.
+- [step-budget-and-runaway-control](nodes/concepts/step-budget-and-runaway-control.md) — hard ceilings on loop iterations, tokens, wall-clock, and tool calls so a stuck agent fails loudly instead of running forever.
 
 **[agent-control-loop](nodes/topics/agent-control-loop.md)**
 - [decision-engine-contract](nodes/concepts/decision-engine-contract.md) — layered output (decision + confidence + next-action) as the wire format every surface consumes.

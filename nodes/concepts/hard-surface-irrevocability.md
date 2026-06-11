@@ -3,6 +3,7 @@ id: hard-surface-irrevocability
 type: concept
 tags: [output, design, system-design, reliability]
 related:
+  - [[action-execution-safety]]
   - [[human-in-the-loop-control]]
   - [[sms-multi-thread-chatbot]]
   - [[llm-output-design]]

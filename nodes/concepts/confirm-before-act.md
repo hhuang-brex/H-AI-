@@ -4,6 +4,7 @@ type: concept
 tags: [agent, human-in-the-loop, approval, confirmation, reversibility, engineering-excellence]
 summary: "gating an action on explicit user approval, with the gate's strictness scaled to the action's reversibility and blast radius."
 related:
+  - [[action-execution-safety]]
   - [[human-in-the-loop-control]]
   - [[hard-surface-irrevocability]]
   - [[action-authority]]

@@ -4,6 +4,7 @@ type: topic
 tags: [agent, tool-use, function-calling, tool-schema, action]
 summary: "how an agent acts on the world through tools — schema design, selection, and grounding results back into the loop."
 related:
+  - [[action-execution-safety]]
   - [[task-agent-pattern]]
   - [[agent-control-loop]]
   - [[tool-schema-design]]
