@@ -29,7 +29,7 @@ Iterative drilling. Each turn either drilled into a piece (`/fork dive deep`) or
 5. **Episode types explored, then collapsed.** Five typed episodes proposed (trip, project, event, recurring, ad-hoc); user pushed first-principles ("group is just a set of context?") and the type taxonomy collapsed into a single `Context` primitive with structured inheritance rules.
 6. **AI-proposes / user-corrects.** Authority model added: user assertions are append-only, high-authority, layered on top of system inferences rather than overwriting them.
 7. **First-principles EA workflow.** Stripped to two loops (slow context model + fast event handling) and five fast-loop steps (recognize / imply / check sufficiency / select action / execute & learn).
-8. **Product spec.** Synthesized into [spender-agent](../product/spender-agent.md) under the new top-level `product/` folder.
+8. **Product spec.** Synthesized into [spender-agent](../nodes/projects/spender-agent.md) (`kind: product`).
 
 ## Key insights captured
 
@@ -43,9 +43,8 @@ Iterative drilling. Each turn either drilled into a piece (`/fork dive deep`) or
 
 ## Output
 
-- [spender-agent](../product/spender-agent.md) — full product spec, six-week build order, mapping to current IAF failure modes, scaling analysis.
-- New top-level `product/` folder with [its own README](../product/README.md) explaining the relationship to `nodes/` and `threads/`.
-- `README.md` updated: "Product specs" entry pointing to the new spec.
+- [spender-agent](../nodes/projects/spender-agent.md) — full product spec, six-week build order, mapping to current IAF failure modes, scaling analysis.
+- `README.md` updated: spender-agent entry under Projects.
 
 ## Connection to existing graph
 

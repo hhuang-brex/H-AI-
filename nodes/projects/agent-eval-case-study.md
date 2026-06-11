@@ -1,6 +1,7 @@
 ---
 id: agent-eval-case-study
 type: project
+kind: snapshot
 tags: [eval, case-study, agents]
 related:
   - [[llm-evaluation]]

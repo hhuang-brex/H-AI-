@@ -1,6 +1,7 @@
 ---
 id: sms-message-buffering-spec
 type: project
+kind: spec
 tags: [sms, message-buffering, end-of-turn, dynamic-timeout, design, proposal]
 related:
   - [[sms-multi-thread-chatbot]]

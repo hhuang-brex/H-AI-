@@ -1,6 +1,7 @@
 ---
 id: agent-eval-improvement-tiers
 type: project
+kind: plan
 tags: [eval, plan, agents]
 related:
   - [[agent-eval-case-study]]

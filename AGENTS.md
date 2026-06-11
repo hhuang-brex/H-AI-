@@ -22,7 +22,9 @@ Contract for any agent (or human) adding to this knowledge graph. Following this
 ---
 id: kebab-case-slug                    # required; matches filename
 type: topic | concept | project | reference | thread   # required
+kind: spec | plan | snapshot | worked-example | product   # required when type: project
 tags: [string, ...]                    # required; lowercase, kebab-case
+summary: <one-line ≤200 chars>         # required; the index entry's description
 related:                               # required (may be empty)
   - [[other-node-id]]
 status: living | snapshot | proposal | archived  # required
@@ -37,9 +39,23 @@ source-thread: [[thread-id]]           # optional; for nodes derived from a thre
 |---|---|---|---|
 | `topic` | `nodes/topics/` | Broad area; entry point that fans out | Short — links + one-paragraph framing. |
 | `concept` | `nodes/concepts/` | Reusable pattern, idea, technique | Definition → mechanics → pitfalls → references. |
-| `project` | `nodes/projects/` | Project-specific snapshot or plan | What it is → current state → known issues → see-also. |
+| `project` | `nodes/projects/` | Project-specific snapshot, spec, plan, worked example, or product spec | Distinguished by the `kind` field. Body shape varies by kind — see below. |
 | `reference` | `nodes/references/` | External posts/papers reading list | Annotated link list. |
 | `thread` | `threads/` | Conversation summary, dated `YYYY-MM-DD-slug.md` | Goal → outputs → key insights. |
+
+### `kind` (projects only)
+
+| Kind | Use for | Body shape |
+|---|---|---|
+| `spec` | Design intent for a specific system | Goal → non-goals → architecture → migration → success criteria. |
+| `plan` | Sequenced implementation of a spec | Tasks with steps, files, commits. |
+| `snapshot` | Point-in-time state of a real system | What it is → current state → known issues → see-also. |
+| `worked-example` | Code walkthrough with primary-source fidelity | Setup → annotated code → why it works → caveats. |
+| `product` | End-to-end product spec synthesized from threads | Problem → architecture → workflow → tradeoffs. |
+
+### `summary`
+
+A single line, ≤200 characters. Appears next to every node link in `README.md` and `threads/INDEX.md`. Keep it concrete: what is this node *for*? Avoid restating the title.
 
 ### Status guide
 

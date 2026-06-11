@@ -1,6 +1,7 @@
 ---
 id: task-agent-pattern-fanout
 type: project
+kind: spec
 tags: [task-agent, decision-engine, fan-out, design, proposal]
 related:
   - [[domain-chatbot-design]]

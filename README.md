@@ -19,13 +19,15 @@ H-AI-/
 ├── README.md              ← you are here (and the site homepage)
 ├── AGENTS.md              ← contract for agents adding/editing nodes
 ├── _config.yml            ← Jekyll config (powers the rendered site)
+├── graph.json             ← machine-readable graph export (auto-generated)
+├── tools/
+│   └── build-graph.py     ← regenerates README index, threads/INDEX.md, graph.json
 ├── nodes/
 │   ├── topics/            ← broad areas; entry points (e.g. llm-evaluation)
 │   ├── concepts/          ← reusable patterns/ideas (e.g. llm-as-judge)
-│   ├── projects/          ← project-specific snapshots (e.g. agent-eval-case-study)
+│   ├── projects/          ← specs, plans, snapshots, worked-examples, products (`kind:` field)
 │   └── references/        ← external posts/papers reading lists
-├── product/               ← end-to-end product specs synthesized from threads
-└── threads/               ← time-stamped conversation summaries
+└── threads/               ← time-stamped conversation summaries (rolled up in INDEX.md)
 ```
 
 Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). Body prose uses standard markdown links so navigation works on github.com and on the rendered site. Schema reference and editing rules: [`AGENTS.md`](./AGENTS.md).
@@ -107,13 +109,8 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [sms-message-buffering-plan](nodes/projects/sms-message-buffering-plan.md) — 7-piece implementation plan for the spec above.
 - [task-agent-pattern-fanout](nodes/projects/task-agent-pattern-fanout.md) — engine-primary framing where chat is one surface among several.
 - [knowledge-graph-index-builder-spec](nodes/projects/knowledge-graph-index-builder-spec.md) — `tools/build-graph.py` derives the README index, threads rollup, and `graph.json` from frontmatter; ends index drift permanently.
-
-### Products
-End-to-end design specs for systems we'd build (synthesized from threads). See [`product/`](product/).
-- [spender-agent](product/spender-agent.md) — task agent that documents transactions by maintaining an EA-grade model of the principal's economic life. Two-loop architecture (slow context model + fast event handling) over a universal-context primitive; AI-proposes / user-corrects authority.
-
-### Product specs
-- [spender-agent](product/spender-agent.md) — task agent that documents transactions by maintaining an EA-grade model of the principal's economic life. Two-loop workflow over universal-context primitive, AI-proposes / user-corrects authority. (2026-06-09 proposal.)
+- [knowledge-graph-index-builder-plan](nodes/projects/knowledge-graph-index-builder-plan.md) — 13-task implementation plan for the spec above.
+- [spender-agent](nodes/projects/spender-agent.md) — task agent that documents transactions by maintaining an EA-grade model of the principal's economic life. Two-loop architecture (slow context model + fast event handling) over a universal-context primitive; AI-proposes / user-corrects authority. (`kind: product`.)
 
 ### References
 - [references-eval-reading-list](nodes/references/references-eval-reading-list.md) — frontier-lab + practitioner posts on LLM eval (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, …).
@@ -131,7 +128,7 @@ End-to-end design specs for systems we'd build (synthesized from threads). See [
 - [2026-06-09-ikki-forced-tool-calling](threads/2026-06-09-ikki-forced-tool-calling.md) — audit against Ikki's "Forced Tool Calling in Production Chatbots" post.
 - [2026-06-09-operator-trust-injection](threads/2026-06-09-operator-trust-injection.md) — adding operator-trust-injection + recency-bias-prompt-design from Anthropic-engineer-recommended patterns.
 - [2026-06-09-task-agent-pattern](threads/2026-06-09-task-agent-pattern.md) — origin of the task-agent-pattern cluster.
-- [2026-06-09-spender-agent-ea-workflow](threads/2026-06-09-spender-agent-ea-workflow.md) — origin of the spender-agent product spec.
+- [2026-06-09-spender-agent-ea-workflow](threads/2026-06-09-spender-agent-ea-workflow.md) — first-principles synthesis from IAF-1611 root-cause to the spender-agent product spec.
 - [2026-06-09-reasoning-mode-research](threads/2026-06-09-reasoning-mode-research.md) — deep-research on prompted `<reasoning>` vs. native thinking APIs.
 - [2026-06-10-llm-observability-research](threads/2026-06-10-llm-observability-research.md) — deep-research on "why did the model respond this way?" debugging workflow.
 - [2026-06-10-reasoning-rationale-research](threads/2026-06-10-reasoning-rationale-research.md) — deep-research on faithfulness, alignment-faking, scheming evaluations — the *why* for instrumenting reasoning.
@@ -139,7 +136,6 @@ End-to-end design specs for systems we'd build (synthesized from threads). See [
 - [2026-06-10-github-buffering-references](threads/2026-06-10-github-buffering-references.md) — GitHub prior art for chatbot message buffering (clawbolt, Chatwoot, LiveKit).
 - [2026-06-11-text-eot-classifier-salvage](threads/2026-06-11-text-eot-classifier-salvage.md) — text-EOT classifier salvage from a stalled deep-research workflow; TurnGPT verified, HF entries blocked by Brex SSO.
 - [2026-06-11-knowledge-graph-organization-review](threads/2026-06-11-knowledge-graph-organization-review.md) — audit of this repo as a knowledge graph; origin of the index-builder spec.
-- [2026-06-09-spender-agent-ea-workflow](threads/2026-06-09-spender-agent-ea-workflow.md) — first-principles synthesis from IAF-1611 root-cause to spender-agent product spec.
 
 ## Why this shape
 

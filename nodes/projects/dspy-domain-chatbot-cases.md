@@ -1,6 +1,7 @@
 ---
 id: dspy-domain-chatbot-cases
 type: project
+kind: snapshot
 tags: [dspy, chatbot, case-study, llm, optimizer]
 related:
   - [[domain-chatbot-design]]

@@ -1,7 +1,7 @@
 ---
 id: spender-agent
 type: project
-product: spender-agent
+kind: product
 tags: [task-agent, decision-engine, expense-documentation, ea-workflow, design]
 related:
   - [[task-agent-pattern]]

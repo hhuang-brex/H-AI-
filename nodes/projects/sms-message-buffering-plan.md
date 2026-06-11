@@ -1,6 +1,7 @@
 ---
 id: sms-message-buffering-plan
 type: project
+kind: plan
 tags: [sms, message-buffering, end-of-turn, plan, proposal]
 related:
   - [[sms-message-buffering-spec]]

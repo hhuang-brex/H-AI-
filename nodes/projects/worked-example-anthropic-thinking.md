@@ -1,8 +1,8 @@
 ---
 id: worked-example-anthropic-thinking
 type: project
+kind: worked-example
 tags: [worked-example, anthropic, code, thinking, observability]
-product: reference
 related:
   - [[cot-as-forensic-artifact]]
   - [[llm-observability]]

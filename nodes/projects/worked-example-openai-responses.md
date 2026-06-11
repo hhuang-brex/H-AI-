@@ -1,8 +1,8 @@
 ---
 id: worked-example-openai-responses
 type: project
+kind: worked-example
 tags: [worked-example, openai, code, reasoning, observability]
-product: reference
 related:
   - [[cot-as-forensic-artifact]]
   - [[llm-observability]]
