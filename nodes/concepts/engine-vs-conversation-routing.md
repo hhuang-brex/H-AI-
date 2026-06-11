@@ -11,6 +11,7 @@ related:
   - [[scope-and-refusal]]
 status: living
 created: 2026-06-09
+summary: "when the engine handles vs. when the chat layer handles; the bridge between them."
 ---
 
 # Engine-vs-Conversation Routing

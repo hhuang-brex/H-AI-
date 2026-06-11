@@ -8,6 +8,7 @@ related:
   - [[agent-eval-case-study]]
 status: living
 created: 2026-06-05
+summary: "closing the gap between frozen datasets and live traffic."
 ---
 
 # Prod Shadow / Replay

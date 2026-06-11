@@ -9,6 +9,7 @@ related:
   - [[action-authority]]
 status: living
 created: 2026-06-08
+summary: "turning ambiguous input into actionable intent; clarification vs. assumption."
 ---
 
 # Intent & Disambiguation

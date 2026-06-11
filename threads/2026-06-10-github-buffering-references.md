@@ -8,6 +8,7 @@ related:
   - [[2026-06-10-sms-message-buffering-research]]
 status: archived
 created: 2026-06-10
+summary: "GitHub prior art for chatbot message buffering (clawbolt, Chatwoot, LiveKit)."
 ---
 
 # Thread — GitHub Prior Art for Message Buffering (2026-06-10)

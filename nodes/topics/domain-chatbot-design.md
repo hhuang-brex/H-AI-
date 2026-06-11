@@ -16,8 +16,11 @@ related:
   - [[repair-and-clarification]]
   - [[turn-taking-and-proactivity]]
   - [[safety-rails-domain-specific]]
+  - [[operator-trust-injection]]
+  - [[recency-bias-prompt-design]]
 status: living
 created: 2026-06-08
+summary: "how a chatbot converses inside a specific domain."
 ---
 
 # Domain-Specific Chatbot Conversation Design

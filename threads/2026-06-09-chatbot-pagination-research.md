@@ -10,6 +10,7 @@ related:
   - [[references-chatbot-pagination]]
 status: archived
 created: 2026-06-09
+summary: "deep-research on chatbot pagination UX + technical patterns."
 ---
 
 # Thread — Chatbot Pagination Research (2026-06-09)

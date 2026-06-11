@@ -10,6 +10,7 @@ related:
   - [[layered-defense-pipeline]]
 status: living
 created: 2026-06-05
+summary: "calibration, bias, multi-vote, cascading."
 ---
 
 # LLM-as-Judge

@@ -8,6 +8,7 @@ related:
   - [[references-eval-reading-list]]
 status: archived
 created: 2026-06-05
+summary: "origin of the eval nodes."
 ---
 
 # Thread — Agent Eval Analysis (2026-06-05)

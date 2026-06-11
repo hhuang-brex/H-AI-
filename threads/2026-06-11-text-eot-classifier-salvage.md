@@ -9,6 +9,7 @@ related:
   - [[2026-06-10-sms-message-buffering-research]]
 status: archived
 created: 2026-06-11
+summary: "text-EOT classifier salvage from a stalled deep-research workflow; TurnGPT verified, HF entries blocked by Brex SSO."
 ---
 
 # Thread — Text EOT Classifier Salvage (2026-06-11)

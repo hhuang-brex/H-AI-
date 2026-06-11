@@ -9,6 +9,7 @@ related:
   - [[streaming-vs-structured]]
 status: living
 created: 2026-06-07
+summary: "schema-enforced output vs. free-text + post-hoc validator."
 ---
 
 # Schema vs. Validator

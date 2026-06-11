@@ -11,6 +11,7 @@ related:
   - [[action-authority]]
 status: living
 created: 2026-06-08
+summary: "generic safety is the baseline, not the answer."
 ---
 
 # Domain-Specific Safety Rails

@@ -9,6 +9,7 @@ related:
   - [[hard-surface-irrevocability]]
 status: living
 created: 2026-06-07
+summary: "classify each surface explicitly; per-surface decisions."
 ---
 
 # Output Surface Taxonomy

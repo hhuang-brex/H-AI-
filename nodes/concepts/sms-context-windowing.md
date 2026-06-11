@@ -11,6 +11,7 @@ related:
   - [[cost-aware-eval]]
 status: living
 created: 2026-06-08
+summary: "what's in the prompt: per-thread, structured, bounded."
 ---
 
 # SMS Context Windowing

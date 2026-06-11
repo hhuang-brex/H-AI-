@@ -13,6 +13,7 @@ related:
   - [[native-thinking-vs-prompted-reasoning]]
 status: living
 created: 2026-06-09
+summary: "mid-conversation operator-only messages without a developer role; self-describing wrapper + recency reinforcement + output hygiene + reply envelope."
 ---
 
 # Operator-Trust Injection

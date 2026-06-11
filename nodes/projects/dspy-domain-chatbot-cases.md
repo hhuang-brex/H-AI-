@@ -11,6 +11,7 @@ related:
   - [[domain-knowledge-injection]]
 status: snapshot
 created: 2026-06-09
+summary: "verified DSPy domain-chatbot success examples (JetBlue, Dr.Copilot, etc.; 2026-06-09 snapshot)."
 source-thread: [[2026-06-09-dspy-domain-chatbot-research]]
 ---
 

@@ -10,6 +10,7 @@ related:
   - [[intent-and-disambiguation]]
 status: living
 created: 2026-06-08
+summary: "what the bot can *do*; tiered authority enforced at the tool layer."
 ---
 
 # Action Authority

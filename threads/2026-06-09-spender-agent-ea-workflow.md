@@ -10,6 +10,7 @@ related:
   - [[sms-multi-thread-chatbot]]
 status: archived
 created: 2026-06-09
+summary: "first-principles synthesis from IAF-1611 root-cause to the spender-agent product spec."
 ---
 
 # Thread — Spender Agent / EA Workflow Synthesis (2026-06-09)

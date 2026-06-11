@@ -10,6 +10,7 @@ related:
   - [[conversation-memory]]
 status: living
 created: 2026-06-08
+summary: "when and how to hand off to a human; preserving context."
 ---
 
 # Escalation & Handoff

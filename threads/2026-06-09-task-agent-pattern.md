@@ -10,6 +10,7 @@ related:
   - [[task-agent-pattern-fanout]]
 status: archived
 created: 2026-06-09
+summary: "origin of the task-agent-pattern cluster."
 ---
 
 # Thread — Task-Agent Pattern Fan-Out (2026-06-09)

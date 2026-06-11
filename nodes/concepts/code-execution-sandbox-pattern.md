@@ -10,6 +10,7 @@ related:
   - [[cost-aware-eval]]
 status: living
 created: 2026-06-09
+summary: "keep large rows out of model context entirely."
 ---
 
 # Code-Execution Sandbox Pattern

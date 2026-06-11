@@ -32,6 +32,8 @@ H-AI-/
 
 Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). Body prose uses standard markdown links so navigation works on github.com and on the rendered site. Schema reference and editing rules: [`AGENTS.md`](./AGENTS.md).
 
+<!-- BEGIN GENERATED: rebuilt by `python tools/build-graph.py`. Do not edit by hand. -->
+
 ## Current entry points
 
 ### Topics
@@ -136,6 +138,8 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [2026-06-10-github-buffering-references](threads/2026-06-10-github-buffering-references.md) — GitHub prior art for chatbot message buffering (clawbolt, Chatwoot, LiveKit).
 - [2026-06-11-text-eot-classifier-salvage](threads/2026-06-11-text-eot-classifier-salvage.md) — text-EOT classifier salvage from a stalled deep-research workflow; TurnGPT verified, HF entries blocked by Brex SSO.
 - [2026-06-11-knowledge-graph-organization-review](threads/2026-06-11-knowledge-graph-organization-review.md) — audit of this repo as a knowledge graph; origin of the index-builder spec.
+
+<!-- END GENERATED -->
 
 ## Why this shape
 

@@ -8,6 +8,7 @@ related:
   - [[forced-tool-call-output]]
 status: living
 created: 2026-06-07
+summary: "irrevocable output channels as a first-class category."
 ---
 
 # Hard Surface / Irrevocability

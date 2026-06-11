@@ -11,6 +11,7 @@ related:
   - [[forced-tool-call-output]]
 status: proposal
 created: 2026-06-10
+summary: "7-piece implementation plan for the spec above."
 source-thread: [[2026-06-10-sms-message-buffering-research]]
 ---
 

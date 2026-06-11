@@ -10,6 +10,7 @@ related:
   - [[cost-aware-eval]]
 status: living
 created: 2026-06-09
+summary: "opaque cursors, verbosity enum, filter parameters; ~3× token savings."
 ---
 
 # Paginated Tool Contract

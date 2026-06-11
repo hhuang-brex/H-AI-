@@ -8,6 +8,7 @@ related:
   - [[references-eval-reading-list]]
 status: archived
 created: 2026-06-08
+summary: "verified reading-list research thread."
 ---
 
 # Thread — Domain Chatbot Design Research (2026-06-08)

@@ -12,6 +12,7 @@ related:
   - [[adversarial-eval]]
 status: living
 created: 2026-06-05
+summary: "frontier-lab + practitioner posts on LLM eval (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, …)."
 ---
 
 # LLM Eval — Frontier Lab + Practitioner Reading List

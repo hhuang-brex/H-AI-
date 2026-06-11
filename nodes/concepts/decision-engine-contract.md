@@ -11,6 +11,7 @@ related:
   - [[output-surface-taxonomy]]
 status: living
 created: 2026-06-09
+summary: "layered output (decision + confidence + next-action) as the wire format every surface consumes."
 ---
 
 # Decision-Engine Contract

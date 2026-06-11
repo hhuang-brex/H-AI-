@@ -8,6 +8,7 @@ related:
   - [[schema-vs-validator]]
 status: living
 created: 2026-06-07
+summary: "token-by-token UX vs. structured output trade-off."
 ---
 
 # Streaming vs. Structured Output

@@ -9,6 +9,7 @@ related:
   - [[turn-taking-and-proactivity]]
 status: living
 created: 2026-06-08
+summary: "recovery turns are not initial turns."
 ---
 
 # Repair & Clarification

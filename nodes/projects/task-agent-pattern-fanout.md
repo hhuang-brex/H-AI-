@@ -11,6 +11,7 @@ related:
   - [[output-surface-taxonomy]]
 status: archived
 created: 2026-06-09
+summary: "engine-primary framing where chat is one surface among several."
 ---
 
 # Task-Agent Pattern Fan-Out — Design Spec

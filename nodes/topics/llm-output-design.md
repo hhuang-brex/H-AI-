@@ -9,8 +9,14 @@ related:
   - [[schema-vs-validator]]
   - [[streaming-vs-structured]]
   - [[hard-surface-irrevocability]]
+  - [[template-rendered-output]]
+  - [[layered-defense-pipeline]]
+  - [[native-thinking-vs-prompted-reasoning]]
+  - [[llm-observability]]
+  - [[cot-as-forensic-artifact]]
 status: living
 created: 2026-06-07
+summary: "how an LLM emits to the world; per-surface decisions."
 ---
 
 # LLM Output Design

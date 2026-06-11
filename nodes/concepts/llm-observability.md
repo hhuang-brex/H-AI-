@@ -3,6 +3,7 @@ id: llm-observability
 type: concept
 tags: [observability, debugging, audit, agents, otel, tracing]
 related:
+  - [[llm-output-design]]
   - [[decision-audit-trail]]
   - [[native-thinking-vs-prompted-reasoning]]
   - [[prod-shadow-replay]]
@@ -12,6 +13,7 @@ related:
   - [[cot-as-forensic-artifact]]
 status: living
 created: 2026-06-10
+summary: "debugging \"why did the model respond this way?\" — what frontier APIs actually return (mostly summaries), platform feature reality, OTel state."
 source-thread: [[2026-06-10-llm-observability-research]]
 ---
 

@@ -9,6 +9,7 @@ related:
   - [[repair-and-clarification]]
 status: living
 created: 2026-06-08
+summary: "three horizons; what to remember, what not to."
 ---
 
 # Conversation Memory

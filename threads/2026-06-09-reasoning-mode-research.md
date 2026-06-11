@@ -9,6 +9,7 @@ related:
   - [[decision-engine-contract]]
 status: archived
 created: 2026-06-09
+summary: "deep-research on prompted `<reasoning>` vs. native thinking APIs."
 ---
 
 # Thread — Reasoning Mode Research (2026-06-09)

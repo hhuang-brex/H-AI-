@@ -14,6 +14,7 @@ related:
   - [[agent-eval-improvement-tiers]]
 status: snapshot
 created: 2026-06-05
+summary: "generalized agent platform eval system (2026-06-05 snapshot)."
 source-thread: [[2026-06-05-eval-analysis]]
 ---
 

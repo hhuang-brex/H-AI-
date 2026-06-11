@@ -13,6 +13,7 @@ related:
   - [[sms-recovery-and-reentry]]
 status: archived
 created: 2026-06-08
+summary: "origin of the SMS multi-thread nodes."
 ---
 
 # Thread — SMS Multi-Thread Chatbot Fan-Out (2026-06-08)

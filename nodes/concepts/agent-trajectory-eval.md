@@ -9,6 +9,7 @@ related:
   - [[agent-eval-case-study]]
 status: living
 created: 2026-06-05
+summary: "multi-turn, tool sequences, end-state."
 ---
 
 # Agent Trajectory Eval

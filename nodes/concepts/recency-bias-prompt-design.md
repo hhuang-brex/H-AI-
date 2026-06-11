@@ -3,12 +3,14 @@ id: recency-bias-prompt-design
 type: concept
 tags: [prompt-engineering, recency, long-context, agents, attention]
 related:
+  - [[domain-chatbot-design]]
   - [[operator-trust-injection]]
   - [[conversation-memory]]
   - [[domain-knowledge-injection]]
   - [[layered-defense-pipeline]]
 status: living
 created: 2026-06-09
+summary: "placement matters; rules near the end and reinforcements near the injection point earn more weight."
 ---
 
 # Recency-Bias Prompt Design

@@ -7,9 +7,13 @@ related:
   - [[llm-as-judge]]
   - [[prod-shadow-replay]]
   - [[cost-aware-eval]]
+  - [[agent-trajectory-eval]]
+  - [[adversarial-eval]]
+  - [[golden-snapshot-eval]]
   - [[agent-eval-case-study]]
 status: living
 created: 2026-06-05
+summary: "measuring whether LLM systems do what they should without bankrupting the team."
 ---
 
 # LLM Evaluation

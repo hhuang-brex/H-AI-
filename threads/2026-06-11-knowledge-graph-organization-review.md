@@ -6,6 +6,7 @@ related:
   - [[knowledge-graph-index-builder-spec]]
 status: archived
 created: 2026-06-11
+summary: "audit of this repo as a knowledge graph; origin of the index-builder spec."
 ---
 
 # Thread — Knowledge Graph Organization Review (2026-06-11)

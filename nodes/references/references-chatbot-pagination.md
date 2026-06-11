@@ -9,6 +9,7 @@ related:
   - [[code-execution-sandbox-pattern]]
 status: living
 created: 2026-06-09
+summary: "pagination reading list (Anthropic Writing Tools / Code Execution, MCP cursor spec, NN/g UX patterns)."
 ---
 
 # Chatbot Pagination — Reading List

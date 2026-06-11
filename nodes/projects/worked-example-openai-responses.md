@@ -11,6 +11,7 @@ related:
   - [[worked-example-anthropic-thinking]]
 status: living
 created: 2026-06-10
+summary: "Python code: Responses API, server-stateful + stateless multi-turn, `incomplete:max_output_tokens` handling."
 ---
 
 # Worked Example — Reading Reasoning from OpenAI Models

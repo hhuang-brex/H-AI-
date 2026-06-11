@@ -9,6 +9,7 @@ related:
   - [[safety-rails-domain-specific]]
 status: living
 created: 2026-06-08
+summary: "anchoring claims in domain sources; refusal as the right answer."
 ---
 
 # Grounding & Citation

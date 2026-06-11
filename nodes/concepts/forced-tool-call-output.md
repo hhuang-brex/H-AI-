@@ -13,6 +13,7 @@ related:
   - [[agent-trajectory-eval]]
 status: living
 created: 2026-06-07
+summary: "when to force schema vs. let the model write free-text."
 ---
 
 # Forced Tool-Call as Output Channel

@@ -16,6 +16,7 @@ related:
   - [[conversation-memory]]
 status: living
 created: 2026-06-08
+summary: "multi-thread chatbot design when the only channel is flat SMS."
 ---
 
 # SMS Multi-Thread Chatbot Design

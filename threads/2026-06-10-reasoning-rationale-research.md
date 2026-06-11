@@ -9,6 +9,7 @@ related:
   - [[llm-observability]]
 status: archived
 created: 2026-06-10
+summary: "deep-research on faithfulness, alignment-faking, scheming evaluations — the *why* for instrumenting reasoning."
 ---
 
 # Thread — Why Read Model Reasoning? (2026-06-10)

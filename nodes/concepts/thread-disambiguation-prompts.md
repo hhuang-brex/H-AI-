@@ -10,6 +10,7 @@ related:
   - [[repair-and-clarification]]
 status: living
 created: 2026-06-08
+summary: "how to ask \"which thread?\" in 160 chars."
 ---
 
 # Thread Disambiguation Prompts

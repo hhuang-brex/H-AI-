@@ -10,6 +10,7 @@ related:
   - [[prod-shadow-replay]]
 status: archived
 created: 2026-06-10
+summary: "deep-research on \"why did the model respond this way?\" debugging workflow."
 ---
 
 # Thread — LLM Observability Research (2026-06-10)

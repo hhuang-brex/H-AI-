@@ -11,6 +11,7 @@ related:
   - [[hard-surface-irrevocability]]
 status: archived
 created: 2026-06-07
+summary: "origin of the output-design nodes."
 ---
 
 # Thread — Forced Tool-Call Fan-Out (2026-06-07)

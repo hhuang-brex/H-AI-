@@ -11,6 +11,7 @@ related:
   - [[forced-tool-call-output]]
 status: living
 created: 2026-06-10
+summary: "Python code: capturing reasoning, signature continuity, forced-tool-call constraint, hidden billing."
 ---
 
 # Worked Example — Reading Reasoning from Anthropic Models

@@ -9,6 +9,7 @@ related:
   - [[forced-tool-call-output]]
 status: archived
 created: 2026-06-10
+summary: "origin of the SMS message buffering spec; voice-AI EOT pattern as architectural reference."
 ---
 
 # Thread — SMS Message Buffering Research (2026-06-10)

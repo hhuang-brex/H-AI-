@@ -3,11 +3,13 @@ id: golden-snapshot-eval
 type: concept
 tags: [eval, snapshot, golden, deterministic]
 related:
+  - [[llm-evaluation]]
   - [[test-pyramid-llm]]
   - [[agent-trajectory-eval]]
   - [[cost-aware-eval]]
 status: living
 created: 2026-06-05
+summary: "pre-LLM deterministic checks."
 ---
 
 # Golden / Snapshot Eval

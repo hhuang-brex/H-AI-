@@ -14,6 +14,7 @@ related:
   - [[sms-multi-thread-chatbot]]
 status: living
 created: 2026-06-09
+summary: "handling large result sets in a chatbot; UX shape and tool shape chosen jointly."
 source-thread: [[2026-06-09-chatbot-pagination-research]]
 ---
 

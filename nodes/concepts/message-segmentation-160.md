@@ -8,6 +8,7 @@ related:
   - [[hard-surface-irrevocability]]
 status: living
 created: 2026-06-08
+summary: "character limits, encoding switches, MMS/RCS fallback."
 ---
 
 # Message Segmentation & the 160-Character Reality

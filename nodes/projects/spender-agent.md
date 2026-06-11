@@ -17,6 +17,7 @@ related:
   - [[grounding-and-citation]]
 status: proposal
 created: 2026-06-09
+summary: "task agent that documents transactions by maintaining an EA-grade model of the principal's economic life. Two-loop architecture (slow context model + fast event handling) over a universal-context primitive; AI-proposes / user-corrects authority. (`kind: product`.)"
 source-thread: [[2026-06-09-spender-agent-ea-workflow]]
 ---
 

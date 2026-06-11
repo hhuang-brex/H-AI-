@@ -9,6 +9,7 @@ related:
   - [[domain-chatbot-design]]
 status: living
 created: 2026-06-09
+summary: "summary first, select-N exemplars, refinement buttons (NN/g)."
 ---
 
 # Truncated-Pyramid Results

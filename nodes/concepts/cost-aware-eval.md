@@ -10,6 +10,7 @@ related:
   - [[llm-observability]]
 status: living
 created: 2026-06-05
+summary: "sample-size math and budget assertions."
 ---
 
 # Cost-Aware Eval Design

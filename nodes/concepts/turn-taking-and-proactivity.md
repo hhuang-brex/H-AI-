@@ -9,6 +9,7 @@ related:
   - [[intent-and-disambiguation]]
 status: living
 created: 2026-06-08
+summary: "initiative, long operations, closing."
 ---
 
 # Turn-Taking & Proactivity

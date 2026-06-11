@@ -3,6 +3,7 @@ id: layered-defense-pipeline
 type: concept
 tags: [chatbot, architecture, defense-in-depth, classifier, safety]
 related:
+  - [[llm-output-design]]
   - [[template-rendered-output]]
   - [[forced-tool-call-output]]
   - [[llm-as-judge]]
@@ -11,6 +12,7 @@ related:
   - [[cost-aware-eval]]
 status: living
 created: 2026-06-09
+summary: "regex gate → forced tool → templates → heterogeneous-model recheck."
 ---
 
 # Layered-Defense Pipeline

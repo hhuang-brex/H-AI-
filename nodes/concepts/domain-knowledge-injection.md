@@ -11,6 +11,7 @@ related:
   - [[recency-bias-prompt-design]]
 status: living
 created: 2026-06-08
+summary: "RAG, prompt-stuffing, structured state, fine-tuning per knowledge type."
 ---
 
 # Domain Knowledge Injection

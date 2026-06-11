@@ -10,6 +10,7 @@ related:
   - [[references-domain-chatbot-design]]
 status: archived
 created: 2026-06-09
+summary: "audit against Ikki's \"Forced Tool Calling in Production Chatbots\" post."
 ---
 
 # Thread — Audit Against Ikki's "Forced Tool Calling in Production Chatbots" (2026-06-09)

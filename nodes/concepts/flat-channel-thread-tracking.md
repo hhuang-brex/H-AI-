@@ -10,6 +10,7 @@ related:
   - [[intent-and-disambiguation]]
 status: living
 created: 2026-06-08
+summary: "picking the right thread without thread metadata; cheap-to-expensive detection ladder."
 ---
 
 # Flat-Channel Thread Tracking

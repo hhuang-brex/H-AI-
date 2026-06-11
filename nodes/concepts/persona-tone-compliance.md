@@ -9,6 +9,7 @@ related:
   - [[grounding-and-citation]]
 status: living
 created: 2026-06-08
+summary: "voice as a constraint set, not a style preference."
 ---
 
 # Persona, Tone & Compliance

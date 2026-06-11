@@ -14,6 +14,7 @@ related:
   - [[references-eval-reading-list]]
 status: living
 created: 2026-06-08
+summary: "chatbot design reading list (Anthropic, OpenAI, Microsoft Bot Service, Google CDS, Rasa, Voiceflow, Husain, Yan, Hall, Intercom Fin)."
 ---
 
 # Domain Chatbot Design — Reading List

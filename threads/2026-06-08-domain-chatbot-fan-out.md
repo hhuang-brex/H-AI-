@@ -17,6 +17,7 @@ related:
   - [[safety-rails-domain-specific]]
 status: archived
 created: 2026-06-08
+summary: "origin of the conversation-design nodes."
 ---
 
 # Thread — Domain Chatbot Conversation Design Fan-Out (2026-06-08)

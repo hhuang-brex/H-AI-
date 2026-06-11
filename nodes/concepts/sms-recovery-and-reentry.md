@@ -11,6 +11,7 @@ related:
   - [[sms-state-machine]]
 status: living
 created: 2026-06-08
+summary: "five recovery scenarios; not \"sorry, could you clarify?\""
 ---
 
 # SMS Recovery & Re-entry

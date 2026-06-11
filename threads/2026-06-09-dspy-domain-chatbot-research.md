@@ -8,6 +8,7 @@ related:
   - [[references-domain-chatbot-design]]
 status: archived
 created: 2026-06-09
+summary: "deep-research on documented DSPy chatbot case studies."
 ---
 
 # Thread — DSPy Domain-Chatbot Success Examples (2026-06-09)

@@ -9,6 +9,7 @@ related:
   - [[safety-rails-domain-specific]]
 status: living
 created: 2026-06-08
+summary: "in-domain vs. out-of-domain; three kinds of refusal."
 ---
 
 # Scope & Refusal

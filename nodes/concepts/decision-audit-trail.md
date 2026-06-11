@@ -11,6 +11,7 @@ related:
   - [[llm-observability]]
 status: living
 created: 2026-06-09
+summary: "durable per-decision record (fingerprint + version + reasoning + override history); the substrate replay/drift run on."
 ---
 
 # Decision Audit Trail

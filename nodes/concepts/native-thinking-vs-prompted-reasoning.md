@@ -12,6 +12,7 @@ related:
   - [[llm-observability]]
 status: living
 created: 2026-06-09
+summary: "frontier labs have moved away from prompted `<reasoning>` tags; native thinking APIs are the default."
 source-thread: [[2026-06-09-reasoning-mode-research]]
 ---
 

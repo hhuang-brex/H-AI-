@@ -13,6 +13,7 @@ related:
   - [[forced-tool-call-output]]
 status: living
 created: 2026-06-09
+summary: "engine-primary framing where chat is one surface among several."
 source-thread: [[2026-06-09-task-agent-pattern]]
 ---
 

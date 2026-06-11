@@ -9,6 +9,7 @@ related:
   - [[layered-defense-pipeline]]
 status: archived
 created: 2026-06-09
+summary: "adding operator-trust-injection + recency-bias-prompt-design from Anthropic-engineer-recommended patterns."
 ---
 
 # Thread — Operator-Trust Injection (2026-06-09)

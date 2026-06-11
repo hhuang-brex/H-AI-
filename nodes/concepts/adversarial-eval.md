@@ -7,6 +7,7 @@ related:
   - [[agent-eval-case-study]]
 status: living
 created: 2026-06-05
+summary: "red-team / safety / prompt injection."
 ---
 
 # Adversarial / Red-Team Eval

@@ -9,6 +9,7 @@ related:
   - [[sms-recovery-and-reentry]]
 status: living
 created: 2026-06-08
+summary: "gaps measured in days; re-anchoring; expiry; nudge policy."
 ---
 
 # Async Conversation Pacing

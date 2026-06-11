@@ -3,6 +3,7 @@ id: template-rendered-output
 type: concept
 tags: [chatbot, output, schema, templates, classifier, deterministic]
 related:
+  - [[llm-output-design]]
   - [[forced-tool-call-output]]
   - [[schema-vs-validator]]
   - [[layered-defense-pipeline]]
@@ -11,6 +12,7 @@ related:
   - [[persona-tone-compliance]]
 status: living
 created: 2026-06-09
+summary: "stricter sibling: classifier picks a tool, code-owned templates render the reply."
 ---
 
 # Template-Rendered Output
