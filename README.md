@@ -103,6 +103,10 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [dspy-domain-chatbot-cases](nodes/projects/dspy-domain-chatbot-cases.md) — verified DSPy domain-chatbot success examples (JetBlue, Dr.Copilot, etc.; 2026-06-09 snapshot).
 - [worked-example-anthropic-thinking](nodes/projects/worked-example-anthropic-thinking.md) — Python code: capturing reasoning, signature continuity, forced-tool-call constraint, hidden billing.
 - [worked-example-openai-responses](nodes/projects/worked-example-openai-responses.md) — Python code: Responses API, server-stateful + stateless multi-turn, `incomplete:max_output_tokens` handling.
+- [sms-message-buffering-spec](nodes/projects/sms-message-buffering-spec.md) — handle users splitting one thought across multiple SMS messages; 3-layer detection (regex / Haiku classifier / dynamic timeout) with 10 edge cases.
+- [sms-message-buffering-plan](nodes/projects/sms-message-buffering-plan.md) — 7-piece implementation plan for the spec above.
+- [task-agent-pattern-fanout](nodes/projects/task-agent-pattern-fanout.md) — engine-primary framing where chat is one surface among several.
+- [knowledge-graph-index-builder-spec](nodes/projects/knowledge-graph-index-builder-spec.md) — `tools/build-graph.py` derives the README index, threads rollup, and `graph.json` from frontmatter; ends index drift permanently.
 
 ### Products
 End-to-end design specs for systems we'd build (synthesized from threads). See [`product/`](product/).
@@ -131,6 +135,10 @@ End-to-end design specs for systems we'd build (synthesized from threads). See [
 - [2026-06-09-reasoning-mode-research](threads/2026-06-09-reasoning-mode-research.md) — deep-research on prompted `<reasoning>` vs. native thinking APIs.
 - [2026-06-10-llm-observability-research](threads/2026-06-10-llm-observability-research.md) — deep-research on "why did the model respond this way?" debugging workflow.
 - [2026-06-10-reasoning-rationale-research](threads/2026-06-10-reasoning-rationale-research.md) — deep-research on faithfulness, alignment-faking, scheming evaluations — the *why* for instrumenting reasoning.
+- [2026-06-10-sms-message-buffering-research](threads/2026-06-10-sms-message-buffering-research.md) — origin of the SMS message buffering spec; voice-AI EOT pattern as architectural reference.
+- [2026-06-10-github-buffering-references](threads/2026-06-10-github-buffering-references.md) — GitHub prior art for chatbot message buffering (clawbolt, Chatwoot, LiveKit).
+- [2026-06-11-text-eot-classifier-salvage](threads/2026-06-11-text-eot-classifier-salvage.md) — text-EOT classifier salvage from a stalled deep-research workflow; TurnGPT verified, HF entries blocked by Brex SSO.
+- [2026-06-11-knowledge-graph-organization-review](threads/2026-06-11-knowledge-graph-organization-review.md) — audit of this repo as a knowledge graph; origin of the index-builder spec.
 - [2026-06-09-spender-agent-ea-workflow](threads/2026-06-09-spender-agent-ea-workflow.md) — first-principles synthesis from IAF-1611 root-cause to spender-agent product spec.
 
 ## Why this shape
