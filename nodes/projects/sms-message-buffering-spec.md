@@ -429,6 +429,12 @@ The hybrid wait + abort design is the synthesis. This spec adopts it explicitly.
 - **LiveKit Agents** `livekit-agents/livekit/agents/voice/audio_recognition.py` — pluggable `BaseEndpointing` class, `TurnDetectionMode` (`vad`/`stt`/`manual`/custom), `_transcript_buffer: deque[SpeechEvent]`, manual-commit at 0.5s threshold, `stt_flush_duration: float = 2.0`. Apache-2.0. The abstraction is cleanly designed but voice-coupled; the *pattern* ports, the *artifact* doesn't.
 - **Pipecat smart-turn** — audio-only (16kHz mono PCM, ≤8s); text conditioning is a medium-term goal, not yet shipped. Don't try to use the artifact for SMS.
 
+### Academic prior art on text EOT classification
+
+- **TurnGPT** (Ekstedt & Skantze, EMNLP 2020 Findings) — https://github.com/ErikEkstedt/TurnGPT — MIT, 69 stars, last pushed 2024-05-18. GPT-2 / DialoGPT-small base with a custom `SpokenDialogTokenizer` that adds a `<ts>` turn-shift token (id 50257) and an optional projection head modeling turn-shift probability over the next N tokens. Operates on text input — verbatim from the README: *"we focus on text as is commonly acquired when implementing an SDS … all text should be lower-case and certain punctations should be filtered out, text as commonly returned from ASR services."*
+
+  **What this means for the spec's L2 classifier**: the architectural concept (text-input semantic EOT classifier) is **not novel**. TurnGPT demonstrated it at EMNLP 2020. What this spec contributes around L2 is (a) the chat-channel application — TurnGPT targets spoken-dialog systems, not SMS bursts; (b) the production deployment choice — pretrained-LLM forced tool-call (no fine-tune, day-one shippable, ~$0.0001/inbound) vs. TurnGPT's fine-tuned LM with projection head (free runtime, requires hosting); (c) the composition with forward-reference detection, announced-content mode, and intent-edit handling — none of which TurnGPT addresses. The HF Hub `turn-detection` tag also surfaces additional text-input classifiers (TEN_Turn_Detection, livekit/turn-detector, several language-specific fine-tunes); these were salvaged from a stalled research workflow but **could not be third-party-verified** from the network where this spec was authored. See [2026-06-11-text-eot-classifier-salvage](../../threads/2026-06-11-text-eot-classifier-salvage.md). Treat the HF list as a follow-up to verify when adopting the spec.
+
 ## References (verified primary sources)
 
 ### Voice-AI semantic end-of-turn — the architectural pattern this spec ports
@@ -447,6 +453,7 @@ The hybrid wait + abort design is the synthesis. This spec adopts it explicitly.
 - **Chatwoot issue #14545 — "Hybrid: short wait + abort-on-newer"**. https://github.com/chatwoot/chatwoot/issues/14545 — The two-checkpoint design template this spec adopts. Open, not yet merged; useful as design rationale.
 - **Chatwoot issue #13697 — "WhatsApp burst debounce" (closed not planned)**. https://github.com/chatwoot/chatwoot/issues/13697 — Documents the absence of platform-level burst handling and the maintainer's stance that this is the integration layer's responsibility.
 - **LiveKit Agents — `audio_recognition.py`**. https://github.com/livekit/agents/blob/main/livekit-agents/livekit/agents/voice/audio_recognition.py — Pluggable `BaseEndpointing`, deque transcript buffer, manual-commit flush at 0.5s threshold. The voice-domain code skeleton this spec's L3 dynamic timeout adapts.
+- **TurnGPT** (Ekstedt & Skantze) — https://github.com/ErikEkstedt/TurnGPT — MIT, 69 stars. GPT-2 / DialoGPT-small base; custom `SpokenDialogTokenizer` with `<ts>` turn-shift token (id 50257) and projection head over next N tokens. Operates on text input. EMNLP 2020 Findings paper. Academic prior art establishing that text-input semantic EOT classification is a known technique; not production-grade for chat-channel use.
 
 ### SMS platform docs — what the carriers do (and don't do) for you
 
