@@ -3,6 +3,7 @@ id: task-agent-pattern
 type: topic
 tags: [task-agent, decision-engine, agents, architecture]
 related:
+  - [[human-in-the-loop-control]]
   - [[domain-chatbot-design]]
   - [[llm-output-design]]
   - [[llm-evaluation]]

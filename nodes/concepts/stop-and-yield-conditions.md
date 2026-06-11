@@ -4,6 +4,7 @@ type: concept
 tags: [agent, control-loop, termination, human-in-the-loop, yield]
 summary: "the three ways a loop can end — done, blocked-needs-user, or failed — and why 'yield to user' is distinct from 'stop'."
 related:
+  - [[human-in-the-loop-control]]
   - [[agent-control-loop]]
   - [[perceive-reason-act-loop]]
   - [[step-budget-and-runaway-control]]

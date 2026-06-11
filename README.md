@@ -41,6 +41,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [chatbot-pagination](nodes/topics/chatbot-pagination.md) — handling large result sets in a chatbot; UX shape and tool shape chosen jointly.
 - [context-engineering](nodes/topics/context-engineering.md) — the discipline of deciding what the model sees each turn — assembly, budget, and compaction — the master lever for agent cost, latency, and accuracy.
 - [domain-chatbot-design](nodes/topics/domain-chatbot-design.md) — how a chatbot converses inside a specific domain.
+- [human-in-the-loop-control](nodes/topics/human-in-the-loop-control.md) — the interaction patterns that keep a human in an agent's action loop — confirm before acting, steer mid-task, interrupt and resume.
 - [llm-evaluation](nodes/topics/llm-evaluation.md) — measuring whether LLM systems do what they should without bankrupting the team.
 - [llm-output-design](nodes/topics/llm-output-design.md) — how an LLM emits to the world; per-surface decisions.
 - [sms-multi-thread-chatbot](nodes/topics/sms-multi-thread-chatbot.md) — multi-thread chatbot design when the only channel is flat SMS.
@@ -87,6 +88,14 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [safety-rails-domain-specific](nodes/concepts/safety-rails-domain-specific.md) — generic safety is the baseline, not the answer.
 - [scope-and-refusal](nodes/concepts/scope-and-refusal.md) — in-domain vs. out-of-domain; three kinds of refusal.
 - [turn-taking-and-proactivity](nodes/concepts/turn-taking-and-proactivity.md) — initiative, long operations, closing.
+
+**[human-in-the-loop-control](nodes/topics/human-in-the-loop-control.md)**
+- [action-authority](nodes/concepts/action-authority.md) — what the bot can *do*; tiered authority enforced at the tool layer.
+- [confirm-before-act](nodes/concepts/confirm-before-act.md) — gating an action on explicit user approval, with the gate's strictness scaled to the action's reversibility and blast radius.
+- [hard-surface-irrevocability](nodes/concepts/hard-surface-irrevocability.md) — irrevocable output channels as a first-class category.
+- [interrupt-and-resume](nodes/concepts/interrupt-and-resume.md) — stopping a run in flight — abort vs. pause — and resuming from durable state without redoing completed work or repeating side effects.
+- [mid-task-steering](nodes/concepts/mid-task-steering.md) — handling a user message that arrives while the agent is working — classify it as redirect, refinement, abort, or chatter, then replan accordingly.
+- [stop-and-yield-conditions](nodes/concepts/stop-and-yield-conditions.md) — the three ways a loop can end — done, blocked-needs-user, or failed — and why 'yield to user' is distinct from 'stop'.
 
 **[llm-evaluation](nodes/topics/llm-evaluation.md)**
 - [adversarial-eval](nodes/concepts/adversarial-eval.md) — red-team / safety / prompt injection.

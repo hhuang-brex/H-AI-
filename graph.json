@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-11",
-  "node_count": 96,
-  "edge_count": 560,
+  "node_count": 100,
+  "edge_count": 588,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -480,10 +480,12 @@
       "created": "2026-06-08",
       "clusters": [
         "domain-chatbot-design",
+        "human-in-the-loop-control",
         "tool-use-design"
       ],
       "source_thread": null,
       "related": [
+        "human-in-the-loop-control",
         "tool-use-design",
         "domain-chatbot-design",
         "escalation-handoff",
@@ -535,6 +537,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "human-in-the-loop-control",
         "task-agent-pattern",
         "tool-use-design",
         "task-planning",
@@ -710,6 +713,35 @@
         "truncated-pyramid-results",
         "domain-knowledge-injection",
         "cost-aware-eval"
+      ]
+    },
+    {
+      "id": "confirm-before-act",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/confirm-before-act.md",
+      "title": "Confirm-Before-Act",
+      "summary": "gating an action on explicit user approval, with the gate's strictness scaled to the action's reversibility and blast radius.",
+      "tags": [
+        "agent",
+        "human-in-the-loop",
+        "approval",
+        "confirmation",
+        "reversibility",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "human-in-the-loop-control"
+      ],
+      "source_thread": null,
+      "related": [
+        "human-in-the-loop-control",
+        "hard-surface-irrevocability",
+        "action-authority",
+        "stop-and-yield-conditions",
+        "tool-use-design"
       ]
     },
     {
@@ -1292,15 +1324,47 @@
       "status": "living",
       "created": "2026-06-07",
       "clusters": [
+        "human-in-the-loop-control",
         "llm-output-design",
         "sms-multi-thread-chatbot"
       ],
       "source_thread": null,
       "related": [
+        "human-in-the-loop-control",
         "sms-multi-thread-chatbot",
         "llm-output-design",
         "output-surface-taxonomy",
         "forced-tool-call-output"
+      ]
+    },
+    {
+      "id": "human-in-the-loop-control",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/human-in-the-loop-control.md",
+      "title": "Human-in-the-Loop Control",
+      "summary": "the interaction patterns that keep a human in an agent's action loop \u2014 confirm before acting, steer mid-task, interrupt and resume.",
+      "tags": [
+        "agent",
+        "human-in-the-loop",
+        "control",
+        "approval",
+        "steering",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "agent-control-loop",
+        "task-agent-pattern",
+        "confirm-before-act",
+        "mid-task-steering",
+        "interrupt-and-resume",
+        "stop-and-yield-conditions",
+        "action-authority",
+        "hard-surface-irrevocability"
       ]
     },
     {
@@ -1327,6 +1391,36 @@
         "repair-and-clarification",
         "scope-and-refusal",
         "action-authority"
+      ]
+    },
+    {
+      "id": "interrupt-and-resume",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/interrupt-and-resume.md",
+      "title": "Interrupt & Resume",
+      "summary": "stopping a run in flight \u2014 abort vs. pause \u2014 and resuming from durable state without redoing completed work or repeating side effects.",
+      "tags": [
+        "agent",
+        "human-in-the-loop",
+        "interrupt",
+        "pause",
+        "resume",
+        "state",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "human-in-the-loop-control"
+      ],
+      "source_thread": null,
+      "related": [
+        "human-in-the-loop-control",
+        "mid-task-steering",
+        "stop-and-yield-conditions",
+        "decision-audit-trail",
+        "step-budget-and-runaway-control"
       ]
     },
     {
@@ -1553,6 +1647,35 @@
         "sms-multi-thread-chatbot",
         "forced-tool-call-output",
         "hard-surface-irrevocability"
+      ]
+    },
+    {
+      "id": "mid-task-steering",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/mid-task-steering.md",
+      "title": "Mid-Task Steering",
+      "summary": "handling a user message that arrives while the agent is working \u2014 classify it as redirect, refinement, abort, or chatter, then replan accordingly.",
+      "tags": [
+        "agent",
+        "human-in-the-loop",
+        "steering",
+        "correction",
+        "interrupt",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "human-in-the-loop-control"
+      ],
+      "source_thread": null,
+      "related": [
+        "human-in-the-loop-control",
+        "interrupt-and-resume",
+        "plan-execute-replan",
+        "intent-and-disambiguation",
+        "perceive-reason-act-loop"
       ]
     },
     {
@@ -2265,10 +2388,12 @@
       "status": "living",
       "created": "2026-06-11",
       "clusters": [
-        "agent-control-loop"
+        "agent-control-loop",
+        "human-in-the-loop-control"
       ],
       "source_thread": null,
       "related": [
+        "human-in-the-loop-control",
         "agent-control-loop",
         "perceive-reason-act-loop",
         "step-budget-and-runaway-control",
@@ -2320,6 +2445,7 @@
       "clusters": [],
       "source_thread": "2026-06-09-task-agent-pattern",
       "related": [
+        "human-in-the-loop-control",
         "domain-chatbot-design",
         "llm-output-design",
         "llm-evaluation",
@@ -3130,6 +3256,11 @@
     },
     {
       "from": "action-authority",
+      "to": "human-in-the-loop-control",
+      "kind": "related"
+    },
+    {
+      "from": "action-authority",
       "to": "intent-and-disambiguation",
       "kind": "related"
     },
@@ -3161,6 +3292,11 @@
     {
       "from": "agent-control-loop",
       "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
+      "to": "human-in-the-loop-control",
       "kind": "related"
     },
     {
@@ -3401,6 +3537,31 @@
     {
       "from": "code-execution-sandbox-pattern",
       "to": "truncated-pyramid-results",
+      "kind": "related"
+    },
+    {
+      "from": "confirm-before-act",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "confirm-before-act",
+      "to": "hard-surface-irrevocability",
+      "kind": "related"
+    },
+    {
+      "from": "confirm-before-act",
+      "to": "human-in-the-loop-control",
+      "kind": "related"
+    },
+    {
+      "from": "confirm-before-act",
+      "to": "stop-and-yield-conditions",
+      "kind": "related"
+    },
+    {
+      "from": "confirm-before-act",
+      "to": "tool-use-design",
       "kind": "related"
     },
     {
@@ -4030,6 +4191,11 @@
     },
     {
       "from": "hard-surface-irrevocability",
+      "to": "human-in-the-loop-control",
+      "kind": "related"
+    },
+    {
+      "from": "hard-surface-irrevocability",
       "to": "llm-output-design",
       "kind": "related"
     },
@@ -4041,6 +4207,46 @@
     {
       "from": "hard-surface-irrevocability",
       "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "human-in-the-loop-control",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "human-in-the-loop-control",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "human-in-the-loop-control",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "human-in-the-loop-control",
+      "to": "hard-surface-irrevocability",
+      "kind": "related"
+    },
+    {
+      "from": "human-in-the-loop-control",
+      "to": "interrupt-and-resume",
+      "kind": "related"
+    },
+    {
+      "from": "human-in-the-loop-control",
+      "to": "mid-task-steering",
+      "kind": "related"
+    },
+    {
+      "from": "human-in-the-loop-control",
+      "to": "stop-and-yield-conditions",
+      "kind": "related"
+    },
+    {
+      "from": "human-in-the-loop-control",
+      "to": "task-agent-pattern",
       "kind": "related"
     },
     {
@@ -4061,6 +4267,31 @@
     {
       "from": "intent-and-disambiguation",
       "to": "scope-and-refusal",
+      "kind": "related"
+    },
+    {
+      "from": "interrupt-and-resume",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "interrupt-and-resume",
+      "to": "human-in-the-loop-control",
+      "kind": "related"
+    },
+    {
+      "from": "interrupt-and-resume",
+      "to": "mid-task-steering",
+      "kind": "related"
+    },
+    {
+      "from": "interrupt-and-resume",
+      "to": "step-budget-and-runaway-control",
+      "kind": "related"
+    },
+    {
+      "from": "interrupt-and-resume",
+      "to": "stop-and-yield-conditions",
       "kind": "related"
     },
     {
@@ -4296,6 +4527,31 @@
     {
       "from": "message-segmentation-160",
       "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "mid-task-steering",
+      "to": "human-in-the-loop-control",
+      "kind": "related"
+    },
+    {
+      "from": "mid-task-steering",
+      "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "mid-task-steering",
+      "to": "interrupt-and-resume",
+      "kind": "related"
+    },
+    {
+      "from": "mid-task-steering",
+      "to": "perceive-reason-act-loop",
+      "kind": "related"
+    },
+    {
+      "from": "mid-task-steering",
+      "to": "plan-execute-replan",
       "kind": "related"
     },
     {
@@ -5055,6 +5311,11 @@
     },
     {
       "from": "stop-and-yield-conditions",
+      "to": "human-in-the-loop-control",
+      "kind": "related"
+    },
+    {
+      "from": "stop-and-yield-conditions",
       "to": "perceive-reason-act-loop",
       "kind": "related"
     },
@@ -5116,6 +5377,11 @@
     {
       "from": "task-agent-pattern",
       "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "human-in-the-loop-control",
       "kind": "related"
     },
     {
