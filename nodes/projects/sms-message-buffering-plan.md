@@ -62,6 +62,8 @@ Each of the 7 pieces below specifies:
 
 **Scope.** Foundation. Every inbound transitions through a `buffering` state before processing. Per-user × thread lock during the `buffering → processing` transition to prevent races. Zero user-visible behavior change initially (everything flushes at floor with no real classifier yet).
 
+**Reference implementation.** [mozilla-ai/clawbolt's `MessageBatcher`](https://github.com/mozilla-ai/clawbolt/blob/main/backend/app/agent/ingestion.py) (Apache-2.0) is the cleanest open-source prior art for this layer — per-user asyncio debounce, cancel-and-recreate `_flush_after`, text + media merging. Borrow the skeleton; add the L1/L2/L3 detection layers on top in later pieces.
+
 **Deliverables**
 - New state `buffering` added to the SMS turn state machine (per [sms-state-machine](../concepts/sms-state-machine.md)).
 - Buffer record schema in the chosen store (Redis hash or Postgres row), with TTL = `CEILING_S + ANNOUNCED_EXTENSION_S + buffer_seconds` (default 90s).
@@ -82,7 +84,7 @@ Each of the 7 pieces below specifies:
 - *Lock contention on bursty users*: granularity is user × thread, not just user, to avoid this. If a user has only one thread, contention is the same as user-level — accept and monitor.
 - *Hot-key TTL pressure on the KV store*: for users with persistent buffer churn, TTL writes become noisy. Mitigation: extend TTL on each new message rather than recreate the record.
 
-**Effort.** ~3 dev-days. The lock + recovery are usually the time sinks, not the state itself.
+**Effort.** ~3 dev-days. The lock + recovery are usually the time sinks, not the state itself. **Borrowing the clawbolt skeleton can reduce this to ~2 days** if licensing and architecture fit.
 
 ---
 
@@ -112,9 +114,9 @@ Each of the 7 pieces below specifies:
 
 ---
 
-### Piece 3 — L2 default classifier + dynamic timeout
+### Piece 3 — L2 default classifier + dynamic timeout + abort-on-newer checkpoints
 
-**Scope.** Semantic-aware turn-completeness detection for inbounds that L1 doesn't short-circuit. Plus the dynamic-timeout math that converts classifier confidence into a wait window.
+**Scope.** Semantic-aware turn-completeness detection for inbounds that L1 doesn't short-circuit. Plus the dynamic-timeout math that converts classifier confidence into a wait window. Plus the two abort-on-newer checkpoints from [Chatwoot issue #14545](https://github.com/chatwoot/chatwoot/issues/14545) that protect against the "user types during LLM call" race.
 
 **Deliverables**
 - `classify_turn_completeness` tool definition (per spec's L2 section) with `{is_complete, confidence, expected_continuation}` output.
@@ -122,7 +124,9 @@ Each of the 7 pieces below specifies:
 - Dynamic-timeout calculator: `flush_at = max(last_arrival + (FLOOR_S + (1 - confidence) × (CEILING_S - FLOOR_S)), hard_ceiling)`.
 - Constants `FLOOR_S=8`, `CEILING_S=30` exposed as configuration.
 - Re-arming logic: each new inbound recomputes `flush_at` based on the latest classifier decision.
-- Audit field `classifier_decisions` populated on every classifier call.
+- **Checkpoint A** — pre-LLM tail check. Before invoking the action LLM, re-read the user's buffer state. If a newer message arrived since processing started, abort this run and return the lock; the new buffer's eventual flush handles the conversation. One Redis read.
+- **Checkpoint B** — post-LLM pre-send tail check. After the action LLM returns, before sending to the user, re-read buffer state again. If newer messages arrived during the LLM call, do *not* send the (now-stale) response. Either discard or stash for audit. One Redis read.
+- Audit fields: `classifier_decisions` populated on every classifier call; `aborted_by_checkpoint_a` / `aborted_by_checkpoint_b` counters in the audit trail.
 
 **Dependencies.** Pieces 1, 2. Stack: LLM with forced-tool-call API.
 
@@ -131,13 +135,17 @@ Each of the 7 pieces below specifies:
 - Dynamic-timeout produces values in `[FLOOR_S, hard_ceiling]` for all valid inputs.
 - Audit trail has one row per classifier call with `confidence`, `expected_continuation`, `model_version`, `latency_ms`.
 - Per-inbound cost ≤ \$0.0002 at the chosen model tier.
+- Checkpoint A: test scenario where new inbound arrives between buffer flush and LLM call → assert processing aborts, lock released, new buffer continues.
+- Checkpoint B: test scenario where new inbound arrives during LLM call → assert response is NOT sent to user; new turn handles the conversation.
+- Checkpoint B firing rate < 5% in steady state (above this signals the LLM is too slow or users are too bursty).
 
 **Risks**
 - *Classifier calibration drift on model upgrades*: pin model version in the audit; dashboard alerts on confidence-distribution shift past a threshold.
 - *Latency on the classifier*: p99 ≤ 600ms is the target; alert if p99 exceeds 1s.
 - *Cost*: at high inbound volume, the L2 cost is the dominant new spend. Track per-call cost in the audit; reconcile against vendor bill monthly.
+- *Checkpoint B wasted-LLM-call cost*: Checkpoint B aborts mean we paid for an LLM call we didn't use. Track in audit; accept as the cost of preventing fragmentation. If rate exceeds 5%, investigate.
 
-**Effort.** ~3 dev-days.
+**Effort.** ~3 dev-days (includes the two checkpoints; without them ~2 days).
 
 ---
 

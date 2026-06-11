@@ -285,6 +285,17 @@ The `buffering → processing` transition acquires a per-user lock. Three behavi
 
 Lock granularity: `user_id × thread_id`, not just `user_id`. A user with two open threads can have parallel buffers.
 
+### Checkpoints during processing — abort-on-newer
+
+The lock prevents two parallel processing runs but doesn't address the race where a user types *during* a long-running LLM call from a prior turn. Per the Chatwoot #14545 hybrid-design proposal, two abort checkpoints in the processing path:
+
+- **Checkpoint A** — before invoking the action LLM: re-read the user's buffer state. If a newer message arrived since processing started, abort this run and return the lock; the new buffer's eventual flush handles the conversation.
+- **Checkpoint B** — after the action LLM returns, before sending to the user: re-read buffer state again. If a newer message arrived during the LLM call, do *not* send the (now-stale) response. Either discard or stash for audit; the new turn's response will subsume it.
+
+Why both: a single checkpoint pre-LLM doesn't catch the case where the user types during the LLM call (which can take 5–30s for complex actions). Without Checkpoint B, the user receives a stale response that ignores their most recent message — a fragmentation regression.
+
+Pre-LLM Checkpoint A is cheap (one Redis read). Post-LLM Checkpoint B is also cheap and runs once per processing cycle. The only cost is the wasted LLM call when Checkpoint B fires (logged for cost reconciliation; should be < 5% of processing cycles in steady state).
+
 ## Storage decisions
 
 | Component | Where it lives | Why |
@@ -375,6 +386,49 @@ Total: ~17 dev-days for the full surface. Items 1–4 alone (~10 days) handle th
 - [forced-tool-call-output](../concepts/forced-tool-call-output.md) — both L2 prompt modes use forced tool-calls.
 - [cot-as-forensic-artifact](../concepts/cot-as-forensic-artifact.md) — classifier reasoning summary captured for audit; never user-facing.
 
+## Existing implementations (prior art on GitHub)
+
+A follow-up GitHub-specific research pass (see [2026-06-10-github-buffering-references](../../threads/2026-06-10-github-buffering-references.md)) found exactly **one clean open-source reference** for inbound message buffering on chat channels, plus one in-flight design proposal worth reading.
+
+### `mozilla-ai/clawbolt` — the closest existing reference
+
+Apache-2.0, ~94 stars, last pushed 2026-06-10. The class `MessageBatcher` in `backend/app/agent/ingestion.py` (line 467) implements the foundational pattern this spec ports.
+
+**What it does that maps to this spec:**
+- Per-user asyncio debounce keyed by `user.id` (matches the per-user × thread lock at finer granularity).
+- Each new inbound cancels and recreates an `asyncio.Task` `_flush_after` — equivalent to the spec's "re-arming logic on every new message."
+- `flush()` picks `state.entries[-1]` as the trigger and merges accumulated text + media (lines 542–547: `all_media.extend(...)`, `all_downloaded.extend(...)`) — the same multi-image / announced-content handling our Piece 4 implements.
+- Default debounce window: 1500ms via `MESSAGE_BATCH_WINDOW_MS` (with `ge=100` validator; `0` to disable through a runtime branch).
+
+**What it does NOT do** (where this spec's novelty lives):
+- No semantic end-of-turn classifier — fixed timer only.
+- No typing-indicator consumption (only `_send_early_typing_indicator()` for outbound).
+- No forward-reference detection for the announced-content pattern; relies on the timer alone.
+- No intent-edit handling (E10).
+- Internal note in `ingestion.py` references borrowing from "nanobot's Mochat _enqueue_delayed_entry/_flush_delayed_entries pattern" — possible deeper provenance worth tracing.
+
+**Recommendation**: borrow the asyncio debounce + state-management skeleton directly. Layer the L1/L2/L3 detection on top.
+
+### Chatwoot issue #14545 — design template for Checkpoints A/B
+
+Open issue, design proposal not yet merged. Articulates the **hybrid debounce + abort-on-newer** pattern with two checkpoints — the exact rationale this spec's "Per-user serialization" section adopts. Worth reading for the explicit pseudocode and the justification:
+
+> "A pure passive wait (long sleep + tail-check) gives every single-message conversation the full floor latency and does not handle the race where the user types during the LLM call. A pure abort-on-newer with no wait still lets all N jobs reach the LLM in parallel for very fast bursts."
+
+The hybrid wait + abort design is the synthesis. This spec adopts it explicitly.
+
+### Frameworks where this is **NOT** implemented (verified)
+
+- **Rasa** (RasaHQ/rasa) — no inbound-burst buffering. The "Buffered Tracker Save" issue is about TrackerStore I/O, not message coalescing.
+- **Botpress** (botpress/botpress) — no implementation, no open issues.
+- **Chatwoot** (chatwoot/chatwoot) base behavior — Captain LLM auto-responder fires once per inbound message; the only delay (PR #11837) is a 1–5s ActiveStorage attachment-readiness wait, gated on `message.attachments.present?`. Burst-debounce was filed as issue #13697 and **closed "not planned"** by maintainers.
+- **Baileys / whatsapp-web.js / wppconnect** — low-level protocol libraries; expose events, not turn-handling. Consumer must implement.
+
+### Voice-AI references that inspire but don't port directly
+
+- **LiveKit Agents** `livekit-agents/livekit/agents/voice/audio_recognition.py` — pluggable `BaseEndpointing` class, `TurnDetectionMode` (`vad`/`stt`/`manual`/custom), `_transcript_buffer: deque[SpeechEvent]`, manual-commit at 0.5s threshold, `stt_flush_duration: float = 2.0`. Apache-2.0. The abstraction is cleanly designed but voice-coupled; the *pattern* ports, the *artifact* doesn't.
+- **Pipecat smart-turn** — audio-only (16kHz mono PCM, ≤8s); text conditioning is a medium-term goal, not yet shipped. Don't try to use the artifact for SMS.
+
 ## References (verified primary sources)
 
 ### Voice-AI semantic end-of-turn — the architectural pattern this spec ports
@@ -385,6 +439,14 @@ Total: ~17 dev-days for the full surface. Items 1–4 alone (~10 days) handle th
 - **LiveKit Agents — Turn Detector plugin (GitHub)**. https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-turn-detector — Plugin README documents the architecture: Qwen2.5-0.5B-Instruct distilled from a Qwen2.5-7B teacher.
 - **Pipecat Smart Turn v3 (GitHub)**. https://github.com/pipecat-ai/smart-turn — Independent vendor implementation: 8M-param Whisper Tiny + linear classifier head, 23 languages, 16kHz mono PCM input up to 8s, 10–100 ms CPU inference (~65 ms on Pipecat Cloud).
 - **Deepgram — Endpointing**. https://developers.deepgram.com/docs/endpointing — 10ms default, 300–500ms for conversational. Critical caveat: *"Do not use `speech_final: true` alone to capture full transcripts"* — long utterances produce multiple `is_final: true` responses before `speech_final: true`. The buffer-and-stitch principle.
+
+### Open-source chatbot prior art (verified on GitHub)
+
+- **mozilla-ai/clawbolt — `MessageBatcher`**. https://github.com/mozilla-ai/clawbolt/blob/main/backend/app/agent/ingestion.py — The closest existing reference for inbound message buffering on chat channels. Per-user asyncio debounce, 1500ms default, merges text + media. Apache-2.0. ~94 stars. Recommended as a borrow-from reference for Piece 1.
+- **mozilla-ai/clawbolt — config**. https://github.com/mozilla-ai/clawbolt/blob/main/backend/app/config.py — `MESSAGE_BATCH_WINDOW_MS` documented configuration.
+- **Chatwoot issue #14545 — "Hybrid: short wait + abort-on-newer"**. https://github.com/chatwoot/chatwoot/issues/14545 — The two-checkpoint design template this spec adopts. Open, not yet merged; useful as design rationale.
+- **Chatwoot issue #13697 — "WhatsApp burst debounce" (closed not planned)**. https://github.com/chatwoot/chatwoot/issues/13697 — Documents the absence of platform-level burst handling and the maintainer's stance that this is the integration layer's responsibility.
+- **LiveKit Agents — `audio_recognition.py`**. https://github.com/livekit/agents/blob/main/livekit-agents/livekit/agents/voice/audio_recognition.py — Pluggable `BaseEndpointing`, deque transcript buffer, manual-commit flush at 0.5s threshold. The voice-domain code skeleton this spec's L3 dynamic timeout adapts.
 
 ### SMS platform docs — what the carriers do (and don't do) for you
 
@@ -407,5 +469,7 @@ The deep-research workflow explicitly refuted these as production guidance — t
 - "BuilderBot 1.5s debounce window" — vote 0–3, no primary-source production deployment found.
 - "OpenClaw WeCom 2-second debounce" — vote 0–3, plugin docs only, not production guidance.
 - "Carrier-level concatenation handles split-thought bursts" — vote 1–2, conflates transport segmentation with user-intent splitting.
+- "Chatwoot #14545 recommends a 4-second default debounce window" — vote 0–3, the specific value is not in the proposal.
+- "Pipecat / LiveKit turn decisions come purely from ML backends, not fixed debounce timeouts" — vote 1–2, oversimplifies; both use a baseline timer that the model adjusts dynamically.
 
-The honest finding from the research: **no major chatbot team (Intercom Fin, Klarna AI, ChatGPT mobile, Slack AI, Discord, Notion AI, Glean, Stripe, Cursor, Replit, Linear, WhatsApp Business) has published canonical guidance on SMS split-message handling.** This spec exists to fill that gap by porting the voice-AI pattern, not by following a documented chatbot-team precedent.
+The honest finding from both research rounds: **no major chatbot team (Intercom Fin, Klarna AI, ChatGPT mobile, Slack AI, Discord, Notion AI, Glean, Stripe, Cursor, Replit, Linear, WhatsApp Business) has published canonical guidance on SMS split-message handling.** This spec exists to fill that gap by porting the voice-AI pattern + extending mozilla-ai/clawbolt's text-channel skeleton, not by following a documented chatbot-team precedent.
