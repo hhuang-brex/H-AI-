@@ -39,6 +39,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 ### Topics
 - [agent-control-loop](nodes/topics/agent-control-loop.md) — the iteration that turns an LLM into an agent — perceive, reason, act, observe — plus when to stop, yield, and bound runaway.
 - [chatbot-pagination](nodes/topics/chatbot-pagination.md) — handling large result sets in a chatbot; UX shape and tool shape chosen jointly.
+- [context-engineering](nodes/topics/context-engineering.md) — the discipline of deciding what the model sees each turn — assembly, budget, and compaction — the master lever for agent cost, latency, and accuracy.
 - [domain-chatbot-design](nodes/topics/domain-chatbot-design.md) — how a chatbot converses inside a specific domain.
 - [llm-evaluation](nodes/topics/llm-evaluation.md) — measuring whether LLM systems do what they should without bankrupting the team.
 - [llm-output-design](nodes/topics/llm-output-design.md) — how an LLM emits to the world; per-surface decisions.
@@ -63,6 +64,14 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [forced-tool-call-output](nodes/concepts/forced-tool-call-output.md) — when to force schema vs. let the model write free-text.
 - [paginated-tool-contract](nodes/concepts/paginated-tool-contract.md) — opaque cursors, verbosity enum, filter parameters; ~3× token savings.
 - [truncated-pyramid-results](nodes/concepts/truncated-pyramid-results.md) — summary first, select-N exemplars, refinement buttons (NN/g).
+
+**[context-engineering](nodes/topics/context-engineering.md)**
+- [context-assembly-per-turn](nodes/concepts/context-assembly-per-turn.md) — constructing each turn's prompt from typed parts — system, goal, history, tools, results — instead of resending a growing transcript.
+- [context-budget-allocation](nodes/concepts/context-budget-allocation.md) — splitting a fixed token window across system, history, tools, and results — with an explicit eviction policy for when it overflows.
+- [context-compaction](nodes/concepts/context-compaction.md) — shrinking a long history to fit the window without losing the decisions that matter — rolling summaries, structured state, and what never to compact.
+- [conversation-memory](nodes/concepts/conversation-memory.md) — three horizons; what to remember, what not to.
+- [domain-knowledge-injection](nodes/concepts/domain-knowledge-injection.md) — RAG, prompt-stuffing, structured state, fine-tuning per knowledge type.
+- [sms-context-windowing](nodes/concepts/sms-context-windowing.md) — what's in the prompt: per-thread, structured, bounded.
 
 **[domain-chatbot-design](nodes/topics/domain-chatbot-design.md)**
 - [action-authority](nodes/concepts/action-authority.md) — what the bot can *do*; tiered authority enforced at the tool layer.

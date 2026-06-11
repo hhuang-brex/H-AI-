@@ -7,6 +7,7 @@ related:
   - [[task-agent-pattern]]
   - [[tool-use-design]]
   - [[task-planning]]
+  - [[context-engineering]]
   - [[perceive-reason-act-loop]]
   - [[stop-and-yield-conditions]]
   - [[step-budget-and-runaway-control]]

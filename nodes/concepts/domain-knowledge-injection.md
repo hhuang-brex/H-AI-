@@ -3,6 +3,7 @@ id: domain-knowledge-injection
 type: concept
 tags: [chatbot, conversation-design, rag, knowledge, context, fine-tuning]
 related:
+  - [[context-engineering]]
   - [[chatbot-pagination]]
   - [[domain-chatbot-design]]
   - [[grounding-and-citation]]

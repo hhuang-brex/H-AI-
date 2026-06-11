@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-11",
-  "node_count": 92,
-  "edge_count": 533,
+  "node_count": 96,
+  "edge_count": 560,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -538,6 +538,7 @@
         "task-agent-pattern",
         "tool-use-design",
         "task-planning",
+        "context-engineering",
         "perceive-reason-act-loop",
         "stop-and-yield-conditions",
         "step-budget-and-runaway-control",
@@ -712,6 +713,121 @@
       ]
     },
     {
+      "id": "context-assembly-per-turn",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/context-assembly-per-turn.md",
+      "title": "Context Assembly Per Turn",
+      "summary": "constructing each turn's prompt from typed parts \u2014 system, goal, history, tools, results \u2014 instead of resending a growing transcript.",
+      "tags": [
+        "agent",
+        "context",
+        "prompt-assembly",
+        "perceive",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "context-engineering"
+      ],
+      "source_thread": null,
+      "related": [
+        "context-engineering",
+        "context-budget-allocation",
+        "perceive-reason-act-loop",
+        "recency-bias-prompt-design",
+        "domain-knowledge-injection"
+      ]
+    },
+    {
+      "id": "context-budget-allocation",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/context-budget-allocation.md",
+      "title": "Context Budget Allocation",
+      "summary": "splitting a fixed token window across system, history, tools, and results \u2014 with an explicit eviction policy for when it overflows.",
+      "tags": [
+        "agent",
+        "context",
+        "token-budget",
+        "eviction",
+        "cost",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "context-engineering"
+      ],
+      "source_thread": null,
+      "related": [
+        "context-engineering",
+        "context-assembly-per-turn",
+        "context-compaction",
+        "cost-aware-eval",
+        "step-budget-and-runaway-control"
+      ]
+    },
+    {
+      "id": "context-compaction",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/context-compaction.md",
+      "title": "Context Compaction",
+      "summary": "shrinking a long history to fit the window without losing the decisions that matter \u2014 rolling summaries, structured state, and what never to compact.",
+      "tags": [
+        "agent",
+        "context",
+        "compaction",
+        "summarization",
+        "memory",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "context-engineering"
+      ],
+      "source_thread": null,
+      "related": [
+        "context-engineering",
+        "context-budget-allocation",
+        "conversation-memory",
+        "decision-audit-trail",
+        "agent-control-loop"
+      ]
+    },
+    {
+      "id": "context-engineering",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/context-engineering.md",
+      "title": "Context Engineering",
+      "summary": "the discipline of deciding what the model sees each turn \u2014 assembly, budget, and compaction \u2014 the master lever for agent cost, latency, and accuracy.",
+      "tags": [
+        "agent",
+        "context",
+        "prompt-assembly",
+        "token-budget",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "agent-control-loop",
+        "tool-use-design",
+        "context-assembly-per-turn",
+        "context-budget-allocation",
+        "context-compaction",
+        "conversation-memory",
+        "domain-knowledge-injection",
+        "sms-context-windowing"
+      ]
+    },
+    {
       "id": "conversation-memory",
       "type": "concept",
       "kind": null,
@@ -728,11 +844,13 @@
       "status": "living",
       "created": "2026-06-08",
       "clusters": [
+        "context-engineering",
         "domain-chatbot-design",
         "sms-multi-thread-chatbot"
       ],
       "source_thread": null,
       "related": [
+        "context-engineering",
         "sms-multi-thread-chatbot",
         "domain-chatbot-design",
         "domain-knowledge-injection",
@@ -914,10 +1032,12 @@
       "created": "2026-06-08",
       "clusters": [
         "chatbot-pagination",
+        "context-engineering",
         "domain-chatbot-design"
       ],
       "source_thread": null,
       "related": [
+        "context-engineering",
         "chatbot-pagination",
         "domain-chatbot-design",
         "grounding-and-citation",
@@ -1907,10 +2027,12 @@
       "status": "living",
       "created": "2026-06-08",
       "clusters": [
+        "context-engineering",
         "sms-multi-thread-chatbot"
       ],
       "source_thread": null,
       "related": [
+        "context-engineering",
         "sms-multi-thread-chatbot",
         "flat-channel-thread-tracking",
         "sms-state-machine",
@@ -3033,6 +3155,11 @@
     },
     {
       "from": "agent-control-loop",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
       "to": "decision-engine-contract",
       "kind": "related"
     },
@@ -3277,6 +3404,126 @@
       "kind": "related"
     },
     {
+      "from": "context-assembly-per-turn",
+      "to": "context-budget-allocation",
+      "kind": "related"
+    },
+    {
+      "from": "context-assembly-per-turn",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "context-assembly-per-turn",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "context-assembly-per-turn",
+      "to": "perceive-reason-act-loop",
+      "kind": "related"
+    },
+    {
+      "from": "context-assembly-per-turn",
+      "to": "recency-bias-prompt-design",
+      "kind": "related"
+    },
+    {
+      "from": "context-budget-allocation",
+      "to": "context-assembly-per-turn",
+      "kind": "related"
+    },
+    {
+      "from": "context-budget-allocation",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "context-budget-allocation",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "context-budget-allocation",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "context-budget-allocation",
+      "to": "step-budget-and-runaway-control",
+      "kind": "related"
+    },
+    {
+      "from": "context-compaction",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "context-compaction",
+      "to": "context-budget-allocation",
+      "kind": "related"
+    },
+    {
+      "from": "context-compaction",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "context-compaction",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "context-compaction",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "context-assembly-per-turn",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "context-budget-allocation",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "sms-context-windowing",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "conversation-memory",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
       "from": "conversation-memory",
       "to": "domain-chatbot-design",
       "kind": "related"
@@ -3514,6 +3761,11 @@
     {
       "from": "domain-knowledge-injection",
       "to": "chatbot-pagination",
+      "kind": "related"
+    },
+    {
+      "from": "domain-knowledge-injection",
+      "to": "context-engineering",
       "kind": "related"
     },
     {
@@ -4479,6 +4731,11 @@
     {
       "from": "scope-and-refusal",
       "to": "safety-rails-domain-specific",
+      "kind": "related"
+    },
+    {
+      "from": "sms-context-windowing",
+      "to": "context-engineering",
       "kind": "related"
     },
     {

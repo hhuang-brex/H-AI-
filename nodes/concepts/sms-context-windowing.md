@@ -3,6 +3,7 @@ id: sms-context-windowing
 type: concept
 tags: [sms, chatbot, context, prompt-engineering, multi-thread]
 related:
+  - [[context-engineering]]
   - [[sms-multi-thread-chatbot]]
   - [[flat-channel-thread-tracking]]
   - [[sms-state-machine]]
