@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-11",
-  "node_count": 81,
-  "edge_count": 461,
+  "node_count": 92,
+  "edge_count": 533,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -479,10 +479,12 @@
       "status": "living",
       "created": "2026-06-08",
       "clusters": [
-        "domain-chatbot-design"
+        "domain-chatbot-design",
+        "tool-use-design"
       ],
       "source_thread": null,
       "related": [
+        "tool-use-design",
         "domain-chatbot-design",
         "escalation-handoff",
         "forced-tool-call-output",
@@ -512,6 +514,35 @@
       "related": [
         "llm-evaluation",
         "agent-eval-case-study"
+      ]
+    },
+    {
+      "id": "agent-control-loop",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/agent-control-loop.md",
+      "title": "Agent Control Loop",
+      "summary": "the iteration that turns an LLM into an agent \u2014 perceive, reason, act, observe \u2014 plus when to stop, yield, and bound runaway.",
+      "tags": [
+        "agent",
+        "control-loop",
+        "react",
+        "orchestration",
+        "task-agent"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "task-agent-pattern",
+        "tool-use-design",
+        "task-planning",
+        "perceive-reason-act-loop",
+        "stop-and-yield-conditions",
+        "step-budget-and-runaway-control",
+        "decision-engine-contract",
+        "llm-observability"
       ]
     },
     {
@@ -583,10 +614,12 @@
       "status": "living",
       "created": "2026-06-05",
       "clusters": [
-        "llm-evaluation"
+        "llm-evaluation",
+        "task-planning"
       ],
       "source_thread": null,
       "related": [
+        "task-planning",
         "llm-evaluation",
         "test-pyramid-llm",
         "golden-snapshot-eval",
@@ -811,10 +844,14 @@
       "status": "living",
       "created": "2026-06-09",
       "clusters": [
-        "task-agent-pattern"
+        "agent-control-loop",
+        "task-agent-pattern",
+        "task-planning"
       ],
       "source_thread": null,
       "related": [
+        "task-planning",
+        "agent-control-loop",
         "task-agent-pattern",
         "forced-tool-call-output",
         "template-rendered-output",
@@ -1020,10 +1057,12 @@
       "clusters": [
         "chatbot-pagination",
         "llm-output-design",
-        "task-agent-pattern"
+        "task-agent-pattern",
+        "tool-use-design"
       ],
       "source_thread": null,
       "related": [
+        "tool-use-design",
         "task-agent-pattern",
         "chatbot-pagination",
         "llm-output-design",
@@ -1034,6 +1073,33 @@
         "template-rendered-output",
         "layered-defense-pipeline",
         "agent-trajectory-eval"
+      ]
+    },
+    {
+      "id": "goal-decomposition",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/goal-decomposition.md",
+      "title": "Goal Decomposition",
+      "summary": "breaking a goal into steps at the right granularity \u2014 actionable but not brittle \u2014 with dependencies made explicit.",
+      "tags": [
+        "agent",
+        "planning",
+        "decomposition",
+        "task",
+        "granularity"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "task-planning"
+      ],
+      "source_thread": null,
+      "related": [
+        "task-planning",
+        "plan-execute-replan",
+        "decision-engine-contract",
+        "agent-control-loop"
       ]
     },
     {
@@ -1294,10 +1360,12 @@
       "status": "living",
       "created": "2026-06-10",
       "clusters": [
+        "agent-control-loop",
         "llm-output-design"
       ],
       "source_thread": "2026-06-10-llm-observability-research",
       "related": [
+        "agent-control-loop",
         "llm-output-design",
         "decision-audit-trail",
         "native-thinking-vs-prompted-reasoning",
@@ -1448,10 +1516,12 @@
       "created": "2026-06-07",
       "clusters": [
         "llm-output-design",
-        "task-agent-pattern"
+        "task-agent-pattern",
+        "tool-use-design"
       ],
       "source_thread": null,
       "related": [
+        "tool-use-design",
         "task-agent-pattern",
         "llm-output-design",
         "forced-tool-call-output",
@@ -1489,6 +1559,34 @@
       ]
     },
     {
+      "id": "perceive-reason-act-loop",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/perceive-reason-act-loop.md",
+      "title": "Perceive\u2013Reason\u2013Act Loop",
+      "summary": "the core agent iteration \u2014 observe state, decide one action, execute, observe result \u2014 and why each turn should commit to exactly one action.",
+      "tags": [
+        "agent",
+        "control-loop",
+        "react",
+        "reasoning",
+        "action"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "agent-control-loop"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-control-loop",
+        "tool-use-design",
+        "decision-engine-contract",
+        "native-thinking-vs-prompted-reasoning",
+        "stop-and-yield-conditions"
+      ]
+    },
+    {
       "id": "persona-tone-compliance",
       "type": "concept",
       "kind": null,
@@ -1514,6 +1612,34 @@
         "scope-and-refusal",
         "safety-rails-domain-specific",
         "grounding-and-citation"
+      ]
+    },
+    {
+      "id": "plan-execute-replan",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/plan-execute-replan.md",
+      "title": "Plan\u2013Execute\u2013Replan",
+      "summary": "executing a plan step by step and revising it when a step fails or reality diverges \u2014 the difference between an agent and a script.",
+      "tags": [
+        "agent",
+        "planning",
+        "replanning",
+        "recovery",
+        "adaptation"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "task-planning"
+      ],
+      "source_thread": null,
+      "related": [
+        "task-planning",
+        "goal-decomposition",
+        "agent-control-loop",
+        "step-budget-and-runaway-control",
+        "stop-and-yield-conditions"
       ]
     },
     {
@@ -1972,6 +2098,63 @@
       ]
     },
     {
+      "id": "step-budget-and-runaway-control",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/step-budget-and-runaway-control.md",
+      "title": "Step Budget & Runaway Control",
+      "summary": "hard ceilings on loop iterations, tokens, wall-clock, and tool calls so a stuck agent fails loudly instead of running forever.",
+      "tags": [
+        "agent",
+        "control-loop",
+        "budget",
+        "cost",
+        "safety",
+        "runaway"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "agent-control-loop"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-control-loop",
+        "stop-and-yield-conditions",
+        "cost-aware-eval",
+        "action-execution-safety",
+        "llm-observability"
+      ]
+    },
+    {
+      "id": "stop-and-yield-conditions",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/stop-and-yield-conditions.md",
+      "title": "Stop-and-Yield Conditions",
+      "summary": "the three ways a loop can end \u2014 done, blocked-needs-user, or failed \u2014 and why 'yield to user' is distinct from 'stop'.",
+      "tags": [
+        "agent",
+        "control-loop",
+        "termination",
+        "human-in-the-loop",
+        "yield"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "agent-control-loop"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-control-loop",
+        "perceive-reason-act-loop",
+        "step-budget-and-runaway-control",
+        "turn-taking-and-proactivity",
+        "escalation-handoff"
+      ]
+    },
+    {
       "id": "streaming-vs-structured",
       "type": "concept",
       "kind": null,
@@ -2018,6 +2201,9 @@
         "domain-chatbot-design",
         "llm-output-design",
         "llm-evaluation",
+        "agent-control-loop",
+        "tool-use-design",
+        "task-planning",
         "decision-engine-contract",
         "engine-vs-conversation-routing",
         "decision-audit-trail",
@@ -2049,6 +2235,34 @@
         "llm-evaluation",
         "forced-tool-call-output",
         "output-surface-taxonomy"
+      ]
+    },
+    {
+      "id": "task-planning",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/task-planning.md",
+      "title": "Task Planning",
+      "summary": "turning a goal into an ordered set of actions and adapting when reality diverges from the plan.",
+      "tags": [
+        "agent",
+        "planning",
+        "task-decomposition",
+        "replanning",
+        "task-agent"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "task-agent-pattern",
+        "agent-control-loop",
+        "tool-use-design",
+        "goal-decomposition",
+        "plan-execute-replan",
+        "decision-engine-contract",
+        "agent-trajectory-eval"
       ]
     },
     {
@@ -2134,6 +2348,119 @@
         "intent-and-disambiguation",
         "message-segmentation-160",
         "repair-and-clarification"
+      ]
+    },
+    {
+      "id": "tool-result-grounding",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/tool-result-grounding.md",
+      "title": "Tool Result Grounding",
+      "summary": "feeding tool output back into the loop so the model can act on it \u2014 trimming, shaping, and distinguishing error from success.",
+      "tags": [
+        "agent",
+        "tool-use",
+        "grounding",
+        "context",
+        "results"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "tool-use-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "tool-use-design",
+        "tool-schema-design",
+        "code-execution-sandbox-pattern",
+        "grounding-and-citation",
+        "perceive-reason-act-loop"
+      ]
+    },
+    {
+      "id": "tool-schema-design",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/tool-schema-design.md",
+      "title": "Tool Schema Design",
+      "summary": "writing tool definitions the model can reliably pick and call \u2014 names, descriptions, parameter shapes, and the errors they return.",
+      "tags": [
+        "agent",
+        "tool-use",
+        "schema",
+        "function-calling",
+        "design"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "tool-use-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "tool-use-design",
+        "tool-selection-and-routing",
+        "tool-result-grounding",
+        "forced-tool-call-output",
+        "schema-vs-validator"
+      ]
+    },
+    {
+      "id": "tool-selection-and-routing",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/tool-selection-and-routing.md",
+      "title": "Tool Selection & Routing",
+      "summary": "helping the model pick the right tool when there are many \u2014 disambiguation, hierarchical routing, and keeping the active set small.",
+      "tags": [
+        "agent",
+        "tool-use",
+        "routing",
+        "selection",
+        "scale"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [
+        "tool-use-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "tool-use-design",
+        "tool-schema-design",
+        "tool-result-grounding",
+        "intent-and-disambiguation",
+        "recency-bias-prompt-design"
+      ]
+    },
+    {
+      "id": "tool-use-design",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/tool-use-design.md",
+      "title": "Tool-Use Design",
+      "summary": "how an agent acts on the world through tools \u2014 schema design, selection, and grounding results back into the loop.",
+      "tags": [
+        "agent",
+        "tool-use",
+        "function-calling",
+        "tool-schema",
+        "action"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "task-agent-pattern",
+        "agent-control-loop",
+        "tool-schema-design",
+        "tool-selection-and-routing",
+        "tool-result-grounding",
+        "forced-tool-call-output",
+        "action-authority",
+        "output-surface-taxonomy"
       ]
     },
     {
@@ -2690,6 +3017,11 @@
       "kind": "related"
     },
     {
+      "from": "action-authority",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
       "from": "adversarial-eval",
       "to": "agent-eval-case-study",
       "kind": "related"
@@ -2697,6 +3029,46 @@
     {
       "from": "adversarial-eval",
       "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
+      "to": "perceive-reason-act-loop",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
+      "to": "step-budget-and-runaway-control",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
+      "to": "stop-and-yield-conditions",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
+      "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
+      "to": "task-planning",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
+      "to": "tool-use-design",
       "kind": "related"
     },
     {
@@ -2797,6 +3169,11 @@
     {
       "from": "agent-trajectory-eval",
       "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "agent-trajectory-eval",
+      "to": "task-planning",
       "kind": "related"
     },
     {
@@ -3021,6 +3398,11 @@
     },
     {
       "from": "decision-engine-contract",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "decision-engine-contract",
       "to": "decision-audit-trail",
       "kind": "related"
     },
@@ -3042,6 +3424,11 @@
     {
       "from": "decision-engine-contract",
       "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "decision-engine-contract",
+      "to": "task-planning",
       "kind": "related"
     },
     {
@@ -3320,6 +3707,31 @@
       "kind": "related"
     },
     {
+      "from": "forced-tool-call-output",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "goal-decomposition",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "goal-decomposition",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "goal-decomposition",
+      "to": "plan-execute-replan",
+      "kind": "related"
+    },
+    {
+      "from": "goal-decomposition",
+      "to": "task-planning",
+      "kind": "related"
+    },
+    {
       "from": "golden-snapshot-eval",
       "to": "agent-trajectory-eval",
       "kind": "related"
@@ -3518,6 +3930,11 @@
       "from": "llm-observability",
       "to": "2026-06-10-llm-observability-research",
       "kind": "source-thread"
+    },
+    {
+      "from": "llm-observability",
+      "to": "agent-control-loop",
+      "kind": "related"
     },
     {
       "from": "llm-observability",
@@ -3735,6 +4152,11 @@
       "kind": "related"
     },
     {
+      "from": "output-surface-taxonomy",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
       "from": "paginated-tool-contract",
       "to": "chatbot-pagination",
       "kind": "related"
@@ -3760,6 +4182,31 @@
       "kind": "related"
     },
     {
+      "from": "perceive-reason-act-loop",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "perceive-reason-act-loop",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "perceive-reason-act-loop",
+      "to": "native-thinking-vs-prompted-reasoning",
+      "kind": "related"
+    },
+    {
+      "from": "perceive-reason-act-loop",
+      "to": "stop-and-yield-conditions",
+      "kind": "related"
+    },
+    {
+      "from": "perceive-reason-act-loop",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
       "from": "persona-tone-compliance",
       "to": "domain-chatbot-design",
       "kind": "related"
@@ -3777,6 +4224,31 @@
     {
       "from": "persona-tone-compliance",
       "to": "scope-and-refusal",
+      "kind": "related"
+    },
+    {
+      "from": "plan-execute-replan",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "plan-execute-replan",
+      "to": "goal-decomposition",
+      "kind": "related"
+    },
+    {
+      "from": "plan-execute-replan",
+      "to": "step-budget-and-runaway-control",
+      "kind": "related"
+    },
+    {
+      "from": "plan-execute-replan",
+      "to": "stop-and-yield-conditions",
+      "kind": "related"
+    },
+    {
+      "from": "plan-execute-replan",
+      "to": "task-planning",
       "kind": "related"
     },
     {
@@ -4290,6 +4762,56 @@
       "kind": "related"
     },
     {
+      "from": "step-budget-and-runaway-control",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "step-budget-and-runaway-control",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "step-budget-and-runaway-control",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "step-budget-and-runaway-control",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "step-budget-and-runaway-control",
+      "to": "stop-and-yield-conditions",
+      "kind": "related"
+    },
+    {
+      "from": "stop-and-yield-conditions",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "stop-and-yield-conditions",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "stop-and-yield-conditions",
+      "to": "perceive-reason-act-loop",
+      "kind": "related"
+    },
+    {
+      "from": "stop-and-yield-conditions",
+      "to": "step-budget-and-runaway-control",
+      "kind": "related"
+    },
+    {
+      "from": "stop-and-yield-conditions",
+      "to": "turn-taking-and-proactivity",
+      "kind": "related"
+    },
+    {
       "from": "streaming-vs-structured",
       "to": "forced-tool-call-output",
       "kind": "related"
@@ -4308,6 +4830,11 @@
       "from": "task-agent-pattern",
       "to": "2026-06-09-task-agent-pattern",
       "kind": "source-thread"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "agent-control-loop",
+      "kind": "related"
     },
     {
       "from": "task-agent-pattern",
@@ -4350,6 +4877,16 @@
       "kind": "related"
     },
     {
+      "from": "task-agent-pattern",
+      "to": "task-planning",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
       "from": "task-agent-pattern-fanout",
       "to": "domain-chatbot-design",
       "kind": "related"
@@ -4372,6 +4909,41 @@
     {
       "from": "task-agent-pattern-fanout",
       "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "task-planning",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "task-planning",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "task-planning",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "task-planning",
+      "to": "goal-decomposition",
+      "kind": "related"
+    },
+    {
+      "from": "task-planning",
+      "to": "plan-execute-replan",
+      "kind": "related"
+    },
+    {
+      "from": "task-planning",
+      "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "task-planning",
+      "to": "tool-use-design",
       "kind": "related"
     },
     {
@@ -4457,6 +5029,121 @@
     {
       "from": "thread-disambiguation-prompts",
       "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "tool-result-grounding",
+      "to": "code-execution-sandbox-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "tool-result-grounding",
+      "to": "grounding-and-citation",
+      "kind": "related"
+    },
+    {
+      "from": "tool-result-grounding",
+      "to": "perceive-reason-act-loop",
+      "kind": "related"
+    },
+    {
+      "from": "tool-result-grounding",
+      "to": "tool-schema-design",
+      "kind": "related"
+    },
+    {
+      "from": "tool-result-grounding",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "tool-schema-design",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "tool-schema-design",
+      "to": "schema-vs-validator",
+      "kind": "related"
+    },
+    {
+      "from": "tool-schema-design",
+      "to": "tool-result-grounding",
+      "kind": "related"
+    },
+    {
+      "from": "tool-schema-design",
+      "to": "tool-selection-and-routing",
+      "kind": "related"
+    },
+    {
+      "from": "tool-schema-design",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "tool-selection-and-routing",
+      "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "tool-selection-and-routing",
+      "to": "recency-bias-prompt-design",
+      "kind": "related"
+    },
+    {
+      "from": "tool-selection-and-routing",
+      "to": "tool-result-grounding",
+      "kind": "related"
+    },
+    {
+      "from": "tool-selection-and-routing",
+      "to": "tool-schema-design",
+      "kind": "related"
+    },
+    {
+      "from": "tool-selection-and-routing",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "tool-use-design",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "tool-use-design",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "tool-use-design",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "tool-use-design",
+      "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "tool-use-design",
+      "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "tool-use-design",
+      "to": "tool-result-grounding",
+      "kind": "related"
+    },
+    {
+      "from": "tool-use-design",
+      "to": "tool-schema-design",
+      "kind": "related"
+    },
+    {
+      "from": "tool-use-design",
+      "to": "tool-selection-and-routing",
       "kind": "related"
     },
     {

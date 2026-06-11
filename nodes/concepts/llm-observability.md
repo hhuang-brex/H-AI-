@@ -3,6 +3,7 @@ id: llm-observability
 type: concept
 tags: [observability, debugging, audit, agents, otel, tracing]
 related:
+  - [[agent-control-loop]]
   - [[llm-output-design]]
   - [[decision-audit-trail]]
   - [[native-thinking-vs-prompted-reasoning]]

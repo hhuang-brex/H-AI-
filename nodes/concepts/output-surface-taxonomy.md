@@ -3,6 +3,7 @@ id: output-surface-taxonomy
 type: concept
 tags: [llm, output, design, taxonomy, system-design]
 related:
+  - [[tool-use-design]]
   - [[task-agent-pattern]]
   - [[llm-output-design]]
   - [[forced-tool-call-output]]

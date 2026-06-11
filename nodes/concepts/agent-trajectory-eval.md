@@ -3,6 +3,7 @@ id: agent-trajectory-eval
 type: concept
 tags: [eval, agent, trajectory, multi-turn]
 related:
+  - [[task-planning]]
   - [[llm-evaluation]]
   - [[test-pyramid-llm]]
   - [[golden-snapshot-eval]]

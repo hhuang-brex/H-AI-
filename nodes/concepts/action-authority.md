@@ -3,6 +3,7 @@ id: action-authority
 type: concept
 tags: [chatbot, conversation-design, agents, authority, risk]
 related:
+  - [[tool-use-design]]
   - [[domain-chatbot-design]]
   - [[escalation-handoff]]
   - [[forced-tool-call-output]]

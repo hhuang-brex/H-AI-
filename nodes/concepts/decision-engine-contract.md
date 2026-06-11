@@ -3,6 +3,8 @@ id: decision-engine-contract
 type: concept
 tags: [task-agent, decision-engine, contract, schema, output]
 related:
+  - [[task-planning]]
+  - [[agent-control-loop]]
   - [[task-agent-pattern]]
   - [[forced-tool-call-output]]
   - [[template-rendered-output]]

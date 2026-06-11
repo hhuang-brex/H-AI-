@@ -37,14 +37,24 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 ## Current entry points
 
 ### Topics
+- [agent-control-loop](nodes/topics/agent-control-loop.md) — the iteration that turns an LLM into an agent — perceive, reason, act, observe — plus when to stop, yield, and bound runaway.
 - [chatbot-pagination](nodes/topics/chatbot-pagination.md) — handling large result sets in a chatbot; UX shape and tool shape chosen jointly.
 - [domain-chatbot-design](nodes/topics/domain-chatbot-design.md) — how a chatbot converses inside a specific domain.
 - [llm-evaluation](nodes/topics/llm-evaluation.md) — measuring whether LLM systems do what they should without bankrupting the team.
 - [llm-output-design](nodes/topics/llm-output-design.md) — how an LLM emits to the world; per-surface decisions.
 - [sms-multi-thread-chatbot](nodes/topics/sms-multi-thread-chatbot.md) — multi-thread chatbot design when the only channel is flat SMS.
 - [task-agent-pattern](nodes/topics/task-agent-pattern.md) — engine-primary framing where chat is one surface among several.
+- [task-planning](nodes/topics/task-planning.md) — turning a goal into an ordered set of actions and adapting when reality diverges from the plan.
+- [tool-use-design](nodes/topics/tool-use-design.md) — how an agent acts on the world through tools — schema design, selection, and grounding results back into the loop.
 
 ### Concepts — by topic cluster
+
+**[agent-control-loop](nodes/topics/agent-control-loop.md)**
+- [decision-engine-contract](nodes/concepts/decision-engine-contract.md) — layered output (decision + confidence + next-action) as the wire format every surface consumes.
+- [llm-observability](nodes/concepts/llm-observability.md) — debugging \"why did the model respond this way?\" — what frontier APIs actually return (mostly summaries), platform feature reality, OTel state.
+- [perceive-reason-act-loop](nodes/concepts/perceive-reason-act-loop.md) — the core agent iteration — observe state, decide one action, execute, observe result — and why each turn should commit to exactly one action.
+- [step-budget-and-runaway-control](nodes/concepts/step-budget-and-runaway-control.md) — hard ceilings on loop iterations, tokens, wall-clock, and tool calls so a stuck agent fails loudly instead of running forever.
+- [stop-and-yield-conditions](nodes/concepts/stop-and-yield-conditions.md) — the three ways a loop can end — done, blocked-needs-user, or failed — and why 'yield to user' is distinct from 'stop'.
 
 **[chatbot-pagination](nodes/topics/chatbot-pagination.md)**
 - [code-execution-sandbox-pattern](nodes/concepts/code-execution-sandbox-pattern.md) — keep large rows out of model context entirely.
@@ -107,6 +117,20 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [engine-vs-conversation-routing](nodes/concepts/engine-vs-conversation-routing.md) — when the engine handles vs. when the chat layer handles; the bridge between them.
 - [forced-tool-call-output](nodes/concepts/forced-tool-call-output.md) — when to force schema vs. let the model write free-text.
 - [output-surface-taxonomy](nodes/concepts/output-surface-taxonomy.md) — classify each surface explicitly; per-surface decisions.
+
+**[task-planning](nodes/topics/task-planning.md)**
+- [agent-trajectory-eval](nodes/concepts/agent-trajectory-eval.md) — multi-turn, tool sequences, end-state.
+- [decision-engine-contract](nodes/concepts/decision-engine-contract.md) — layered output (decision + confidence + next-action) as the wire format every surface consumes.
+- [goal-decomposition](nodes/concepts/goal-decomposition.md) — breaking a goal into steps at the right granularity — actionable but not brittle — with dependencies made explicit.
+- [plan-execute-replan](nodes/concepts/plan-execute-replan.md) — executing a plan step by step and revising it when a step fails or reality diverges — the difference between an agent and a script.
+
+**[tool-use-design](nodes/topics/tool-use-design.md)**
+- [action-authority](nodes/concepts/action-authority.md) — what the bot can *do*; tiered authority enforced at the tool layer.
+- [forced-tool-call-output](nodes/concepts/forced-tool-call-output.md) — when to force schema vs. let the model write free-text.
+- [output-surface-taxonomy](nodes/concepts/output-surface-taxonomy.md) — classify each surface explicitly; per-surface decisions.
+- [tool-result-grounding](nodes/concepts/tool-result-grounding.md) — feeding tool output back into the loop so the model can act on it — trimming, shaping, and distinguishing error from success.
+- [tool-schema-design](nodes/concepts/tool-schema-design.md) — writing tool definitions the model can reliably pick and call — names, descriptions, parameter shapes, and the errors they return.
+- [tool-selection-and-routing](nodes/concepts/tool-selection-and-routing.md) — helping the model pick the right tool when there are many — disambiguation, hierarchical routing, and keeping the active set small.
 
 ### Projects — by kind
 

@@ -6,6 +6,9 @@ related:
   - [[domain-chatbot-design]]
   - [[llm-output-design]]
   - [[llm-evaluation]]
+  - [[agent-control-loop]]
+  - [[tool-use-design]]
+  - [[task-planning]]
   - [[decision-engine-contract]]
   - [[engine-vs-conversation-routing]]
   - [[decision-audit-trail]]
@@ -96,6 +99,14 @@ Notes on borderline calls:
 - [decision-engine-contract](../concepts/decision-engine-contract.md) — the layered wire format every surface consumes
 - [engine-vs-conversation-routing](../concepts/engine-vs-conversation-routing.md) — when the engine handles vs. when chat handles; the bridge
 - [decision-audit-trail](../concepts/decision-audit-trail.md) — durable per-decision record; the substrate replay/drift run on
+
+## The engine needs a runtime
+
+The decision-engine framing above answers *what the agent emits per step*. It does not answer *how the agent runs over time* — the loop that calls tools, follows a plan, and decides when to stop. Those are the three sibling topics that turn this contract into a running agent:
+
+- [agent-control-loop](agent-control-loop.md) — the perceive–reason–act iteration; stop/yield conditions; runaway control. The engine's decision is *one iteration* of this loop.
+- [tool-use-design](tool-use-design.md) — how the agent acts on the world; the action half of each loop step.
+- [task-planning](task-planning.md) — turning a goal into ordered actions and replanning when steps fail. Needed when the task spans multiple dependent steps.
 
 ## How this connects to the rest of the graph
 
