@@ -4,6 +4,7 @@ type: topic
 tags: [agent, multi-agent, delegation, sub-agent, orchestration, engineering-excellence]
 summary: "splitting work across sub-agents — when delegation earns its cost, how to isolate their context, and how to merge results without trusting them blindly."
 related:
+  - [[references-task-agent-design]]
   - [[worked-example-chatting-task-agent]]
   - [[agent-control-loop]]
   - [[task-planning]]

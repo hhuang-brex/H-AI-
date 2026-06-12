@@ -4,6 +4,7 @@ type: topic
 tags: [agent, planning, task-decomposition, replanning, task-agent]
 summary: "turning a goal into an ordered set of actions and adapting when reality diverges from the plan."
 related:
+  - [[references-task-agent-design]]
   - [[worked-example-chatting-task-agent]]
   - [[task-agent-pattern]]
   - [[agent-control-loop]]

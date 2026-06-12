@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-11",
-  "node_count": 116,
-  "edge_count": 720,
+  "node_count": 117,
+  "edge_count": 730,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -603,6 +603,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "references-task-agent-design",
         "worked-example-chatting-task-agent",
         "multi-agent-delegation",
         "agent-state-persistence",
@@ -1971,6 +1972,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "references-task-agent-design",
         "worked-example-chatting-task-agent",
         "agent-control-loop",
         "task-planning",
@@ -2326,6 +2328,35 @@
         "cost-aware-eval",
         "agent-trajectory-eval",
         "adversarial-eval"
+      ]
+    },
+    {
+      "id": "references-task-agent-design",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-task-agent-design.md",
+      "title": "References \u2014 Task Agent Design",
+      "summary": "verified primary sources grounding the agent cluster \u2014 ReAct, Reflexion, Toolformer, Tree of Thoughts, MetaGPT, and Anthropic's effective-agents guidance.",
+      "tags": [
+        "agent",
+        "task-agent",
+        "reading-list",
+        "react",
+        "tool-use",
+        "multi-agent",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-11",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "agent-control-loop",
+        "tool-use-design",
+        "task-planning",
+        "multi-agent-delegation",
+        "perceive-reason-act-loop",
+        "plan-execute-replan"
       ]
     },
     {
@@ -2960,6 +2991,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "references-task-agent-design",
         "worked-example-chatting-task-agent",
         "task-agent-pattern",
         "agent-control-loop",
@@ -3158,6 +3190,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "references-task-agent-design",
         "worked-example-chatting-task-agent",
         "action-execution-safety",
         "task-agent-pattern",
@@ -3949,6 +3982,11 @@
     {
       "from": "agent-control-loop",
       "to": "perceive-reason-act-loop",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
+      "to": "references-task-agent-design",
       "kind": "related"
     },
     {
@@ -5468,6 +5506,11 @@
     },
     {
       "from": "multi-agent-delegation",
+      "to": "references-task-agent-design",
+      "kind": "related"
+    },
+    {
+      "from": "multi-agent-delegation",
       "to": "result-aggregation-and-trust",
       "kind": "related"
     },
@@ -5834,6 +5877,36 @@
     {
       "from": "references-eval-reading-list",
       "to": "test-pyramid-llm",
+      "kind": "related"
+    },
+    {
+      "from": "references-task-agent-design",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "references-task-agent-design",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "references-task-agent-design",
+      "to": "perceive-reason-act-loop",
+      "kind": "related"
+    },
+    {
+      "from": "references-task-agent-design",
+      "to": "plan-execute-replan",
+      "kind": "related"
+    },
+    {
+      "from": "references-task-agent-design",
+      "to": "task-planning",
+      "kind": "related"
+    },
+    {
+      "from": "references-task-agent-design",
+      "to": "tool-use-design",
       "kind": "related"
     },
     {
@@ -6538,6 +6611,11 @@
     },
     {
       "from": "task-planning",
+      "to": "references-task-agent-design",
+      "kind": "related"
+    },
+    {
+      "from": "task-planning",
       "to": "task-agent-pattern",
       "kind": "related"
     },
@@ -6734,6 +6812,11 @@
     {
       "from": "tool-use-design",
       "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "tool-use-design",
+      "to": "references-task-agent-design",
       "kind": "related"
     },
     {
