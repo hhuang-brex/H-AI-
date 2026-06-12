@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-11",
-  "node_count": 117,
-  "edge_count": 730,
+  "generated": "2026-06-12",
+  "node_count": 121,
+  "edge_count": 759,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -674,6 +674,36 @@
       ]
     },
     {
+      "id": "agent-memory",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/agent-memory.md",
+      "title": "Agent Memory",
+      "summary": "the semantic memory system that lets a talking agent recall across turns and sessions \u2014 memory types, retrieval, and consolidation/forgetting \u2014 distinct from the this-turn context window and the run-state for resume.",
+      "tags": [
+        "agent",
+        "memory",
+        "retrieval",
+        "consolidation",
+        "context",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-12",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "context-engineering",
+        "agent-state-persistence",
+        "conversation-memory",
+        "memory-types-taxonomy",
+        "memory-retrieval",
+        "memory-consolidation-and-forgetting",
+        "domain-knowledge-injection",
+        "references-context-and-memory"
+      ]
+    },
+    {
       "id": "agent-state-persistence",
       "type": "topic",
       "kind": null,
@@ -694,6 +724,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "agent-memory",
         "execution-invariant-testing",
         "worked-example-chatting-task-agent",
         "agent-control-loop",
@@ -957,6 +988,7 @@
       ],
       "source_thread": null,
       "related": [
+        "agent-memory",
         "context-engineering",
         "context-budget-allocation",
         "conversation-memory",
@@ -983,6 +1015,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "agent-memory",
         "worked-example-chatting-task-agent",
         "agent-control-loop",
         "tool-use-design",
@@ -1011,6 +1044,7 @@
       "status": "living",
       "created": "2026-06-08",
       "clusters": [
+        "agent-memory",
         "agent-state-persistence",
         "context-engineering",
         "domain-chatbot-design",
@@ -1018,6 +1052,7 @@
       ],
       "source_thread": null,
       "related": [
+        "agent-memory",
         "agent-state-persistence",
         "context-engineering",
         "sms-multi-thread-chatbot",
@@ -1232,12 +1267,14 @@
       "status": "living",
       "created": "2026-06-08",
       "clusters": [
+        "agent-memory",
         "chatbot-pagination",
         "context-engineering",
         "domain-chatbot-design"
       ],
       "source_thread": null,
       "related": [
+        "agent-memory",
         "context-engineering",
         "chatbot-pagination",
         "domain-chatbot-design",
@@ -1897,6 +1934,95 @@
       ]
     },
     {
+      "id": "memory-consolidation-and-forgetting",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/memory-consolidation-and-forgetting.md",
+      "title": "Memory Consolidation & Forgetting",
+      "summary": "deciding what to keep, promote from episodic to semantic, and deliberately forget \u2014 because storing everything degrades retrieval as surely as remembering nothing.",
+      "tags": [
+        "agent",
+        "memory",
+        "consolidation",
+        "forgetting",
+        "decay",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-12",
+      "clusters": [
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "memory-types-taxonomy",
+        "memory-retrieval",
+        "context-compaction",
+        "references-context-and-memory"
+      ]
+    },
+    {
+      "id": "memory-retrieval",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/memory-retrieval.md",
+      "title": "Memory Retrieval",
+      "summary": "surfacing the few relevant memories out of many \u2014 recency \u00d7 relevance \u00d7 importance scoring \u2014 and why a bigger context window doesn't replace it.",
+      "tags": [
+        "agent",
+        "memory",
+        "retrieval",
+        "ranking",
+        "embedding",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-12",
+      "clusters": [
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "memory-types-taxonomy",
+        "context-assembly-per-turn",
+        "domain-knowledge-injection",
+        "references-context-and-memory"
+      ]
+    },
+    {
+      "id": "memory-types-taxonomy",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/memory-types-taxonomy.md",
+      "title": "Memory-Types Taxonomy",
+      "summary": "the working / episodic / semantic / procedural split borrowed from cognitive science \u2014 what each holds, how they differ in write and decay, and when an agent needs more than one.",
+      "tags": [
+        "agent",
+        "memory",
+        "taxonomy",
+        "episodic",
+        "semantic",
+        "working",
+        "procedural",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-12",
+      "clusters": [
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "memory-consolidation-and-forgetting",
+        "conversation-memory",
+        "memory-retrieval",
+        "run-state-model"
+      ]
+    },
+    {
       "id": "message-segmentation-160",
       "type": "concept",
       "kind": null,
@@ -2466,6 +2592,7 @@
       ],
       "source_thread": null,
       "related": [
+        "agent-memory",
         "agent-state-persistence",
         "checkpoint-and-replay",
         "decision-audit-trail",
@@ -4105,6 +4232,46 @@
       "kind": "related"
     },
     {
+      "from": "agent-memory",
+      "to": "agent-state-persistence",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
+      "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
+      "to": "memory-types-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
+      "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
       "from": "agent-state-persistence",
       "to": "action-execution-safety",
       "kind": "related"
@@ -4112,6 +4279,11 @@
     {
       "from": "agent-state-persistence",
       "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "agent-state-persistence",
+      "to": "agent-memory",
       "kind": "related"
     },
     {
@@ -4386,6 +4558,11 @@
     },
     {
       "from": "context-compaction",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "context-compaction",
       "to": "context-budget-allocation",
       "kind": "related"
     },
@@ -4407,6 +4584,11 @@
     {
       "from": "context-engineering",
       "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "agent-memory",
       "kind": "related"
     },
     {
@@ -4447,6 +4629,11 @@
     {
       "from": "context-engineering",
       "to": "worked-example-chatting-task-agent",
+      "kind": "related"
+    },
+    {
+      "from": "conversation-memory",
+      "to": "agent-memory",
       "kind": "related"
     },
     {
@@ -4722,6 +4909,11 @@
     {
       "from": "domain-chatbot-design",
       "to": "turn-taking-and-proactivity",
+      "kind": "related"
+    },
+    {
+      "from": "domain-knowledge-injection",
+      "to": "agent-memory",
       "kind": "related"
     },
     {
@@ -5445,6 +5637,81 @@
       "kind": "related"
     },
     {
+      "from": "memory-consolidation-and-forgetting",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "memory-consolidation-and-forgetting",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "memory-consolidation-and-forgetting",
+      "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "memory-consolidation-and-forgetting",
+      "to": "memory-types-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "memory-consolidation-and-forgetting",
+      "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "memory-retrieval",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "memory-retrieval",
+      "to": "context-assembly-per-turn",
+      "kind": "related"
+    },
+    {
+      "from": "memory-retrieval",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "memory-retrieval",
+      "to": "memory-types-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "memory-retrieval",
+      "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "memory-types-taxonomy",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "memory-types-taxonomy",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "memory-types-taxonomy",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "memory-types-taxonomy",
+      "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "memory-types-taxonomy",
+      "to": "run-state-model",
+      "kind": "related"
+    },
+    {
       "from": "message-segmentation-160",
       "to": "forced-tool-call-output",
       "kind": "related"
@@ -5977,6 +6244,11 @@
     {
       "from": "rollback-and-compensation",
       "to": "plan-execute-replan",
+      "kind": "related"
+    },
+    {
+      "from": "run-state-model",
+      "to": "agent-memory",
       "kind": "related"
     },
     {

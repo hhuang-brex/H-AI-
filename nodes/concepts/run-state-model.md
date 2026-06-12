@@ -4,6 +4,7 @@ type: concept
 tags: [agent, state, persistence, schema, resume, engineering-excellence]
 summary: "the minimal durable shape that lets a run resume — goal, plan with per-step status, established facts, open commitments, and in-flight markers."
 related:
+  - [[agent-memory]]
   - [[agent-state-persistence]]
   - [[checkpoint-and-replay]]
   - [[decision-audit-trail]]

@@ -4,6 +4,7 @@ type: topic
 tags: [agent, state, persistence, checkpoint, resume, durability, engineering-excellence]
 summary: "the durable run state that lets an agent survive crashes, pause/resume across sessions, and recover to a consistent point — distinct from the audit log and conversation memory."
 related:
+  - [[agent-memory]]
   - [[execution-invariant-testing]]
   - [[worked-example-chatting-task-agent]]
   - [[agent-control-loop]]

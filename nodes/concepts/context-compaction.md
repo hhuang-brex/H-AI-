@@ -4,6 +4,7 @@ type: concept
 tags: [agent, context, compaction, summarization, memory, engineering-excellence]
 summary: "shrinking a long history to fit the window without losing the decisions that matter — rolling summaries, structured state, and what never to compact."
 related:
+  - [[agent-memory]]
   - [[context-engineering]]
   - [[context-budget-allocation]]
   - [[conversation-memory]]

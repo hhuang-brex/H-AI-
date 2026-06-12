@@ -39,6 +39,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 ### Topics
 - [action-execution-safety](nodes/topics/action-execution-safety.md) — executing side-effecting actions safely — idempotency, dry-run preview, and rollback — so retries, crashes, and replans don't double-charge or corrupt state.
 - [agent-control-loop](nodes/topics/agent-control-loop.md) — the iteration that turns an LLM into an agent — perceive, reason, act, observe — plus when to stop, yield, and bound runaway.
+- [agent-memory](nodes/topics/agent-memory.md) — the semantic memory system that lets a talking agent recall across turns and sessions — memory types, retrieval, and consolidation/forgetting — distinct from the this-turn context window and the run-state for resume.
 - [agent-state-persistence](nodes/topics/agent-state-persistence.md) — the durable run state that lets an agent survive crashes, pause/resume across sessions, and recover to a consistent point — distinct from the audit log and conversation memory.
 - [chatbot-pagination](nodes/topics/chatbot-pagination.md) — handling large result sets in a chatbot; UX shape and tool shape chosen jointly.
 - [context-engineering](nodes/topics/context-engineering.md) — the discipline of deciding what the model sees each turn — assembly, budget, and compaction — the master lever for agent cost, latency, and accuracy.
@@ -69,6 +70,13 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [perceive-reason-act-loop](nodes/concepts/perceive-reason-act-loop.md) — the core agent iteration — observe state, decide one action, execute, observe result — and why each turn should commit to exactly one action.
 - [step-budget-and-runaway-control](nodes/concepts/step-budget-and-runaway-control.md) — hard ceilings on loop iterations, tokens, wall-clock, and tool calls so a stuck agent fails loudly instead of running forever.
 - [stop-and-yield-conditions](nodes/concepts/stop-and-yield-conditions.md) — the three ways a loop can end — done, blocked-needs-user, or failed — and why 'yield to user' is distinct from 'stop'.
+
+**[agent-memory](nodes/topics/agent-memory.md)**
+- [conversation-memory](nodes/concepts/conversation-memory.md) — three horizons; what to remember, what not to.
+- [domain-knowledge-injection](nodes/concepts/domain-knowledge-injection.md) — RAG, prompt-stuffing, structured state, fine-tuning per knowledge type.
+- [memory-consolidation-and-forgetting](nodes/concepts/memory-consolidation-and-forgetting.md) — deciding what to keep, promote from episodic to semantic, and deliberately forget — because storing everything degrades retrieval as surely as remembering nothing.
+- [memory-retrieval](nodes/concepts/memory-retrieval.md) — surfacing the few relevant memories out of many — recency × relevance × importance scoring — and why a bigger context window doesn't replace it.
+- [memory-types-taxonomy](nodes/concepts/memory-types-taxonomy.md) — the working / episodic / semantic / procedural split borrowed from cognitive science — what each holds, how they differ in write and decay, and when an agent needs more than one.
 
 **[agent-state-persistence](nodes/topics/agent-state-persistence.md)**
 - [checkpoint-and-replay](nodes/concepts/checkpoint-and-replay.md) — when to write durable state — before every risky step — and how to rebuild a live run from the last checkpoint.
