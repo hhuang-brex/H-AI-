@@ -211,6 +211,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-eval-reading-list](nodes/references/references-eval-reading-list.md) — frontier-lab + practitioner posts on LLM eval (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, …).
 
 ### Recent threads (10 most recent)
+- 2026-06-11 · [task-agent] [2026-06-11-chatting-task-agent-buildout](threads/2026-06-11-chatting-task-agent-buildout.md) — the 7-pass /loop build-out that added the agent spine (8 topics, ~30 concepts, 1 worked example, 2 eval concepts) for building a chatting task agent.
 - 2026-06-11 · [meta] [2026-06-11-knowledge-graph-organization-review](threads/2026-06-11-knowledge-graph-organization-review.md) — audit of this repo as a knowledge graph; origin of the index-builder spec.
 - 2026-06-11 · [text-eot] [2026-06-11-text-eot-classifier-salvage](threads/2026-06-11-text-eot-classifier-salvage.md) — text-EOT classifier salvage from a stalled deep-research workflow; TurnGPT verified, HF entries blocked by Brex SSO.
 - 2026-06-10 · [sms] [2026-06-10-github-buffering-references](threads/2026-06-10-github-buffering-references.md) — GitHub prior art for chatbot message buffering (clawbolt, Chatwoot, LiveKit).
@@ -220,7 +221,6 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - 2026-06-09 · [pagination] [2026-06-09-chatbot-pagination-research](threads/2026-06-09-chatbot-pagination-research.md) — deep-research on chatbot pagination UX + technical patterns.
 - 2026-06-09 · [dspy] [2026-06-09-dspy-domain-chatbot-research](threads/2026-06-09-dspy-domain-chatbot-research.md) — deep-research on documented DSPy chatbot case studies.
 - 2026-06-09 · [chatbot] [2026-06-09-ikki-forced-tool-calling](threads/2026-06-09-ikki-forced-tool-calling.md) — audit against Ikki's \"Forced Tool Calling in Production Chatbots\" post.
-- 2026-06-09 · [operator-trust] [2026-06-09-operator-trust-injection](threads/2026-06-09-operator-trust-injection.md) — adding operator-trust-injection + recency-bias-prompt-design from Anthropic-engineer-recommended patterns.
 
 See [`threads/INDEX.md`](threads/INDEX.md) for the full archive.
 

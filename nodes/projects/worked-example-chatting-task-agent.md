@@ -19,6 +19,7 @@ related:
   - [[idempotency-keys]]
 status: snapshot
 created: 2026-06-11
+source-thread: [[2026-06-11-chatting-task-agent-buildout]]
 ---
 
 # Worked Example — A Chatting Task Agent

@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-11",
-  "node_count": 115,
-  "edge_count": 710,
+  "node_count": 116,
+  "edge_count": 720,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -408,6 +408,38 @@
         "sms-multi-thread-chatbot",
         "sms-state-machine",
         "forced-tool-call-output"
+      ]
+    },
+    {
+      "id": "2026-06-11-chatting-task-agent-buildout",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-11-chatting-task-agent-buildout.md",
+      "title": "Thread \u2014 Chatting Task Agent Build-Out (2026-06-11)",
+      "summary": "the 7-pass /loop build-out that added the agent spine (8 topics, ~30 concepts, 1 worked example, 2 eval concepts) for building a chatting task agent.",
+      "tags": [
+        "meta",
+        "agent",
+        "task-agent",
+        "knowledge-graph",
+        "build-out",
+        "loop",
+        "thread"
+      ],
+      "status": "archived",
+      "created": "2026-06-11",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "agent-control-loop",
+        "tool-use-design",
+        "task-planning",
+        "context-engineering",
+        "human-in-the-loop-control",
+        "action-execution-safety",
+        "agent-state-persistence",
+        "multi-agent-delegation",
+        "worked-example-chatting-task-agent"
       ]
     },
     {
@@ -3265,7 +3297,7 @@
       "status": "snapshot",
       "created": "2026-06-11",
       "clusters": [],
-      "source_thread": null,
+      "source_thread": "2026-06-11-chatting-task-agent-buildout",
       "related": [
         "simulated-user-eval",
         "execution-invariant-testing",
@@ -3702,6 +3734,51 @@
     {
       "from": "2026-06-10-sms-message-buffering-research",
       "to": "sms-state-machine",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-11-chatting-task-agent-buildout",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-11-chatting-task-agent-buildout",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-11-chatting-task-agent-buildout",
+      "to": "agent-state-persistence",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-11-chatting-task-agent-buildout",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-11-chatting-task-agent-buildout",
+      "to": "human-in-the-loop-control",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-11-chatting-task-agent-buildout",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-11-chatting-task-agent-buildout",
+      "to": "task-planning",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-11-chatting-task-agent-buildout",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-11-chatting-task-agent-buildout",
+      "to": "worked-example-chatting-task-agent",
       "kind": "related"
     },
     {
@@ -6773,6 +6850,11 @@
       "from": "worked-example-anthropic-thinking",
       "to": "native-thinking-vs-prompted-reasoning",
       "kind": "related"
+    },
+    {
+      "from": "worked-example-chatting-task-agent",
+      "to": "2026-06-11-chatting-task-agent-buildout",
+      "kind": "source-thread"
     },
     {
       "from": "worked-example-chatting-task-agent",
