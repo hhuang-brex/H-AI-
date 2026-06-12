@@ -24,7 +24,7 @@ The tempting shortcut — "context windows are huge now, just put all the memori
 - Models attend unevenly across a long context; information in the middle is recalled worse than at the ends ("lost in the middle").
 - Performance degrades with raw context length even when the relevant fact is present ("context rot").
 
-So stuffing all memory into a long window *lowers* the odds the right one is used, and costs more per turn. Retrieval — select few, place well — beats dump-everything on both accuracy and cost. (Sources in *references-context-and-memory* (planned — pending fetch verification).)
+So stuffing all memory into a long window *lowers* the odds the right one is used, and costs more per turn. Retrieval — select few, place well — beats dump-everything on both accuracy and cost. (Sources in [references-context-and-memory](../references/references-context-and-memory.md).)
 
 ## The scoring function: recency × relevance × importance
 
@@ -55,4 +55,4 @@ Retrieved memories don't go straight to the model — they're candidates for [co
 
 ## References
 
-[memory-types-taxonomy](memory-types-taxonomy.md) determines what's in the store to retrieve from; [context-assembly-per-turn](context-assembly-per-turn.md) is what consumes the retrieved set; empirical grounding for the attention-limit claims is in *references-context-and-memory* (planned — pending fetch verification).
+[memory-types-taxonomy](memory-types-taxonomy.md) determines what's in the store to retrieve from; [context-assembly-per-turn](context-assembly-per-turn.md) is what consumes the retrieved set; empirical grounding for the attention-limit claims is in [references-context-and-memory](../references/references-context-and-memory.md).

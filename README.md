@@ -215,6 +215,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 
 ### References
 - [references-chatbot-pagination](nodes/references/references-chatbot-pagination.md) — pagination reading list (Anthropic Writing Tools / Code Execution, MCP cursor spec, NN/g UX patterns).
+- [references-context-and-memory](nodes/references/references-context-and-memory.md) — verified empirical sources behind the context and memory clusters — lost-in-the-middle, context rot, RAG, MemGPT, and generative agents.
 - [references-domain-chatbot-design](nodes/references/references-domain-chatbot-design.md) — chatbot design reading list (Anthropic, OpenAI, Microsoft Bot Service, Google CDS, Rasa, Voiceflow, Husain, Yan, Hall, Intercom Fin).
 - [references-eval-reading-list](nodes/references/references-eval-reading-list.md) — frontier-lab + practitioner posts on LLM eval (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, …).
 - [references-task-agent-design](nodes/references/references-task-agent-design.md) — verified primary sources grounding the agent cluster — ReAct, Reflexion, Toolformer, Tree of Thoughts, MetaGPT, and Anthropic's effective-agents guidance.

@@ -47,7 +47,7 @@ Mirror of [context-compaction](context-compaction.md)'s rule: consolidation may 
 
 ## The science framing
 
-Consolidation and decay are not engineering conveniences retrofitted with biology vocabulary — they're directly modeled on memory consolidation and the adaptive value of forgetting from cognitive science, and instantiated in LLM-agent memory systems (memory-stream reflection, OS-style eviction from main context to external store). Treat the empirical work as design source, not decoration; see *references-context-and-memory* (planned — pending fetch verification).
+Consolidation and decay are not engineering conveniences retrofitted with biology vocabulary — they're directly modeled on memory consolidation and the adaptive value of forgetting from cognitive science, and instantiated in LLM-agent memory systems (memory-stream reflection, OS-style eviction from main context to external store). Treat the empirical work as design source, not decoration; see [references-context-and-memory](../references/references-context-and-memory.md).
 
 ## Pitfalls
 
@@ -59,4 +59,4 @@ Consolidation and decay are not engineering conveniences retrofitted with biolog
 
 ## References
 
-[memory-types-taxonomy](memory-types-taxonomy.md) defines the episodic/semantic distinction consolidation operates on; [context-compaction](context-compaction.md) is the in-run sibling; *references-context-and-memory* (planned — pending fetch verification) holds the cognitive-science and agent-systems sources.
+[memory-types-taxonomy](memory-types-taxonomy.md) defines the episodic/semantic distinction consolidation operates on; [context-compaction](context-compaction.md) is the in-run sibling; [references-context-and-memory](../references/references-context-and-memory.md) holds the cognitive-science and agent-systems sources.

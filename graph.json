@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-12",
-  "node_count": 121,
-  "edge_count": 759,
+  "node_count": 122,
+  "edge_count": 764,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -2395,6 +2395,33 @@
         "truncated-pyramid-results",
         "paginated-tool-contract",
         "code-execution-sandbox-pattern"
+      ]
+    },
+    {
+      "id": "references-context-and-memory",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-context-and-memory.md",
+      "title": "References \u2014 Context & Memory",
+      "summary": "verified empirical sources behind the context and memory clusters \u2014 lost-in-the-middle, context rot, RAG, MemGPT, and generative agents.",
+      "tags": [
+        "context",
+        "memory",
+        "reading-list",
+        "retrieval",
+        "long-context",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-12",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "context-engineering",
+        "agent-memory",
+        "memory-retrieval",
+        "memory-consolidation-and-forgetting",
+        "memory-types-taxonomy"
       ]
     },
     {
@@ -6064,6 +6091,31 @@
     {
       "from": "references-chatbot-pagination",
       "to": "truncated-pyramid-results",
+      "kind": "related"
+    },
+    {
+      "from": "references-context-and-memory",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "references-context-and-memory",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "references-context-and-memory",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "references-context-and-memory",
+      "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "references-context-and-memory",
+      "to": "memory-types-taxonomy",
       "kind": "related"
     },
     {

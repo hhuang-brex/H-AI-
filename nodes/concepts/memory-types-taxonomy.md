@@ -58,4 +58,4 @@ The types differ in the operations that matter:
 
 ## References
 
-[memory-consolidation-and-forgetting](memory-consolidation-and-forgetting.md) is the episodic→semantic promotion and decay machinery; *references-context-and-memory* (planned — pending fetch verification) holds the cognitive-science and LLM-agent sources this split is drawn from.
+[memory-consolidation-and-forgetting](memory-consolidation-and-forgetting.md) is the episodic→semantic promotion and decay machinery; [references-context-and-memory](../references/references-context-and-memory.md) holds the cognitive-science and LLM-agent sources this split is drawn from.
