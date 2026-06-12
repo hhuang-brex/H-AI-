@@ -3,6 +3,7 @@ id: flat-channel-thread-tracking
 type: concept
 tags: [sms, chatbot, threading, routing, multi-thread]
 related:
+  - [[context-storage-and-hydration]]
   - [[sms-multi-thread-chatbot]]
   - [[thread-disambiguation-prompts]]
   - [[sms-state-machine]]

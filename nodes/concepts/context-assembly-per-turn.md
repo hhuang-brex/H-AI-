@@ -4,6 +4,7 @@ type: concept
 tags: [agent, context, prompt-assembly, perceive, engineering-excellence]
 summary: "constructing each turn's prompt from typed parts — system, goal, history, tools, results — instead of resending a growing transcript."
 related:
+  - [[context-storage-and-hydration]]
   - [[context-engineering]]
   - [[context-budget-allocation]]
   - [[perceive-reason-act-loop]]

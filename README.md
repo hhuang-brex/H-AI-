@@ -72,6 +72,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [stop-and-yield-conditions](nodes/concepts/stop-and-yield-conditions.md) — the three ways a loop can end — done, blocked-needs-user, or failed — and why 'yield to user' is distinct from 'stop'.
 
 **[agent-memory](nodes/topics/agent-memory.md)**
+- [context-storage-and-hydration](nodes/concepts/context-storage-and-hydration.md) — where conversational context lives and how it's loaded per request — the stateless-compute / stateful-store split, keyed per user/conversation, with a DB-of-record plus optional cache tier.
 - [conversation-memory](nodes/concepts/conversation-memory.md) — three horizons; what to remember, what not to.
 - [domain-knowledge-injection](nodes/concepts/domain-knowledge-injection.md) — RAG, prompt-stuffing, structured state, fine-tuning per knowledge type.
 - [memory-consolidation-and-forgetting](nodes/concepts/memory-consolidation-and-forgetting.md) — deciding what to keep, promote from episodic to semantic, and deliberately forget — because storing everything degrades retrieval as surely as remembering nothing.
@@ -80,6 +81,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 
 **[agent-state-persistence](nodes/topics/agent-state-persistence.md)**
 - [checkpoint-and-replay](nodes/concepts/checkpoint-and-replay.md) — when to write durable state — before every risky step — and how to rebuild a live run from the last checkpoint.
+- [context-storage-and-hydration](nodes/concepts/context-storage-and-hydration.md) — where conversational context lives and how it's loaded per request — the stateless-compute / stateful-store split, keyed per user/conversation, with a DB-of-record plus optional cache tier.
 - [conversation-memory](nodes/concepts/conversation-memory.md) — three horizons; what to remember, what not to.
 - [crash-recovery-consistency](nodes/concepts/crash-recovery-consistency.md) — resuming after a crash that landed mid-action — using write-ahead markers to decide whether the in-flight side effect fired, and reconciling to a consistent state.
 - [decision-audit-trail](nodes/concepts/decision-audit-trail.md) — durable per-decision record (fingerprint + version + reasoning + override history); the substrate replay/drift run on.
@@ -99,6 +101,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [context-assembly-per-turn](nodes/concepts/context-assembly-per-turn.md) — constructing each turn's prompt from typed parts — system, goal, history, tools, results — instead of resending a growing transcript.
 - [context-budget-allocation](nodes/concepts/context-budget-allocation.md) — splitting a fixed token window across system, history, tools, and results — with an explicit eviction policy for when it overflows.
 - [context-compaction](nodes/concepts/context-compaction.md) — shrinking a long history to fit the window without losing the decisions that matter — rolling summaries, structured state, and what never to compact.
+- [context-storage-and-hydration](nodes/concepts/context-storage-and-hydration.md) — where conversational context lives and how it's loaded per request — the stateless-compute / stateful-store split, keyed per user/conversation, with a DB-of-record plus optional cache tier.
 - [conversation-memory](nodes/concepts/conversation-memory.md) — three horizons; what to remember, what not to.
 - [domain-knowledge-injection](nodes/concepts/domain-knowledge-injection.md) — RAG, prompt-stuffing, structured state, fine-tuning per knowledge type.
 - [sms-context-windowing](nodes/concepts/sms-context-windowing.md) — what's in the prompt: per-thread, structured, bounded.

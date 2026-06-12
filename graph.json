@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-12",
-  "node_count": 122,
-  "edge_count": 764,
+  "node_count": 123,
+  "edge_count": 776,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -693,6 +693,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "context-storage-and-hydration",
         "context-engineering",
         "agent-state-persistence",
         "conversation-memory",
@@ -724,6 +725,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "context-storage-and-hydration",
         "agent-memory",
         "execution-invariant-testing",
         "worked-example-chatting-task-agent",
@@ -930,6 +932,7 @@
       ],
       "source_thread": null,
       "related": [
+        "context-storage-and-hydration",
         "context-engineering",
         "context-budget-allocation",
         "perceive-reason-act-loop",
@@ -1015,6 +1018,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "context-storage-and-hydration",
         "agent-memory",
         "worked-example-chatting-task-agent",
         "agent-control-loop",
@@ -1025,6 +1029,40 @@
         "conversation-memory",
         "domain-knowledge-injection",
         "sms-context-windowing"
+      ]
+    },
+    {
+      "id": "context-storage-and-hydration",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/context-storage-and-hydration.md",
+      "title": "Context Storage & Hydration",
+      "summary": "where conversational context lives and how it's loaded per request \u2014 the stateless-compute / stateful-store split, keyed per user/conversation, with a DB-of-record plus optional cache tier.",
+      "tags": [
+        "agent",
+        "context",
+        "state",
+        "storage",
+        "stateless",
+        "hydration",
+        "cache",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-12",
+      "clusters": [
+        "agent-memory",
+        "agent-state-persistence",
+        "context-engineering"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-state-persistence",
+        "context-engineering",
+        "context-assembly-per-turn",
+        "run-state-model",
+        "agent-memory",
+        "checkpoint-and-replay"
       ]
     },
     {
@@ -1455,6 +1493,7 @@
       ],
       "source_thread": null,
       "related": [
+        "context-storage-and-hydration",
         "sms-multi-thread-chatbot",
         "thread-disambiguation-prompts",
         "sms-state-machine",
@@ -2619,6 +2658,7 @@
       ],
       "source_thread": null,
       "related": [
+        "context-storage-and-hydration",
         "agent-memory",
         "agent-state-persistence",
         "checkpoint-and-replay",
@@ -4270,6 +4310,11 @@
     },
     {
       "from": "agent-memory",
+      "to": "context-storage-and-hydration",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
       "to": "conversation-memory",
       "kind": "related"
     },
@@ -4316,6 +4361,11 @@
     {
       "from": "agent-state-persistence",
       "to": "checkpoint-and-replay",
+      "kind": "related"
+    },
+    {
+      "from": "agent-state-persistence",
+      "to": "context-storage-and-hydration",
       "kind": "related"
     },
     {
@@ -4540,6 +4590,11 @@
     },
     {
       "from": "context-assembly-per-turn",
+      "to": "context-storage-and-hydration",
+      "kind": "related"
+    },
+    {
+      "from": "context-assembly-per-turn",
       "to": "domain-knowledge-injection",
       "kind": "related"
     },
@@ -4635,6 +4690,11 @@
     },
     {
       "from": "context-engineering",
+      "to": "context-storage-and-hydration",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
       "to": "conversation-memory",
       "kind": "related"
     },
@@ -4656,6 +4716,36 @@
     {
       "from": "context-engineering",
       "to": "worked-example-chatting-task-agent",
+      "kind": "related"
+    },
+    {
+      "from": "context-storage-and-hydration",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "context-storage-and-hydration",
+      "to": "agent-state-persistence",
+      "kind": "related"
+    },
+    {
+      "from": "context-storage-and-hydration",
+      "to": "checkpoint-and-replay",
+      "kind": "related"
+    },
+    {
+      "from": "context-storage-and-hydration",
+      "to": "context-assembly-per-turn",
+      "kind": "related"
+    },
+    {
+      "from": "context-storage-and-hydration",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "context-storage-and-hydration",
+      "to": "run-state-model",
       "kind": "related"
     },
     {
@@ -5131,6 +5221,11 @@
     {
       "from": "execution-invariant-testing",
       "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "flat-channel-thread-tracking",
+      "to": "context-storage-and-hydration",
       "kind": "related"
     },
     {
@@ -6316,6 +6411,11 @@
     {
       "from": "run-state-model",
       "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "run-state-model",
+      "to": "context-storage-and-hydration",
       "kind": "related"
     },
     {

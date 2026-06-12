@@ -4,6 +4,7 @@ type: topic
 tags: [agent, memory, retrieval, consolidation, context, science-excellence]
 summary: "the semantic memory system that lets a talking agent recall across turns and sessions — memory types, retrieval, and consolidation/forgetting — distinct from the this-turn context window and the run-state for resume."
 related:
+  - [[context-storage-and-hydration]]
   - [[context-engineering]]
   - [[agent-state-persistence]]
   - [[conversation-memory]]

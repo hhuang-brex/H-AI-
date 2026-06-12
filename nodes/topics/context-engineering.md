@@ -4,6 +4,7 @@ type: topic
 tags: [agent, context, prompt-assembly, token-budget, engineering-excellence]
 summary: "the discipline of deciding what the model sees each turn — assembly, budget, and compaction — the master lever for agent cost, latency, and accuracy."
 related:
+  - [[context-storage-and-hydration]]
   - [[agent-memory]]
   - [[worked-example-chatting-task-agent]]
   - [[agent-control-loop]]
