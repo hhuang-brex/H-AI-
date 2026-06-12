@@ -45,6 +45,15 @@ The two patterns are points on a spectrum, not alternatives:
 
 A typed RPC for LLM output. The model still chooses content; the schema chooses shape. Stylistic flexibility lives inside string fields (`merchant_name`, `question_text`); structural failures (missing field, 200-word essay) become impossible at the output layer.
 
+### Forcing a call ≠ guaranteeing the shape
+
+A precision point that's easy to miss: `tool_choice` forces *that* the model emits a tool-call, but on its own it does **not** guarantee the arguments conform to your schema — the model can still produce a missing field or a malformed value inside the call. The hard guarantee is a separate, newer feature:
+
+- **Anthropic** — add `strict: true` to the tool definition for guaranteed schema conformance ([strict tool use](https://platform.claude.com/docs/en/docs/build-with-claude/tool-use)).
+- **OpenAI** — Structured Outputs (`strict: true` on the function, or `response_format: json_schema`) guarantees adherence, unlike legacy JSON mode; available from `gpt-4o-2024-08-06` onward.
+
+So "structural failures become impossible" is precisely true only with forced-call **plus** strict/structured-output enforcement. Forced call alone narrows the failure surface; strict mode closes it. Design for both.
+
 ## When to use it
 
 Strongest signal is when **all three** of these hold:
@@ -89,7 +98,7 @@ Conceptually different from a prompt fix. Migrating a "produce text matching thi
 
 ## Hard constraint: extended thinking on Anthropic
 
-Worth knowing before you design: **Anthropic extended thinking does NOT support `tool_choice: "any"` or named tools** — only `auto` or `none`. Forcing tool use with extended thinking returns an error. An agent that wants both this pattern AND native reasoning has to drop one per turn. Common resolutions:
+Worth knowing before you design: **Anthropic extended thinking does NOT support `tool_choice: "any"` or named tools** — only `auto` or `none`. Forcing tool use with extended thinking returns an error. The docs state it verbatim: *"Tool use with thinking only supports `tool_choice: {"type": "auto"}` (the default) or `tool_choice: {"type": "none"}`. Using `{"type": "any"}` or `{"type": "tool", "name": "..."}` will result in an error because these options force tool use, which is incompatible with extended thinking."* An agent that wants both this pattern AND native reasoning has to drop one per turn. Common resolutions:
 
 - Use forced tool-call only on first-touch / hard-surface turns; conversational turns use `auto` + thinking.
 - Run reasoning in a separate pass; render via forced tool-call without thinking.
@@ -106,3 +115,14 @@ See [native-thinking-vs-prompted-reasoning](native-thinking-vs-prompted-reasonin
 - [native-thinking-vs-prompted-reasoning](native-thinking-vs-prompted-reasoning.md) — the forced-tool-choice + extended-thinking incompatibility above; broader reasoning-mode trade-off.
 - [agent-trajectory-eval](agent-trajectory-eval.md) — once schema is enforced, mechanical evals can pin tool-call shape (`input.equals`, schema-validity) and demote LLM-judges to where they belong.
 - [decision-engine-contract](decision-engine-contract.md) — the contract IS a forced-tool-call output. Names the specific shape decision engines need.
+
+## References (verified primary sources)
+
+Each fetched and confirmed on 2026-06-11 (per the repo's never-guess-URLs rule). Vendor docs are living pages — re-verify before citing externally.
+
+- **Anthropic — Tool use / strict tool use**. https://platform.claude.com/docs/en/docs/build-with-claude/tool-use — `tool_choice` options (`auto`/`any`/`tool`/`none`); `strict: true` for guaranteed schema conformance. Grounds the "forcing a call ≠ guaranteeing the shape" distinction.
+- **Anthropic — Extended thinking**. https://platform.claude.com/docs/en/docs/build-with-claude/extended-thinking — Source of the verbatim constraint that thinking supports only `tool_choice` `auto`/`none`; `any`/named-tool error out. Grounds the "Hard constraint" section.
+- **OpenAI — Structured Outputs**. https://developers.openai.com/api/docs/guides/structured-outputs — Guaranteed schema adherence for function calling and `response_format: json_schema` (vs. legacy JSON mode), from `gpt-4o-2024-08-06` onward. The OpenAI-side equivalent of strict tool use, and a data point for the mid-2024 reliability inflection the "Why it's emerging" section claims.
+- **Anthropic — Building Effective Agents** (Schluntz & Zhang, 2024). https://www.anthropic.com/engineering/building-effective-agents — "simple, composable patterns rather than complex frameworks"; corroborates the per-turn-mechanism / don't-over-force-schema stance.
+
+These second the node's claims rather than just decorate it: the strict-mode sources *correct and sharpen* the central mechanism (forced call narrows the failure surface; strict mode closes it), and the extended-thinking source confirms the hard constraint verbatim.
