@@ -50,6 +50,29 @@ Two things only:
 
 That's it. Anthropic's `tool_choice: { type: 'any' }` enforces "exactly one tool call, no free text." The model is now a multi-class classifier whose output is rendered by code.
 
+## Not "send the template to the LLM to fill in"
+
+The most common misreading: *"so the template goes to the model and it fills the blanks?"* No — that's **fill-in-the-blank / mail-merge**, and it is exactly the failure mode this pattern eliminates.
+
+| | Fill-in-the-blank (NOT this) | Template-rendered (this) |
+|---|---|---|
+| Where the template lives | In the prompt | In code; the model never sees it |
+| What the model writes | Prose into `{slots}` | A tool choice + typed args, no prose |
+| Who renders the final string | The model | Deterministic code |
+| Almost-right-sentence failure | **Still possible** — model can rephrase, drop a word, add a reassurance | **Structurally impossible** — model can't write any sentence |
+
+If the model fills a template, it can still mangle the parts you didn't blank out, or write the wrong thing into the blank. The control only holds when prose generation is removed entirely: the model classifies, code renders. The arguments it emits are *typed* (a date, an enum, an ID) — not free-text slots — so even the parametrized values can't drift into prose.
+
+```
+WRONG (fill-in-the-blank):
+  prompt: "Reply using: 'You're confirmed for {time}.'"   ← model writes the string
+  risk:   model emits "You're all set for 2pm, see you then!" — off-script, unreviewed
+
+RIGHT (template-rendered):
+  model:  { tool: "confirm_appt", args: { time: "14:00" } }   ← model stops here
+  code:   f"You're confirmed for {fmt(time)}."                 ← the only string that can ship
+```
+
 ## Tool palette discipline
 
 The palette *is* the design contract. Ikki's documented production-tested rules:
