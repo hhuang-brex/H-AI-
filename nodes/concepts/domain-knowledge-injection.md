@@ -50,7 +50,7 @@ Most production domain bots use **all five** together. The skill is choosing per
 
 ## Cost dimension
 
-Knowledge injection is where token budgets blow up. Every retrieved chunk, every line of system prompt, every structured state field is paid on every request × every user × every turn. See [cost-aware-eval](cost-aware-eval.md).
+Knowledge injection is where token budgets balloon. Every retrieved chunk, every line of system prompt, every structured state field is paid on every request × every user × every turn. See [cost-aware-eval](cost-aware-eval.md).
 
 A useful audit: snapshot the actual prompt for a representative production call. Look at what's in there. Most teams find 30-50% of tokens are knowledge that's stale, redundant, or never referenced by the model.
 

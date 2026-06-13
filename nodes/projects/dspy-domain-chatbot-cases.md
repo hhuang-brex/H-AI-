@@ -19,7 +19,7 @@ source-thread: [[2026-06-09-dspy-domain-chatbot-research]]
 
 Cases where teams used **DSPy** (Stanford framework for *programming* — not prompting — LLMs: Signatures, Modules, Optimizers like MIPROv2 / BootstrapFewShot / SIMBA, Assertions) to build domain-specific chatbots or conversational agents. Adversarially verified via fan-out web search + 3-vote refute on each claim. Snapshot of public evidence as of 2026-06-09; private deployments at named companies are not in scope.
 
-## TL;DR
+## Headline finding
 
 The public evidence base is **smaller than DSPy's marketing implies**. Two cases cleanly satisfy "domain-specific chatbot": **JetBlue** (multiple chatbots on Databricks) and **Dr.Copilot** (Romanian telemedicine multi-agent assistant, live with 41 doctors). Other frequently-cited DSPy adopters built **adjacent** systems: training-data pipelines (Replit), entity extraction (Infinitus), error-detection guardrails (RAEC), or RAG-QA (Emory LiveRAG). Of the user-named companies, only **JetBlue, Replit, and Databricks** appear on the official adopter list — **Zoro, VMware, Sephora, and Moody's do not** (the Moody's claim was unanimously refuted in verification).
 
