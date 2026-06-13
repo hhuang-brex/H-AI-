@@ -4,6 +4,7 @@ type: concept
 tags: [agent, planning, replanning, recovery, adaptation]
 summary: "executing a plan step by step and revising it when a step fails or reality diverges — the difference between an agent and a script."
 related:
+  - [[references-task-agent-design]]
   - [[task-planning]]
   - [[goal-decomposition]]
   - [[agent-control-loop]]

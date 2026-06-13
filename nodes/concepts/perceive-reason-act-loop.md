@@ -4,6 +4,7 @@ type: concept
 tags: [agent, control-loop, react, reasoning, action]
 summary: "the core agent iteration — observe state, decide one action, execute, observe result — and why each turn should commit to exactly one action."
 related:
+  - [[references-task-agent-design]]
   - [[agent-control-loop]]
   - [[tool-use-design]]
   - [[decision-engine-contract]]
@@ -50,4 +51,4 @@ What "act" produces should be a typed decision the loop can execute deterministi
 
 ## References
 
-The loop is the substrate; [stop-and-yield-conditions](stop-and-yield-conditions.md) decides when it ends, and [step-budget-and-runaway-control](step-budget-and-runaway-control.md) bounds how long it may run.
+The loop is the substrate; [stop-and-yield-conditions](stop-and-yield-conditions.md) decides when it ends, and [step-budget-and-runaway-control](step-budget-and-runaway-control.md) bounds how long it may run. The interleaved reason→act→observe pattern is **ReAct** (Yao et al., 2022) — see [references-task-agent-design](../references/references-task-agent-design.md) for the verified primary source; this node is the production distillation, adding the one-action-per-turn discipline the paper does not emphasize.

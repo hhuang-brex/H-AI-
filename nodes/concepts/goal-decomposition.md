@@ -4,6 +4,7 @@ type: concept
 tags: [agent, planning, decomposition, task, granularity]
 summary: "breaking a goal into steps at the right granularity — actionable but not brittle — with dependencies made explicit."
 related:
+  - [[references-task-agent-design]]
   - [[task-planning]]
   - [[plan-execute-replan]]
   - [[decision-engine-contract]]

@@ -4,6 +4,7 @@ type: concept
 tags: [agent, tool-use, routing, selection, scale]
 summary: "helping the model pick the right tool when there are many — disambiguation, hierarchical routing, and keeping the active set small."
 related:
+  - [[references-task-agent-design]]
   - [[tool-use-design]]
   - [[tool-schema-design]]
   - [[tool-result-grounding]]

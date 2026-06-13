@@ -4,6 +4,7 @@ type: concept
 tags: [agent, tool-use, schema, function-calling, design]
 summary: "writing tool definitions the model can reliably pick and call — names, descriptions, parameter shapes, and the errors they return."
 related:
+  - [[references-task-agent-design]]
   - [[tool-use-design]]
   - [[tool-selection-and-routing]]
   - [[tool-result-grounding]]
@@ -49,6 +50,8 @@ The failure that matters: **a free `string` arg is a back door for prose generat
 **Litmus test:** could this arg value ship to a user as-is? If yes, it's prose in disguise — replace it with an enum the model selects, and let code render the sentence. A `reason: string` becomes `reason_code: enum`; the user-facing wording lives in a template, not in the arg.
 
 Corollary to "mirror how the model thinks": when an arg *must* be a string (a merchant name to look up), accept the natural value and resolve it in code — don't make the model emit a wire-format compound ID, which is where malformed args come from.
+
+## Schema enforcement vs. post-hoc validation
 
 You can constrain tool args at generation (schema-enforced function calling) or accept free-form and validate after. The trade-off is the same as [schema-vs-validator](schema-vs-validator.md): enforcement removes the error class but is rigid; validation is flexible but lets bad calls through to be caught later. For action tools (irreversible side effects), prefer enforcement.
 

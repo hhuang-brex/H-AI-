@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-13",
   "node_count": 124,
-  "edge_count": 783,
+  "edge_count": 788,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -1560,6 +1560,7 @@
       ],
       "source_thread": null,
       "related": [
+        "references-task-agent-design",
         "task-planning",
         "plan-execute-replan",
         "decision-engine-contract",
@@ -2295,6 +2296,7 @@
       ],
       "source_thread": null,
       "related": [
+        "references-task-agent-design",
         "agent-control-loop",
         "tool-use-design",
         "decision-engine-contract",
@@ -2351,6 +2353,7 @@
       ],
       "source_thread": null,
       "related": [
+        "references-task-agent-design",
         "task-planning",
         "goal-decomposition",
         "agent-control-loop",
@@ -3359,6 +3362,7 @@
       ],
       "source_thread": null,
       "related": [
+        "references-task-agent-design",
         "tool-use-design",
         "tool-selection-and-routing",
         "tool-result-grounding",
@@ -3387,6 +3391,7 @@
       ],
       "source_thread": null,
       "related": [
+        "references-task-agent-design",
         "tool-use-design",
         "tool-schema-design",
         "tool-result-grounding",
@@ -5359,6 +5364,11 @@
     },
     {
       "from": "goal-decomposition",
+      "to": "references-task-agent-design",
+      "kind": "related"
+    },
+    {
+      "from": "goal-decomposition",
       "to": "task-planning",
       "kind": "related"
     },
@@ -6114,6 +6124,11 @@
     },
     {
       "from": "perceive-reason-act-loop",
+      "to": "references-task-agent-design",
+      "kind": "related"
+    },
+    {
+      "from": "perceive-reason-act-loop",
       "to": "stop-and-yield-conditions",
       "kind": "related"
     },
@@ -6150,6 +6165,11 @@
     {
       "from": "plan-execute-replan",
       "to": "goal-decomposition",
+      "kind": "related"
+    },
+    {
+      "from": "plan-execute-replan",
+      "to": "references-task-agent-design",
       "kind": "related"
     },
     {
@@ -7234,6 +7254,11 @@
     },
     {
       "from": "tool-schema-design",
+      "to": "references-task-agent-design",
+      "kind": "related"
+    },
+    {
+      "from": "tool-schema-design",
       "to": "schema-vs-validator",
       "kind": "related"
     },
@@ -7260,6 +7285,11 @@
     {
       "from": "tool-selection-and-routing",
       "to": "recency-bias-prompt-design",
+      "kind": "related"
+    },
+    {
+      "from": "tool-selection-and-routing",
+      "to": "references-task-agent-design",
       "kind": "related"
     },
     {
