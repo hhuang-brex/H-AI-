@@ -224,19 +224,8 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-task-agent-design](nodes/references/references-task-agent-design.md) — verified primary sources grounding the agent cluster — ReAct, Reflexion, Toolformer, Tree of Thoughts, MetaGPT, and Anthropic's effective-agents guidance.
 - [references-template-rendered-output](nodes/references/references-template-rendered-output.md) — what's verifiable about template-rendered output in production — Rasa (mechanism confirmed), Ikki (architecture confirmed, outcomes refuted), and why most 'structured output' systems don't qualify.
 
-### Recent threads (10 most recent)
-- 2026-06-11 · [task-agent] [2026-06-11-chatting-task-agent-buildout](threads/2026-06-11-chatting-task-agent-buildout.md) — the 7-pass /loop build-out that added the agent spine (8 topics, ~30 concepts, 1 worked example, 2 eval concepts) for building a chatting task agent.
-- 2026-06-11 · [meta] [2026-06-11-knowledge-graph-organization-review](threads/2026-06-11-knowledge-graph-organization-review.md) — audit of this repo as a knowledge graph; origin of the index-builder spec.
-- 2026-06-11 · [text-eot] [2026-06-11-text-eot-classifier-salvage](threads/2026-06-11-text-eot-classifier-salvage.md) — text-EOT classifier salvage from a stalled deep-research workflow; TurnGPT verified, HF entries blocked by Brex SSO.
-- 2026-06-10 · [sms] [2026-06-10-github-buffering-references](threads/2026-06-10-github-buffering-references.md) — GitHub prior art for chatbot message buffering (clawbolt, Chatwoot, LiveKit).
-- 2026-06-10 · [observability] [2026-06-10-llm-observability-research](threads/2026-06-10-llm-observability-research.md) — deep-research on \"why did the model respond this way?\" debugging workflow.
-- 2026-06-10 · [reasoning] [2026-06-10-reasoning-rationale-research](threads/2026-06-10-reasoning-rationale-research.md) — deep-research on faithfulness, alignment-faking, scheming evaluations — the *why* for instrumenting reasoning.
-- 2026-06-10 · [sms] [2026-06-10-sms-message-buffering-research](threads/2026-06-10-sms-message-buffering-research.md) — origin of the SMS message buffering spec; voice-AI EOT pattern as architectural reference.
-- 2026-06-09 · [pagination] [2026-06-09-chatbot-pagination-research](threads/2026-06-09-chatbot-pagination-research.md) — deep-research on chatbot pagination UX + technical patterns.
-- 2026-06-09 · [dspy] [2026-06-09-dspy-domain-chatbot-research](threads/2026-06-09-dspy-domain-chatbot-research.md) — deep-research on documented DSPy chatbot case studies.
-- 2026-06-09 · [chatbot] [2026-06-09-ikki-forced-tool-calling](threads/2026-06-09-ikki-forced-tool-calling.md) — audit against Ikki's \"Forced Tool Calling in Production Chatbots\" post.
-
-See [`threads/INDEX.md`](threads/INDEX.md) for the full archive.
+---
+<sub>Provenance: 19 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
 
 <!-- END GENERATED -->
 
