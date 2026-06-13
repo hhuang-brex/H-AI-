@@ -33,7 +33,22 @@ A tool definition is a prompt. The name, the description, and the parameter sche
 - **Make illegal calls unrepresentable.** Enums over free strings; required fields required. This is [forced-tool-call-output](forced-tool-call-output.md) discipline applied to tool inputs — the schema removes the failure class instead of validating after.
 - **Errors are part of the contract.** A tool that returns a bare `"error"` teaches the model nothing. Return *actionable* errors ("expense not found: no expense with id X" vs. "invalid") so the next loop iteration can correct rather than retry blindly.
 
-## Schema enforcement vs. post-hoc validation
+## Argument value design: every arg is a choice, not a sentence
+
+The args are the model's only channel for saying *which specific instance* of the action — `refund_charge` is the verb, `{charge_id, reason_code, amount}` is the binding. The discipline is making each arg a **closed, typed value** so the model selects from a constrained domain instead of writing.
+
+The failure that matters: **a free `string` arg is a back door for prose generation.** If `confirm_appointment` takes `note: string`, the model can write a wrong, unreviewed sentence into `note` — the almost-right-sentence failure you removed at the tool-choice layer walks straight back in through the args. (This is the exact escape hatch [template-rendered-output](template-rendered-output.md) forbids.)
+
+| Arg value type | Safe? | Why |
+|---|---|---|
+| `enum` / closed set | safest | Model picks from a list; can't invent |
+| `date`, `int`, `bool`, ID reference | yes | Typed, validatable, no prose |
+| bounded `string` used as a *key* (a name to resolve) | ok if resolved/validated | Becomes a lookup key, not content |
+| free `string` carrying a *message* or prose `reason` | no | Re-opens free-text generation |
+
+**Litmus test:** could this arg value ship to a user as-is? If yes, it's prose in disguise — replace it with an enum the model selects, and let code render the sentence. A `reason: string` becomes `reason_code: enum`; the user-facing wording lives in a template, not in the arg.
+
+Corollary to "mirror how the model thinks": when an arg *must* be a string (a merchant name to look up), accept the natural value and resolve it in code — don't make the model emit a wire-format compound ID, which is where malformed args come from.
 
 You can constrain tool args at generation (schema-enforced function calling) or accept free-form and validate after. The trade-off is the same as [schema-vs-validator](schema-vs-validator.md): enforcement removes the error class but is rigid; validation is flexible but lets bad calls through to be caught later. For action tools (irreversible side effects), prefer enforcement.
 
