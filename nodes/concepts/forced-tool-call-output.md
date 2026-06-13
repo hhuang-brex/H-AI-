@@ -3,6 +3,7 @@ id: forced-tool-call-output
 type: concept
 tags: [llm, output, schema, structured-output, tool-use]
 related:
+  - [[references-template-rendered-output]]
   - [[tool-use-design]]
   - [[task-agent-pattern]]
   - [[chatbot-pagination]]

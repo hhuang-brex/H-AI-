@@ -3,6 +3,7 @@ id: template-rendered-output
 type: concept
 tags: [chatbot, output, schema, templates, classifier, deterministic]
 related:
+  - [[references-template-rendered-output]]
   - [[llm-output-design]]
   - [[forced-tool-call-output]]
   - [[schema-vs-validator]]

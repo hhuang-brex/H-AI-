@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-12",
-  "node_count": 123,
-  "edge_count": 776,
+  "generated": "2026-06-13",
+  "node_count": 124,
+  "edge_count": 783,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -1525,6 +1525,7 @@
       ],
       "source_thread": null,
       "related": [
+        "references-template-rendered-output",
         "tool-use-design",
         "task-agent-pattern",
         "chatbot-pagination",
@@ -1841,6 +1842,7 @@
       ],
       "source_thread": null,
       "related": [
+        "references-template-rendered-output",
         "llm-output-design",
         "template-rendered-output",
         "forced-tool-call-output",
@@ -2552,6 +2554,32 @@
       ]
     },
     {
+      "id": "references-template-rendered-output",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-template-rendered-output.md",
+      "title": "References \u2014 Template-Rendered Output in Production",
+      "summary": "what's verifiable about template-rendered output in production \u2014 Rasa (mechanism confirmed), Ikki (architecture confirmed, outcomes refuted), and why most 'structured output' systems don't qualify.",
+      "tags": [
+        "output",
+        "template-rendered",
+        "forced-tool-call",
+        "production",
+        "reading-list",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-13",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "template-rendered-output",
+        "forced-tool-call-output",
+        "layered-defense-pipeline",
+        "schema-vs-validator"
+      ]
+    },
+    {
       "id": "repair-and-clarification",
       "type": "concept",
       "kind": null,
@@ -3218,6 +3246,7 @@
       ],
       "source_thread": null,
       "related": [
+        "references-template-rendered-output",
         "llm-output-design",
         "forced-tool-call-output",
         "schema-vs-validator",
@@ -5285,6 +5314,11 @@
     },
     {
       "from": "forced-tool-call-output",
+      "to": "references-template-rendered-output",
+      "kind": "related"
+    },
+    {
+      "from": "forced-tool-call-output",
       "to": "schema-vs-validator",
       "kind": "related"
     },
@@ -5566,6 +5600,11 @@
     {
       "from": "layered-defense-pipeline",
       "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "layered-defense-pipeline",
+      "to": "references-template-rendered-output",
       "kind": "related"
     },
     {
@@ -6321,6 +6360,26 @@
     {
       "from": "references-task-agent-design",
       "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "references-template-rendered-output",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "references-template-rendered-output",
+      "to": "layered-defense-pipeline",
+      "kind": "related"
+    },
+    {
+      "from": "references-template-rendered-output",
+      "to": "schema-vs-validator",
+      "kind": "related"
+    },
+    {
+      "from": "references-template-rendered-output",
+      "to": "template-rendered-output",
       "kind": "related"
     },
     {
@@ -7081,6 +7140,11 @@
     {
       "from": "template-rendered-output",
       "to": "persona-tone-compliance",
+      "kind": "related"
+    },
+    {
+      "from": "template-rendered-output",
+      "to": "references-template-rendered-output",
       "kind": "related"
     },
     {

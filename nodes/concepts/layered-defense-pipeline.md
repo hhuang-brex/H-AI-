@@ -3,6 +3,7 @@ id: layered-defense-pipeline
 type: concept
 tags: [chatbot, architecture, defense-in-depth, classifier, safety]
 related:
+  - [[references-template-rendered-output]]
   - [[llm-output-design]]
   - [[template-rendered-output]]
   - [[forced-tool-call-output]]
