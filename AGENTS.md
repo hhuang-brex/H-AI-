@@ -7,6 +7,14 @@ nav_order: 99
 
 Contract for any agent (or human) adding to this knowledge graph. Following this keeps the repo machine-parseable and the graph navigable.
 
+## Scope
+
+This graph captures the engineering and science of **building domain-specific task agents that converse** — systems that feel like a chatbot to the user (SMS, chat, voice) but are, underneath, a decision engine that takes actions in a domain. The canonical example is an executive-assistant-class agent: it talks, but its value is doing the work (scheduling, triage, documentation), not the conversation itself.
+
+In scope: the agent runtime (control loop, tools, planning, context, memory, persistence), output discipline (forced tool-call, template rendering, validators), conversation design, evaluation, and the production concerns that make these shippable (execution safety, observability, human-in-the-loop). Out of scope: general ML training, model internals, and anything not in service of building such an agent.
+
+Each node is an **engineering distillation** — a reusable decision with its failure modes and trade-offs — not a paper summary or a vendor explainer. When a node makes an empirical or product claim, it must be grounded per the evidence standard below.
+
 ## Core invariants
 
 1. **One concept per file.** If a node tries to explain two things, split it.
@@ -63,6 +71,16 @@ A single line, ≤200 characters. Appears next to every node link in `README.md`
 - `snapshot` — accurate as of `created`; future readers should treat it as point-in-time.
 - `proposal` — recommendation/plan, not yet decided.
 - `archived` — historical; do not edit.
+
+## Evidence standard
+
+The graph's authority depends on every external claim being checkable. This is non-negotiable:
+
+- **Never write a URL, paper title, author, or version from memory.** Fetch it first and confirm it resolves. An unverified citation is worse than none — it launders a guess as a fact.
+- **Mark verification.** A `reference` node states when its links were last fetch-confirmed (e.g. "verified 2026-06-13"). Vendor docs are living pages; date them.
+- **Separate mechanism from outcome.** "Architecture X works this way" (often verifiable from docs) is a different claim from "X delivered Y in production" (usually a vendor's self-report). Label self-reported metrics as such; don't present them as measured fact.
+- **Record what failed to verify.** If a claim couldn't be confirmed — or was refuted — say so in the node. A documented negative result is a finding, not a gap to paper over.
+- **Distinguish the graph's own reasoning from cited sources.** Engineering distillations are the author's synthesis; where they diverge from a cited paper, name the divergence rather than implying the source said it.
 
 ## Linking conventions
 
