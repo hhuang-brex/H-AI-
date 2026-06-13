@@ -4,6 +4,7 @@ type: concept
 tags: [agent, context, token-budget, eviction, cost, engineering-excellence]
 summary: "splitting a fixed token window across system, history, tools, and results — with an explicit eviction policy for when it overflows."
 related:
+  - [[references-context-and-memory]]
   - [[context-engineering]]
   - [[context-assembly-per-turn]]
   - [[context-compaction]]

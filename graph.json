@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-13",
   "node_count": 124,
-  "edge_count": 788,
+  "edge_count": 790,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -962,6 +962,7 @@
       ],
       "source_thread": null,
       "related": [
+        "references-context-and-memory",
         "context-engineering",
         "context-assembly-per-turn",
         "context-compaction",
@@ -1018,6 +1019,7 @@
       "clusters": [],
       "source_thread": null,
       "related": [
+        "references-context-and-memory",
         "context-storage-and-hydration",
         "agent-memory",
         "worked-example-chatting-task-agent",
@@ -4664,6 +4666,11 @@
     },
     {
       "from": "context-budget-allocation",
+      "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "context-budget-allocation",
       "to": "step-budget-and-runaway-control",
       "kind": "related"
     },
@@ -4735,6 +4742,11 @@
     {
       "from": "context-engineering",
       "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "references-context-and-memory",
       "kind": "related"
     },
     {

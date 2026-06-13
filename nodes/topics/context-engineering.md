@@ -4,6 +4,7 @@ type: topic
 tags: [agent, context, prompt-assembly, token-budget, engineering-excellence]
 summary: "the discipline of deciding what the model sees each turn — assembly, budget, and compaction — the master lever for agent cost, latency, and accuracy."
 related:
+  - [[references-context-and-memory]]
   - [[context-storage-and-hydration]]
   - [[agent-memory]]
   - [[worked-example-chatting-task-agent]]
@@ -26,6 +27,8 @@ Every turn of an agent loop re-decides what the model sees: the system instructi
 ## Why it's a discipline, not a detail
 
 The naive agent appends everything to a growing transcript and resends it every turn. This works in a demo and fails in production three ways at once: the bill grows quadratically with conversation length, latency creeps up turn over turn, and accuracy *drops* as the relevant facts get buried in middle-of-context noise. None of these are model problems — they are assembly problems, and they're fixable with explicit policy.
+
+That accuracy drop is empirically documented, not folklore: models recall information at the *start or end* of a long context far better than the *middle* (Liu et al., "Lost in the Middle," 2023), and degrade with raw input length generally (Chroma's "Context Rot," 2025). See [references-context-and-memory](../references/references-context-and-memory.md) for the verified sources — a bigger window is not a substitute for this discipline.
 
 The frame: treat the context window as a **managed budget**, not an append log. Each turn, you *construct* the prompt from parts, each part earning its place.
 
