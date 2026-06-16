@@ -8,6 +8,7 @@ related:
   - [[cost-aware-eval]]
   - [[agent-eval-case-study]]
   - [[layered-defense-pipeline]]
+  - [[agent-trajectory-eval]]
 status: living
 created: 2026-06-05
 summary: "calibration, bias, multi-vote, cascading."
@@ -52,6 +53,10 @@ Distinct from judge calibration — but worth knowing because it's often confuse
 | Why different-family helps | Independent vote | Uncorrelated blind spots → catches what either alone misses |
 
 The recheck is *not* a multi-vote judge; it's a runtime branch with override authority. See [layered-defense-pipeline](layered-defense-pipeline.md) for the full architecture.
+
+## Judges as trajectory reward models (2026)
+
+Beyond scoring single outputs, judges are increasingly used as **reward models over whole agent trajectories**. Plan-RewardBench (*Aligning Agents via Planning*, [arXiv:2604.08178](https://arxiv.org/abs/2604.08178)) shows LLM-judges — alongside generative and discriminative reward models — **degrade sharply as trajectory horizon grows**: a judge calibrated on short tasks needs re-validation before you trust it to rank long-horizon ones. The calibration discipline above doesn't transfer for free across horizon length. See [agent-trajectory-eval](agent-trajectory-eval.md).
 
 ## References
 

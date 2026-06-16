@@ -50,6 +50,10 @@ The right reason to spawn a sub-agent is **context isolation** — a child gets 
 
 If none hold, a single [agent-control-loop](agent-control-loop.md) with good [context-engineering](context-engineering.md) is simpler, cheaper, and easier to debug. YAGNI applies hard.
 
+## What actually drives the gains (and what doesn't)
+
+A controlled study of multi-agent debate on logic puzzles (Wu et al., *Can LLM Agents Really Debate?*, [arXiv:2511.07784](https://arxiv.org/abs/2511.07784), Nov 2025) isolates the active ingredient: **intrinsic reasoning strength and group diversity are the dominant drivers** of debate success, while structural knobs — turn order, confidence visibility — offer limited gains. Worse, **majority pressure suppresses independent correction**: effective teams overturn an incorrect consensus, weak ones conform to it. This tempers "more agents = better" — adding copies of the same mediocre reasoner, or a fancier debate protocol, won't fix a weak base model; diversity of *capable* members is what pays. Reinforces *delegate for isolation, not for verbs*.
+
 ## Connections
 
 - **Planning:** the coordinator's plan ([task-planning](task-planning.md)) is what gets split into sub-agent assignments; the dependency structure decides what can fan out vs. must serialize.

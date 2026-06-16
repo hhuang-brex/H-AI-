@@ -39,6 +39,14 @@ For genuinely nondeterministic agents, judging "did the final state satisfy the 
 
 Single-turn cases miss the failure mode where state from turn N contaminates turn N+1 (system-reminder leakage, tool-output framing, premature tool use). Cover at least a handful of 3+ turn trajectories per surface.
 
+## Frontier (2026): reward models, failure attribution, dual-control
+
+The eval frontier is moving from scoring a final state to scoring and *diagnosing* the whole trajectory:
+
+- **Trajectory-level reward modeling.** Plan-RewardBench (Wang et al., *Aligning Agents via Planning*, [arXiv:2604.08178](https://arxiv.org/abs/2604.08178), ACL 2026) tests whether judges/reward models can tell a preferred trajectory from a confusable distractor across safety-refusal, tool-irrelevance, complex-planning, and error-recovery families. Finding: generative, discriminative, *and* LLM-judge evaluators all **degrade sharply on long-horizon trajectories** — a scorer calibrated on short tasks is not trustworthy on long ones.
+- **Automated failure attribution.** AgentRx (Barke et al., *Diagnosing AI Agent Failures from Execution Trajectories*, [arXiv:2602.02475](https://arxiv.org/abs/2602.02475), Feb 2026) synthesizes constraints, checks them step-by-step, and pinpoints the **critical failure step + category** with an auditable validation log — moving trajectory eval from "did it fail?" to "where, and why." Built on 115 hand-annotated failed runs across API workflows, incident management, and web/file tasks.
+- **Dual-control conversational eval.** τ²-Bench (Barres et al., [arXiv:2506.07982](https://arxiv.org/abs/2506.07982), Jun 2025) models a domain where **both agent and user act with tools** (a Dec-POMDP); agents show large performance drops moving from no-user to dual-control, separating reasoning errors from communication/coordination errors. Directly relevant to a conversing task agent that must *guide* a user who also acts.
+
 ## References
 
 - Anthropic, *Building Effective Agents* — [references-eval-reading-list](../references/references-eval-reading-list.md)

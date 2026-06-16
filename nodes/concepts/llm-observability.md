@@ -64,6 +64,8 @@ The spec is in **Development** status (experimental). Stable attributes on a Gen
 - v1.41 renamed tool-call span attributes
 - More breaking changes expected before stable
 
+**2026 update — conventions spun out, agent spans added.** The GenAI conventions moved out of the main `semantic-conventions` repo into a dedicated [`semantic-conventions-genai`](https://github.com/open-telemetry/semantic-conventions-genai) repo (the old `/gen-ai/` spec page now just redirects there). It now defines **agent operation spans** via `gen_ai.operation.name` well-known values — `create_agent`, `invoke_agent`, `invoke_workflow`, `execute_tool`, `plan` — plus a memory-operation family (`create_memory`, `search_memory`, `update_memory`, …) and MCP conventions. Every one is still marked **Development** (experimental), with no releases published — so the drift caveat above now applies over a *larger* surface, not a settled one. Don't pin instrumentation to these span names expecting stability.
+
 Two opt-in mechanisms developers should know:
 
 1. **Stability switch.** Instrumentations *should* expose `OTEL_SEMCONV_STABILITY_OPT_IN`. Setting it to `gen_ai_latest_experimental` opts you into the latest experimental conventions; otherwise instrumentations continue emitting v1.36.0-or-prior by default.
@@ -157,6 +159,7 @@ A minimum-viable setup that survives both the API leakiness and OTel drift:
 - DeepSeek, *Reasoning Model* — https://api-docs.deepseek.com/guides/reasoning_model — `reasoning_content` shape, 400-on-echo.
 - Google Gemini, *Thinking* — https://ai.google.dev/gemini-api/docs/thinking — `includeThoughts`, `thoughtSignature`, `thoughts_token_count`.
 - OpenTelemetry GenAI Semantic Conventions — https://opentelemetry.io/docs/specs/semconv/gen-ai/ — Development status, `OTEL_SEMCONV_STABILITY_OPT_IN`, opt-in content capture.
+- OpenTelemetry `semantic-conventions-genai` (dedicated repo, 2026) — https://github.com/open-telemetry/semantic-conventions-genai — agent spans (`create_agent`/`invoke_agent`/`execute_tool`/`plan`), memory operations, and MCP conventions; all Development-status, no releases.
 - LangSmith OTel mapping — https://docs.langchain.com/langsmith/trace-with-opentelemetry — explicit attribute table.
 - Datadog LLM Observability — https://docs.datadoghq.com/llm_observability/ — auto-instrumentation, span kinds.
 - Arize Phoenix LLM traces — https://arize.com/docs/phoenix/tracing/llm-traces — captured field list.

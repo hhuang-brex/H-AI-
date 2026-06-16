@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-13",
+  "generated": "2026-06-16",
   "node_count": 124,
-  "edge_count": 790,
+  "edge_count": 791,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -1878,7 +1878,8 @@
         "test-pyramid-llm",
         "cost-aware-eval",
         "agent-eval-case-study",
-        "layered-defense-pipeline"
+        "layered-defense-pipeline",
+        "agent-trajectory-eval"
       ]
     },
     {
@@ -5642,6 +5643,11 @@
     {
       "from": "llm-as-judge",
       "to": "agent-eval-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-judge",
+      "to": "agent-trajectory-eval",
       "kind": "related"
     },
     {
