@@ -16,6 +16,7 @@ related:
   - [[conversation-memory]]
   - [[domain-knowledge-injection]]
   - [[sms-context-windowing]]
+  - [[agentic-context-engineering-ace]]
 status: living
 created: 2026-06-11
 ---
@@ -47,6 +48,7 @@ The frame: treat the context window as a **managed budget**, not an append log. 
 - **Memory:** [conversation-memory](../concepts/conversation-memory.md) is *what* to remember across turns/sessions; context-engineering is *how* that memory is selected into a given prompt. They compose.
 - **Knowledge:** [domain-knowledge-injection](../concepts/domain-knowledge-injection.md) covers RAG / prompt-stuffing / structured-state as ways to get domain facts in; this topic is the budget and assembly logic around them.
 - **SMS slice:** [sms-context-windowing](../concepts/sms-context-windowing.md) is the channel-specific instance of these decisions.
+- **Optimizing the context itself:** [agentic-context-engineering-ace](../concepts/agentic-context-engineering-ace.md) treats the assembled context as an evolving playbook (generate/reflect/curate) — the structural counterpart to optimizing instruction prose ([offline-prompt-optimization](../concepts/offline-prompt-optimization.md)).
 
 ## The one rule
 

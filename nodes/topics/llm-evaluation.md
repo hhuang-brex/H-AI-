@@ -13,6 +13,7 @@ related:
   - [[adversarial-eval]]
   - [[golden-snapshot-eval]]
   - [[agent-eval-case-study]]
+  - [[offline-prompt-optimization]]
 status: living
 created: 2026-06-05
 summary: "measuring whether LLM systems do what they should without bankrupting the team."
@@ -40,6 +41,7 @@ Anything not serving (1)–(3) is overhead.
 - [adversarial-eval](../concepts/adversarial-eval.md) — red-team / safety / prompt injection.
 - [execution-invariant-testing](../concepts/execution-invariant-testing.md) — assert agent safety properties (idempotency, crash-consistency, budget-bound) as deterministic tests.
 - [simulated-user-eval](../concepts/simulated-user-eval.md) — drive a chatting agent with a scripted/LLM-played user across multi-turn interruption and correction scenarios.
+- [offline-prompt-optimization](../concepts/offline-prompt-optimization.md) — turn the eval metric around and use it to *improve* a skill: search prompt space offline, scored end-to-end by the real agent.
 
 ## Canonical references
 

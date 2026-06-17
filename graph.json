@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-16",
-  "node_count": 124,
-  "edge_count": 791,
+  "node_count": 126,
+  "edge_count": 807,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -768,6 +768,35 @@
       ]
     },
     {
+      "id": "agentic-context-engineering-ace",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/agentic-context-engineering-ace.md",
+      "title": "Agentic Context Engineering (ACE)",
+      "summary": "optimize the context-as-playbook itself (generate/reflect/curate, delta updates) \u2014 the structural counterpart to optimizing instruction prose.",
+      "tags": [
+        "context",
+        "agents",
+        "optimization",
+        "playbook",
+        "memory"
+      ],
+      "status": "living",
+      "created": "2026-06-16",
+      "clusters": [
+        "context-engineering"
+      ],
+      "source_thread": null,
+      "related": [
+        "context-engineering",
+        "offline-prompt-optimization",
+        "context-compaction",
+        "context-assembly-per-turn",
+        "conversation-memory",
+        "agent-memory"
+      ]
+    },
+    {
       "id": "async-conversation-pacing",
       "type": "concept",
       "kind": null,
@@ -1030,7 +1059,8 @@
         "context-compaction",
         "conversation-memory",
         "domain-knowledge-injection",
-        "sms-context-windowing"
+        "sms-context-windowing",
+        "agentic-context-engineering-ace"
       ]
     },
     {
@@ -1377,7 +1407,8 @@
         "references-domain-chatbot-design",
         "llm-as-judge",
         "grounding-and-citation",
-        "domain-knowledge-injection"
+        "domain-knowledge-injection",
+        "offline-prompt-optimization"
       ]
     },
     {
@@ -1909,7 +1940,8 @@
         "agent-trajectory-eval",
         "adversarial-eval",
         "golden-snapshot-eval",
-        "agent-eval-case-study"
+        "agent-eval-case-study",
+        "offline-prompt-optimization"
       ]
     },
     {
@@ -2184,6 +2216,37 @@
         "domain-knowledge-injection",
         "recency-bias-prompt-design",
         "llm-observability"
+      ]
+    },
+    {
+      "id": "offline-prompt-optimization",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/offline-prompt-optimization.md",
+      "title": "Offline Prompt Optimization",
+      "summary": "improve an agent skill by searching prompt space offline, scored end-to-end by the real agent \u2014 not hand-tuning.",
+      "tags": [
+        "eval",
+        "dspy",
+        "gepa",
+        "optimizer",
+        "prompt",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-06-15",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "llm-as-judge",
+        "agent-trajectory-eval",
+        "agent-eval-improvement-tiers",
+        "dspy-domain-chatbot-cases",
+        "agentic-context-engineering-ace",
+        "context-engineering"
       ]
     },
     {
@@ -4466,6 +4529,36 @@
       "kind": "related"
     },
     {
+      "from": "agentic-context-engineering-ace",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "agentic-context-engineering-ace",
+      "to": "context-assembly-per-turn",
+      "kind": "related"
+    },
+    {
+      "from": "agentic-context-engineering-ace",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "agentic-context-engineering-ace",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "agentic-context-engineering-ace",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "agentic-context-engineering-ace",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
       "from": "async-conversation-pacing",
       "to": "sms-multi-thread-chatbot",
       "kind": "related"
@@ -4713,6 +4806,11 @@
     {
       "from": "context-engineering",
       "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "agentic-context-engineering-ace",
       "kind": "related"
     },
     {
@@ -5168,6 +5266,11 @@
     {
       "from": "dspy-domain-chatbot-cases",
       "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "dspy-domain-chatbot-cases",
+      "to": "offline-prompt-optimization",
       "kind": "related"
     },
     {
@@ -5707,6 +5810,11 @@
     },
     {
       "from": "llm-evaluation",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
       "to": "prod-shadow-replay",
       "kind": "related"
     },
@@ -6028,6 +6136,41 @@
     {
       "from": "native-thinking-vs-prompted-reasoning",
       "to": "recency-bias-prompt-design",
+      "kind": "related"
+    },
+    {
+      "from": "offline-prompt-optimization",
+      "to": "agent-eval-improvement-tiers",
+      "kind": "related"
+    },
+    {
+      "from": "offline-prompt-optimization",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "offline-prompt-optimization",
+      "to": "agentic-context-engineering-ace",
+      "kind": "related"
+    },
+    {
+      "from": "offline-prompt-optimization",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "offline-prompt-optimization",
+      "to": "dspy-domain-chatbot-cases",
+      "kind": "related"
+    },
+    {
+      "from": "offline-prompt-optimization",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "offline-prompt-optimization",
+      "to": "llm-evaluation",
       "kind": "related"
     },
     {

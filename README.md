@@ -98,6 +98,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [truncated-pyramid-results](nodes/concepts/truncated-pyramid-results.md) — summary first, select-N exemplars, refinement buttons (NN/g).
 
 **[context-engineering](nodes/topics/context-engineering.md)**
+- [agentic-context-engineering-ace](nodes/concepts/agentic-context-engineering-ace.md) — optimize the context-as-playbook itself (generate/reflect/curate, delta updates) — the structural counterpart to optimizing instruction prose.
 - [context-assembly-per-turn](nodes/concepts/context-assembly-per-turn.md) — constructing each turn's prompt from typed parts — system, goal, history, tools, results — instead of resending a growing transcript.
 - [context-budget-allocation](nodes/concepts/context-budget-allocation.md) — splitting a fixed token window across system, history, tools, and results — with an explicit eviction policy for when it overflows.
 - [context-compaction](nodes/concepts/context-compaction.md) — shrinking a long history to fit the window without losing the decisions that matter — rolling summaries, structured state, and what never to compact.
@@ -137,6 +138,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [execution-invariant-testing](nodes/concepts/execution-invariant-testing.md) — asserting an agent's safety properties as tests — run-twice-equals-once, crash-anywhere-resumes-consistently, never-exceeds-budget — instead of hoping they hold.
 - [golden-snapshot-eval](nodes/concepts/golden-snapshot-eval.md) — pre-LLM deterministic checks.
 - [llm-as-judge](nodes/concepts/llm-as-judge.md) — calibration, bias, multi-vote, cascading.
+- [offline-prompt-optimization](nodes/concepts/offline-prompt-optimization.md) — improve an agent skill by searching prompt space offline, scored end-to-end by the real agent — not hand-tuning.
 - [prod-shadow-replay](nodes/concepts/prod-shadow-replay.md) — closing the gap between frozen datasets and live traffic.
 - [simulated-user-eval](nodes/concepts/simulated-user-eval.md) — evaluating a chatting agent by driving it with a scripted or LLM-played user across multi-turn scenarios — interruptions, corrections, abandonment — not just single-turn replies.
 - [test-pyramid-llm](nodes/concepts/test-pyramid-llm.md) — porting the classic pyramid to LLM apps.

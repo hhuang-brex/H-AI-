@@ -9,6 +9,7 @@ related:
   - [[llm-as-judge]]
   - [[grounding-and-citation]]
   - [[domain-knowledge-injection]]
+  - [[offline-prompt-optimization]]
 status: snapshot
 created: 2026-06-09
 summary: "verified DSPy domain-chatbot success examples (JetBlue, Dr.Copilot, etc.; 2026-06-09 snapshot)."
