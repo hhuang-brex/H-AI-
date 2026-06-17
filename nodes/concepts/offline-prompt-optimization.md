@@ -10,6 +10,7 @@ related:
   - [[dspy-domain-chatbot-cases]]
   - [[agentic-context-engineering-ace]]
   - [[context-engineering]]
+  - [[verbal-reinforcement-vs-gradient-rl]]
 status: living
 created: 2026-06-15
 summary: "improve an agent skill by searching prompt space offline, scored end-to-end by the real agent — not hand-tuning."

@@ -142,6 +142,8 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [prod-shadow-replay](nodes/concepts/prod-shadow-replay.md) — closing the gap between frozen datasets and live traffic.
 - [simulated-user-eval](nodes/concepts/simulated-user-eval.md) — evaluating a chatting agent by driving it with a scripted or LLM-played user across multi-turn scenarios — interruptions, corrections, abandonment — not just single-turn replies.
 - [test-pyramid-llm](nodes/concepts/test-pyramid-llm.md) — porting the classic pyramid to LLM apps.
+- [verbal-reinforcement-vs-gradient-rl](nodes/concepts/verbal-reinforcement-vs-gradient-rl.md) — the distinction between gradient RL (weights move) and verbal/in-context reinforcement (text moves) — and why eval-driven skill-rewriting is the latter.
+- [verbal-self-correction](nodes/concepts/verbal-self-correction.md) — a model revises its own behaviour from natural-language self-feedback — Self-Refine (within a task) and Reflexion (across trials); the primitive the optimizers scale up.
 
 **[llm-output-design](nodes/topics/llm-output-design.md)**
 - [cot-as-forensic-artifact](nodes/concepts/cot-as-forensic-artifact.md) — the *why* behind reasoning instrumentation: CoT is forensic, not explanatory; unfaithful 60–75% of the time yet uniquely surfaces alignment-faking, scheming, situational awareness.

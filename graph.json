@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-16",
-  "node_count": 126,
-  "edge_count": 807,
+  "node_count": 128,
+  "edge_count": 821,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -1941,7 +1941,9 @@
         "adversarial-eval",
         "golden-snapshot-eval",
         "agent-eval-case-study",
-        "offline-prompt-optimization"
+        "offline-prompt-optimization",
+        "verbal-reinforcement-vs-gradient-rl",
+        "verbal-self-correction"
       ]
     },
     {
@@ -2246,7 +2248,8 @@
         "agent-eval-improvement-tiers",
         "dspy-domain-chatbot-cases",
         "agentic-context-engineering-ace",
-        "context-engineering"
+        "context-engineering",
+        "verbal-reinforcement-vs-gradient-rl"
       ]
     },
     {
@@ -3549,6 +3552,64 @@
         "repair-and-clarification",
         "escalation-handoff",
         "intent-and-disambiguation"
+      ]
+    },
+    {
+      "id": "verbal-reinforcement-vs-gradient-rl",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/verbal-reinforcement-vs-gradient-rl.md",
+      "title": "Verbal Reinforcement vs. Gradient RL",
+      "summary": "the distinction between gradient RL (weights move) and verbal/in-context reinforcement (text moves) \u2014 and why eval-driven skill-rewriting is the latter.",
+      "tags": [
+        "optimization",
+        "prompt",
+        "rl",
+        "reflection",
+        "agents",
+        "eval"
+      ],
+      "status": "living",
+      "created": "2026-06-16",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "offline-prompt-optimization",
+        "agentic-context-engineering-ace",
+        "verbal-self-correction",
+        "llm-evaluation",
+        "llm-as-judge"
+      ]
+    },
+    {
+      "id": "verbal-self-correction",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/verbal-self-correction.md",
+      "title": "Verbal Self-Correction",
+      "summary": "a model revises its own behaviour from natural-language self-feedback \u2014 Self-Refine (within a task) and Reflexion (across trials); the primitive the optimizers scale up.",
+      "tags": [
+        "reflection",
+        "agents",
+        "self-improvement",
+        "prompt",
+        "memory"
+      ],
+      "status": "living",
+      "created": "2026-06-16",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "verbal-reinforcement-vs-gradient-rl",
+        "offline-prompt-optimization",
+        "agentic-context-engineering-ace",
+        "conversation-memory",
+        "cot-as-forensic-artifact",
+        "llm-evaluation"
       ]
     },
     {
@@ -5829,6 +5890,16 @@
       "kind": "related"
     },
     {
+      "from": "llm-evaluation",
+      "to": "verbal-reinforcement-vs-gradient-rl",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "verbal-self-correction",
+      "kind": "related"
+    },
+    {
       "from": "llm-observability",
       "to": "2026-06-10-llm-observability-research",
       "kind": "source-thread"
@@ -6171,6 +6242,11 @@
     {
       "from": "offline-prompt-optimization",
       "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "offline-prompt-optimization",
+      "to": "verbal-reinforcement-vs-gradient-rl",
       "kind": "related"
     },
     {
@@ -7561,6 +7637,61 @@
     {
       "from": "turn-taking-and-proactivity",
       "to": "repair-and-clarification",
+      "kind": "related"
+    },
+    {
+      "from": "verbal-reinforcement-vs-gradient-rl",
+      "to": "agentic-context-engineering-ace",
+      "kind": "related"
+    },
+    {
+      "from": "verbal-reinforcement-vs-gradient-rl",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "verbal-reinforcement-vs-gradient-rl",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "verbal-reinforcement-vs-gradient-rl",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "verbal-reinforcement-vs-gradient-rl",
+      "to": "verbal-self-correction",
+      "kind": "related"
+    },
+    {
+      "from": "verbal-self-correction",
+      "to": "agentic-context-engineering-ace",
+      "kind": "related"
+    },
+    {
+      "from": "verbal-self-correction",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "verbal-self-correction",
+      "to": "cot-as-forensic-artifact",
+      "kind": "related"
+    },
+    {
+      "from": "verbal-self-correction",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "verbal-self-correction",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "verbal-self-correction",
+      "to": "verbal-reinforcement-vs-gradient-rl",
       "kind": "related"
     },
     {
