@@ -29,6 +29,8 @@ Asking the model to emit reasoning in `<reasoning>` / `<thinking>` tags inside t
 | DeepSeek | `reasoning_content` field as sibling to `content`; R1 emits `<think>` natively | Native thinking is the protocol. **Forbids feeding `reasoning_content` back into context** (returns 400). |
 | Google (Gemini) | Thinking mode | Documented as native; primary-source detail not verified in this pass — flag as unconfirmed. |
 
+**Depth control (2026).** On Anthropic the manual `budget_tokens` thinking budget is gone — it's a hard **400** on Opus 4.7/4.8 and Fable 5 (deprecated on Opus 4.6 / Sonnet 4.6). Depth is now set by the GA **`effort`** parameter (`output_config.effort` ∈ `low | medium | high | xhigh | max`) combined with adaptive thinking, not a token count. So "how much should it think?" is a coarse effort dial the model self-moderates against, not a budget you compute.
+
 ## Why native > prompted, structurally
 
 Even when the *cost per token* of native thinking and inline-prompted reasoning is similar, native modes win on four structural axes:

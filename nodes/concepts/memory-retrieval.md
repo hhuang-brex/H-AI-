@@ -38,6 +38,8 @@ A robust memory ranker (popularized by the generative-agents line of work) score
 
 Relevance alone surfaces topically-similar but stale junk; recency alone forgets important older facts; importance alone ignores the current situation. The combination is what makes retrieval feel intelligent — a months-old but *important and relevant* memory beats a recent trivial one.
 
+> **2026 caveat — the evidence base is contested.** This ranker comes from the early generative-agents line, and its evaluation foundations are now under scrutiny. *Anatomy of Agentic Memory* (Jiang et al., [arXiv:2602.19320](https://arxiv.org/abs/2602.19320)) argues agentic-memory benchmarks are **underscaled** and their **metrics misaligned with semantic utility**, with benchmark-saturation effects, judge sensitivity, and backbone-dependent accuracy — so reported memory-system wins may not reflect real utility. Treat headline retrieval-quality numbers cautiously.
+
 ## Retrieval is the same machinery as RAG, different source
 
 Embed-and-rank over a memory store is mechanically the same as [domain-knowledge-injection](domain-knowledge-injection.md)'s RAG over a document store. The difference is the *source and write path*: RAG retrieves curated external knowledge; memory retrieves the agent's own accumulated experience, which it also wrote. The retrieval/ranking concerns (chunking, embedding drift, top-k tuning) transfer directly.
@@ -52,6 +54,8 @@ Retrieved memories don't go straight to the model — they're candidates for [co
 - **Relevance-only retrieval.** Surfaces stale-but-similar memories; no notion that newer or more important should win ties.
 - **Dump-all-into-the-window.** Defeated by lost-in-the-middle and context rot; expensive too.
 - **Untuned top-k.** Retrieving 50 memories "to be safe" floods assembly and buries the few that mattered.
+- **Memory conflict.** *MemConflict* (Tao et al., [arXiv:2605.20926](https://arxiv.org/abs/2605.20926)) shows long-term stores accumulate dynamic / static / conditional conflicts (temporal validity, factual correctness, contextual applicability); across six systems **answer correctness often diverges from retrieval/ranking quality**, and longer histories + distractors degrade it. Good retrieval ≠ correct answer when stored memories contradict each other — you need conflict resolution, not just ranking.
+- **Bias accumulation.** *How Implicit Bias Accumulates and Propagates in LLM Long-term Memory* (Ma et al., [arXiv:2602.01558](https://arxiv.org/abs/2602.01558), under review) finds implicit bias **intensifies over time and propagates across unrelated domains**; static system-prompt debiasing is short-lived — the durable fix enforces fairness constraints at **memory write time**, not retrieval time.
 
 ## References
 

@@ -34,6 +34,12 @@ The highest-leverage move is **not showing the model every tool every turn.** Op
 
 Most agents need only static subsetting. Reach for retrieval-over-tools only when the catalog is genuinely large and unstructured (YAGNI).
 
+## 2026 update — the tool search tool makes retrieval-over-tools first-class
+
+The "retrieval over tools" row above is now a server-side primitive. Anthropic's **tool search tool** (`tool_search_tool_regex_20251119` / `tool_search_tool_bm25_20251119`) lets you mark tools `defer_loading: true`; Claude searches their names/descriptions/arg-names on demand and the API expands only the **3–5 most relevant** `tool_reference` blocks into full definitions — cutting tool-definition tokens by **>85%** (a ~55k-token multi-server setup loads only what the request needs). Deferred tools are *appended*, not swapped into the prefix, so **prompt caching is preserved**. It also quantifies this node's headline claim: selection accuracy "degrades significantly once you exceed 30–50 available tools," and on-demand surfacing keeps it high across thousands (max 10,000). Source: [tool-search-tool docs](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool).
+
+A complementary lever for the *round-trip* cost (not selection): **programmatic tool calling** — Claude writes code that invokes tools inside a code-execution container, so intermediate results are filtered *before* entering the context window and N sequential calls collapse into one script. Reported +11% on agentic-search benchmarks at **24% fewer input tokens** ([docs](https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling)). Reach for it when chaining many calls or when intermediate payloads are large.
+
 ## Disambiguation is mostly a schema job
 
 Before adding a router, fix the descriptions. Two tools that could fire for the same intent must each say what distinguishes them — this is covered in [tool-schema-design](tool-schema-design.md) and is the cheapest accuracy gain available. Routing infrastructure compensates for *scale*, not for *vague schemas*.
