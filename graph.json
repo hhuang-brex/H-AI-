@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-16",
   "node_count": 128,
-  "edge_count": 821,
+  "edge_count": 822,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -793,7 +793,8 @@
         "context-compaction",
         "context-assembly-per-turn",
         "conversation-memory",
-        "agent-memory"
+        "agent-memory",
+        "verbal-reinforcement-vs-gradient-rl"
       ]
     },
     {
@@ -4617,6 +4618,11 @@
     {
       "from": "agentic-context-engineering-ace",
       "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "agentic-context-engineering-ace",
+      "to": "verbal-reinforcement-vs-gradient-rl",
       "kind": "related"
     },
     {
