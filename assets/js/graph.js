@@ -121,8 +121,10 @@
       nbr.removeClass("dim").addClass("hi");
     });
     cy.on("mousemove", function (e) {
-      tip.style.left = (e.renderedPosition.x + 14) + "px";
-      tip.style.top = (e.renderedPosition.y + 14) + "px";
+      var oe = e.originalEvent;
+      if (!oe) return;
+      tip.style.left = (oe.clientX + 14) + "px";
+      tip.style.top = (oe.clientY + 14) + "px";
     });
     cy.on("mouseout", "node", function () {
       tip.style.display = "none";
