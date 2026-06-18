@@ -44,6 +44,12 @@
       seen.add(key);
       edges.push({ data: { id: "e_" + key, source: e.from, target: e.to } });
     }
+    const deg = {};
+    for (const e of edges) {
+      deg[e.data.source] = (deg[e.data.source] || 0) + 1;
+      deg[e.data.target] = (deg[e.data.target] || 0) + 1;
+    }
+    for (const n of nodes) { n.data.deg = deg[n.data.id] || 0; }
     return { nodes, edges };
   }
 
@@ -70,7 +76,9 @@
       { selector: "node", style: {
           "label": "data(label)", "font-size": 6, "color": "#374151",
           "text-valign": "bottom", "text-halign": "center", "text-margin-y": 2,
-          "width": 12, "height": 12, "min-zoomed-font-size": 8 } },
+          "width": function (ele) { return 10 + Math.min(ele.data("deg") || 0, 16); },
+          "height": function (ele) { return 10 + Math.min(ele.data("deg") || 0, 16); },
+          "min-zoomed-font-size": 8 } },
       { selector: "edge", style: {
           "width": 0.6, "line-color": "#d1d5db", "curve-style": "straight", "opacity": 0.6 } },
       ...typeSelectors,
