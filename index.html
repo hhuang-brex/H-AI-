@@ -1,0 +1,15 @@
+---
+title: Graph
+permalink: /
+layout: graph
+nav_order: 1
+---
+
+<p>Interactive map of the knowledge graph — {{ site.title }}. Click a node to open its page; toggle types and search above. <a href="{{ '/overview/' | relative_url }}">Browse as a list →</a></p>
+
+<div id="graph-toolbar"></div>
+<div id="cy" data-baseurl="{{ site.baseurl }}" data-graph-url="{{ '/graph.json' | relative_url }}"></div>
+
+<noscript>
+  <p>This view needs JavaScript. <a href="{{ '/overview/' | relative_url }}">Browse the index as a list →</a></p>
+</noscript>
