@@ -3,11 +3,11 @@
   "use strict";
 
   const TYPE_COLORS = {
-    topic:     "#2563eb", // blue
-    concept:   "#059669", // green
-    project:   "#d97706", // amber
-    reference: "#7c3aed", // violet
-    thread:    "#9ca3af", // gray
+    topic:     "#5eead4", // teal — entry points
+    concept:   "#a5b4fc", // indigo — the body of the graph
+    project:   "#fbbf24", // amber — built things
+    reference: "#f472b6", // pink — external pointers
+    thread:    "#64748b", // slate — provenance (hidden by default)
   };
   const DEFAULT_HIDDEN_TYPES = ["thread"];
 
@@ -70,21 +70,27 @@
 
   function cytoStyle() {
     const typeSelectors = Object.keys(TYPE_COLORS).map(function (t) {
-      return { selector: 'node[type = "' + t + '"]', style: { "background-color": TYPE_COLORS[t] } };
+      return { selector: 'node[type = "' + t + '"]', style: {
+        "background-color": TYPE_COLORS[t], "border-color": TYPE_COLORS[t] } };
     });
     return [
       { selector: "node", style: {
-          "label": "data(label)", "font-size": 6, "color": "#374151",
-          "text-valign": "bottom", "text-halign": "center", "text-margin-y": 2,
-          "width": function (ele) { return 10 + Math.min(ele.data("deg") || 0, 16); },
-          "height": function (ele) { return 10 + Math.min(ele.data("deg") || 0, 16); },
-          "min-zoomed-font-size": 8 } },
+          "label": "data(label)",
+          "font-family": "ui-monospace, SFMono-Regular, Menlo, monospace",
+          "font-size": 5.5, "color": "#aeb9c9",
+          "text-valign": "bottom", "text-halign": "center", "text-margin-y": 3,
+          "text-outline-color": "#0b0f14", "text-outline-width": 2,
+          "min-zoomed-font-size": 9,
+          "border-width": 5, "border-opacity": 0.16,
+          "width": function (ele) { return 9 + Math.min(ele.data("deg") || 0, 18); },
+          "height": function (ele) { return 9 + Math.min(ele.data("deg") || 0, 18); } } },
       { selector: "edge", style: {
-          "width": 0.6, "line-color": "#d1d5db", "curve-style": "straight", "opacity": 0.6 } },
+          "width": 0.5, "line-color": "#3a4658", "curve-style": "straight", "opacity": 0.32 } },
       ...typeSelectors,
-      { selector: ".dim", style: { "opacity": 0.12 } },
-      { selector: ".hi", style: { "opacity": 1, "z-index": 10 } },
-      { selector: 'node[status = "archived"]', style: { "opacity": 0.5 } },
+      { selector: ".dim", style: { "opacity": 0.07, "text-opacity": 0 } },
+      { selector: "node.hi", style: { "opacity": 1, "z-index": 10, "border-opacity": 0.55 } },
+      { selector: "edge.hi", style: { "opacity": 0.9, "width": 1, "line-color": "#8ea0b8" } },
+      { selector: 'node[status = "archived"]', style: { "opacity": 0.55 } },
     ];
   }
 
@@ -146,18 +152,30 @@
   function buildToolbar(all) {
     const bar = document.getElementById("graph-toolbar");
     if (!bar) return;
+    const counts = {};
+    all.nodes.forEach(function (n) { counts[n.data.type] = (counts[n.data.type] || 0) + 1; });
     const types = Object.keys(TYPE_COLORS);
-    const checks = types.map(function (t) {
-      const on = !hiddenTypes.has(t) ? "checked" : "";
-      return '<label class="cy-filter"><input type="checkbox" data-type="' + t + '" ' + on + '>' +
-        '<span class="cy-swatch" style="background:' + TYPE_COLORS[t] + '"></span>' + t + "</label>";
+    const chips = types.map(function (t) {
+      const off = hiddenTypes.has(t) ? " off" : "";
+      return '<button class="cy-chip' + off + '" data-type="' + t + '" type="button" ' +
+        'aria-pressed="' + (!hiddenTypes.has(t)) + '">' +
+        '<span class="cy-dot" style="background:' + TYPE_COLORS[t] + '"></span>' +
+        '<span class="cy-chip-label">' + t + '</span>' +
+        '<span class="cy-chip-count">' + (counts[t] || 0) + '</span></button>';
     }).join("");
-    bar.innerHTML = checks + '<input id="cy-search" class="cy-search" type="search" placeholder="search…">';
+    bar.innerHTML =
+      '<div class="cy-panel-head">the graph</div>' +
+      '<div class="cy-legend">' + chips + '</div>' +
+      '<input id="cy-search" class="cy-search" type="search" placeholder="search nodes…" aria-label="search nodes">' +
+      '<div class="cy-stats">' + all.nodes.length + ' nodes · ' + all.edges.length + ' links</div>';
 
-    bar.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
-      cb.addEventListener("change", function () {
-        const t = cb.dataset.type;
-        if (cb.checked) hiddenTypes.delete(t); else hiddenTypes.add(t);
+    bar.querySelectorAll(".cy-chip").forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        const t = chip.dataset.type;
+        const nowOn = hiddenTypes.has(t);
+        if (nowOn) hiddenTypes.delete(t); else hiddenTypes.add(t);
+        chip.classList.toggle("off", !nowOn);
+        chip.setAttribute("aria-pressed", String(nowOn));
         rerender(all);
       });
     });
