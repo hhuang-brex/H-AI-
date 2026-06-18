@@ -1,0 +1,17 @@
+---
+title: Graph
+permalink: /
+layout: graph
+nav_order: 1
+---
+
+<p class="graph-intro">Every file is a node; every link, an edge. This is the live map of <b>{{ site.title }}</b> — drag to explore, hover for a summary, click a node to open its page. The legend doubles as a filter. <a href="{{ '/overview/' | relative_url }}">Prefer a list? →</a></p>
+
+<div class="graph-frame">
+  <div id="graph-toolbar"></div>
+  <div id="cy" data-baseurl="{{ site.baseurl }}" data-graph-url="{{ '/graph.json' | relative_url }}"></div>
+</div>
+
+<noscript>
+  <p>This view needs JavaScript. <a href="{{ '/overview/' | relative_url }}">Browse the index as a list →</a></p>
+</noscript>

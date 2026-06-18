@@ -16,7 +16,7 @@ relative_links:
 # just-the-docs features
 search_enabled: true
 heading_anchors: true
-color_scheme: light
+color_scheme: hai
 
 # Show "View on GitHub" link in the top-right corner
 aux_links:

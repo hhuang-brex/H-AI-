@@ -1,0 +1,157 @@
+/* assets/css/graph.css — the knowledge graph as an observatory viewport */
+
+:root {
+  --cy-ink-0: #0b0f14;
+  --cy-ink-1: #131b24;
+  --cy-edge: #3a4658;
+  --cy-line: rgba(148, 163, 184, 0.16);
+  --cy-text: #e2e8f0;
+  --cy-muted: #64748b;
+  --cy-accent: #5eead4;
+}
+
+/* --- intro / thesis line above the viewport --- */
+.graph-intro {
+  margin: 0.1rem 0 0.85rem;
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 60ch;
+}
+.graph-intro b { color: #1f2937; font-weight: 600; }
+.graph-intro .gi-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #0f766e;
+}
+
+/* --- the viewport frame: a dark window into the network --- */
+.graph-frame {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #1e2935;
+  box-shadow: 0 12px 44px -16px rgba(2, 6, 12, 0.45), 0 2px 8px -4px rgba(2, 6, 12, 0.25);
+}
+#cy {
+  width: 100%;
+  height: 78vh;
+  min-height: 460px;
+  background: radial-gradient(125% 120% at 50% 28%, var(--cy-ink-1) 0%, var(--cy-ink-0) 72%);
+}
+
+/* --- floating instrument panel (legend === filter) --- */
+#graph-toolbar {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 5;
+  width: 188px;
+  max-width: calc(100% - 28px);
+  padding: 13px 13px 11px;
+  background: rgba(11, 15, 20, 0.72);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--cy-line);
+  border-radius: 12px;
+  color: var(--cy-text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.cy-panel-head {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cy-muted);
+  margin-bottom: 9px;
+}
+.cy-legend { display: flex; flex-direction: column; gap: 1px; }
+
+.cy-chip {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 5px 7px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--cy-text);
+  font: inherit;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.12s ease, opacity 0.12s ease;
+}
+.cy-chip:hover { background: rgba(148, 163, 184, 0.10); }
+.cy-chip.off { opacity: 0.4; }
+.cy-chip.off .cy-dot { box-shadow: none; background: transparent !important; border: 1.5px solid currentColor; }
+.cy-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  flex: 0 0 auto;
+  box-shadow: 0 0 7px -1px rgba(255, 255, 255, 0.25);
+}
+.cy-chip-label { flex: 1 1 auto; }
+.cy-chip-count { color: var(--cy-muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+
+.cy-search {
+  width: 100%;
+  margin-top: 11px;
+  padding: 6px 9px;
+  background: rgba(2, 6, 12, 0.5);
+  border: 1px solid var(--cy-line);
+  border-radius: 7px;
+  color: var(--cy-text);
+  font: inherit;
+  font-size: 12px;
+}
+.cy-search::placeholder { color: var(--cy-muted); }
+.cy-search:focus { outline: none; border-color: var(--cy-accent); }
+
+.cy-stats {
+  margin-top: 9px;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--cy-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- node tooltip --- */
+#cy-tip {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  max-width: 300px;
+  padding: 8px 11px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--cy-text);
+  background: rgba(11, 15, 20, 0.94);
+  border: 1px solid var(--cy-line);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+#cy-tip strong { color: #fff; font-weight: 600; }
+#cy-tip .cy-tip-type {
+  display: inline-block;
+  margin-bottom: 2px;
+  color: var(--cy-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 9.5px;
+}
+
+/* accessibility: visible keyboard focus */
+.cy-chip:focus-visible,
+.cy-search:focus-visible { outline: 2px solid var(--cy-accent); outline-offset: 2px; }
+
+/* small screens: shrink the viewport; keep the panel compact */
+@media (max-width: 640px) {
+  #cy { height: 64vh; min-height: 360px; }
+  #graph-toolbar { width: 158px; top: 10px; left: 10px; padding: 10px; }
+}
+
+/* respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .cy-chip { transition: none; }
+}
