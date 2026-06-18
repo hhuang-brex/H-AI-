@@ -1,0 +1,22 @@
+// _sass/color_schemes/hai.scss — custom just-the-docs scheme for H-AI-
+// One identity with the graph homepage: ink text, teal accent, slate borders, mono code.
+// Only overrides what changes; everything else falls back to just-the-docs defaults.
+
+$body-background-color: #ffffff;
+$sidebar-color: #f8fafc;
+$search-background-color: #ffffff;
+$table-background-color: #ffffff;
+
+$body-text-color: #1f2937;
+$body-heading-color: #0f172a;
+$nav-child-link-color: #475569;
+$search-result-preview-color: #64748b;
+
+$link-color: #0f766e;        // teal-700 — light counterpart of the graph's teal accent
+$btn-primary-color: #0f766e;
+$base-button-color: #f1f5f9;
+
+$border-color: #e2e8f0;       // slate-200
+$code-background-color: #f1f5f9; // slate-100
+
+$body-link-color: #0f766e;
