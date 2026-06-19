@@ -16,6 +16,7 @@ related:
   - [[offline-prompt-optimization]]
   - [[verbal-reinforcement-vs-gradient-rl]]
   - [[eval-dataset-quality]]
+  - [[eval-case-design]]
   - [[verbal-self-correction]]
 status: living
 created: 2026-06-05
@@ -48,6 +49,7 @@ Anything not serving (1)–(3) is overhead.
 - [verbal-reinforcement-vs-gradient-rl](../concepts/verbal-reinforcement-vs-gradient-rl.md) — the eval-driven "rewrite the skill from failures" loop is *verbal* reinforcement (text moves), not gradient RL (weights move); maps the OPRO/DSPy/GEPA/Reflexion family.
 - [verbal-self-correction](../concepts/verbal-self-correction.md) — the primitive underneath it: Self-Refine (within a task) and Reflexion (across trials).
 - [eval-dataset-quality](../concepts/eval-dataset-quality.md) — audit the *instrument*: validity, label agreement, discrimination (the negative-control test), contamination, drift — a scorecard for "is my eval set any good?"
+- [eval-case-design](../concepts/eval-case-design.md) — *construct* good cases: design from the decision, a coverage matrix, scorable end-states, discrimination-piloting, held-out splits, and the failure flywheel.
 
 ## Canonical references
 

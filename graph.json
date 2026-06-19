@@ -1,7 +1,7 @@
 {
   "generated": "2026-06-18",
-  "node_count": 129,
-  "edge_count": 831,
+  "node_count": 130,
+  "edge_count": 839,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -1474,6 +1474,36 @@
       ]
     },
     {
+      "id": "eval-case-design",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/eval-case-design.md",
+      "title": "Eval Case / Benchmark Design",
+      "summary": "how to construct eval cases: design from the decision, a coverage matrix, scorable end-states, discrimination-piloting, held-out splits, and a failure flywheel.",
+      "tags": [
+        "eval",
+        "dataset",
+        "benchmark",
+        "design",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-06-18",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "eval-dataset-quality",
+        "agent-trajectory-eval",
+        "simulated-user-eval",
+        "golden-snapshot-eval",
+        "decision-engine-contract",
+        "offline-prompt-optimization"
+      ]
+    },
+    {
       "id": "eval-dataset-quality",
       "type": "concept",
       "kind": null,
@@ -1977,6 +2007,7 @@
         "offline-prompt-optimization",
         "verbal-reinforcement-vs-gradient-rl",
         "eval-dataset-quality",
+        "eval-case-design",
         "verbal-self-correction"
       ]
     },
@@ -5444,6 +5475,41 @@
       "kind": "related"
     },
     {
+      "from": "eval-case-design",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "eval-case-design",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "eval-case-design",
+      "to": "eval-dataset-quality",
+      "kind": "related"
+    },
+    {
+      "from": "eval-case-design",
+      "to": "golden-snapshot-eval",
+      "kind": "related"
+    },
+    {
+      "from": "eval-case-design",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "eval-case-design",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "eval-case-design",
+      "to": "simulated-user-eval",
+      "kind": "related"
+    },
+    {
       "from": "eval-dataset-quality",
       "to": "agent-eval-improvement-tiers",
       "kind": "related"
@@ -5931,6 +5997,11 @@
     {
       "from": "llm-evaluation",
       "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "eval-case-design",
       "kind": "related"
     },
     {
