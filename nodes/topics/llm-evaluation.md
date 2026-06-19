@@ -15,6 +15,7 @@ related:
   - [[agent-eval-case-study]]
   - [[offline-prompt-optimization]]
   - [[verbal-reinforcement-vs-gradient-rl]]
+  - [[eval-dataset-quality]]
   - [[verbal-self-correction]]
 status: living
 created: 2026-06-05
@@ -46,6 +47,7 @@ Anything not serving (1)–(3) is overhead.
 - [offline-prompt-optimization](../concepts/offline-prompt-optimization.md) — turn the eval metric around and use it to *improve* a skill: search prompt space offline, scored end-to-end by the real agent.
 - [verbal-reinforcement-vs-gradient-rl](../concepts/verbal-reinforcement-vs-gradient-rl.md) — the eval-driven "rewrite the skill from failures" loop is *verbal* reinforcement (text moves), not gradient RL (weights move); maps the OPRO/DSPy/GEPA/Reflexion family.
 - [verbal-self-correction](../concepts/verbal-self-correction.md) — the primitive underneath it: Self-Refine (within a task) and Reflexion (across trials).
+- [eval-dataset-quality](../concepts/eval-dataset-quality.md) — audit the *instrument*: validity, label agreement, discrimination (the negative-control test), contamination, drift — a scorecard for "is my eval set any good?"
 
 ## Canonical references
 

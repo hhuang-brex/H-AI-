@@ -135,6 +135,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [adversarial-eval](nodes/concepts/adversarial-eval.md) — red-team / safety / prompt injection.
 - [agent-trajectory-eval](nodes/concepts/agent-trajectory-eval.md) — multi-turn, tool sequences, end-state.
 - [cost-aware-eval](nodes/concepts/cost-aware-eval.md) — sample-size math and budget assertions.
+- [eval-dataset-quality](nodes/concepts/eval-dataset-quality.md) — audit the eval set as an instrument — validity, label agreement, discrimination (negative-control), contamination, drift — not just the model's score.
 - [execution-invariant-testing](nodes/concepts/execution-invariant-testing.md) — asserting an agent's safety properties as tests — run-twice-equals-once, crash-anywhere-resumes-consistently, never-exceeds-budget — instead of hoping they hold.
 - [golden-snapshot-eval](nodes/concepts/golden-snapshot-eval.md) — pre-LLM deterministic checks.
 - [llm-as-judge](nodes/concepts/llm-as-judge.md) — calibration, bias, multi-vote, cascading.

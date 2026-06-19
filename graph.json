@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-16",
-  "node_count": 128,
-  "edge_count": 822,
+  "generated": "2026-06-18",
+  "node_count": 129,
+  "edge_count": 831,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -1474,6 +1474,38 @@
       ]
     },
     {
+      "id": "eval-dataset-quality",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/eval-dataset-quality.md",
+      "title": "Eval Dataset Quality",
+      "summary": "audit the eval set as an instrument \u2014 validity, label agreement, discrimination (negative-control), contamination, drift \u2014 not just the model's score.",
+      "tags": [
+        "eval",
+        "dataset",
+        "quality",
+        "validity",
+        "reliability",
+        "measurement"
+      ],
+      "status": "living",
+      "created": "2026-06-18",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "llm-as-judge",
+        "cost-aware-eval",
+        "agent-eval-improvement-tiers",
+        "agent-trajectory-eval",
+        "prod-shadow-replay",
+        "golden-snapshot-eval",
+        "offline-prompt-optimization"
+      ]
+    },
+    {
       "id": "execution-invariant-testing",
       "type": "concept",
       "kind": null,
@@ -1944,6 +1976,7 @@
         "agent-eval-case-study",
         "offline-prompt-optimization",
         "verbal-reinforcement-vs-gradient-rl",
+        "eval-dataset-quality",
         "verbal-self-correction"
       ]
     },
@@ -5411,6 +5444,46 @@
       "kind": "related"
     },
     {
+      "from": "eval-dataset-quality",
+      "to": "agent-eval-improvement-tiers",
+      "kind": "related"
+    },
+    {
+      "from": "eval-dataset-quality",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "eval-dataset-quality",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "eval-dataset-quality",
+      "to": "golden-snapshot-eval",
+      "kind": "related"
+    },
+    {
+      "from": "eval-dataset-quality",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "eval-dataset-quality",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "eval-dataset-quality",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "eval-dataset-quality",
+      "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
       "from": "execution-invariant-testing",
       "to": "action-execution-safety",
       "kind": "related"
@@ -5858,6 +5931,11 @@
     {
       "from": "llm-evaluation",
       "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "eval-dataset-quality",
       "kind": "related"
     },
     {
