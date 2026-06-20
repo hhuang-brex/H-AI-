@@ -11,8 +11,14 @@ related:
   - [[memory-types-taxonomy]]
   - [[memory-retrieval]]
   - [[memory-consolidation-and-forgetting]]
+  - [[associative-memory-and-attention]]
+  - [[complementary-learning-systems]]
+  - [[interference-and-catastrophic-forgetting]]
+  - [[parametric-memory-and-editing]]
+  - [[experiential-memory-substrates]]
   - [[domain-knowledge-injection]]
   - [[references-context-and-memory]]
+  - [[references-memory-theory]]
 status: living
 created: 2026-06-12
 ---
@@ -51,6 +57,20 @@ The engineering here is unusually well-served by reaching to the empirical liter
 ## The governing principle: remembering is a precision problem, not a capacity problem
 
 The naive instinct is "store more, recall more." Both halves are wrong. Storing everything fills retrieval with noise; recalling everything (or recalling by recency alone) surfaces the wrong items. A good memory system is *selective* on both write and read — it forgets deliberately and retrieves by relevance, not volume. Capacity is cheap; precision is the hard part.
+
+## Scientific foundations
+
+The three decisions above are the *systems* view. Beneath them sits a theory layer that explains **why** these architectures — not arbitrary ones — are what works. The throughline: *knowledge in a distributed associative store is a superposition of patterns over shared parameters, and the same overlap that buys generalization causes interference and forgetting.* Each foundation node extracts the build decision the theory forces:
+
+| Foundation | The verified result | What it forces |
+|---|---|---|
+| [associative-memory-and-attention](../concepts/associative-memory-and-attention.md) | Attention *is* associative-memory retrieval, with a capacity wall (linear 0.14N → sub-linear N/log N) | Externalize memory; a bigger window has a ceiling, it doesn't replace retrieval |
+| [complementary-learning-systems](../concepts/complementary-learning-systems.md) | Fast episodic + slow semantic + replay (CLS), with causal neuroscience evidence | The two-tier store and episodic→semantic consolidation are a tested blueprint, not a metaphor |
+| [interference-and-catastrophic-forgetting](../concepts/interference-and-catastrophic-forgetting.md) | Forgetting tracks update overlap (NTK-overlap law); three mitigations: regularize / replay / isolate | Prefer external/retrieval memory (parameter-isolation by construction) for mutable facts |
+| [parametric-memory-and-editing](../concepts/parametric-memory-and-editing.md) | Facts are an editable MLP key-value store (ROME/MEMIT) — but sequential edits forget catastrophically | Keep changing facts out of the weights; reserve editing for rare static fixes |
+| [experiential-memory-substrates](../concepts/experiential-memory-substrates.md) | Learned experience stores as weights / text / transient activation; ICL is itself learning | Curate text with delta-merge discipline, gated by feedback verifiability |
+
+Where the source theory is mean-field-heuristic or disputed by a later paper, the nodes mark it; full provenance is in [references-memory-theory](../references/references-memory-theory.md).
 
 ## Connections
 

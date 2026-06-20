@@ -72,12 +72,17 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [stop-and-yield-conditions](nodes/concepts/stop-and-yield-conditions.md) — the three ways a loop can end — done, blocked-needs-user, or failed — and why 'yield to user' is distinct from 'stop'.
 
 **[agent-memory](nodes/topics/agent-memory.md)**
+- [associative-memory-and-attention](nodes/concepts/associative-memory-and-attention.md) — why retrieval and in-context recall work at all — attention IS associative-memory retrieval — and the capacity wall that forces agents to externalize memory rather than enlarge the window.
+- [complementary-learning-systems](nodes/concepts/complementary-learning-systems.md) — the dual-store blueprint behind two-tier agent memory — fast episodic + slow semantic, joined by replay/consolidation — and the verified cognitive-science theory the existing memory nodes only gesture at.
 - [context-storage-and-hydration](nodes/concepts/context-storage-and-hydration.md) — where conversational context lives and how it's loaded per request — the stateless-compute / stateful-store split, keyed per user/conversation, with a DB-of-record plus optional cache tier.
 - [conversation-memory](nodes/concepts/conversation-memory.md) — three horizons; what to remember, what not to.
 - [domain-knowledge-injection](nodes/concepts/domain-knowledge-injection.md) — RAG, prompt-stuffing, structured state, fine-tuning per knowledge type.
+- [experiential-memory-substrates](nodes/concepts/experiential-memory-substrates.md) — the substrate-choice decision for learned experience — store it as curated text, distilled weights, or transient activation — and why production agents keep weights frozen and curate text with delta-merge discipline.
+- [interference-and-catastrophic-forgetting](nodes/concepts/interference-and-catastrophic-forgetting.md) — why any shared-parameter store forgets when updated sequentially — the NTK-overlap law — and the three verified mitigation families (importance regularization, replay, parameter isolation).
 - [memory-consolidation-and-forgetting](nodes/concepts/memory-consolidation-and-forgetting.md) — deciding what to keep, promote from episodic to semantic, and deliberately forget — because storing everything degrades retrieval as surely as remembering nothing.
 - [memory-retrieval](nodes/concepts/memory-retrieval.md) — surfacing the few relevant memories out of many — recency × relevance × importance scoring — and why a bigger context window doesn't replace it.
 - [memory-types-taxonomy](nodes/concepts/memory-types-taxonomy.md) — the working / episodic / semantic / procedural split borrowed from cognitive science — what each holds, how they differ in write and decay, and when an agent needs more than one.
+- [parametric-memory-and-editing](nodes/concepts/parametric-memory-and-editing.md) — facts live in the weights as a key-value store you can surgically edit (ROME/MEMIT) — and why sequential editing inherits catastrophic forgetting, making external memory the safer choice for mutable facts.
 
 **[agent-state-persistence](nodes/topics/agent-state-persistence.md)**
 - [checkpoint-and-replay](nodes/concepts/checkpoint-and-replay.md) — when to write durable state — before every risky step — and how to rebuild a live run from the last checkpoint.
@@ -227,6 +232,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-context-and-memory](nodes/references/references-context-and-memory.md) — verified empirical sources behind the context and memory clusters — lost-in-the-middle, context rot, RAG, MemGPT, and generative agents.
 - [references-domain-chatbot-design](nodes/references/references-domain-chatbot-design.md) — chatbot design reading list (Anthropic, OpenAI, Microsoft Bot Service, Google CDS, Rasa, Voiceflow, Husain, Yan, Hall, Intercom Fin).
 - [references-eval-reading-list](nodes/references/references-eval-reading-list.md) — frontier-lab + practitioner posts on LLM eval (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, …).
+- [references-memory-theory](nodes/references/references-memory-theory.md) — verified primary sources behind the memory-theory cluster — Hopfield/attention, complementary learning systems, catastrophic forgetting, model editing, and experiential learning.
 - [references-task-agent-design](nodes/references/references-task-agent-design.md) — verified primary sources grounding the agent cluster — ReAct, Reflexion, Toolformer, Tree of Thoughts, MetaGPT, and Anthropic's effective-agents guidance.
 - [references-template-rendered-output](nodes/references/references-template-rendered-output.md) — what's verifiable about template-rendered output in production — Rasa (mechanism confirmed), Ikki (architecture confirmed, outcomes refuted), and why most 'structured output' systems don't qualify.
 

@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-18",
-  "node_count": 130,
-  "edge_count": 839,
+  "generated": "2026-06-19",
+  "node_count": 136,
+  "edge_count": 878,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -700,8 +700,14 @@
         "memory-types-taxonomy",
         "memory-retrieval",
         "memory-consolidation-and-forgetting",
+        "associative-memory-and-attention",
+        "complementary-learning-systems",
+        "interference-and-catastrophic-forgetting",
+        "parametric-memory-and-editing",
+        "experiential-memory-substrates",
         "domain-knowledge-injection",
-        "references-context-and-memory"
+        "references-context-and-memory",
+        "references-memory-theory"
       ]
     },
     {
@@ -795,6 +801,35 @@
         "conversation-memory",
         "agent-memory",
         "verbal-reinforcement-vs-gradient-rl"
+      ]
+    },
+    {
+      "id": "associative-memory-and-attention",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/associative-memory-and-attention.md",
+      "title": "Associative Memory & Attention",
+      "summary": "why retrieval and in-context recall work at all \u2014 attention IS associative-memory retrieval \u2014 and the capacity wall that forces agents to externalize memory rather than enlarge the window.",
+      "tags": [
+        "memory",
+        "associative-memory",
+        "attention",
+        "hopfield",
+        "capacity",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-19",
+      "clusters": [
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "memory-retrieval",
+        "context-engineering",
+        "parametric-memory-and-editing",
+        "references-memory-theory"
       ]
     },
     {
@@ -909,6 +944,36 @@
         "truncated-pyramid-results",
         "domain-knowledge-injection",
         "cost-aware-eval"
+      ]
+    },
+    {
+      "id": "complementary-learning-systems",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/complementary-learning-systems.md",
+      "title": "Complementary Learning Systems",
+      "summary": "the dual-store blueprint behind two-tier agent memory \u2014 fast episodic + slow semantic, joined by replay/consolidation \u2014 and the verified cognitive-science theory the existing memory nodes only gesture at.",
+      "tags": [
+        "memory",
+        "consolidation",
+        "replay",
+        "cognitive-science",
+        "episodic",
+        "semantic",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-19",
+      "clusters": [
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "memory-consolidation-and-forgetting",
+        "memory-types-taxonomy",
+        "interference-and-catastrophic-forgetting",
+        "references-memory-theory"
       ]
     },
     {
@@ -1569,6 +1634,36 @@
       ]
     },
     {
+      "id": "experiential-memory-substrates",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/experiential-memory-substrates.md",
+      "title": "Experiential Memory Substrates",
+      "summary": "the substrate-choice decision for learned experience \u2014 store it as curated text, distilled weights, or transient activation \u2014 and why production agents keep weights frozen and curate text with delta-merge discipline.",
+      "tags": [
+        "memory",
+        "experiential-learning",
+        "in-context-learning",
+        "procedural",
+        "ace",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-19",
+      "clusters": [
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "agentic-context-engineering-ace",
+        "verbal-reinforcement-vs-gradient-rl",
+        "memory-consolidation-and-forgetting",
+        "eval-dataset-quality",
+        "references-memory-theory"
+      ]
+    },
+    {
       "id": "flat-channel-thread-tracking",
       "type": "concept",
       "kind": null,
@@ -1833,6 +1928,35 @@
         "repair-and-clarification",
         "scope-and-refusal",
         "action-authority"
+      ]
+    },
+    {
+      "id": "interference-and-catastrophic-forgetting",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/interference-and-catastrophic-forgetting.md",
+      "title": "Interference & Catastrophic Forgetting",
+      "summary": "why any shared-parameter store forgets when updated sequentially \u2014 the NTK-overlap law \u2014 and the three verified mitigation families (importance regularization, replay, parameter isolation).",
+      "tags": [
+        "memory",
+        "forgetting",
+        "interference",
+        "continual-learning",
+        "ewc",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-19",
+      "clusters": [
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "complementary-learning-systems",
+        "parametric-memory-and-editing",
+        "memory-consolidation-and-forgetting",
+        "references-memory-theory"
       ]
     },
     {
@@ -2410,6 +2534,35 @@
       ]
     },
     {
+      "id": "parametric-memory-and-editing",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/parametric-memory-and-editing.md",
+      "title": "Parametric Memory & Editing",
+      "summary": "facts live in the weights as a key-value store you can surgically edit (ROME/MEMIT) \u2014 and why sequential editing inherits catastrophic forgetting, making external memory the safer choice for mutable facts.",
+      "tags": [
+        "memory",
+        "model-editing",
+        "rome",
+        "knowledge",
+        "interpretability",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-19",
+      "clusters": [
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "associative-memory-and-attention",
+        "interference-and-catastrophic-forgetting",
+        "memory-retrieval",
+        "references-memory-theory"
+      ]
+    },
+    {
       "id": "perceive-reason-act-loop",
       "type": "concept",
       "kind": null,
@@ -2659,6 +2812,36 @@
         "cost-aware-eval",
         "agent-trajectory-eval",
         "adversarial-eval"
+      ]
+    },
+    {
+      "id": "references-memory-theory",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-memory-theory.md",
+      "title": "References \u2014 Memory Theory",
+      "summary": "verified primary sources behind the memory-theory cluster \u2014 Hopfield/attention, complementary learning systems, catastrophic forgetting, model editing, and experiential learning.",
+      "tags": [
+        "memory",
+        "theory",
+        "reading-list",
+        "associative-memory",
+        "forgetting",
+        "editing",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-19",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "associative-memory-and-attention",
+        "complementary-learning-systems",
+        "interference-and-catastrophic-forgetting",
+        "parametric-memory-and-editing",
+        "experiential-memory-substrates",
+        "references-context-and-memory"
       ]
     },
     {
@@ -4531,6 +4714,16 @@
     },
     {
       "from": "agent-memory",
+      "to": "associative-memory-and-attention",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
+      "to": "complementary-learning-systems",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
       "to": "context-engineering",
       "kind": "related"
     },
@@ -4551,6 +4744,16 @@
     },
     {
       "from": "agent-memory",
+      "to": "experiential-memory-substrates",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
+      "to": "interference-and-catastrophic-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
       "to": "memory-consolidation-and-forgetting",
       "kind": "related"
     },
@@ -4566,7 +4769,17 @@
     },
     {
       "from": "agent-memory",
+      "to": "parametric-memory-and-editing",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
       "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
+      "to": "references-memory-theory",
       "kind": "related"
     },
     {
@@ -4690,6 +4903,31 @@
       "kind": "related"
     },
     {
+      "from": "associative-memory-and-attention",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "associative-memory-and-attention",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "associative-memory-and-attention",
+      "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "associative-memory-and-attention",
+      "to": "parametric-memory-and-editing",
+      "kind": "related"
+    },
+    {
+      "from": "associative-memory-and-attention",
+      "to": "references-memory-theory",
+      "kind": "related"
+    },
+    {
       "from": "async-conversation-pacing",
       "to": "sms-multi-thread-chatbot",
       "kind": "related"
@@ -4807,6 +5045,31 @@
     {
       "from": "code-execution-sandbox-pattern",
       "to": "truncated-pyramid-results",
+      "kind": "related"
+    },
+    {
+      "from": "complementary-learning-systems",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "complementary-learning-systems",
+      "to": "interference-and-catastrophic-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "complementary-learning-systems",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "complementary-learning-systems",
+      "to": "memory-types-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "complementary-learning-systems",
+      "to": "references-memory-theory",
       "kind": "related"
     },
     {
@@ -5580,6 +5843,36 @@
       "kind": "related"
     },
     {
+      "from": "experiential-memory-substrates",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "experiential-memory-substrates",
+      "to": "agentic-context-engineering-ace",
+      "kind": "related"
+    },
+    {
+      "from": "experiential-memory-substrates",
+      "to": "eval-dataset-quality",
+      "kind": "related"
+    },
+    {
+      "from": "experiential-memory-substrates",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "experiential-memory-substrates",
+      "to": "references-memory-theory",
+      "kind": "related"
+    },
+    {
+      "from": "experiential-memory-substrates",
+      "to": "verbal-reinforcement-vs-gradient-rl",
+      "kind": "related"
+    },
+    {
       "from": "flat-channel-thread-tracking",
       "to": "context-storage-and-hydration",
       "kind": "related"
@@ -5857,6 +6150,31 @@
     {
       "from": "intent-and-disambiguation",
       "to": "scope-and-refusal",
+      "kind": "related"
+    },
+    {
+      "from": "interference-and-catastrophic-forgetting",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "interference-and-catastrophic-forgetting",
+      "to": "complementary-learning-systems",
+      "kind": "related"
+    },
+    {
+      "from": "interference-and-catastrophic-forgetting",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "interference-and-catastrophic-forgetting",
+      "to": "parametric-memory-and-editing",
+      "kind": "related"
+    },
+    {
+      "from": "interference-and-catastrophic-forgetting",
+      "to": "references-memory-theory",
       "kind": "related"
     },
     {
@@ -6500,6 +6818,31 @@
       "kind": "related"
     },
     {
+      "from": "parametric-memory-and-editing",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "parametric-memory-and-editing",
+      "to": "associative-memory-and-attention",
+      "kind": "related"
+    },
+    {
+      "from": "parametric-memory-and-editing",
+      "to": "interference-and-catastrophic-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "parametric-memory-and-editing",
+      "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "parametric-memory-and-editing",
+      "to": "references-memory-theory",
+      "kind": "related"
+    },
+    {
       "from": "perceive-reason-act-loop",
       "to": "agent-control-loop",
       "kind": "related"
@@ -6742,6 +7085,41 @@
     {
       "from": "references-eval-reading-list",
       "to": "test-pyramid-llm",
+      "kind": "related"
+    },
+    {
+      "from": "references-memory-theory",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "references-memory-theory",
+      "to": "associative-memory-and-attention",
+      "kind": "related"
+    },
+    {
+      "from": "references-memory-theory",
+      "to": "complementary-learning-systems",
+      "kind": "related"
+    },
+    {
+      "from": "references-memory-theory",
+      "to": "experiential-memory-substrates",
+      "kind": "related"
+    },
+    {
+      "from": "references-memory-theory",
+      "to": "interference-and-catastrophic-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "references-memory-theory",
+      "to": "parametric-memory-and-editing",
+      "kind": "related"
+    },
+    {
+      "from": "references-memory-theory",
+      "to": "references-context-and-memory",
       "kind": "related"
     },
     {
