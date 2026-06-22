@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-19",
-  "node_count": 136,
-  "edge_count": 878,
+  "generated": "2026-06-21",
+  "node_count": 137,
+  "edge_count": 886,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -711,6 +711,36 @@
       ]
     },
     {
+      "id": "agent-skills-progressive-disclosure",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/agent-skills-progressive-disclosure.md",
+      "title": "Agent Skills & Progressive Disclosure",
+      "summary": "package domain capability as a SKILL.md folder the agent loads in three stages \u2014 metadata always, instructions on match, bundled files on demand \u2014 so many capabilities cost almost no base-prompt tokens.",
+      "tags": [
+        "agent",
+        "skills",
+        "context-engineering",
+        "progressive-disclosure",
+        "tool-use"
+      ],
+      "status": "living",
+      "created": "2026-06-21",
+      "clusters": [
+        "context-engineering"
+      ],
+      "source_thread": null,
+      "related": [
+        "context-engineering",
+        "tool-use-design",
+        "domain-knowledge-injection",
+        "experiential-memory-substrates",
+        "tool-selection-and-routing",
+        "context-budget-allocation",
+        "action-execution-safety"
+      ]
+    },
+    {
       "id": "agent-state-persistence",
       "type": "topic",
       "kind": null,
@@ -1126,7 +1156,8 @@
         "conversation-memory",
         "domain-knowledge-injection",
         "sms-context-windowing",
-        "agentic-context-engineering-ace"
+        "agentic-context-engineering-ace",
+        "agent-skills-progressive-disclosure"
       ]
     },
     {
@@ -4783,6 +4814,41 @@
       "kind": "related"
     },
     {
+      "from": "agent-skills-progressive-disclosure",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "agent-skills-progressive-disclosure",
+      "to": "context-budget-allocation",
+      "kind": "related"
+    },
+    {
+      "from": "agent-skills-progressive-disclosure",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "agent-skills-progressive-disclosure",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "agent-skills-progressive-disclosure",
+      "to": "experiential-memory-substrates",
+      "kind": "related"
+    },
+    {
+      "from": "agent-skills-progressive-disclosure",
+      "to": "tool-selection-and-routing",
+      "kind": "related"
+    },
+    {
+      "from": "agent-skills-progressive-disclosure",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
       "from": "agent-state-persistence",
       "to": "action-execution-safety",
       "kind": "related"
@@ -5200,6 +5266,11 @@
     {
       "from": "context-engineering",
       "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "agent-skills-progressive-disclosure",
       "kind": "related"
     },
     {

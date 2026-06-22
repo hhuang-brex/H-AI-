@@ -103,6 +103,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [truncated-pyramid-results](nodes/concepts/truncated-pyramid-results.md) — summary first, select-N exemplars, refinement buttons (NN/g).
 
 **[context-engineering](nodes/topics/context-engineering.md)**
+- [agent-skills-progressive-disclosure](nodes/concepts/agent-skills-progressive-disclosure.md) — package domain capability as a SKILL.md folder the agent loads in three stages — metadata always, instructions on match, bundled files on demand — so many capabilities cost almost no base-prompt tokens.
 - [agentic-context-engineering-ace](nodes/concepts/agentic-context-engineering-ace.md) — optimize the context-as-playbook itself (generate/reflect/curate, delta updates) — the structural counterpart to optimizing instruction prose.
 - [context-assembly-per-turn](nodes/concepts/context-assembly-per-turn.md) — constructing each turn's prompt from typed parts — system, goal, history, tools, results — instead of resending a growing transcript.
 - [context-budget-allocation](nodes/concepts/context-budget-allocation.md) — splitting a fixed token window across system, history, tools, and results — with an explicit eviction policy for when it overflows.

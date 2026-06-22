@@ -17,6 +17,7 @@ related:
   - [[domain-knowledge-injection]]
   - [[sms-context-windowing]]
   - [[agentic-context-engineering-ace]]
+  - [[agent-skills-progressive-disclosure]]
 status: living
 created: 2026-06-11
 ---
@@ -49,6 +50,7 @@ The frame: treat the context window as a **managed budget**, not an append log. 
 - **Knowledge:** [domain-knowledge-injection](../concepts/domain-knowledge-injection.md) covers RAG / prompt-stuffing / structured-state as ways to get domain facts in; this topic is the budget and assembly logic around them.
 - **SMS slice:** [sms-context-windowing](../concepts/sms-context-windowing.md) is the channel-specific instance of these decisions.
 - **Optimizing the context itself:** [agentic-context-engineering-ace](../concepts/agentic-context-engineering-ace.md) treats the assembled context as an evolving playbook (generate/reflect/curate) — the structural counterpart to optimizing instruction prose ([offline-prompt-optimization](../concepts/offline-prompt-optimization.md)).
+- **Loading capability lazily:** [agent-skills-progressive-disclosure](../concepts/agent-skills-progressive-disclosure.md) packages domain procedure as a SKILL.md folder loaded in three stages (metadata always, instructions on match, files on demand) — progressive disclosure applied to *capability*, so many skills cost almost no base-prompt budget.
 
 ## The one rule
 
