@@ -11,6 +11,7 @@ related:
   - [[memory-types-taxonomy]]
   - [[memory-retrieval]]
   - [[memory-consolidation-and-forgetting]]
+  - [[agent-native-memory-framework]]
   - [[associative-memory-and-attention]]
   - [[complementary-learning-systems]]
   - [[interference-and-catastrophic-forgetting]]
@@ -46,6 +47,10 @@ Context is volatile and reconstructed every turn; run state is durable but task-
 | What kinds of memory exist? | Working vs. episodic vs. semantic vs. procedural — and do you need all four? | [memory-types-taxonomy](../concepts/memory-types-taxonomy.md) |
 | How do you surface the right memory? | Out of thousands of stored items, which few enter the prompt? | [memory-retrieval](../concepts/memory-retrieval.md) |
 | What gets kept, promoted, or forgotten? | Writing everything is as broken as remembering nothing | [memory-consolidation-and-forgetting](../concepts/memory-consolidation-and-forgetting.md) |
+
+## Two lenses on the memory system
+
+The taxonomy above sorts memory by *content type*. There is an orthogonal, complementary lens — the **data-management** decomposition of a memory *system* by *lifecycle phase*: [agent-native-memory-framework](../concepts/agent-native-memory-framework.md) (`R/S/Q/U` — representation+storage, extraction, retrieval+routing, maintenance; Zhou et al. 2026). The two compose: the taxonomy says *what* is stored; the four modules say *how* it is written, read, and maintained. Most cluster nodes are slices of `R/S/Q/U` — [memory-retrieval](../concepts/memory-retrieval.md) is **Q**, [memory-consolidation-and-forgetting](../concepts/memory-consolidation-and-forgetting.md) is **U** — and its headline result reframes the engineering question from "which memory system?" to "**which module is my workload's bottleneck?**"
 
 ## The science angle: memory is a cognitive-systems borrowing
 

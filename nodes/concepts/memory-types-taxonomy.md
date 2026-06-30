@@ -9,6 +9,7 @@ related:
   - [[conversation-memory]]
   - [[memory-retrieval]]
   - [[run-state-model]]
+  - [[agent-native-memory-framework]]
 status: living
 created: 2026-06-12
 ---
@@ -59,3 +60,5 @@ The types differ in the operations that matter:
 ## References
 
 [memory-consolidation-and-forgetting](memory-consolidation-and-forgetting.md) is the episodic→semantic promotion and decay machinery; [references-context-and-memory](../references/references-context-and-memory.md) holds the cognitive-science and LLM-agent sources this split is drawn from.
+
+This content-type taxonomy is orthogonal to the *lifecycle-phase* decomposition in [agent-native-memory-framework](agent-native-memory-framework.md) (`R/S/Q/U`) — the two are complementary lenses, not competitors: this node says *what kind* of thing is stored; the four modules say *how* it is represented, written, retrieved, and maintained.

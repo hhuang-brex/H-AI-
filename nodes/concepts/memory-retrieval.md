@@ -6,6 +6,7 @@ summary: "surfacing the few relevant memories out of many — recency × relevan
 related:
   - [[agent-memory]]
   - [[memory-types-taxonomy]]
+  - [[agent-native-memory-framework]]
   - [[context-assembly-per-turn]]
   - [[domain-knowledge-injection]]
   - [[references-context-and-memory]]
@@ -39,6 +40,13 @@ A robust memory ranker (popularized by the generative-agents line of work) score
 Relevance alone surfaces topically-similar but stale junk; recency alone forgets important older facts; importance alone ignores the current situation. The combination is what makes retrieval feel intelligent — a months-old but *important and relevant* memory beats a recent trivial one.
 
 > **2026 caveat — the evidence base is contested.** This ranker comes from the early generative-agents line, and its evaluation foundations are now under scrutiny. *Anatomy of Agentic Memory* (Jiang et al., [arXiv:2602.19320](https://arxiv.org/abs/2602.19320)) argues agentic-memory benchmarks are **underscaled** and their **metrics misaligned with semantic utility**, with benchmark-saturation effects, judge sensitivity, and backbone-dependent accuracy — so reported memory-system wins may not reflect real utility. Treat headline retrieval-quality numbers cautiously.
+
+## Retrieval is a separate axis from the answer — and it's evidence-completion, not top-1
+
+The data-management evaluation of [agent-native-memory-framework](agent-native-memory-framework.md) (Zhou et al., [arXiv:2606.24775](https://arxiv.org/abs/2606.24775)) isolates retrieval (module **Q**) as a *generation-independent* axis and finds two things worth internalizing:
+
+- **Retrieval is an evidence-completion problem, not top-1 ranking.** A system that wins Recall@1 (SimpleMem 39.0) can lose at realistic budgets (A-MEM leads 69.5 / 85.9 at Recall@5/@10). Optimizing top-1 is the wrong target when the agent needs *all* the supporting evidence in the window — tune the budget, not the single best hit.
+- **Answer correctness diverges from retrieval quality.** *MemConflict* ([arXiv:2605.20926](https://arxiv.org/abs/2605.20926)) shows gold memory is often retrieved but ranked low (coverage exceeds rank quality across six systems) and conflict-recognition tops out near 0.25 — so a high end-to-end answer score can hide a broken retriever, and vice versa. **Score Q on its own**, not only through downstream F1.
 
 ## Retrieval is the same machinery as RAG, different source
 

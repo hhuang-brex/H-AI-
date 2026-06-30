@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-21",
-  "node_count": 137,
-  "edge_count": 886,
+  "generated": "2026-06-30",
+  "node_count": 138,
+  "edge_count": 899,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -700,6 +700,7 @@
         "memory-types-taxonomy",
         "memory-retrieval",
         "memory-consolidation-and-forgetting",
+        "agent-native-memory-framework",
         "associative-memory-and-attention",
         "complementary-learning-systems",
         "interference-and-catastrophic-forgetting",
@@ -708,6 +709,36 @@
         "domain-knowledge-injection",
         "references-context-and-memory",
         "references-memory-theory"
+      ]
+    },
+    {
+      "id": "agent-native-memory-framework",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/agent-native-memory-framework.md",
+      "title": "Agent-Native Memory Framework (R/S/Q/U)",
+      "summary": "the R/S/Q/U four-module decomposition of agent memory as a data-management system (Zhou et al. 2026) \u2014 the cross-system lens for the cluster, plus its two headline results.",
+      "tags": [
+        "agent",
+        "memory",
+        "data-management",
+        "architecture",
+        "evaluation",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-06-24",
+      "clusters": [
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "memory-types-taxonomy",
+        "memory-retrieval",
+        "memory-consolidation-and-forgetting",
+        "eval-dataset-quality",
+        "agentic-context-engineering-ace"
       ]
     },
     {
@@ -830,6 +861,7 @@
         "context-assembly-per-turn",
         "conversation-memory",
         "agent-memory",
+        "agent-native-memory-framework",
         "verbal-reinforcement-vs-gradient-rl"
       ]
     },
@@ -1628,7 +1660,8 @@
         "agent-trajectory-eval",
         "prod-shadow-replay",
         "golden-snapshot-eval",
-        "offline-prompt-optimization"
+        "offline-prompt-optimization",
+        "agent-native-memory-framework"
       ]
     },
     {
@@ -2257,6 +2290,8 @@
         "agent-memory",
         "memory-types-taxonomy",
         "memory-retrieval",
+        "agent-native-memory-framework",
+        "agentic-context-engineering-ace",
         "context-compaction",
         "references-context-and-memory"
       ]
@@ -2285,6 +2320,7 @@
       "related": [
         "agent-memory",
         "memory-types-taxonomy",
+        "agent-native-memory-framework",
         "context-assembly-per-turn",
         "domain-knowledge-injection",
         "references-context-and-memory"
@@ -2318,7 +2354,8 @@
         "memory-consolidation-and-forgetting",
         "conversation-memory",
         "memory-retrieval",
-        "run-state-model"
+        "run-state-model",
+        "agent-native-memory-framework"
       ]
     },
     {
@@ -4740,6 +4777,11 @@
     },
     {
       "from": "agent-memory",
+      "to": "agent-native-memory-framework",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
       "to": "agent-state-persistence",
       "kind": "related"
     },
@@ -4811,6 +4853,36 @@
     {
       "from": "agent-memory",
       "to": "references-memory-theory",
+      "kind": "related"
+    },
+    {
+      "from": "agent-native-memory-framework",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "agent-native-memory-framework",
+      "to": "agentic-context-engineering-ace",
+      "kind": "related"
+    },
+    {
+      "from": "agent-native-memory-framework",
+      "to": "eval-dataset-quality",
+      "kind": "related"
+    },
+    {
+      "from": "agent-native-memory-framework",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "agent-native-memory-framework",
+      "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "agent-native-memory-framework",
+      "to": "memory-types-taxonomy",
       "kind": "related"
     },
     {
@@ -4936,6 +5008,11 @@
     {
       "from": "agentic-context-engineering-ace",
       "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "agentic-context-engineering-ace",
+      "to": "agent-native-memory-framework",
       "kind": "related"
     },
     {
@@ -5850,6 +5927,11 @@
     },
     {
       "from": "eval-dataset-quality",
+      "to": "agent-native-memory-framework",
+      "kind": "related"
+    },
+    {
+      "from": "eval-dataset-quality",
       "to": "agent-trajectory-eval",
       "kind": "related"
     },
@@ -6555,6 +6637,16 @@
     },
     {
       "from": "memory-consolidation-and-forgetting",
+      "to": "agent-native-memory-framework",
+      "kind": "related"
+    },
+    {
+      "from": "memory-consolidation-and-forgetting",
+      "to": "agentic-context-engineering-ace",
+      "kind": "related"
+    },
+    {
+      "from": "memory-consolidation-and-forgetting",
       "to": "context-compaction",
       "kind": "related"
     },
@@ -6580,6 +6672,11 @@
     },
     {
       "from": "memory-retrieval",
+      "to": "agent-native-memory-framework",
+      "kind": "related"
+    },
+    {
+      "from": "memory-retrieval",
       "to": "context-assembly-per-turn",
       "kind": "related"
     },
@@ -6601,6 +6698,11 @@
     {
       "from": "memory-types-taxonomy",
       "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "memory-types-taxonomy",
+      "to": "agent-native-memory-framework",
       "kind": "related"
     },
     {

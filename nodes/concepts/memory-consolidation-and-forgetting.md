@@ -7,6 +7,8 @@ related:
   - [[agent-memory]]
   - [[memory-types-taxonomy]]
   - [[memory-retrieval]]
+  - [[agent-native-memory-framework]]
+  - [[agentic-context-engineering-ace]]
   - [[context-compaction]]
   - [[references-context-and-memory]]
 status: living
@@ -44,6 +46,12 @@ Supersession is the subtle one: when a user's preference *changes*, the old sema
 ## What must never be forgotten
 
 Mirror of [context-compaction](context-compaction.md)'s rule: consolidation may lossily compress *episodes*, but **stated hard constraints and explicit user commitments** are copied forward losslessly. "Never auto-dispute without asking me" is not an episode to decay — it's a standing instruction. Forgetting it is a safety failure, not a memory optimization.
+
+## Localized vs global maintenance — the cost finding
+
+How *widely each write propagates* through the store is the dominant cost driver of the whole memory system — more than which data structure you picked. The data-management evaluation in [agent-native-memory-framework](agent-native-memory-framework.md) (Zhou et al., [arXiv:2606.24775](https://arxiv.org/abs/2606.24775), Observation O7) finds that **bounded-scope incremental maintenance sits on the efficiency frontier** (LightMem 48.3 utility @ 3.67s/query; MemTree's path-local aggregation 63.5 @ 15.9s) while **global reorganization is least efficient** (graph-wide consolidators reach high utility only at 116.5s–155.1s/query). Two structurally different systems win the frontier — so *maintenance scope*, not structure type, is the lever.
+
+This is the same mechanism [agentic-context-engineering-ace](agentic-context-engineering-ace.md) names **context collapse**: letting an LLM rewrite the whole store each round erodes detail. Both lines converge on one rule — **prefer bounded incremental deltas over monolithic global rewrites**, on cost *and* information-retention grounds. The corollary for the consolidator: **conservative consolidation is the best default** — selectively merge resolved evidence; neither leave conflicts unresolved nor compress so aggressively that specifics are lost. And a store with *no* lifecycle/supersession management "returns stale facts, leading to hallucinations of the past" — append-only stores degrade catastrophically as relevant evidence ages.
 
 ## The science framing
 

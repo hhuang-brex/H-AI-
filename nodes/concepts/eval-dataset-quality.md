@@ -12,6 +12,7 @@ related:
   - [[prod-shadow-replay]]
   - [[golden-snapshot-eval]]
   - [[offline-prompt-optimization]]
+  - [[agent-native-memory-framework]]
 status: living
 created: 2026-06-18
 ---
@@ -31,6 +32,15 @@ Most teams audit the model's score and never audit the **instrument**. An eval s
 - **Drift** — a frozen eval passes while production shifts; periodically compare eval inputs to current prod traffic and refresh ([prod-shadow-replay](prod-shadow-replay.md)).
 - **Redundancy & efficiency** — dedup near-duplicates (50 paraphrases of one case is one case); track cost-per-signal.
 - **Actionability** — a good failing case localizes the fix (failure attribution, [agent-trajectory-eval](agent-trajectory-eval.md)); prefer mechanically-scorable cases ([golden-snapshot-eval](golden-snapshot-eval.md)) so a failure is unambiguous.
+
+## Don't benchmark a multi-module system as a black box
+
+A whole class of systems — agent *memory* especially — is routinely scored by one end-to-end number (F1/BLEU/task success) that hides where the system actually fails. The data-management evaluation in [agent-native-memory-framework](agent-native-memory-framework.md) (Zhou et al., [arXiv:2606.24775](https://arxiv.org/abs/2606.24775)) makes the case concretely: decompose the system and **ablate per module** (representation, extraction, retrieval, maintenance) rather than trusting the monolith. Two instrument-validity lessons generalize beyond memory:
+
+- **The end-to-end metric can invert the ranking.** On their procedural benchmark, a long-context baseline won Exact-Match (48.20) while a different system won Task-Success-Rate (55.40) — EM "becomes insufficient when correctness depends on paraphrastic synthesis or executable success." Pick the metric that matches the *decision*, and report more than one.
+- **Underscaled / single-axis benchmarks lack power.** Popular memory sets are small (LoCoMo ≈ 10 conversations) or single-needle (LongMemEval), so they saturate and can't discriminate — the coverage/discrimination axes above, applied to a borrowed benchmark. This is the primary-source backing for the trend-scan's "benchmarks underscaled / metrics misaligned" caveat.
+
+The general rule: **audit cost, cross-module trade-offs, and update-robustness as separate axes**, not folded into one task score — the same "audit the instrument, not just the number" discipline this node is about.
 
 ## Scorecard
 

@@ -72,6 +72,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [stop-and-yield-conditions](nodes/concepts/stop-and-yield-conditions.md) — the three ways a loop can end — done, blocked-needs-user, or failed — and why 'yield to user' is distinct from 'stop'.
 
 **[agent-memory](nodes/topics/agent-memory.md)**
+- [agent-native-memory-framework](nodes/concepts/agent-native-memory-framework.md) — the R/S/Q/U four-module decomposition of agent memory as a data-management system (Zhou et al. 2026) — the cross-system lens for the cluster, plus its two headline results.
 - [associative-memory-and-attention](nodes/concepts/associative-memory-and-attention.md) — why retrieval and in-context recall work at all — attention IS associative-memory retrieval — and the capacity wall that forces agents to externalize memory rather than enlarge the window.
 - [complementary-learning-systems](nodes/concepts/complementary-learning-systems.md) — the dual-store blueprint behind two-tier agent memory — fast episodic + slow semantic, joined by replay/consolidation — and the verified cognitive-science theory the existing memory nodes only gesture at.
 - [context-storage-and-hydration](nodes/concepts/context-storage-and-hydration.md) — where conversational context lives and how it's loaded per request — the stateless-compute / stateful-store split, keyed per user/conversation, with a DB-of-record plus optional cache tier.
