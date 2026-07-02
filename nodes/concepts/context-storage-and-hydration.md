@@ -9,6 +9,7 @@ related:
   - [[context-assembly-per-turn]]
   - [[run-state-model]]
   - [[agent-memory]]
+  - [[agent-native-memory-framework]]
   - [[checkpoint-and-replay]]
 status: living
 created: 2026-06-12
@@ -57,6 +58,13 @@ The two layers map onto the cluster: `conversation_id` state is the run/thread c
 | **Database (DB of record)** | Durable source of truth | Authoritative; higher latency, so often fronted by cache |
 
 The common production shape is **DB of record + cache tier**: write-through to the DB, read from cache on hot path, fall back to DB on cache miss. The invariant from [agent-state-persistence](agent-state-persistence.md) holds — the cache may vanish; the DB must not. Treat Redis as a hydration accelerator, not as where state "lives."
+
+## Productized primitive: the memory tool
+
+Anthropic's **memory tool** (`memory_20250818`) is this split shipped as an API: the model issues `view`/`create`/`str_replace`/`insert`/`delete`/`rename` commands against a `/memories` directory, but the tool is **client-side** — *you* execute the file operations on your own infrastructure (file, DB, object store, encrypted blob), so you still own the stateful store, its keying, and its eviction. It's the routing layer (module Q of [agent-native-memory-framework](agent-native-memory-framework.md)) over a developer-owned store (R/S); the durability discipline of this node is unchanged — the model deciding *what* to write doesn't relieve you of *where it lives and how it hydrates*. Two caveats (docs verified 2026-07-02; the memory tool does not itself require the `context-management` beta header, while context editing and server-side compaction are beta):
+
+- **Path-traversal is your problem.** Because you execute the ops, a malicious or injected path (`../`, URL-encoded `%2e%2e%2f`) can escape `/memories`; the docs make path validation a hard **MUST**. This is the [action-execution-safety](../topics/action-execution-safety.md) boundary surfacing in the storage layer.
+- **Still a keyed, bounded store.** Scope `/memories` per `user_id`/`conversation_id` as above, and cap size — a model-written store bloats exactly like a hand-written one.
 
 ## What you store is the structured state, not the transcript
 

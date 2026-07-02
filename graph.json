@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-30",
+  "generated": "2026-07-02",
   "node_count": 138,
-  "edge_count": 899,
+  "edge_count": 902,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -1154,7 +1154,9 @@
         "context-budget-allocation",
         "conversation-memory",
         "decision-audit-trail",
-        "agent-control-loop"
+        "agent-control-loop",
+        "agent-native-memory-framework",
+        "tool-result-grounding"
       ]
     },
     {
@@ -1223,6 +1225,7 @@
         "context-assembly-per-turn",
         "run-state-model",
         "agent-memory",
+        "agent-native-memory-framework",
         "checkpoint-and-replay"
       ]
     },
@@ -5317,6 +5320,11 @@
     },
     {
       "from": "context-compaction",
+      "to": "agent-native-memory-framework",
+      "kind": "related"
+    },
+    {
+      "from": "context-compaction",
       "to": "context-budget-allocation",
       "kind": "related"
     },
@@ -5333,6 +5341,11 @@
     {
       "from": "context-compaction",
       "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "context-compaction",
+      "to": "tool-result-grounding",
       "kind": "related"
     },
     {
@@ -5408,6 +5421,11 @@
     {
       "from": "context-storage-and-hydration",
       "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "context-storage-and-hydration",
+      "to": "agent-native-memory-framework",
       "kind": "related"
     },
     {

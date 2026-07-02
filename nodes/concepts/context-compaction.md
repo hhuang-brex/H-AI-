@@ -10,6 +10,8 @@ related:
   - [[conversation-memory]]
   - [[decision-audit-trail]]
   - [[agent-control-loop]]
+  - [[agent-native-memory-framework]]
+  - [[tool-result-grounding]]
 status: living
 created: 2026-06-11
 ---
@@ -27,6 +29,15 @@ A long-running agent generates more history than fits in any window. Compaction 
 | **Reference + retrieve** | Older turns live outside context; pull specific ones back on demand | Long histories with occasional callbacks |
 
 Structured state is the strongest for a *task* agent: instead of summarizing prose, you maintain a small object — "decisions so far, facts established, open questions" — and carry only that forward. This is the engine-side analogue of [conversation-memory](conversation-memory.md), and it dovetails with the durable [decision-audit-trail](decision-audit-trail.md): the audit record *is* a compact, replayable history.
+
+## Productized primitives (2026)
+
+Two Anthropic API features instantiate strategies above; both are **beta** and worth knowing as off-the-shelf compaction (identifiers verified 2026-07-02):
+
+- **Context editing** (`clear_tool_uses_20250919`, beta header `context-management-2025-06-27`) is *reference-and-evict* applied to tool results: once the prompt crosses a `trigger` (default 100k input tokens), the API clears the **oldest tool results first**, replacing each with a placeholder, keeping the most recent `keep` (default 3) tool-use pairs; you can `exclude_tools` and optionally clear tool *inputs*. It runs **server-side before the prompt reaches the model, while your client keeps the full unmodified history** — so it's a window-fitting eviction, not a durable-store edit. Pair it with the memory tool ([context-storage-and-hydration](context-storage-and-hydration.md)) so the agent writes anything important to `/memories` *before* it's cleared. (A sibling strategy `clear_thinking_20251015` evicts thinking blocks.)
+- **Server-side compaction** (`compact_20260112`) is a managed **rolling summary**: the API summarizes older conversation context automatically as it nears the window limit. Anthropic now recommends it over the deprecated client-side `compaction_control` SDK path. It carries this node's core risk — a summarizer that can drop a constraint — so the *what-you-must-never-compact* rule below applies to it exactly as to a hand-rolled compactor; treat the managed summary as an untrusted component and assert on it.
+
+The bounded-scope lesson from [agent-native-memory-framework](agent-native-memory-framework.md) applies: context editing (localized eviction) is cheap; a compactor that rewrites the whole state each pass risks the context-collapse degradation, so summarize incrementally where you can.
 
 ## What you must never compact away
 
