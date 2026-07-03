@@ -11,6 +11,7 @@ related:
   - [[tool-use-design]]
   - [[goal-decomposition]]
   - [[plan-execute-replan]]
+  - [[llm-as-autoformalizer-plus-solver]]
   - [[decision-engine-contract]]
   - [[agent-trajectory-eval]]
 status: living

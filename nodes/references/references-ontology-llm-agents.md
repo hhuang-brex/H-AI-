@@ -1,0 +1,54 @@
+---
+id: references-ontology-llm-agents
+type: reference
+tags: [ontology, knowledge-graph, neuro-symbolic, agents, reading-list, science-excellence]
+summary: "verified primary sources for the ontology-grounded-agent cluster — KG-RAG, LLM ontology engineering, autoformalization+solvers, temporal-KG memory, SHACL/OWL, MCP/A2A."
+related:
+  - [[ontology-grounded-agent]]
+  - [[domain-event-task-ontology]]
+  - [[llm-as-autoformalizer-plus-solver]]
+  - [[bitemporal-fact-invalidation-memory]]
+  - [[ontology-as-validator-shacl]]
+status: living
+created: 2026-07-03
+---
+
+# References — Ontology & LLM Agents
+
+Primary sources for the [ontology-grounded-agent](../concepts/ontology-grounded-agent.md) cluster. Verified during a 25-agent adversarial fan-out on **2026-07-03** (each claim independently refuted-or-confirmed against the primary source; 2024–2026 work is beyond the training cutoff, so all confirmation is by live fetch). Tags: **[supported]** = confirmed against primary source; **[self-report]** = vendor/author's own numbers, not independently reproduced; **[contested]** = genuine disagreement.
+
+## KG / ontology grounding (empirical)
+
+- **From Local to Global: A Graph RAG Approach** — Edge et al. (Microsoft), arXiv:2404.16130 (v2 2025-02). **[supported / self-report]** GraphRAG wins *global query-focused summarization* (GPT-4-judged comprehensiveness 72–83%); vector RAG wins directness; **hallucination/accuracy was not measured** — do not cite as a hallucination cure.
+- **Han et al., "RAG vs GraphRAG: A Systematic Evaluation"** — arXiv:2502.11371. **[supported]** No consistent winner: plain RAG wins single-hop (F1 64.78 vs 63.01), GraphRAG wins multi-hop by ~3 F1, KG-triplet-only collapses (F1 25.02; only 65.8% of answer entities in the graph), graph build 50–100× index cost, **hybrid best**.
+- **Think-on-Graph** — Sun et al., ICLR 2024, arXiv:2307.07697. **[supported]** Traversal over *curated* KGs: CWQ 67.6 vs CoT 38.8; weaker single-hop. **HippoRAG** — arXiv:2405.14831 **[supported]**: +~21 recall on 2WikiMultiHop but underperforms ColBERTv2 on HotpotQA.
+- Li et al., arXiv:2512.09148 **[supported]**: given *correct* subgraphs, LLMs still misread topology — KG grounding ≠ no hallucination.
+- Pan et al. roadmap (arXiv:2306.08302), Peng et al. GraphRAG survey (arXiv:2408.08921) — **taxonomies/surveys, not evidence** (often miscited).
+
+## LLM ontology engineering (empirical)
+
+- **LLMs4OL** — Babaei Giglou, D'Souza, Auer, ISWC 2023, arXiv:2307.16648. **[supported]** Sharp task gradient: term typing easy (WordNet MAP@1 91.7%), biomedical 16–38%, non-taxonomic relations peak F1 49.5%; **fine-tuning beats scale** (8-shot Flan-T5 > models 1000× larger).
+- **OntoAxiom** — arXiv:2512.05594. **[supported]** 12 modern LLMs; **axiom identification effectively unsolved** (overall F1 ~0.126; domain/range ~0.03).
+- **LLMs4OM** — ESWC 2024, arXiv:2404.10317. **[supported]** Retrieve-then-verify matching beats OAEI leaders on general tracks, collapses on Bio-ML (25.64 vs 78.50).
+
+## Neuro-symbolic (LLM + sound solver)
+
+- **Logic-LM** — Pan et al., EMNLP 2023, arXiv:2305.12295. **[supported]** +39.2%/+18.4% over standard/CoT via translate→solver→repair.
+- **LINC** — Olausson et al., EMNLP 2023, arXiv:2310.15164. **[supported]** 15.5B + FOL prover beats GPT-4 CoT by 10% absolute.
+- **PlanBench / o1** — arXiv:2409.13373. **[supported]** o1-preview 97.8% standard Blocksworld → 37.3% obfuscated; **Fast Downward 100% @ ~0.265s/instance** with guarantees vs o1 ~$42/100.
+- **[contested]** Autoformalization ceiling: Thatikonda (arXiv:2409.16461) / Ryu (arXiv:2410.08047) treat NL→formal translation error as the dominant failure; Brunello et al. (AAAI 2026, arXiv:2511.11816) argue prior negatives were artifacts and modern LLMs translate well. The single most decision-relevant open disagreement.
+
+## Temporal-KG memory
+
+- **Zep: A Temporal Knowledge Graph Architecture for Agent Memory** — Rasmussen et al., arXiv:2501.13956 (2025-01). **[supported]** Bi-temporal (valid + transaction time), invalidate-not-delete, as-of-T queries; schema-constrained extraction (Pydantic entity/edge types) with **soft** enforcement. Headline benchmark numbers (94.8% DMR; up to 18.5% LongMemEval; ~90% latency) are **[self-report]**.
+- **Are We Ready For An Agent-Native Memory System?** — Zhou et al., arXiv:2606.24775 (already the [agent-native-memory-framework](../concepts/agent-native-memory-framework.md) node). **[supported]** Structural-topological memory leads Knowledge-Update/Temporal but is least cost-efficient.
+
+## Validation, capability modeling, eval
+
+- **SHACL** — W3C Recommendation, 2017-07-20. **[supported]** RDF constraint validation (shapes, cardinality/type/range/pattern). **OWL 2 profiles** (EL/QL/RL, W3C Rec 2012) **[supported]** — expressivity is a tractability dial.
+- **MCP** (spec 2025-06-18) & **A2A v1.0.0** **[supported]**: tool/skill = name + free-text description + JSON-Schema; **no formal capability ontology**; MCP spec says annotations MUST be treated as untrusted. **OWL-S** (2004) / **WSMO** (2005) — W3C Member Submissions, ~zero production deployment.
+- **RAGAS** — Es et al., arXiv:2309.15217. **[supported]** faithfulness = supported-statements/total = an LLM-judge *estimate*, not a truth oracle. **GrailQA** — Gu et al., WWW 2021 **[supported]**: iid/compositional/zero-shot split; in-distribution accuracy overstates real performance.
+
+## How to read this list
+
+The cluster nodes are engineering distillations: they extract *when formal/ontological structure earns its cost for a conversational domain agent*. Empirical results, vendor self-reports, and proposals are kept distinct — the recurring lesson is that the formal layer's cost is construction/maintenance + the LLM boundary, and it wins only at a specific bottleneck.

@@ -74,6 +74,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 **[agent-memory](nodes/topics/agent-memory.md)**
 - [agent-native-memory-framework](nodes/concepts/agent-native-memory-framework.md) — the R/S/Q/U four-module decomposition of agent memory as a data-management system (Zhou et al. 2026) — the cross-system lens for the cluster, plus its two headline results.
 - [associative-memory-and-attention](nodes/concepts/associative-memory-and-attention.md) — why retrieval and in-context recall work at all — attention IS associative-memory retrieval — and the capacity wall that forces agents to externalize memory rather than enlarge the window.
+- [bitemporal-fact-invalidation-memory](nodes/concepts/bitemporal-fact-invalidation-memory.md) — track valid-time + transaction-time and invalidate-not-delete on contradiction — the one thing flat-text memory structurally can't do — so an agent answers 'as of when' and keeps an audit trail for changing user facts.
 - [complementary-learning-systems](nodes/concepts/complementary-learning-systems.md) — the dual-store blueprint behind two-tier agent memory — fast episodic + slow semantic, joined by replay/consolidation — and the verified cognitive-science theory the existing memory nodes only gesture at.
 - [context-storage-and-hydration](nodes/concepts/context-storage-and-hydration.md) — where conversational context lives and how it's loaded per request — the stateless-compute / stateful-store split, keyed per user/conversation, with a DB-of-record plus optional cache tier.
 - [conversation-memory](nodes/concepts/conversation-memory.md) — three horizons; what to remember, what not to.
@@ -161,6 +162,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [layered-defense-pipeline](nodes/concepts/layered-defense-pipeline.md) — regex gate → forced tool → templates → heterogeneous-model recheck.
 - [llm-observability](nodes/concepts/llm-observability.md) — debugging \"why did the model respond this way?\" — what frontier APIs actually return (mostly summaries), platform feature reality, OTel state.
 - [native-thinking-vs-prompted-reasoning](nodes/concepts/native-thinking-vs-prompted-reasoning.md) — frontier labs have moved away from prompted `<reasoning>` tags; native thinking APIs are the default.
+- [ontology-as-validator-shacl](nodes/concepts/ontology-as-validator-shacl.md) — validate an agent's structured output/state against a domain ontology's constraints (SHACL/OWL) — a domain-semantic layer atop schema-vs-validator that catches type/cardinality/range violations, but checks structure, not truth.
 - [output-surface-taxonomy](nodes/concepts/output-surface-taxonomy.md) — classify each surface explicitly; per-surface decisions.
 - [schema-vs-validator](nodes/concepts/schema-vs-validator.md) — schema-enforced output vs. free-text + post-hoc validator.
 - [streaming-vs-structured](nodes/concepts/streaming-vs-structured.md) — token-by-token UX vs. structured output trade-off.
@@ -187,14 +189,17 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 **[task-agent-pattern](nodes/topics/task-agent-pattern.md)**
 - [decision-audit-trail](nodes/concepts/decision-audit-trail.md) — durable per-decision record (fingerprint + version + reasoning + override history); the substrate replay/drift run on.
 - [decision-engine-contract](nodes/concepts/decision-engine-contract.md) — layered output (decision + confidence + next-action) as the wire format every surface consumes.
+- [domain-event-task-ontology](nodes/concepts/domain-event-task-ontology.md) — model the user's world — entities, events, tasks, activities and their typed relations/states — as a lightweight domain ontology the agent grounds understanding on and acts over; scope it with competency questions.
 - [engine-vs-conversation-routing](nodes/concepts/engine-vs-conversation-routing.md) — when the engine handles vs. when the chat layer handles; the bridge between them.
 - [forced-tool-call-output](nodes/concepts/forced-tool-call-output.md) — when to force schema vs. let the model write free-text.
+- [ontology-grounded-agent](nodes/concepts/ontology-grounded-agent.md) — when a conversational domain agent should ground on formal/ontological structure — modeling the user's world (events, tasks, activities, entities) so it understands and acts — vs when text + JSON-schema + retrieval suffice.
 - [output-surface-taxonomy](nodes/concepts/output-surface-taxonomy.md) — classify each surface explicitly; per-surface decisions.
 
 **[task-planning](nodes/topics/task-planning.md)**
 - [agent-trajectory-eval](nodes/concepts/agent-trajectory-eval.md) — multi-turn, tool sequences, end-state.
 - [decision-engine-contract](nodes/concepts/decision-engine-contract.md) — layered output (decision + confidence + next-action) as the wire format every surface consumes.
 - [goal-decomposition](nodes/concepts/goal-decomposition.md) — breaking a goal into steps at the right granularity — actionable but not brittle — with dependencies made explicit.
+- [llm-as-autoformalizer-plus-solver](nodes/concepts/llm-as-autoformalizer-plus-solver.md) — LLM translates the problem into a formal spec (PDDL/ASP/FOL/constraints), a sound solver decides, errors feed back for repair — the guarantee lives in the solver, not the weights; the load-bearing weakness is the translation.
 - [plan-execute-replan](nodes/concepts/plan-execute-replan.md) — executing a plan step by step and revising it when a step fails or reality diverges — the difference between an agent and a script.
 
 **[tool-use-design](nodes/topics/tool-use-design.md)**
@@ -235,6 +240,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-domain-chatbot-design](nodes/references/references-domain-chatbot-design.md) — chatbot design reading list (Anthropic, OpenAI, Microsoft Bot Service, Google CDS, Rasa, Voiceflow, Husain, Yan, Hall, Intercom Fin).
 - [references-eval-reading-list](nodes/references/references-eval-reading-list.md) — frontier-lab + practitioner posts on LLM eval (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, …).
 - [references-memory-theory](nodes/references/references-memory-theory.md) — verified primary sources behind the memory-theory cluster — Hopfield/attention, complementary learning systems, catastrophic forgetting, model editing, and experiential learning.
+- [references-ontology-llm-agents](nodes/references/references-ontology-llm-agents.md) — verified primary sources for the ontology-grounded-agent cluster — KG-RAG, LLM ontology engineering, autoformalization+solvers, temporal-KG memory, SHACL/OWL, MCP/A2A.
 - [references-task-agent-design](nodes/references/references-task-agent-design.md) — verified primary sources grounding the agent cluster — ReAct, Reflexion, Toolformer, Tree of Thoughts, MetaGPT, and Anthropic's effective-agents guidance.
 - [references-template-rendered-output](nodes/references/references-template-rendered-output.md) — what's verifiable about template-rendered output in production — Rasa (mechanism confirmed), Ikki (architecture confirmed, outcomes refuted), and why most 'structured output' systems don't qualify.
 

@@ -14,6 +14,8 @@ related:
   - [[tool-use-design]]
   - [[task-planning]]
   - [[decision-engine-contract]]
+  - [[ontology-grounded-agent]]
+  - [[domain-event-task-ontology]]
   - [[engine-vs-conversation-routing]]
   - [[decision-audit-trail]]
   - [[output-surface-taxonomy]]

@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-02",
-  "node_count": 138,
-  "edge_count": 902,
+  "generated": "2026-07-03",
+  "node_count": 144,
+  "edge_count": 946,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -701,6 +701,7 @@
         "memory-retrieval",
         "memory-consolidation-and-forgetting",
         "agent-native-memory-framework",
+        "bitemporal-fact-invalidation-memory",
         "associative-memory-and-attention",
         "complementary-learning-systems",
         "interference-and-catastrophic-forgetting",
@@ -919,6 +920,36 @@
         "sms-state-machine",
         "turn-taking-and-proactivity",
         "sms-recovery-and-reentry"
+      ]
+    },
+    {
+      "id": "bitemporal-fact-invalidation-memory",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/bitemporal-fact-invalidation-memory.md",
+      "title": "Bi-Temporal Fact Invalidation Memory",
+      "summary": "track valid-time + transaction-time and invalidate-not-delete on contradiction \u2014 the one thing flat-text memory structurally can't do \u2014 so an agent answers 'as of when' and keeps an audit trail for changing user facts.",
+      "tags": [
+        "memory",
+        "temporal",
+        "knowledge-graph",
+        "versioning",
+        "agents",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-07-03",
+      "clusters": [
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "ontology-grounded-agent",
+        "domain-event-task-ontology",
+        "memory-consolidation-and-forgetting",
+        "agent-native-memory-framework",
+        "references-ontology-llm-agents"
       ]
     },
     {
@@ -1449,6 +1480,39 @@
         "safety-rails-domain-specific",
         "operator-trust-injection",
         "recency-bias-prompt-design"
+      ]
+    },
+    {
+      "id": "domain-event-task-ontology",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/domain-event-task-ontology.md",
+      "title": "Domain Event / Task / Activity Ontology",
+      "summary": "model the user's world \u2014 entities, events, tasks, activities and their typed relations/states \u2014 as a lightweight domain ontology the agent grounds understanding on and acts over; scope it with competency questions.",
+      "tags": [
+        "ontology",
+        "domain-modeling",
+        "events",
+        "tasks",
+        "activities",
+        "schema",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-07-03",
+      "clusters": [
+        "task-agent-pattern"
+      ],
+      "source_thread": null,
+      "related": [
+        "task-agent-pattern",
+        "ontology-grounded-agent",
+        "run-state-model",
+        "memory-types-taxonomy",
+        "decision-engine-contract",
+        "bitemporal-fact-invalidation-memory",
+        "agent-native-memory-framework",
+        "references-ontology-llm-agents"
       ]
     },
     {
@@ -2141,6 +2205,36 @@
       ]
     },
     {
+      "id": "llm-as-autoformalizer-plus-solver",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/llm-as-autoformalizer-plus-solver.md",
+      "title": "LLM as Autoformalizer + Solver",
+      "summary": "LLM translates the problem into a formal spec (PDDL/ASP/FOL/constraints), a sound solver decides, errors feed back for repair \u2014 the guarantee lives in the solver, not the weights; the load-bearing weakness is the translation.",
+      "tags": [
+        "neuro-symbolic",
+        "planning",
+        "solver",
+        "reasoning",
+        "agents",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-07-03",
+      "clusters": [
+        "task-planning"
+      ],
+      "source_thread": null,
+      "related": [
+        "task-planning",
+        "ontology-grounded-agent",
+        "decision-engine-contract",
+        "plan-execute-replan",
+        "tool-use-design",
+        "references-ontology-llm-agents"
+      ]
+    },
+    {
       "id": "llm-as-judge",
       "type": "concept",
       "kind": null,
@@ -2259,6 +2353,7 @@
         "forced-tool-call-output",
         "output-surface-taxonomy",
         "schema-vs-validator",
+        "ontology-as-validator-shacl",
         "streaming-vs-structured",
         "hard-surface-irrevocability",
         "template-rendered-output",
@@ -2510,6 +2605,68 @@
         "agentic-context-engineering-ace",
         "context-engineering",
         "verbal-reinforcement-vs-gradient-rl"
+      ]
+    },
+    {
+      "id": "ontology-as-validator-shacl",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/ontology-as-validator-shacl.md",
+      "title": "Ontology as Validator (SHACL)",
+      "summary": "validate an agent's structured output/state against a domain ontology's constraints (SHACL/OWL) \u2014 a domain-semantic layer atop schema-vs-validator that catches type/cardinality/range violations, but checks structure, not truth.",
+      "tags": [
+        "ontology",
+        "validation",
+        "shacl",
+        "schema",
+        "output-design",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-07-03",
+      "clusters": [
+        "llm-output-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-output-design",
+        "schema-vs-validator",
+        "ontology-grounded-agent",
+        "domain-event-task-ontology",
+        "decision-engine-contract",
+        "references-ontology-llm-agents"
+      ]
+    },
+    {
+      "id": "ontology-grounded-agent",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/ontology-grounded-agent.md",
+      "title": "Ontology-Grounded Agent",
+      "summary": "when a conversational domain agent should ground on formal/ontological structure \u2014 modeling the user's world (events, tasks, activities, entities) so it understands and acts \u2014 vs when text + JSON-schema + retrieval suffice.",
+      "tags": [
+        "ontology",
+        "knowledge-graph",
+        "grounding",
+        "domain-modeling",
+        "neuro-symbolic",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-07-03",
+      "clusters": [
+        "task-agent-pattern"
+      ],
+      "source_thread": null,
+      "related": [
+        "task-agent-pattern",
+        "domain-event-task-ontology",
+        "llm-as-autoformalizer-plus-solver",
+        "bitemporal-fact-invalidation-memory",
+        "ontology-as-validator-shacl",
+        "domain-knowledge-injection",
+        "agent-native-memory-framework",
+        "references-ontology-llm-agents"
       ]
     },
     {
@@ -2913,6 +3070,33 @@
         "parametric-memory-and-editing",
         "experiential-memory-substrates",
         "references-context-and-memory"
+      ]
+    },
+    {
+      "id": "references-ontology-llm-agents",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-ontology-llm-agents.md",
+      "title": "References \u2014 Ontology & LLM Agents",
+      "summary": "verified primary sources for the ontology-grounded-agent cluster \u2014 KG-RAG, LLM ontology engineering, autoformalization+solvers, temporal-KG memory, SHACL/OWL, MCP/A2A.",
+      "tags": [
+        "ontology",
+        "knowledge-graph",
+        "neuro-symbolic",
+        "agents",
+        "reading-list",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-07-03",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "ontology-grounded-agent",
+        "domain-event-task-ontology",
+        "llm-as-autoformalizer-plus-solver",
+        "bitemporal-fact-invalidation-memory",
+        "ontology-as-validator-shacl"
       ]
     },
     {
@@ -3553,6 +3737,8 @@
         "tool-use-design",
         "task-planning",
         "decision-engine-contract",
+        "ontology-grounded-agent",
+        "domain-event-task-ontology",
         "engine-vs-conversation-routing",
         "decision-audit-trail",
         "output-surface-taxonomy",
@@ -3611,6 +3797,7 @@
         "tool-use-design",
         "goal-decomposition",
         "plan-execute-replan",
+        "llm-as-autoformalizer-plus-solver",
         "decision-engine-contract",
         "agent-trajectory-eval"
       ]
@@ -4795,6 +4982,11 @@
     },
     {
       "from": "agent-memory",
+      "to": "bitemporal-fact-invalidation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
       "to": "complementary-learning-systems",
       "kind": "related"
     },
@@ -5091,6 +5283,36 @@
     {
       "from": "async-conversation-pacing",
       "to": "turn-taking-and-proactivity",
+      "kind": "related"
+    },
+    {
+      "from": "bitemporal-fact-invalidation-memory",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "bitemporal-fact-invalidation-memory",
+      "to": "agent-native-memory-framework",
+      "kind": "related"
+    },
+    {
+      "from": "bitemporal-fact-invalidation-memory",
+      "to": "domain-event-task-ontology",
+      "kind": "related"
+    },
+    {
+      "from": "bitemporal-fact-invalidation-memory",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "bitemporal-fact-invalidation-memory",
+      "to": "ontology-grounded-agent",
+      "kind": "related"
+    },
+    {
+      "from": "bitemporal-fact-invalidation-memory",
+      "to": "references-ontology-llm-agents",
       "kind": "related"
     },
     {
@@ -5731,6 +5953,46 @@
     {
       "from": "domain-chatbot-design",
       "to": "turn-taking-and-proactivity",
+      "kind": "related"
+    },
+    {
+      "from": "domain-event-task-ontology",
+      "to": "agent-native-memory-framework",
+      "kind": "related"
+    },
+    {
+      "from": "domain-event-task-ontology",
+      "to": "bitemporal-fact-invalidation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "domain-event-task-ontology",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "domain-event-task-ontology",
+      "to": "memory-types-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "domain-event-task-ontology",
+      "to": "ontology-grounded-agent",
+      "kind": "related"
+    },
+    {
+      "from": "domain-event-task-ontology",
+      "to": "references-ontology-llm-agents",
+      "kind": "related"
+    },
+    {
+      "from": "domain-event-task-ontology",
+      "to": "run-state-model",
+      "kind": "related"
+    },
+    {
+      "from": "domain-event-task-ontology",
+      "to": "task-agent-pattern",
       "kind": "related"
     },
     {
@@ -6439,6 +6701,36 @@
       "kind": "related"
     },
     {
+      "from": "llm-as-autoformalizer-plus-solver",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-autoformalizer-plus-solver",
+      "to": "ontology-grounded-agent",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-autoformalizer-plus-solver",
+      "to": "plan-execute-replan",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-autoformalizer-plus-solver",
+      "to": "references-ontology-llm-agents",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-autoformalizer-plus-solver",
+      "to": "task-planning",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-autoformalizer-plus-solver",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
       "from": "llm-as-judge",
       "to": "agent-eval-case-study",
       "kind": "related"
@@ -6626,6 +6918,11 @@
     {
       "from": "llm-output-design",
       "to": "native-thinking-vs-prompted-reasoning",
+      "kind": "related"
+    },
+    {
+      "from": "llm-output-design",
+      "to": "ontology-as-validator-shacl",
       "kind": "related"
     },
     {
@@ -6911,6 +7208,76 @@
     {
       "from": "offline-prompt-optimization",
       "to": "verbal-reinforcement-vs-gradient-rl",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-as-validator-shacl",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-as-validator-shacl",
+      "to": "domain-event-task-ontology",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-as-validator-shacl",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-as-validator-shacl",
+      "to": "ontology-grounded-agent",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-as-validator-shacl",
+      "to": "references-ontology-llm-agents",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-as-validator-shacl",
+      "to": "schema-vs-validator",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-grounded-agent",
+      "to": "agent-native-memory-framework",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-grounded-agent",
+      "to": "bitemporal-fact-invalidation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-grounded-agent",
+      "to": "domain-event-task-ontology",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-grounded-agent",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-grounded-agent",
+      "to": "llm-as-autoformalizer-plus-solver",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-grounded-agent",
+      "to": "ontology-as-validator-shacl",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-grounded-agent",
+      "to": "references-ontology-llm-agents",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-grounded-agent",
+      "to": "task-agent-pattern",
       "kind": "related"
     },
     {
@@ -7311,6 +7678,31 @@
     {
       "from": "references-memory-theory",
       "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "references-ontology-llm-agents",
+      "to": "bitemporal-fact-invalidation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "references-ontology-llm-agents",
+      "to": "domain-event-task-ontology",
+      "kind": "related"
+    },
+    {
+      "from": "references-ontology-llm-agents",
+      "to": "llm-as-autoformalizer-plus-solver",
+      "kind": "related"
+    },
+    {
+      "from": "references-ontology-llm-agents",
+      "to": "ontology-as-validator-shacl",
+      "kind": "related"
+    },
+    {
+      "from": "references-ontology-llm-agents",
+      "to": "ontology-grounded-agent",
       "kind": "related"
     },
     {
@@ -7980,6 +8372,11 @@
     },
     {
       "from": "task-agent-pattern",
+      "to": "domain-event-task-ontology",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
       "to": "engine-vs-conversation-routing",
       "kind": "related"
     },
@@ -8006,6 +8403,11 @@
     {
       "from": "task-agent-pattern",
       "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "ontology-grounded-agent",
       "kind": "related"
     },
     {
@@ -8066,6 +8468,11 @@
     {
       "from": "task-planning",
       "to": "goal-decomposition",
+      "kind": "related"
+    },
+    {
+      "from": "task-planning",
+      "to": "llm-as-autoformalizer-plus-solver",
       "kind": "related"
     },
     {

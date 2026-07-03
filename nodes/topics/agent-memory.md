@@ -12,6 +12,7 @@ related:
   - [[memory-retrieval]]
   - [[memory-consolidation-and-forgetting]]
   - [[agent-native-memory-framework]]
+  - [[bitemporal-fact-invalidation-memory]]
   - [[associative-memory-and-attention]]
   - [[complementary-learning-systems]]
   - [[interference-and-catastrophic-forgetting]]
