@@ -17,6 +17,16 @@ created: 2026-07-03
 
 Primary sources for the [ontology-grounded-agent](../concepts/ontology-grounded-agent.md) cluster. Verified during a 25-agent adversarial fan-out on **2026-07-03** (each claim independently refuted-or-confirmed against the primary source; 2024–2026 work is beyond the training cutoff, so all confirmation is by live fetch). Tags: **[supported]** = confirmed against primary source; **[self-report]** = vendor/author's own numbers, not independently reproduced; **[contested]** = genuine disagreement.
 
+## Ontology of the user's world (assistant understanding of events/tasks/activities)
+
+The most on-point line for "an ontology so an agent understands the user's events/tasks/activities." (KNOW abstract + PROV-O page fetched directly 2026-07-03; the rest confirmed — title/ID/authors/date — against the arXiv search listing, not each abstract.)
+
+- **KNOW: A Real-World Ontology for Knowledge Capture with LLMs** — Arto Bendiken, arXiv:2405.19877 (2024-05). **[supported]** Bills itself as the *first ontology designed to capture everyday knowledge to augment LLMs* for personal AI assistants; scope = human universals **spacetime (places, events) + social (people, groups, organizations)**; open (CC0), client libs in 12 languages.
+- **PROV-O (The PROV Ontology)** — W3C **Recommendation 2013-04-30**. **[supported]** Models `Agent` / `Activity` / `Entity` with `used`, `wasGeneratedBy`, `wasAssociatedWith`, `startedAtTime`/`endedAtTime` — the canonical vocabulary for "who did what activity to what, and when." Pair with **OWL-Time** for temporal reasoning.
+- **Prompt-Time Symbolic Knowledge Capture with LLMs** — Çöplü et al., arXiv:2402.00414 (2024-02); and the **Ontology-Driven** follow-up, arXiv:2405.14012 (2024-05). **[supported]** Extract personal facts/events from the user's prompts into an ontology/KG so a personal assistant remembers and understands the user.
+- **OntoBOT** — Martorana, Urgese, Tiddi, Schlobach, arXiv:2509.22434 (2025-09). **[supported]** Ontology unifying **tasks, actions, environments, capabilities** for context-aware reasoning + task-oriented execution by an assistive agent.
+- **Personal-KG-as-memory (LLM era, mostly proposals/self-reports):** POLAR (arXiv:2605.26256, multimodal semantic+episodic KG for embodied agents); Personalized Graph-Empowered LLM (arXiv:2602.21862, personal KG over lifelogs to recall life events); REMI (arXiv:2509.06269, personal *causal* KG of life events/habits); RAG+KG personalization (arXiv:2505.09945, KG of calendar/contacts/location). **[supported as existing works; treat their metrics as self-reported / directional]**
+
 ## KG / ontology grounding (empirical)
 
 - **From Local to Global: A Graph RAG Approach** — Edge et al. (Microsoft), arXiv:2404.16130 (v2 2025-02). **[supported / self-report]** GraphRAG wins *global query-focused summarization* (GPT-4-judged comprehensiveness 72–83%); vector RAG wins directness; **hallucination/accuracy was not measured** — do not cite as a hallucination cure.

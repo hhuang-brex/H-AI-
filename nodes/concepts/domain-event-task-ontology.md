@@ -51,4 +51,4 @@ Plus **typed relations** (`task blocks task`, `event about entity`, `activity pr
 
 ## References
 
-Sits under [task-agent-pattern](../topics/task-agent-pattern.md); the whether-to-formalize decision is [ontology-grounded-agent](ontology-grounded-agent.md). Sources in [references-ontology-llm-agents](../references/references-ontology-llm-agents.md).
+Sits under [task-agent-pattern](../topics/task-agent-pattern.md); the whether-to-formalize decision is [ontology-grounded-agent](ontology-grounded-agent.md). Prior art you can build on rather than inventing from scratch: **PROV-O** (W3C Rec 2013) gives the `Agent`/`Activity`/`Entity` + time backbone for events/activities, and **KNOW** ([arXiv:2405.19877](https://arxiv.org/abs/2405.19877)) is an open everyday-life ontology (spacetime + social) built specifically to augment LLM personal assistants; prompt-time capture into such a schema is demonstrated by Çöplü et al. ([arXiv:2405.14012](https://arxiv.org/abs/2405.14012)). Sources in [references-ontology-llm-agents](../references/references-ontology-llm-agents.md).
