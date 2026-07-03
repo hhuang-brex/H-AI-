@@ -23,6 +23,10 @@
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   color: #0f766e;
 }
+/* dark mode: the viewport is dark in both themes; only the prose around it adapts */
+html[data-theme="hai-dark"] .graph-intro { color: #94a3b8; }
+html[data-theme="hai-dark"] .graph-intro b { color: #e2e8f0; }
+html[data-theme="hai-dark"] .graph-intro .gi-num { color: #5eead4; }
 
 /* --- the viewport frame: a dark window into the network --- */
 .graph-frame {

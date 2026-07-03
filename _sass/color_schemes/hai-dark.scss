@@ -1,0 +1,23 @@
+// _sass/color_schemes/hai-dark.scss — dark counterpart of the `hai` scheme for H-AI-
+// Built on just-the-docs' dark base, then overridden with the graph homepage's
+// "observatory" palette so dark doc pages share one identity with the graph viewport.
+@import "./color_schemes/dark";
+
+$body-background-color: #0b0f14;   // graph --cy-ink-0
+$sidebar-color: #0e141b;           // slightly lifted from body
+$search-background-color: #131b24; // graph --cy-ink-1
+$table-background-color: #0e141b;
+
+$body-text-color: #e2e8f0;         // graph --cy-text
+$body-heading-color: #f1f5f9;
+$nav-child-link-color: #cbd5e1;
+$search-result-preview-color: #94a3b8;
+
+$link-color: #5eead4;              // graph --cy-accent (teal)
+$btn-primary-color: #5eead4;
+$base-button-color: #1e2935;
+
+$border-color: #1e2935;            // graph frame border
+$code-background-color: #131b24;   // graph --cy-ink-1
+
+$body-link-color: #5eead4;

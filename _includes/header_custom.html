@@ -1,0 +1,43 @@
+<!-- header_custom.html — light/dark toggle button (☾/☀).
+     State of record: localStorage["hai-theme"] + <html data-theme>. Uses jtd.setTheme to swap the
+     stylesheet (NOT jtd.getTheme, which mis-splits the hyphenated "hai-dark" name). -->
+<button id="hai-theme-toggle" class="hai-theme-toggle" type="button"
+        aria-label="Toggle dark mode" title="Toggle light / dark">
+  <span class="hai-theme-icon" aria-hidden="true">☾</span>
+</button>
+<script>
+(function () {
+  var btn = document.getElementById('hai-theme-toggle');
+  if (!btn) return;
+  var icon = btn.querySelector('.hai-theme-icon');
+  function current() {
+    return document.documentElement.getAttribute('data-theme') === 'hai-dark' ? 'hai-dark' : 'default';
+  }
+  function paint(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (icon) icon.textContent = theme === 'hai-dark' ? '☀' : '☾'; // ☀ / ☾
+    btn.setAttribute('aria-pressed', theme === 'hai-dark' ? 'true' : 'false');
+  }
+  function apply(theme) {
+    if (window.jtd && jtd.setTheme) jtd.setTheme(theme); // swaps the scheme stylesheet at runtime
+    paint(theme);
+  }
+  paint(current()); // sync the icon to what the boot script already applied
+  btn.addEventListener('click', function () {
+    var next = current() === 'hai-dark' ? 'default' : 'hai-dark';
+    localStorage.setItem('hai-theme', next); // explicit choice wins over OS
+    apply(next);
+  });
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+      if (localStorage.getItem('hai-theme')) return; // don't override an explicit choice
+      apply(e.matches ? 'hai-dark' : 'default');
+    });
+  }
+})();
+</script>
+<style>
+.hai-theme-toggle { background: none; border: 0; cursor: pointer; font-size: 1.05rem;
+  line-height: 1; padding: 0.35rem 0.5rem; color: inherit; opacity: 0.72; }
+.hai-theme-toggle:hover { opacity: 1; }
+</style>
