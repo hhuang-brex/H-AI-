@@ -32,6 +32,8 @@ The naive agent appends everything to a growing transcript and resends it every 
 
 That accuracy drop is empirically documented, not folklore: models recall information at the *start or end* of a long context far better than the *middle* (Liu et al., "Lost in the Middle," 2023), and degrade with raw input length generally. Chroma's *Context Rot* (2025-07-14) quantified the latter across 18 models (GPT-4.1, Claude 4, Gemini 2.5, Qwen3, …): shrinking an input from ~113k tokens to the ~300 relevant tokens — same answer available in both — reliably *improved* accuracy, isolating input **length itself**, not task difficulty, as the cause. See [references-context-and-memory](../references/references-context-and-memory.md) for the verified sources — a bigger window is not a substitute for this discipline.
 
+The field now has a formal survey — *A Survey of Context Engineering for Large Language Models* (Mei et al., [arXiv:2507.13334](https://arxiv.org/abs/2507.13334); 166 pp, 1,411 citations) — whose taxonomy (context retrieval & generation / processing / management) maps closely onto this cluster. It also names a second, *output-side* axis distinct from the input-side degradation above: a **"fundamental asymmetry"** — models understand rich context far better than they can *generate* equally sophisticated long-form output. Context engineering optimizes what goes *in*; that asymmetry is a standing limit on what reliably comes *out*.
+
 The frame: treat the context window as a **managed budget**, not an append log. Each turn, you *construct* the prompt from parts, each part earning its place.
 
 ## The three decisions

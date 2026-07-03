@@ -15,7 +15,11 @@ created: 2026-06-12
 
 # References — Context & Memory
 
-The scientific grounding for the context cluster ([context-engineering](../topics/context-engineering.md)) and the memory cluster ([agent-memory](../topics/agent-memory.md)). These concepts were written as engineering distillations; this list ties their empirical claims to primary sources. Every entry was fetched and verified (title/authors/year confirmed) on 2026-06-12 — not recalled from memory.
+The scientific grounding for the context cluster ([context-engineering](../topics/context-engineering.md)) and the memory cluster ([agent-memory](../topics/agent-memory.md)). These concepts were written as engineering distillations; this list ties their empirical claims to primary sources. Every entry was fetched and verified (title/authors/year confirmed) on 2026-06-12 — not recalled from memory (survey entry added and verified 2026-07-02).
+
+## The field's formal survey
+
+- **A Survey of Context Engineering for Large Language Models** — Mei, Yao, Ge, Wang, Bi, Cai, Liu, Li, Li, Zhang, Zhou, Mao, Xia, Guo, Liu (15 authors) (2025, v2 2025-07-21). https://arxiv.org/abs/2507.13334 — Verified 2026-07-02. The field's reference survey (ongoing work; **166 pages, 1,411 citations**). Formalizes context engineering "beyond prompt design" with a taxonomy — *context retrieval & generation*, *context processing*, *context management* → system implementations *RAG*, *memory systems*, *tool-integrated reasoning*, *multi-agent* — that maps almost 1:1 onto this graph's context + memory clusters. Its distinctive scientific claim is a **"fundamental asymmetry"**: models understand complex context far better than they can *generate* equally sophisticated long-form output, named a defining priority for future work. This is an *output-side* limit, complementary to the *input-side* degradation (lost-in-the-middle / context rot) below.
 
 ## Why retrieval beats a bigger window (attention limits)
 
