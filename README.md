@@ -194,6 +194,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [forced-tool-call-output](nodes/concepts/forced-tool-call-output.md) — when to force schema vs. let the model write free-text.
 - [ontology-grounded-agent](nodes/concepts/ontology-grounded-agent.md) — when a conversational domain agent should ground on formal/ontological structure — modeling the user's world (events, tasks, activities, entities) so it understands and acts — vs when text + JSON-schema + retrieval suffice.
 - [output-surface-taxonomy](nodes/concepts/output-surface-taxonomy.md) — classify each surface explicitly; per-surface decisions.
+- [user-intent-to-task-grounding](nodes/concepts/user-intent-to-task-grounding.md) — turn an under-specified user request — read against the user's activities/context — into an executable task, deciding act-vs-clarify; the bridge from 'what the user is doing/asking' to 'the task the engine runs'.
 
 **[task-planning](nodes/topics/task-planning.md)**
 - [agent-trajectory-eval](nodes/concepts/agent-trajectory-eval.md) — multi-turn, tool sequences, end-state.

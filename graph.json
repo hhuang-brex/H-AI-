@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-03",
-  "node_count": 144,
-  "edge_count": 946,
+  "node_count": 145,
+  "edge_count": 955,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -3094,6 +3094,7 @@
       "related": [
         "ontology-grounded-agent",
         "domain-event-task-ontology",
+        "user-intent-to-task-grounding",
         "llm-as-autoformalizer-plus-solver",
         "bitemporal-fact-invalidation-memory",
         "ontology-as-validator-shacl"
@@ -3739,6 +3740,7 @@
         "decision-engine-contract",
         "ontology-grounded-agent",
         "domain-event-task-ontology",
+        "user-intent-to-task-grounding",
         "engine-vs-conversation-routing",
         "decision-audit-trail",
         "output-surface-taxonomy",
@@ -4058,6 +4060,37 @@
         "repair-and-clarification",
         "escalation-handoff",
         "intent-and-disambiguation"
+      ]
+    },
+    {
+      "id": "user-intent-to-task-grounding",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/user-intent-to-task-grounding.md",
+      "title": "User-Intent-to-Task Grounding",
+      "summary": "turn an under-specified user request \u2014 read against the user's activities/context \u2014 into an executable task, deciding act-vs-clarify; the bridge from 'what the user is doing/asking' to 'the task the engine runs'.",
+      "tags": [
+        "intent",
+        "task-grounding",
+        "dialogue-state",
+        "proactive",
+        "personalization",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-07-03",
+      "clusters": [
+        "task-agent-pattern"
+      ],
+      "source_thread": null,
+      "related": [
+        "task-agent-pattern",
+        "engine-vs-conversation-routing",
+        "domain-event-task-ontology",
+        "llm-as-autoformalizer-plus-solver",
+        "memory-retrieval",
+        "goal-decomposition",
+        "references-ontology-llm-agents"
       ]
     },
     {
@@ -7706,6 +7739,11 @@
       "kind": "related"
     },
     {
+      "from": "references-ontology-llm-agents",
+      "to": "user-intent-to-task-grounding",
+      "kind": "related"
+    },
+    {
       "from": "references-task-agent-design",
       "to": "agent-control-loop",
       "kind": "related"
@@ -8426,6 +8464,11 @@
       "kind": "related"
     },
     {
+      "from": "task-agent-pattern",
+      "to": "user-intent-to-task-grounding",
+      "kind": "related"
+    },
+    {
       "from": "task-agent-pattern-fanout",
       "to": "domain-chatbot-design",
       "kind": "related"
@@ -8768,6 +8811,41 @@
     {
       "from": "turn-taking-and-proactivity",
       "to": "repair-and-clarification",
+      "kind": "related"
+    },
+    {
+      "from": "user-intent-to-task-grounding",
+      "to": "domain-event-task-ontology",
+      "kind": "related"
+    },
+    {
+      "from": "user-intent-to-task-grounding",
+      "to": "engine-vs-conversation-routing",
+      "kind": "related"
+    },
+    {
+      "from": "user-intent-to-task-grounding",
+      "to": "goal-decomposition",
+      "kind": "related"
+    },
+    {
+      "from": "user-intent-to-task-grounding",
+      "to": "llm-as-autoformalizer-plus-solver",
+      "kind": "related"
+    },
+    {
+      "from": "user-intent-to-task-grounding",
+      "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "user-intent-to-task-grounding",
+      "to": "references-ontology-llm-agents",
+      "kind": "related"
+    },
+    {
+      "from": "user-intent-to-task-grounding",
+      "to": "task-agent-pattern",
       "kind": "related"
     },
     {

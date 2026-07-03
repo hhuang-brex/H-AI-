@@ -6,6 +6,7 @@ summary: "verified primary sources for the ontology-grounded-agent cluster — K
 related:
   - [[ontology-grounded-agent]]
   - [[domain-event-task-ontology]]
+  - [[user-intent-to-task-grounding]]
   - [[llm-as-autoformalizer-plus-solver]]
   - [[bitemporal-fact-invalidation-memory]]
   - [[ontology-as-validator-shacl]]
@@ -26,6 +27,34 @@ The most on-point line for "an ontology so an agent understands the user's event
 - **Prompt-Time Symbolic Knowledge Capture with LLMs** — Çöplü et al., arXiv:2402.00414 (2024-02); and the **Ontology-Driven** follow-up, arXiv:2405.14012 (2024-05). **[supported]** Extract personal facts/events from the user's prompts into an ontology/KG so a personal assistant remembers and understands the user.
 - **OntoBOT** — Martorana, Urgese, Tiddi, Schlobach, arXiv:2509.22434 (2025-09). **[supported]** Ontology unifying **tasks, actions, environments, capabilities** for context-aware reasoning + task-oriented execution by an assistive agent.
 - **Personal-KG-as-memory (LLM era, mostly proposals/self-reports):** POLAR (arXiv:2605.26256, multimodal semantic+episodic KG for embodied agents); Personalized Graph-Empowered LLM (arXiv:2602.21862, personal KG over lifelogs to recall life events); REMI (arXiv:2509.06269, personal *causal* KG of life events/habits); RAG+KG personalization (arXiv:2505.09945, KG of calendar/contacts/location). **[supported as existing works; treat their metrics as self-reported / directional]**
+
+## Understanding user activities → connecting to the asked task
+
+The connect-the-user's-context-to-the-task line, grounding [user-intent-to-task-grounding](../concepts/user-intent-to-task-grounding.md). Confirmed via a 31-agent discovery+verification fan-out (2026-07-03); each paper below was independently confirmed to exist with correct ID/authors/year — venue corrections noted. **[supported]** unless flagged.
+
+- **ContextAgent** — arXiv:2505.14668 (NeurIPS 2025). Context-aware proactive agent: sense open-world user context → infer intent → decide when to act → ground into a service/tool call. The closest single work to "understand what the user is doing → do the right task."
+- **Ask-before-Plan** — arXiv:2406.12639 (EMNLP 2024 Findings). Proactive planning that *clarifies* an under-specified request against context before executing (Clarification→Execution→Planning).
+- **Training Proactive and Personalized LLM Agents** — arXiv:2511.02208. Jointly optimizes task success + proactivity + personalization.
+- **Satori** — arXiv:2410.16668. Explicit BDI user-state + environment modeling to infer the relevant task/step (proactive AR assistant).
+- **FnCTOD** — arXiv:2402.10466 (ACL 2024). Zero-shot dialogue-state tracking *as LLM function calling*: utterance → function/slot schema (the request-side autoformalizer).
+- **Intent Detection in the Age of LLMs** — arXiv:2410.01627 (EMNLP 2024 Industry). Intent detection + out-of-scope rejection with uncertainty-based routing.
+- **Utterance-to-API semantic parsing** — arXiv:2305.15338 (**cite as arXiv preprint**; EMNLP Findings unconfirmed). Constrained decoding + retrieval for schema-valid API calls.
+- **InstructTODS** — arXiv:2310.08885 (**cite as arXiv preprint, NOT GenBench@EMNLP2023**). Zero-shot proxy-belief-state translation from dialogue to task execution.
+
+## Memory → plan (turning understood context into the task's steps)
+
+- **Reflexion** — Shinn et al., arXiv:2303.11366 (NeurIPS 2023). Verbal RL; episodic reflection memory revises plans.
+- **Generative Agents** — Park et al., arXiv:2304.03442 (UIST 2023). Memory stream → retrieval → reflection → planning.
+- **ExpeL** — arXiv:2308.10144 (AAAI 2024). Extract NL insights into memory, recall at inference.
+- **MemGPT** — arXiv:2310.08560. OS-style tiered virtual context for long-term/multi-session memory.
+
+## Benchmarks
+
+- **LongMemEval** — arXiv:2410.10813 (ICLR 2025). Long-term interactive memory: extraction / multi-session / temporal / knowledge-update / abstention.
+- **LoCoMo** — arXiv:2402.17753 (**ACL 2024 venue unconfirmed on arXiv**). Very long-term conversation memory (~35 sessions).
+- **MultiWOZ** — arXiv:1810.00278 (EMNLP 2018) and **MultiWOZ 2.2** — arXiv:2007.12720 (NLP4ConvAI 2020). The canonical belief-state + task-success paradigm the connect-to-task work is measured against.
+
+> **Coverage caveat.** This fan-out hard-verified the top candidates per facet. Many further leads (SGD arXiv:1909.05855, Toolformer, Gorilla, ToolLLM, τ-bench, LaMP, OWL-Time, ProactiveBench, PrefEval, and others) were surfaced but **not** run through verification — treat them as leads, not confirmed citations, until checked.
 
 ## KG / ontology grounding (empirical)
 

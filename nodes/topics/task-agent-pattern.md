@@ -16,6 +16,7 @@ related:
   - [[decision-engine-contract]]
   - [[ontology-grounded-agent]]
   - [[domain-event-task-ontology]]
+  - [[user-intent-to-task-grounding]]
   - [[engine-vs-conversation-routing]]
   - [[decision-audit-trail]]
   - [[output-surface-taxonomy]]
