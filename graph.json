@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-03",
-  "node_count": 145,
-  "edge_count": 955,
+  "generated": "2026-07-05",
+  "node_count": 146,
+  "edge_count": 963,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -702,6 +702,7 @@
         "memory-consolidation-and-forgetting",
         "agent-native-memory-framework",
         "bitemporal-fact-invalidation-memory",
+        "memory-graph-topology",
         "associative-memory-and-attention",
         "complementary-learning-systems",
         "interference-and-catastrophic-forgetting",
@@ -2391,6 +2392,37 @@
         "agent-native-memory-framework",
         "agentic-context-engineering-ace",
         "context-compaction",
+        "references-context-and-memory"
+      ]
+    },
+    {
+      "id": "memory-graph-topology",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/memory-graph-topology.md",
+      "title": "Memory-Graph Topology",
+      "summary": "which graph structure backs an agent's memory \u2014 flat / tree / entity-graph / community-structured / temporal-KG \u2014 and what each buys vs costs; topology is a cost-capability dial matched to the workload bottleneck, not a default win.",
+      "tags": [
+        "memory",
+        "knowledge-graph",
+        "topology",
+        "retrieval",
+        "graphrag",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-07-05",
+      "clusters": [
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "agent-native-memory-framework",
+        "bitemporal-fact-invalidation-memory",
+        "memory-retrieval",
+        "memory-consolidation-and-forgetting",
+        "domain-knowledge-injection",
         "references-context-and-memory"
       ]
     },
@@ -5060,6 +5092,11 @@
     },
     {
       "from": "agent-memory",
+      "to": "memory-graph-topology",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
       "to": "memory-retrieval",
       "kind": "related"
     },
@@ -7010,6 +7047,41 @@
     },
     {
       "from": "memory-consolidation-and-forgetting",
+      "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "memory-graph-topology",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "memory-graph-topology",
+      "to": "agent-native-memory-framework",
+      "kind": "related"
+    },
+    {
+      "from": "memory-graph-topology",
+      "to": "bitemporal-fact-invalidation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "memory-graph-topology",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "memory-graph-topology",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "memory-graph-topology",
+      "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "memory-graph-topology",
       "to": "references-context-and-memory",
       "kind": "related"
     },
