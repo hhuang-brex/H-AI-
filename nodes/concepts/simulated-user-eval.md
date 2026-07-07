@@ -9,6 +9,7 @@ related:
   - [[human-in-the-loop-control]]
   - [[mid-task-steering]]
   - [[llm-as-judge]]
+  - [[collaborative-agent-eval]]
 status: living
 created: 2026-06-11
 ---

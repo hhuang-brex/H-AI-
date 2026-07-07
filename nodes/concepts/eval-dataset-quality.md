@@ -13,6 +13,7 @@ related:
   - [[golden-snapshot-eval]]
   - [[offline-prompt-optimization]]
   - [[agent-native-memory-framework]]
+  - [[collaborative-agent-eval]]
 status: living
 created: 2026-06-18
 ---

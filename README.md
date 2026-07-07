@@ -68,6 +68,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [decision-engine-contract](nodes/concepts/decision-engine-contract.md) — layered output (decision + confidence + next-action) as the wire format every surface consumes.
 - [llm-observability](nodes/concepts/llm-observability.md) — debugging \"why did the model respond this way?\" — what frontier APIs actually return (mostly summaries), platform feature reality, OTel state.
 - [perceive-reason-act-loop](nodes/concepts/perceive-reason-act-loop.md) — the core agent iteration — observe state, decide one action, execute, observe result — and why each turn should commit to exactly one action.
+- [self-improving-harness](nodes/concepts/self-improving-harness.md) — optimize the code around the model — prompts → context → workflow → harness code → optimizer code — gated by regression tests, with security kept outside the loop; a capable base model is a precondition.
 - [step-budget-and-runaway-control](nodes/concepts/step-budget-and-runaway-control.md) — hard ceilings on loop iterations, tokens, wall-clock, and tool calls so a stuck agent fails loudly instead of running forever.
 - [stop-and-yield-conditions](nodes/concepts/stop-and-yield-conditions.md) — the three ways a loop can end — done, blocked-needs-user, or failed — and why 'yield to user' is distinct from 'stop'.
 
@@ -143,6 +144,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 **[llm-evaluation](nodes/topics/llm-evaluation.md)**
 - [adversarial-eval](nodes/concepts/adversarial-eval.md) — red-team / safety / prompt injection.
 - [agent-trajectory-eval](nodes/concepts/agent-trajectory-eval.md) — multi-turn, tool sequences, end-state.
+- [collaborative-agent-eval](nodes/concepts/collaborative-agent-eval.md) — evaluating an agent that must act through a semi-autonomous user who also holds tools over a shared world — dual-control (τ²-Bench): solo→interactive gap, compositional verifiable tasks, environment-coupled user simulator, pass^k.
 - [cost-aware-eval](nodes/concepts/cost-aware-eval.md) — sample-size math and budget assertions.
 - [eval-case-design](nodes/concepts/eval-case-design.md) — how to construct eval cases: design from the decision, a coverage matrix, scorable end-states, discrimination-piloting, held-out splits, and a failure flywheel.
 - [eval-dataset-quality](nodes/concepts/eval-dataset-quality.md) — audit the eval set as an instrument — validity, label agreement, discrimination (negative-control), contamination, drift — not just the model's score.

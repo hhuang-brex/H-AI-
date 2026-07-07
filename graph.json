@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-05",
-  "node_count": 146,
-  "edge_count": 963,
+  "generated": "2026-07-07",
+  "node_count": 148,
+  "edge_count": 987,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -617,7 +617,8 @@
         "stop-and-yield-conditions",
         "step-budget-and-runaway-control",
         "decision-engine-contract",
-        "llm-observability"
+        "llm-observability",
+        "self-improving-harness"
       ]
     },
     {
@@ -833,7 +834,8 @@
         "llm-evaluation",
         "test-pyramid-llm",
         "golden-snapshot-eval",
-        "agent-eval-case-study"
+        "agent-eval-case-study",
+        "collaborative-agent-eval"
       ]
     },
     {
@@ -864,7 +866,8 @@
         "conversation-memory",
         "agent-memory",
         "agent-native-memory-framework",
-        "verbal-reinforcement-vs-gradient-rl"
+        "verbal-reinforcement-vs-gradient-rl",
+        "self-improving-harness"
       ]
     },
     {
@@ -1038,6 +1041,40 @@
         "truncated-pyramid-results",
         "domain-knowledge-injection",
         "cost-aware-eval"
+      ]
+    },
+    {
+      "id": "collaborative-agent-eval",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/collaborative-agent-eval.md",
+      "title": "Collaborative / Dual-Control Agent Eval",
+      "summary": "evaluating an agent that must act through a semi-autonomous user who also holds tools over a shared world \u2014 dual-control (\u03c4\u00b2-Bench): solo\u2192interactive gap, compositional verifiable tasks, environment-coupled user simulator, pass^k.",
+      "tags": [
+        "eval",
+        "agent",
+        "dual-control",
+        "multi-turn",
+        "conversation",
+        "user-simulator",
+        "reliability"
+      ],
+      "status": "living",
+      "created": "2026-07-07",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "simulated-user-eval",
+        "agent-trajectory-eval",
+        "eval-case-design",
+        "eval-dataset-quality",
+        "golden-snapshot-eval",
+        "human-in-the-loop-control",
+        "user-intent-to-task-grounding",
+        "escalation-handoff"
       ]
     },
     {
@@ -1696,7 +1733,8 @@
         "simulated-user-eval",
         "golden-snapshot-eval",
         "decision-engine-contract",
-        "offline-prompt-optimization"
+        "offline-prompt-optimization",
+        "collaborative-agent-eval"
       ]
     },
     {
@@ -1729,7 +1767,8 @@
         "prod-shadow-replay",
         "golden-snapshot-eval",
         "offline-prompt-optimization",
-        "agent-native-memory-framework"
+        "agent-native-memory-framework",
+        "collaborative-agent-eval"
       ]
     },
     {
@@ -2294,7 +2333,8 @@
         "verbal-reinforcement-vs-gradient-rl",
         "eval-dataset-quality",
         "eval-case-design",
-        "verbal-self-correction"
+        "verbal-self-correction",
+        "collaborative-agent-eval"
       ]
     },
     {
@@ -2636,7 +2676,8 @@
         "dspy-domain-chatbot-cases",
         "agentic-context-engineering-ace",
         "context-engineering",
-        "verbal-reinforcement-vs-gradient-rl"
+        "verbal-reinforcement-vs-gradient-rl",
+        "self-improving-harness"
       ]
     },
     {
@@ -3387,6 +3428,37 @@
       ]
     },
     {
+      "id": "self-improving-harness",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/self-improving-harness.md",
+      "title": "Self-Improving Harness",
+      "summary": "optimize the code around the model \u2014 prompts \u2192 context \u2192 workflow \u2192 harness code \u2192 optimizer code \u2014 gated by regression tests, with security kept outside the loop; a capable base model is a precondition.",
+      "tags": [
+        "agents",
+        "self-improvement",
+        "harness",
+        "optimization",
+        "evolutionary-search",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-07-07",
+      "clusters": [
+        "agent-control-loop"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-control-loop",
+        "agentic-context-engineering-ace",
+        "offline-prompt-optimization",
+        "verbal-reinforcement-vs-gradient-rl",
+        "action-execution-safety",
+        "llm-evaluation",
+        "multi-agent-delegation"
+      ]
+    },
+    {
       "id": "simulated-user-eval",
       "type": "concept",
       "kind": null,
@@ -3414,7 +3486,8 @@
         "agent-trajectory-eval",
         "human-in-the-loop-control",
         "mid-task-steering",
-        "llm-as-judge"
+        "llm-as-judge",
+        "collaborative-agent-eval"
       ]
     },
     {
@@ -4917,6 +4990,11 @@
     },
     {
       "from": "agent-control-loop",
+      "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
       "to": "step-budget-and-runaway-control",
       "kind": "related"
     },
@@ -5252,6 +5330,11 @@
     },
     {
       "from": "agent-trajectory-eval",
+      "to": "collaborative-agent-eval",
+      "kind": "related"
+    },
+    {
+      "from": "agent-trajectory-eval",
       "to": "golden-snapshot-eval",
       "kind": "related"
     },
@@ -5303,6 +5386,11 @@
     {
       "from": "agentic-context-engineering-ace",
       "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "agentic-context-engineering-ace",
+      "to": "self-improving-harness",
       "kind": "related"
     },
     {
@@ -5483,6 +5571,51 @@
     {
       "from": "code-execution-sandbox-pattern",
       "to": "truncated-pyramid-results",
+      "kind": "related"
+    },
+    {
+      "from": "collaborative-agent-eval",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "collaborative-agent-eval",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "collaborative-agent-eval",
+      "to": "eval-case-design",
+      "kind": "related"
+    },
+    {
+      "from": "collaborative-agent-eval",
+      "to": "eval-dataset-quality",
+      "kind": "related"
+    },
+    {
+      "from": "collaborative-agent-eval",
+      "to": "golden-snapshot-eval",
+      "kind": "related"
+    },
+    {
+      "from": "collaborative-agent-eval",
+      "to": "human-in-the-loop-control",
+      "kind": "related"
+    },
+    {
+      "from": "collaborative-agent-eval",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "collaborative-agent-eval",
+      "to": "simulated-user-eval",
+      "kind": "related"
+    },
+    {
+      "from": "collaborative-agent-eval",
+      "to": "user-intent-to-task-grounding",
       "kind": "related"
     },
     {
@@ -6242,6 +6375,11 @@
     },
     {
       "from": "eval-case-design",
+      "to": "collaborative-agent-eval",
+      "kind": "related"
+    },
+    {
+      "from": "eval-case-design",
       "to": "decision-engine-contract",
       "kind": "related"
     },
@@ -6283,6 +6421,11 @@
     {
       "from": "eval-dataset-quality",
       "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "eval-dataset-quality",
+      "to": "collaborative-agent-eval",
       "kind": "related"
     },
     {
@@ -6847,6 +6990,11 @@
     },
     {
       "from": "llm-evaluation",
+      "to": "collaborative-agent-eval",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
       "to": "cost-aware-eval",
       "kind": "related"
     },
@@ -7308,6 +7456,11 @@
     {
       "from": "offline-prompt-optimization",
       "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "offline-prompt-optimization",
+      "to": "self-improving-harness",
       "kind": "related"
     },
     {
@@ -8041,8 +8194,48 @@
       "kind": "related"
     },
     {
+      "from": "self-improving-harness",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "self-improving-harness",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "self-improving-harness",
+      "to": "agentic-context-engineering-ace",
+      "kind": "related"
+    },
+    {
+      "from": "self-improving-harness",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "self-improving-harness",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "self-improving-harness",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "self-improving-harness",
+      "to": "verbal-reinforcement-vs-gradient-rl",
+      "kind": "related"
+    },
+    {
       "from": "simulated-user-eval",
       "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "simulated-user-eval",
+      "to": "collaborative-agent-eval",
       "kind": "related"
     },
     {

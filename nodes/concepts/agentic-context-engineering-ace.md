@@ -11,6 +11,7 @@ related:
   - [[agent-memory]]
   - [[agent-native-memory-framework]]
   - [[verbal-reinforcement-vs-gradient-rl]]
+  - [[self-improving-harness]]
 status: living
 created: 2026-06-16
 summary: "optimize the context-as-playbook itself (generate/reflect/curate, delta updates) — the structural counterpart to optimizing instruction prose."

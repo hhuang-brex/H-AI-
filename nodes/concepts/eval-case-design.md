@@ -11,6 +11,7 @@ related:
   - [[golden-snapshot-eval]]
   - [[decision-engine-contract]]
   - [[offline-prompt-optimization]]
+  - [[collaborative-agent-eval]]
 status: living
 created: 2026-06-18
 ---

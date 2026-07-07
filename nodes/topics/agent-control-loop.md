@@ -19,6 +19,7 @@ related:
   - [[step-budget-and-runaway-control]]
   - [[decision-engine-contract]]
   - [[llm-observability]]
+  - [[self-improving-harness]]
 status: living
 created: 2026-06-11
 ---

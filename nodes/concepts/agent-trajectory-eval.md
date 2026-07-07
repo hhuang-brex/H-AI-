@@ -8,6 +8,7 @@ related:
   - [[test-pyramid-llm]]
   - [[golden-snapshot-eval]]
   - [[agent-eval-case-study]]
+  - [[collaborative-agent-eval]]
 status: living
 created: 2026-06-05
 summary: "multi-turn, tool sequences, end-state."

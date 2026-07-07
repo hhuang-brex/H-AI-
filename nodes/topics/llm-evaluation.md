@@ -18,6 +18,7 @@ related:
   - [[eval-dataset-quality]]
   - [[eval-case-design]]
   - [[verbal-self-correction]]
+  - [[collaborative-agent-eval]]
 status: living
 created: 2026-06-05
 summary: "measuring whether LLM systems do what they should without bankrupting the team."
