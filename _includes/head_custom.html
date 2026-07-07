@@ -1,7 +1,7 @@
-<!-- head_custom.html — pre-paint theme boot (no flash of light).
-     Runs before jtd.js loads, so it rewrites the scheme <link> directly rather than via jtd.setTheme.
-     Theme names: "default" = light `hai` scheme; "hai-dark" = dark scheme. -->
 <script>
+/* Pre-paint theme boot (no flash). Runs before jtd.js; rewrites the scheme <link> directly.
+   NOTE: no // line comments — the site's compress layout strips newlines, which would turn
+   a // comment into a whole-script comment and break execution. Block comments only. */
 (function () {
   try {
     var saved = localStorage.getItem('hai-theme');
@@ -9,7 +9,6 @@
       : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'hai-dark' : 'default');
     document.documentElement.setAttribute('data-theme', theme);
     if (theme === 'hai-dark') {
-      // First stylesheet is the just-the-docs color-scheme link (same element jtd.setTheme targets).
       var link = document.querySelector('link[rel="stylesheet"]');
       if (link && link.href) {
         link.href = link.href.replace(/just-the-docs-[A-Za-z0-9-]+\.css/, 'just-the-docs-hai-dark.css');
