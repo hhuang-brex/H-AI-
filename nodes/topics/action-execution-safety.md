@@ -15,6 +15,7 @@ related:
   - [[hard-surface-irrevocability]]
   - [[interrupt-and-resume]]
   - [[step-budget-and-runaway-control]]
+  - [[prompt-injection-and-isolation]]
 status: living
 created: 2026-06-11
 ---

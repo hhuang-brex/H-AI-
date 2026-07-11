@@ -10,6 +10,7 @@ related:
   - [[forced-tool-call-output]]
   - [[safety-rails-domain-specific]]
   - [[intent-and-disambiguation]]
+  - [[prompt-injection-and-isolation]]
 status: living
 created: 2026-06-08
 summary: "what the bot can *do*; tiered authority enforced at the tool layer."

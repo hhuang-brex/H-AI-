@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-10",
-  "node_count": 149,
-  "edge_count": 999,
+  "node_count": 150,
+  "edge_count": 1015,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -523,7 +523,8 @@
         "escalation-handoff",
         "forced-tool-call-output",
         "safety-rails-domain-specific",
-        "intent-and-disambiguation"
+        "intent-and-disambiguation",
+        "prompt-injection-and-isolation"
       ]
     },
     {
@@ -556,7 +557,8 @@
         "rollback-and-compensation",
         "hard-surface-irrevocability",
         "interrupt-and-resume",
-        "step-budget-and-runaway-control"
+        "step-budget-and-runaway-control",
+        "prompt-injection-and-isolation"
       ]
     },
     {
@@ -581,7 +583,8 @@
       "related": [
         "multi-agent-delegation",
         "llm-evaluation",
-        "agent-eval-case-study"
+        "agent-eval-case-study",
+        "prompt-injection-and-isolation"
       ]
     },
     {
@@ -2274,7 +2277,8 @@
         "llm-as-judge",
         "escalation-handoff",
         "safety-rails-domain-specific",
-        "cost-aware-eval"
+        "cost-aware-eval",
+        "prompt-injection-and-isolation"
       ]
     },
     {
@@ -3005,6 +3009,42 @@
         "llm-evaluation",
         "test-pyramid-llm",
         "agent-eval-case-study"
+      ]
+    },
+    {
+      "id": "prompt-injection-and-isolation",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/prompt-injection-and-isolation.md",
+      "title": "Prompt Injection and Isolation",
+      "summary": "the threat model for agents that act \u2014 you cannot reliably detect injected instructions, so the boundary is architectural: least-privilege isolation of what a compromised session CAN do (lethal trifecta / Agents Rule of Two).",
+      "tags": [
+        "agent",
+        "security",
+        "prompt-injection",
+        "isolation",
+        "least-privilege",
+        "safety",
+        "threat-model"
+      ],
+      "status": "living",
+      "created": "2026-07-10",
+      "clusters": [
+        "action-execution-safety"
+      ],
+      "source_thread": null,
+      "related": [
+        "action-execution-safety",
+        "action-authority",
+        "confirm-before-act",
+        "escalation-handoff",
+        "tool-result-grounding",
+        "layered-defense-pipeline",
+        "code-execution-sandbox-pattern",
+        "hard-surface-irrevocability",
+        "adversarial-eval",
+        "dry-run-and-preview",
+        "safety-rails-domain-specific"
       ]
     },
     {
@@ -4055,7 +4095,8 @@
         "tool-schema-design",
         "code-execution-sandbox-pattern",
         "grounding-and-citation",
-        "perceive-reason-act-loop"
+        "perceive-reason-act-loop",
+        "prompt-injection-and-isolation"
       ]
     },
     {
@@ -4900,6 +4941,11 @@
     },
     {
       "from": "action-authority",
+      "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "action-authority",
       "to": "safety-rails-domain-specific",
       "kind": "related"
     },
@@ -4945,6 +4991,11 @@
     },
     {
       "from": "action-execution-safety",
+      "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "action-execution-safety",
       "to": "rollback-and-compensation",
       "kind": "related"
     },
@@ -4976,6 +5027,11 @@
     {
       "from": "adversarial-eval",
       "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "adversarial-eval",
+      "to": "prompt-injection-and-isolation",
       "kind": "related"
     },
     {
@@ -6990,6 +7046,11 @@
     },
     {
       "from": "layered-defense-pipeline",
+      "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "layered-defense-pipeline",
       "to": "references-template-rendered-output",
       "kind": "related"
     },
@@ -7841,6 +7902,61 @@
     {
       "from": "prod-shadow-replay",
       "to": "test-pyramid-llm",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
+      "to": "adversarial-eval",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
+      "to": "code-execution-sandbox-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
+      "to": "dry-run-and-preview",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
+      "to": "hard-surface-irrevocability",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
+      "to": "layered-defense-pipeline",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
+      "to": "safety-rails-domain-specific",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
+      "to": "tool-result-grounding",
       "kind": "related"
     },
     {
@@ -9006,6 +9122,11 @@
     {
       "from": "tool-result-grounding",
       "to": "perceive-reason-act-loop",
+      "kind": "related"
+    },
+    {
+      "from": "tool-result-grounding",
+      "to": "prompt-injection-and-isolation",
       "kind": "related"
     },
     {

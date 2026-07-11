@@ -9,6 +9,7 @@ related:
   - [[code-execution-sandbox-pattern]]
   - [[grounding-and-citation]]
   - [[perceive-reason-act-loop]]
+  - [[prompt-injection-and-isolation]]
 status: living
 created: 2026-06-11
 ---

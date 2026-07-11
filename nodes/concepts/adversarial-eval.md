@@ -6,6 +6,7 @@ related:
   - [[multi-agent-delegation]]
   - [[llm-evaluation]]
   - [[agent-eval-case-study]]
+  - [[prompt-injection-and-isolation]]
 status: living
 created: 2026-06-05
 summary: "red-team / safety / prompt injection."

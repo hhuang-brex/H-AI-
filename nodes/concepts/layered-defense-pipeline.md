@@ -11,6 +11,7 @@ related:
   - [[escalation-handoff]]
   - [[safety-rails-domain-specific]]
   - [[cost-aware-eval]]
+  - [[prompt-injection-and-isolation]]
 status: living
 created: 2026-06-09
 summary: "regex gate → forced tool → templates → heterogeneous-model recheck."

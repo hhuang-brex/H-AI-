@@ -62,6 +62,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [hard-surface-irrevocability](nodes/concepts/hard-surface-irrevocability.md) — irrevocable output channels as a first-class category.
 - [idempotency-keys](nodes/concepts/idempotency-keys.md) — making a side-effecting action safe to call more than once by keying it on a stable client-generated token, so retries and replays produce one effect.
 - [interrupt-and-resume](nodes/concepts/interrupt-and-resume.md) — stopping a run in flight — abort vs. pause — and resuming from durable state without redoing completed work or repeating side effects.
+- [prompt-injection-and-isolation](nodes/concepts/prompt-injection-and-isolation.md) — the threat model for agents that act — you cannot reliably detect injected instructions, so the boundary is architectural: least-privilege isolation of what a compromised session CAN do (lethal trifecta / Agents Rule of Two).
 - [rollback-and-compensation](nodes/concepts/rollback-and-compensation.md) — undoing a multi-step action that failed halfway — true rollback where possible, compensating actions where not — to avoid leaving the world half-changed.
 - [step-budget-and-runaway-control](nodes/concepts/step-budget-and-runaway-control.md) — hard ceilings on loop iterations, tokens, wall-clock, and tool calls so a stuck agent fails loudly instead of running forever.
 
