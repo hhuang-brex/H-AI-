@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-10",
-  "node_count": 150,
-  "edge_count": 1015,
+  "node_count": 151,
+  "edge_count": 1029,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -2442,6 +2442,39 @@
       ]
     },
     {
+      "id": "mcp-tool-layer",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/mcp-tool-layer.md",
+      "title": "MCP Tool Layer",
+      "summary": "the Model Context Protocol as the de-facto tool-interop standard \u2014 what it standardizes (JSON-RPC primitives + transport), the current 2025-11-25 spec, the stateless work that lives only in draft, and the client-side MUSTs an agent consuming external MCP servers must enforce.",
+      "tags": [
+        "agent",
+        "tool-use",
+        "mcp",
+        "protocol",
+        "interop",
+        "standards",
+        "transport"
+      ],
+      "status": "living",
+      "created": "2026-07-10",
+      "clusters": [
+        "tool-use-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "tool-use-design",
+        "tool-schema-design",
+        "tool-selection-and-routing",
+        "tool-result-grounding",
+        "paginated-tool-contract",
+        "prompt-injection-and-isolation",
+        "code-execution-sandbox-pattern",
+        "agent-skills-progressive-disclosure"
+      ]
+    },
+    {
       "id": "memory-consolidation-and-forgetting",
       "type": "concept",
       "kind": null,
@@ -2868,7 +2901,8 @@
         "truncated-pyramid-results",
         "code-execution-sandbox-pattern",
         "forced-tool-call-output",
-        "cost-aware-eval"
+        "cost-aware-eval",
+        "mcp-tool-layer"
       ]
     },
     {
@@ -3044,7 +3078,8 @@
         "hard-surface-irrevocability",
         "adversarial-eval",
         "dry-run-and-preview",
-        "safety-rails-domain-specific"
+        "safety-rails-domain-specific",
+        "mcp-tool-layer"
       ]
     },
     {
@@ -4096,7 +4131,8 @@
         "code-execution-sandbox-pattern",
         "grounding-and-citation",
         "perceive-reason-act-loop",
-        "prompt-injection-and-isolation"
+        "prompt-injection-and-isolation",
+        "mcp-tool-layer"
       ]
     },
     {
@@ -4125,7 +4161,8 @@
         "tool-selection-and-routing",
         "tool-result-grounding",
         "forced-tool-call-output",
-        "schema-vs-validator"
+        "schema-vs-validator",
+        "mcp-tool-layer"
       ]
     },
     {
@@ -4154,7 +4191,8 @@
         "tool-schema-design",
         "tool-result-grounding",
         "intent-and-disambiguation",
-        "recency-bias-prompt-design"
+        "recency-bias-prompt-design",
+        "mcp-tool-layer"
       ]
     },
     {
@@ -4186,7 +4224,8 @@
         "tool-result-grounding",
         "forced-tool-call-output",
         "action-authority",
-        "output-surface-taxonomy"
+        "output-surface-taxonomy",
+        "mcp-tool-layer"
       ]
     },
     {
@@ -7315,6 +7354,46 @@
       "kind": "related"
     },
     {
+      "from": "mcp-tool-layer",
+      "to": "agent-skills-progressive-disclosure",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tool-layer",
+      "to": "code-execution-sandbox-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tool-layer",
+      "to": "paginated-tool-contract",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tool-layer",
+      "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tool-layer",
+      "to": "tool-result-grounding",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tool-layer",
+      "to": "tool-schema-design",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tool-layer",
+      "to": "tool-selection-and-routing",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tool-layer",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
       "from": "memory-consolidation-and-forgetting",
       "to": "agent-memory",
       "kind": "related"
@@ -7781,6 +7860,11 @@
     },
     {
       "from": "paginated-tool-contract",
+      "to": "mcp-tool-layer",
+      "kind": "related"
+    },
+    {
+      "from": "paginated-tool-contract",
       "to": "truncated-pyramid-results",
       "kind": "related"
     },
@@ -7947,6 +8031,11 @@
     {
       "from": "prompt-injection-and-isolation",
       "to": "layered-defense-pipeline",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
+      "to": "mcp-tool-layer",
       "kind": "related"
     },
     {
@@ -9121,6 +9210,11 @@
     },
     {
       "from": "tool-result-grounding",
+      "to": "mcp-tool-layer",
+      "kind": "related"
+    },
+    {
+      "from": "tool-result-grounding",
       "to": "perceive-reason-act-loop",
       "kind": "related"
     },
@@ -9142,6 +9236,11 @@
     {
       "from": "tool-schema-design",
       "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "tool-schema-design",
+      "to": "mcp-tool-layer",
       "kind": "related"
     },
     {
@@ -9172,6 +9271,11 @@
     {
       "from": "tool-selection-and-routing",
       "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "tool-selection-and-routing",
+      "to": "mcp-tool-layer",
       "kind": "related"
     },
     {
@@ -9217,6 +9321,11 @@
     {
       "from": "tool-use-design",
       "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "tool-use-design",
+      "to": "mcp-tool-layer",
       "kind": "related"
     },
     {

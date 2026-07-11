@@ -10,6 +10,7 @@ related:
   - [[grounding-and-citation]]
   - [[perceive-reason-act-loop]]
   - [[prompt-injection-and-isolation]]
+  - [[mcp-tool-layer]]
 status: living
 created: 2026-06-11
 ---

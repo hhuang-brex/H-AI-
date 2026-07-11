@@ -10,6 +10,7 @@ related:
   - [[tool-result-grounding]]
   - [[intent-and-disambiguation]]
   - [[recency-bias-prompt-design]]
+  - [[mcp-tool-layer]]
 status: living
 created: 2026-06-11
 ---

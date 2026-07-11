@@ -10,6 +10,7 @@ related:
   - [[tool-result-grounding]]
   - [[forced-tool-call-output]]
   - [[schema-vs-validator]]
+  - [[mcp-tool-layer]]
 status: living
 created: 2026-06-11
 ---

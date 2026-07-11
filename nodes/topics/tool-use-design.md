@@ -15,6 +15,7 @@ related:
   - [[forced-tool-call-output]]
   - [[action-authority]]
   - [[output-surface-taxonomy]]
+  - [[mcp-tool-layer]]
 status: living
 created: 2026-06-11
 ---

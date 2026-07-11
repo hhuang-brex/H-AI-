@@ -214,6 +214,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 **[tool-use-design](nodes/topics/tool-use-design.md)**
 - [action-authority](nodes/concepts/action-authority.md) — what the bot can *do*; tiered authority enforced at the tool layer.
 - [forced-tool-call-output](nodes/concepts/forced-tool-call-output.md) — when to force schema vs. let the model write free-text.
+- [mcp-tool-layer](nodes/concepts/mcp-tool-layer.md) — the Model Context Protocol as the de-facto tool-interop standard — what it standardizes (JSON-RPC primitives + transport), the current 2025-11-25 spec, the stateless work that lives only in draft, and the client-side MUSTs an agent consuming external MCP servers must enforce.
 - [output-surface-taxonomy](nodes/concepts/output-surface-taxonomy.md) — classify each surface explicitly; per-surface decisions.
 - [tool-result-grounding](nodes/concepts/tool-result-grounding.md) — feeding tool output back into the loop so the model can act on it — trimming, shaping, and distinguishing error from success.
 - [tool-schema-design](nodes/concepts/tool-schema-design.md) — writing tool definitions the model can reliably pick and call — names, descriptions, parameter shapes, and the errors they return.

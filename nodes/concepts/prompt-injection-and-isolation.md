@@ -14,6 +14,7 @@ related:
   - [[adversarial-eval]]
   - [[dry-run-and-preview]]
   - [[safety-rails-domain-specific]]
+  - [[mcp-tool-layer]]
 status: living
 created: 2026-07-10
 summary: "the threat model for agents that act — you cannot reliably detect injected instructions, so the boundary is architectural: least-privilege isolation of what a compromised session CAN do (lethal trifecta / Agents Rule of Two)."
@@ -69,7 +70,7 @@ An acting agent almost always has **[C]** (it acts) and usually **[B]** (it touc
 | **MCP tool-description poisoning** | Malicious instructions embedded in tool descriptions invisible to users but visible to the model; plus **rug-pull** (description changed post-approval) and **tool-shadowing** | Vendor research, reproduced (Invariant Labs 2025-04) |
 | **Memory poisoning** | Untrusted content written into persistent memory/RAG as a delayed trigger — AgentPoison ([arXiv:2407.12784](https://arxiv.org/abs/2407.12784), >80% ASR at <0.1% poison rate); MINJA ([arXiv:2503.03704](https://arxiv.org/abs/2503.03704), *any user* can poison shared memory via normal queries) | Established (academic) |
 
-> **Don't conflate:** the normative MCP *Security Best Practices* (rev 2025-06-18) does **not** name "tool poisoning / rug-pull / shadowing" — those are Invariant Labs *research*. The spec's enumerated attacks are confused-deputy, token-passthrough, SSRF, session-hijacking, etc., and it *mandates* least-privilege scoping, HITL consent, sandboxing, egress allowlists (block `169.254.169.254`), and token-audience checks.
+> **Don't conflate:** the normative MCP *Security Best Practices* (a living doc) does **not** name "tool poisoning / rug-pull / shadowing" — those are Invariant Labs *research*. It enumerates **eight** client/server attack sections (confused-deputy, token-passthrough, SSRF, session-hijacking, local-server-compromise, OAuth-URL validation, stdio-proxy, scope-minimization). Its genuine **MUSTs** are token-audience checks (RFC 8707) and consent-with-untruncated-command on one-click local launch; least-privilege scoping, sandboxing, and egress allowlists are **SHOULD**, and tool-invocation HITL consent is a principle the spec says it "cannot enforce." Details in [mcp-tool-layer](mcp-tool-layer.md).
 
 ## The mitigation ladder: architectural > compositional > prompt-level
 
