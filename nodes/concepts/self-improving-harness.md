@@ -11,6 +11,7 @@ related:
   - [[action-execution-safety]]
   - [[llm-evaluation]]
   - [[multi-agent-delegation]]
+  - [[agent-harness]]
 status: living
 created: 2026-07-07
 ---

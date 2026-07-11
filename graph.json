@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-07",
-  "node_count": 148,
-  "edge_count": 987,
+  "generated": "2026-07-10",
+  "node_count": 149,
+  "edge_count": 999,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -618,7 +618,8 @@
         "step-budget-and-runaway-control",
         "decision-engine-contract",
         "llm-observability",
-        "self-improving-harness"
+        "self-improving-harness",
+        "agent-harness"
       ]
     },
     {
@@ -672,6 +673,38 @@
         "cost-aware-eval",
         "golden-snapshot-eval",
         "adversarial-eval"
+      ]
+    },
+    {
+      "id": "agent-harness",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/agent-harness.md",
+      "title": "Agent Harness",
+      "summary": "the whole system wrapping a base model \u2014 loop, context, tools, state, permissions, eval \u2014 named as ONE engineered artifact; the umbrella over the loop/context/tool/state/eval topics and the debate over what belongs in the harness vs the model.",
+      "tags": [
+        "agent",
+        "harness",
+        "runtime",
+        "orchestration",
+        "system-design",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-07-10",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "references-task-agent-design",
+        "agent-control-loop",
+        "context-engineering",
+        "tool-use-design",
+        "action-execution-safety",
+        "agent-memory",
+        "agent-state-persistence",
+        "multi-agent-delegation",
+        "llm-evaluation",
+        "self-improving-harness"
       ]
     },
     {
@@ -3445,7 +3478,8 @@
       "status": "living",
       "created": "2026-07-07",
       "clusters": [
-        "agent-control-loop"
+        "agent-control-loop",
+        "agent-harness"
       ],
       "source_thread": null,
       "related": [
@@ -3455,7 +3489,8 @@
         "verbal-reinforcement-vs-gradient-rl",
         "action-execution-safety",
         "llm-evaluation",
-        "multi-agent-delegation"
+        "multi-agent-delegation",
+        "agent-harness"
       ]
     },
     {
@@ -4950,6 +4985,11 @@
     },
     {
       "from": "agent-control-loop",
+      "to": "agent-harness",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
       "to": "agent-state-persistence",
       "kind": "related"
     },
@@ -5106,6 +5146,56 @@
     {
       "from": "agent-eval-improvement-tiers",
       "to": "test-pyramid-llm",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
+      "to": "agent-state-persistence",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
+      "to": "references-task-agent-design",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
+      "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
+      "to": "tool-use-design",
       "kind": "related"
     },
     {
@@ -8201,6 +8291,11 @@
     {
       "from": "self-improving-harness",
       "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "self-improving-harness",
+      "to": "agent-harness",
       "kind": "related"
     },
     {

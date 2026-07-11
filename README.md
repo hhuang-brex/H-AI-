@@ -39,6 +39,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 ### Topics
 - [action-execution-safety](nodes/topics/action-execution-safety.md) — executing side-effecting actions safely — idempotency, dry-run preview, and rollback — so retries, crashes, and replans don't double-charge or corrupt state.
 - [agent-control-loop](nodes/topics/agent-control-loop.md) — the iteration that turns an LLM into an agent — perceive, reason, act, observe — plus when to stop, yield, and bound runaway.
+- [agent-harness](nodes/topics/agent-harness.md) — the whole system wrapping a base model — loop, context, tools, state, permissions, eval — named as ONE engineered artifact; the umbrella over the loop/context/tool/state/eval topics and the debate over what belongs in the harness vs the model.
 - [agent-memory](nodes/topics/agent-memory.md) — the semantic memory system that lets a talking agent recall across turns and sessions — memory types, retrieval, and consolidation/forgetting — distinct from the this-turn context window and the run-state for resume.
 - [agent-state-persistence](nodes/topics/agent-state-persistence.md) — the durable run state that lets an agent survive crashes, pause/resume across sessions, and recover to a consistent point — distinct from the audit log and conversation memory.
 - [chatbot-pagination](nodes/topics/chatbot-pagination.md) — handling large result sets in a chatbot; UX shape and tool shape chosen jointly.
@@ -71,6 +72,9 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [self-improving-harness](nodes/concepts/self-improving-harness.md) — optimize the code around the model — prompts → context → workflow → harness code → optimizer code — gated by regression tests, with security kept outside the loop; a capable base model is a precondition.
 - [step-budget-and-runaway-control](nodes/concepts/step-budget-and-runaway-control.md) — hard ceilings on loop iterations, tokens, wall-clock, and tool calls so a stuck agent fails loudly instead of running forever.
 - [stop-and-yield-conditions](nodes/concepts/stop-and-yield-conditions.md) — the three ways a loop can end — done, blocked-needs-user, or failed — and why 'yield to user' is distinct from 'stop'.
+
+**[agent-harness](nodes/topics/agent-harness.md)**
+- [self-improving-harness](nodes/concepts/self-improving-harness.md) — optimize the code around the model — prompts → context → workflow → harness code → optimizer code — gated by regression tests, with security kept outside the loop; a capable base model is a precondition.
 
 **[agent-memory](nodes/topics/agent-memory.md)**
 - [agent-native-memory-framework](nodes/concepts/agent-native-memory-framework.md) — the R/S/Q/U four-module decomposition of agent memory as a data-management system (Zhou et al. 2026) — the cross-system lens for the cluster, plus its two headline results.

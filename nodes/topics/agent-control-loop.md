@@ -20,6 +20,7 @@ related:
   - [[decision-engine-contract]]
   - [[llm-observability]]
   - [[self-improving-harness]]
+  - [[agent-harness]]
 status: living
 created: 2026-06-11
 ---
