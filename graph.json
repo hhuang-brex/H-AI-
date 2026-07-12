@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-10",
-  "node_count": 151,
-  "edge_count": 1029,
+  "generated": "2026-07-11",
+  "node_count": 152,
+  "edge_count": 1042,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -707,7 +707,8 @@
         "agent-state-persistence",
         "multi-agent-delegation",
         "llm-evaluation",
-        "self-improving-harness"
+        "self-improving-harness",
+        "managed-agent-apis"
       ]
     },
     {
@@ -2442,6 +2443,44 @@
       ]
     },
     {
+      "id": "managed-agent-apis",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/managed-agent-apis.md",
+      "title": "Managed Agent APIs (build-vs-buy the harness)",
+      "summary": "build-vs-buy the agent loop: three tiers from a single Messages call, to a self-hosted loop (Tool Runner + server-side primitives), to a fully hosted harness (Claude Managed Agents / OpenAI Responses+Agents SDK) that runs the loop, sandbox, tools, and state for you \u2014 trading loop control (and ZDR/HIPAA + cloud-provider parity) for less code, not for tool openness.",
+      "tags": [
+        "agent",
+        "harness",
+        "managed-runtime",
+        "build-vs-buy",
+        "api",
+        "anthropic",
+        "openai",
+        "mcp",
+        "lock-in",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-07-10",
+      "clusters": [
+        "agent-harness"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-harness",
+        "agent-control-loop",
+        "tool-use-design",
+        "mcp-tool-layer",
+        "context-storage-and-hydration",
+        "context-compaction",
+        "multi-agent-delegation",
+        "action-execution-safety",
+        "agent-state-persistence",
+        "self-improving-harness"
+      ]
+    },
+    {
       "id": "mcp-tool-layer",
       "type": "concept",
       "kind": null,
@@ -2471,7 +2510,8 @@
         "paginated-tool-contract",
         "prompt-injection-and-isolation",
         "code-execution-sandbox-pattern",
-        "agent-skills-progressive-disclosure"
+        "agent-skills-progressive-disclosure",
+        "managed-agent-apis"
       ]
     },
     {
@@ -3565,7 +3605,8 @@
         "action-execution-safety",
         "llm-evaluation",
         "multi-agent-delegation",
-        "agent-harness"
+        "agent-harness",
+        "managed-agent-apis"
       ]
     },
     {
@@ -5271,6 +5312,11 @@
     {
       "from": "agent-harness",
       "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
+      "to": "managed-agent-apis",
       "kind": "related"
     },
     {
@@ -7354,6 +7400,56 @@
       "kind": "related"
     },
     {
+      "from": "managed-agent-apis",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "managed-agent-apis",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "managed-agent-apis",
+      "to": "agent-harness",
+      "kind": "related"
+    },
+    {
+      "from": "managed-agent-apis",
+      "to": "agent-state-persistence",
+      "kind": "related"
+    },
+    {
+      "from": "managed-agent-apis",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "managed-agent-apis",
+      "to": "context-storage-and-hydration",
+      "kind": "related"
+    },
+    {
+      "from": "managed-agent-apis",
+      "to": "mcp-tool-layer",
+      "kind": "related"
+    },
+    {
+      "from": "managed-agent-apis",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "managed-agent-apis",
+      "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "managed-agent-apis",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
       "from": "mcp-tool-layer",
       "to": "agent-skills-progressive-disclosure",
       "kind": "related"
@@ -7361,6 +7457,11 @@
     {
       "from": "mcp-tool-layer",
       "to": "code-execution-sandbox-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tool-layer",
+      "to": "managed-agent-apis",
       "kind": "related"
     },
     {
@@ -8511,6 +8612,11 @@
     {
       "from": "self-improving-harness",
       "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "self-improving-harness",
+      "to": "managed-agent-apis",
       "kind": "related"
     },
     {

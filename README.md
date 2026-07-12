@@ -75,6 +75,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [stop-and-yield-conditions](nodes/concepts/stop-and-yield-conditions.md) — the three ways a loop can end — done, blocked-needs-user, or failed — and why 'yield to user' is distinct from 'stop'.
 
 **[agent-harness](nodes/topics/agent-harness.md)**
+- [managed-agent-apis](nodes/concepts/managed-agent-apis.md) — build-vs-buy the agent loop: three tiers from a single Messages call, to a self-hosted loop (Tool Runner + server-side primitives), to a fully hosted harness (Claude Managed Agents / OpenAI Responses+Agents SDK) that runs the loop, sandbox, tools, and state for you — trading loop control (and ZDR/HIPAA + cloud-provider parity) for less code, not for tool openness.
 - [self-improving-harness](nodes/concepts/self-improving-harness.md) — optimize the code around the model — prompts → context → workflow → harness code → optimizer code — gated by regression tests, with security kept outside the loop; a capable base model is a precondition.
 
 **[agent-memory](nodes/topics/agent-memory.md)**

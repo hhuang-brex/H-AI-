@@ -12,6 +12,7 @@ related:
   - [[llm-evaluation]]
   - [[multi-agent-delegation]]
   - [[agent-harness]]
+  - [[managed-agent-apis]]
 status: living
 created: 2026-07-07
 ---
