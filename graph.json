@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-11",
-  "node_count": 152,
-  "edge_count": 1042,
+  "generated": "2026-07-12",
+  "node_count": 156,
+  "edge_count": 1081,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -622,7 +622,8 @@
         "decision-engine-contract",
         "llm-observability",
         "self-improving-harness",
-        "agent-harness"
+        "agent-harness",
+        "reflection-loop-taxonomy"
       ]
     },
     {
@@ -1297,7 +1298,8 @@
         "domain-knowledge-injection",
         "sms-context-windowing",
         "agentic-context-engineering-ace",
-        "agent-skills-progressive-disclosure"
+        "agent-skills-progressive-disclosure",
+        "text-to-sql-retrieval"
       ]
     },
     {
@@ -2283,6 +2285,36 @@
       ]
     },
     {
+      "id": "live-traffic-eval",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/live-traffic-eval.md",
+      "title": "Live-Traffic Evaluation",
+      "summary": "reference-free scoring of actual production outputs on a cadence to catch live regressions/hallucinations \u2014 distinct from prod-shadow-replay and passive observability; pairs with change-triggered dataset evals.",
+      "tags": [
+        "eval",
+        "monitoring",
+        "production",
+        "reference-free",
+        "ragas",
+        "observability"
+      ],
+      "status": "living",
+      "created": "2026-07-10",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "prod-shadow-replay",
+        "llm-observability",
+        "eval-dataset-quality",
+        "llm-as-judge",
+        "prince-reliable-agentic-case-study"
+      ]
+    },
+    {
       "id": "llm-as-autoformalizer-plus-solver",
       "type": "concept",
       "kind": null,
@@ -2372,7 +2404,8 @@
         "eval-dataset-quality",
         "eval-case-design",
         "verbal-self-correction",
-        "collaborative-agent-eval"
+        "collaborative-agent-eval",
+        "live-traffic-eval"
       ]
     },
     {
@@ -3061,6 +3094,49 @@
       ]
     },
     {
+      "id": "prince-reliable-agentic-case-study",
+      "type": "project",
+      "kind": "snapshot",
+      "path": "nodes/projects/prince-reliable-agentic-case-study.md",
+      "title": "PRINCE \u2014 Reliable Agentic AI Case Study (Snapshot)",
+      "summary": "Bayer/Thoughtworks PRINCE \u2014 a shipped, peer-reviewed production agentic-RAG + Text-to-SQL system; field validation that reliability = context engineering + harness engineering.",
+      "tags": [
+        "case-study",
+        "agents",
+        "rag",
+        "text-to-sql",
+        "context-engineering",
+        "harness",
+        "pharma",
+        "eval",
+        "production"
+      ],
+      "status": "snapshot",
+      "created": "2026-07-10",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "context-engineering",
+        "agent-harness",
+        "domain-knowledge-injection",
+        "grounding-and-citation",
+        "multi-agent-delegation",
+        "verbal-self-correction",
+        "plan-execute-replan",
+        "checkpoint-and-replay",
+        "crash-recovery-consistency",
+        "llm-evaluation",
+        "llm-observability",
+        "human-in-the-loop-control",
+        "action-execution-safety",
+        "subagent-context-isolation",
+        "context-assembly-per-turn",
+        "text-to-sql-retrieval",
+        "live-traffic-eval",
+        "reflection-loop-taxonomy"
+      ]
+    },
+    {
       "id": "prod-shadow-replay",
       "type": "concept",
       "kind": null,
@@ -3374,6 +3450,36 @@
         "forced-tool-call-output",
         "layered-defense-pipeline",
         "schema-vs-validator"
+      ]
+    },
+    {
+      "id": "reflection-loop-taxonomy",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/reflection-loop-taxonomy.md",
+      "title": "Reflection-Loop Taxonomy",
+      "summary": "classify self-correction loops by what-is-validated \u00d7 pipeline-stage \u2014 process (planning) / data (evidence) / draft (output) reflection; the stage-bound structuring of verbal-self-correction's primitives.",
+      "tags": [
+        "agents",
+        "reflection",
+        "self-correction",
+        "control-loop",
+        "pipeline",
+        "reliability"
+      ],
+      "status": "living",
+      "created": "2026-07-10",
+      "clusters": [
+        "agent-control-loop"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-control-loop",
+        "verbal-self-correction",
+        "plan-execute-replan",
+        "goal-decomposition",
+        "multi-agent-delegation",
+        "prince-reliable-agentic-case-study"
       ]
     },
     {
@@ -4116,6 +4222,36 @@
         "cost-aware-eval",
         "golden-snapshot-eval",
         "agent-eval-case-study"
+      ]
+    },
+    {
+      "id": "text-to-sql-retrieval",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/text-to-sql-retrieval.md",
+      "title": "Text-to-SQL Retrieval",
+      "summary": "natural-language\u2192SQL over a structured store as a retrieval modality beside RAG \u2014 with its guardrail bundle: dynamic schema selection, dynamic few-shot, SELECT-only, record cap, bounded self-correcting retry.",
+      "tags": [
+        "retrieval",
+        "text-to-sql",
+        "structured-data",
+        "tools",
+        "guardrails",
+        "grounding"
+      ],
+      "status": "living",
+      "created": "2026-07-10",
+      "clusters": [
+        "context-engineering"
+      ],
+      "source_thread": null,
+      "related": [
+        "context-engineering",
+        "domain-knowledge-injection",
+        "action-execution-safety",
+        "plan-execute-replan",
+        "grounding-and-citation",
+        "prince-reliable-agentic-case-study"
       ]
     },
     {
@@ -5166,6 +5302,11 @@
     },
     {
       "from": "agent-control-loop",
+      "to": "reflection-loop-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
       "to": "self-improving-harness",
       "kind": "related"
     },
@@ -6062,6 +6203,11 @@
     {
       "from": "context-engineering",
       "to": "sms-context-windowing",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "text-to-sql-retrieval",
       "kind": "related"
     },
     {
@@ -7150,6 +7296,36 @@
       "kind": "related"
     },
     {
+      "from": "live-traffic-eval",
+      "to": "eval-dataset-quality",
+      "kind": "related"
+    },
+    {
+      "from": "live-traffic-eval",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "live-traffic-eval",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "live-traffic-eval",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "live-traffic-eval",
+      "to": "prince-reliable-agentic-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "live-traffic-eval",
+      "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
       "from": "llm-as-autoformalizer-plus-solver",
       "to": "decision-engine-contract",
       "kind": "related"
@@ -7252,6 +7428,11 @@
     {
       "from": "llm-evaluation",
       "to": "golden-snapshot-eval",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "live-traffic-eval",
       "kind": "related"
     },
     {
@@ -8075,6 +8256,96 @@
       "kind": "related"
     },
     {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "agent-harness",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "checkpoint-and-replay",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "context-assembly-per-turn",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "crash-recovery-consistency",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "grounding-and-citation",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "human-in-the-loop-control",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "live-traffic-eval",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "plan-execute-replan",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "reflection-loop-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "subagent-context-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "text-to-sql-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "prince-reliable-agentic-case-study",
+      "to": "verbal-self-correction",
+      "kind": "related"
+    },
+    {
       "from": "prod-shadow-replay",
       "to": "agent-eval-case-study",
       "kind": "related"
@@ -8412,6 +8683,36 @@
     {
       "from": "references-template-rendered-output",
       "to": "template-rendered-output",
+      "kind": "related"
+    },
+    {
+      "from": "reflection-loop-taxonomy",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "reflection-loop-taxonomy",
+      "to": "goal-decomposition",
+      "kind": "related"
+    },
+    {
+      "from": "reflection-loop-taxonomy",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "reflection-loop-taxonomy",
+      "to": "plan-execute-replan",
+      "kind": "related"
+    },
+    {
+      "from": "reflection-loop-taxonomy",
+      "to": "prince-reliable-agentic-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "reflection-loop-taxonomy",
+      "to": "verbal-self-correction",
       "kind": "related"
     },
     {
@@ -9277,6 +9578,36 @@
     {
       "from": "test-pyramid-llm",
       "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "text-to-sql-retrieval",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "text-to-sql-retrieval",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "text-to-sql-retrieval",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "text-to-sql-retrieval",
+      "to": "grounding-and-citation",
+      "kind": "related"
+    },
+    {
+      "from": "text-to-sql-retrieval",
+      "to": "plan-execute-replan",
+      "kind": "related"
+    },
+    {
+      "from": "text-to-sql-retrieval",
+      "to": "prince-reliable-agentic-case-study",
       "kind": "related"
     },
     {

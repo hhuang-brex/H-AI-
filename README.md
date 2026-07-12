@@ -70,6 +70,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [decision-engine-contract](nodes/concepts/decision-engine-contract.md) — layered output (decision + confidence + next-action) as the wire format every surface consumes.
 - [llm-observability](nodes/concepts/llm-observability.md) — debugging \"why did the model respond this way?\" — what frontier APIs actually return (mostly summaries), platform feature reality, OTel state.
 - [perceive-reason-act-loop](nodes/concepts/perceive-reason-act-loop.md) — the core agent iteration — observe state, decide one action, execute, observe result — and why each turn should commit to exactly one action.
+- [reflection-loop-taxonomy](nodes/concepts/reflection-loop-taxonomy.md) — classify self-correction loops by what-is-validated × pipeline-stage — process (planning) / data (evidence) / draft (output) reflection; the stage-bound structuring of verbal-self-correction's primitives.
 - [self-improving-harness](nodes/concepts/self-improving-harness.md) — optimize the code around the model — prompts → context → workflow → harness code → optimizer code — gated by regression tests, with security kept outside the loop; a capable base model is a precondition.
 - [step-budget-and-runaway-control](nodes/concepts/step-budget-and-runaway-control.md) — hard ceilings on loop iterations, tokens, wall-clock, and tool calls so a stuck agent fails loudly instead of running forever.
 - [stop-and-yield-conditions](nodes/concepts/stop-and-yield-conditions.md) — the three ways a loop can end — done, blocked-needs-user, or failed — and why 'yield to user' is distinct from 'stop'.
@@ -122,6 +123,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [conversation-memory](nodes/concepts/conversation-memory.md) — three horizons; what to remember, what not to.
 - [domain-knowledge-injection](nodes/concepts/domain-knowledge-injection.md) — RAG, prompt-stuffing, structured state, fine-tuning per knowledge type.
 - [sms-context-windowing](nodes/concepts/sms-context-windowing.md) — what's in the prompt: per-thread, structured, bounded.
+- [text-to-sql-retrieval](nodes/concepts/text-to-sql-retrieval.md) — natural-language→SQL over a structured store as a retrieval modality beside RAG — with its guardrail bundle: dynamic schema selection, dynamic few-shot, SELECT-only, record cap, bounded self-correcting retry.
 
 **[domain-chatbot-design](nodes/topics/domain-chatbot-design.md)**
 - [action-authority](nodes/concepts/action-authority.md) — what the bot can *do*; tiered authority enforced at the tool layer.
@@ -156,6 +158,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [eval-dataset-quality](nodes/concepts/eval-dataset-quality.md) — audit the eval set as an instrument — validity, label agreement, discrimination (negative-control), contamination, drift — not just the model's score.
 - [execution-invariant-testing](nodes/concepts/execution-invariant-testing.md) — asserting an agent's safety properties as tests — run-twice-equals-once, crash-anywhere-resumes-consistently, never-exceeds-budget — instead of hoping they hold.
 - [golden-snapshot-eval](nodes/concepts/golden-snapshot-eval.md) — pre-LLM deterministic checks.
+- [live-traffic-eval](nodes/concepts/live-traffic-eval.md) — reference-free scoring of actual production outputs on a cadence to catch live regressions/hallucinations — distinct from prod-shadow-replay and passive observability; pairs with change-triggered dataset evals.
 - [llm-as-judge](nodes/concepts/llm-as-judge.md) — calibration, bias, multi-vote, cascading.
 - [offline-prompt-optimization](nodes/concepts/offline-prompt-optimization.md) — improve an agent skill by searching prompt space offline, scored end-to-end by the real agent — not hand-tuning.
 - [prod-shadow-replay](nodes/concepts/prod-shadow-replay.md) — closing the gap between frozen datasets and live traffic.
@@ -236,6 +239,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 **Snapshots**
 - [agent-eval-case-study](nodes/projects/agent-eval-case-study.md) — generalized agent platform eval system (2026-06-05 snapshot).
 - [dspy-domain-chatbot-cases](nodes/projects/dspy-domain-chatbot-cases.md) — verified DSPy domain-chatbot success examples (JetBlue, Dr.Copilot, etc.; 2026-06-09 snapshot).
+- [prince-reliable-agentic-case-study](nodes/projects/prince-reliable-agentic-case-study.md) — Bayer/Thoughtworks PRINCE — a shipped, peer-reviewed production agentic-RAG + Text-to-SQL system; field validation that reliability = context engineering + harness engineering.
 
 **Worked examples**
 - [worked-example-anthropic-thinking](nodes/projects/worked-example-anthropic-thinking.md) — Python code: capturing reasoning, signature continuity, forced-tool-call constraint, hidden billing.

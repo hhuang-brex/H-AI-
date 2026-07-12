@@ -21,6 +21,7 @@ related:
   - [[llm-observability]]
   - [[self-improving-harness]]
   - [[agent-harness]]
+  - [[reflection-loop-taxonomy]]
 status: living
 created: 2026-06-11
 ---
