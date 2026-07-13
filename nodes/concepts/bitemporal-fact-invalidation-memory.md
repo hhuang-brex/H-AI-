@@ -11,6 +11,7 @@ related:
   - [[agent-native-memory-framework]]
   - [[prompt-time-knowledge-capture]]
   - [[references-ontology-llm-agents]]
+  - [[memory-poisoning]]
 status: living
 created: 2026-07-03
 ---

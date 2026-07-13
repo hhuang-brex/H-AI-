@@ -24,6 +24,7 @@ related:
   - [[references-memory-theory]]
   - [[proactive-memory-intervention]]
   - [[prompt-time-knowledge-capture]]
+  - [[memory-poisoning]]
 status: living
 created: 2026-06-12
 ---

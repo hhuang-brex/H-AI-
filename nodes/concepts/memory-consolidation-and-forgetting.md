@@ -12,6 +12,7 @@ related:
   - [[context-compaction]]
   - [[prompt-time-knowledge-capture]]
   - [[references-context-and-memory]]
+  - [[memory-poisoning]]
 status: living
 created: 2026-06-12
 ---

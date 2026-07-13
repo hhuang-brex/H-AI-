@@ -15,6 +15,7 @@ related:
   - [[dry-run-and-preview]]
   - [[safety-rails-domain-specific]]
   - [[mcp-tool-layer]]
+  - [[memory-poisoning]]
 status: living
 created: 2026-07-10
 summary: "the threat model for agents that act — you cannot reliably detect injected instructions, so the boundary is architectural: least-privilege isolation of what a compromised session CAN do (lethal trifecta / Agents Rule of Two)."

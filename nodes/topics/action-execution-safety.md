@@ -16,6 +16,7 @@ related:
   - [[interrupt-and-resume]]
   - [[step-budget-and-runaway-control]]
   - [[prompt-injection-and-isolation]]
+  - [[memory-poisoning]]
 status: living
 created: 2026-06-11
 ---

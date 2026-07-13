@@ -15,6 +15,7 @@ related:
   - [[prompt-injection-and-isolation]]
   - [[confirm-before-act]]
   - [[references-ontology-llm-agents]]
+  - [[memory-poisoning]]
 status: living
 created: 2026-07-12
 ---

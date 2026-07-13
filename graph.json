@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-12",
-  "node_count": 161,
-  "edge_count": 1143,
+  "node_count": 162,
+  "edge_count": 1161,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -558,7 +558,8 @@
         "hard-surface-irrevocability",
         "interrupt-and-resume",
         "step-budget-and-runaway-control",
-        "prompt-injection-and-isolation"
+        "prompt-injection-and-isolation",
+        "memory-poisoning"
       ]
     },
     {
@@ -786,7 +787,8 @@
         "references-context-and-memory",
         "references-memory-theory",
         "proactive-memory-intervention",
-        "prompt-time-knowledge-capture"
+        "prompt-time-knowledge-capture",
+        "memory-poisoning"
       ]
     },
     {
@@ -1070,7 +1072,8 @@
         "memory-consolidation-and-forgetting",
         "agent-native-memory-framework",
         "prompt-time-knowledge-capture",
-        "references-ontology-llm-agents"
+        "references-ontology-llm-agents",
+        "memory-poisoning"
       ]
     },
     {
@@ -2691,7 +2694,8 @@
         "agentic-context-engineering-ace",
         "context-compaction",
         "prompt-time-knowledge-capture",
-        "references-context-and-memory"
+        "references-context-and-memory",
+        "memory-poisoning"
       ]
     },
     {
@@ -2723,6 +2727,46 @@
         "memory-consolidation-and-forgetting",
         "domain-knowledge-injection",
         "references-context-and-memory"
+      ]
+    },
+    {
+      "id": "memory-poisoning",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/memory-poisoning.md",
+      "title": "Memory Poisoning",
+      "summary": "the persisted/delayed attack on agent memory \u2014 untrusted content is WRITTEN into a durable store in one turn and TRIGGERS a harmful action on a later turn or for a different reader; persistence amplifies blast radius across time/sessions/readers, and self-attested provenance is launderable, so authority must be bound at write time.",
+      "tags": [
+        "agent",
+        "memory",
+        "security",
+        "prompt-injection",
+        "poisoning",
+        "persistence",
+        "threat-model",
+        "safety",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-07-12",
+      "clusters": [
+        "action-execution-safety",
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "action-execution-safety",
+        "prompt-injection-and-isolation",
+        "prompt-time-knowledge-capture",
+        "memory-consolidation-and-forgetting",
+        "bitemporal-fact-invalidation-memory",
+        "memory-retrieval",
+        "action-authority",
+        "tool-result-grounding",
+        "adversarial-eval",
+        "multi-agent-delegation",
+        "agent-native-memory-framework"
       ]
     },
     {
@@ -3346,7 +3390,8 @@
         "adversarial-eval",
         "dry-run-and-preview",
         "safety-rails-domain-specific",
-        "mcp-tool-layer"
+        "mcp-tool-layer",
+        "memory-poisoning"
       ]
     },
     {
@@ -3382,7 +3427,8 @@
         "text-to-sql-retrieval",
         "prompt-injection-and-isolation",
         "confirm-before-act",
-        "references-ontology-llm-agents"
+        "references-ontology-llm-agents",
+        "memory-poisoning"
       ]
     },
     {
@@ -5395,6 +5441,11 @@
     },
     {
       "from": "action-execution-safety",
+      "to": "memory-poisoning",
+      "kind": "related"
+    },
+    {
+      "from": "action-execution-safety",
       "to": "prompt-injection-and-isolation",
       "kind": "related"
     },
@@ -5790,6 +5841,11 @@
     },
     {
       "from": "agent-memory",
+      "to": "memory-poisoning",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
       "to": "memory-retrieval",
       "kind": "related"
     },
@@ -6151,6 +6207,11 @@
     {
       "from": "bitemporal-fact-invalidation-memory",
       "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "bitemporal-fact-invalidation-memory",
+      "to": "memory-poisoning",
       "kind": "related"
     },
     {
@@ -8075,6 +8136,11 @@
     },
     {
       "from": "memory-consolidation-and-forgetting",
+      "to": "memory-poisoning",
+      "kind": "related"
+    },
+    {
+      "from": "memory-consolidation-and-forgetting",
       "to": "memory-retrieval",
       "kind": "related"
     },
@@ -8126,6 +8192,66 @@
     {
       "from": "memory-graph-topology",
       "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "memory-poisoning",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "memory-poisoning",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "memory-poisoning",
+      "to": "adversarial-eval",
+      "kind": "related"
+    },
+    {
+      "from": "memory-poisoning",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "memory-poisoning",
+      "to": "agent-native-memory-framework",
+      "kind": "related"
+    },
+    {
+      "from": "memory-poisoning",
+      "to": "bitemporal-fact-invalidation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "memory-poisoning",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "memory-poisoning",
+      "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "memory-poisoning",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "memory-poisoning",
+      "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "memory-poisoning",
+      "to": "prompt-time-knowledge-capture",
+      "kind": "related"
+    },
+    {
+      "from": "memory-poisoning",
+      "to": "tool-result-grounding",
       "kind": "related"
     },
     {
@@ -8850,6 +8976,11 @@
     },
     {
       "from": "prompt-injection-and-isolation",
+      "to": "memory-poisoning",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
       "to": "safety-rails-domain-specific",
       "kind": "related"
     },
@@ -8886,6 +9017,11 @@
     {
       "from": "prompt-time-knowledge-capture",
       "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-time-knowledge-capture",
+      "to": "memory-poisoning",
       "kind": "related"
     },
     {
