@@ -10,6 +10,7 @@ related:
   - [[memory-consolidation-and-forgetting]]
   - [[eval-dataset-quality]]
   - [[agentic-context-engineering-ace]]
+  - [[prompt-time-knowledge-capture]]
 status: living
 created: 2026-06-24
 ---

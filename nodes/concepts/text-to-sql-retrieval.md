@@ -8,6 +8,7 @@ related:
   - [[action-execution-safety]]
   - [[plan-execute-replan]]
   - [[grounding-and-citation]]
+  - [[prompt-time-knowledge-capture]]
   - [[prince-reliable-agentic-case-study]]
 status: living
 created: 2026-07-10

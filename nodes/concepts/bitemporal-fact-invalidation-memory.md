@@ -9,6 +9,7 @@ related:
   - [[domain-event-task-ontology]]
   - [[memory-consolidation-and-forgetting]]
   - [[agent-native-memory-framework]]
+  - [[prompt-time-knowledge-capture]]
   - [[references-ontology-llm-agents]]
 status: living
 created: 2026-07-03

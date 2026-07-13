@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-12",
-  "node_count": 160,
-  "edge_count": 1127,
+  "node_count": 161,
+  "edge_count": 1143,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -785,7 +785,8 @@
         "domain-knowledge-injection",
         "references-context-and-memory",
         "references-memory-theory",
-        "proactive-memory-intervention"
+        "proactive-memory-intervention",
+        "prompt-time-knowledge-capture"
       ]
     },
     {
@@ -815,7 +816,8 @@
         "memory-retrieval",
         "memory-consolidation-and-forgetting",
         "eval-dataset-quality",
-        "agentic-context-engineering-ace"
+        "agentic-context-engineering-ace",
+        "prompt-time-knowledge-capture"
       ]
     },
     {
@@ -1067,6 +1069,7 @@
         "domain-event-task-ontology",
         "memory-consolidation-and-forgetting",
         "agent-native-memory-framework",
+        "prompt-time-knowledge-capture",
         "references-ontology-llm-agents"
       ]
     },
@@ -2687,6 +2690,7 @@
         "agent-native-memory-framework",
         "agentic-context-engineering-ace",
         "context-compaction",
+        "prompt-time-knowledge-capture",
         "references-context-and-memory"
       ]
     },
@@ -3343,6 +3347,42 @@
         "dry-run-and-preview",
         "safety-rails-domain-specific",
         "mcp-tool-layer"
+      ]
+    },
+    {
+      "id": "prompt-time-knowledge-capture",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/prompt-time-knowledge-capture.md",
+      "title": "Prompt-Time Knowledge Capture (P2T)",
+      "summary": "the synchronous write path \u2014 extract structured subject-predicate-object triples from the user's utterance AT interaction time (P2T, \u00c7\u00f6pl\u00fc et al. 2024), the commit boundary where a memory item is born; owns capture-at-say, upstream of consolidation, invalidation, and retrieval.",
+      "tags": [
+        "agent",
+        "memory",
+        "knowledge-graph",
+        "extraction",
+        "write-path",
+        "ontology",
+        "security"
+      ],
+      "status": "living",
+      "created": "2026-07-12",
+      "clusters": [
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "agent-native-memory-framework",
+        "memory-consolidation-and-forgetting",
+        "bitemporal-fact-invalidation-memory",
+        "domain-event-task-ontology",
+        "ontology-grounded-agent",
+        "ontology-as-validator-shacl",
+        "text-to-sql-retrieval",
+        "prompt-injection-and-isolation",
+        "confirm-before-act",
+        "references-ontology-llm-agents"
       ]
     },
     {
@@ -4398,6 +4438,7 @@
         "action-execution-safety",
         "plan-execute-replan",
         "grounding-and-citation",
+        "prompt-time-knowledge-capture",
         "prince-reliable-agentic-case-study"
       ]
     },
@@ -5769,6 +5810,11 @@
     },
     {
       "from": "agent-memory",
+      "to": "prompt-time-knowledge-capture",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
       "to": "references-context-and-memory",
       "kind": "related"
     },
@@ -5805,6 +5851,11 @@
     {
       "from": "agent-native-memory-framework",
       "to": "memory-types-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "agent-native-memory-framework",
+      "to": "prompt-time-knowledge-capture",
       "kind": "related"
     },
     {
@@ -6105,6 +6156,11 @@
     {
       "from": "bitemporal-fact-invalidation-memory",
       "to": "ontology-grounded-agent",
+      "kind": "related"
+    },
+    {
+      "from": "bitemporal-fact-invalidation-memory",
+      "to": "prompt-time-knowledge-capture",
       "kind": "related"
     },
     {
@@ -8029,6 +8085,11 @@
     },
     {
       "from": "memory-consolidation-and-forgetting",
+      "to": "prompt-time-knowledge-capture",
+      "kind": "related"
+    },
+    {
+      "from": "memory-consolidation-and-forgetting",
       "to": "references-context-and-memory",
       "kind": "related"
     },
@@ -8795,6 +8856,61 @@
     {
       "from": "prompt-injection-and-isolation",
       "to": "tool-result-grounding",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-time-knowledge-capture",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-time-knowledge-capture",
+      "to": "agent-native-memory-framework",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-time-knowledge-capture",
+      "to": "bitemporal-fact-invalidation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-time-knowledge-capture",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-time-knowledge-capture",
+      "to": "domain-event-task-ontology",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-time-knowledge-capture",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-time-knowledge-capture",
+      "to": "ontology-as-validator-shacl",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-time-knowledge-capture",
+      "to": "ontology-grounded-agent",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-time-knowledge-capture",
+      "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-time-knowledge-capture",
+      "to": "references-ontology-llm-agents",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-time-knowledge-capture",
+      "to": "text-to-sql-retrieval",
       "kind": "related"
     },
     {
@@ -9985,6 +10101,11 @@
     {
       "from": "text-to-sql-retrieval",
       "to": "prince-reliable-agentic-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "text-to-sql-retrieval",
+      "to": "prompt-time-knowledge-capture",
       "kind": "related"
     },
     {

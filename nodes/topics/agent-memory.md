@@ -23,6 +23,7 @@ related:
   - [[references-context-and-memory]]
   - [[references-memory-theory]]
   - [[proactive-memory-intervention]]
+  - [[prompt-time-knowledge-capture]]
 status: living
 created: 2026-06-12
 ---

@@ -10,6 +10,7 @@ related:
   - [[agent-native-memory-framework]]
   - [[agentic-context-engineering-ace]]
   - [[context-compaction]]
+  - [[prompt-time-knowledge-capture]]
   - [[references-context-and-memory]]
 status: living
 created: 2026-06-12
