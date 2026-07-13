@@ -14,6 +14,7 @@ related:
   - [[action-execution-safety]]
   - [[agent-state-persistence]]
   - [[self-improving-harness]]
+  - [[background-agent-execution]]
 status: living
 created: 2026-07-10
 ---

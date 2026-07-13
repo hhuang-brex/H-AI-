@@ -11,6 +11,7 @@ related:
   - [[stop-and-yield-conditions]]
   - [[decision-audit-trail]]
   - [[step-budget-and-runaway-control]]
+  - [[background-agent-execution]]
 status: living
 created: 2026-06-11
 ---

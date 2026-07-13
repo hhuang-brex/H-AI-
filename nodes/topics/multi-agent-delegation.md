@@ -14,6 +14,7 @@ related:
   - [[result-aggregation-and-trust]]
   - [[escalation-handoff]]
   - [[engine-vs-conversation-routing]]
+  - [[background-agent-execution]]
 status: living
 created: 2026-06-11
 ---

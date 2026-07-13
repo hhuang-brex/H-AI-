@@ -16,6 +16,7 @@ related:
   - [[self-improving-harness]]
   - [[managed-agent-apis]]
   - [[harness-token-economics]]
+  - [[background-agent-execution]]
 status: living
 created: 2026-07-10
 ---

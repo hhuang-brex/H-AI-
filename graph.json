@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-12",
-  "node_count": 159,
-  "edge_count": 1111,
+  "node_count": 160,
+  "edge_count": 1127,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -743,7 +743,8 @@
         "llm-evaluation",
         "self-improving-harness",
         "managed-agent-apis",
-        "harness-token-economics"
+        "harness-token-economics",
+        "background-agent-execution"
       ]
     },
     {
@@ -997,6 +998,46 @@
         "sms-state-machine",
         "turn-taking-and-proactivity",
         "sms-recovery-and-reentry"
+      ]
+    },
+    {
+      "id": "background-agent-execution",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/background-agent-execution.md",
+      "title": "Background Agent Execution",
+      "summary": "the detached execution lifecycle: a run that keeps going after the launching client leaves, whose lifecycle a supervisor or managed service owns \u2014 covering fleet registry + per-run addressability, workspace/concurrency isolation, session-independent triggers (schedule/webhook/VCS), zero-token waiting, and out-of-band completion/needs-input signaling for jobs nobody is watching.",
+      "tags": [
+        "agent",
+        "harness",
+        "background",
+        "async",
+        "detached",
+        "supervisor",
+        "scheduling",
+        "lifecycle",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-07-12",
+      "clusters": [
+        "agent-harness",
+        "multi-agent-delegation"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-harness",
+        "managed-agent-apis",
+        "multi-agent-delegation",
+        "subagent-context-isolation",
+        "interrupt-and-resume",
+        "run-state-model",
+        "agent-state-persistence",
+        "crash-recovery-consistency",
+        "step-budget-and-runaway-control",
+        "harness-token-economics",
+        "llm-observability",
+        "when-to-delegate"
       ]
     },
     {
@@ -2268,7 +2309,8 @@
         "mid-task-steering",
         "stop-and-yield-conditions",
         "decision-audit-trail",
-        "step-budget-and-runaway-control"
+        "step-budget-and-runaway-control",
+        "background-agent-execution"
       ]
     },
     {
@@ -2579,7 +2621,8 @@
         "multi-agent-delegation",
         "action-execution-safety",
         "agent-state-persistence",
-        "self-improving-harness"
+        "self-improving-harness",
+        "background-agent-execution"
       ]
     },
     {
@@ -2825,7 +2868,8 @@
         "subagent-context-isolation",
         "result-aggregation-and-trust",
         "escalation-handoff",
-        "engine-vs-conversation-routing"
+        "engine-vs-conversation-routing",
+        "background-agent-execution"
       ]
     },
     {
@@ -5595,6 +5639,11 @@
     },
     {
       "from": "agent-harness",
+      "to": "background-agent-execution",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
       "to": "context-engineering",
       "kind": "related"
     },
@@ -5971,6 +6020,66 @@
     {
       "from": "async-conversation-pacing",
       "to": "turn-taking-and-proactivity",
+      "kind": "related"
+    },
+    {
+      "from": "background-agent-execution",
+      "to": "agent-harness",
+      "kind": "related"
+    },
+    {
+      "from": "background-agent-execution",
+      "to": "agent-state-persistence",
+      "kind": "related"
+    },
+    {
+      "from": "background-agent-execution",
+      "to": "crash-recovery-consistency",
+      "kind": "related"
+    },
+    {
+      "from": "background-agent-execution",
+      "to": "harness-token-economics",
+      "kind": "related"
+    },
+    {
+      "from": "background-agent-execution",
+      "to": "interrupt-and-resume",
+      "kind": "related"
+    },
+    {
+      "from": "background-agent-execution",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "background-agent-execution",
+      "to": "managed-agent-apis",
+      "kind": "related"
+    },
+    {
+      "from": "background-agent-execution",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "background-agent-execution",
+      "to": "run-state-model",
+      "kind": "related"
+    },
+    {
+      "from": "background-agent-execution",
+      "to": "step-budget-and-runaway-control",
+      "kind": "related"
+    },
+    {
+      "from": "background-agent-execution",
+      "to": "subagent-context-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "background-agent-execution",
+      "to": "when-to-delegate",
       "kind": "related"
     },
     {
@@ -7410,6 +7519,11 @@
     },
     {
       "from": "interrupt-and-resume",
+      "to": "background-agent-execution",
+      "kind": "related"
+    },
+    {
+      "from": "interrupt-and-resume",
       "to": "decision-audit-trail",
       "kind": "related"
     },
@@ -7805,6 +7919,11 @@
     },
     {
       "from": "managed-agent-apis",
+      "to": "background-agent-execution",
+      "kind": "related"
+    },
+    {
+      "from": "managed-agent-apis",
       "to": "context-compaction",
       "kind": "related"
     },
@@ -8051,6 +8170,11 @@
     {
       "from": "multi-agent-delegation",
       "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "multi-agent-delegation",
+      "to": "background-agent-execution",
       "kind": "related"
     },
     {

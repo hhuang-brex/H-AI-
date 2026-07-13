@@ -76,6 +76,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [stop-and-yield-conditions](nodes/concepts/stop-and-yield-conditions.md) — the three ways a loop can end — done, blocked-needs-user, or failed — and why 'yield to user' is distinct from 'stop'.
 
 **[agent-harness](nodes/topics/agent-harness.md)**
+- [background-agent-execution](nodes/concepts/background-agent-execution.md) — the detached execution lifecycle: a run that keeps going after the launching client leaves, whose lifecycle a supervisor or managed service owns — covering fleet registry + per-run addressability, workspace/concurrency isolation, session-independent triggers (schedule/webhook/VCS), zero-token waiting, and out-of-band completion/needs-input signaling for jobs nobody is watching.
 - [harness-token-economics](nodes/concepts/harness-token-economics.md) — a self-reported vendor case study that the orchestration layer — not the model — sets the token bill; owns the effective-input-price-under-caching formula and 'cache-shape discipline / two-zone prompt' as first-class levers, plus quality-per-dollar / completions-per-M-token as metrics.
 - [managed-agent-apis](nodes/concepts/managed-agent-apis.md) — build-vs-buy the agent loop: three tiers from a single Messages call, to a self-hosted loop (Tool Runner + server-side primitives), to a fully hosted harness (Claude Managed Agents / OpenAI Responses+Agents SDK) that runs the loop, sandbox, tools, and state for you — trading loop control (and ZDR/HIPAA + cloud-provider parity) for less code, not for tool openness.
 - [self-improving-harness](nodes/concepts/self-improving-harness.md) — optimize the code around the model — prompts → context → workflow → harness code → optimizer code — gated by regression tests, with security kept outside the loop; a capable base model is a precondition.
@@ -184,6 +185,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [template-rendered-output](nodes/concepts/template-rendered-output.md) — stricter sibling: classifier picks a tool, code-owned templates render the reply.
 
 **[multi-agent-delegation](nodes/topics/multi-agent-delegation.md)**
+- [background-agent-execution](nodes/concepts/background-agent-execution.md) — the detached execution lifecycle: a run that keeps going after the launching client leaves, whose lifecycle a supervisor or managed service owns — covering fleet registry + per-run addressability, workspace/concurrency isolation, session-independent triggers (schedule/webhook/VCS), zero-token waiting, and out-of-band completion/needs-input signaling for jobs nobody is watching.
 - [engine-vs-conversation-routing](nodes/concepts/engine-vs-conversation-routing.md) — when the engine handles vs. when the chat layer handles; the bridge between them.
 - [escalation-handoff](nodes/concepts/escalation-handoff.md) — when and how to hand off to a human; preserving context.
 - [result-aggregation-and-trust](nodes/concepts/result-aggregation-and-trust.md) — merging sub-agent outputs without trusting them blindly — dedup, conflict resolution, and adversarial verification of confident-but-wrong children.
