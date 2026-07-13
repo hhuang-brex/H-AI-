@@ -15,6 +15,7 @@ related:
   - [[llm-evaluation]]
   - [[self-improving-harness]]
   - [[managed-agent-apis]]
+  - [[harness-token-economics]]
 status: living
 created: 2026-07-10
 ---

@@ -20,6 +20,7 @@ related:
   - [[verbal-self-correction]]
   - [[collaborative-agent-eval]]
   - [[live-traffic-eval]]
+  - [[agent-failure-modes]]
 status: living
 created: 2026-06-05
 summary: "measuring whether LLM systems do what they should without bankrupting the team."

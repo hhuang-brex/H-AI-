@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-12",
-  "node_count": 156,
-  "edge_count": 1081,
+  "node_count": 159,
+  "edge_count": 1111,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -680,6 +680,39 @@
       ]
     },
     {
+      "id": "agent-failure-modes",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/agent-failure-modes.md",
+      "title": "Agent Failure Modes (Beyond the Leaderboard)",
+      "summary": "a cross-stack map of the six ways agents silently break (survey, secondary evidence) \u2014 owns the genuine-capability-vs-measurement-correction lens and three cross-cutting laws: failures compound nonlinearly with length, sub-skill competence doesn't compose, undirected scaffolding doesn't reliably help.",
+      "tags": [
+        "agent",
+        "failure-taxonomy",
+        "reliability",
+        "measurement-validity",
+        "survey",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-07-12",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": null,
+      "related": [
+        "llm-evaluation",
+        "eval-dataset-quality",
+        "context-compaction",
+        "multi-agent-delegation",
+        "plan-execute-replan",
+        "collaborative-agent-eval",
+        "self-improving-harness",
+        "proactive-memory-intervention",
+        "cost-aware-eval"
+      ]
+    },
+    {
       "id": "agent-harness",
       "type": "topic",
       "kind": null,
@@ -709,7 +742,8 @@
         "multi-agent-delegation",
         "llm-evaluation",
         "self-improving-harness",
-        "managed-agent-apis"
+        "managed-agent-apis",
+        "harness-token-economics"
       ]
     },
     {
@@ -749,7 +783,8 @@
         "experiential-memory-substrates",
         "domain-knowledge-injection",
         "references-context-and-memory",
-        "references-memory-theory"
+        "references-memory-theory",
+        "proactive-memory-intervention"
       ]
     },
     {
@@ -2054,6 +2089,39 @@
       ]
     },
     {
+      "id": "harness-token-economics",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/harness-token-economics.md",
+      "title": "Harness Token Economics",
+      "summary": "a self-reported vendor case study that the orchestration layer \u2014 not the model \u2014 sets the token bill; owns the effective-input-price-under-caching formula and 'cache-shape discipline / two-zone prompt' as first-class levers, plus quality-per-dollar / completions-per-M-token as metrics.",
+      "tags": [
+        "agent",
+        "harness",
+        "cost",
+        "token-economics",
+        "prompt-caching",
+        "orchestration",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-07-12",
+      "clusters": [
+        "agent-harness"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-harness",
+        "cost-aware-eval",
+        "context-compaction",
+        "context-engineering",
+        "managed-agent-apis",
+        "self-improving-harness",
+        "prince-reliable-agentic-case-study",
+        "agent-failure-modes"
+      ]
+    },
+    {
       "id": "human-in-the-loop-control",
       "type": "topic",
       "kind": null,
@@ -2405,7 +2473,8 @@
         "eval-case-design",
         "verbal-self-correction",
         "collaborative-agent-eval",
-        "live-traffic-eval"
+        "live-traffic-eval",
+        "agent-failure-modes"
       ]
     },
     {
@@ -3134,6 +3203,40 @@
         "text-to-sql-retrieval",
         "live-traffic-eval",
         "reflection-loop-taxonomy"
+      ]
+    },
+    {
+      "id": "proactive-memory-intervention",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/proactive-memory-intervention.md",
+      "title": "Proactive Memory Intervention",
+      "summary": "memory as an active PUSH intervention, not passive PULL retrieval \u2014 a separate memory agent watches an unmodified action agent and each step decides whether to inject a reminder or stay silent, to counter 'behavioral state decay' (state that stops steering behavior even while still in context).",
+      "tags": [
+        "agent",
+        "memory",
+        "intervention",
+        "long-horizon",
+        "reliability",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-07-12",
+      "clusters": [
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "memory-retrieval",
+        "context-compaction",
+        "memory-consolidation-and-forgetting",
+        "agent-native-memory-framework",
+        "memory-types-taxonomy",
+        "multi-agent-delegation",
+        "agent-harness",
+        "self-improving-harness",
+        "collaborative-agent-eval"
       ]
     },
     {
@@ -5426,6 +5529,51 @@
       "kind": "related"
     },
     {
+      "from": "agent-failure-modes",
+      "to": "collaborative-agent-eval",
+      "kind": "related"
+    },
+    {
+      "from": "agent-failure-modes",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "agent-failure-modes",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "agent-failure-modes",
+      "to": "eval-dataset-quality",
+      "kind": "related"
+    },
+    {
+      "from": "agent-failure-modes",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "agent-failure-modes",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "agent-failure-modes",
+      "to": "plan-execute-replan",
+      "kind": "related"
+    },
+    {
+      "from": "agent-failure-modes",
+      "to": "proactive-memory-intervention",
+      "kind": "related"
+    },
+    {
+      "from": "agent-failure-modes",
+      "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
       "from": "agent-harness",
       "to": "action-execution-safety",
       "kind": "related"
@@ -5448,6 +5596,11 @@
     {
       "from": "agent-harness",
       "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
+      "to": "harness-token-economics",
       "kind": "related"
     },
     {
@@ -5558,6 +5711,11 @@
     {
       "from": "agent-memory",
       "to": "parametric-memory-and-editing",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
+      "to": "proactive-memory-intervention",
       "kind": "related"
     },
     {
@@ -7081,6 +7239,46 @@
       "kind": "related"
     },
     {
+      "from": "harness-token-economics",
+      "to": "agent-failure-modes",
+      "kind": "related"
+    },
+    {
+      "from": "harness-token-economics",
+      "to": "agent-harness",
+      "kind": "related"
+    },
+    {
+      "from": "harness-token-economics",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "harness-token-economics",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "harness-token-economics",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "harness-token-economics",
+      "to": "managed-agent-apis",
+      "kind": "related"
+    },
+    {
+      "from": "harness-token-economics",
+      "to": "prince-reliable-agentic-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "harness-token-economics",
+      "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
       "from": "human-in-the-loop-control",
       "to": "action-authority",
       "kind": "related"
@@ -7393,6 +7591,11 @@
     {
       "from": "llm-evaluation",
       "to": "agent-eval-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "agent-failure-modes",
       "kind": "related"
     },
     {
@@ -8343,6 +8546,56 @@
     {
       "from": "prince-reliable-agentic-case-study",
       "to": "verbal-self-correction",
+      "kind": "related"
+    },
+    {
+      "from": "proactive-memory-intervention",
+      "to": "agent-harness",
+      "kind": "related"
+    },
+    {
+      "from": "proactive-memory-intervention",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "proactive-memory-intervention",
+      "to": "agent-native-memory-framework",
+      "kind": "related"
+    },
+    {
+      "from": "proactive-memory-intervention",
+      "to": "collaborative-agent-eval",
+      "kind": "related"
+    },
+    {
+      "from": "proactive-memory-intervention",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "proactive-memory-intervention",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "proactive-memory-intervention",
+      "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "proactive-memory-intervention",
+      "to": "memory-types-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "proactive-memory-intervention",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "proactive-memory-intervention",
+      "to": "self-improving-harness",
       "kind": "related"
     },
     {

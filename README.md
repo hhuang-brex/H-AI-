@@ -76,6 +76,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [stop-and-yield-conditions](nodes/concepts/stop-and-yield-conditions.md) — the three ways a loop can end — done, blocked-needs-user, or failed — and why 'yield to user' is distinct from 'stop'.
 
 **[agent-harness](nodes/topics/agent-harness.md)**
+- [harness-token-economics](nodes/concepts/harness-token-economics.md) — a self-reported vendor case study that the orchestration layer — not the model — sets the token bill; owns the effective-input-price-under-caching formula and 'cache-shape discipline / two-zone prompt' as first-class levers, plus quality-per-dollar / completions-per-M-token as metrics.
 - [managed-agent-apis](nodes/concepts/managed-agent-apis.md) — build-vs-buy the agent loop: three tiers from a single Messages call, to a self-hosted loop (Tool Runner + server-side primitives), to a fully hosted harness (Claude Managed Agents / OpenAI Responses+Agents SDK) that runs the loop, sandbox, tools, and state for you — trading loop control (and ZDR/HIPAA + cloud-provider parity) for less code, not for tool openness.
 - [self-improving-harness](nodes/concepts/self-improving-harness.md) — optimize the code around the model — prompts → context → workflow → harness code → optimizer code — gated by regression tests, with security kept outside the loop; a capable base model is a precondition.
 
@@ -94,6 +95,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [memory-retrieval](nodes/concepts/memory-retrieval.md) — surfacing the few relevant memories out of many — recency × relevance × importance scoring — and why a bigger context window doesn't replace it.
 - [memory-types-taxonomy](nodes/concepts/memory-types-taxonomy.md) — the working / episodic / semantic / procedural split borrowed from cognitive science — what each holds, how they differ in write and decay, and when an agent needs more than one.
 - [parametric-memory-and-editing](nodes/concepts/parametric-memory-and-editing.md) — facts live in the weights as a key-value store you can surgically edit (ROME/MEMIT) — and why sequential editing inherits catastrophic forgetting, making external memory the safer choice for mutable facts.
+- [proactive-memory-intervention](nodes/concepts/proactive-memory-intervention.md) — memory as an active PUSH intervention, not passive PULL retrieval — a separate memory agent watches an unmodified action agent and each step decides whether to inject a reminder or stay silent, to counter 'behavioral state decay' (state that stops steering behavior even while still in context).
 
 **[agent-state-persistence](nodes/topics/agent-state-persistence.md)**
 - [checkpoint-and-replay](nodes/concepts/checkpoint-and-replay.md) — when to write durable state — before every risky step — and how to rebuild a live run from the last checkpoint.
@@ -151,6 +153,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 
 **[llm-evaluation](nodes/topics/llm-evaluation.md)**
 - [adversarial-eval](nodes/concepts/adversarial-eval.md) — red-team / safety / prompt injection.
+- [agent-failure-modes](nodes/concepts/agent-failure-modes.md) — a cross-stack map of the six ways agents silently break (survey, secondary evidence) — owns the genuine-capability-vs-measurement-correction lens and three cross-cutting laws: failures compound nonlinearly with length, sub-skill competence doesn't compose, undirected scaffolding doesn't reliably help.
 - [agent-trajectory-eval](nodes/concepts/agent-trajectory-eval.md) — multi-turn, tool sequences, end-state.
 - [collaborative-agent-eval](nodes/concepts/collaborative-agent-eval.md) — evaluating an agent that must act through a semi-autonomous user who also holds tools over a shared world — dual-control (τ²-Bench): solo→interactive gap, compositional verifiable tasks, environment-coupled user simulator, pass^k.
 - [cost-aware-eval](nodes/concepts/cost-aware-eval.md) — sample-size math and budget assertions.

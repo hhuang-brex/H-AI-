@@ -22,6 +22,7 @@ related:
   - [[domain-knowledge-injection]]
   - [[references-context-and-memory]]
   - [[references-memory-theory]]
+  - [[proactive-memory-intervention]]
 status: living
 created: 2026-06-12
 ---
