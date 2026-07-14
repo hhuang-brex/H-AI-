@@ -60,6 +60,33 @@ There is no built-in one. The candidates — **tests, a spec, types, human revie
 
 The discourse is littered with misattributions this node's verification caught: **Don Syme** ("On Natural Language Programming", 2025) is *pro*-NL (argues ambiguity can be useful), not a correctness-critic; **Marc Brooker**'s post is titled "On the *success* of natural language programming" and is *pro*-NL; the claim that Isaac Vando "reframes" Vivek Haldar's abstraction-only defense is ungrounded; and "a sufficiently precise spec simply *is* code" is unattributable folklore. Cite the verbatim-verified sources above, not the meme versions.
 
+## Supporting reading (live-verified 2026-07-13)
+
+Beyond the verified anchors above, a wider evidence base — grouped by which side it serves. Tiers: ★ strongest / ◦ secondary.
+
+**The metaphor itself, pro-and-con**
+- ★ Martin Fowler, *LLMs bring a new nature of abstraction* — the cleanest balanced treatment: endorses the assembler→HLL leap, then rebuts the compiler analogy on non-determinism (a compile is re-runnable; an LLM "compile" isn't).
+- Kent Beck, *Prose as a Programming Language* — the strongest full-throated practitioner endorsement (raises and then dismisses Dijkstra's ambiguity objection with `requires`/`ensures` blocks). ◦
+- Steve Yegge, *Software Survival 3.0* — pro-with-a-twist: accepts AI synthesizes ~all software but relocates the frontier to "Agent UX." ◦
+
+**Skeptic / "different in kind"**
+- ★ Birgitta Böckeler (martinfowler.com), *Understanding Spec-Driven Development* — the highest-signal on-thesis skeptic; splits "spec is the new code" into spec-first / anchored / spec-as-source and warns the last risks "inflexibility *and* non-determinism."
+- Geoffrey Litt, *Understanding is the new bottleneck* — you must understand to *participate*, not just to verify ("cognitive debt"). ◦
+- Frederick Brooks, *No Silver Bullet* (1986) and Peter Naur, *Programming as Theory Building* (1985) — pre-LLM pedigree for why an NL spec underdetermines a correct program (essential complexity; the program's theory lives in minds, not text). Canonical; cite from the bibliographic record.
+
+**Empirical limits (measured, not rhetorical)**
+- ★ Ouyang et al., *Non-determinism of ChatGPT in Code Generation* ([arXiv:2308.02828](https://arxiv.org/abs/2308.02828)) — the headline quantified refutation of prompt-as-deterministic-program: up to **75.76%** of tasks yield *zero* test-equivalent outputs across identical prompts, and `temperature=0` doesn't fix it. Complements the FormatSpread and Thinking Machines anchors.
+- Lu et al., *Fantastically Ordered Prompts…* ([arXiv:2104.08786](https://arxiv.org/abs/2104.08786)) — permuting identical in-context examples swings near-SOTA→random; the "source" isn't stable. ◦
+- EvalPlus ([arXiv:2305.01210](https://arxiv.org/abs/2305.01210)) — *complicates* "tests are the contract": weak tests overstate correctness (pass@k drops up to ~28.9% under stronger tests), so the oracle only works if it's rigorous. ◦
+
+**Verification bridge (recover a guarantee with a machine-checkable spec + sound checker)**
+- ★ Clover, *Closed-Loop Verifiable Code Generation* ([arXiv:2310.17807](https://arxiv.org/abs/2310.17807)) — the concrete "agent-as-compiler-*with-a-checker*": Dafny-annotation consistency filtering, ~87% acceptance, zero false positives on adversarially-incorrect input.
+- ★ nl2postcond ([arXiv:2310.01831](https://arxiv.org/abs/2310.01831)) — the crux of the bridge: autoformalize NL into checkable *postconditions* (caught 64 Defects4J bugs) — and "generally correct" is exactly where the guarantee leaks.
+- TiCoder ([arXiv:2208.05950](https://arxiv.org/abs/2208.05950)) — generates tests to formalize user intent because NL "lacks a formal semantics"; the pro-side operational form of "tests carry the contract." ◦
+- Lemur ([arXiv:2310.04870](https://arxiv.org/abs/2310.04870)) proves an LLM+sound-reasoner procedure sound; *Verified Dafny methods* ([arXiv:2402.00247](https://arxiv.org/abs/2402.00247)) tops out ~58% verified — quantifying how far the bridge currently reaches. ◦
+
+*(Deeper cuts surfaced but not embedded: HumanEval/MBPP execution-based correctness ([arXiv:2107.03374](https://arxiv.org/abs/2107.03374), [2108.07732](https://arxiv.org/abs/2108.07732)); QuickCheck / metamorphic-testing as the "properties are the executable spec" root; LeanDojo, Baldur whole-proof-repair, LLMLift translation-validation; ClarifyGPT; LMQL "Prompting Is Programming". Two just-posted 2026 ambiguity benchmarks — Orchid and ClarifyCodeBench — are on-thesis but near-uncited; verify the IDs resolve before relying on them.)*
+
 ## References
 
 Sits under [tool-use-design](../topics/tool-use-design.md) as the authored-artifact/verification sibling of [dsl-vs-code-vs-tool-calls](dsl-vs-code-vs-tool-calls.md). Upstream sibling: [user-intent-to-task-grounding](user-intent-to-task-grounding.md) (turning NL into an executable task — act-vs-clarify). Shares the "NL is an untrusted, underspecified input" theme with [prompt-time-knowledge-capture](prompt-time-knowledge-capture.md); "validity ≠ correctness" with [forced-tool-call-output](forced-tool-call-output.md) / [schema-vs-validator](schema-vs-validator.md); per-artifact skepticism with [adversarial-eval](adversarial-eval.md). Verified anchors: Karpathy Software 2.0 (2017) / 3.0 (2025) / English tweet (2023); Grove *The New Code* (2025); Dijkstra EWD667 (~1978), EWD249 (1970); CompCert (Leroy, CACM 2009); Translation Validation (Pnueli et al., TACAS 1998); FormatSpread (arXiv:2310.11324); Thinking Machines nondeterminism (He, 2025); autoformalization (arXiv:2205.12615, 2210.12283, AlphaProof); CNL survey (Kuhn, 2014); low-resource-DSL survey (arXiv:2410.03981); spec-kit + Kiro.
