@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-13",
-  "node_count": 164,
-  "edge_count": 1185,
+  "node_count": 165,
+  "edge_count": 1194,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -622,6 +622,39 @@
         "llm-evaluation",
         "agent-eval-case-study",
         "prompt-injection-and-isolation"
+      ]
+    },
+    {
+      "id": "agent-as-compiler",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/agent-as-compiler.md",
+      "title": "Agent-as-Compiler (is English the new programming language?)",
+      "summary": "the 'coding agent is the new compiler / English is the new programming language' thesis \u2014 a real reframing (Karpathy, Grove) that correctly spots intent rising up the abstraction stack, but a category error on the four properties that make a compiler valuable: determinism, semantics-preservation, verify-once, and fail-local; the builder's takeaway is that the prompt is NOT the source of truth \u2014 the checkable contract (code + tests/spec/types) is.",
+      "tags": [
+        "agent",
+        "code-generation",
+        "abstraction",
+        "verification",
+        "natural-language",
+        "spec-driven",
+        "output-design"
+      ],
+      "status": "living",
+      "created": "2026-07-13",
+      "clusters": [
+        "tool-use-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "tool-use-design",
+        "dsl-vs-code-vs-tool-calls",
+        "llm-as-autoformalizer-plus-solver",
+        "user-intent-to-task-grounding",
+        "prompt-time-knowledge-capture",
+        "forced-tool-call-output",
+        "schema-vs-validator",
+        "adversarial-eval"
       ]
     },
     {
@@ -4705,6 +4738,7 @@
         "tool-result-grounding",
         "forced-tool-call-output",
         "dsl-vs-code-vs-tool-calls",
+        "agent-as-compiler",
         "action-authority",
         "output-surface-taxonomy",
         "mcp-tool-layer"
@@ -5628,6 +5662,46 @@
     {
       "from": "adversarial-eval",
       "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "agent-as-compiler",
+      "to": "adversarial-eval",
+      "kind": "related"
+    },
+    {
+      "from": "agent-as-compiler",
+      "to": "dsl-vs-code-vs-tool-calls",
+      "kind": "related"
+    },
+    {
+      "from": "agent-as-compiler",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "agent-as-compiler",
+      "to": "llm-as-autoformalizer-plus-solver",
+      "kind": "related"
+    },
+    {
+      "from": "agent-as-compiler",
+      "to": "prompt-time-knowledge-capture",
+      "kind": "related"
+    },
+    {
+      "from": "agent-as-compiler",
+      "to": "schema-vs-validator",
+      "kind": "related"
+    },
+    {
+      "from": "agent-as-compiler",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "agent-as-compiler",
+      "to": "user-intent-to-task-grounding",
       "kind": "related"
     },
     {
@@ -10568,6 +10642,11 @@
     {
       "from": "tool-use-design",
       "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "tool-use-design",
+      "to": "agent-as-compiler",
       "kind": "related"
     },
     {

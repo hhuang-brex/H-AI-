@@ -14,6 +14,7 @@ related:
   - [[tool-result-grounding]]
   - [[forced-tool-call-output]]
   - [[dsl-vs-code-vs-tool-calls]]
+  - [[agent-as-compiler]]
   - [[action-authority]]
   - [[output-surface-taxonomy]]
   - [[mcp-tool-layer]]
@@ -46,5 +47,5 @@ A tool that *reads* and a tool that *acts irreversibly* are different risk class
 - **Loop:** tools are what [agent-control-loop](agent-control-loop.md) invokes each iteration; tool results are the "observe" half of perceive-reason-act.
 - **Surfaces:** a tool that emits to a user is also an output surface — see [output-surface-taxonomy](../concepts/output-surface-taxonomy.md). Classify whether a tool reads, computes, or emits.
 - **Context:** tool results are the fastest way to blow your context budget. [code-execution-sandbox-pattern](../concepts/code-execution-sandbox-pattern.md) keeps large results out of the model entirely.
-- **Action language:** *what* the model emits to act — a typed tool-call, a DSL, or general code — is a choice above any single tool. [dsl-vs-code-vs-tool-calls](../concepts/dsl-vs-code-vs-tool-calls.md) is that decision: expressivity vs verifiability, gated by how well-trained the target language is.
+- **Action language:** *what* the model emits to act — a typed tool-call, a DSL, or general code — is a choice above any single tool. [dsl-vs-code-vs-tool-calls](../concepts/dsl-vs-code-vs-tool-calls.md) is that decision: expressivity vs verifiability, gated by how well-trained the target language is. Zoom out and it becomes the "is the agent a compiler / is English the new programming language" question — [agent-as-compiler](../concepts/agent-as-compiler.md): where that analogy holds, where it's a category error, and why the prompt is not your source of truth.
 - **Eval:** correct tool *sequences* are a trajectory property — [agent-trajectory-eval](../concepts/agent-trajectory-eval.md).
