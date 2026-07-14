@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-12",
-  "node_count": 162,
-  "edge_count": 1161,
+  "generated": "2026-07-13",
+  "node_count": 164,
+  "edge_count": 1185,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -492,6 +492,42 @@
         "sms-message-buffering-plan",
         "2026-06-10-github-buffering-references",
         "2026-06-10-sms-message-buffering-research"
+      ]
+    },
+    {
+      "id": "2026-06-15-kb-trend-scan",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-06-15-kb-trend-scan.md",
+      "title": "Thread \u2014 KB Trend Scan (2026-06-15)",
+      "summary": "first daily trend scan; biggest gap = adversarial/security safety (prompt injection, lethal trifecta, isolation); plus MCP/Agent-Skills nodes and CoT-monitorability / memory-eval updates.",
+      "tags": [
+        "meta",
+        "trend-scan",
+        "loop",
+        "gap-analysis",
+        "agents",
+        "research"
+      ],
+      "status": "snapshot",
+      "created": "2026-06-15",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "action-execution-safety",
+        "safety-rails-domain-specific",
+        "adversarial-eval",
+        "tool-use-design",
+        "tool-selection-and-routing",
+        "forced-tool-call-output",
+        "cot-as-forensic-artifact",
+        "memory-retrieval",
+        "memory-types-taxonomy",
+        "multi-agent-delegation",
+        "agent-trajectory-eval",
+        "llm-as-judge",
+        "context-engineering",
+        "references-task-agent-design"
       ]
     },
     {
@@ -1737,6 +1773,40 @@
         "hard-surface-irrevocability",
         "tool-use-design",
         "mid-task-steering"
+      ]
+    },
+    {
+      "id": "dsl-vs-code-vs-tool-calls",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/dsl-vs-code-vs-tool-calls.md",
+      "title": "DSL vs Code vs Tool-Calls (the action-language choice)",
+      "summary": "what LANGUAGE an agent emits to act \u2014 template \u2192 typed tool-call \u2192 DSL \u2192 general code \u2014 is a dial trading expressivity for verifiability; but generation accuracy is gated by the language's training-data coverage, so a DSL is best-fit only when verifiability/safety dominate AND the DSL stays close to a well-represented language.",
+      "tags": [
+        "agent",
+        "action-space",
+        "dsl",
+        "code-generation",
+        "constrained-decoding",
+        "tool-use",
+        "output-design"
+      ],
+      "status": "living",
+      "created": "2026-07-13",
+      "clusters": [
+        "tool-use-design"
+      ],
+      "source_thread": null,
+      "related": [
+        "tool-use-design",
+        "forced-tool-call-output",
+        "schema-vs-validator",
+        "template-rendered-output",
+        "decision-engine-contract",
+        "tool-schema-design",
+        "code-execution-sandbox-pattern",
+        "text-to-sql-retrieval",
+        "llm-as-autoformalizer-plus-solver"
       ]
     },
     {
@@ -4634,6 +4704,7 @@
         "tool-selection-and-routing",
         "tool-result-grounding",
         "forced-tool-call-output",
+        "dsl-vs-code-vs-tool-calls",
         "action-authority",
         "output-surface-taxonomy",
         "mcp-tool-layer"
@@ -5362,6 +5433,76 @@
     {
       "from": "2026-06-11-text-eot-classifier-salvage",
       "to": "sms-message-buffering-spec",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-15-kb-trend-scan",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-15-kb-trend-scan",
+      "to": "adversarial-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-15-kb-trend-scan",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-15-kb-trend-scan",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-15-kb-trend-scan",
+      "to": "cot-as-forensic-artifact",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-15-kb-trend-scan",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-15-kb-trend-scan",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-15-kb-trend-scan",
+      "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-15-kb-trend-scan",
+      "to": "memory-types-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-15-kb-trend-scan",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-15-kb-trend-scan",
+      "to": "references-task-agent-design",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-15-kb-trend-scan",
+      "to": "safety-rails-domain-specific",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-15-kb-trend-scan",
+      "to": "tool-selection-and-routing",
+      "kind": "related"
+    },
+    {
+      "from": "2026-06-15-kb-trend-scan",
+      "to": "tool-use-design",
       "kind": "related"
     },
     {
@@ -7026,6 +7167,51 @@
     },
     {
       "from": "dry-run-and-preview",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "dsl-vs-code-vs-tool-calls",
+      "to": "code-execution-sandbox-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "dsl-vs-code-vs-tool-calls",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "dsl-vs-code-vs-tool-calls",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "dsl-vs-code-vs-tool-calls",
+      "to": "llm-as-autoformalizer-plus-solver",
+      "kind": "related"
+    },
+    {
+      "from": "dsl-vs-code-vs-tool-calls",
+      "to": "schema-vs-validator",
+      "kind": "related"
+    },
+    {
+      "from": "dsl-vs-code-vs-tool-calls",
+      "to": "template-rendered-output",
+      "kind": "related"
+    },
+    {
+      "from": "dsl-vs-code-vs-tool-calls",
+      "to": "text-to-sql-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "dsl-vs-code-vs-tool-calls",
+      "to": "tool-schema-design",
+      "kind": "related"
+    },
+    {
+      "from": "dsl-vs-code-vs-tool-calls",
       "to": "tool-use-design",
       "kind": "related"
     },
@@ -10387,6 +10573,11 @@
     {
       "from": "tool-use-design",
       "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "tool-use-design",
+      "to": "dsl-vs-code-vs-tool-calls",
       "kind": "related"
     },
     {

@@ -225,6 +225,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 
 **[tool-use-design](nodes/topics/tool-use-design.md)**
 - [action-authority](nodes/concepts/action-authority.md) — what the bot can *do*; tiered authority enforced at the tool layer.
+- [dsl-vs-code-vs-tool-calls](nodes/concepts/dsl-vs-code-vs-tool-calls.md) — what LANGUAGE an agent emits to act — template → typed tool-call → DSL → general code — is a dial trading expressivity for verifiability; but generation accuracy is gated by the language's training-data coverage, so a DSL is best-fit only when verifiability/safety dominate AND the DSL stays close to a well-represented language.
 - [forced-tool-call-output](nodes/concepts/forced-tool-call-output.md) — when to force schema vs. let the model write free-text.
 - [mcp-tool-layer](nodes/concepts/mcp-tool-layer.md) — the Model Context Protocol as the de-facto tool-interop standard — what it standardizes (JSON-RPC primitives + transport), the current 2025-11-25 spec, the stateless work that lives only in draft, and the client-side MUSTs an agent consuming external MCP servers must enforce.
 - [output-surface-taxonomy](nodes/concepts/output-surface-taxonomy.md) — classify each surface explicitly; per-surface decisions.
@@ -268,7 +269,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-template-rendered-output](nodes/references/references-template-rendered-output.md) — what's verifiable about template-rendered output in production — Rasa (mechanism confirmed), Ikki (architecture confirmed, outcomes refuted), and why most 'structured output' systems don't qualify.
 
 ---
-<sub>Provenance: 19 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
+<sub>Provenance: 20 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
 
 <!-- END GENERATED -->
 
