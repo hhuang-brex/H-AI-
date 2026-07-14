@@ -44,6 +44,7 @@ Zep/Graphiti (Rasmussen et al., [arXiv:2501.13956](https://arxiv.org/abs/2501.13
 - **Never actually querying the temporal dimension.** If deployments only read current-state, the bi-temporal graph collapses back to flat text at graph-build cost with no payoff (an open question in the literature — verify your access patterns need it).
 - **Trusting soft-schema types as guarantees.** Extraction is best-effort; unmapped/mistyped facts still land — validate downstream ([ontology-as-validator-shacl](ontology-as-validator-shacl.md)).
 - **Paying graph cost for a recall problem.** Bi-temporal memory answers *update/temporal* bottlenecks, not raw recall.
+- **Calling valid-time-plus-supersession "bi-temporal."** Many shipped builds carry only `valid_from`/`valid_until` + `superseded_by` edges (e.g. Iusztin, *Decoding AI*, 2026 — [references-ontology-llm-agents](../references/references-ontology-llm-agents.md)) — genuinely useful and cheaper, but it is *single-temporal*: without a separate **transaction time** you can answer "when was this true in the world" but not "what did we *believe* on Tuesday," and you lose the ingestion/correction audit trail. Add transaction time only when retroactive-correction auditing is a real requirement — otherwise the lighter variant is the right default.
 
 ## References
 

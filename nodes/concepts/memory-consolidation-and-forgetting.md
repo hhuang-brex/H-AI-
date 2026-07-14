@@ -66,6 +66,7 @@ Consolidation and decay are not engineering conveniences retrofitted with biolog
 - **Silent supersession.** Overwriting a changed preference with no audit of the change.
 - **Forgetting a constraint.** Decaying a standing user instruction as if it were an episode — a safety bug.
 - **Consolidation that hallucinates.** The compress/promote step is an LLM call that can distort; test it, like [context-compaction](context-compaction.md)'s compactor.
+- **One-shot merge on a single threshold.** Redundancy collapse is *asymmetric*: a **wrong merge is effectively unrecoverable** (re-splitting two conflated entities is far harder than merging them later), so entity-resolution should use a similarity *band* with a human-review zone and bias toward **under-merging**, not auto-merge on one cutoff — the write-side discipline in [prompt-time-knowledge-capture](prompt-time-knowledge-capture.md).
 
 ## References
 
