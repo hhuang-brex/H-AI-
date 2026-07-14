@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-13",
-  "node_count": 165,
-  "edge_count": 1194,
+  "node_count": 166,
+  "edge_count": 1207,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -845,6 +845,7 @@
         "memory-retrieval",
         "memory-consolidation-and-forgetting",
         "agent-native-memory-framework",
+        "ontology-knowledge-memory-layering",
         "bitemporal-fact-invalidation-memory",
         "memory-graph-topology",
         "associative-memory-and-attention",
@@ -3147,6 +3148,43 @@
         "domain-knowledge-injection",
         "agent-native-memory-framework",
         "references-ontology-llm-agents"
+      ]
+    },
+    {
+      "id": "ontology-knowledge-memory-layering",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/ontology-knowledge-memory-layering.md",
+      "title": "Ontology \u00b7 Knowledge \u00b7 Memory \u2014 the layering",
+      "summary": "ontology, knowledge graph, and agent memory are three LAYERS of one stack, not three things: ontology = schema/type layer (DL TBox), knowledge/KG = that schema populated with instance facts (ABox), memory = the process/lifecycle layer (write, consolidate, forget, retrieve, temporally invalidate) over the instances. The data structure doesn't distinguish them; the state-transition operators do.",
+      "tags": [
+        "ontology",
+        "knowledge-graph",
+        "agent-memory",
+        "tbox-abox",
+        "layering",
+        "neuro-symbolic",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-07-13",
+      "clusters": [
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "ontology-grounded-agent",
+        "domain-event-task-ontology",
+        "ontology-as-validator-shacl",
+        "memory-types-taxonomy",
+        "agent-native-memory-framework",
+        "bitemporal-fact-invalidation-memory",
+        "prompt-time-knowledge-capture",
+        "memory-retrieval",
+        "memory-consolidation-and-forgetting",
+        "references-ontology-llm-agents",
+        "references-context-and-memory"
       ]
     },
     {
@@ -6071,6 +6109,11 @@
     },
     {
       "from": "agent-memory",
+      "to": "ontology-knowledge-memory-layering",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
       "to": "parametric-memory-and-editing",
       "kind": "related"
     },
@@ -8822,6 +8865,66 @@
     {
       "from": "ontology-grounded-agent",
       "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-knowledge-memory-layering",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-knowledge-memory-layering",
+      "to": "agent-native-memory-framework",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-knowledge-memory-layering",
+      "to": "bitemporal-fact-invalidation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-knowledge-memory-layering",
+      "to": "domain-event-task-ontology",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-knowledge-memory-layering",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-knowledge-memory-layering",
+      "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-knowledge-memory-layering",
+      "to": "memory-types-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-knowledge-memory-layering",
+      "to": "ontology-as-validator-shacl",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-knowledge-memory-layering",
+      "to": "ontology-grounded-agent",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-knowledge-memory-layering",
+      "to": "prompt-time-knowledge-capture",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-knowledge-memory-layering",
+      "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-knowledge-memory-layering",
+      "to": "references-ontology-llm-agents",
       "kind": "related"
     },
     {
