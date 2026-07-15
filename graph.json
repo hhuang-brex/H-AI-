@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-13",
-  "node_count": 166,
-  "edge_count": 1207,
+  "generated": "2026-07-14",
+  "node_count": 167,
+  "edge_count": 1219,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -846,6 +846,7 @@
         "memory-consolidation-and-forgetting",
         "agent-native-memory-framework",
         "ontology-knowledge-memory-layering",
+        "building-ontology-backed-memory",
         "bitemporal-fact-invalidation-memory",
         "memory-graph-topology",
         "associative-memory-and-attention",
@@ -1144,6 +1145,44 @@
         "prompt-time-knowledge-capture",
         "references-ontology-llm-agents",
         "memory-poisoning"
+      ]
+    },
+    {
+      "id": "building-ontology-backed-memory",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/building-ontology-backed-memory.md",
+      "title": "Building Ontology-Backed Agent Memory",
+      "summary": "the buildable HOW of ontology-backed agent memory \u2014 an ordered sequence (competency questions \u2192 frozen TBox \u2192 one schema artifact \u2192 single hybrid store \u2192 write pipeline \u2192 read pipeline \u2192 eval) with explicit decision forks, giving the extract/validate/resolve/invalidate/upsert/provenance WRITE PATH the most depth because that is where durable quality bugs are minted.",
+      "tags": [
+        "agent-memory",
+        "ontology",
+        "knowledge-graph",
+        "write-pipeline",
+        "build-sequence",
+        "tbox-abox",
+        "entity-resolution",
+        "engineering",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-07-14",
+      "clusters": [
+        "agent-memory"
+      ],
+      "source_thread": null,
+      "related": [
+        "agent-memory",
+        "ontology-grounded-agent",
+        "domain-event-task-ontology",
+        "ontology-as-validator-shacl",
+        "ontology-knowledge-memory-layering",
+        "prompt-time-knowledge-capture",
+        "bitemporal-fact-invalidation-memory",
+        "memory-retrieval",
+        "agent-native-memory-framework",
+        "memory-graph-topology",
+        "references-ontology-llm-agents"
       ]
     },
     {
@@ -6049,6 +6088,11 @@
     },
     {
       "from": "agent-memory",
+      "to": "building-ontology-backed-memory",
+      "kind": "related"
+    },
+    {
+      "from": "agent-memory",
       "to": "complementary-learning-systems",
       "kind": "related"
     },
@@ -6484,6 +6528,61 @@
     },
     {
       "from": "bitemporal-fact-invalidation-memory",
+      "to": "references-ontology-llm-agents",
+      "kind": "related"
+    },
+    {
+      "from": "building-ontology-backed-memory",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "building-ontology-backed-memory",
+      "to": "agent-native-memory-framework",
+      "kind": "related"
+    },
+    {
+      "from": "building-ontology-backed-memory",
+      "to": "bitemporal-fact-invalidation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "building-ontology-backed-memory",
+      "to": "domain-event-task-ontology",
+      "kind": "related"
+    },
+    {
+      "from": "building-ontology-backed-memory",
+      "to": "memory-graph-topology",
+      "kind": "related"
+    },
+    {
+      "from": "building-ontology-backed-memory",
+      "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "building-ontology-backed-memory",
+      "to": "ontology-as-validator-shacl",
+      "kind": "related"
+    },
+    {
+      "from": "building-ontology-backed-memory",
+      "to": "ontology-grounded-agent",
+      "kind": "related"
+    },
+    {
+      "from": "building-ontology-backed-memory",
+      "to": "ontology-knowledge-memory-layering",
+      "kind": "related"
+    },
+    {
+      "from": "building-ontology-backed-memory",
+      "to": "prompt-time-knowledge-capture",
+      "kind": "related"
+    },
+    {
+      "from": "building-ontology-backed-memory",
       "to": "references-ontology-llm-agents",
       "kind": "related"
     },
