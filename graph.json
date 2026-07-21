@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-14",
-  "node_count": 167,
-  "edge_count": 1219,
+  "generated": "2026-07-20",
+  "node_count": 168,
+  "edge_count": 1228,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -527,6 +527,37 @@
         "agent-trajectory-eval",
         "llm-as-judge",
         "context-engineering",
+        "references-task-agent-design"
+      ]
+    },
+    {
+      "id": "2026-07-20-agent-harness-research",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-07-20-agent-harness-research.md",
+      "title": "Thread \u2014 Agent-Harness Research Fan-Out (2026-07-20)",
+      "summary": "fan-out research to refresh agent-harness.md: 29 fetch-verified anchors, 6 deepenings (convergence-as-spectrum, async gap, debate\u2192trilemma), 3 candidate nodes.",
+      "tags": [
+        "meta",
+        "research",
+        "fan-out",
+        "agent-harness",
+        "gap-analysis",
+        "harness"
+      ],
+      "status": "snapshot",
+      "created": "2026-07-20",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "agent-harness",
+        "self-improving-harness",
+        "background-agent-execution",
+        "harness-as-hyperparameter",
+        "managed-agent-apis",
+        "agent-control-loop",
+        "action-execution-safety",
+        "llm-evaluation",
         "references-task-agent-design"
       ]
     },
@@ -5614,6 +5645,51 @@
     {
       "from": "2026-06-15-kb-trend-scan",
       "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "2026-07-20-agent-harness-research",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "2026-07-20-agent-harness-research",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "2026-07-20-agent-harness-research",
+      "to": "agent-harness",
+      "kind": "related"
+    },
+    {
+      "from": "2026-07-20-agent-harness-research",
+      "to": "background-agent-execution",
+      "kind": "related"
+    },
+    {
+      "from": "2026-07-20-agent-harness-research",
+      "to": "harness-as-hyperparameter",
+      "kind": "related"
+    },
+    {
+      "from": "2026-07-20-agent-harness-research",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "2026-07-20-agent-harness-research",
+      "to": "managed-agent-apis",
+      "kind": "related"
+    },
+    {
+      "from": "2026-07-20-agent-harness-research",
+      "to": "references-task-agent-design",
+      "kind": "related"
+    },
+    {
+      "from": "2026-07-20-agent-harness-research",
+      "to": "self-improving-harness",
       "kind": "related"
     },
     {

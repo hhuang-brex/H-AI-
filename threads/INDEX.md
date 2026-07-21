@@ -13,6 +13,7 @@ nav_exclude: true
 > here to learn the material, start from the topics in the [README](../README.md)
 > instead. Use this only to trace *why* a particular node says what it says.
 
+- 2026-07-20 · [meta] [2026-07-20-agent-harness-research](2026-07-20-agent-harness-research.md) — fan-out research to refresh agent-harness.md: 29 fetch-verified anchors, 6 deepenings (convergence-as-spectrum, async gap, debate→trilemma), 3 candidate nodes.
 - 2026-06-15 · [meta] [2026-06-15-kb-trend-scan](2026-06-15-kb-trend-scan.md) — first daily trend scan; biggest gap = adversarial/security safety (prompt injection, lethal trifecta, isolation); plus MCP/Agent-Skills nodes and CoT-monitorability / memory-eval updates.
 - 2026-06-11 · [task-agent] [2026-06-11-chatting-task-agent-buildout](2026-06-11-chatting-task-agent-buildout.md) — the 7-pass /loop build-out that added the agent spine (8 topics, ~30 concepts, 1 worked example, 2 eval concepts) for building a chatting task agent.
 - 2026-06-11 · [meta] [2026-06-11-knowledge-graph-organization-review](2026-06-11-knowledge-graph-organization-review.md) — audit of this repo as a knowledge graph; origin of the index-builder spec.
