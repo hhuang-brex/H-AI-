@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-20",
-  "node_count": 168,
-  "edge_count": 1231,
+  "node_count": 169,
+  "edge_count": 1240,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -2309,6 +2309,39 @@
         "llm-output-design",
         "output-surface-taxonomy",
         "forced-tool-call-output"
+      ]
+    },
+    {
+      "id": "harness-as-hyperparameter",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/harness-as-hyperparameter.md",
+      "title": "Harness as Hyperparameter",
+      "summary": "there is no universally superior harness \u2014 the best loop/tool/context configuration is problem- and model-dependent, so treat harness choice as a tunable hyperparameter selected or adapted online rather than a fixed recipe.",
+      "tags": [
+        "agent",
+        "harness",
+        "optimization",
+        "model-selection",
+        "evaluation",
+        "no-free-lunch",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-07-20",
+      "clusters": [
+        "agent-harness"
+      ],
+      "source_thread": "2026-07-20-agent-harness-research",
+      "related": [
+        "agent-harness",
+        "self-improving-harness",
+        "llm-evaluation",
+        "offline-prompt-optimization",
+        "agent-control-loop",
+        "agent-trajectory-eval",
+        "eval-statistical-significance",
+        "harness-token-economics"
       ]
     },
     {
@@ -7957,6 +7990,51 @@
     {
       "from": "hard-surface-irrevocability",
       "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "harness-as-hyperparameter",
+      "to": "2026-07-20-agent-harness-research",
+      "kind": "source-thread"
+    },
+    {
+      "from": "harness-as-hyperparameter",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "harness-as-hyperparameter",
+      "to": "agent-harness",
+      "kind": "related"
+    },
+    {
+      "from": "harness-as-hyperparameter",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "harness-as-hyperparameter",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "harness-as-hyperparameter",
+      "to": "harness-token-economics",
+      "kind": "related"
+    },
+    {
+      "from": "harness-as-hyperparameter",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "harness-as-hyperparameter",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "harness-as-hyperparameter",
+      "to": "self-improving-harness",
       "kind": "related"
     },
     {
