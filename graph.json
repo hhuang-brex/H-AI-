@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-20",
   "node_count": 168,
-  "edge_count": 1228,
+  "edge_count": 1231,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -831,7 +831,7 @@
       "status": "living",
       "created": "2026-07-10",
       "clusters": [],
-      "source_thread": null,
+      "source_thread": "2026-07-20-agent-harness-research",
       "related": [
         "references-task-agent-design",
         "agent-control-loop",
@@ -845,7 +845,9 @@
         "self-improving-harness",
         "managed-agent-apis",
         "harness-token-economics",
-        "background-agent-execution"
+        "background-agent-execution",
+        "harness-as-hyperparameter",
+        "references-harness-evaluation"
       ]
     },
     {
@@ -6079,6 +6081,11 @@
     },
     {
       "from": "agent-harness",
+      "to": "2026-07-20-agent-harness-research",
+      "kind": "source-thread"
+    },
+    {
+      "from": "agent-harness",
       "to": "action-execution-safety",
       "kind": "related"
     },
@@ -6109,6 +6116,11 @@
     },
     {
       "from": "agent-harness",
+      "to": "harness-as-hyperparameter",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
       "to": "harness-token-economics",
       "kind": "related"
     },
@@ -6125,6 +6137,11 @@
     {
       "from": "agent-harness",
       "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
+      "to": "references-harness-evaluation",
       "kind": "related"
     },
     {
