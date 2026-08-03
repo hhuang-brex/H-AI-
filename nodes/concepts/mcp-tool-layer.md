@@ -12,6 +12,7 @@ related:
   - [[code-execution-sandbox-pattern]]
   - [[agent-skills-progressive-disclosure]]
   - [[managed-agent-apis]]
+  - [[references-model-context-protocol]]
 status: living
 created: 2026-07-10
 summary: "the Model Context Protocol as the de-facto tool-interop standard — what it standardizes (JSON-RPC primitives + transport), the current 2025-11-25 spec, the stateless work that lives only in draft, and the client-side MUSTs an agent consuming external MCP servers must enforce."
