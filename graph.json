@@ -1,7 +1,7 @@
 {
   "generated": "2026-08-05",
   "node_count": 171,
-  "edge_count": 1247,
+  "edge_count": 1250,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -3905,7 +3905,7 @@
       "kind": null,
       "path": "nodes/references/references-prompt-optimization.md",
       "title": "References \u2014 Automatic Prompt Optimization",
-      "summary": "verified primary sources for automatic prompt optimization \u2014 the token-search \u2192 text-gradient \u2192 program-optimizer lineage behind offline-prompt-optimization, plus the agent-specific work and the field survey.",
+      "summary": "verified primary sources for automatic prompt optimization \u2014 the token-search \u2192 text-gradient \u2192 program-optimizer lineage, the 2026 work on credit assignment, cost and GEPA's failure modes, plus the field survey.",
       "tags": [
         "prompt",
         "optimization",
@@ -3926,6 +3926,9 @@
         "self-improving-harness",
         "dspy-domain-chatbot-cases",
         "agent-eval-improvement-tiers",
+        "cost-aware-eval",
+        "tool-schema-design",
+        "multi-agent-delegation",
         "llm-evaluation"
       ]
     },
@@ -9958,6 +9961,11 @@
     },
     {
       "from": "references-prompt-optimization",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-optimization",
       "to": "dspy-domain-chatbot-cases",
       "kind": "related"
     },
@@ -9968,12 +9976,22 @@
     },
     {
       "from": "references-prompt-optimization",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-optimization",
       "to": "offline-prompt-optimization",
       "kind": "related"
     },
     {
       "from": "references-prompt-optimization",
       "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-optimization",
+      "to": "tool-schema-design",
       "kind": "related"
     },
     {
