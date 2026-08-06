@@ -9,6 +9,8 @@ related:
   - [[decision-audit-trail]]
   - [[adversarial-eval]]
   - [[safety-rails-domain-specific]]
+  - [[prompt-component-attribution]]
+  - [[references-prompt-attribution]]
 status: living
 created: 2026-06-10
 summary: "the *why* behind reasoning instrumentation: CoT is forensic, not explanatory; unfaithful 60–75% of the time yet uniquely surfaces alignment-faking, scheming, situational awareness."

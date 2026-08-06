@@ -131,6 +131,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [context-storage-and-hydration](nodes/concepts/context-storage-and-hydration.md) — where conversational context lives and how it's loaded per request — the stateless-compute / stateful-store split, keyed per user/conversation, with a DB-of-record plus optional cache tier.
 - [conversation-memory](nodes/concepts/conversation-memory.md) — three horizons; what to remember, what not to.
 - [domain-knowledge-injection](nodes/concepts/domain-knowledge-injection.md) — RAG, prompt-stuffing, structured state, fine-tuning per knowledge type.
+- [prompt-component-attribution](nodes/concepts/prompt-component-attribution.md) — which sentence caused which output — per-instance context attribution vs population-level ablation, the method ladder from leave-one-out to surrogate/Shapley/bandit, and why a per-sentence effect is always conditional.
 - [sms-context-windowing](nodes/concepts/sms-context-windowing.md) — what's in the prompt: per-thread, structured, bounded.
 - [text-to-sql-retrieval](nodes/concepts/text-to-sql-retrieval.md) — natural-language→SQL over a structured store as a retrieval modality beside RAG — with its guardrail bundle: dynamic schema selection, dynamic few-shot, SELECT-only, record cap, bounded self-correcting retry.
 
@@ -166,12 +167,14 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [cost-aware-eval](nodes/concepts/cost-aware-eval.md) — sample-size math and budget assertions.
 - [eval-case-design](nodes/concepts/eval-case-design.md) — how to construct eval cases: design from the decision, a coverage matrix, scorable end-states, discrimination-piloting, held-out splits, and a failure flywheel.
 - [eval-dataset-quality](nodes/concepts/eval-dataset-quality.md) — audit the eval set as an instrument — validity, label agreement, discrimination (negative-control), contamination, drift — not just the model's score.
+- [eval-statistical-significance](nodes/concepts/eval-statistical-significance.md) — is the delta real? — the variance budget of an LLM eval, paired and multi-prompt designs, effect-vs-spread reporting, and the winner's curse when sweeping many prompt variants.
 - [execution-invariant-testing](nodes/concepts/execution-invariant-testing.md) — asserting an agent's safety properties as tests — run-twice-equals-once, crash-anywhere-resumes-consistently, never-exceeds-budget — instead of hoping they hold.
 - [golden-snapshot-eval](nodes/concepts/golden-snapshot-eval.md) — pre-LLM deterministic checks.
 - [live-traffic-eval](nodes/concepts/live-traffic-eval.md) — reference-free scoring of actual production outputs on a cadence to catch live regressions/hallucinations — distinct from prod-shadow-replay and passive observability; pairs with change-triggered dataset evals.
 - [llm-as-judge](nodes/concepts/llm-as-judge.md) — calibration, bias, multi-vote, cascading.
 - [offline-prompt-optimization](nodes/concepts/offline-prompt-optimization.md) — improve an agent skill by searching prompt space offline, scored end-to-end by the real agent — not hand-tuning.
 - [prod-shadow-replay](nodes/concepts/prod-shadow-replay.md) — closing the gap between frozen datasets and live traffic.
+- [prompt-component-attribution](nodes/concepts/prompt-component-attribution.md) — which sentence caused which output — per-instance context attribution vs population-level ablation, the method ladder from leave-one-out to surrogate/Shapley/bandit, and why a per-sentence effect is always conditional.
 - [simulated-user-eval](nodes/concepts/simulated-user-eval.md) — evaluating a chatting agent by driving it with a scripted or LLM-played user across multi-turn scenarios — interruptions, corrections, abandonment — not just single-turn replies.
 - [test-pyramid-llm](nodes/concepts/test-pyramid-llm.md) — porting the classic pyramid to LLM apps.
 - [verbal-reinforcement-vs-gradient-rl](nodes/concepts/verbal-reinforcement-vs-gradient-rl.md) — the distinction between gradient RL (weights move) and verbal/in-context reinforcement (text moves) — and why eval-driven skill-rewriting is the latter.
@@ -271,12 +274,13 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-memory-theory](nodes/references/references-memory-theory.md) — verified primary sources behind the memory-theory cluster — Hopfield/attention, complementary learning systems, catastrophic forgetting, model editing, and experiential learning.
 - [references-model-context-protocol](nodes/references/references-model-context-protocol.md) — verified primary sources grounding mcp-tool-layer, fanned out by category — projects (reference servers, FastMCP, mcp-agent, LangChain adapters), papers (landscape survey, RAG-MCP, two security audits), and blogs (launch, code-execution, Cloudflare Code Mode, writing tools for agents).
 - [references-ontology-llm-agents](nodes/references/references-ontology-llm-agents.md) — verified primary sources for the ontology-grounded-agent cluster — KG-RAG, LLM ontology engineering, autoformalization+solvers, temporal-KG memory, SHACL/OWL, MCP/A2A.
+- [references-prompt-attribution](nodes/references/references-prompt-attribution.md) — verified sources for measuring prompt effectiveness — context-attribution methods (which span caused which output), population-level ablation and sensitivity studies, and the confounds that make naive measurement unfaithful.
 - [references-prompt-optimization](nodes/references/references-prompt-optimization.md) — verified primary sources for automatic prompt optimization — the token-search → text-gradient → program-optimizer lineage, the 2026 work on credit assignment, cost and GEPA's failure modes, plus the field survey.
 - [references-task-agent-design](nodes/references/references-task-agent-design.md) — verified primary sources grounding the agent cluster — ReAct, Reflexion, Toolformer, Tree of Thoughts, MetaGPT, and Anthropic's effective-agents guidance.
 - [references-template-rendered-output](nodes/references/references-template-rendered-output.md) — what's verifiable about template-rendered output in production — Rasa (mechanism confirmed), Ikki (architecture confirmed, outcomes refuted), and why most 'structured output' systems don't qualify.
 
 ---
-<sub>Provenance: 20 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
+<sub>Provenance: 21 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
 
 <!-- END GENERATED -->
 

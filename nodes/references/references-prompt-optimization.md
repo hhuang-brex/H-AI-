@@ -11,11 +11,13 @@ related:
   - [[dspy-domain-chatbot-cases]]
   - [[agent-eval-improvement-tiers]]
   - [[cost-aware-eval]]
+  - [[references-prompt-attribution]]
   - [[tool-schema-design]]
   - [[multi-agent-delegation]]
   - [[llm-evaluation]]
 status: living
 created: 2026-08-05
+source-thread: [[2026-08-06-prompt-attribution-research]]
 ---
 
 # References — Automatic Prompt Optimization

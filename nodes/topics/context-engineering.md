@@ -18,6 +18,7 @@ related:
   - [[sms-context-windowing]]
   - [[agentic-context-engineering-ace]]
   - [[agent-skills-progressive-disclosure]]
+  - [[prompt-component-attribution]]
   - [[text-to-sql-retrieval]]
 status: living
 created: 2026-06-11

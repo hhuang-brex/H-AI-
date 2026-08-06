@@ -1,0 +1,82 @@
+---
+id: references-prompt-attribution
+type: reference
+tags: [prompt, attribution, interpretability, eval, reading-list, sensitivity, faithfulness]
+summary: "verified sources for measuring prompt effectiveness — context-attribution methods (which span caused which output), population-level ablation and sensitivity studies, and the confounds that make naive measurement unfaithful."
+related:
+  - [[prompt-component-attribution]]
+  - [[eval-statistical-significance]]
+  - [[cot-as-forensic-artifact]]
+  - [[offline-prompt-optimization]]
+  - [[references-prompt-optimization]]
+  - [[llm-evaluation]]
+  - [[grounding-and-citation]]
+status: living
+created: 2026-08-06
+source-thread: [[2026-08-06-prompt-attribution-research]]
+---
+
+# References — Prompt Attribution & Effectiveness Measurement
+
+Sources behind [prompt-component-attribution](../concepts/prompt-component-attribution.md) and [eval-statistical-significance](../concepts/eval-statistical-significance.md). Every arXiv entry's title, authors, date, and comments field were pulled from the arXiv API and confirmed on **2026-08-06**; the ACL entry was fetched from the ACL Anthology the same day. **2026 entries are beyond the May-2026 knowledge cutoff and none is independently reproduced** — the numbers below are author-reported.
+
+## Methods — pinpointing which span caused which output
+
+- **ContextCite: Attributing Model Generation to Context** — Cohen-Wang, Shah, Georgiev, Madry (2024-09-01). https://arxiv.org/abs/2409.00729 — Defines the problem this cluster is named for: "pinpointing the parts of the context (if any) that led a model to generate a particular statement," distinguishing grounded from misinterpreted from fabricated. Method is a scalable surrogate over random context ablations, applicable on top of any LM. Its three applications map onto three different nodes in this graph: verifying generated statements ([grounding-and-citation](../concepts/grounding-and-citation.md)), pruning context to improve quality ([context-budget-allocation](../concepts/context-budget-allocation.md)), and detecting poisoning attacks ([prompt-injection-and-isolation](../concepts/prompt-injection-and-isolation.md)). Code: `MadryLab/context-cite`.
+
+- **JoPA: Explaining Large Language Model's Generation via Joint Prompt Attribution** — Chang, Cao, Wang, Chen, Lin (2024-05-30, rev. to ACL 2025 Main). https://arxiv.org/abs/2405.20404 — The paper that names the flaw in per-sentence thinking: prior prompt-explanation work either restricts output to classification/next-token, or treats prompt texts **independently, ignoring their combinatorial effects**. JoPA formulates attribution for a *complete generation* as a combinatorial optimization over jointly influential prompt texts. Read it as the formal case for why an ablation table of independent per-rule deltas is an approximation.
+
+- **TokenSHAP: Interpreting Large Language Models with Monte Carlo Shapley Value Estimation** — Goldshmidt & Horovicz (2024-07-14). https://arxiv.org/abs/2407.10114 — Shapley values from cooperative game theory adapted to token/substring importance in prompts, with Monte Carlo sampling for tractability. The principled interaction-aware option; also the expensive one. Authors report gains over baselines in alignment with human judgment, faithfulness, and consistency.
+
+- **Context Attribution with Multi-Armed Bandit Optimization** — Pan, Murugesan, Hua, Moniz, Chawla (2025-06-24; ACL 2026 Findings). https://arxiv.org/abs/2506.19977 — The cost fix for perturbation-based attribution: Linear Thompson Sampling **adaptively prioritizes informative subsets** instead of SHAP's uniform sampling, with a reward built from token log-probabilities so it works on black-box APIs. This is the method to reach for when each query is expensive — the usual case when the "query" is an agent run.
+
+- **Towards Long-Horizon Interpretability: Efficient and Faithful Multi-Token Attribution for Reasoning LLMs** — Pan, Liu, Wang, Yu, Jia (2026-02-02; **ICML 2026 Oral**). https://arxiv.org/abs/2602.01914 — Names two failures that hit reasoning-heavy agents specifically: an **O(M·N) efficiency bottleneck** for attributing an M-token span in an N-token context, and a **faithfulness drop where intermediate reasoning tokens absorb attribution mass**, blocking importance from propagating back to the original input. FlashTrace aggregates span-wise in one pass plus a recursive scheme. If you attribute outputs of a long-CoT agent with a single-target method, this is the paper explaining why your attributions point at the model's own reasoning instead of your prompt. Code: `wbopan/flashtrace`.
+
+- **Tokengeist: Multi-Turn Attribution Tracing in Agentic Conversations** — Tang, Barke, Agarwal (2026-06-14). https://arxiv.org/abs/2607.22610 — The multi-turn gap, stated plainly: existing methods "process the full context in a single pass, recovering surface-level dependencies but missing the layered, non-linear structure of real-world dialogues." Defines **multi-turn context attribution (MTCA)** — trace a target span backward across turns, including how those turns depended on earlier context — as recursive traversal of a DAG over turns, attribution-method-agnostic. Promises MTCABench (3,845 targets). Most directly relevant entry for a long-running conversational agent.
+
+- **Locating and Editing Factual Associations in GPT** — Meng, Bau, Andonian, Belinkov (2022-02-10; NeurIPS 2022). https://arxiv.org/abs/2202.05262 — The white-box pole: a causal intervention identifying which activations are *decisive* for a prediction, localized to middle-layer feed-forward modules over subject tokens, verified by editing (ROME). Include it to mark the boundary — this tier answers "where in the model," needs weights, and is not available for a hosted frontier model.
+
+## Evaluating the attribution itself
+
+- **Evaluation Framework for Highlight Explanations of Context Utilisation in Language Models** — Sun, Atanasova, Ray Choudhury, Islam, Augenstein (2025-10-03). https://arxiv.org/abs/2510.02629 — Attribution methods are themselves unvalidated tools. This introduces the first **gold-standard** evaluation framework for highlight explanations of context attribution, using controlled test cases with *known ground-truth context usage* rather than indirect proxies, and evaluates four methods against it. Use it before trusting any attribution tool's output as ground truth.
+
+- **How Context Attribution Handles What the Model Already Knows** — Trinh, Zhu, Szyller (2026-07-26). https://arxiv.org/abs/2607.23804 — The confound that matters most in RAG-style setups: when context overlaps training data, existing methods **cannot disentangle in-context from in-weight contributions**, producing unreliable scores. Contributes four metrics (BCS, CAC, APS, SSP) and a provenance-labeled benchmark (WMDP-Cyber++), and reports unfaithful attribution across four well-known methods under that overlap.
+
+- **Attention is not Explanation** — Jain & Wallace (2019-02-26; NAACL 2019). https://arxiv.org/abs/1902.10186 — Still the right citation for refusing attention-weight heatmaps as evidence: learned attention weights are "frequently uncorrelated with gradient-based measures of feature importance," and very different attention distributions can yield equivalent predictions.
+
+- **Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting** — Turpin, Michael, Perez, Bowman (2023-05-07; NeurIPS 2023). https://arxiv.org/abs/2305.04388 — Why "ask the model which instruction it followed" is not a measurement: adding biasing features (e.g. reordering options so the answer is always "(A)") systematically changes behavior *without models mentioning it*, and models rationalize the biased answer — up to a **36%** accuracy drop across 13 BIG-Bench Hard tasks.
+
+- **Measuring Faithfulness in Chain-of-Thought Reasoning** — Lanham et al., Anthropic (2023-07-17). https://arxiv.org/abs/2307.13702 — Intervenes on the CoT itself (adding mistakes, paraphrasing) to measure how much the answer actually depends on it. Two findings this graph relies on: dependence varies widely by task, and **larger, more capable models produce less faithful reasoning** on most tasks studied. Anchors [cot-as-forensic-artifact](../concepts/cot-as-forensic-artifact.md).
+
+- **Do Models Explain Themselves? Counterfactual Simulatability of Natural Language Explanations** — Chen, Zhong, Ri, Zhao, He, Steinhardt, Yu, McKeown (2023-07-17). https://arxiv.org/abs/2307.08678 — Proposes the operational test for a self-explanation: does it let a human **precisely predict the model's output on counterfactual variants** of the input? A stronger bar than plausibility, and the right framing when a stakeholder asks "why did the agent do that?"
+
+## Population-level effect: ablation, sensitivity, and stacking
+
+- **Deconstructing In-Context Learning: Understanding Prompts via Corruption** — Shivagunde, Lialin, Muckatira, Rumshisky (2024-04-02; LREC-COLING 2024). https://arxiv.org/abs/2404.02054 — Systematic corruption of individual prompt *elements* (rather than a handful of hand-picked variants) as a measurement method, and the finding that alignment-tuned assistants are far more robust to minor prompt modification than their pre-trained backbones — i.e. how much your ablation Δ depends on which model you ablate against.
+
+- **Rethinking the Role of Demonstrations: What Makes In-Context Learning Work?** — Min, Lyu, Holtzman, Artetxe, Lewis, Hajishirzi, Zettlemoyer (2022-02-25; EMNLP 2022). https://arxiv.org/abs/2202.12837 — The classic component-ablation result: **randomly replacing labels in demonstrations barely hurts performance** across 12 models including GPT-3, so other aspects of the demonstrations drive the gain. The cautionary tale for assuming a prompt component works through the mechanism you intended.
+
+- **Instruction Stacking Collapse: A Benchmark and the Capability-Dependent Value of Prompt Compilation** — Anand & Chattaraj (2026-07-31). https://arxiv.org/abs/2608.02639 — The non-additivity evidence: stacking 24 verifier-checked instructions, one to twenty at a time, across Claude Sonnet 4.6, GPT-5-mini, and Gemini 2.5 Flash, follow rate degrades **non-linearly from ~96% to as low as 20%**, driven by reproducible pairwise conflicts — a single "output JSON" constraint is jointly unsatisfiable with nine others. A training-free instruction compiler recovers up to **+11 points** for weaker models, with capability-graded benefit. Deterministic verifiers and cached responses released. Directly why per-rule effects must be re-measured after every edit.
+
+- **Instruction-Following Evaluation for Large Language Models** — Zhou, Lu, Mishra, Brahma, Basu, Luan, Zhou, Hou (2023-11-14). https://arxiv.org/abs/2311.07911 — IFEval: 25 types of **verifiable instructions** ("write in more than 400 words," "mention the keyword AI at least 3 times") over ~500 prompts, scored programmatically instead of by humans or a judge LLM. The template for giving each playbook rule its own deterministic verifier so per-rule follow rate is measurable at all.
+
+- **Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design** — Sclar, Choi, Tsvetkov, Suhr (2023-10-17; ICLR 2024). https://arxiv.org/abs/2310.11324 — The variance floor: meaning-preserving **formatting** changes produce differences of **up to 76 accuracy points** (LLaMA-2-13B, few-shot), and sensitivity persists across model size, shot count, and instruction tuning. Its recommendation — report a *range* over plausible formats rather than one number — is the core practice in [eval-statistical-significance](../concepts/eval-statistical-significance.md).
+
+- **Fantastically Ordered Prompts and Where to Find Them: Overcoming Few-Shot Prompt Order Sensitivity** — Lu, Bartolo, Moore, Riedel, Stenetorp (2021-04-18; ACL 2022). https://arxiv.org/abs/2104.08786 — Example **order** alone spans near-SOTA to near-random; present at all model sizes, not attributable to a particular subset of examples, and a good permutation for one model does not transfer to another. The last clause is the practical sting: ordering must be re-tuned per model.
+
+- **State of What Art? A Call for Multi-Prompt LLM Evaluation** — Mizrahi, Kaplan, Malkin, Dror, Shahaf, Stanovsky (2023-12-31; TACL). https://arxiv.org/abs/2401.00595 — Quantifies single-prompt brittleness across **6.5M instances, 20 LLMs, 39 tasks**, and proposes evaluating over a diverse prompt set with metrics tailored to the consumer (model developer vs. downstream application). The scholarly basis for reporting a distribution.
+
+- **Spurious Prompts: Can Irrelevant Prompts Steer Large Language Models?** — Batorski, Pourhadi, Sarosiek, Spurek, Swoboda (2026-05-28). https://arxiv.org/abs/2605.29678 — Task-*unrelated* prompts, found by a simple black-box search, can improve performance — "often matching or outperforming standard prompting baselines and task-aware prompt optimization" — and can also steer models into unintended behaviors (always picking the first option, returning even/prime/small numbers), across 0.8B–27B models in three families. The strongest available warning that a measured improvement does not validate the explanation attached to it.
+
+- **PromptRobust: Towards Evaluating the Robustness of Large Language Models on Adversarial Prompts** — Zhu, Wang, Zhou, Wang, Chen, Wang, Yang, Ye, Gong, Zhang, Xie (2023-06-07). https://arxiv.org/abs/2306.04528 — Adversarial prompt perturbations at **character, word, sentence, and semantic** levels, mimicking plausible user errors. Useful as the ready-made perturbation taxonomy for stress-testing whether a prompt's effect is robust or incidental. Code: `microsoft/promptbench`.
+
+- **Don't Blame the Large Language Model: How Agent Harness Evolution Shapes Coding Agent Quality** — Ben Sghaier, Li, Adams, Hassan (2026-07-04). https://arxiv.org/abs/2607.03691 — Attribution one level up: a controlled longitudinal study that **fixes the model and varies the harness** (system prompts, tool execution, context management, loop), motivated by practitioners attributing post-update regressions to the model rather than the harness. The design template for asking "which layer caused this regression?" — pairs with [harness-as-hyperparameter](../concepts/harness-as-hyperparameter.md).
+
+## Compression as a measurement by-product
+
+- **LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models** — Jiang, Wu, Lin, Yang, Qiu (2023-10-09; EMNLP 2023). https://arxiv.org/abs/2310.05736 — Coarse-to-fine compression with a budget controller and token-level iterative compression that explicitly models **interdependence between compressed contents**. Relevant here because a compressor is an importance estimator with a deployment story: what it drops is what it measured as low-value.
+- **Unlocking Context Constraints of LLMs: Enhancing Context Efficiency of LLMs with Self-Information-Based Content Filtering** — Li (2023-04-24). https://arxiv.org/abs/2304.12102 — "Selective Context": filter content by **self-information**. The cheapest importance proxy in this list, and the baseline to beat before adopting anything above.
+
+## Statistics
+
+- **The Hitchhiker's Guide to Testing Statistical Significance in Natural Language Processing** — Dror, Baumer, Shlomov, Reichart (ACL 2018, pp. 1383–1392). https://aclanthology.org/P18-1128/ — Protocol for choosing a significance test based on task type, experimental design, and metric, plus a review of the relevant tests. Its survey of ACL/TACL 2017 papers found significance testing "ignored or misused" — the same gap, now compounded by prompt-format and judge variance.

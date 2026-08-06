@@ -12,6 +12,7 @@ related:
   - [[agent-native-memory-framework]]
   - [[verbal-reinforcement-vs-gradient-rl]]
   - [[self-improving-harness]]
+  - [[prompt-component-attribution]]
   - [[references-prompt-optimization]]
 status: living
 created: 2026-06-16

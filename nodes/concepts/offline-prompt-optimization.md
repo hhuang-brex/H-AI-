@@ -12,6 +12,8 @@ related:
   - [[context-engineering]]
   - [[verbal-reinforcement-vs-gradient-rl]]
   - [[self-improving-harness]]
+  - [[prompt-component-attribution]]
+  - [[eval-statistical-significance]]
   - [[references-prompt-optimization]]
 status: living
 created: 2026-06-15
@@ -45,7 +47,7 @@ Optimization is only as good as the metric. Weight a **deterministic programmati
 
 ## Pitfalls
 
-- **Coarse credit assignment.** One score for a whole multi-step flow can't localize *which* sentence caused a late-step failure — convergence is slower. Mitigate with feedback that points at *where* in the transcript it went wrong.
+- **Coarse credit assignment.** One score for a whole multi-step flow can't localize *which* sentence caused a late-step failure — convergence is slower. Mitigate with feedback that points at *where* in the transcript it went wrong, and measure the localization directly rather than guessing: [prompt-component-attribution](prompt-component-attribution.md).
 - **Reward hacking.** The agent games a weak judge. Weight programmatic checks highest; review final transcripts by hand.
 - **Cost and noise.** Every candidate eval is a full agent run × N examples × many rounds; multi-call flows are noisy even with pinned temperature. Iterate on a subset, cap the budget, report score variance so you don't chase noise.
 - **Diminishing returns.** Published gains are largest over *weak* baselines. Against an already hand-tuned playbook, expect modest lift — the durable value is a repeatable, regression-tested loop, not a one-time jump.

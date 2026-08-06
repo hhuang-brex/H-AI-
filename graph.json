@@ -1,7 +1,7 @@
 {
-  "generated": "2026-08-05",
-  "node_count": 171,
-  "edge_count": 1250,
+  "generated": "2026-08-06",
+  "node_count": 175,
+  "edge_count": 1300,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -526,6 +526,35 @@
       ]
     },
     {
+      "id": "2026-08-06-prompt-attribution-research",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-08-06-prompt-attribution-research.md",
+      "title": "Thread \u2014 Measuring Prompt Effectiveness (2026-08-05 \u2192 2026-08-06)",
+      "summary": "research on measuring prompt effectiveness \u2014 which sentence causes which output; 20 fetch-verified sources, 2 new concept nodes, 1 reference node, and the resolution of a dangling edge.",
+      "tags": [
+        "meta",
+        "research",
+        "prompt",
+        "attribution",
+        "eval",
+        "statistics"
+      ],
+      "status": "snapshot",
+      "created": "2026-08-06",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "prompt-component-attribution",
+        "eval-statistical-significance",
+        "references-prompt-attribution",
+        "references-prompt-optimization",
+        "offline-prompt-optimization",
+        "cot-as-forensic-artifact",
+        "llm-evaluation"
+      ]
+    },
+    {
       "id": "action-authority",
       "type": "concept",
       "kind": null,
@@ -1014,6 +1043,7 @@
         "agent-native-memory-framework",
         "verbal-reinforcement-vs-gradient-rl",
         "self-improving-harness",
+        "prompt-component-attribution",
         "references-prompt-optimization"
       ]
     },
@@ -1488,6 +1518,7 @@
         "sms-context-windowing",
         "agentic-context-engineering-ace",
         "agent-skills-progressive-disclosure",
+        "prompt-component-attribution",
         "text-to-sql-retrieval"
       ]
     },
@@ -1616,7 +1647,9 @@
         "native-thinking-vs-prompted-reasoning",
         "decision-audit-trail",
         "adversarial-eval",
-        "safety-rails-domain-specific"
+        "safety-rails-domain-specific",
+        "prompt-component-attribution",
+        "references-prompt-attribution"
       ]
     },
     {
@@ -2031,6 +2064,40 @@
         "offline-prompt-optimization",
         "agent-native-memory-framework",
         "collaborative-agent-eval"
+      ]
+    },
+    {
+      "id": "eval-statistical-significance",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/eval-statistical-significance.md",
+      "title": "Eval Statistical Significance",
+      "summary": "is the delta real? \u2014 the variance budget of an LLM eval, paired and multi-prompt designs, effect-vs-spread reporting, and the winner's curse when sweeping many prompt variants.",
+      "tags": [
+        "eval",
+        "statistics",
+        "variance",
+        "significance",
+        "prompt",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-08-06",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": "2026-08-06-prompt-attribution-research",
+      "related": [
+        "llm-evaluation",
+        "eval-dataset-quality",
+        "eval-case-design",
+        "cost-aware-eval",
+        "prompt-component-attribution",
+        "offline-prompt-optimization",
+        "harness-as-hyperparameter",
+        "agent-trajectory-eval",
+        "llm-as-judge",
+        "references-prompt-attribution"
       ]
     },
     {
@@ -2693,6 +2760,8 @@
         "verbal-reinforcement-vs-gradient-rl",
         "eval-dataset-quality",
         "eval-case-design",
+        "eval-statistical-significance",
+        "prompt-component-attribution",
         "verbal-self-correction",
         "collaborative-agent-eval",
         "live-traffic-eval",
@@ -2730,7 +2799,8 @@
         "cost-aware-eval",
         "agent-eval-improvement-tiers",
         "forced-tool-call-output",
-        "cot-as-forensic-artifact"
+        "cot-as-forensic-artifact",
+        "prompt-component-attribution"
       ]
     },
     {
@@ -3157,6 +3227,8 @@
         "context-engineering",
         "verbal-reinforcement-vs-gradient-rl",
         "self-improving-harness",
+        "prompt-component-attribution",
+        "eval-statistical-significance",
         "references-prompt-optimization"
       ]
     },
@@ -3570,6 +3642,43 @@
       ]
     },
     {
+      "id": "prompt-component-attribution",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/prompt-component-attribution.md",
+      "title": "Prompt Component Attribution",
+      "summary": "which sentence caused which output \u2014 per-instance context attribution vs population-level ablation, the method ladder from leave-one-out to surrogate/Shapley/bandit, and why a per-sentence effect is always conditional.",
+      "tags": [
+        "prompt",
+        "attribution",
+        "interpretability",
+        "eval",
+        "agents",
+        "credit-assignment"
+      ],
+      "status": "living",
+      "created": "2026-08-06",
+      "clusters": [
+        "context-engineering",
+        "llm-evaluation"
+      ],
+      "source_thread": "2026-08-06-prompt-attribution-research",
+      "related": [
+        "offline-prompt-optimization",
+        "agentic-context-engineering-ace",
+        "eval-statistical-significance",
+        "llm-evaluation",
+        "eval-case-design",
+        "cot-as-forensic-artifact",
+        "recency-bias-prompt-design",
+        "grounding-and-citation",
+        "prompt-injection-and-isolation",
+        "llm-observability",
+        "context-engineering",
+        "references-prompt-attribution"
+      ]
+    },
+    {
       "id": "prompt-injection-and-isolation",
       "type": "concept",
       "kind": null,
@@ -3900,6 +4009,36 @@
       ]
     },
     {
+      "id": "references-prompt-attribution",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-prompt-attribution.md",
+      "title": "References \u2014 Prompt Attribution & Effectiveness Measurement",
+      "summary": "verified sources for measuring prompt effectiveness \u2014 context-attribution methods (which span caused which output), population-level ablation and sensitivity studies, and the confounds that make naive measurement unfaithful.",
+      "tags": [
+        "prompt",
+        "attribution",
+        "interpretability",
+        "eval",
+        "reading-list",
+        "sensitivity",
+        "faithfulness"
+      ],
+      "status": "living",
+      "created": "2026-08-06",
+      "clusters": [],
+      "source_thread": "2026-08-06-prompt-attribution-research",
+      "related": [
+        "prompt-component-attribution",
+        "eval-statistical-significance",
+        "cot-as-forensic-artifact",
+        "offline-prompt-optimization",
+        "references-prompt-optimization",
+        "llm-evaluation",
+        "grounding-and-citation"
+      ]
+    },
+    {
       "id": "references-prompt-optimization",
       "type": "reference",
       "kind": null,
@@ -3918,7 +4057,7 @@
       "status": "living",
       "created": "2026-08-05",
       "clusters": [],
-      "source_thread": null,
+      "source_thread": "2026-08-06-prompt-attribution-research",
       "related": [
         "offline-prompt-optimization",
         "agentic-context-engineering-ace",
@@ -3927,6 +4066,7 @@
         "dspy-domain-chatbot-cases",
         "agent-eval-improvement-tiers",
         "cost-aware-eval",
+        "references-prompt-attribution",
         "tool-schema-design",
         "multi-agent-delegation",
         "llm-evaluation"
@@ -5715,6 +5855,41 @@
       "kind": "related"
     },
     {
+      "from": "2026-08-06-prompt-attribution-research",
+      "to": "cot-as-forensic-artifact",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-06-prompt-attribution-research",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-06-prompt-attribution-research",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-06-prompt-attribution-research",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-06-prompt-attribution-research",
+      "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-06-prompt-attribution-research",
+      "to": "references-prompt-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-06-prompt-attribution-research",
+      "to": "references-prompt-optimization",
+      "kind": "related"
+    },
+    {
       "from": "action-authority",
       "to": "domain-chatbot-design",
       "kind": "related"
@@ -6491,6 +6666,11 @@
     },
     {
       "from": "agentic-context-engineering-ace",
+      "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "agentic-context-engineering-ace",
       "to": "references-prompt-optimization",
       "kind": "related"
     },
@@ -7056,6 +7236,11 @@
     },
     {
       "from": "context-engineering",
+      "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
       "to": "references-context-and-memory",
       "kind": "related"
     },
@@ -7212,6 +7397,16 @@
     {
       "from": "cot-as-forensic-artifact",
       "to": "native-thinking-vs-prompted-reasoning",
+      "kind": "related"
+    },
+    {
+      "from": "cot-as-forensic-artifact",
+      "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "cot-as-forensic-artifact",
+      "to": "references-prompt-attribution",
       "kind": "related"
     },
     {
@@ -7737,6 +7932,61 @@
     {
       "from": "eval-dataset-quality",
       "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
+      "from": "eval-statistical-significance",
+      "to": "2026-08-06-prompt-attribution-research",
+      "kind": "source-thread"
+    },
+    {
+      "from": "eval-statistical-significance",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "eval-statistical-significance",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "eval-statistical-significance",
+      "to": "eval-case-design",
+      "kind": "related"
+    },
+    {
+      "from": "eval-statistical-significance",
+      "to": "eval-dataset-quality",
+      "kind": "related"
+    },
+    {
+      "from": "eval-statistical-significance",
+      "to": "harness-as-hyperparameter",
+      "kind": "related"
+    },
+    {
+      "from": "eval-statistical-significance",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "eval-statistical-significance",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "eval-statistical-significance",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "eval-statistical-significance",
+      "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "eval-statistical-significance",
+      "to": "references-prompt-attribution",
       "kind": "related"
     },
     {
@@ -8421,6 +8671,11 @@
     },
     {
       "from": "llm-evaluation",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
       "to": "execution-invariant-testing",
       "kind": "related"
     },
@@ -8447,6 +8702,11 @@
     {
       "from": "llm-evaluation",
       "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "prompt-component-attribution",
       "kind": "related"
     },
     {
@@ -8517,6 +8777,11 @@
     {
       "from": "llm-observability",
       "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
+      "from": "llm-observability",
+      "to": "prompt-component-attribution",
       "kind": "related"
     },
     {
@@ -9046,12 +9311,22 @@
     },
     {
       "from": "offline-prompt-optimization",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "offline-prompt-optimization",
       "to": "llm-as-judge",
       "kind": "related"
     },
     {
       "from": "offline-prompt-optimization",
       "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "offline-prompt-optimization",
+      "to": "prompt-component-attribution",
       "kind": "related"
     },
     {
@@ -9560,6 +9835,71 @@
       "kind": "related"
     },
     {
+      "from": "prompt-component-attribution",
+      "to": "2026-08-06-prompt-attribution-research",
+      "kind": "source-thread"
+    },
+    {
+      "from": "prompt-component-attribution",
+      "to": "agentic-context-engineering-ace",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-component-attribution",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-component-attribution",
+      "to": "cot-as-forensic-artifact",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-component-attribution",
+      "to": "eval-case-design",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-component-attribution",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-component-attribution",
+      "to": "grounding-and-citation",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-component-attribution",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-component-attribution",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-component-attribution",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-component-attribution",
+      "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-component-attribution",
+      "to": "recency-bias-prompt-design",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-component-attribution",
+      "to": "references-prompt-attribution",
+      "kind": "related"
+    },
+    {
       "from": "prompt-injection-and-isolation",
       "to": "action-authority",
       "kind": "related"
@@ -9950,6 +10290,51 @@
       "kind": "related"
     },
     {
+      "from": "references-prompt-attribution",
+      "to": "2026-08-06-prompt-attribution-research",
+      "kind": "source-thread"
+    },
+    {
+      "from": "references-prompt-attribution",
+      "to": "cot-as-forensic-artifact",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-attribution",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-attribution",
+      "to": "grounding-and-citation",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-attribution",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-attribution",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-attribution",
+      "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-attribution",
+      "to": "references-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-optimization",
+      "to": "2026-08-06-prompt-attribution-research",
+      "kind": "source-thread"
+    },
+    {
       "from": "references-prompt-optimization",
       "to": "agent-eval-improvement-tiers",
       "kind": "related"
@@ -9982,6 +10367,11 @@
     {
       "from": "references-prompt-optimization",
       "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-optimization",
+      "to": "references-prompt-attribution",
       "kind": "related"
     },
     {
