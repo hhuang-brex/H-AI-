@@ -267,13 +267,16 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-context-and-memory](nodes/references/references-context-and-memory.md) — verified empirical sources behind the context and memory clusters — lost-in-the-middle, context rot, RAG, MemGPT, and generative agents.
 - [references-domain-chatbot-design](nodes/references/references-domain-chatbot-design.md) — chatbot design reading list (Anthropic, OpenAI, Microsoft Bot Service, Google CDS, Rasa, Voiceflow, Husain, Yan, Hall, Intercom Fin).
 - [references-eval-reading-list](nodes/references/references-eval-reading-list.md) — frontier-lab + practitioner posts on LLM eval (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, …).
+- [references-harness-evaluation](nodes/references/references-harness-evaluation.md) — verified primary sources grounding the agent-harness cluster — the dynamic-workflow concept (agent orchestrates its own fan-out), the minimalist vs rich-taxonomy harness projects, and the papers arguing harness-as-hyperparameter and code-owned enforcement.
 - [references-memory-theory](nodes/references/references-memory-theory.md) — verified primary sources behind the memory-theory cluster — Hopfield/attention, complementary learning systems, catastrophic forgetting, model editing, and experiential learning.
+- [references-model-context-protocol](nodes/references/references-model-context-protocol.md) — verified primary sources grounding mcp-tool-layer, fanned out by category — projects (reference servers, FastMCP, mcp-agent, LangChain adapters), papers (landscape survey, RAG-MCP, two security audits), and blogs (launch, code-execution, Cloudflare Code Mode, writing tools for agents).
 - [references-ontology-llm-agents](nodes/references/references-ontology-llm-agents.md) — verified primary sources for the ontology-grounded-agent cluster — KG-RAG, LLM ontology engineering, autoformalization+solvers, temporal-KG memory, SHACL/OWL, MCP/A2A.
+- [references-prompt-optimization](nodes/references/references-prompt-optimization.md) — verified primary sources for automatic prompt optimization — the token-search → text-gradient → program-optimizer lineage behind offline-prompt-optimization, plus the agent-specific work and the field survey.
 - [references-task-agent-design](nodes/references/references-task-agent-design.md) — verified primary sources grounding the agent cluster — ReAct, Reflexion, Toolformer, Tree of Thoughts, MetaGPT, and Anthropic's effective-agents guidance.
 - [references-template-rendered-output](nodes/references/references-template-rendered-output.md) — what's verifiable about template-rendered output in production — Rasa (mechanism confirmed), Ikki (architecture confirmed, outcomes refuted), and why most 'structured output' systems don't qualify.
 
 ---
-<sub>Provenance: 21 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
+<sub>Provenance: 20 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
 
 <!-- END GENERATED -->
 

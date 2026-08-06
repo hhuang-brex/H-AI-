@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-20",
-  "node_count": 169,
-  "edge_count": 1240,
+  "generated": "2026-08-05",
+  "node_count": 171,
+  "edge_count": 1247,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -492,42 +492,6 @@
         "sms-message-buffering-plan",
         "2026-06-10-github-buffering-references",
         "2026-06-10-sms-message-buffering-research"
-      ]
-    },
-    {
-      "id": "2026-06-15-kb-trend-scan",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-15-kb-trend-scan.md",
-      "title": "Thread \u2014 KB Trend Scan (2026-06-15)",
-      "summary": "first daily trend scan; biggest gap = adversarial/security safety (prompt injection, lethal trifecta, isolation); plus MCP/Agent-Skills nodes and CoT-monitorability / memory-eval updates.",
-      "tags": [
-        "meta",
-        "trend-scan",
-        "loop",
-        "gap-analysis",
-        "agents",
-        "research"
-      ],
-      "status": "snapshot",
-      "created": "2026-06-15",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "action-execution-safety",
-        "safety-rails-domain-specific",
-        "adversarial-eval",
-        "tool-use-design",
-        "tool-selection-and-routing",
-        "forced-tool-call-output",
-        "cot-as-forensic-artifact",
-        "memory-retrieval",
-        "memory-types-taxonomy",
-        "multi-agent-delegation",
-        "agent-trajectory-eval",
-        "llm-as-judge",
-        "context-engineering",
-        "references-task-agent-design"
       ]
     },
     {
@@ -1049,7 +1013,8 @@
         "agent-memory",
         "agent-native-memory-framework",
         "verbal-reinforcement-vs-gradient-rl",
-        "self-improving-harness"
+        "self-improving-harness",
+        "references-prompt-optimization"
       ]
     },
     {
@@ -2871,7 +2836,8 @@
         "prompt-injection-and-isolation",
         "code-execution-sandbox-pattern",
         "agent-skills-progressive-disclosure",
-        "managed-agent-apis"
+        "managed-agent-apis",
+        "references-model-context-protocol"
       ]
     },
     {
@@ -3190,7 +3156,8 @@
         "agentic-context-engineering-ace",
         "context-engineering",
         "verbal-reinforcement-vs-gradient-rl",
-        "self-improving-harness"
+        "self-improving-harness",
+        "references-prompt-optimization"
       ]
     },
     {
@@ -3819,6 +3786,34 @@
       ]
     },
     {
+      "id": "references-harness-evaluation",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-harness-evaluation.md",
+      "title": "References \u2014 Harness & Fan-Out Orchestration",
+      "summary": "verified primary sources grounding the agent-harness cluster \u2014 the dynamic-workflow concept (agent orchestrates its own fan-out), the minimalist vs rich-taxonomy harness projects, and the papers arguing harness-as-hyperparameter and code-owned enforcement.",
+      "tags": [
+        "agent",
+        "harness",
+        "orchestration",
+        "fan-out",
+        "reading-list",
+        "evaluation",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-08-02",
+      "clusters": [],
+      "source_thread": "2026-07-20-agent-harness-research",
+      "related": [
+        "agent-harness",
+        "harness-as-hyperparameter",
+        "background-agent-execution",
+        "self-improving-harness",
+        "multi-agent-delegation"
+      ]
+    },
+    {
       "id": "references-memory-theory",
       "type": "reference",
       "kind": null,
@@ -3849,6 +3844,34 @@
       ]
     },
     {
+      "id": "references-model-context-protocol",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-model-context-protocol.md",
+      "title": "References \u2014 Model Context Protocol",
+      "summary": "verified primary sources grounding mcp-tool-layer, fanned out by category \u2014 projects (reference servers, FastMCP, mcp-agent, LangChain adapters), papers (landscape survey, RAG-MCP, two security audits), and blogs (launch, code-execution, Cloudflare Code Mode, writing tools for agents).",
+      "tags": [
+        "agent",
+        "tool-use",
+        "mcp",
+        "protocol",
+        "interop",
+        "standards",
+        "reading-list",
+        "science-excellence"
+      ],
+      "status": "living",
+      "created": "2026-08-02",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "mcp-tool-layer",
+        "tool-use-design",
+        "prompt-injection-and-isolation",
+        "managed-agent-apis"
+      ]
+    },
+    {
       "id": "references-ontology-llm-agents",
       "type": "reference",
       "kind": null,
@@ -3874,6 +3897,36 @@
         "llm-as-autoformalizer-plus-solver",
         "bitemporal-fact-invalidation-memory",
         "ontology-as-validator-shacl"
+      ]
+    },
+    {
+      "id": "references-prompt-optimization",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-prompt-optimization.md",
+      "title": "References \u2014 Automatic Prompt Optimization",
+      "summary": "verified primary sources for automatic prompt optimization \u2014 the token-search \u2192 text-gradient \u2192 program-optimizer lineage behind offline-prompt-optimization, plus the agent-specific work and the field survey.",
+      "tags": [
+        "prompt",
+        "optimization",
+        "dspy",
+        "gepa",
+        "reading-list",
+        "eval",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-08-05",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "offline-prompt-optimization",
+        "agentic-context-engineering-ace",
+        "verbal-reinforcement-vs-gradient-rl",
+        "self-improving-harness",
+        "dspy-domain-chatbot-cases",
+        "agent-eval-improvement-tiers",
+        "llm-evaluation"
       ]
     },
     {
@@ -4998,7 +5051,8 @@
         "agentic-context-engineering-ace",
         "verbal-self-correction",
         "llm-evaluation",
-        "llm-as-judge"
+        "llm-as-judge",
+        "references-prompt-optimization"
       ]
     },
     {
@@ -5610,76 +5664,6 @@
     {
       "from": "2026-06-11-text-eot-classifier-salvage",
       "to": "sms-message-buffering-spec",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-15-kb-trend-scan",
-      "to": "action-execution-safety",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-15-kb-trend-scan",
-      "to": "adversarial-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-15-kb-trend-scan",
-      "to": "agent-trajectory-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-15-kb-trend-scan",
-      "to": "context-engineering",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-15-kb-trend-scan",
-      "to": "cot-as-forensic-artifact",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-15-kb-trend-scan",
-      "to": "forced-tool-call-output",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-15-kb-trend-scan",
-      "to": "llm-as-judge",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-15-kb-trend-scan",
-      "to": "memory-retrieval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-15-kb-trend-scan",
-      "to": "memory-types-taxonomy",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-15-kb-trend-scan",
-      "to": "multi-agent-delegation",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-15-kb-trend-scan",
-      "to": "references-task-agent-design",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-15-kb-trend-scan",
-      "to": "safety-rails-domain-specific",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-15-kb-trend-scan",
-      "to": "tool-selection-and-routing",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-15-kb-trend-scan",
-      "to": "tool-use-design",
       "kind": "related"
     },
     {
@@ -6500,6 +6484,11 @@
     {
       "from": "agentic-context-engineering-ace",
       "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "agentic-context-engineering-ace",
+      "to": "references-prompt-optimization",
       "kind": "related"
     },
     {
@@ -8669,6 +8658,11 @@
     },
     {
       "from": "mcp-tool-layer",
+      "to": "references-model-context-protocol",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tool-layer",
       "to": "tool-result-grounding",
       "kind": "related"
     },
@@ -9055,6 +9049,11 @@
     {
       "from": "offline-prompt-optimization",
       "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "offline-prompt-optimization",
+      "to": "references-prompt-optimization",
       "kind": "related"
     },
     {
@@ -9833,6 +9832,36 @@
       "kind": "related"
     },
     {
+      "from": "references-harness-evaluation",
+      "to": "2026-07-20-agent-harness-research",
+      "kind": "source-thread"
+    },
+    {
+      "from": "references-harness-evaluation",
+      "to": "agent-harness",
+      "kind": "related"
+    },
+    {
+      "from": "references-harness-evaluation",
+      "to": "background-agent-execution",
+      "kind": "related"
+    },
+    {
+      "from": "references-harness-evaluation",
+      "to": "harness-as-hyperparameter",
+      "kind": "related"
+    },
+    {
+      "from": "references-harness-evaluation",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "references-harness-evaluation",
+      "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
       "from": "references-memory-theory",
       "to": "agent-memory",
       "kind": "related"
@@ -9868,6 +9897,26 @@
       "kind": "related"
     },
     {
+      "from": "references-model-context-protocol",
+      "to": "managed-agent-apis",
+      "kind": "related"
+    },
+    {
+      "from": "references-model-context-protocol",
+      "to": "mcp-tool-layer",
+      "kind": "related"
+    },
+    {
+      "from": "references-model-context-protocol",
+      "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "references-model-context-protocol",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
       "from": "references-ontology-llm-agents",
       "to": "bitemporal-fact-invalidation-memory",
       "kind": "related"
@@ -9895,6 +9944,41 @@
     {
       "from": "references-ontology-llm-agents",
       "to": "user-intent-to-task-grounding",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-optimization",
+      "to": "agent-eval-improvement-tiers",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-optimization",
+      "to": "agentic-context-engineering-ace",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-optimization",
+      "to": "dspy-domain-chatbot-cases",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-optimization",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-optimization",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-optimization",
+      "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "references-prompt-optimization",
+      "to": "verbal-reinforcement-vs-gradient-rl",
       "kind": "related"
     },
     {
@@ -11170,6 +11254,11 @@
     {
       "from": "verbal-reinforcement-vs-gradient-rl",
       "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "verbal-reinforcement-vs-gradient-rl",
+      "to": "references-prompt-optimization",
       "kind": "related"
     },
     {

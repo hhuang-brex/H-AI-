@@ -12,6 +12,7 @@ related:
   - [[context-engineering]]
   - [[verbal-reinforcement-vs-gradient-rl]]
   - [[self-improving-harness]]
+  - [[references-prompt-optimization]]
 status: living
 created: 2026-06-15
 summary: "improve an agent skill by searching prompt space offline, scored end-to-end by the real agent — not hand-tuning."
@@ -60,3 +61,4 @@ As of mid-2026, **no verified production case** improves a genuinely *multi-step
 - The structural counterpart — optimizing *what context the playbook assembles* rather than its prose: [agentic-context-engineering-ace](agentic-context-engineering-ace.md).
 - Eval foundations this depends on: [agent-trajectory-eval](agent-trajectory-eval.md), [llm-as-judge](llm-as-judge.md), [adversarial-eval](adversarial-eval.md).
 - Primary: GEPA [arXiv:2507.19457](https://arxiv.org/abs/2507.19457); DSPy [arXiv:2310.03714](https://arxiv.org/abs/2310.03714); `gepa-ai/gepa` (standalone, MIT).
+- Full verified reading list — the AutoPrompt → APE → textual-gradient → program-optimizer lineage, the agent-specific work, and the field survey: [references-prompt-optimization](../references/references-prompt-optimization.md).
