@@ -19,6 +19,7 @@ related:
   - [[eval-case-design]]
   - [[eval-statistical-significance]]
   - [[prompt-component-attribution]]
+  - [[references-multi-turn-agent-eval]]
   - [[verbal-self-correction]]
   - [[collaborative-agent-eval]]
   - [[live-traffic-eval]]
@@ -60,4 +61,4 @@ Anything not serving (1)–(3) is overhead.
 
 ## Canonical references
 
-See [references-eval-reading-list](../references/references-eval-reading-list.md) for the curated frontier-lab + practitioner reading list.
+See [references-eval-reading-list](../references/references-eval-reading-list.md) for the curated frontier-lab + practitioner reading list, and [references-multi-turn-agent-eval](../references/references-multi-turn-agent-eval.md) for the multi-turn conversational-agent evaluation literature (component taxonomies, long-horizon memory and interleaving benchmarks).

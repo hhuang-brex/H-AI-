@@ -1,7 +1,7 @@
 {
   "generated": "2026-08-06",
-  "node_count": 175,
-  "edge_count": 1300,
+  "node_count": 177,
+  "edge_count": 1325,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -526,6 +526,35 @@
       ]
     },
     {
+      "id": "2026-08-06-multi-turn-eval-survey-fanout",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-08-06-multi-turn-eval-survey-fanout.md",
+      "title": "Thread \u2014 Multi-Turn Agent Eval Survey Fan-Out (2026-08-06)",
+      "summary": "fan-out of the ~250-source multi-turn agent evaluation survey (arXiv:2503.22458 v2): taxonomies extracted from LaTeX source, 8 anchors verified, 3 concept deepenings, 5 citation defects recorded.",
+      "tags": [
+        "meta",
+        "research",
+        "fan-out",
+        "eval",
+        "multi-turn",
+        "memory",
+        "planner"
+      ],
+      "status": "snapshot",
+      "created": "2026-08-06",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "references-multi-turn-agent-eval",
+        "agent-trajectory-eval",
+        "memory-types-taxonomy",
+        "reflection-loop-taxonomy",
+        "llm-evaluation",
+        "agent-memory"
+      ]
+    },
+    {
       "id": "2026-08-06-prompt-attribution-research",
       "type": "thread",
       "kind": null,
@@ -882,6 +911,7 @@
         "experiential-memory-substrates",
         "domain-knowledge-injection",
         "references-context-and-memory",
+        "references-multi-turn-agent-eval",
         "references-memory-theory",
         "proactive-memory-intervention",
         "prompt-time-knowledge-capture",
@@ -1010,7 +1040,9 @@
         "test-pyramid-llm",
         "golden-snapshot-eval",
         "agent-eval-case-study",
-        "collaborative-agent-eval"
+        "collaborative-agent-eval",
+        "flat-channel-thread-tracking",
+        "references-multi-turn-agent-eval"
       ]
     },
     {
@@ -2762,6 +2794,7 @@
         "eval-case-design",
         "eval-statistical-significance",
         "prompt-component-attribution",
+        "references-multi-turn-agent-eval",
         "verbal-self-correction",
         "collaborative-agent-eval",
         "live-traffic-eval",
@@ -3073,7 +3106,9 @@
         "conversation-memory",
         "memory-retrieval",
         "run-state-model",
-        "agent-native-memory-framework"
+        "agent-native-memory-framework",
+        "parametric-memory-and-editing",
+        "references-multi-turn-agent-eval"
       ]
     },
     {
@@ -3981,6 +4016,40 @@
       ]
     },
     {
+      "id": "references-multi-turn-agent-eval",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-multi-turn-agent-eval.md",
+      "title": "References \u2014 Multi-Turn Conversational Agent Evaluation",
+      "summary": "the ~250-source multi-turn conversational agent evaluation survey as a map of the field, with its taxonomies extracted, its citation defects recorded, and eight of its anchor benchmarks verified at the primary source.",
+      "tags": [
+        "eval",
+        "multi-turn",
+        "agents",
+        "memory",
+        "planner",
+        "tool-use",
+        "reading-list",
+        "survey"
+      ],
+      "status": "living",
+      "created": "2026-08-06",
+      "clusters": [],
+      "source_thread": "2026-08-06-multi-turn-eval-survey-fanout",
+      "related": [
+        "llm-evaluation",
+        "agent-trajectory-eval",
+        "memory-types-taxonomy",
+        "reflection-loop-taxonomy",
+        "conversation-memory",
+        "simulated-user-eval",
+        "llm-as-judge",
+        "eval-case-design",
+        "references-eval-reading-list",
+        "references-context-and-memory"
+      ]
+    },
+    {
       "id": "references-ontology-llm-agents",
       "type": "reference",
       "kind": null,
@@ -4154,7 +4223,9 @@
         "plan-execute-replan",
         "goal-decomposition",
         "multi-agent-delegation",
-        "prince-reliable-agentic-case-study"
+        "prince-reliable-agentic-case-study",
+        "confirm-before-act",
+        "references-multi-turn-agent-eval"
       ]
     },
     {
@@ -5855,6 +5926,36 @@
       "kind": "related"
     },
     {
+      "from": "2026-08-06-multi-turn-eval-survey-fanout",
+      "to": "agent-memory",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-06-multi-turn-eval-survey-fanout",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-06-multi-turn-eval-survey-fanout",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-06-multi-turn-eval-survey-fanout",
+      "to": "memory-types-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-06-multi-turn-eval-survey-fanout",
+      "to": "references-multi-turn-agent-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-06-multi-turn-eval-survey-fanout",
+      "to": "reflection-loop-taxonomy",
+      "kind": "related"
+    },
+    {
       "from": "2026-08-06-prompt-attribution-research",
       "to": "cot-as-forensic-artifact",
       "kind": "related"
@@ -6470,6 +6571,11 @@
       "kind": "related"
     },
     {
+      "from": "agent-memory",
+      "to": "references-multi-turn-agent-eval",
+      "kind": "related"
+    },
+    {
       "from": "agent-native-memory-framework",
       "to": "agent-memory",
       "kind": "related"
@@ -6611,12 +6717,22 @@
     },
     {
       "from": "agent-trajectory-eval",
+      "to": "flat-channel-thread-tracking",
+      "kind": "related"
+    },
+    {
+      "from": "agent-trajectory-eval",
       "to": "golden-snapshot-eval",
       "kind": "related"
     },
     {
       "from": "agent-trajectory-eval",
       "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "agent-trajectory-eval",
+      "to": "references-multi-turn-agent-eval",
       "kind": "related"
     },
     {
@@ -8711,6 +8827,11 @@
     },
     {
       "from": "llm-evaluation",
+      "to": "references-multi-turn-agent-eval",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
       "to": "simulated-user-eval",
       "kind": "related"
     },
@@ -9142,6 +9263,16 @@
     {
       "from": "memory-types-taxonomy",
       "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "memory-types-taxonomy",
+      "to": "parametric-memory-and-editing",
+      "kind": "related"
+    },
+    {
+      "from": "memory-types-taxonomy",
+      "to": "references-multi-turn-agent-eval",
       "kind": "related"
     },
     {
@@ -10260,6 +10391,61 @@
       "kind": "related"
     },
     {
+      "from": "references-multi-turn-agent-eval",
+      "to": "2026-08-06-multi-turn-eval-survey-fanout",
+      "kind": "source-thread"
+    },
+    {
+      "from": "references-multi-turn-agent-eval",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "references-multi-turn-agent-eval",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "references-multi-turn-agent-eval",
+      "to": "eval-case-design",
+      "kind": "related"
+    },
+    {
+      "from": "references-multi-turn-agent-eval",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "references-multi-turn-agent-eval",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "references-multi-turn-agent-eval",
+      "to": "memory-types-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "references-multi-turn-agent-eval",
+      "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "references-multi-turn-agent-eval",
+      "to": "references-eval-reading-list",
+      "kind": "related"
+    },
+    {
+      "from": "references-multi-turn-agent-eval",
+      "to": "reflection-loop-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "references-multi-turn-agent-eval",
+      "to": "simulated-user-eval",
+      "kind": "related"
+    },
+    {
       "from": "references-ontology-llm-agents",
       "to": "bitemporal-fact-invalidation-memory",
       "kind": "related"
@@ -10446,6 +10632,11 @@
     },
     {
       "from": "reflection-loop-taxonomy",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "reflection-loop-taxonomy",
       "to": "goal-decomposition",
       "kind": "related"
     },
@@ -10462,6 +10653,11 @@
     {
       "from": "reflection-loop-taxonomy",
       "to": "prince-reliable-agentic-case-study",
+      "kind": "related"
+    },
+    {
+      "from": "reflection-loop-taxonomy",
+      "to": "references-multi-turn-agent-eval",
       "kind": "related"
     },
     {

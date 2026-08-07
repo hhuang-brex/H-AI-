@@ -9,6 +9,8 @@ related:
   - [[golden-snapshot-eval]]
   - [[agent-eval-case-study]]
   - [[collaborative-agent-eval]]
+  - [[flat-channel-thread-tracking]]
+  - [[references-multi-turn-agent-eval]]
 status: living
 created: 2026-06-05
 summary: "multi-turn, tool sequences, end-state."
@@ -39,6 +41,15 @@ For genuinely nondeterministic agents, judging "did the final state satisfy the 
 ## Multi-turn drift
 
 Single-turn cases miss the failure mode where state from turn N contaminates turn N+1 (system-reminder leakage, tool-output framing, premature tool use). Cover at least a handful of 3+ turn trajectories per surface.
+
+## Interleaving, not length, is the variable
+
+The stronger version of drift: what breaks a conversational agent is **concurrent tasks with context switching**, not a long single-task dialogue. Benchmarking agents through one long conversation carrying several simultaneous tasks found models "in general perform well on single-task interactions" but **degrade on the same tasks once interleaved** — and that short-context models with a long-term memory system matched or exceeded larger-context models ([arXiv:2409.20222](https://arxiv.org/abs/2409.20222), NeurIPS D&B 2024). Two consequences for case design:
+
+- A suite of long *single-task* trajectories will pass while production fails. Build cases that **interleave two or three tasks and switch between them**, which is the real shape of [sms-multi-thread-chatbot](../topics/sms-multi-thread-chatbot.md) traffic and what [flat-channel-thread-tracking](flat-channel-thread-tracking.md) exists to handle.
+- Do not treat "bigger context window" as the fix you're measuring against; memory architecture beat window size on this benchmark.
+
+A survey of ~250 sources on multi-turn agent evaluation names the same failure at the field level: current methods "tend to assess conversation turns in isolation rather than holistically, which limits the ability to capture the dynamic interplay among successive turns." Its component decomposition — end-to-end experience, action/tool use, memory, planner — is a usable coverage checklist for a trajectory suite; see [references-multi-turn-agent-eval](../references/references-multi-turn-agent-eval.md).
 
 ## Frontier (2026): reward models, failure attribution, dual-control
 

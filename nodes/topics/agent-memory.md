@@ -23,6 +23,7 @@ related:
   - [[experiential-memory-substrates]]
   - [[domain-knowledge-injection]]
   - [[references-context-and-memory]]
+  - [[references-multi-turn-agent-eval]]
   - [[references-memory-theory]]
   - [[proactive-memory-intervention]]
   - [[prompt-time-knowledge-capture]]

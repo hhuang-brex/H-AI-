@@ -10,6 +10,8 @@ related:
   - [[memory-retrieval]]
   - [[run-state-model]]
   - [[agent-native-memory-framework]]
+  - [[parametric-memory-and-editing]]
+  - [[references-multi-turn-agent-eval]]
 status: living
 created: 2026-06-12
 ---
@@ -32,6 +34,19 @@ Working memory is essentially this-turn/this-run state — it overlaps the [run-
 ## conversation-memory is a special case
 
 [conversation-memory](conversation-memory.md)'s "three horizons" (this turn / this session / across sessions) maps onto this taxonomy: this-turn ≈ working, this-session ≈ episodic, across-sessions ≈ semantic. The taxonomy generalizes it — same idea, with the write/decay differences made explicit and procedural memory added for task-learning agents.
+
+## A second, orthogonal decomposition: span × form
+
+The four types answer *what kind of thing* is remembered. A multi-turn-agent evaluation survey of ~250 sources cuts the same territory along two different axes, and the pair is useful precisely because it asks questions this taxonomy doesn't ([references-multi-turn-agent-eval](../references/references-multi-turn-agent-eval.md)):
+
+| Axis | Values | The question it forces |
+|---|---|---|
+| **Memory span** (temporal scope) | turn · conversation · permanent | how long must this survive, and what is the eviction rule at each boundary? |
+| **Memory form** (representation) | *textual*: complete / recent / retrieved / external — *parametric*: fine-tuning, memory editing | is it searchable text or baked into weights, and what does that cost at retrieval time? |
+
+Span maps onto [conversation-memory](conversation-memory.md)'s three horizons; **form** is the axis this graph otherwise treats separately — textual-retrieved is [memory-retrieval](memory-retrieval.md), textual-external is tool calls, and parametric is [parametric-memory-and-editing](parametric-memory-and-editing.md). Reading the grid as a matrix is what makes it worth having: "permanent × parametric" (fine-tune a preference into weights) and "permanent × textual-retrieved" (store it and retrieve it) are the same *type* of memory — semantic — with completely different write cost, auditability, and unlearning story. Pick a cell, not just a type.
+
+The survey's own gap statement is worth keeping as an eval requirement: many benchmarks "fail to differentiate between short-term recall and long-term context integration," so a memory eval that doesn't separate the spans can't tell drift from forgetting.
 
 ## When you need more than one type
 

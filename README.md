@@ -273,6 +273,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-harness-evaluation](nodes/references/references-harness-evaluation.md) — verified primary sources grounding the agent-harness cluster — the dynamic-workflow concept (agent orchestrates its own fan-out), the minimalist vs rich-taxonomy harness projects, and the papers arguing harness-as-hyperparameter and code-owned enforcement.
 - [references-memory-theory](nodes/references/references-memory-theory.md) — verified primary sources behind the memory-theory cluster — Hopfield/attention, complementary learning systems, catastrophic forgetting, model editing, and experiential learning.
 - [references-model-context-protocol](nodes/references/references-model-context-protocol.md) — verified primary sources grounding mcp-tool-layer, fanned out by category — projects (reference servers, FastMCP, mcp-agent, LangChain adapters), papers (landscape survey, RAG-MCP, two security audits), and blogs (launch, code-execution, Cloudflare Code Mode, writing tools for agents).
+- [references-multi-turn-agent-eval](nodes/references/references-multi-turn-agent-eval.md) — the ~250-source multi-turn conversational agent evaluation survey as a map of the field, with its taxonomies extracted, its citation defects recorded, and eight of its anchor benchmarks verified at the primary source.
 - [references-ontology-llm-agents](nodes/references/references-ontology-llm-agents.md) — verified primary sources for the ontology-grounded-agent cluster — KG-RAG, LLM ontology engineering, autoformalization+solvers, temporal-KG memory, SHACL/OWL, MCP/A2A.
 - [references-prompt-attribution](nodes/references/references-prompt-attribution.md) — verified sources for measuring prompt effectiveness — context-attribution methods (which span caused which output), population-level ablation and sensitivity studies, and the confounds that make naive measurement unfaithful.
 - [references-prompt-optimization](nodes/references/references-prompt-optimization.md) — verified primary sources for automatic prompt optimization — the token-search → text-gradient → program-optimizer lineage, the 2026 work on credit assignment, cost and GEPA's failure modes, plus the field survey.
@@ -280,7 +281,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-template-rendered-output](nodes/references/references-template-rendered-output.md) — what's verifiable about template-rendered output in production — Rasa (mechanism confirmed), Ikki (architecture confirmed, outcomes refuted), and why most 'structured output' systems don't qualify.
 
 ---
-<sub>Provenance: 21 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
+<sub>Provenance: 22 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
 
 <!-- END GENERATED -->
 
