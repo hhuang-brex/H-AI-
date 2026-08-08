@@ -11,6 +11,8 @@ related:
   - [[tool-selection-and-routing]]
   - [[context-budget-allocation]]
   - [[action-execution-safety]]
+  - [[skill-text-authoring]]
+  - [[references-agent-skill-authoring]]
 status: living
 created: 2026-06-21
 ---
@@ -53,12 +55,26 @@ Progressive disclosure is the same lever as the rest of [context-engineering](..
 - **A SKILL.md is curated-text capability.** It is the durable, portable instance of the "curated text" substrate in [experiential-memory-substrates](experiential-memory-substrates.md) and a structured form of [domain-knowledge-injection](domain-knowledge-injection.md) — domain procedure as a version-controlled artifact rather than prose baked into the prompt. The `description` is the retrieval key; the body is the retrieved payload.
 - **The description *is* the routing function.** Discovery works only if `description` states *when to use this* precisely. A vague description means the skill is never surfaced (under-recall) or fires on everything (over-recall) — the same precision problem as [memory-retrieval](memory-retrieval.md), now at the capability layer.
 
+## The format's hard constraints
+
+Packaging discipline has actual limits, not just conventions (Anthropic authoring guidance, verified 2026-08-08):
+
+| Field / file | Constraint |
+|---|---|
+| `name` | ≤ 64 chars, lowercase letters/numbers/hyphens only, no XML tags, no reserved words ("anthropic", "claude") |
+| `description` | ≤ 1,024 chars, non-empty, no XML tags; **third person** (it is injected into the system prompt) |
+| `SKILL.md` body | under **500 lines** "for optimal performance"; split beyond that |
+| Bundled references | **one level deep from SKILL.md** — with nested references the agent may `head -100` a file instead of reading it, silently losing content |
+| Reference file > 100 lines | add a table of contents, so a partial read still shows the full scope |
+
+What to *write* inside those limits is [skill-text-authoring](skill-text-authoring.md).
+
 ## Pitfalls
 
-- **Weak descriptions.** The whole mechanism rests on stage-1 matching. "Helps with documents" won't route; "Fill PDF AcroForm fields from a JSON record" will. Treat the description as a routing contract, not a label.
-- **Skill sprawl.** Many overlapping skills make discovery ambiguous and inflate the always-resident metadata. Consolidate; keep descriptions disjoint.
+- **Weak descriptions.** The whole mechanism rests on stage-1 matching. "Helps with documents" won't route; "Fill PDF AcroForm fields from a JSON record" will. Treat the description as a routing contract, not a label. The stronger 2026 formulation: a skill's capability is its **executable region** (the set of queries it can solve) and its document is a *lossy observation* of that region, which creates "a document-imposed component of retrieval error that cannot be removed by improving the retriever alone" ([arXiv:2608.04482](https://arxiv.org/abs/2608.04482)). So also state the **negative boundary** — which similar-looking requests should route elsewhere.
+- **Skill sprawl.** Many overlapping skills make discovery ambiguous and inflate the always-resident metadata. Consolidate; keep descriptions disjoint. Measured ceiling worth knowing: over **690 skills / 117 queries**, a hybrid lexical+dense ranker put the right skill in the top five **73.5% ± 8.0** of the time — about a quarter of queries unserved — and a typed workflow knowledge graph was **11.2 points worse** at matched token budget ([arXiv:2608.06196](https://arxiv.org/abs/2608.06196), 2026 preprint). Past a few hundred skills, discovery, not authoring, is the binding constraint.
 - **Instructions that assume unloaded context.** The body must be self-contained at activation; don't reference an `assets/` file's contents as if already in the window — link it so stage 3 can fetch it.
-- **Skills are an action surface.** A skill that ships executable scripts is a path to running code — squarely an [action-execution-safety](../topics/action-execution-safety.md) concern. An untrusted or injected skill is a real attack vector (the still-open `prompt-injection-and-isolation` gap); load skills only from trusted sources and sandbox bundled code.
+- **Skills are an action surface.** A skill that ships executable scripts is a path to running code — squarely an [action-execution-safety](../topics/action-execution-safety.md) concern. An untrusted or injected skill is a real attack vector (the still-open `prompt-injection-and-isolation` gap); load skills only from trusted sources and sandbox bundled code. The threat is now demonstrated at scale: **471 real-world shell commands were transformed into 2,826 benign-appearing skills mapped to 11 MITRE ATT&CK tactics**, exploiting the fact that malicious commands hide inside natural-language skill files ([arXiv:2608.05223](https://arxiv.org/abs/2608.05223), 2026 preprint under review).
 - **No versioning discipline.** Skills evolve; an unversioned skill silently changes agent behavior across runs. Version and pin like any dependency.
 
 ## References

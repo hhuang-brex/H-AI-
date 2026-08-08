@@ -1,0 +1,63 @@
+---
+id: references-agent-skill-authoring
+type: reference
+tags: [skills, authoring, reading-list, retrieval, eval, safety, agents]
+summary: "verified sources on writing and improving agent skill text — Anthropic's authoring guidance plus the 2026 skill-library literature on valuation, evolution, retrieval documents, compression, rule nesting, and malicious skills."
+related:
+  - [[skill-text-authoring]]
+  - [[agent-skills-progressive-disclosure]]
+  - [[offline-prompt-optimization]]
+  - [[prompt-component-attribution]]
+  - [[references-prompt-optimization]]
+  - [[references-prompt-attribution]]
+  - [[tool-selection-and-routing]]
+  - [[action-execution-safety]]
+status: living
+created: 2026-08-08
+source-thread: [[2026-08-08-skill-text-authoring-fanout]]
+---
+
+# References — Agent Skill Authoring
+
+Sources behind [skill-text-authoring](../concepts/skill-text-authoring.md). Fetched and confirmed **2026-08-08**. **Every arXiv entry here is a 2026 preprint beyond the May-2026 cutoff, and none is independently reproduced** — all figures are author-reported. The vendor page is a living doc: re-date it before relying on a specific number.
+
+## The vendor guidance — the only prescriptive primary source
+
+- **Skill authoring best practices** — Anthropic (fetched 2026-08-08). https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices — Note the redirect: `docs.claude.com/en/docs/agents-and-tools/…` 302s to `platform.claude.com/docs/en/…`. The most concrete authoring source available, and the origin of several claims in the concept node:
+  - **Economy.** "The context window is a public good"; the default assumption is that Claude "is already very smart," so each piece of content must answer "does this paragraph justify its token cost?" Worked contrast: ~50 tokens vs ~150 for the same PDF-extraction instruction.
+  - **Degrees of freedom.** Match specificity to task fragility — high freedom (prose heuristics) / medium (pseudocode, parameterized scripts) / low (one exact command, "do not modify the command"). Analogy: narrow bridge with cliffs vs open field.
+  - **Hard limits.** `name` ≤ 64 chars, lowercase-hyphen only, no XML tags, no reserved words ("anthropic", "claude"); `description` ≤ 1,024 chars, non-empty, no XML tags. Body **under 500 lines** "for optimal performance."
+  - **Descriptions.** Third person always ("Processes Excel files…", not "I can help you…") because the description is injected into the system prompt; must state **what it does and when to use it**, since it is what selects among "potentially 100+ available Skills."
+  - **Structure for partial reads.** Keep references **one level deep** — with nested references Claude "might use commands like `head -100` to preview content rather than reading entire files, resulting in incomplete information"; add a **table of contents to reference files over 100 lines**; name files descriptively.
+  - **Process.** Build evaluations *before* extensive documentation (identify gaps → three scenarios → baseline without the skill → minimal instructions → iterate); develop with a "Claude A authors / Claude B uses" split; test across Haiku, Sonnet, and Opus because what suits Opus may under-serve Haiku.
+  - **Navigation signals to watch.** Unexpected exploration paths, missed connections (references not followed), overreliance on one file (promote it into the body), and content never accessed (cut it or signal it better).
+  - **Anti-patterns.** Time-sensitive conditionals (use an "old patterns" section), offering many library options instead of one default plus an escape hatch, Windows-style paths, inconsistent terminology, "voodoo constants" in bundled scripts, and scripts that defer error handling to the model.
+  - Also ships a **plan-validate-execute** pattern (verifiable intermediate artifact, validated by script before anything is applied) and a checklist for review before sharing.
+
+## Valuing and improving skill text
+
+- **What Is a Skill Worth? Structure-Aware Shapley Valuation of Agent Skills** — Li, Liu, Zhao, Li, Wang, Shao, Liu, Shou (2026-08-05). https://arxiv.org/abs/2608.04562 — The measurement counterpart to authoring. Defines **skill valuation**: assigning credit to a fixed skill's *internal units* — rules, examples, scripts, heuristics — under a fixed agent and held-out task distribution, and argues it differs from data- or prompt-span valuation because skill units "may depend on other units, belong to a document hierarchy, trigger agent behavior, and consume limited prompt context." **SkillSV** compiles a skill into units + dependencies + hierarchy so only *valid* counterfactual skills are evaluated, and uses **paired deletion with length-neutral padding to separate content value from context cost** — the fix for the confound in naive ablation, where deleting a rule also shortens the prompt. The most directly useful entry for deciding what to cut.
+
+- **SkillHEX: Improving Agent Skills via Hypothesis-Driven Autonomous Exploration and Exploitation** — Feng, Chen, Zhao, Zhang, Wang, Lu, Wang, Xu, Li, Chen (2026-08-06). https://arxiv.org/abs/2608.05628 — Frames the diagnostic problem precisely: at test time, with limited interaction budget and no train/validation split, outcomes are a **sparse reward that conflates multiple latent failure causes**, and methods that "greedily refine a single incumbent skill" fall into an **exploitation trap** where "early misdiagnoses exhaust limited trials along unproductive trajectories." Remedy: translate falsifiable failure hypotheses into executable tests, and search with evidence-guided tree search. Read it as the argument for testing a hypothesis before rewriting a rule.
+
+- **Progressive Agent Skill Generation via Reinforcement Learning** — Shen, Zhang, Guo, Cheng (2026-08-03). https://arxiv.org/abs/2608.01678 — Notes that skills "lack a natural supervision signal based on relevance or correctness; their value can largely be determined only by whether they improve the behavior of the agent on downstream tasks," and formulates skill generation as **sequential editing decomposed into individually evaluable edits** (Skill-α). The structural lesson survives the RL machinery: make each edit separately scorable. Code: `ejhshen/skill-alpha`.
+
+- **ContinualSkillBench: Can LLM Agents Truly Evolve Their Capabilities?** — Guan, Wang, Yang, Cao, Liu, Hu, Li, Zhang (2026-08-04). https://arxiv.org/abs/2608.03874 — The control every skill-authoring effort needs. Five domains × 100 interconnected subtasks ordered by difficulty with cross-task reuse opportunities. Findings: sequential execution generally helps but "gains vary substantially across models and domains," and **in-context learning performs comparably to explicit skill maintenance on average**, suggesting much of the improvement "arises from adaptation to prior context and feedback rather than reusable skill a[cquisition]." Cite it whenever a skill library's value is asserted rather than measured.
+
+## Rule structure and its failure modes
+
+- **Confidently Wrong: Exception Chain Collapse in Frontier LLM Rule Evaluation** — Simpson, Kozak, Doake (2026-07-25; working paper v3.13.0, 43 pages). https://arxiv.org/abs/2607.23386 — Documents **exception chain collapse** under nested conditionals of the form "A is required UNLESS B applies, UNLESS C overrides B," in eligibility evaluation. Two takeaways: don't write nested exceptions in skill text, and note the operational warning — "between March and April 2026 several failure cells closed silently under the same model alias, with no version bump (GPT-5.4 on construction insurance moved from 96.6% to 100%, same prompt and harness)," so "frontier-model accuracy is a moving compliance boundary that shifts without notice." Their architecture has LLMs author rules from authoritative sources and an **SMT layer execute them deterministically** — the pattern in [llm-as-autoformalizer-plus-solver](../concepts/llm-as-autoformalizer-plus-solver.md). Artifacts: `Aethis-ai/confidently-wrong-benchmark`.
+
+- **IFHierBench: Hierarchical Instruction Following for Large Language Models** — Mao & Chen (2026-07-30). https://arxiv.org/abs/2607.27912 — 600 prompts stratified across four constraint-tree depths and 35 distinct constraints, each with a **deterministic checker**. Its critique is the reusable part: existing instruction-following benchmarks "treat the constraint set as a flat list applied uniformly to the response, so they cannot scope a check to a particular section of the output." If a skill specifies a layered artifact, attach each rule to the section it governs. Pairs with *Instruction Stacking Collapse* ([arXiv:2608.02639](https://arxiv.org/abs/2608.02639)) in [references-prompt-attribution](references-prompt-attribution.md).
+
+## The document as a retrieval object
+
+- **Skills Know Their Neighbors: Cluster-Contrastive Capability Pages for Skill Retrieval** — Wang, Wen, Ji, Qiao (2026-08-05). https://arxiv.org/abs/2608.04482 — Sharpens "the description is the routing function" into something actionable. Formalizes a skill's capability as its **executable region** — the set of queries it can solve — and its document as "a lossy observation of that region," which "exposes a document-imposed component of retrieval error that cannot be removed by improving the retriever alone." Proposed **Capability Pages** carry a positive trigger *and* a **negative boundary** — which similar-looking requests should be routed elsewhere. Actionable edit: state what the skill is *not* for, especially against its nearest neighbors.
+
+- **Comparative Approaches to Agent Retrieval over Large Skill Libraries** — Kolluru & Sportsman (2026-08-06). https://arxiv.org/abs/2608.06196 — Scale reality check over **690 skills / 117 realistic non-echoing queries**: a hybrid lexical + dense ranker puts the correct skill in the top five in **73.5% ± 8.0** of cases, "leaving roughly a quarter of queries unserved," and a typed workflow knowledge graph was **significantly worse at matched token budget (−11.2 points)** when substituted for additional ranked results. Grounds the skill-sprawl pitfall in [agent-skills-progressive-disclosure](../concepts/agent-skills-progressive-disclosure.md): past a few hundred skills, discovery — not authoring — is the binding constraint.
+
+- **SkillZip: Contract-Preserving Graph Compression for Scalable Agent Skill Libraries** — Tan, Wang, Liu, Xu, Yuan, Zhu, Zhang (2026-08-06). https://arxiv.org/abs/2608.05604 — Names a **unit mismatch** worth internalizing: "skills are retrieved as packages, compressed as text, and converted into execution graphs only after retrieval, whereas reliable reuse requires a contract-bearing procedural unit." Performs contract-preserving compression over **section-level** graphs, so compressed routines stay executable and expandable as skills evolve. The argument for writing skills in self-contained sections with explicit contracts rather than continuous prose.
+
+## Skill text as attack surface
+
+- **Towards a Risk Assessment of Malicious Skill Files in Coding Agents** — Yang, Fu, Tantithamthavorn, Arora, Chua (2026-08-05; preprint, under review). https://arxiv.org/abs/2608.05223 — "Folders of instructions and scripts that agents load dynamically" widen the attack surface, "letting malicious shell commands hide within natural-language skill files." Contributes an adversarial skill-synthesis method using six LLMs across four families to turn **471 real-world shell commands into 2,826 benign-appearing skills mapped to 11 MITRE ATT&CK tactics**, plus an evaluation pipeline with run stratification, evidence anchoring, a refusal veto, and a deterministic declared-intent override. The concrete basis for treating a third-party skill as untrusted code — see [action-execution-safety](../topics/action-execution-safety.md) and [prompt-injection-and-isolation](../concepts/prompt-injection-and-isolation.md).

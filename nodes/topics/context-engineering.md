@@ -19,6 +19,7 @@ related:
   - [[agentic-context-engineering-ace]]
   - [[agent-skills-progressive-disclosure]]
   - [[prompt-component-attribution]]
+  - [[skill-text-authoring]]
   - [[text-to-sql-retrieval]]
 status: living
 created: 2026-06-11

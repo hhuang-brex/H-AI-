@@ -13,6 +13,7 @@ related:
   - [[verbal-reinforcement-vs-gradient-rl]]
   - [[self-improving-harness]]
   - [[prompt-component-attribution]]
+  - [[skill-text-authoring]]
   - [[references-prompt-optimization]]
 status: living
 created: 2026-06-16
@@ -40,7 +41,7 @@ The delta discipline is the load-bearing idea — it's what the two named failur
 ## The two failure modes it targets
 
 - **Context collapse** (ACE-coined). Letting an LLM rewrite a whole context blob each round progressively *compresses away* hard-won specifics. ACE's illustration: an AppWorld run where the context held 18,282 tokens at 66.7% accuracy and the next step collapsed to 122 tokens at 57.1% — below the 63.7% no-adaptation baseline. (Caveat: a single-run anecdote, not shown to be systematic.) Delta updates prevent this by editing entries instead of regenerating. The same mechanism appears in agent-memory systems as the inefficiency of **global reorganization** (whole-store rewriting): the data-management evaluation in [agent-native-memory-framework](agent-native-memory-framework.md) independently finds bounded-scope incremental maintenance on the cost-efficiency frontier and whole-state reorganization least efficient — converging evidence that localized deltas beat monolithic rewrites.
-- **Brevity bias** (*not* ACE-coined — from Gao et al., [arXiv:2501.01329](https://arxiv.org/abs/2501.01329), and noted of GEPA). Optimizers and summarizers favor shorter text, silently dropping edge-case rules that rarely fire but matter when they do. The playbook's value *is* its long tail of specifics.
+- **Brevity bias** — ACE's definition: "the tendency of optimization to collapse toward short, generic prompts." Provenance checked 2026-08-08: ACE coins no term and credits no one with it; it cites Gao et al. ([arXiv:2501.01329](https://arxiv.org/abs/2501.01329)) as *documenting the effect* — in prompt optimization for **test-case generation** specifically, a narrower setting than the general claim — and cites GEPA as a counter-case that "highlights brevity as a strength." Optimizers and summarizers favor shorter text, silently dropping edge-case rules that rarely fire but matter when they do. The playbook's value *is* its long tail of specifics; keeping it is the human author's job ([skill-text-authoring](skill-text-authoring.md)).
 
 ## ACE vs. instruction optimization
 

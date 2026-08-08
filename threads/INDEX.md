@@ -13,6 +13,7 @@ nav_exclude: true
 > here to learn the material, start from the topics in the [README](../README.md)
 > instead. Use this only to trace *why* a particular node says what it says.
 
+- 2026-08-08 · [eval] [2026-08-08-skill-text-authoring-fanout](2026-08-08-skill-text-authoring-fanout.md) — fan-out on improving LLM skill text: Anthropic's authoring guidance + 9 verified 2026 agent-skills papers, one new concept, one reference node, three deepenings, one provenance check.
 - 2026-08-06 · [eval] [2026-08-06-multi-turn-eval-survey-fanout](2026-08-06-multi-turn-eval-survey-fanout.md) — fan-out of the ~250-source multi-turn agent evaluation survey (arXiv:2503.22458 v2): taxonomies extracted from LaTeX source, 8 anchors verified, 3 concept deepenings, 5 citation defects recorded.
 - 2026-08-06 · [eval] [2026-08-06-prompt-attribution-research](2026-08-06-prompt-attribution-research.md) — research on measuring prompt effectiveness — which sentence causes which output; 20 fetch-verified sources, 2 new concept nodes, 1 reference node, and the resolution of a dangling edge.
 - 2026-07-20 · [meta] [2026-07-20-agent-harness-research](2026-07-20-agent-harness-research.md) — fan-out research to refresh agent-harness.md: 29 fetch-verified anchors, 6 deepenings (convergence-as-spectrum, async gap, debate→trilemma), 3 candidate nodes.

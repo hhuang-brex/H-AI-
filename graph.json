@@ -1,7 +1,7 @@
 {
-  "generated": "2026-08-06",
-  "node_count": 177,
-  "edge_count": 1325,
+  "generated": "2026-08-08",
+  "node_count": 180,
+  "edge_count": 1358,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -584,6 +584,34 @@
       ]
     },
     {
+      "id": "2026-08-08-skill-text-authoring-fanout",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-08-08-skill-text-authoring-fanout.md",
+      "title": "Thread \u2014 Skill-Text Authoring Fan-Out (2026-08-08)",
+      "summary": "fan-out on improving LLM skill text: Anthropic's authoring guidance + 9 verified 2026 agent-skills papers, one new concept, one reference node, three deepenings, one provenance check.",
+      "tags": [
+        "meta",
+        "research",
+        "fan-out",
+        "skills",
+        "authoring",
+        "eval"
+      ],
+      "status": "snapshot",
+      "created": "2026-08-08",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "skill-text-authoring",
+        "references-agent-skill-authoring",
+        "agent-skills-progressive-disclosure",
+        "agentic-context-engineering-ace",
+        "offline-prompt-optimization",
+        "prompt-component-attribution"
+      ]
+    },
+    {
       "id": "action-authority",
       "type": "concept",
       "kind": null,
@@ -976,7 +1004,9 @@
         "experiential-memory-substrates",
         "tool-selection-and-routing",
         "context-budget-allocation",
-        "action-execution-safety"
+        "action-execution-safety",
+        "skill-text-authoring",
+        "references-agent-skill-authoring"
       ]
     },
     {
@@ -1076,6 +1106,7 @@
         "verbal-reinforcement-vs-gradient-rl",
         "self-improving-harness",
         "prompt-component-attribution",
+        "skill-text-authoring",
         "references-prompt-optimization"
       ]
     },
@@ -1551,6 +1582,7 @@
         "agentic-context-engineering-ace",
         "agent-skills-progressive-disclosure",
         "prompt-component-attribution",
+        "skill-text-authoring",
         "text-to-sql-retrieval"
       ]
     },
@@ -3263,6 +3295,7 @@
         "verbal-reinforcement-vs-gradient-rl",
         "self-improving-harness",
         "prompt-component-attribution",
+        "skill-text-authoring",
         "eval-statistical-significance",
         "references-prompt-optimization"
       ]
@@ -3814,6 +3847,37 @@
         "conversation-memory",
         "domain-knowledge-injection",
         "layered-defense-pipeline"
+      ]
+    },
+    {
+      "id": "references-agent-skill-authoring",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-agent-skill-authoring.md",
+      "title": "References \u2014 Agent Skill Authoring",
+      "summary": "verified sources on writing and improving agent skill text \u2014 Anthropic's authoring guidance plus the 2026 skill-library literature on valuation, evolution, retrieval documents, compression, rule nesting, and malicious skills.",
+      "tags": [
+        "skills",
+        "authoring",
+        "reading-list",
+        "retrieval",
+        "eval",
+        "safety",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-08-08",
+      "clusters": [],
+      "source_thread": "2026-08-08-skill-text-authoring-fanout",
+      "related": [
+        "skill-text-authoring",
+        "agent-skills-progressive-disclosure",
+        "offline-prompt-optimization",
+        "prompt-component-attribution",
+        "references-prompt-optimization",
+        "references-prompt-attribution",
+        "tool-selection-and-routing",
+        "action-execution-safety"
       ]
     },
     {
@@ -4491,6 +4555,42 @@
         "mid-task-steering",
         "llm-as-judge",
         "collaborative-agent-eval"
+      ]
+    },
+    {
+      "id": "skill-text-authoring",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/skill-text-authoring.md",
+      "title": "Skill-Text Authoring",
+      "summary": "how to improve a skill's instruction text by hand: cut what the model already knows, match specificity to task fragility, structure for partial reads, keep rule sets small and unnested, and gate every edit on an eval.",
+      "tags": [
+        "skills",
+        "prompt-engineering",
+        "playbook",
+        "authoring",
+        "context-engineering",
+        "eval"
+      ],
+      "status": "living",
+      "created": "2026-08-08",
+      "clusters": [
+        "context-engineering"
+      ],
+      "source_thread": "2026-08-08-skill-text-authoring-fanout",
+      "related": [
+        "agent-skills-progressive-disclosure",
+        "offline-prompt-optimization",
+        "agentic-context-engineering-ace",
+        "prompt-component-attribution",
+        "eval-statistical-significance",
+        "context-budget-allocation",
+        "context-engineering",
+        "domain-knowledge-injection",
+        "recency-bias-prompt-design",
+        "template-rendered-output",
+        "action-execution-safety",
+        "references-agent-skill-authoring"
       ]
     },
     {
@@ -5991,6 +6091,36 @@
       "kind": "related"
     },
     {
+      "from": "2026-08-08-skill-text-authoring-fanout",
+      "to": "agent-skills-progressive-disclosure",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-08-skill-text-authoring-fanout",
+      "to": "agentic-context-engineering-ace",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-08-skill-text-authoring-fanout",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-08-skill-text-authoring-fanout",
+      "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-08-skill-text-authoring-fanout",
+      "to": "references-agent-skill-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-08-skill-text-authoring-fanout",
+      "to": "skill-text-authoring",
+      "kind": "related"
+    },
+    {
       "from": "action-authority",
       "to": "domain-chatbot-design",
       "kind": "related"
@@ -6637,6 +6767,16 @@
     },
     {
       "from": "agent-skills-progressive-disclosure",
+      "to": "references-agent-skill-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "agent-skills-progressive-disclosure",
+      "to": "skill-text-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "agent-skills-progressive-disclosure",
       "to": "tool-selection-and-routing",
       "kind": "related"
     },
@@ -6793,6 +6933,11 @@
     {
       "from": "agentic-context-engineering-ace",
       "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "agentic-context-engineering-ace",
+      "to": "skill-text-authoring",
       "kind": "related"
     },
     {
@@ -7358,6 +7503,11 @@
     {
       "from": "context-engineering",
       "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "skill-text-authoring",
       "kind": "related"
     },
     {
@@ -9472,6 +9622,11 @@
     },
     {
       "from": "offline-prompt-optimization",
+      "to": "skill-text-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "offline-prompt-optimization",
       "to": "verbal-reinforcement-vs-gradient-rl",
       "kind": "related"
     },
@@ -10178,6 +10333,51 @@
     {
       "from": "recency-bias-prompt-design",
       "to": "operator-trust-injection",
+      "kind": "related"
+    },
+    {
+      "from": "references-agent-skill-authoring",
+      "to": "2026-08-08-skill-text-authoring-fanout",
+      "kind": "source-thread"
+    },
+    {
+      "from": "references-agent-skill-authoring",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "references-agent-skill-authoring",
+      "to": "agent-skills-progressive-disclosure",
+      "kind": "related"
+    },
+    {
+      "from": "references-agent-skill-authoring",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "references-agent-skill-authoring",
+      "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "references-agent-skill-authoring",
+      "to": "references-prompt-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "references-agent-skill-authoring",
+      "to": "references-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "references-agent-skill-authoring",
+      "to": "skill-text-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "references-agent-skill-authoring",
+      "to": "tool-selection-and-routing",
       "kind": "related"
     },
     {
@@ -10913,6 +11113,71 @@
     {
       "from": "simulated-user-eval",
       "to": "mid-task-steering",
+      "kind": "related"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "2026-08-08-skill-text-authoring-fanout",
+      "kind": "source-thread"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "agent-skills-progressive-disclosure",
+      "kind": "related"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "agentic-context-engineering-ace",
+      "kind": "related"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "context-budget-allocation",
+      "kind": "related"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "recency-bias-prompt-design",
+      "kind": "related"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "references-agent-skill-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "template-rendered-output",
       "kind": "related"
     },
     {

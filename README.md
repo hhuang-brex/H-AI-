@@ -132,6 +132,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [conversation-memory](nodes/concepts/conversation-memory.md) — three horizons; what to remember, what not to.
 - [domain-knowledge-injection](nodes/concepts/domain-knowledge-injection.md) — RAG, prompt-stuffing, structured state, fine-tuning per knowledge type.
 - [prompt-component-attribution](nodes/concepts/prompt-component-attribution.md) — which sentence caused which output — per-instance context attribution vs population-level ablation, the method ladder from leave-one-out to surrogate/Shapley/bandit, and why a per-sentence effect is always conditional.
+- [skill-text-authoring](nodes/concepts/skill-text-authoring.md) — how to improve a skill's instruction text by hand: cut what the model already knows, match specificity to task fragility, structure for partial reads, keep rule sets small and unnested, and gate every edit on an eval.
 - [sms-context-windowing](nodes/concepts/sms-context-windowing.md) — what's in the prompt: per-thread, structured, bounded.
 - [text-to-sql-retrieval](nodes/concepts/text-to-sql-retrieval.md) — natural-language→SQL over a structured store as a retrieval modality beside RAG — with its guardrail bundle: dynamic schema selection, dynamic few-shot, SELECT-only, record cap, bounded self-correcting retry.
 
@@ -266,6 +267,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [spender-agent](nodes/projects/spender-agent.md) — task agent that documents transactions by maintaining an EA-grade model of the principal's economic life. Two-loop architecture (slow context model + fast event handling) over a universal-context primitive; AI-proposes / user-corrects authority. (`kind: product`.)
 
 ### References
+- [references-agent-skill-authoring](nodes/references/references-agent-skill-authoring.md) — verified sources on writing and improving agent skill text — Anthropic's authoring guidance plus the 2026 skill-library literature on valuation, evolution, retrieval documents, compression, rule nesting, and malicious skills.
 - [references-chatbot-pagination](nodes/references/references-chatbot-pagination.md) — pagination reading list (Anthropic Writing Tools / Code Execution, MCP cursor spec, NN/g UX patterns).
 - [references-context-and-memory](nodes/references/references-context-and-memory.md) — verified empirical sources behind the context and memory clusters — lost-in-the-middle, context rot, RAG, MemGPT, and generative agents.
 - [references-domain-chatbot-design](nodes/references/references-domain-chatbot-design.md) — chatbot design reading list (Anthropic, OpenAI, Microsoft Bot Service, Google CDS, Rasa, Voiceflow, Husain, Yan, Hall, Intercom Fin).
@@ -281,7 +283,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-template-rendered-output](nodes/references/references-template-rendered-output.md) — what's verifiable about template-rendered output in production — Rasa (mechanism confirmed), Ikki (architecture confirmed, outcomes refuted), and why most 'structured output' systems don't qualify.
 
 ---
-<sub>Provenance: 22 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
+<sub>Provenance: 23 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
 
 <!-- END GENERATED -->
 

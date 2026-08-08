@@ -13,6 +13,7 @@ related:
   - [[verbal-reinforcement-vs-gradient-rl]]
   - [[self-improving-harness]]
   - [[prompt-component-attribution]]
+  - [[skill-text-authoring]]
   - [[eval-statistical-significance]]
   - [[references-prompt-optimization]]
 status: living
