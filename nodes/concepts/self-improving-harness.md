@@ -13,6 +13,7 @@ related:
   - [[multi-agent-delegation]]
   - [[agent-harness]]
   - [[managed-agent-apis]]
+  - [[eval-statistical-significance]]
 status: living
 created: 2026-07-07
 ---
@@ -59,6 +60,7 @@ Weng's *prediction* (not established): near-term recursive self-improvement is "
 - **Proposer can see the held-out set.** Then it reward-hacks the gate — keep the test set + labels secret from the loop.
 - **Editable security.** If the permission/sandbox layer is inside the editable surface, the agent can disable it.
 - **Weak base model.** Below a capability floor, recursive self-improvement degrades rather than improves (STOP).
+- **Unreported variance and a fixed task order.** The reliability axes were "critically overlooked" until a 2026 re-evaluation added multiple runs and random task shuffling, and found both that the loop amplifies eval noise and that gains are **highly dependent on task order** ([arXiv:2608.18066](https://arxiv.org/abs/2608.18066)). A default task order is a hidden hyperparameter; report *n* runs and shuffle it ([eval-statistical-significance](eval-statistical-significance.md)).
 - **Citing unverified systems.** The "AI Scientist" *Nature* 2026 citation is unverified (do not conflate with 2024 arXiv:2408.06292); several 2026 harness preprints exist but their results are not independently evaluated.
 
 ## References

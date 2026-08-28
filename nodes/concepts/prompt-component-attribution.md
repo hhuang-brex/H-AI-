@@ -14,6 +14,7 @@ related:
   - [[grounding-and-citation]]
   - [[prompt-injection-and-isolation]]
   - [[llm-observability]]
+  - [[live-traffic-eval]]
   - [[context-engineering]]
   - [[references-prompt-attribution]]
 status: living
@@ -79,4 +80,5 @@ Steps 1–3 are logging discipline, not research; they belong in [llm-observabil
 - Attribution is the **localization** that [offline-prompt-optimization](offline-prompt-optimization.md)'s coarse-credit-assignment pitfall is missing. The 2026 optimizers that build it in — section-local textual gradients, an environment-grounded *behavior analyzer* that attributes episode outcomes to prompt components, temporal/structural credit decomposition for multi-agent systems — are catalogued in [references-prompt-optimization](../references/references-prompt-optimization.md).
 - ACE's `helpful`/`harmful` counters per bullet are the cheap **online** approximation of a per-rule follow rate: no ablation, just tallying outcomes per component.
 - Two non-debugging uses: **pruning** context by attribution (reported to improve response quality) and **detecting poisoning** — an injected instruction is, by construction, a high-attribution span you didn't write. See [prompt-injection-and-isolation](prompt-injection-and-isolation.md) and [memory-poisoning](memory-poisoning.md).
+- **The production path.** Everything above assumes a fixed eval suite and a chosen target span. Attribution can instead be driven from live traffic by mining trajectories for implicit dissatisfaction signals (corrections, rephrasing, abandonment) — see the 2026 frontier section of [live-traffic-eval](live-traffic-eval.md).
 - Full verified source list, including how to evaluate an attribution method itself: [references-prompt-attribution](../references/references-prompt-attribution.md).

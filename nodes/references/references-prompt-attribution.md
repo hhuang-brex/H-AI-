@@ -18,7 +18,7 @@ source-thread: [[2026-08-06-prompt-attribution-research]]
 
 # References — Prompt Attribution & Effectiveness Measurement
 
-Sources behind [prompt-component-attribution](../concepts/prompt-component-attribution.md) and [eval-statistical-significance](../concepts/eval-statistical-significance.md). Every arXiv entry's title, authors, date, and comments field were pulled from the arXiv API and confirmed on **2026-08-06**; the ACL entry was fetched from the ACL Anthology the same day. **2026 entries are beyond the May-2026 knowledge cutoff and none is independently reproduced** — the numbers below are author-reported.
+Sources behind [prompt-component-attribution](../concepts/prompt-component-attribution.md) and [eval-statistical-significance](../concepts/eval-statistical-significance.md). Every arXiv entry's title, authors, date, and comments field were pulled from the arXiv API and confirmed on **2026-08-06**; the ACL entry was fetched from the ACL Anthology the same day. The *production traffic* section was added and verified on **2026-08-18**. **2026 entries are beyond the May-2026 knowledge cutoff and none is independently reproduced** — the numbers below are author-reported.
 
 ## Methods — pinpointing which span caused which output
 
@@ -76,6 +76,12 @@ Sources behind [prompt-component-attribution](../concepts/prompt-component-attri
 
 - **LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models** — Jiang, Wu, Lin, Yang, Qiu (2023-10-09; EMNLP 2023). https://arxiv.org/abs/2310.05736 — Coarse-to-fine compression with a budget controller and token-level iterative compression that explicitly models **interdependence between compressed contents**. Relevant here because a compressor is an importance estimator with a deployment story: what it drops is what it measured as low-value.
 - **Unlocking Context Constraints of LLMs: Enhancing Context Efficiency of LLMs with Self-Information-Based Content Filtering** — Li (2023-04-24). https://arxiv.org/abs/2304.12102 — "Selective Context": filter content by **self-information**. The cheapest importance proxy in this list, and the baseline to beat before adopting anything above.
+
+## Driving attribution from production traffic
+
+- **TRACE: TRajectory Attribution for Automated Context Engineering** — Zhao, Misra, Pandey (2026-08-10; 21 pages). https://arxiv.org/abs/2608.09153 — Moves attribution off the eval suite and onto the production stream. Premise: agents fail when "context sources — system prompts, knowledge bases, tool descriptions, and procedural skills — contain errors or gaps," and maintenance by manual log review is a scalability bottleneck. Key insight is the signal choice: trajectories carry **implicit dissatisfaction signals — user corrections, rephrasing, abandonment cues** — that localize which context source failed "without explicit feedback collection," and because it operates on the context layer rather than weights, iteration needs no retraining. The bridge between [prompt-component-attribution](../concepts/prompt-component-attribution.md) and [live-traffic-eval](../concepts/live-traffic-eval.md); treat the mined signals as hypothesis generators, since corrections and abandonment are noisy proxies.
+
+- **On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification** — Ye, Li, Pruksachatkun, Zhang, Wu, Salesforce AI Research (2026-08-18). https://arxiv.org/abs/2608.18066 — Re-evaluates two memory-based self-improving agents along the two axes the literature omitted: **multiple runs** (to quantify variance) and **randomly shuffled task order**. Two findings: "agent evaluation is inherently noisy in complex environments and on multi-step tasks, and stacking a self-improving loop on top can further amplify this noise"; and improvement is "highly dependent on task order," so a default order is a hidden hyperparameter. Code and dataset released (`SalesforceAIResearch/self-improve-fragility`). The empirical backing for the task-order row in [eval-statistical-significance](../concepts/eval-statistical-significance.md).
 
 ## Statistics
 

@@ -34,6 +34,7 @@ Before attributing a delta to your change, know what else moves the number. Each
 | **Few-shot order** | near-SOTA → near-random across permutations ([arXiv:2104.08786](https://arxiv.org/abs/2104.08786)) | fix the permutation | multiple permutations |
 | Judge | drifts with judge model/version | pin judge model + rubric version | multi-vote |
 | Agent path | high on multi-step flows even at temp 0 | — (irreducible) | repeat rollouts |
+| **Task order** (online/self-improving streams) | improvement "highly dependent on task order" ([arXiv:2608.18066](https://arxiv.org/abs/2608.18066)) | fix one canonical order and say so | **shuffle the stream** across runs |
 | Case sample | ∝ 1/√N | held-out split | bigger N ([cost-aware-eval](cost-aware-eval.md)) |
 
 Fixing a knob is cheaper than sampling it, and legitimate — but it converts a general claim into a conditional one: "better *with this template*," not "better." Report which knobs were frozen.
@@ -53,4 +54,5 @@ Fixing a knob is cheaper than sampling it, and legitimate — but it converts a 
 - **Silent instrument change.** A new judge model, a re-rendered template, or a refreshed dataset invalidates comparison with historical scores. Version the eval as strictly as the code ([eval-dataset-quality](eval-dataset-quality.md)).
 - **Underpowered by construction.** With 30 cases, a 3-point difference is unmeasurable. Either accept the resolution limit or grow N — do not narrate the difference.
 - **Significance ≠ importance.** A statistically solid +0.4% that costs 2× tokens is a regression in the dimension that matters ([cost-aware-eval](cost-aware-eval.md)).
+- **A learning loop amplifies the noise it sits on.** Re-evaluating two memory-based self-improving agents with multiple runs *and* shuffled task order found that "agent evaluation is inherently noisy in complex environments and on multi-step tasks, and stacking a self-improving loop on top can further amplify this noise" ([arXiv:2608.18066](https://arxiv.org/abs/2608.18066), Salesforce AI Research; code and data released; 2026 preprint). Single-run before/after numbers for a self-improving agent are not evidence — the minimum protocol is *n* runs × shuffled order. See [self-improving-harness](self-improving-harness.md).
 - **Aggregate wins hiding segment losses.** Break results out by the segments you care about; a mean can improve while your highest-value slice degrades.

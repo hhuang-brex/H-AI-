@@ -15,6 +15,7 @@ related:
   - [[recency-bias-prompt-design]]
   - [[template-rendered-output]]
   - [[action-execution-safety]]
+  - [[dry-run-and-preview]]
   - [[references-agent-skill-authoring]]
 status: living
 created: 2026-08-08
@@ -72,7 +73,8 @@ Authoring is not a one-shot write. The loop that the evidence supports:
 3. **Observe navigation, not just outcomes.** Unexpected read order, references never followed, a bundled file never opened, one file read every run — each is a signal about structure. A file the agent never opens is either unnecessary or badly signposted; a file it reads every time belongs in the body.
 4. **Attribute before editing.** Which unit earned its place is measurable: **SkillSV** scores a skill's internal units (rules, examples, scripts, heuristics) with structure-aware Shapley values, using paired deletion plus **length-neutral padding to separate content value from context cost** and respecting unit dependencies so only *valid* counterfactual skills are evaluated ([arXiv:2608.04562](https://arxiv.org/abs/2608.04562)). That last detail is the trap in naive ablation: deleting a rule also shortens the prompt, so you measure two changes at once. See [prompt-component-attribution](prompt-component-attribution.md).
 5. **Gate on a real delta.** Format and ordering variance can swamp a small improvement — [eval-statistical-significance](eval-statistical-significance.md).
-6. **Edit in small, individually evaluable steps.** Framing skill improvement as *sequential edits, each separately scorable*, is exactly what makes the loop learnable rather than a rewrite gamble ([arXiv:2608.01678](https://arxiv.org/abs/2608.01678)).
+6. **Accept on behavior, not on text.** Reviewing the artifact — or even its final task score — "leaves unresolved which actions the equipped agent will perform and which side effects those actions will produce" ([arXiv:2608.17588](https://arxiv.org/abs/2608.17588), 2026 preprint). The pattern worth copying: a **static gate** over named safety properties, then load the candidate into a **shadow agent** in a controlled environment where brokered tools expose every requested action to policy enforcement and record it. For a skill that touches an irreversible surface, that recorded action list — not the prose — is the acceptance artifact ([action-execution-safety](../topics/action-execution-safety.md), [dry-run-and-preview](dry-run-and-preview.md)).
+7. **Edit in small, individually evaluable steps.** Framing skill improvement as *sequential edits, each separately scorable*, is exactly what makes the loop learnable rather than a rewrite gamble ([arXiv:2608.01678](https://arxiv.org/abs/2608.01678)).
 
 ## Pitfalls
 

@@ -1,7 +1,7 @@
 {
-  "generated": "2026-08-08",
-  "node_count": 180,
-  "edge_count": 1358,
+  "generated": "2026-08-28",
+  "node_count": 181,
+  "edge_count": 1370,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -609,6 +609,36 @@
         "agentic-context-engineering-ace",
         "offline-prompt-optimization",
         "prompt-component-attribution"
+      ]
+    },
+    {
+      "id": "2026-08-18-industry-trend-catchup",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-08-18-industry-trend-catchup.md",
+      "title": "Thread \u2014 Industry Trend Catch-Up (2026-08-08 \u2192 2026-08-18)",
+      "summary": "10-day arXiv trend scan (2026-08-08 \u2192 08-18): cluster volumes, 11 verified papers, 4 landings \u2014 task-order variance, CAPO, TRACE, TRUSS.",
+      "tags": [
+        "meta",
+        "research",
+        "trend-scan",
+        "eval",
+        "skills",
+        "memory",
+        "security"
+      ],
+      "status": "snapshot",
+      "created": "2026-08-18",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "eval-statistical-significance",
+        "self-improving-harness",
+        "live-traffic-eval",
+        "skill-text-authoring",
+        "references-prompt-optimization",
+        "references-prompt-attribution",
+        "references-agent-skill-authoring"
       ]
     },
     {
@@ -2732,7 +2762,9 @@
         "llm-observability",
         "eval-dataset-quality",
         "llm-as-judge",
-        "prince-reliable-agentic-case-study"
+        "prince-reliable-agentic-case-study",
+        "prompt-component-attribution",
+        "cost-aware-eval"
       ]
     },
     {
@@ -3742,6 +3774,7 @@
         "grounding-and-citation",
         "prompt-injection-and-isolation",
         "llm-observability",
+        "live-traffic-eval",
         "context-engineering",
         "references-prompt-attribution"
       ]
@@ -4522,7 +4555,8 @@
         "llm-evaluation",
         "multi-agent-delegation",
         "agent-harness",
-        "managed-agent-apis"
+        "managed-agent-apis",
+        "eval-statistical-significance"
       ]
     },
     {
@@ -4590,6 +4624,7 @@
         "recency-bias-prompt-design",
         "template-rendered-output",
         "action-execution-safety",
+        "dry-run-and-preview",
         "references-agent-skill-authoring"
       ]
     },
@@ -6117,6 +6152,41 @@
     },
     {
       "from": "2026-08-08-skill-text-authoring-fanout",
+      "to": "skill-text-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-18-industry-trend-catchup",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-18-industry-trend-catchup",
+      "to": "live-traffic-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-18-industry-trend-catchup",
+      "to": "references-agent-skill-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-18-industry-trend-catchup",
+      "to": "references-prompt-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-18-industry-trend-catchup",
+      "to": "references-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-18-industry-trend-catchup",
+      "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-18-industry-trend-catchup",
       "to": "skill-text-authoring",
       "kind": "related"
     },
@@ -8807,6 +8877,11 @@
     },
     {
       "from": "live-traffic-eval",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "live-traffic-eval",
       "to": "eval-dataset-quality",
       "kind": "related"
     },
@@ -8833,6 +8908,11 @@
     {
       "from": "live-traffic-eval",
       "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
+      "from": "live-traffic-eval",
+      "to": "prompt-component-attribution",
       "kind": "related"
     },
     {
@@ -10157,6 +10237,11 @@
     },
     {
       "from": "prompt-component-attribution",
+      "to": "live-traffic-eval",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-component-attribution",
       "to": "llm-evaluation",
       "kind": "related"
     },
@@ -11062,6 +11147,11 @@
     },
     {
       "from": "self-improving-harness",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "self-improving-harness",
       "to": "llm-evaluation",
       "kind": "related"
     },
@@ -11148,6 +11238,11 @@
     {
       "from": "skill-text-authoring",
       "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "dry-run-and-preview",
       "kind": "related"
     },
     {
