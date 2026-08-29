@@ -1,0 +1,397 @@
+// _sass/custom/custom.scss — H-AI- design layer
+//
+// Loaded last by just-the-docs (theme imports `custom/custom` at the end), so it
+// applies to BOTH color schemes. Scheme-specific rules key off the
+// `html[data-theme="hai-dark"]` attribute that head_custom.html sets pre-paint —
+// the same hook graph.css already uses. Plain CSS only (no SCSS features) so the
+// file stays legible and cannot break the theme's Sass compile.
+//
+// Design intent: this is a reference work, not a blog. Long analytical nodes with
+// dense tables are the primary artifact, so the shell recedes and the prose gets
+// measure, rhythm, and scannable section breaks. The teal accent is shared with
+// the graph viewport so the map and the documents read as one system.
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Tokens
+// ─────────────────────────────────────────────────────────────────────────────
+:root {
+  --h-ink:        #14202e;
+  --h-ink-soft:   #3b4859;
+  --h-muted:      #64748b;
+  --h-faint:      #94a3b8;
+  --h-rule:       #e6ebf1;
+  --h-rule-soft:  #f1f5f9;
+  --h-surface:    #ffffff;
+  --h-surface-2:  #f8fafc;
+  --h-accent:     #0f766e;
+  --h-accent-ink: #0b5c55;
+  --h-accent-wash:#effcf9;
+  --h-accent-line:rgba(15, 118, 110, 0.38);
+  --h-accent-ring:rgba(15, 118, 110, 0.18);
+
+  --h-measure: 74ch;
+  --h-radius: 10px;
+  --h-radius-sm: 6px;
+}
+
+html[data-theme="hai-dark"] {
+  --h-ink:        #eef2f7;
+  --h-ink-soft:   #cbd5e1;
+  --h-muted:      #94a3b8;
+  --h-faint:      #64748b;
+  --h-rule:       #1e2935;
+  --h-rule-soft:  #161f2a;
+  --h-surface:    #0b0f14;
+  --h-surface-2:  #131b24;
+  --h-accent:     #5eead4;
+  --h-accent-ink: #99f6e4;
+  --h-accent-wash:#0f2a2a;
+  --h-accent-line:rgba(94, 234, 212, 0.42);
+  --h-accent-ring:rgba(94, 234, 212, 0.22);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Reading surface — measure, rhythm, and a lede
+// ─────────────────────────────────────────────────────────────────────────────
+.main-content {
+  color: var(--h-ink-soft);
+  font-size: 1rem;
+  line-height: 1.68;
+  letter-spacing: -0.003em;
+}
+
+// Prose gets a comfortable measure; anything structural (tables, code, the graph
+// frame, media) is exempt so wide content still uses the full column.
+.main-content > p,
+.main-content > ul,
+.main-content > ol,
+.main-content > blockquote {
+  max-width: var(--h-measure);
+}
+
+// The first paragraph of a node is its thesis — treat it as a lede.
+.main-content > h1:first-of-type + p {
+  font-size: 1.09rem;
+  line-height: 1.6;
+  color: var(--h-ink);
+  max-width: 68ch;
+}
+
+.main-content p,
+.main-content li { text-wrap: pretty; }
+
+.main-content strong { font-weight: 600; color: var(--h-ink); }
+.main-content em { color: inherit; }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Headings — a real scale, with a hairline that makes long nodes scannable
+// ─────────────────────────────────────────────────────────────────────────────
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4 {
+  color: var(--h-ink);
+  letter-spacing: -0.018em;
+  line-height: 1.25;
+}
+
+.main-content h1 {
+  font-size: 1.95rem;
+  font-weight: 640;
+  margin-bottom: 0.55rem;
+}
+
+.main-content h2 {
+  font-size: 1.28rem;
+  font-weight: 620;
+  margin-top: 2.4rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--h-rule);
+}
+
+// A node's own H1 is followed immediately by prose; the first H2 doesn't need a
+// rule stacked right under the title block.
+.main-content > h1:first-of-type + h2 { border-top: 0; padding-top: 0; margin-top: 1.4rem; }
+
+.main-content h3 {
+  font-size: 1.06rem;
+  font-weight: 620;
+  margin-top: 1.8rem;
+}
+
+.main-content h4 {
+  font-size: 0.95rem;
+  font-weight: 640;
+  margin-top: 1.5rem;
+  color: var(--h-ink-soft);
+  text-transform: none;
+}
+
+// Anchor links: present for keyboard users, quiet until hover.
+.main-content .anchor-heading svg { fill: var(--h-faint); }
+.main-content h2:hover .anchor-heading svg,
+.main-content h3:hover .anchor-heading svg,
+.main-content .anchor-heading:focus-visible svg { fill: var(--h-accent); }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Links — quiet in lists, deliberate in prose
+// ─────────────────────────────────────────────────────────────────────────────
+.main-content a {
+  color: var(--h-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: var(--h-accent-line);
+}
+.main-content a:hover {
+  color: var(--h-accent-ink);
+  text-decoration-color: currentColor;
+}
+
+// External links (papers, vendor docs) get a subtle marker so citation density
+// is visible at a glance without cluttering internal graph navigation.
+.main-content p > a[href^="http"]::after,
+.main-content li > a[href^="http"]::after {
+  content: "\2197";
+  font-size: 0.78em;
+  margin-left: 0.12em;
+  color: var(--h-faint);
+  vertical-align: baseline;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Index lists (/overview/, threads/INDEX) — link is the object, summary is meta
+// ─────────────────────────────────────────────────────────────────────────────
+.main-content ul li,
+.main-content ol li { color: var(--h-muted); }
+.main-content ul li > a:first-child,
+.main-content ol li > a:first-child {
+  color: var(--h-ink);
+  font-weight: 560;
+  text-decoration: none;
+}
+.main-content ul li > a:first-child:hover,
+.main-content ol li > a:first-child:hover {
+  color: var(--h-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--h-accent-line);
+}
+.main-content ul li > a:first-child::after { content: none; }
+
+.main-content ul,
+.main-content ol { padding-left: 1.15rem; }
+.main-content li + li { margin-top: 0.3rem; }
+.main-content li > ul,
+.main-content li > ol { margin-top: 0.3rem; }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Tables — the graph compares things constantly; make comparison legible
+// ─────────────────────────────────────────────────────────────────────────────
+.main-content table {
+  display: table;
+  width: 100%;
+  min-width: 100%;
+  border-collapse: collapse;
+  font-size: 0.905rem;
+  line-height: 1.5;
+  box-shadow: none;
+  border: 0;
+  border-radius: 0;
+  margin: 1.1rem 0 1.4rem;
+}
+.table-wrapper {
+  box-shadow: none;
+  border: 1px solid var(--h-rule);
+  border-radius: var(--h-radius);
+  overflow-x: auto;
+  margin: 1.15rem 0 1.5rem;
+}
+.main-content th {
+  background: var(--h-surface-2);
+  color: var(--h-ink);
+  font-weight: 620;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--h-rule);
+  white-space: nowrap;
+}
+.main-content th,
+.main-content td {
+  padding: 0.6rem 0.8rem;
+  border-left: 0;
+  border-right: 0;
+  vertical-align: top;
+}
+.main-content td { border-bottom: 1px solid var(--h-rule-soft); }
+.main-content tr:last-child td { border-bottom: 0; }
+// First column is almost always the dimension being compared.
+.main-content tbody td:first-child { color: var(--h-ink); }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Code + IDs
+// ─────────────────────────────────────────────────────────────────────────────
+.main-content code {
+  font-size: 0.855em;
+  padding: 0.15em 0.36em;
+  border-radius: var(--h-radius-sm);
+  background: var(--h-rule-soft);
+  color: var(--h-ink);
+  border: 1px solid transparent;
+}
+.main-content a code { color: inherit; background: var(--h-accent-wash); }
+.main-content div.highlighter-rouge,
+.main-content figure.highlight,
+.main-content pre.highlight {
+  border-radius: var(--h-radius);
+  border: 1px solid var(--h-rule);
+  background: var(--h-surface-2);
+  box-shadow: none;
+}
+.main-content div.highlighter-rouge pre.highlight,
+.main-content figure.highlight pre { border: 0; background: transparent; }
+.main-content pre { font-size: 0.845rem; line-height: 1.62; }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Blockquote as a callout (source caveats, verification notes)
+// ─────────────────────────────────────────────────────────────────────────────
+.main-content blockquote {
+  margin: 1.2rem 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--h-rule);
+  border-left: 3px solid var(--h-accent);
+  border-radius: var(--h-radius-sm);
+  background: var(--h-surface-2);
+  color: var(--h-ink-soft);
+  font-size: 0.95rem;
+}
+.main-content blockquote > :first-child { margin-top: 0; }
+.main-content blockquote > :last-child { margin-bottom: 0; }
+
+.main-content hr {
+  height: 1px;
+  background: var(--h-rule);
+  border: 0;
+  margin: 2.2rem 0;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Chrome — sidebar, header, search, breadcrumbs
+// ─────────────────────────────────────────────────────────────────────────────
+.side-bar {
+  border-right: 1px solid var(--h-rule);
+  background: var(--h-surface-2);
+}
+.site-header { border-bottom: 1px solid var(--h-rule); }
+.site-title {
+  color: var(--h-ink);
+  font-weight: 640;
+  letter-spacing: -0.02em;
+}
+.site-title:hover { background-image: none; color: var(--h-accent); }
+
+.nav-list .nav-list-item {
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+.nav-list .nav-list-item .nav-list-link {
+  color: var(--h-ink-soft);
+  padding-top: 0.32rem;
+  padding-bottom: 0.32rem;
+  border-radius: 0 var(--h-radius-sm) var(--h-radius-sm) 0;
+}
+.nav-list .nav-list-item .nav-list-link:hover {
+  background-image: none;
+  background-color: var(--h-rule-soft);
+  color: var(--h-ink);
+}
+.nav-list .nav-list-item .nav-list-link.active {
+  background-image: none;
+  color: var(--h-accent);
+  font-weight: 600;
+  box-shadow: inset 2px 0 0 var(--h-accent);
+  background-color: var(--h-accent-wash);
+}
+.nav-category {
+  color: var(--h-faint);
+  font-size: 0.7rem;
+  font-weight: 640;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 0;
+  padding-top: 1.1rem;
+}
+
+.search-input {
+  border-radius: var(--h-radius-sm);
+  background: var(--h-surface);
+  border: 1px solid var(--h-rule);
+  font-size: 0.9rem;
+}
+.search-input:focus {
+  border-color: var(--h-accent);
+  box-shadow: 0 0 0 3px var(--h-accent-ring);
+  outline: 0;
+}
+.search-result-title { color: var(--h-ink); }
+.search-result:hover,
+.search-result.active { background-color: var(--h-accent-wash); }
+
+.breadcrumb-nav-list-item {
+  font-size: 0.78rem;
+  color: var(--h-faint);
+}
+.breadcrumb-nav-list-item a { color: var(--h-muted); text-decoration: none; }
+.breadcrumb-nav-list-item a:hover { color: var(--h-accent); }
+
+// Accessibility: a visible, on-brand focus ring everywhere.
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--h-accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Site footer
+// ─────────────────────────────────────────────────────────────────────────────
+.h-footer {
+  margin-top: 3.5rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--h-rule);
+  font-size: 0.8rem;
+  color: var(--h-faint);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  align-items: baseline;
+}
+.h-footer a { color: var(--h-muted); text-decoration: none; }
+.h-footer a:hover { color: var(--h-accent); text-decoration: underline; }
+.h-footer code { font-size: 0.95em; background: none; padding: 0; color: var(--h-muted); }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Graph page: the viewport owns the screen, so drop the doc-page furniture
+// (graph.css still owns everything inside the frame — untouched by design.)
+// ─────────────────────────────────────────────────────────────────────────────
+.main-content h1.h-visually-hidden,
+body:has(#cy) .main-content h1:first-of-type {
+  // Kept in the accessibility tree and the document outline; removed from the
+  // visual composition, because on the graph page the viewport *is* the title.
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+body:has(#cy) .breadcrumb-nav { display: none; }
+body:has(#cy) .main-content > p.graph-intro { max-width: 62ch; }

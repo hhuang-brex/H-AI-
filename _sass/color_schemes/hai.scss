@@ -1,22 +1,38 @@
-// _sass/color_schemes/hai.scss — custom just-the-docs scheme for H-AI-
-// One identity with the graph homepage: ink text, teal accent, slate borders, mono code.
-// Only overrides what changes; everything else falls back to just-the-docs defaults.
+// _sass/color_schemes/hai.scss — light scheme for H-AI-
+// One identity with the graph viewport: ink text, teal accent, slate rules, mono code.
+// Typography lives here (the theme's Sass variables); everything structural is in
+// _sass/custom/custom.scss. Only overrides what changes.
 
+// ── Typography ───────────────────────────────────────────────────────────────
+// A reference work read in long sittings: slightly larger root, generous line
+// height, and a system stack that resolves to a real text face on every OS
+// (no webfont request, so no FOUT and no third-party dependency).
+$body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
+  "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+$mono-font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas,
+  "Liberation Mono", monospace;
+$root-font-size: 16.5px;
+$body-line-height: 1.68;
+$content-line-height: 1.68;
+$body-heading-font-family: $body-font-family;
+
+// ── Surfaces ─────────────────────────────────────────────────────────────────
 $body-background-color: #ffffff;
 $sidebar-color: #f8fafc;
 $search-background-color: #ffffff;
 $table-background-color: #ffffff;
+$code-background-color: #f1f5f9;
 
-$body-text-color: #1f2937;
-$body-heading-color: #0f172a;
+// ── Ink ──────────────────────────────────────────────────────────────────────
+$body-text-color: #3b4859;
+$body-heading-color: #14202e;
 $nav-child-link-color: #475569;
 $search-result-preview-color: #64748b;
 
-$link-color: #0f766e;        // teal-700 — light counterpart of the graph's teal accent
+// ── Accent (teal — the graph's accent, darkened for contrast on white) ────────
+$link-color: #0f766e;
+$body-link-color: #0f766e;
 $btn-primary-color: #0f766e;
 $base-button-color: #f1f5f9;
 
-$border-color: #e2e8f0;       // slate-200
-$code-background-color: #f1f5f9; // slate-100
-
-$body-link-color: #0f766e;
+$border-color: #e6ebf1;
