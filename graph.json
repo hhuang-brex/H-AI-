@@ -1,7 +1,7 @@
 {
   "generated": "2026-08-28",
   "node_count": 181,
-  "edge_count": 1370,
+  "edge_count": 1372,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -1711,7 +1711,9 @@
         "test-pyramid-llm",
         "llm-as-judge",
         "agent-eval-case-study",
-        "llm-observability"
+        "llm-observability",
+        "eval-statistical-significance",
+        "harness-token-economics"
       ]
     },
     {
@@ -7683,6 +7685,16 @@
     {
       "from": "cost-aware-eval",
       "to": "chatbot-pagination",
+      "kind": "related"
+    },
+    {
+      "from": "cost-aware-eval",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "cost-aware-eval",
+      "to": "harness-token-economics",
       "kind": "related"
     },
     {

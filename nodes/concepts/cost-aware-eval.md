@@ -9,6 +9,8 @@ related:
   - [[llm-as-judge]]
   - [[agent-eval-case-study]]
   - [[llm-observability]]
+  - [[eval-statistical-significance]]
+  - [[harness-token-economics]]
 status: living
 created: 2026-06-05
 summary: "sample-size math and budget assertions."
@@ -47,6 +49,17 @@ Token-budget assertions must read the **lab-reported usage object**, not visible
 - OpenAI: reasoning tokens count against `max_output_tokens` and can return `status: "incomplete"` with `incomplete_details.reason: "max_output_tokens"` — paid input + reasoning, no visible output. Reserve ≥25k tokens.
 
 A token-budget eval that counts only what's in `content` will under-attribute spend by 2–10× depending on reasoning depth. See [llm-observability](llm-observability.md) for instrumentation.
+
+## Cost ratios are easy to get wrong in ways the final number hides
+
+Before quoting any "AI is N× cheaper" figure, including your own: a 2026 case study instrumented a six-person build with a three-layer cost model (real AI spend, self-reported human effort, human counterfactual) and **initially reported a 19.4× cost ratio**. A follow-up pass found two independent errors — **inferring per-token cost under a flat-rate subscription**, and **pricing the counterfactual at the wrong regional labor rates** — that together had inflated the ratio roughly 2×. Corrected figure: **~9.9×** ([arXiv:2608.13730](https://arxiv.org/abs/2608.13730), workshop paper; small student-team case study, so treat the ratio itself as anecdote and the *error taxonomy* as the finding).
+
+Both errors share a shape worth checking for: the denominator was modeled, not measured. Practical guards —
+
+- **Price what you are actually billed.** Under a flat-rate seat or subscription, per-token arithmetic is fiction; use the invoice, not the token count.
+- **Name the counterfactual explicitly.** "Cheaper than what, at whose rates, in which region?" An unstated baseline is where most of the error lives.
+- **Separate the layers** (AI spend / human effort / counterfactual) so a mistake in one doesn't silently propagate into the headline ratio.
+- **Re-derive before publishing.** Both errors here were found by a second pass over the same data, not by new data.
 
 ## References
 

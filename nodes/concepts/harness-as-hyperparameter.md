@@ -34,8 +34,15 @@ This is a distinct third stance in the harness-vs-model debate. It is neither "s
 | **Per-workload selection** | pick/allocate among a fixed set of harnesses by early signal (bandit-style) | Automated Discovery ([2607.18235](https://arxiv.org/abs/2607.18235)) |
 | **Per-case adaptation** | tailor the control layer to each test case from the agent's own execution history, no test-time labels | MemoHarness ([arXiv:2607.14159](https://arxiv.org/abs/2607.14159), 2026-07-14) — an "adaptive harness optimization framework that learns from its own executions" |
 | **Offline code edit** | rewrite the harness *code* against a held-out fitness function | [self-improving-harness](self-improving-harness.md) (propose-evaluate-accept; STOP/DGM/Self-Harness) |
+| **Weights, trained inside the harness** | keep the harness fixed and make it the RL *environment* — no control-flow changes | LEGO-RL ([arXiv:2608.17393](https://arxiv.org/abs/2608.17393), 2026-08-18) |
 
 The first two are the *online / inference-time* face of the same idea the third does *offline*. They compose: an offline loop can produce the candidate set that an online selector then allocates across.
+
+## The fourth grain: the harness as training substrate
+
+A 2026-08 turn worth noting, because it changes what the harness *is*. LEGO-RL ([arXiv:2608.17393](https://arxiv.org/abs/2608.17393)) treats a production coding-agent harness as the RL environment and bridges it to policy-gradient training **without modifying its internal control flow** (in-process LLM proxying to capture raw generation streams for token-level credit). Its diagnosis is the transferable part: native harness environments are "inherently misaligned with policy-gradient training" because **environmental crashes and reward hacking corrupt outcome signals**, while **train-inference discrepancies decouple rollout behavior from policy updates**.
+
+Two consequences for this node. First, the harness stops being only a hyperparameter you select and becomes the substrate that training runs *through* — so harness instability is no longer just a reliability problem, it is signal corruption. Second, it sharpens the boundary with [self-improving-harness](self-improving-harness.md): that node moves *text and code*, this grain moves *weights* while holding the harness still ([verbal-reinforcement-vs-gradient-rl](verbal-reinforcement-vs-gradient-rl.md) is the distinction). Author-reported, 2026 preprint, coding-agent domain — cite the misalignment mechanism, not the numbers.
 
 ## The compounding caveat
 
@@ -52,4 +59,5 @@ Online adaptation does **not** compound for free. **Do Agent Optimizers Compound
 
 - **Automated Discovery Has No Universally Superior Harness** — [arXiv:2607.18235](https://arxiv.org/abs/2607.18235) (2026-07-20). The no-free-lunch ablation + hyperparameter framing. *Verified 2026-07-20.*
 - **MemoHarness: Agent Harnesses That Learn from Experience** — [arXiv:2607.14159](https://arxiv.org/abs/2607.14159) (2026-07-14). Per-case online adaptation from execution history. *Verified 2026-07-20.*
+- **LEGO-RL: Harness-Native Reinforcement Learning for Coding Agents** — [arXiv:2608.17393](https://arxiv.org/abs/2608.17393) (2026-08-18). The harness as RL environment; crashes/reward-hacking corrupt outcome signals, train-inference discrepancy decouples rollouts from updates. *Verified 2026-08-18.*
 - **Do Agent Optimizers Compound?** — [arXiv:2607.14004](https://arxiv.org/abs/2607.14004) (2026-07-15). The regression-control-or-plateau caveat; pass-rate ranking is vendor-authored — cite the mechanism, not the numbers. *Verified 2026-07-20.*

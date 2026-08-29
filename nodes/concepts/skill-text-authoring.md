@@ -76,6 +76,17 @@ Authoring is not a one-shot write. The loop that the evidence supports:
 6. **Accept on behavior, not on text.** Reviewing the artifact — or even its final task score — "leaves unresolved which actions the equipped agent will perform and which side effects those actions will produce" ([arXiv:2608.17588](https://arxiv.org/abs/2608.17588), 2026 preprint). The pattern worth copying: a **static gate** over named safety properties, then load the candidate into a **shadow agent** in a controlled environment where brokered tools expose every requested action to policy enforcement and record it. For a skill that touches an irreversible surface, that recorded action list — not the prose — is the acceptance artifact ([action-execution-safety](../topics/action-execution-safety.md), [dry-run-and-preview](dry-run-and-preview.md)).
 7. **Edit in small, individually evaluable steps.** Framing skill improvement as *sequential edits, each separately scorable*, is exactly what makes the loop learnable rather than a rewrite gamble ([arXiv:2608.01678](https://arxiv.org/abs/2608.01678)).
 
+## Which artifact is worth the investment
+
+Two 2026 empirical studies of open-source repositories answer this with adoption data, and they disagree by two orders of magnitude:
+
+| Artifact | Found in the wild | Source |
+|---|---|---|
+| **Static config prompt files** (`.cursorrules`-style project rules) | **12,110 files across 11,427 repositories**, with characterized distribution, evolution, and maintenance | [arXiv:2608.10622](https://arxiv.org/abs/2608.10622) (ICSOFT 2026) |
+| **Per-task agent plans** (plan files committed to the repo) | **85 plan files in 10 repositories**, from **36,710 repositories screened** — "a highly concentrated corpus" | [arXiv:2608.04661](https://arxiv.org/abs/2608.04661) (ESEM 2026) |
+
+The durable, maintained artifact is the **standing instruction file**; per-task plans are written and discarded. So the authoring effort described in this node — earning tokens, degrees of freedom, structure for partial reads, flat rule sets — belongs on the standing file, and a plan is best treated as scaffolding for one run rather than something to polish or version. (Both are open-source-repository studies; internal practice may differ, and neither measures whether the files *work*.)
+
 ## Pitfalls
 
 - **Explaining instead of instructing.** The most common bloat, and it crowds out the conventions only you know.
