@@ -15,6 +15,9 @@ related:
   - [[prompt-injection-and-isolation]]
   - [[llm-observability]]
   - [[live-traffic-eval]]
+  - [[harness-token-economics]]
+  - [[context-budget-allocation]]
+  - [[skill-text-authoring]]
   - [[context-engineering]]
   - [[references-prompt-attribution]]
 status: living
@@ -74,6 +77,27 @@ Steps 1–3 are logging discipline, not research; they belong in [llm-observabil
 - **A sentence can help for reasons unrelated to its meaning.** Semantically *irrelevant* prompts have been shown to steer behavior and sometimes match or beat task-aware prompt optimization ([arXiv:2605.29678](https://arxiv.org/abs/2605.29678)) — so "removing it hurt" does not license the story you'll write about *why* it helped.
 - **In-context and in-weight contributions get confounded.** When context overlaps training data, attribution methods cannot disentangle the two and produce unreliable scores ([arXiv:2607.23804](https://arxiv.org/abs/2607.23804)). A high score on your retrieved passage may mean the model already knew it — which matters directly for [grounding-and-citation](grounding-and-citation.md), since it inflates apparent groundedness.
 - **Self-reports and attention weights are not attribution.** CoT explanations systematically misrepresent the true cause — reordering options to make the answer always "(A)" changes behavior while models fail to mention it ([arXiv:2305.04388](https://arxiv.org/abs/2305.04388)); faithfulness varies by task and *decreases* with model capability ([arXiv:2307.13702](https://arxiv.org/abs/2307.13702)); attention weights are frequently uncorrelated with gradient-based importance ([arXiv:1902.10186](https://arxiv.org/abs/1902.10186)). Treat any self-explanation as a lead to verify by ablation, per [cot-as-forensic-artifact](cot-as-forensic-artifact.md).
+
+## Per-line efficiency: is this line worth its tokens?
+
+Attribution asks *what did this line do?* Efficiency asks *did it earn its tokens?* — a different question, with its own literature and its own traps. Two method families:
+
+| Family | Mechanism | Cost | What it gets wrong |
+|---|---|---|---|
+| **Value-based** (ablation / Shapley) | delete or permute a unit, measure the outcome delta | rollouts per unit | needs valid counterfactuals; confounds content with length |
+| **Score-based** (compression) | score each token/sentence/chunk, keep the top under a budget | one cheap pass | scores units *independently*, so it breaks dependencies |
+
+**The length confound is the first thing to fix.** Deleting a rule also shortens the prompt, so a naive ablation measures two changes at once. SkillSV's answer is **paired deletion with length-neutral padding**, plus dependency- and hierarchy-aware counterfactuals so only *valid* variants are scored ([arXiv:2608.04562](https://arxiv.org/abs/2608.04562)). Adopt the padding even if you never adopt the Shapley machinery.
+
+**Score-based methods have three documented failure modes**, all of which are the independence assumption failing:
+
+- **Referential dangling.** Independent scoring keeps the sentence containing the answer and deletes the sentence defining the entity needed to interpret it. At compression ratio 0.30 one compressor leaves the answer path incomplete in **34–54%** of bridge examples across three multi-hop QA datasets; on a shared HotpotQA bridge set **all six** tested hard compressors dangle at rates up to **60%**, and every document in LongBench-v2 Single-Document QA contains at least one dangling reference ([arXiv:2608.04569](https://arxiv.org/abs/2608.04569)).
+- **Theme collapse.** Ranking sentences by a scalar relevance score lets the dominant theme monopolize a tight budget, discarding less-frequent but task-relevant themes; coverage requires allocating budget *across* themes rather than scoring sentences in isolation ([arXiv:2607.17486](https://arxiv.org/abs/2607.17486)).
+- **Language dependence.** Compressors trained on English supervision transfer poorly, and non-English content already pays a **1.3–1.8× token premium** — so the tooling widens the gap it was meant to close ([arXiv:2608.26175](https://arxiv.org/abs/2608.26175); 10 languages, 11 target models, 250,000+ evaluation calls).
+
+**Caching can invert the entire calculation.** Query-aware compression emits a different prefix per query, which *mechanically invalidates the prefix cache on every call*. Measured against Anthropic's Sonnet 4.6 API: a two-tier cache with a sharp threshold near **3,500 tokens**, below which hit rate plateaus at **ρ≈0.83** over 30-call sessions — well short of the ρ=1.0 the compression literature assumes — and query-aware compression only beats naive caching at high compression ratios (**r ≥ 6**) ([arXiv:2607.15516](https://arxiv.org/abs/2607.15516)). A skill or system prompt is a *stable prefix*, so for the case this graph cares about, trimming lines can cost more than it saves. Establish whether the prompt is cached before asking whether a line is efficient — see [harness-token-economics](harness-token-economics.md).
+
+**The ceiling on the question.** A line whose value only appears in a case your eval set doesn't contain scores as zero under *every* method here — ablation, Shapley, and compression alike. "Rare exceptions may remain essential even when no sampled task activates them" ([arXiv:2608.11079](https://arxiv.org/abs/2608.11079)). So the operating rule is asymmetric: **measure value on lines your eval exercises; restructure rather than delete the rest.** Deletion needs outcome evidence; deduplication needs only structure ([skill-text-authoring](skill-text-authoring.md)).
 
 ## Where this connects
 

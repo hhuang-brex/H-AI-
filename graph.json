@@ -1,7 +1,7 @@
 {
-  "generated": "2026-08-28",
+  "generated": "2026-08-30",
   "node_count": 181,
-  "edge_count": 1372,
+  "edge_count": 1375,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -3777,6 +3777,9 @@
         "prompt-injection-and-isolation",
         "llm-observability",
         "live-traffic-eval",
+        "harness-token-economics",
+        "context-budget-allocation",
+        "skill-text-authoring",
         "context-engineering",
         "references-prompt-attribution"
       ]
@@ -10224,6 +10227,11 @@
     },
     {
       "from": "prompt-component-attribution",
+      "to": "context-budget-allocation",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-component-attribution",
       "to": "context-engineering",
       "kind": "related"
     },
@@ -10245,6 +10253,11 @@
     {
       "from": "prompt-component-attribution",
       "to": "grounding-and-citation",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-component-attribution",
+      "to": "harness-token-economics",
       "kind": "related"
     },
     {
@@ -10280,6 +10293,11 @@
     {
       "from": "prompt-component-attribution",
       "to": "references-prompt-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-component-attribution",
+      "to": "skill-text-authoring",
       "kind": "related"
     },
     {

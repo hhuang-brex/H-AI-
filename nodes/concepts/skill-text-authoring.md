@@ -76,6 +76,16 @@ Authoring is not a one-shot write. The loop that the evidence supports:
 6. **Accept on behavior, not on text.** Reviewing the artifact — or even its final task score — "leaves unresolved which actions the equipped agent will perform and which side effects those actions will produce" ([arXiv:2608.17588](https://arxiv.org/abs/2608.17588), 2026 preprint). The pattern worth copying: a **static gate** over named safety properties, then load the candidate into a **shadow agent** in a controlled environment where brokered tools expose every requested action to policy enforcement and record it. For a skill that touches an irreversible surface, that recorded action list — not the prose — is the acceptance artifact ([action-execution-safety](../topics/action-execution-safety.md), [dry-run-and-preview](dry-run-and-preview.md)).
 7. **Edit in small, individually evaluable steps.** Framing skill improvement as *sequential edits, each separately scorable*, is exactly what makes the loop learnable rather than a rewrite gamble ([arXiv:2608.01678](https://arxiv.org/abs/2608.01678)).
 
+## Cutting: restructure before you delete
+
+"Earn the tokens" (above) is about what never gets written. This is about what to do with text that already exists and looks redundant — and the two moves are not equally safe.
+
+**Deleting requires outcome evidence; deduplicating requires only structure.** A line whose value materializes only in a case your eval set lacks measures as worthless under ablation, Shapley, *and* compression — "rare exceptions may remain essential even when no sampled task activates them" ([arXiv:2608.11079](https://arxiv.org/abs/2608.11079)). Evaluation-guided pruning cannot see them by construction, so a rare-but-real exception is exactly the line a value-based pass will tell you to cut.
+
+The safe move is structural: **explain once, reference many.** State a repeated rule a single time at the scope that governs it, and reference it from the branches instead of restating it per branch. That shrinks the artifact without betting on your eval's coverage. The same source argues why generic prompt compression is the wrong tool on a skill: a skill is not a flat passage — "its name and description define when it applies, its workflow controls execution, its tool and output contracts constrain validity," and each of those parts fails differently when squeezed.
+
+One accounting caveat before optimizing length at all: a skill is a **stable prefix**, so it is cacheable, and per-query rewriting destroys that. Trimming lines can cost more than it saves ([prompt-component-attribution](prompt-component-attribution.md) has the measured cache thresholds).
+
 ## Which artifact is worth the investment
 
 Two 2026 empirical studies of open-source repositories answer this with adoption data, and they disagree by two orders of magnitude:
