@@ -24,6 +24,7 @@ Two different things get called "RL." Conflating them is the trap.
 | Learning signal | scalar reward → **backprop gradient** | natural-language **reflection** ("textual gradient") |
 | Credit assignment | gradient through the network | an LLM reasoning, in words, about *why it failed* |
 | Cost | thousands–tens of thousands of rollouts | tens–hundreds |
+| Measured instance | GRPO at 24,000 rollouts | GEPA matched its best validation with **102 / 32 / 6 / 179** train rollouts on four tasks ([worked-example-gepa-mechanism](../projects/worked-example-gepa-mechanism.md)) |
 | Inspectable / reversible | no / no | yes / yes |
 
 An agent that **reads its eval failures and rewrites its own skill** is entirely the right column. There *is* a trial → signal → improvement loop (the structure shared with RL), but **no parameter update and no gradient**. "Verbal reinforcement learning" is a metaphor coined by Reflexion (see [verbal-self-correction](verbal-self-correction.md)); the "reinforcement" is linguistic feedback, not a policy-gradient step.

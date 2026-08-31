@@ -13,6 +13,7 @@ nav_exclude: true
 > here to learn the material, start from the topics in the [README](../README.md)
 > instead. Use this only to trace *why* a particular node says what it says.
 
+- 2026-08-30 · [meta] [2026-08-30-gepa-dspy-fanout](2026-08-30-gepa-dspy-fanout.md) — fan-out from GEPA read at source: what the abstract omits (Pareto ablation, budget anatomy, two trace types, merge's negative result, cross-model transfer) plus its verified lineage and one contested claim.
 - 2026-08-30 · [meta] [2026-08-30-skillsv-fanout](2026-08-30-skillsv-fanout.md) — fan-out from SkillSV (arXiv:2608.04562) read at source: one worked-example node, its optimizer and Shapley lineages verified and distributed, plus two sources that could not be verified.
 - 2026-08-18 · [eval] [2026-08-18-industry-trend-catchup](2026-08-18-industry-trend-catchup.md) — 10-day arXiv trend scan (2026-08-08 → 08-18): cluster volumes, 11 verified papers, 4 landings — task-order variance, CAPO, TRACE, TRUSS.
 - 2026-08-08 · [eval] [2026-08-08-skill-text-authoring-fanout](2026-08-08-skill-text-authoring-fanout.md) — fan-out on improving LLM skill text: Anthropic's authoring guidance + 9 verified 2026 agent-skills papers, one new concept, one reference node, three deepenings, one provenance check.

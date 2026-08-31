@@ -15,6 +15,7 @@ related:
   - [[prompt-component-attribution]]
   - [[skill-text-authoring]]
   - [[worked-example-skillsv-valuation]]
+  - [[worked-example-gepa-mechanism]]
   - [[eval-statistical-significance]]
   - [[references-prompt-optimization]]
 status: living
@@ -40,6 +41,17 @@ DSPy optimizers tune one of three things: **few-shot demos** (`BootstrapFewShot`
 
 - **Single prose playbook** → **GEPA** (reflective instruction evolution): selects from a *Pareto frontier* of candidates, reflects in natural language on failure traces, and mutates the instruction. *GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning* ([arXiv:2507.19457](https://arxiv.org/abs/2507.19457), ICLR 2026 Oral) beats RL (GRPO) by ~6% avg (up to 20%) at **up to 35× fewer rollouts**, and MIPROv2 by >10%. Its edge for you: it evolves instruction *text* and is sample-efficient — decisive when each eval is a full, expensive agent run.
 - **Several distinct predictors, each input→output** → MIPROv2-style few-shot bootstrapping per predictor.
+
+## What actually makes GEPA work (from the paper body, not the abstract)
+
+Four facts that change how you'd build or configure this — see [worked-example-gepa-mechanism](../projects/worked-example-gepa-mechanism.md):
+
+- **Candidate *selection* carries the gains, not the mutation operator.** Pareto sampling beats `BeamSearch(N=4)` (the APO strategy) by up to **11.33%** and `SelectBestCandidate` (TextGrad-like) by up to **8.17%**, aggregate +7.33% / +6.4%. Mechanism: keep every candidate that leads on **at least one** training instance, prune strictly dominated ones, then sample weighted by how many instances each leads — MAP-Elites *illumination* ([arXiv:1504.04909](https://arxiv.org/abs/1504.04909)) applied to tasks. Always-take-the-best stalls in a local optimum and burns the budget on one lineage.
+- **Most of the rollout budget buys *selection*, not learning.** "The majority of GEPA's rollout budget is spent on validation, where scores are utilized solely for candidate selection and not for producing learning signals." Counting train rollouts only, GEPA reaches optimum in **79–737** rollouts. So instrument the split before buying more budget, and note the authors' own proposed fix — smaller or **dynamically selected validation subsets**, which is state-driven allocation ([cost-aware-eval](cost-aware-eval.md)).
+- **The feedback string has two distinct sources.** *Execution traces* (what the LLM produced) and *evaluation traces* (what the environment produced while computing the reward — compiler errors, failed rubrics, profiling output). Feedback may be **module-specific**, and human graders' written justifications can be attached to the trainset as auxiliary feedback. Your validator already prints why it failed; that string is the gradient.
+- **Merge is a hyperparameter, not a free win.** System-aware crossover gave up to +5% on GPT-4.1 Mini but **degraded Qwen3 8B**, helping on 1 of 4 tasks, because the mutation/crossover budget split and merge timing were held fixed across models.
+
+Two results worth knowing before you plan a run: GEPA's prompts were up to **9.2× shorter** than MIPROv2's with a *lower* generalization gap, and prompts optimized on **Qwen3-8B transferred to GPT-4.1-Mini for +9.00% aggregate** — beating MIPROv2/TextGrad/Trace optimized directly on the target. Try optimizing on a cheap model first.
 
 ## The metric is the whole game
 

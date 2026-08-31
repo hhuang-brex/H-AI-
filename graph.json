@@ -1,7 +1,7 @@
 {
   "generated": "2026-08-30",
-  "node_count": 183,
-  "edge_count": 1392,
+  "node_count": 185,
+  "edge_count": 1407,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -639,6 +639,34 @@
         "references-prompt-optimization",
         "references-prompt-attribution",
         "references-agent-skill-authoring"
+      ]
+    },
+    {
+      "id": "2026-08-30-gepa-dspy-fanout",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-08-30-gepa-dspy-fanout.md",
+      "title": "Thread \u2014 GEPA / DSPy Fan-Out (2026-08-30)",
+      "summary": "fan-out from GEPA read at source: what the abstract omits (Pareto ablation, budget anatomy, two trace types, merge's negative result, cross-model transfer) plus its verified lineage and one contested claim.",
+      "tags": [
+        "meta",
+        "research",
+        "fan-out",
+        "gepa",
+        "dspy",
+        "optimizer",
+        "pareto"
+      ],
+      "status": "snapshot",
+      "created": "2026-08-30",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "worked-example-gepa-mechanism",
+        "offline-prompt-optimization",
+        "verbal-reinforcement-vs-gradient-rl",
+        "cost-aware-eval",
+        "references-prompt-optimization"
       ]
     },
     {
@@ -3360,6 +3388,7 @@
         "prompt-component-attribution",
         "skill-text-authoring",
         "worked-example-skillsv-valuation",
+        "worked-example-gepa-mechanism",
         "eval-statistical-significance",
         "references-prompt-optimization"
       ]
@@ -5559,6 +5588,37 @@
       ]
     },
     {
+      "id": "worked-example-gepa-mechanism",
+      "type": "project",
+      "kind": "worked-example",
+      "path": "nodes/projects/worked-example-gepa-mechanism.md",
+      "title": "Worked Example \u2014 GEPA, Walked Through",
+      "summary": "GEPA read at source: the genetic loop, the feedback function's two trace types, Pareto illumination as the load-bearing component, where the rollout budget actually goes, and the results the abstract leaves out.",
+      "tags": [
+        "gepa",
+        "dspy",
+        "optimizer",
+        "prompt",
+        "pareto",
+        "reflection",
+        "eval"
+      ],
+      "status": "snapshot",
+      "created": "2026-08-30",
+      "clusters": [],
+      "source_thread": "2026-08-30-gepa-dspy-fanout",
+      "related": [
+        "offline-prompt-optimization",
+        "verbal-reinforcement-vs-gradient-rl",
+        "prompt-component-attribution",
+        "cost-aware-eval",
+        "eval-statistical-significance",
+        "self-improving-harness",
+        "worked-example-skillsv-valuation",
+        "references-prompt-optimization"
+      ]
+    },
+    {
       "id": "worked-example-openai-responses",
       "type": "project",
       "kind": "worked-example",
@@ -6254,6 +6314,31 @@
     {
       "from": "2026-08-18-industry-trend-catchup",
       "to": "skill-text-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-30-gepa-dspy-fanout",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-30-gepa-dspy-fanout",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-30-gepa-dspy-fanout",
+      "to": "references-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-30-gepa-dspy-fanout",
+      "to": "verbal-reinforcement-vs-gradient-rl",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-30-gepa-dspy-fanout",
+      "to": "worked-example-gepa-mechanism",
       "kind": "related"
     },
     {
@@ -9818,6 +9903,11 @@
     },
     {
       "from": "offline-prompt-optimization",
+      "to": "worked-example-gepa-mechanism",
+      "kind": "related"
+    },
+    {
+      "from": "offline-prompt-optimization",
       "to": "worked-example-skillsv-valuation",
       "kind": "related"
     },
@@ -12504,6 +12594,51 @@
     {
       "from": "worked-example-chatting-task-agent",
       "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-gepa-mechanism",
+      "to": "2026-08-30-gepa-dspy-fanout",
+      "kind": "source-thread"
+    },
+    {
+      "from": "worked-example-gepa-mechanism",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-gepa-mechanism",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-gepa-mechanism",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-gepa-mechanism",
+      "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-gepa-mechanism",
+      "to": "references-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-gepa-mechanism",
+      "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-gepa-mechanism",
+      "to": "verbal-reinforcement-vs-gradient-rl",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-gepa-mechanism",
+      "to": "worked-example-skillsv-valuation",
       "kind": "related"
     },
     {

@@ -261,6 +261,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 **Worked examples**
 - [worked-example-anthropic-thinking](nodes/projects/worked-example-anthropic-thinking.md) — Python code: capturing reasoning, signature continuity, forced-tool-call constraint, hidden billing.
 - [worked-example-chatting-task-agent](nodes/projects/worked-example-chatting-task-agent.md) — annotated code for one end-to-end chatting task agent — control loop, tools, planning, context, HITL, execution safety, persistence — threading the agent concept cluster into a single runnable shape.
+- [worked-example-gepa-mechanism](nodes/projects/worked-example-gepa-mechanism.md) — GEPA read at source: the genetic loop, the feedback function's two trace types, Pareto illumination as the load-bearing component, where the rollout budget actually goes, and the results the abstract leaves out.
 - [worked-example-openai-responses](nodes/projects/worked-example-openai-responses.md) — Python code: Responses API, server-stateful + stateless multi-turn, `incomplete:max_output_tokens` handling.
 - [worked-example-skillsv-valuation](nodes/projects/worked-example-skillsv-valuation.md) — SkillSV walked through from its source: how a skill compiles into a Shapley game, the three-number report (content value / context cost / net effect), the budgeted estimator, and where the paper is weaker than its abstract.
 
@@ -284,7 +285,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-template-rendered-output](nodes/references/references-template-rendered-output.md) — what's verifiable about template-rendered output in production — Rasa (mechanism confirmed), Ikki (architecture confirmed, outcomes refuted), and why most 'structured output' systems don't qualify.
 
 ---
-<sub>Provenance: 25 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
+<sub>Provenance: 26 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
 
 <!-- END GENERATED -->
 

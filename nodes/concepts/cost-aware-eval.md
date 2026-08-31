@@ -50,6 +50,12 @@ Token-budget assertions must read the **lab-reported usage object**, not visible
 
 A token-budget eval that counts only what's in `content` will under-attribute spend by 2–10× depending on reasoning depth. See [llm-observability](llm-observability.md) for instrumentation.
 
+## Know whether your budget buys learning or selection
+
+A useful audit borrowed from the best-performing prompt optimizer: split your spend by *what it purchases*. GEPA's authors report that "the majority of GEPA's rollout budget is spent on validation, where scores are utilized solely for candidate selection and not for producing learning signals" — counting train rollouts alone, it reaches optimal performance in **79–737** rollouts ([worked-example-gepa-mechanism](../projects/worked-example-gepa-mechanism.md)). Their proposed remedy is a smaller validation set or **dynamically selected validation subsets**.
+
+The generalizable move: before raising a budget, classify each rollout as *signal-producing* (drives an edit, a diagnosis, a gradient) or *selection-only* (ranks candidates you already have). Selection-only spend is the compressible half, and it is usually the larger one.
+
 ## Cost ratios are easy to get wrong in ways the final number hides
 
 Before quoting any "AI is N× cheaper" figure, including your own: a 2026 case study instrumented a six-person build with a three-layer cost model (real AI spend, self-reported human effort, human counterfactual) and **initially reported a 19.4× cost ratio**. A follow-up pass found two independent errors — **inferring per-token cost under a flat-rate subscription**, and **pricing the counterfactual at the wrong regional labor rates** — that together had inflated the ratio roughly 2×. Corrected figure: **~9.9×** ([arXiv:2608.13730](https://arxiv.org/abs/2608.13730), workshop paper; small student-team case study, so treat the ratio itself as anecdote and the *error taxonomy* as the finding).
