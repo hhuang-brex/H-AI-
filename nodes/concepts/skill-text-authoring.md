@@ -16,6 +16,7 @@ related:
   - [[template-rendered-output]]
   - [[action-execution-safety]]
   - [[dry-run-and-preview]]
+  - [[worked-example-skillsv-valuation]]
   - [[references-agent-skill-authoring]]
 status: living
 created: 2026-08-08
@@ -52,6 +53,7 @@ Assume the reader is an agent that may `head -100` your file rather than read it
 - **References exactly one level deep from SKILL.md.** Nested pointers (`SKILL.md → advanced.md → details.md`) are where content silently goes unread, because the agent previews rather than reads.
 - **Table of contents on any reference file over ~100 lines**, so a partial read still reveals the full scope.
 - **Descriptive filenames** (`form_validation_rules.md`, not `doc2.md`) — the filename is the retrieval signal for a file the agent hasn't opened.
+- **Write so the skill compiles.** Valuation tools cut units at **top-level list items**, treat headings as scaffolding rather than content, and keep indented continuations with their parent ([worked-example-skillsv-valuation](../projects/worked-example-skillsv-valuation.md)). A skill written as flat top-level bullets is therefore *measurable* unit by unit; one written as nested prose is not. That is a second, independent reason to prefer the flat decision-table style to nested paragraphs.
 - **One term per concept.** Mixing "field" / "box" / "element" makes the model's matching job harder for zero benefit.
 
 ## Keep the rule set small, flat, and non-conflicting

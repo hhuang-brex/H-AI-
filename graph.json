@@ -1,7 +1,7 @@
 {
   "generated": "2026-08-30",
-  "node_count": 181,
-  "edge_count": 1375,
+  "node_count": 183,
+  "edge_count": 1392,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -639,6 +639,35 @@
         "references-prompt-optimization",
         "references-prompt-attribution",
         "references-agent-skill-authoring"
+      ]
+    },
+    {
+      "id": "2026-08-30-skillsv-fanout",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-08-30-skillsv-fanout.md",
+      "title": "Thread \u2014 SkillSV Fan-Out (2026-08-30)",
+      "summary": "fan-out from SkillSV (arXiv:2608.04562) read at source: one worked-example node, its optimizer and Shapley lineages verified and distributed, plus two sources that could not be verified.",
+      "tags": [
+        "meta",
+        "research",
+        "fan-out",
+        "skills",
+        "attribution",
+        "shapley",
+        "valuation"
+      ],
+      "status": "snapshot",
+      "created": "2026-08-30",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "worked-example-skillsv-valuation",
+        "prompt-component-attribution",
+        "skill-text-authoring",
+        "offline-prompt-optimization",
+        "references-prompt-optimization",
+        "references-prompt-attribution"
       ]
     },
     {
@@ -3330,6 +3359,7 @@
         "self-improving-harness",
         "prompt-component-attribution",
         "skill-text-authoring",
+        "worked-example-skillsv-valuation",
         "eval-statistical-significance",
         "references-prompt-optimization"
       ]
@@ -4630,6 +4660,7 @@
         "template-rendered-output",
         "action-execution-safety",
         "dry-run-and-preview",
+        "worked-example-skillsv-valuation",
         "references-agent-skill-authoring"
       ]
     },
@@ -5552,6 +5583,36 @@
         "decision-audit-trail",
         "worked-example-anthropic-thinking"
       ]
+    },
+    {
+      "id": "worked-example-skillsv-valuation",
+      "type": "project",
+      "kind": "worked-example",
+      "path": "nodes/projects/worked-example-skillsv-valuation.md",
+      "title": "Worked Example \u2014 SkillSV, Walked Through",
+      "summary": "SkillSV walked through from its source: how a skill compiles into a Shapley game, the three-number report (content value / context cost / net effect), the budgeted estimator, and where the paper is weaker than its abstract.",
+      "tags": [
+        "skills",
+        "attribution",
+        "shapley",
+        "valuation",
+        "eval",
+        "compression"
+      ],
+      "status": "snapshot",
+      "created": "2026-08-30",
+      "clusters": [],
+      "source_thread": "2026-08-30-skillsv-fanout",
+      "related": [
+        "prompt-component-attribution",
+        "skill-text-authoring",
+        "agent-skills-progressive-disclosure",
+        "offline-prompt-optimization",
+        "eval-statistical-significance",
+        "cost-aware-eval",
+        "references-agent-skill-authoring",
+        "references-prompt-attribution"
+      ]
     }
   ],
   "edges": [
@@ -6193,6 +6254,36 @@
     {
       "from": "2026-08-18-industry-trend-catchup",
       "to": "skill-text-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-30-skillsv-fanout",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-30-skillsv-fanout",
+      "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-30-skillsv-fanout",
+      "to": "references-prompt-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-30-skillsv-fanout",
+      "to": "references-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-30-skillsv-fanout",
+      "to": "skill-text-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-30-skillsv-fanout",
+      "to": "worked-example-skillsv-valuation",
       "kind": "related"
     },
     {
@@ -9726,6 +9817,11 @@
       "kind": "related"
     },
     {
+      "from": "offline-prompt-optimization",
+      "to": "worked-example-skillsv-valuation",
+      "kind": "related"
+    },
+    {
       "from": "ontology-as-validator-shacl",
       "to": "decision-engine-contract",
       "kind": "related"
@@ -11306,6 +11402,11 @@
       "kind": "related"
     },
     {
+      "from": "skill-text-authoring",
+      "to": "worked-example-skillsv-valuation",
+      "kind": "related"
+    },
+    {
       "from": "sms-context-windowing",
       "to": "context-engineering",
       "kind": "related"
@@ -12428,6 +12529,51 @@
     {
       "from": "worked-example-openai-responses",
       "to": "worked-example-anthropic-thinking",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-skillsv-valuation",
+      "to": "2026-08-30-skillsv-fanout",
+      "kind": "source-thread"
+    },
+    {
+      "from": "worked-example-skillsv-valuation",
+      "to": "agent-skills-progressive-disclosure",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-skillsv-valuation",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-skillsv-valuation",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-skillsv-valuation",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-skillsv-valuation",
+      "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-skillsv-valuation",
+      "to": "references-agent-skill-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-skillsv-valuation",
+      "to": "references-prompt-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "worked-example-skillsv-valuation",
+      "to": "skill-text-authoring",
       "kind": "related"
     }
   ]

@@ -14,6 +14,7 @@ related:
   - [[self-improving-harness]]
   - [[prompt-component-attribution]]
   - [[skill-text-authoring]]
+  - [[worked-example-skillsv-valuation]]
   - [[eval-statistical-significance]]
   - [[references-prompt-optimization]]
 status: living
@@ -65,4 +66,5 @@ As of mid-2026, **no verified production case** improves a genuinely *multi-step
 - The structural counterpart — optimizing *what context the playbook assembles* rather than its prose: [agentic-context-engineering-ace](agentic-context-engineering-ace.md).
 - Eval foundations this depends on: [agent-trajectory-eval](agent-trajectory-eval.md), [llm-as-judge](llm-as-judge.md), [adversarial-eval](adversarial-eval.md).
 - Primary: GEPA [arXiv:2507.19457](https://arxiv.org/abs/2507.19457); DSPy [arXiv:2310.03714](https://arxiv.org/abs/2310.03714); `gepa-ai/gepa` (standalone, MIT).
+- The 2026 shift from optimizing a prompt string to optimizing a **skill document** — SkillOpt's strict held-out acceptance rule, textual learning-rate budget, and rejected-edit buffer; Trace2Skill's parallel trajectory merging — is catalogued in [references-prompt-optimization](../references/references-prompt-optimization.md).
 - Full verified reading list — the AutoPrompt → APE → textual-gradient → program-optimizer lineage, the agent-specific work, and the field survey: [references-prompt-optimization](../references/references-prompt-optimization.md).
