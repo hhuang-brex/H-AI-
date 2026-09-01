@@ -52,6 +52,9 @@ A token-budget eval that counts only what's in `content` will under-attribute sp
 
 ## Know whether your budget buys learning or selection
 
+The mechanisms for compressing the selection half — anytime-valid stopping, best-arm allocation, psychometric item selection — are in [adaptive-eval-budget](adaptive-eval-budget.md).
+
+
 A useful audit borrowed from the best-performing prompt optimizer: split your spend by *what it purchases*. GEPA's authors report that "the majority of GEPA's rollout budget is spent on validation, where scores are utilized solely for candidate selection and not for producing learning signals" — counting train rollouts alone, it reaches optimal performance in **79–737** rollouts ([worked-example-gepa-mechanism](../projects/worked-example-gepa-mechanism.md)). Their proposed remedy is a smaller validation set or **dynamically selected validation subsets**.
 
 The generalizable move: before raising a budget, classify each rollout as *signal-producing* (drives an edit, a diagnosis, a gradient) or *selection-only* (ranks candidates you already have). Selection-only spend is the compressible half, and it is usually the larger one.

@@ -20,6 +20,8 @@ related:
   - [[eval-statistical-significance]]
   - [[prompt-component-attribution]]
   - [[references-multi-turn-agent-eval]]
+  - [[adaptive-eval-budget]]
+  - [[references-adaptive-eval]]
   - [[verbal-self-correction]]
   - [[collaborative-agent-eval]]
   - [[live-traffic-eval]]
@@ -57,6 +59,7 @@ Anything not serving (1)–(3) is overhead.
 - [eval-dataset-quality](../concepts/eval-dataset-quality.md) — audit the *instrument*: validity, label agreement, discrimination (the negative-control test), contamination, drift — a scorecard for "is my eval set any good?"
 - [eval-case-design](../concepts/eval-case-design.md) — *construct* good cases: design from the decision, a coverage matrix, scorable end-states, discrimination-piloting, held-out splits, and the failure flywheel.
 - [eval-statistical-significance](../concepts/eval-statistical-significance.md) — is the delta real? The variance budget (format, order, judge, agent path), paired and multi-prompt designs, and the winner's curse when sweeping variants.
+- [adaptive-eval-budget](../concepts/adaptive-eval-budget.md) — stop paying when the evidence suffices: confidence sequences, best-arm allocation, informative-item selection, with the ship gate kept deliberately non-adaptive.
 - [prompt-component-attribution](../concepts/prompt-component-attribution.md) — which sentence caused which output: per-instance context attribution vs population-level ablation, and how to instrument a playbook so both are cheap.
 
 ## Canonical references

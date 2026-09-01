@@ -48,6 +48,10 @@ Fixing a knob is cheaper than sampling it, and legitimate — but it converts a 
 5. **Budget for multiple comparisons.** Sweeping 20 prompt variants against one eval set produces a winner by selection, not by merit — the **winner's curse**. Correct for the number of comparisons, and require the winner to hold on a slice it was never scored on. This is the same trap as overfitting a harness to an eval slice in [harness-as-hyperparameter](harness-as-hyperparameter.md), and why [offline-prompt-optimization](offline-prompt-optimization.md) insists on a held-out set the optimizer never sees.
 6. **Gate on two conditions, not one.** Ship if the change (a) beats baseline by more than the spread *and* (b) breaks zero critical cases. Criterion (b) is not statistical — a single safety regression is disqualifying at any p-value.
 
+## When the budget itself should adapt
+
+Everything above fixes N in advance. The complementary discipline — stop sampling when the evidence suffices, allocate the next call to the candidate still in contention, and prefer informative cases over uniform ones — is [adaptive-eval-budget](adaptive-eval-budget.md). The one thing not to carry across: adaptivity belongs on the screening layer, while this node's gate of record stays fixed and pre-registered.
+
 ## Pitfalls
 
 - **Reporting the max over reruns.** Re-rolling a flaky eval until the number is good is p-hacking with extra steps. Fix the number of runs before looking.

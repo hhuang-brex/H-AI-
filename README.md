@@ -161,6 +161,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [stop-and-yield-conditions](nodes/concepts/stop-and-yield-conditions.md) — the three ways a loop can end — done, blocked-needs-user, or failed — and why 'yield to user' is distinct from 'stop'.
 
 **[llm-evaluation](nodes/topics/llm-evaluation.md)**
+- [adaptive-eval-budget](nodes/concepts/adaptive-eval-budget.md) — stop paying when the evidence suffices: confidence sequences for valid early stopping, best-arm allocation instead of uniform sampling, and informative-item selection — with a fixed gate of record kept deliberately non-adaptive.
 - [adversarial-eval](nodes/concepts/adversarial-eval.md) — red-team / safety / prompt injection.
 - [agent-failure-modes](nodes/concepts/agent-failure-modes.md) — a cross-stack map of the six ways agents silently break (survey, secondary evidence) — owns the genuine-capability-vs-measurement-correction lens and three cross-cutting laws: failures compound nonlinearly with length, sub-skill competence doesn't compose, undirected scaffolding doesn't reliably help.
 - [agent-trajectory-eval](nodes/concepts/agent-trajectory-eval.md) — multi-turn, tool sequences, end-state.
@@ -269,6 +270,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [spender-agent](nodes/projects/spender-agent.md) — task agent that documents transactions by maintaining an EA-grade model of the principal's economic life. Two-loop architecture (slow context model + fast event handling) over a universal-context primitive; AI-proposes / user-corrects authority. (`kind: product`.)
 
 ### References
+- [references-adaptive-eval](nodes/references/references-adaptive-eval.md) — verified sources for adaptive eval budgeting — anytime-valid stopping, best-arm allocation with valid use of cheap proxies, and psychometric item selection.
 - [references-agent-skill-authoring](nodes/references/references-agent-skill-authoring.md) — verified sources on writing and improving agent skill text — Anthropic's authoring guidance plus the 2026 skill-library literature on valuation, evolution, retrieval documents, compression, rule nesting, and malicious skills.
 - [references-chatbot-pagination](nodes/references/references-chatbot-pagination.md) — pagination reading list (Anthropic Writing Tools / Code Execution, MCP cursor spec, NN/g UX patterns).
 - [references-context-and-memory](nodes/references/references-context-and-memory.md) — verified empirical sources behind the context and memory clusters — lost-in-the-middle, context rot, RAG, MemGPT, and generative agents.
@@ -285,7 +287,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-template-rendered-output](nodes/references/references-template-rendered-output.md) — what's verifiable about template-rendered output in production — Rasa (mechanism confirmed), Ikki (architecture confirmed, outcomes refuted), and why most 'structured output' systems don't qualify.
 
 ---
-<sub>Provenance: 26 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
+<sub>Provenance: 27 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
 
 <!-- END GENERATED -->
 

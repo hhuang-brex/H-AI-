@@ -8,6 +8,7 @@ related:
   - [[cost-aware-eval]]
   - [[golden-snapshot-eval]]
   - [[agent-eval-case-study]]
+  - [[adaptive-eval-budget]]
 status: living
 created: 2026-06-05
 summary: "porting the classic pyramid to LLM apps."

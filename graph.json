@@ -1,7 +1,7 @@
 {
-  "generated": "2026-08-30",
-  "node_count": 185,
-  "edge_count": 1407,
+  "generated": "2026-08-31",
+  "node_count": 188,
+  "edge_count": 1434,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -699,6 +699,34 @@
       ]
     },
     {
+      "id": "2026-08-31-adaptive-eval-fanout",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-08-31-adaptive-eval-fanout.md",
+      "title": "Thread \u2014 Adaptive Eval Budget Fan-Out (2026-08-31)",
+      "summary": "fan-out on adaptive eval budgeting: seven verified sources across anytime-valid stopping, best-arm allocation, and psychometrics; one new concept and one new reference node.",
+      "tags": [
+        "meta",
+        "research",
+        "fan-out",
+        "eval",
+        "statistics",
+        "bandit",
+        "psychometrics"
+      ],
+      "status": "snapshot",
+      "created": "2026-08-31",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "adaptive-eval-budget",
+        "references-adaptive-eval",
+        "eval-statistical-significance",
+        "cost-aware-eval",
+        "worked-example-gepa-mechanism"
+      ]
+    },
+    {
       "id": "action-authority",
       "type": "concept",
       "kind": null,
@@ -764,6 +792,40 @@
         "step-budget-and-runaway-control",
         "prompt-injection-and-isolation",
         "memory-poisoning"
+      ]
+    },
+    {
+      "id": "adaptive-eval-budget",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/adaptive-eval-budget.md",
+      "title": "Adaptive Eval Budget",
+      "summary": "stop paying when the evidence suffices: confidence sequences for valid early stopping, best-arm allocation instead of uniform sampling, and informative-item selection \u2014 with a fixed gate of record kept deliberately non-adaptive.",
+      "tags": [
+        "eval",
+        "statistics",
+        "budget",
+        "sequential-testing",
+        "bandit",
+        "psychometrics"
+      ],
+      "status": "living",
+      "created": "2026-08-31",
+      "clusters": [
+        "llm-evaluation"
+      ],
+      "source_thread": "2026-08-31-adaptive-eval-fanout",
+      "related": [
+        "eval-statistical-significance",
+        "cost-aware-eval",
+        "test-pyramid-llm",
+        "eval-dataset-quality",
+        "llm-evaluation",
+        "offline-prompt-optimization",
+        "harness-as-hyperparameter",
+        "prompt-component-attribution",
+        "live-traffic-eval",
+        "references-adaptive-eval"
       ]
     },
     {
@@ -2918,6 +2980,8 @@
         "eval-statistical-significance",
         "prompt-component-attribution",
         "references-multi-turn-agent-eval",
+        "adaptive-eval-budget",
+        "references-adaptive-eval",
         "verbal-self-correction",
         "collaborative-agent-eval",
         "live-traffic-eval",
@@ -3944,6 +4008,35 @@
         "conversation-memory",
         "domain-knowledge-injection",
         "layered-defense-pipeline"
+      ]
+    },
+    {
+      "id": "references-adaptive-eval",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-adaptive-eval.md",
+      "title": "References \u2014 Adaptive Eval Budgeting",
+      "summary": "verified sources for adaptive eval budgeting \u2014 anytime-valid stopping, best-arm allocation with valid use of cheap proxies, and psychometric item selection.",
+      "tags": [
+        "eval",
+        "reading-list",
+        "sequential-testing",
+        "bandit",
+        "psychometrics",
+        "budget"
+      ],
+      "status": "living",
+      "created": "2026-08-31",
+      "clusters": [],
+      "source_thread": "2026-08-31-adaptive-eval-fanout",
+      "related": [
+        "adaptive-eval-budget",
+        "eval-statistical-significance",
+        "cost-aware-eval",
+        "test-pyramid-llm",
+        "eval-dataset-quality",
+        "references-prompt-attribution",
+        "llm-evaluation"
       ]
     },
     {
@@ -5167,7 +5260,8 @@
         "llm-as-judge",
         "cost-aware-eval",
         "golden-snapshot-eval",
-        "agent-eval-case-study"
+        "agent-eval-case-study",
+        "adaptive-eval-budget"
       ]
     },
     {
@@ -6372,6 +6466,31 @@
       "kind": "related"
     },
     {
+      "from": "2026-08-31-adaptive-eval-fanout",
+      "to": "adaptive-eval-budget",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-31-adaptive-eval-fanout",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-31-adaptive-eval-fanout",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-31-adaptive-eval-fanout",
+      "to": "references-adaptive-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-08-31-adaptive-eval-fanout",
+      "to": "worked-example-gepa-mechanism",
+      "kind": "related"
+    },
+    {
       "from": "action-authority",
       "to": "domain-chatbot-design",
       "kind": "related"
@@ -6474,6 +6593,61 @@
     {
       "from": "action-execution-safety",
       "to": "worked-example-chatting-task-agent",
+      "kind": "related"
+    },
+    {
+      "from": "adaptive-eval-budget",
+      "to": "2026-08-31-adaptive-eval-fanout",
+      "kind": "source-thread"
+    },
+    {
+      "from": "adaptive-eval-budget",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "adaptive-eval-budget",
+      "to": "eval-dataset-quality",
+      "kind": "related"
+    },
+    {
+      "from": "adaptive-eval-budget",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "adaptive-eval-budget",
+      "to": "harness-as-hyperparameter",
+      "kind": "related"
+    },
+    {
+      "from": "adaptive-eval-budget",
+      "to": "live-traffic-eval",
+      "kind": "related"
+    },
+    {
+      "from": "adaptive-eval-budget",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "adaptive-eval-budget",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "adaptive-eval-budget",
+      "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "adaptive-eval-budget",
+      "to": "references-adaptive-eval",
+      "kind": "related"
+    },
+    {
+      "from": "adaptive-eval-budget",
+      "to": "test-pyramid-llm",
       "kind": "related"
     },
     {
@@ -9168,6 +9342,11 @@
     },
     {
       "from": "llm-evaluation",
+      "to": "adaptive-eval-budget",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
       "to": "adversarial-eval",
       "kind": "related"
     },
@@ -9244,6 +9423,11 @@
     {
       "from": "llm-evaluation",
       "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "llm-evaluation",
+      "to": "references-adaptive-eval",
       "kind": "related"
     },
     {
@@ -10634,6 +10818,46 @@
     {
       "from": "recency-bias-prompt-design",
       "to": "operator-trust-injection",
+      "kind": "related"
+    },
+    {
+      "from": "references-adaptive-eval",
+      "to": "2026-08-31-adaptive-eval-fanout",
+      "kind": "source-thread"
+    },
+    {
+      "from": "references-adaptive-eval",
+      "to": "adaptive-eval-budget",
+      "kind": "related"
+    },
+    {
+      "from": "references-adaptive-eval",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "references-adaptive-eval",
+      "to": "eval-dataset-quality",
+      "kind": "related"
+    },
+    {
+      "from": "references-adaptive-eval",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "references-adaptive-eval",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "references-adaptive-eval",
+      "to": "references-prompt-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "references-adaptive-eval",
+      "to": "test-pyramid-llm",
       "kind": "related"
     },
     {
@@ -12084,6 +12308,11 @@
     {
       "from": "template-rendered-output",
       "to": "schema-vs-validator",
+      "kind": "related"
+    },
+    {
+      "from": "test-pyramid-llm",
+      "to": "adaptive-eval-budget",
       "kind": "related"
     },
     {
