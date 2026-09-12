@@ -78,6 +78,6 @@ GEPA's Observation 2 — instruction optimization alone now beats joint instruct
 ## What to adopt *[graph]*
 
 1. **Log evaluation traces, not just scores.** Compiler output, failed rubric names, validator messages — that text is the learning signal, and it is usually already being thrown away.
-2. **Never select only the current best candidate.** Keep every variant that leads on at least one case, and sample proportionally to how many cases it leads. This is the cheapest single upgrade to a homegrown optimization loop.
+2. **Never select only the current best candidate.** Keep every variant that leads on at least one case, and sample proportionally to how many cases it leads. This is the cheapest single upgrade to a homegrown optimization loop. *Contested since 2026-08:* a single-lineage baseline with a strong teacher model (NPO, [arXiv:2608.27266](https://arxiv.org/abs/2608.27266)) reports matching or beating GEPA with fewer rollouts, with the advantage growing as the teacher gets stronger — so measure the population machinery against a naive linear loop rather than assuming it ([offline-prompt-optimization](../concepts/offline-prompt-optimization.md)).
 3. **Instrument where your budget goes.** If most rollouts are buying *selection* rather than *learning*, shrink the selection set before buying more rollouts.
 4. **Try transferring a prompt optimized on a cheaper model** before paying to optimize on the expensive one.

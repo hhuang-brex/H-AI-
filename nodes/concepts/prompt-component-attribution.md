@@ -101,6 +101,16 @@ Attribution asks *what did this line do?* Efficiency asks *did it earn its token
 
 **The ceiling on the question.** A line whose value only appears in a case your eval set doesn't contain scores as zero under *every* method here — ablation, Shapley, and compression alike. "Rare exceptions may remain essential even when no sampled task activates them" ([arXiv:2608.11079](https://arxiv.org/abs/2608.11079)). So the operating rule is asymmetric: **measure value on lines your eval exercises; restructure rather than delete the rest.** Deletion needs outcome evidence; deduplication needs only structure ([skill-text-authoring](skill-text-authoring.md)).
 
+## Multi-turn: the prompt includes what the model already said
+
+In a running conversation, part of the context is the agent's **own prior output** — which makes it both an attribution target and an intervention surface. A 2026-09 study replays completed multi-turn trajectories while editing *only* assistant-generated history ([arXiv:2609.05882](https://arxiv.org/abs/2609.05882); 6 task families, 5 models, code and data released):
+
+- **Neutralization** — replacing prior assistant responses with neutral content — changed downstream normalized performance by **+.027** across 2,973 trajectories. Small on average, and the average is the wrong statistic.
+- **It is not just context shortening.** On a pre-registered length-controlled subset, short and length-matched neutralization gave nearly identical effects (**+.069 vs +.068**) — the same length-confound discipline the per-line section above insists on, applied to history.
+- **Turn Surgery** edits one assistant turn at a time. Among 237 selected degraded trajectories, **63.7% contained at least one beneficial intervention**, and for binary tasks **48.4% admitted a fail-to-success reversal** — while *most* tested positions changed nothing.
+
+Read together: assistant history has **active but selective** effects, so the operating conclusion is **selective rather than uniform history management**. Two consequences for this graph. First, blanket compaction policies are unlikely to be optimal — a specific earlier turn is often the problem ([context-compaction](context-compaction.md)). Second, degradation from single-turn to progressively-revealed multi-turn is **task- and model-dependent, and stronger one-shot performance does not imply interaction robustness** — so a model chosen on single-turn scores is not thereby a better conversational agent ([agent-trajectory-eval](agent-trajectory-eval.md)). The internal-state case study found *measurable* downstream differences but **task-dependent rather than universal** signatures, so there is no probe to reuse yet.
+
 ## Where this connects
 
 - Attribution is the **localization** that [offline-prompt-optimization](offline-prompt-optimization.md)'s coarse-credit-assignment pitfall is missing. The 2026 optimizers that build it in — section-local textual gradients, an environment-grounded *behavior analyzer* that attributes episode outcomes to prompt components, temporal/structural credit decomposition for multi-agent systems — are catalogued in [references-prompt-optimization](../references/references-prompt-optimization.md).

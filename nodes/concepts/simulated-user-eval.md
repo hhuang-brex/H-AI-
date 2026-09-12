@@ -10,6 +10,8 @@ related:
   - [[mid-task-steering]]
   - [[llm-as-judge]]
   - [[collaborative-agent-eval]]
+  - [[intent-and-disambiguation]]
+  - [[references-multi-turn-agent-eval]]
 status: living
 created: 2026-06-11
 ---
@@ -30,6 +32,8 @@ Scoring "given prompt X, was reply Y good?" tests the agent as a chatbot. But a 
 | **LLM-played persona** | Covers the long tail of phrasings | Robustness: many ways to say "actually, the Tuesday one" |
 
 Start scripted — deterministic scenarios are debuggable and non-flaky. Add LLM-played personas for breadth once the scripted core passes. An LLM-played user is itself non-deterministic, so its scenarios need [llm-as-judge](llm-as-judge.md)-style scoring rather than exact-match.
+
+**A flat role description is not a persona.** "You are an angry customer" produces near-identical conversations regardless of scenario, which is why LLM-played breadth so often fails to buy coverage. The parameterized alternative that has been measured: a persona *vector* — categorical demographics (channel, language proficiency, time availability…), continuous behavioral traits sampled around curated base profiles (patience, assertiveness, digital literacy…), and emotional states that **shift in response to scenario context** — plus an orthogonal query-complexity overlay controlling how vaguely the user phrases things. Across 64,698 multi-turn conversations it produced a **15.8-percentage-point spread in agent goal achievement across personas**, and the *same* persona behaved differently across scenarios ([arXiv:2609.08592](https://arxiv.org/abs/2609.08592), author-reported over 3 production corpora). Two takeaways: the vagueness axis is worth separating from the personality axis, because it is what actually stresses [intent-and-disambiguation](intent-and-disambiguation.md); and a persona set that yields no spread in outcomes is not testing anything.
 
 ## The scenarios that matter for a chatting task agent
 

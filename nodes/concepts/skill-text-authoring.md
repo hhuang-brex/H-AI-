@@ -5,6 +5,8 @@ tags: [skills, prompt-engineering, playbook, authoring, context-engineering, eva
 summary: "how to improve a skill's instruction text by hand: cut what the model already knows, match specificity to task fragility, structure for partial reads, keep rule sets small and unnested, and gate every edit on an eval."
 related:
   - [[agent-skills-progressive-disclosure]]
+  - [[skill-injection-decision]]
+  - [[skill-lifecycle-and-drift]]
   - [[offline-prompt-optimization]]
   - [[agentic-context-engineering-ace]]
   - [[prompt-component-attribution]]
@@ -25,13 +27,15 @@ source-thread: [[2026-08-08-skill-text-authoring-fanout]]
 
 # Skill-Text Authoring
 
-[agent-skills-progressive-disclosure](agent-skills-progressive-disclosure.md) covers how a skill is *packaged*; [offline-prompt-optimization](offline-prompt-optimization.md) covers how a machine *searches* its text. This node covers the part a human still does: **deciding what the text should say**. It matters because the automated loop optimizes what you give it — a well-structured skill is what makes attribution and search cheap, and a badly-structured one makes both expensive.
+[agent-skills-progressive-disclosure](agent-skills-progressive-disclosure.md) covers how a skill is *packaged*; [offline-prompt-optimization](offline-prompt-optimization.md) covers how a machine *searches* its text. This node covers the part a human still does: **deciding what the text should say** (whether the skill should be loaded at all is [skill-injection-decision](skill-injection-decision.md); keeping it true afterwards is [skill-lifecycle-and-drift](skill-lifecycle-and-drift.md)). It matters because the automated loop optimizes what you give it — a well-structured skill is what makes attribution and search cheap, and a badly-structured one makes both expensive.
 
 ## Rule 0: earn the tokens
 
 The default failure is writing an explainer. Anthropic's authoring guidance states the test bluntly — "the context window is a public good," the default assumption is that the model "is already very smart," and every paragraph must answer *"does this justify its token cost?"* Their worked contrast is ~50 tokens (name the library, show the three-line call) versus ~150 tokens that explain what a PDF is.
 
 Concretely, cut: definitions of standard concepts, motivation prose, restatements of the model's general competence. Keep: **your** conventions, **your** identifiers and schemas, the non-obvious rule ("always exclude test accounts"), and the exact command that must run.
+
+One empirical tiebreaker on *form*: within skills that measurably helped, **anti-pattern rules outperformed example-heavy content** ([arXiv:2608.23067](https://arxiv.org/abs/2608.23067)). A prohibition is short and unambiguous; an example is long and generalizes in directions you did not choose. When a rule and an illustration compete for the same tokens, write the rule.
 
 ## Match specificity to fragility, not to importance
 
@@ -70,7 +74,7 @@ Practical upshot: prefer a decision table to nested prose, cap the number of har
 
 Authoring is not a one-shot write. The loop that the evidence supports:
 
-1. **Baseline without the skill.** Run representative tasks with no skill and record the failures. Vendor guidance is explicit: build evaluations *before* writing extensive documentation, so the text addresses observed gaps rather than imagined ones. This is also the honest control — **in-context learning performed comparably to explicit skill maintenance on average** in one 2026 benchmark, with much of the apparent gain coming from adaptation to prior context and feedback rather than reusable skill acquisition ([arXiv:2608.03874](https://arxiv.org/abs/2608.03874)). A skill that doesn't beat the no-skill baseline is overhead.
+1. **Baseline without the skill.** Run representative tasks with no skill and record the failures. Vendor guidance is explicit: build evaluations *before* writing extensive documentation, so the text addresses observed gaps rather than imagined ones. This is also the honest control — **in-context learning performed comparably to explicit skill maintenance on average** in one 2026 benchmark, with much of the apparent gain coming from adaptation to prior context and feedback rather than reusable skill acquisition ([arXiv:2608.03874](https://arxiv.org/abs/2608.03874)). A skill that doesn't beat the no-skill baseline is overhead. **Make the control length-matched**, not just skill-free: with an equally long *irrelevant* skill as the third arm, some models lose most of the accuracy to context occupancy alone rather than to your content, and you cannot tell which failure you have without it ([skill-injection-decision](skill-injection-decision.md)).
 2. **Write the minimum that closes the gap**, then test with the models you actually deploy (guidance for weaker models differs from what a frontier model needs).
 3. **Observe navigation, not just outcomes.** Unexpected read order, references never followed, a bundled file never opened, one file read every run — each is a signal about structure. A file the agent never opens is either unnecessary or badly signposted; a file it reads every time belongs in the body.
 4. **Attribute before editing.** Which unit earned its place is measurable: **SkillSV** scores a skill's internal units (rules, examples, scripts, heuristics) with structure-aware Shapley values, using paired deletion plus **length-neutral padding to separate content value from context cost** and respecting unit dependencies so only *valid* counterfactual skills are evaluated ([arXiv:2608.04562](https://arxiv.org/abs/2608.04562)). That last detail is the trap in naive ablation: deleting a rule also shortens the prompt, so you measure two changes at once. See [prompt-component-attribution](prompt-component-attribution.md).
@@ -108,6 +112,7 @@ The durable, maintained artifact is the **standing instruction file**; per-task 
 - **Deleting a rule because one run went wrong.** That is instance attribution used as population evidence — the error [prompt-component-attribution](prompt-component-attribution.md) is about.
 - **Letting an optimizer own the prose unsupervised.** Automated optimization exhibits **brevity bias** — collapse toward short, generic instructions that drop domain specifics ([agentic-context-engineering-ace](agentic-context-engineering-ace.md)). The human's job is precisely the domain detail an optimizer discards; keep a length floor and diff what it removed.
 - **Diagnosing greedily.** When a skill fails, a single sparse outcome conflates several possible causes; refining one incumbent guess repeatedly is an **exploitation trap** that burns the budget on an early misdiagnosis ([arXiv:2608.05628](https://arxiv.org/abs/2608.05628)). Turn the hypothesis into a falsifiable test first.
+- **Assuming the text stays true.** A version-specific line is the most valuable kind and the first to rot, silently — the artifact keeps returning obsolete guidance with full confidence ([skill-lifecycle-and-drift](skill-lifecycle-and-drift.md)).
 - **Treating skill text as inert.** A skill folder is instructions *plus scripts* that an agent will execute — an injection and supply-chain surface, not documentation ([agent-skills-progressive-disclosure](agent-skills-progressive-disclosure.md), [prompt-injection-and-isolation](prompt-injection-and-isolation.md)).
 
 ## References

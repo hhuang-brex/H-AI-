@@ -16,6 +16,8 @@ related:
   - [[safety-rails-domain-specific]]
   - [[mcp-tool-layer]]
   - [[memory-poisoning]]
+  - [[skill-lifecycle-and-drift]]
+  - [[agent-skills-progressive-disclosure]]
 status: living
 created: 2026-07-10
 summary: "the threat model for agents that act — you cannot reliably detect injected instructions, so the boundary is architectural: least-privilege isolation of what a compromised session CAN do (lethal trifecta / Agents Rule of Two)."
@@ -69,9 +71,22 @@ An acting agent almost always has **[C]** (it acts) and usually **[B]** (it touc
 |---|---|---|
 | **Tool-result / retrieved-content** | Instructions hidden in a fetched page, doc, RAG hit, API response | Established (Greshake 2023) |
 | **MCP tool-description poisoning** | Malicious instructions embedded in tool descriptions invisible to users but visible to the model; plus **rug-pull** (description changed post-approval) and **tool-shadowing** | Vendor research, reproduced (Invariant Labs 2025-04) |
+| **Skill / harness supply chain** | A third-party skill, instruction file, hook or MCP declaration installed from a marketplace, running with the developer's privileges — no lockfile, no install-time check | Established (measured at scale, 2026) |
 | **Memory poisoning** | Untrusted content written into persistent memory/RAG as a delayed trigger — AgentPoison ([arXiv:2407.12784](https://arxiv.org/abs/2407.12784), >80% ASR at <0.1% poison rate); MINJA ([arXiv:2503.03704](https://arxiv.org/abs/2503.03704), *any user* can poison shared memory via normal queries) | Established (academic) |
 
 > **Don't conflate:** the normative MCP *Security Best Practices* (a living doc) does **not** name "tool poisoning / rug-pull / shadowing" — those are Invariant Labs *research*. It enumerates **eight** client/server attack sections (confused-deputy, token-passthrough, SSRF, session-hijacking, local-server-compromise, OAuth-URL validation, stdio-proxy, scope-minimization). Its genuine **MUSTs** are token-audience checks (RFC 8707) and consent-with-untruncated-command on one-click local launch; least-privilege scoping, sandboxing, and egress allowlists are **SHOULD**, and tool-invocation HITL consent is a principle the spec says it "cannot enforce." Details in [mcp-tool-layer](mcp-tool-layer.md).
+
+### The harness itself is an unaudited dependency layer
+
+Three 2026 results make the skill/harness row above concrete, and they escalate.
+
+**Misconfiguration is common and mostly boring.** Across **3,171 public GitHub repositories** (2,660 setups combining two or more component types), **16.0% carried a security defect** decidable from the bytes alone: **9.8%** install an MCP server with **no version pinned**, **3.1%** pre-approve arbitrary execution behind a *scoped-looking* grant such as `Bash(python:*)`, and **3.8%** ship a skill that pre-approves the shell for whoever installs it — the last visible to a marketplace scan, and present in 3.7% of published collections ([arXiv:2609.07360](https://arxiv.org/abs/2609.07360)). No credential-exfiltration path was confirmed. Note the instrument discipline worth borrowing: a **raw scanner rate of 25.5%** fell to 16.7% confirmed after independent re-derivation and adjudication — most of a naive scan's findings did not survive validation.
+
+**The dangerous version is not malware.** SkillShift formalizes **Skill Policy Integrity** — a skill-induced policy must stay aligned with its declared functionality — and then breaks it: a skill that **preserves the declared task and a valid output interface while covertly redirecting decisions** toward an undisclosed objective. Reported attacker-favored selection rates of **81.33%** (agentic commerce) and **63.33%** (software dependency choice) at a **100% utility-preserving rate**, with frozen policies transferring across LLM backends and agent environments, and **the evaluated scanners failing to detect them** ([arXiv:2609.02564](https://arxiv.org/abs/2609.02564)). This is the injection analogue of a thumb on the scale rather than a hijack, and it is invisible to output-validity checks by construction.
+
+**Detection does not generalize across sources.** On a consolidated benchmark of 9,740 skills (7,505 malicious / 2,235 benign, deduplicated to 4,588 structural families from 13 sources), learned text detectors score **0.882–0.932 macro-F1 under random splits but only 0.653–0.665 source-disjoint**; the strongest keeps 95.6% malicious recall at a **62.4% benign false-positive rate** on held-out sources ([arXiv:2608.19901](https://arxiv.org/abs/2608.19901)). Off-the-shelf scanners trade recall for precision without escaping the tradeoff.
+
+Consistent with this node's thesis: scanning skill *text* is Tier 4. The controls that hold are architectural — pin the closure rather than the directory ([skill-lifecycle-and-drift](skill-lifecycle-and-drift.md)), refuse scope-shaped grants that are actually unbounded ([action-authority](action-authority.md)), and audit the **behavior** a skill induces rather than the prose it contains ([skill-text-authoring](skill-text-authoring.md) step 6).
 
 ## The mitigation ladder: architectural > compositional > prompt-level
 

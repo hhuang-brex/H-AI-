@@ -9,6 +9,8 @@ related:
   - [[context-engineering]]
   - [[context-assembly-per-turn]]
   - [[result-aggregation-and-trust]]
+  - [[skill-injection-decision]]
+  - [[agent-skills-progressive-disclosure]]
 status: living
 created: 2026-06-11
 ---
@@ -34,6 +36,12 @@ A sub-agent should return a *result*, not a *transcript*. The parent doesn't wan
 ## Isolation enables adversarial independence
 
 Some delegation exists *because* the child must not see something — a verifier that independently judges a claim must be isolated from the generator's reasoning, or its "independent" check just echoes the original ([result-aggregation-and-trust](result-aggregation-and-trust.md)). Context isolation is the mechanism that makes adversarial separation real rather than nominal.
+
+## A skill package is a candidate sub-agent
+
+The usual way to use a reusable skill is to load its instructions into the *current* context and let the agent follow them. As task horizons grow that gets brittle for exactly this node's reason — reasoning quality degrades as information accumulates in the window. Invoking the skill package **as a sub-agent** instead spawns a fresh context per subtask, and has been reported to outperform in-context skill execution **when the package exposes a clear input-output contract and its instructions encode the procedural knowledge needed to fulfill that contract**; the cost is the extra tokens spent coordinating parent and child ([arXiv:2609.09233](https://arxiv.org/abs/2609.09233), author-reported, no venue yet).
+
+Note what the condition restates: the **return contract** above is not merely hygiene for the parent's budget — it is the property that makes a body of procedural knowledge delegable at all. Guidance written as ambient advice has to be read *alongside* the work and therefore has to occupy the working context; guidance written as a contract can be executed behind a boundary. See [skill-injection-decision](skill-injection-decision.md).
 
 ## Children can't share mutable state casually
 

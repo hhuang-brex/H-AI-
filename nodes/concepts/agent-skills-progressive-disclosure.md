@@ -12,6 +12,8 @@ related:
   - [[context-budget-allocation]]
   - [[action-execution-safety]]
   - [[skill-text-authoring]]
+  - [[skill-injection-decision]]
+  - [[skill-lifecycle-and-drift]]
   - [[references-agent-skill-authoring]]
 status: living
 created: 2026-06-21
@@ -67,7 +69,7 @@ Packaging discipline has actual limits, not just conventions (Anthropic authorin
 | Bundled references | **one level deep from SKILL.md** — with nested references the agent may `head -100` a file instead of reading it, silently losing content |
 | Reference file > 100 lines | add a table of contents, so a partial read still shows the full scope |
 
-What to *write* inside those limits is [skill-text-authoring](skill-text-authoring.md).
+What to *write* inside those limits is [skill-text-authoring](skill-text-authoring.md). Whether a matched skill should load **at all** — and whether as text or as a subagent — is [skill-injection-decision](skill-injection-decision.md); keeping it true after it ships is [skill-lifecycle-and-drift](skill-lifecycle-and-drift.md).
 
 ## Pitfalls
 
@@ -75,7 +77,7 @@ What to *write* inside those limits is [skill-text-authoring](skill-text-authori
 - **Skill sprawl.** Many overlapping skills make discovery ambiguous and inflate the always-resident metadata. Consolidate; keep descriptions disjoint. Measured ceiling worth knowing: over **690 skills / 117 queries**, a hybrid lexical+dense ranker put the right skill in the top five **73.5% ± 8.0** of the time — about a quarter of queries unserved — and a typed workflow knowledge graph was **11.2 points worse** at matched token budget ([arXiv:2608.06196](https://arxiv.org/abs/2608.06196), 2026 preprint). Past a few hundred skills, discovery, not authoring, is the binding constraint.
 - **Instructions that assume unloaded context.** The body must be self-contained at activation; don't reference an `assets/` file's contents as if already in the window — link it so stage 3 can fetch it.
 - **Skills are an action surface.** A skill that ships executable scripts is a path to running code — squarely an [action-execution-safety](../topics/action-execution-safety.md) concern. An untrusted or injected skill is a real attack vector (the still-open `prompt-injection-and-isolation` gap); load skills only from trusted sources and sandbox bundled code. The threat is now demonstrated at scale: **471 real-world shell commands were transformed into 2,826 benign-appearing skills mapped to 11 MITRE ATT&CK tactics**, exploiting the fact that malicious commands hide inside natural-language skill files ([arXiv:2608.05223](https://arxiv.org/abs/2608.05223), 2026 preprint under review).
-- **No versioning discipline.** Skills evolve; an unversioned skill silently changes agent behavior across runs. Version and pin like any dependency.
+- **No versioning discipline.** Skills evolve; an unversioned skill silently changes agent behavior across runs. Version and pin like any dependency — and note that pinning the *directory* is not enough, because a skill's operational identity includes packages, tools, and services beneath it. Measured: across 57 repositories and 105 release transitions, **every** transition invalidated part of the skill set, with no signal raised ([skill-lifecycle-and-drift](skill-lifecycle-and-drift.md)).
 
 ## References
 

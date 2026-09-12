@@ -20,6 +20,8 @@ related:
   - [[agent-skills-progressive-disclosure]]
   - [[prompt-component-attribution]]
   - [[skill-text-authoring]]
+  - [[skill-injection-decision]]
+  - [[skill-lifecycle-and-drift]]
   - [[text-to-sql-retrieval]]
 status: living
 created: 2026-06-11
@@ -56,6 +58,8 @@ The frame: treat the context window as a **managed budget**, not an append log. 
 - **SMS slice:** [sms-context-windowing](../concepts/sms-context-windowing.md) is the channel-specific instance of these decisions.
 - **Optimizing the context itself:** [agentic-context-engineering-ace](../concepts/agentic-context-engineering-ace.md) treats the assembled context as an evolving playbook (generate/reflect/curate) — the structural counterpart to optimizing instruction prose ([offline-prompt-optimization](../concepts/offline-prompt-optimization.md)).
 - **Loading capability lazily:** [agent-skills-progressive-disclosure](../concepts/agent-skills-progressive-disclosure.md) packages domain procedure as a SKILL.md folder loaded in three stages (metadata always, instructions on match, files on demand) — progressive disclosure applied to *capability*, so many skills cost almost no base-prompt budget.
+- **Deciding whether to load it at all:** [skill-injection-decision](../concepts/skill-injection-decision.md) — injection is measurable and not reliably positive, so route, delegate to a sub-agent, or inject, and audit the choice with a length-matched control.
+- **Keeping loaded capability true:** [skill-lifecycle-and-drift](../concepts/skill-lifecycle-and-drift.md) — the artifact that externalizes your conventions also makes their decay invisible.
 
 ## The one rule
 

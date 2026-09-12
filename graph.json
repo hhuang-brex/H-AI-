@@ -1,7 +1,7 @@
 {
-  "generated": "2026-08-31",
-  "node_count": 188,
-  "edge_count": 1434,
+  "generated": "2026-09-11",
+  "node_count": 191,
+  "edge_count": 1496,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -727,6 +727,46 @@
       ]
     },
     {
+      "id": "2026-09-11-industry-trend-catchup",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-09-11-industry-trend-catchup.md",
+      "title": "Thread \u2014 Industry Trend Catch-Up (2026-08-19 \u2192 2026-09-11)",
+      "summary": "24-day arXiv trend scan (2026-08-19 \u2192 09-11): cluster volumes normalized per day, 2 new nodes, 12 edited \u2014 should a skill load at all, skills go stale in silence, and the judge stops being trusted.",
+      "tags": [
+        "meta",
+        "research",
+        "trend-scan",
+        "skills",
+        "eval",
+        "security",
+        "multi-turn"
+      ],
+      "status": "snapshot",
+      "created": "2026-09-11",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "skill-injection-decision",
+        "skill-lifecycle-and-drift",
+        "agent-skills-progressive-disclosure",
+        "skill-text-authoring",
+        "agent-trajectory-eval",
+        "llm-as-judge",
+        "eval-statistical-significance",
+        "harness-as-hyperparameter",
+        "offline-prompt-optimization",
+        "prompt-component-attribution",
+        "simulated-user-eval",
+        "prompt-injection-and-isolation",
+        "references-agent-skill-authoring",
+        "references-harness-evaluation",
+        "references-prompt-optimization",
+        "references-multi-turn-agent-eval",
+        "references-prompt-attribution"
+      ]
+    },
+    {
       "id": "action-authority",
       "type": "concept",
       "kind": null,
@@ -1155,6 +1195,8 @@
         "context-budget-allocation",
         "action-execution-safety",
         "skill-text-authoring",
+        "skill-injection-decision",
+        "skill-lifecycle-and-drift",
         "references-agent-skill-authoring"
       ]
     },
@@ -1221,6 +1263,8 @@
         "agent-eval-case-study",
         "collaborative-agent-eval",
         "flat-channel-thread-tracking",
+        "llm-as-judge",
+        "skill-injection-decision",
         "references-multi-turn-agent-eval"
       ]
     },
@@ -1732,6 +1776,8 @@
         "agent-skills-progressive-disclosure",
         "prompt-component-attribution",
         "skill-text-authoring",
+        "skill-injection-decision",
+        "skill-lifecycle-and-drift",
         "text-to-sql-retrieval"
       ]
     },
@@ -3942,7 +3988,9 @@
         "dry-run-and-preview",
         "safety-rails-domain-specific",
         "mcp-tool-layer",
-        "memory-poisoning"
+        "memory-poisoning",
+        "skill-lifecycle-and-drift",
+        "agent-skills-progressive-disclosure"
       ]
     },
     {
@@ -4062,6 +4110,9 @@
       "related": [
         "skill-text-authoring",
         "agent-skills-progressive-disclosure",
+        "skill-injection-decision",
+        "skill-lifecycle-and-drift",
+        "prompt-injection-and-isolation",
         "offline-prompt-optimization",
         "prompt-component-attribution",
         "references-prompt-optimization",
@@ -4204,6 +4255,7 @@
       "clusters": [],
       "source_thread": "2026-07-20-agent-harness-research",
       "related": [
+        "eval-statistical-significance",
         "agent-harness",
         "harness-as-hyperparameter",
         "background-agent-execution",
@@ -4745,7 +4797,83 @@
         "human-in-the-loop-control",
         "mid-task-steering",
         "llm-as-judge",
-        "collaborative-agent-eval"
+        "collaborative-agent-eval",
+        "intent-and-disambiguation",
+        "references-multi-turn-agent-eval"
+      ]
+    },
+    {
+      "id": "skill-injection-decision",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/skill-injection-decision.md",
+      "title": "Skill Injection Decision",
+      "summary": "whether to load a skill at all is a measurable decision per (skill, task, model) triple \u2014 public-skill injection has been measured as net-negative, so route or invoke as a subagent instead of always-loading, and audit with a length-matched control.",
+      "tags": [
+        "skills",
+        "context-engineering",
+        "routing",
+        "eval",
+        "cost",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-09-11",
+      "clusters": [
+        "context-engineering"
+      ],
+      "source_thread": "2026-09-11-industry-trend-catchup",
+      "related": [
+        "context-engineering",
+        "agent-skills-progressive-disclosure",
+        "skill-text-authoring",
+        "skill-lifecycle-and-drift",
+        "subagent-context-isolation",
+        "context-budget-allocation",
+        "harness-token-economics",
+        "agent-trajectory-eval",
+        "prompt-component-attribution",
+        "tool-selection-and-routing",
+        "when-to-delegate",
+        "eval-statistical-significance",
+        "references-agent-skill-authoring"
+      ]
+    },
+    {
+      "id": "skill-lifecycle-and-drift",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/skill-lifecycle-and-drift.md",
+      "title": "Skill Lifecycle & Drift",
+      "summary": "externalizing knowledge into a skill makes its decay invisible \u2014 every release invalidates part of a repo skill set, frontier agents cannot reliably repair it, and the artifact's real identity is its dependency closure, not the signed directory.",
+      "tags": [
+        "skills",
+        "versioning",
+        "maintenance",
+        "drift",
+        "eval",
+        "security",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-09-11",
+      "clusters": [
+        "context-engineering"
+      ],
+      "source_thread": "2026-09-11-industry-trend-catchup",
+      "related": [
+        "context-engineering",
+        "agent-skills-progressive-disclosure",
+        "skill-text-authoring",
+        "skill-injection-decision",
+        "eval-dataset-quality",
+        "adaptive-eval-budget",
+        "bitemporal-fact-invalidation-memory",
+        "memory-consolidation-and-forgetting",
+        "prompt-injection-and-isolation",
+        "action-authority",
+        "llm-observability",
+        "references-agent-skill-authoring"
       ]
     },
     {
@@ -4771,6 +4899,8 @@
       "source_thread": "2026-08-08-skill-text-authoring-fanout",
       "related": [
         "agent-skills-progressive-disclosure",
+        "skill-injection-decision",
+        "skill-lifecycle-and-drift",
         "offline-prompt-optimization",
         "agentic-context-engineering-ace",
         "prompt-component-attribution",
@@ -5107,7 +5237,9 @@
         "when-to-delegate",
         "context-engineering",
         "context-assembly-per-turn",
-        "result-aggregation-and-trust"
+        "result-aggregation-and-trust",
+        "skill-injection-decision",
+        "agent-skills-progressive-disclosure"
       ]
     },
     {
@@ -6491,6 +6623,91 @@
       "kind": "related"
     },
     {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "agent-skills-progressive-disclosure",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "harness-as-hyperparameter",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "references-agent-skill-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "references-harness-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "references-multi-turn-agent-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "references-prompt-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "references-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "simulated-user-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "skill-injection-decision",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "skill-lifecycle-and-drift",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-11-industry-trend-catchup",
+      "to": "skill-text-authoring",
+      "kind": "related"
+    },
+    {
       "from": "action-authority",
       "to": "domain-chatbot-design",
       "kind": "related"
@@ -7197,6 +7414,16 @@
     },
     {
       "from": "agent-skills-progressive-disclosure",
+      "to": "skill-injection-decision",
+      "kind": "related"
+    },
+    {
+      "from": "agent-skills-progressive-disclosure",
+      "to": "skill-lifecycle-and-drift",
+      "kind": "related"
+    },
+    {
+      "from": "agent-skills-progressive-disclosure",
       "to": "skill-text-authoring",
       "kind": "related"
     },
@@ -7292,12 +7519,22 @@
     },
     {
       "from": "agent-trajectory-eval",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "agent-trajectory-eval",
       "to": "llm-evaluation",
       "kind": "related"
     },
     {
       "from": "agent-trajectory-eval",
       "to": "references-multi-turn-agent-eval",
+      "kind": "related"
+    },
+    {
+      "from": "agent-trajectory-eval",
+      "to": "skill-injection-decision",
       "kind": "related"
     },
     {
@@ -7928,6 +8165,16 @@
     {
       "from": "context-engineering",
       "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "skill-injection-decision",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "skill-lifecycle-and-drift",
       "kind": "related"
     },
     {
@@ -10687,6 +10934,11 @@
     },
     {
       "from": "prompt-injection-and-isolation",
+      "to": "agent-skills-progressive-disclosure",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
       "to": "code-execution-sandbox-pattern",
       "kind": "related"
     },
@@ -10728,6 +10980,11 @@
     {
       "from": "prompt-injection-and-isolation",
       "to": "safety-rails-domain-specific",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
+      "to": "skill-lifecycle-and-drift",
       "kind": "related"
     },
     {
@@ -10887,12 +11144,27 @@
     },
     {
       "from": "references-agent-skill-authoring",
+      "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "references-agent-skill-authoring",
       "to": "references-prompt-attribution",
       "kind": "related"
     },
     {
       "from": "references-agent-skill-authoring",
       "to": "references-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "references-agent-skill-authoring",
+      "to": "skill-injection-decision",
+      "kind": "related"
+    },
+    {
+      "from": "references-agent-skill-authoring",
+      "to": "skill-lifecycle-and-drift",
       "kind": "related"
     },
     {
@@ -11043,6 +11315,11 @@
     {
       "from": "references-harness-evaluation",
       "to": "background-agent-execution",
+      "kind": "related"
+    },
+    {
+      "from": "references-harness-evaluation",
+      "to": "eval-statistical-significance",
       "kind": "related"
     },
     {
@@ -11632,6 +11909,11 @@
     },
     {
       "from": "simulated-user-eval",
+      "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "simulated-user-eval",
       "to": "llm-as-judge",
       "kind": "related"
     },
@@ -11643,6 +11925,146 @@
     {
       "from": "simulated-user-eval",
       "to": "mid-task-steering",
+      "kind": "related"
+    },
+    {
+      "from": "simulated-user-eval",
+      "to": "references-multi-turn-agent-eval",
+      "kind": "related"
+    },
+    {
+      "from": "skill-injection-decision",
+      "to": "2026-09-11-industry-trend-catchup",
+      "kind": "source-thread"
+    },
+    {
+      "from": "skill-injection-decision",
+      "to": "agent-skills-progressive-disclosure",
+      "kind": "related"
+    },
+    {
+      "from": "skill-injection-decision",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "skill-injection-decision",
+      "to": "context-budget-allocation",
+      "kind": "related"
+    },
+    {
+      "from": "skill-injection-decision",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "skill-injection-decision",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "skill-injection-decision",
+      "to": "harness-token-economics",
+      "kind": "related"
+    },
+    {
+      "from": "skill-injection-decision",
+      "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "skill-injection-decision",
+      "to": "references-agent-skill-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "skill-injection-decision",
+      "to": "skill-lifecycle-and-drift",
+      "kind": "related"
+    },
+    {
+      "from": "skill-injection-decision",
+      "to": "skill-text-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "skill-injection-decision",
+      "to": "subagent-context-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "skill-injection-decision",
+      "to": "tool-selection-and-routing",
+      "kind": "related"
+    },
+    {
+      "from": "skill-injection-decision",
+      "to": "when-to-delegate",
+      "kind": "related"
+    },
+    {
+      "from": "skill-lifecycle-and-drift",
+      "to": "2026-09-11-industry-trend-catchup",
+      "kind": "source-thread"
+    },
+    {
+      "from": "skill-lifecycle-and-drift",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "skill-lifecycle-and-drift",
+      "to": "adaptive-eval-budget",
+      "kind": "related"
+    },
+    {
+      "from": "skill-lifecycle-and-drift",
+      "to": "agent-skills-progressive-disclosure",
+      "kind": "related"
+    },
+    {
+      "from": "skill-lifecycle-and-drift",
+      "to": "bitemporal-fact-invalidation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "skill-lifecycle-and-drift",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "skill-lifecycle-and-drift",
+      "to": "eval-dataset-quality",
+      "kind": "related"
+    },
+    {
+      "from": "skill-lifecycle-and-drift",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "skill-lifecycle-and-drift",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "skill-lifecycle-and-drift",
+      "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "skill-lifecycle-and-drift",
+      "to": "references-agent-skill-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "skill-lifecycle-and-drift",
+      "to": "skill-injection-decision",
+      "kind": "related"
+    },
+    {
+      "from": "skill-lifecycle-and-drift",
+      "to": "skill-text-authoring",
       "kind": "related"
     },
     {
@@ -11708,6 +12130,16 @@
     {
       "from": "skill-text-authoring",
       "to": "references-agent-skill-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "skill-injection-decision",
+      "kind": "related"
+    },
+    {
+      "from": "skill-text-authoring",
+      "to": "skill-lifecycle-and-drift",
       "kind": "related"
     },
     {
@@ -12077,6 +12509,11 @@
     },
     {
       "from": "subagent-context-isolation",
+      "to": "agent-skills-progressive-disclosure",
+      "kind": "related"
+    },
+    {
+      "from": "subagent-context-isolation",
       "to": "context-assembly-per-turn",
       "kind": "related"
     },
@@ -12093,6 +12530,11 @@
     {
       "from": "subagent-context-isolation",
       "to": "result-aggregation-and-trust",
+      "kind": "related"
+    },
+    {
+      "from": "subagent-context-isolation",
+      "to": "skill-injection-decision",
       "kind": "related"
     },
     {
