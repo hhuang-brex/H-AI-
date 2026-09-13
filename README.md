@@ -151,7 +151,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [repair-and-clarification](nodes/concepts/repair-and-clarification.md) — recovery turns are not initial turns.
 - [safety-rails-domain-specific](nodes/concepts/safety-rails-domain-specific.md) — generic safety is the baseline, not the answer.
 - [scope-and-refusal](nodes/concepts/scope-and-refusal.md) — in-domain vs. out-of-domain; three kinds of refusal.
-- [turn-outcome-signal](nodes/concepts/turn-outcome-signal.md) — downstream hooks fire on 'the conversation ended and nothing is owed' — a predicate no transcript stores; emit a required turn-outcome enum at generation time instead of inferring resolution after the fact.
+- [turn-outcome-signal](nodes/concepts/turn-outcome-signal.md) — downstream hooks fire on 'the conversation ended and nothing is owed' — a predicate no transcript stores; name a deterministic action class per turn (recovered from cues to bootstrap, emitted as a required enum to ship) instead of asking a judge whether it was resolved.
 - [turn-taking-and-proactivity](nodes/concepts/turn-taking-and-proactivity.md) — initiative, long operations, closing.
 
 **[human-in-the-loop-control](nodes/topics/human-in-the-loop-control.md)**
@@ -197,7 +197,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [schema-vs-validator](nodes/concepts/schema-vs-validator.md) — schema-enforced output vs. free-text + post-hoc validator.
 - [streaming-vs-structured](nodes/concepts/streaming-vs-structured.md) — token-by-token UX vs. structured output trade-off.
 - [template-rendered-output](nodes/concepts/template-rendered-output.md) — stricter sibling: classifier picks a tool, code-owned templates render the reply.
-- [turn-outcome-signal](nodes/concepts/turn-outcome-signal.md) — downstream hooks fire on 'the conversation ended and nothing is owed' — a predicate no transcript stores; emit a required turn-outcome enum at generation time instead of inferring resolution after the fact.
+- [turn-outcome-signal](nodes/concepts/turn-outcome-signal.md) — downstream hooks fire on 'the conversation ended and nothing is owed' — a predicate no transcript stores; name a deterministic action class per turn (recovered from cues to bootstrap, emitted as a required enum to ship) instead of asking a judge whether it was resolved.
 
 **[multi-agent-delegation](nodes/topics/multi-agent-delegation.md)**
 - [background-agent-execution](nodes/concepts/background-agent-execution.md) — the detached execution lifecycle: a run that keeps going after the launching client leaves, whose lifecycle a supervisor or managed service owns — covering fleet registry + per-run addressability, workspace/concurrency isolation, session-independent triggers (schedule/webhook/VCS), zero-token waiting, and out-of-band completion/needs-input signaling for jobs nobody is watching.

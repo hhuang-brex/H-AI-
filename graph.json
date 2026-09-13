@@ -5645,7 +5645,7 @@
       "kind": null,
       "path": "nodes/concepts/turn-outcome-signal.md",
       "title": "Turn-Outcome Signal",
-      "summary": "downstream hooks fire on 'the conversation ended and nothing is owed' \u2014 a predicate no transcript stores; emit a required turn-outcome enum at generation time instead of inferring resolution after the fact.",
+      "summary": "downstream hooks fire on 'the conversation ended and nothing is owed' \u2014 a predicate no transcript stores; name a deterministic action class per turn (recovered from cues to bootstrap, emitted as a required enum to ship) instead of asking a judge whether it was resolved.",
       "tags": [
         "conversation",
         "instrumentation",
