@@ -13,6 +13,7 @@ nav_exclude: true
 > here to learn the material, start from the topics in the [README](../README.md)
 > instead. Use this only to trace *why* a particular node says what it says.
 
+- 2026-09-12 · [meta] [2026-09-12-turn-outcome-signal](2026-09-12-turn-outcome-signal.md) — a product gate defined as 'terminal outcome, no user action' has no stored field to key on — landing the action-class enum as the named deterministic proxy, with the next user turn as its backtest.
 - 2026-09-11 · [eval] [2026-09-11-industry-trend-catchup](2026-09-11-industry-trend-catchup.md) — 24-day arXiv trend scan (2026-08-19 → 09-11): cluster volumes normalized per day, 2 new nodes, 12 edited — should a skill load at all, skills go stale in silence, and the judge stops being trusted.
 - 2026-08-31 · [eval] [2026-08-31-adaptive-eval-fanout](2026-08-31-adaptive-eval-fanout.md) — fan-out on adaptive eval budgeting: seven verified sources across anytime-valid stopping, best-arm allocation, and psychometrics; one new concept and one new reference node.
 - 2026-08-30 · [meta] [2026-08-30-gepa-dspy-fanout](2026-08-30-gepa-dspy-fanout.md) — fan-out from GEPA read at source: what the abstract omits (Pareto ablation, budget anatomy, two trace types, merge's negative result, cross-model transfer) plus its verified lineage and one contested claim.

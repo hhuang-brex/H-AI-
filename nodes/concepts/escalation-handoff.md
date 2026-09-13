@@ -9,6 +9,7 @@ related:
   - [[scope-and-refusal]]
   - [[safety-rails-domain-specific]]
   - [[conversation-memory]]
+  - [[turn-outcome-signal]]
 status: living
 created: 2026-06-08
 summary: "when and how to hand off to a human; preserving context."
@@ -38,6 +39,8 @@ A good handoff transfers four things to the human:
 2. **What's been tried** (turns, tool calls, what worked, what didn't).
 3. **The current state** (any partial actions, holds, drafts).
 4. **Why escalation triggered** (which of the 5 classes, with evidence).
+
+A completed handoff is also a **terminal outcome for the bot** even though the user's problem is still open — one of the cases where "nothing is owed to the agent" and "the user is done" come apart, and a reason to record the outcome class rather than derive it ([turn-outcome-signal](turn-outcome-signal.md)).
 
 Generic handoffs transfer only the chat transcript. Humans then re-ask everything. This is the most common cause of "the bot was useless" feedback — the bot wasn't useless; the handoff was.
 

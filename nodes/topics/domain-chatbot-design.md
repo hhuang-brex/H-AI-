@@ -15,6 +15,7 @@ related:
   - [[persona-tone-compliance]]
   - [[repair-and-clarification]]
   - [[turn-taking-and-proactivity]]
+  - [[turn-outcome-signal]]
   - [[safety-rails-domain-specific]]
   - [[operator-trust-injection]]
   - [[recency-bias-prompt-design]]

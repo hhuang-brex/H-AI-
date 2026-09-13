@@ -7,6 +7,7 @@ related:
   - [[forced-tool-call-output]]
   - [[output-surface-taxonomy]]
   - [[schema-vs-validator]]
+  - [[turn-outcome-signal]]
   - [[ontology-as-validator-shacl]]
   - [[streaming-vs-structured]]
   - [[hard-surface-irrevocability]]

@@ -10,6 +10,7 @@ related:
   - [[action-authority]]
   - [[stop-and-yield-conditions]]
   - [[tool-use-design]]
+  - [[turn-outcome-signal]]
 status: living
 created: 2026-06-11
 ---
@@ -35,6 +36,8 @@ The principle is the same reversibility lens as careful execution generally: che
 ## A confirm is a deliberate yield
 
 Mechanically, confirm-before-act is a *blocked → yield* in [stop-and-yield-conditions](stop-and-yield-conditions.md): the loop suspends, surfaces the proposed action, and resumes with the user's decision. That means it needs the same durable-state plumbing as any yield — resuming a confirm must continue the task, not restart it.
+
+It also means the turn is **not terminal**, and anything downstream that fires on "nothing is owed" must be able to see that without re-reading the prose. Record the confirm as a typed outcome on the turn rather than leaving it implicit in a question mark ([turn-outcome-signal](turn-outcome-signal.md)).
 
 ## Confirm the *specifics*, not the abstraction
 

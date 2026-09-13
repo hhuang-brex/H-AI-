@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-11",
-  "node_count": 191,
-  "edge_count": 1496,
+  "generated": "2026-09-12",
+  "node_count": 193,
+  "edge_count": 1521,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -764,6 +764,33 @@
         "references-prompt-optimization",
         "references-multi-turn-agent-eval",
         "references-prompt-attribution"
+      ]
+    },
+    {
+      "id": "2026-09-12-turn-outcome-signal",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-09-12-turn-outcome-signal.md",
+      "title": "Thread \u2014 The No-Action Gate Needs a Stored Field",
+      "summary": "a product gate defined as 'terminal outcome, no user action' has no stored field to key on \u2014 landing the action-class enum as the named deterministic proxy, with the next user turn as its backtest.",
+      "tags": [
+        "meta",
+        "research",
+        "conversation",
+        "instrumentation",
+        "output-contract"
+      ],
+      "status": "snapshot",
+      "created": "2026-09-12",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "turn-outcome-signal",
+        "turn-taking-and-proactivity",
+        "confirm-before-act",
+        "escalation-handoff",
+        "live-traffic-eval",
+        "forced-tool-call-output"
       ]
     },
     {
@@ -1647,7 +1674,8 @@
         "hard-surface-irrevocability",
         "action-authority",
         "stop-and-yield-conditions",
-        "tool-use-design"
+        "tool-use-design",
+        "turn-outcome-signal"
       ]
     },
     {
@@ -2037,6 +2065,7 @@
         "persona-tone-compliance",
         "repair-and-clarification",
         "turn-taking-and-proactivity",
+        "turn-outcome-signal",
         "safety-rails-domain-specific",
         "operator-trust-injection",
         "recency-bias-prompt-design"
@@ -2259,7 +2288,8 @@
         "action-authority",
         "scope-and-refusal",
         "safety-rails-domain-specific",
-        "conversation-memory"
+        "conversation-memory",
+        "turn-outcome-signal"
       ]
     },
     {
@@ -2931,7 +2961,8 @@
         "llm-as-judge",
         "prince-reliable-agentic-case-study",
         "prompt-component-attribution",
-        "cost-aware-eval"
+        "cost-aware-eval",
+        "turn-outcome-signal"
       ]
     },
     {
@@ -3092,6 +3123,7 @@
         "forced-tool-call-output",
         "output-surface-taxonomy",
         "schema-vs-validator",
+        "turn-outcome-signal",
         "ontology-as-validator-shacl",
         "streaming-vs-structured",
         "hard-surface-irrevocability",
@@ -5608,6 +5640,43 @@
       ]
     },
     {
+      "id": "turn-outcome-signal",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/turn-outcome-signal.md",
+      "title": "Turn-Outcome Signal",
+      "summary": "downstream hooks fire on 'the conversation ended and nothing is owed' \u2014 a predicate no transcript stores; emit a required turn-outcome enum at generation time instead of inferring resolution after the fact.",
+      "tags": [
+        "conversation",
+        "instrumentation",
+        "telemetry",
+        "output-contract",
+        "eval",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-09-12",
+      "clusters": [
+        "domain-chatbot-design",
+        "llm-output-design"
+      ],
+      "source_thread": "2026-09-12-turn-outcome-signal",
+      "related": [
+        "domain-chatbot-design",
+        "llm-output-design",
+        "turn-taking-and-proactivity",
+        "confirm-before-act",
+        "escalation-handoff",
+        "forced-tool-call-output",
+        "schema-vs-validator",
+        "live-traffic-eval",
+        "agent-trajectory-eval",
+        "llm-observability",
+        "llm-as-judge",
+        "references-multi-turn-agent-eval"
+      ]
+    },
+    {
       "id": "turn-taking-and-proactivity",
       "type": "concept",
       "kind": null,
@@ -5631,7 +5700,8 @@
         "domain-chatbot-design",
         "repair-and-clarification",
         "escalation-handoff",
-        "intent-and-disambiguation"
+        "intent-and-disambiguation",
+        "turn-outcome-signal"
       ]
     },
     {
@@ -6705,6 +6775,36 @@
     {
       "from": "2026-09-11-industry-trend-catchup",
       "to": "skill-text-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-12-turn-outcome-signal",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-12-turn-outcome-signal",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-12-turn-outcome-signal",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-12-turn-outcome-signal",
+      "to": "live-traffic-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-12-turn-outcome-signal",
+      "to": "turn-outcome-signal",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-12-turn-outcome-signal",
+      "to": "turn-taking-and-proactivity",
       "kind": "related"
     },
     {
@@ -8008,6 +8108,11 @@
       "kind": "related"
     },
     {
+      "from": "confirm-before-act",
+      "to": "turn-outcome-signal",
+      "kind": "related"
+    },
+    {
       "from": "context-assembly-per-turn",
       "to": "context-budget-allocation",
       "kind": "related"
@@ -8534,6 +8639,11 @@
     },
     {
       "from": "domain-chatbot-design",
+      "to": "turn-outcome-signal",
+      "kind": "related"
+    },
+    {
+      "from": "domain-chatbot-design",
       "to": "turn-taking-and-proactivity",
       "kind": "related"
     },
@@ -8790,6 +8900,11 @@
     {
       "from": "escalation-handoff",
       "to": "scope-and-refusal",
+      "kind": "related"
+    },
+    {
+      "from": "escalation-handoff",
+      "to": "turn-outcome-signal",
       "kind": "related"
     },
     {
@@ -9528,6 +9643,11 @@
       "kind": "related"
     },
     {
+      "from": "live-traffic-eval",
+      "to": "turn-outcome-signal",
+      "kind": "related"
+    },
+    {
       "from": "llm-as-autoformalizer-plus-solver",
       "to": "decision-engine-contract",
       "kind": "related"
@@ -9815,6 +9935,11 @@
     {
       "from": "llm-output-design",
       "to": "template-rendered-output",
+      "kind": "related"
+    },
+    {
+      "from": "llm-output-design",
+      "to": "turn-outcome-signal",
       "kind": "related"
     },
     {
@@ -13038,6 +13163,71 @@
       "kind": "related"
     },
     {
+      "from": "turn-outcome-signal",
+      "to": "2026-09-12-turn-outcome-signal",
+      "kind": "source-thread"
+    },
+    {
+      "from": "turn-outcome-signal",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "turn-outcome-signal",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "turn-outcome-signal",
+      "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "turn-outcome-signal",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "turn-outcome-signal",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "turn-outcome-signal",
+      "to": "live-traffic-eval",
+      "kind": "related"
+    },
+    {
+      "from": "turn-outcome-signal",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "turn-outcome-signal",
+      "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "turn-outcome-signal",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "turn-outcome-signal",
+      "to": "references-multi-turn-agent-eval",
+      "kind": "related"
+    },
+    {
+      "from": "turn-outcome-signal",
+      "to": "schema-vs-validator",
+      "kind": "related"
+    },
+    {
+      "from": "turn-outcome-signal",
+      "to": "turn-taking-and-proactivity",
+      "kind": "related"
+    },
+    {
       "from": "turn-taking-and-proactivity",
       "to": "domain-chatbot-design",
       "kind": "related"
@@ -13055,6 +13245,11 @@
     {
       "from": "turn-taking-and-proactivity",
       "to": "repair-and-clarification",
+      "kind": "related"
+    },
+    {
+      "from": "turn-taking-and-proactivity",
+      "to": "turn-outcome-signal",
       "kind": "related"
     },
     {

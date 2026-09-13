@@ -7,6 +7,7 @@ related:
   - [[repair-and-clarification]]
   - [[escalation-handoff]]
   - [[intent-and-disambiguation]]
+  - [[turn-outcome-signal]]
 status: living
 created: 2026-06-08
 summary: "initiative, long operations, closing."
@@ -64,6 +65,8 @@ Most bots never close. They keep "Anything else?"-ing forever. Real conversation
 - Action completed + offer further help → wait once → if no response, fade gracefully (no follow-up nag).
 - Hand off completed → close cleanly; do not "just check in" later.
 - User explicit goodbye → close, no upsell.
+
+Each of those is a *terminal outcome*, and the moment anything else keys off one — a satisfaction prompt, a next-action offer, a retention timer, a suppressed nudge — the closing state has to be **recorded as a machine-readable outcome on the turn**, not inferred later from the transcript. See [turn-outcome-signal](turn-outcome-signal.md); the distinction that catches teams out is that *terminal* and *satisfied* are different predicates, and a refusal satisfies the first while failing the second.
 
 ## Eval
 
