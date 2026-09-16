@@ -1,10 +1,11 @@
 /* assets/css/graph.css — the knowledge graph as an observatory viewport */
 
 :root {
-  --cy-ink-0: #0b0f14;
-  --cy-ink-1: #131b24;
+  --cy-ink-0: #05060a;   /* the void at the edges */
+  --cy-ink-1: #0f1620;   /* lit centre of the viewport */
   --cy-edge: #3a4658;
   --cy-line: rgba(148, 163, 184, 0.16);
+  --cy-glass: rgba(9, 10, 16, 0.82);
   --cy-text: #e2e8f0;
   --cy-muted: #64748b;
   --cy-accent: #5eead4;
@@ -117,6 +118,170 @@ html[data-theme="hai-dark"] .graph-intro .gi-num { color: #5eead4; }
   color: var(--cy-muted);
   font-variant-numeric: tabular-nums;
 }
+.cy-hint {
+  margin-top: 5px;
+  font-size: 9.5px;
+  line-height: 1.5;
+  color: rgba(100, 116, 139, 0.85);
+}
+
+/* --- detail card: inspect a node without leaving the map ------------------- */
+/* Right-anchored on desktop, a bottom sheet on phones — the layout the 3D
+   reference (x.mitbunny.ai) uses, which keeps the graph itself unoccluded. */
+.cy-detail {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 6;
+  width: 320px;
+  max-width: calc(100% - 28px);
+  max-height: calc(100% - 28px);
+  overflow: hidden auto;
+  overscroll-behavior: contain;
+  background: var(--cy-glass);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--cy-line);
+  border-radius: 14px;
+  box-shadow: 0 18px 48px -18px rgba(0, 0, 0, 0.75);
+  color: var(--cy-text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  animation: cy-detail-in 0.18s ease-out;
+}
+.cy-detail[hidden] { display: none; }
+@keyframes cy-detail-in {
+  from { opacity: 0; transform: translateX(10px); }
+  to   { opacity: 1; transform: none; }
+}
+/* the band carries the node's type colour, so the card is identifiable at a glance */
+.cy-detail-band {
+  height: 4px;
+  background: linear-gradient(90deg, var(--band) 0%, rgba(148, 163, 184, 0.15) 100%);
+}
+.cy-detail-close {
+  position: absolute;
+  top: 11px; right: 11px;
+  width: 22px; height: 22px;
+  display: grid; place-items: center;
+  padding: 0;
+  border: 1px solid var(--cy-line);
+  border-radius: 50%;
+  background: rgba(2, 6, 12, 0.55);
+  color: var(--cy-muted);
+  font: inherit; font-size: 14px; line-height: 1;
+  cursor: pointer;
+  transition: color 0.12s ease, background-color 0.12s ease;
+}
+.cy-detail-close:hover { color: #fff; background: rgba(2, 6, 12, 0.85); }
+.cy-detail-body { padding: 13px 14px 14px; }
+.cy-detail-kicker {
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cy-accent);
+}
+.cy-detail-title {
+  margin: 6px 0 0;
+  padding-right: 26px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #fff;
+}
+.cy-detail-summary {
+  margin: 8px 0 0;
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: #b6c2d2;
+}
+.cy-detail-sub {
+  margin-top: 13px;
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cy-muted);
+}
+.cy-detail-nbrs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 7px;
+}
+.cy-nbr {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 3px 8px 3px 6px;
+  border: 1px solid var(--cy-line);
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.06);
+  color: #c7d2e0;
+  font: inherit;
+  font-size: 10.5px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+.cy-nbr:hover { background: rgba(148, 163, 184, 0.16); color: #fff; }
+.cy-nbr-more {
+  align-self: center;
+  font-size: 10px;
+  color: var(--cy-muted);
+}
+.cy-detail-open {
+  display: block;
+  margin-top: 14px;
+  padding: 7px 10px;
+  border: 1px solid rgba(94, 234, 212, 0.35);
+  border-radius: 8px;
+  background: rgba(94, 234, 212, 0.08);
+  color: var(--cy-accent);
+  font-size: 11.5px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.12s ease;
+}
+.cy-detail-open:hover { background: rgba(94, 234, 212, 0.18); }
+
+/* --- zoom pill: bottom-centre, out / reset / in ---------------------------- */
+.cy-zoom {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  overflow: hidden;
+  background: rgba(2, 6, 12, 0.55);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--cy-line);
+  border-radius: 10px;
+}
+.cy-zoom button {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-right: 1px solid var(--cy-line);
+  background: transparent;
+  color: #cbd5e1;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+.cy-zoom button:last-child { border-right: 0; }
+.cy-zoom button:hover { background: rgba(148, 163, 184, 0.14); color: #fff; }
+.cy-zoom svg { width: 14px; height: 14px; }
 
 /* --- node tooltip --- */
 #cy-tip {
@@ -147,15 +312,41 @@ html[data-theme="hai-dark"] .graph-intro .gi-num { color: #5eead4; }
 
 /* accessibility: visible keyboard focus */
 .cy-chip:focus-visible,
-.cy-search:focus-visible { outline: 2px solid var(--cy-accent); outline-offset: 2px; }
+.cy-search:focus-visible,
+.cy-nbr:focus-visible,
+.cy-detail-close:focus-visible,
+.cy-detail-open:focus-visible,
+.cy-zoom button:focus-visible { outline: 2px solid var(--cy-accent); outline-offset: 2px; }
 
 /* small screens: shrink the viewport; keep the panel compact */
 @media (max-width: 640px) {
   #cy { height: 64vh; min-height: 360px; }
   #graph-toolbar { width: 158px; top: 10px; left: 10px; padding: 10px; }
+  .cy-hint { display: none; }
+  /* the card becomes a bottom sheet: a 320px panel would cover the map */
+  .cy-detail {
+    top: auto;
+    right: 8px;
+    left: 8px;
+    bottom: 58px;
+    width: auto;
+    max-width: none;
+    max-height: 52%;
+    animation-name: cy-sheet-in;
+  }
+  @keyframes cy-sheet-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: none; }
+  }
+  .cy-zoom { bottom: 10px; }
 }
 
 /* respect reduced-motion */
 @media (prefers-reduced-motion: reduce) {
-  .cy-chip { transition: none; }
+  .cy-chip,
+  .cy-nbr,
+  .cy-detail-close,
+  .cy-detail-open,
+  .cy-zoom button { transition: none; }
+  .cy-detail { animation: none; }
 }
