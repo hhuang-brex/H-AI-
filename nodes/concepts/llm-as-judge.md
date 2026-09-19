@@ -72,6 +72,28 @@ The proposed shape is a judge whose verdict is one input among several, with eve
 
 *Provenance:* single-author 2026 preprint, self-reported production experience, no benchmark and no independent reproduction — and the authors note their own Teacher is still an LLM judge, reporting failures it did not prevent. Cite the failure taxonomy and the guardrail list, not a result.
 
+## A judge inherits the conclusions it reads (2026)
+
+The section above says demote the judge; this one says *why* it fails, with a pre-registered experiment isolating a single field. *Audit Without Verification* ([arXiv:2609.07680](https://arxiv.org/abs/2609.07680), submitted 2026-09-07, single author, pre-registered with code) runs a six-agent pipeline with process-level information boundaries, balanced defect injection, matched clean twins, 345,600 requests per chain model across two models, and asks an auditor to name where a fault entered — from the **reports the agents filed**, not from a full trace.
+
+The numbers are the argument:
+
+| Reading | Auditor recovers the true fault origin |
+|---|---|
+| The filed reports | **4.1%** |
+| A uniform guess over 5 candidates | 20% |
+| Always blaming the same link | 31.0% |
+| The **raw documentation** of the same episodes | **60.3%** |
+
+An auditor reading summaries did **worse than chance** on the same episodes it solved 60% of the time from primary evidence. The isolating intervention: delete one clause — the field where each agent states *its own conclusion* — holding the observations constant. Accuracy rises to **45.2% (+41.2 pp, 95% CI +35.3 to +46.9)** and adherence to the agents' suggested culprit collapses from **94.4% to 3.4%**. The harm replicates on two frontier auditors in four of four conditions (+8.5 to +39.0 pp) and in a second domain (+47.7 and +61.1 pp).
+
+Two honest complications the paper reports itself, both of which this graph should carry:
+
+- **The paper's own pre-registered hypothesis was not supported** — collective-responsibility framing did *not* degrade escalation with chain length. Cite the asymmetry it found, not the one it went looking for.
+- **Deleting the conclusion field is not free.** Where the upstream suggestion was *correct*, the same deletion costs accuracy (70.5% → 55.7%). The net effect is governed by upstream reliability, so this is a *conditional* design rule, not a universal one.
+
+The generalization: **an accountability layer needs evidence sufficiently independent of the conclusions it verifies.** A judge fed the agent's own summary of what happened is not an independent check — it is a relay, and it will ratify a wrong conclusion 94% of the time. This is the concrete mechanism behind the graph's "deterministic verification layer the judge cannot override": the layer must read *different bytes*, not the same bytes more carefully. See [decision-audit-trail](decision-audit-trail.md) for what the raw record has to retain to make that possible, and [escalation-handoff](escalation-handoff.md) — the same layer named an innocent party in **34.4% and 62.6%** of clean episodes where any agent raised a false alarm, which is a false-escalation budget, not a rounding error.
+
 ## References
 
 - Eugene Yan, *Evaluating LLM-Evaluators* — [references-eval-reading-list](../references/references-eval-reading-list.md)

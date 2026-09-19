@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-12",
-  "node_count": 193,
-  "edge_count": 1521,
+  "generated": "2026-09-18",
+  "node_count": 194,
+  "edge_count": 1531,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -791,6 +791,40 @@
         "escalation-handoff",
         "live-traffic-eval",
         "forced-tool-call-output"
+      ]
+    },
+    {
+      "id": "2026-09-18-industry-trend-catchup",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-09-18-industry-trend-catchup.md",
+      "title": "Thread \u2014 Industry Trend Catch-Up (2026-09-12 \u2192 2026-09-18)",
+      "summary": "7-day arXiv scan (2026-09-12 \u2192 09-18): six nodes edited. A judge reading agents' own conclusions lands below chance; the prose channel under-reports state the structured channel records; and the volume method itself turned out to be biased by announcement lag.",
+      "tags": [
+        "meta",
+        "research",
+        "trend-scan",
+        "eval",
+        "judge",
+        "skills",
+        "multi-turn",
+        "instrumentation"
+      ],
+      "status": "snapshot",
+      "created": "2026-09-18",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "llm-as-judge",
+        "turn-outcome-signal",
+        "agent-trajectory-eval",
+        "cost-aware-eval",
+        "skill-lifecycle-and-drift",
+        "decision-audit-trail",
+        "escalation-handoff",
+        "adaptive-eval-budget",
+        "references-agent-skill-authoring",
+        "references-multi-turn-agent-eval"
       ]
     },
     {
@@ -6805,6 +6839,56 @@
     {
       "from": "2026-09-12-turn-outcome-signal",
       "to": "turn-taking-and-proactivity",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-18-industry-trend-catchup",
+      "to": "adaptive-eval-budget",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-18-industry-trend-catchup",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-18-industry-trend-catchup",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-18-industry-trend-catchup",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-18-industry-trend-catchup",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-18-industry-trend-catchup",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-18-industry-trend-catchup",
+      "to": "references-agent-skill-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-18-industry-trend-catchup",
+      "to": "references-multi-turn-agent-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-18-industry-trend-catchup",
+      "to": "skill-lifecycle-and-drift",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-18-industry-trend-catchup",
+      "to": "turn-outcome-signal",
       "kind": "related"
     },
     {

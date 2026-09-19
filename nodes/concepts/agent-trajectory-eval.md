@@ -71,6 +71,23 @@ Aggregate task success is not just coarse — it is *structurally blind* to two 
 
 Calibration is reshapable by context-only perturbations, but not portably: injecting a state-reporting instruction moved task accuracy **+11.5 pp for one model family and −21.0 pp for another on the same scenario**. The mechanism is the interesting half — on the losing family GAR sat at the **100% ceiling both before and after**, so the entire loss came from what the re-decoded trajectory then executed, not from which action class it chose. An intervention can leave the decision policy correct and still wreck the run; separating the two is the whole point of the decomposition. For a confirm-before-act agent this is the diagnostic that separates "chose to act when it should have asked" from "asked correctly, then called the wrong tool" — see [confirm-before-act](confirm-before-act.md), and [turn-outcome-signal](turn-outcome-signal.md) for the action class read as a production instrument rather than an eval one.
 
+## The granularity question, answered by staging
+
+Both instruments above still assume you picked a unit. *DynSTEER* ([arXiv:2609.14637](https://arxiv.org/abs/2609.14637), v2 2026-09-15) states the tradeoff plainly: whole-trajectory verification is **too coarse** to locate a concrete failure and its evidence in a long run, while atomic-step scoring is **too fine-grained, noise-sensitive, and expensive**. Its answer is to segment a rollout at **key execution nodes** and adapt the review tier to what each stage returned — cheap checks where a stage looks clean, expensive ones where it does not.
+
+Two design details are worth copying independently of the framework:
+
+- **A path-tolerant milestone graph compiled from *public* task views.** Many valid trajectories reach the same milestones; grading against a single reference trajectory penalizes legal paths. Compiling from public views is what keeps the reference from leaking the answer — the same discipline as a frozen holdout.
+- **Terminate unrecoverable runs.** Reported at **45.41% of execution steps saved on failed rollouts**, with evaluation discriminability up **85.2%** over native evaluation and all model pairs separated at statistical significance. Early stopping is not just a cost lever; on a failed run the remaining steps carry almost no signal. See [adaptive-eval-budget](adaptive-eval-budget.md) and [eval-statistical-significance](eval-statistical-significance.md).
+
+## Reliability is a separate family from correctness
+
+A trace-backed methodology for enterprise analytics agents ([arXiv:2609.09182](https://arxiv.org/abs/2609.09182), submitted 2026-08-28) grades three families — **semantic understanding, execution quality, and reliability** — using question banks with human golden answers, **repeated runs**, and runtime traces, with a run-validity check before any scoring and abstention-aware tiered scores that "feed a decision framework rather than a release gate."
+
+Its case study is the useful part, because the headline improvement hid three regressions. On 50 questions, two model configurations, three randomized repetitions (300 traces), the higher-capability configuration cut early refusal from **73% to 0%** and raised real-data answers from **21% to 73%** — while **exhausting the tool-round budget on 16% of runs**, **overrunning the schema-exploration budget on 77% of traces**, and **changing its table interpretation on 41 of 50 questions**. That last number is the one to keep: a metric averaged over one run per question cannot see it at all, and it is the difference between an agent that is right and an agent you can trust twice. Repeated runs are how instability becomes visible ([golden-snapshot-eval](golden-snapshot-eval.md), [text-to-sql-retrieval](text-to-sql-retrieval.md)).
+
+*Scope:* one controlled internal agent at one marketplace, anonymous model configurations, 50 questions. Cite the methodology and the failure shape, not the percentages as benchmarks.
+
 ## References
 
 - Anthropic, *Building Effective Agents* — [references-eval-reading-list](../references/references-eval-reading-list.md)

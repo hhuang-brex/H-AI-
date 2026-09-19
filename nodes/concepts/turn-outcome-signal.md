@@ -83,11 +83,30 @@ Three practical constraints:
 
 The closing taxonomy in [turn-taking-and-proactivity](turn-taking-and-proactivity.md) is a better starting vocabulary than the paper's four classes, because it splits the terminal side the way a product hook needs — action completed, handoff completed, user ended it — where the classifier has only the single `CONFIRM`. Keep `ASK` (including consent requests) and in-flight `TOOL_CALL` as the non-terminal values and `REFUSE` as terminal-but-unsatisfied.
 
+## The prose channel under-reports; the structured channel does not
+
+The "emit it, don't infer it" argument above was this graph's reasoning. It now has a measurement. *Finishing the Task Is Not Enough* ([arXiv:2609.10724](https://arxiv.org/abs/2609.10724), submitted 2026-09-09) ran **120 simulated healthcare trajectories** across two models and twelve stakeholder-derived tasks under light, medium, and heavy accumulating challenge, and compared three channels from the same agent: its textual action plans, its prompted internal assessments, and **quantitative structured reports**.
+
+The channels disagreed, in one direction: agents reported **increasing workload and negative affect in the structured reports while seldom expressing strain in their textual responses**. Same agent, same turn, same state — and the prose systematically under-reported it.
+
+That is the whole case for a required field, from the other end. A resolver reading transcripts is reading the channel that was *demonstrated* to omit the state; a structured slot is the channel that carried it. The paper's five "deployment dilemmas" also name the two this node cares about directly — **state disclosure** and **escalation** — as things that *require stakeholder specification* rather than a model default, which is the same conclusion as versioning the enum and owning its values.
+
+Read the scope honestly: simulated trajectories, one domain, two models, structured *self*-reports rather than externally verified state. It establishes that the channels diverge, not how far the divergence generalizes.
+
 ## Backtest the proxy without a judge
 
 Any named proxy is a hypothesis; the next user turn scores it. Mining production trajectories for **implicit dissatisfaction — corrections, rephrasing, abandonment** — needs no explicit feedback collection and no labels ([arXiv:2608.09153](https://arxiv.org/abs/2608.09153); see [live-traffic-eval](live-traffic-eval.md)). Applied here: a turn the proxy called terminal that is followed by a correction or a rephrase inside the session window was a **false positive**, and the rate is computable from logs you already have.
 
 Two honest limits. Those signals are noisy proxies for dissatisfaction, so the result bounds the gate's precision rather than establishing ground truth. And the label's meaning is **not portable across model families** — in the same action-class study one intervention moved task accuracy **+11.5 pp on one family and −21.0 pp on another** — so re-measure after a model swap instead of carrying the old precision number forward. The mechanism matters for reading that number: on the losing family the emitted-class rate was already at ceiling *before and after*, so the loss was entirely in what the re-decoded trajectory then did, not in which class it named. A signal can stay correct while everything downstream of it changes.
+
+## What the literature does not have
+
+Searched 2026-09-17 (arXiv, `cs`, abstract fields; 12-month window): **no paper treats a turn-outcome label as an instrumentation contract.** The nearest neighbours answer adjacent questions, and naming them is more useful than leaving the gap implied:
+
+- **Dialogue-act labelling exists and is mature, but predicts rather than records.** Next Dialogue Act Prediction with transition-matrix regularization ([arXiv:2604.18539](https://arxiv.org/abs/2604.18539), ACL Findings) aligns predicted act distributions to corpus-derived transition statistics over a **60-class German counselling taxonomy**, improving macro-F1 **9–42% relative** and transferring to a second corpus and language. Two things it establishes for this node's purposes: a deterministic act taxonomy at that granularity is *learnable*, and **empirical transition priors carry real signal** — which is a cheap validity check on an emitted enum, since an outcome sequence your own logs say never occurs is probably a labelling bug. But the task is forecasting the *next* act, not recording the one just taken.
+- **Everything else in this space is a benchmark, not a contract.** Clarification and recovery benchmarks measure whether the model *should have* asked; they need a gold action class, which the action-class diagnostic's own authors say is "unknown in deployment."
+
+So the emit-as-enum design remains this graph's recommendation, now with the search that failed to find it recorded rather than assumed. The one query that did return volume — escalation/handoff, 375 hits in 12 months — is almost entirely privilege escalation in the security sense, a vocabulary collision worth knowing before searching it.
 
 ## Pitfalls
 
@@ -97,4 +116,5 @@ Two honest limits. Those signals are noisy proxies for dissatisfaction, so the r
 - **Reading a case-level rate as a per-turn rate.** The paper's headline GAR is case-level *any-turn* ("did it ever emit the gold class"). Recomputed at the turn level on 14 cells, the median case/turn ratio is **1.23×** and one cell reaches **2.22×** — so a case-level number overstates per-turn behaviour by roughly a quarter, and the gate is a per-turn object.
 - **Letting `OTHER` sit in the gate's path.** GAR simply ignores the residual class; a production gate cannot. Decide explicitly whether an undecidable turn blocks or passes, and alarm on its rate.
 - **Letting the product gate own the enum.** If the values are named after the hooks that consume them (`SHOULD_SHOW_SURVEY`), the next hook needs a new enum. Name them after what the agent did.
+- **Counting a restatement as progress.** *CarryOnBench* ([arXiv:2604.27093](https://arxiv.org/abs/2604.27093), v2 2026-09-12; 398 seed queries, 5,970 simulated conversations, 14 models) names **redundant recovery** — a model "recycles prior responses rather than providing new information" — as a failure mode **invisible to single-turn evaluation**. Such a turn asserts completion, asks nothing, and leaves the need unmet: it passes a terminal-class gate cleanly. Whatever the gate keys on, a repeat of the previous answer is not a terminal outcome.
 - **Assuming one threshold fits every hook.** Suppressing a nudge tolerates false positives; asking for a rating does not. Same signal, different acceptable error direction.

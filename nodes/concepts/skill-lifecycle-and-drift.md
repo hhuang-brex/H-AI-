@@ -69,8 +69,17 @@ Two things to take: over-compression fails *asymmetrically*, so measure the dire
 
 **Naming warning:** "SkillZip" is now attached to at least three unrelated 2026 arXiv entries ([2608.05604](https://arxiv.org/abs/2608.05604), [2608.11079](https://arxiv.org/abs/2608.11079), and this one). Cite by identifier. I did not establish which, if either, of the earlier two this one descends from.
 
+## Repair needs state across rounds, not one good explanation
+
+Step 3 above says retest; it did not say what to do with a *failed* retest. RESKILL ([arXiv:2609.15684](https://arxiv.org/abs/2609.15684), EMNLP 2026 main) attacks exactly that gap, against the default it names **opaque one-shot reflection**: a model emits a patch without maintaining how failure explanations relate to candidate repairs, or how an unsuccessful retest should constrain the next edit.
+
+Its structure is a **persistent repair state** across rounds: link failure hypotheses to candidate patches, select local repairs by **coverage-based attribution**, retest in the environment, and carry the retest outcome forward into subsequent rounds. On ALFWorld and TextCraft across three model sizes under fixed repair budgets, it wins all six benchmark-model settings — **+3.7 pp** final success over direct repair and **+3.3 pp** over hypothesis-conditioned repair.
+
+The finding that matters more than the margin is the ablation's direction: **explicit attribution alone is insufficient.** Knowing why a skill failed does not produce a durable fix; the gain appears only when attribution is *joined to* repair selection and to retest-conditioned update. A maintenance loop that diagnoses well and then forgets its failed attempts will re-propose them. Modest effect sizes on game-like benchmarks, so treat the architecture as the transferable part.
+
 ## Pitfalls
 
+- **Re-proposing a patch that already failed its retest.** Without persisted repair state, round *n+1* cannot know what round *n* tried — the failure mode RESKILL is built against.
 - **Trusting a review date over a dependency event.** A skill reviewed last week is stale if the API shipped yesterday.
 - **Letting an agent refresh a skill unsupervised.** Best-case measured repair is under 70% F1, and the failure mode is over-deletion — put the diff behind the same acceptance gate as any other skill edit.
 - **Treating a bundled-file link that leaves the root as an implementation detail.** It is an undeclared dependency and, for a shared skill, an unaudited surface ([prompt-injection-and-isolation](prompt-injection-and-isolation.md)).

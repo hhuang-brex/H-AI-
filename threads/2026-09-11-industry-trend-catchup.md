@@ -35,6 +35,8 @@ Catch up on the 24 days since the [previous sweep](2026-08-18-industry-trend-cat
 
 Seven date-bounded arXiv queries (`submittedDate:[202608190000 TO 202609112359]`, non-overlapping with the prior window), capturing `opensearch:totalResults` per cluster as a volume proxy; then title listings for the three fastest-moving clusters; then `id_list` verification of every candidate — published/updated dates, full author list, `arxiv:comment` for venue, and the complete abstract — before any number entered the graph.
 
+> **Superseded 2026-09-18 — this volume table is biased, read it with the correction.** The [09-18 sweep](2026-09-18-industry-trend-catchup.md) established that arXiv **undercounts a trailing window**: submission date is not announcement date, so a window ending on the run date is still filling in (the same query over the same window returned 29 → 37 and 2 → 5 an hour apart). The newest column below was measured fresh, so it is biased **downward**. Both headline movements are affected: multi-turn's rise is likely *understated*, and agent memory's halving may be partly artifact. The per-day deltas should not be quoted. The landings in this thread are unaffected — each was verified per paper, not from the counts.
+
 **Two caveats on the volume table.** (1) The prior sweep's *verbatim* query strings were not preserved, so they were reconstructed from the 08-18 thread's cluster labels; the comparison is indicative, not exact. (2) The windows differ in length (11 days vs 24), so only the **per-day** column is comparable.
 
 | Cluster (abstract keyword) | 08-08→08-18 (11d) | 08-19→09-11 (24d) | per day, then → now |

@@ -13,6 +13,7 @@ nav_exclude: true
 > here to learn the material, start from the topics in the [README](../README.md)
 > instead. Use this only to trace *why* a particular node says what it says.
 
+- 2026-09-18 · [eval] [2026-09-18-industry-trend-catchup](2026-09-18-industry-trend-catchup.md) — 7-day arXiv scan (2026-09-12 → 09-18): six nodes edited. A judge reading agents' own conclusions lands below chance; the prose channel under-reports state the structured channel records; and the volume method itself turned out to be biased by announcement lag.
 - 2026-09-12 · [meta] [2026-09-12-turn-outcome-signal](2026-09-12-turn-outcome-signal.md) — a product gate defined as 'terminal outcome, no user action' has no stored field to key on — landing the action-class enum as the named deterministic proxy, with the next user turn as its backtest.
 - 2026-09-11 · [eval] [2026-09-11-industry-trend-catchup](2026-09-11-industry-trend-catchup.md) — 24-day arXiv trend scan (2026-08-19 → 09-11): cluster volumes normalized per day, 2 new nodes, 12 edited — should a skill load at all, skills go stale in silence, and the judge stops being trusted.
 - 2026-08-31 · [eval] [2026-08-31-adaptive-eval-fanout](2026-08-31-adaptive-eval-fanout.md) — fan-out on adaptive eval budgeting: seven verified sources across anytime-valid stopping, best-arm allocation, and psychometrics; one new concept and one new reference node.

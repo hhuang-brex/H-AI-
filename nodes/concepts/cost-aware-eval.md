@@ -59,6 +59,16 @@ A useful audit borrowed from the best-performing prompt optimizer: split your sp
 
 The generalizable move: before raising a budget, classify each rollout as *signal-producing* (drives an edit, a diagnosis, a gradient) or *selection-only* (ranks candidates you already have). Selection-only spend is the compressible half, and it is usually the larger one.
 
+## Marginal return, not total spend, is the budget question
+
+The audit above splits spend by *purpose*; this one asks when the next token stops paying. **Elo-per-token analysis** ([arXiv:2609.15309](https://arxiv.org/abs/2609.15309), submitted 2026-09-14) tracks the best solution found at each token budget and aggregates within-task orderings into cross-task Elo with a Bradley-Terry model — four agents, four open-ended benchmarks, sessions up to **100M tokens**.
+
+Independent sampling gives a theoretically characterized reference in which **Elo grows linearly with log compute**. Measured against it, agents **initially convert tokens into Elo faster** than independent sampling, then their marginal gains decay and eventually fall **below** it. The authors name the crossing the **scaling inflection point**: the per-session budget at which marginal Elo gain equals the independent-sampling reference.
+
+The actionable result is what you do with that number. Using the inflection point as the per-session budget and splitting 100M tokens across **parallel** sessions beat **one long session by +264 Elo** and **ten short sessions by +355** — so the win is neither "run longer" nor "run more"; it is running at the length where returns are still above reference and parallelizing the remainder. A long-horizon agent has a measurable point past which it should be restarted rather than continued.
+
+Two caveats. This needs **continuous intermediate scores** to be observable at all, which most production tasks lack ([live-traffic-eval](live-traffic-eval.md) for the judge-free substitutes). And the paper's human comparison — the strongest contest participants improving *superlinearly* over contest time — is evidence of headroom, not a claim about the agents' ceiling.
+
 ## Cost ratios are easy to get wrong in ways the final number hides
 
 Before quoting any "AI is N× cheaper" figure, including your own: a 2026 case study instrumented a six-person build with a three-layer cost model (real AI spend, self-reported human effort, human counterfactual) and **initially reported a 19.4× cost ratio**. A follow-up pass found two independent errors — **inferring per-token cost under a flat-rate subscription**, and **pricing the counterfactual at the wrong regional labor rates** — that together had inflated the ratio roughly 2×. Corrected figure: **~9.9×** ([arXiv:2608.13730](https://arxiv.org/abs/2608.13730), workshop paper; small student-team case study, so treat the ratio itself as anecdote and the *error taxonomy* as the finding).
