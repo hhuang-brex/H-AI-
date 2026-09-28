@@ -15,6 +15,7 @@ related:
   - [[adversarial-eval]]
   - [[multi-agent-delegation]]
   - [[agent-native-memory-framework]]
+  - [[references-recursive-self-improvement]]
 status: living
 created: 2026-07-12
 summary: "the persisted/delayed attack on agent memory — untrusted content is WRITTEN into a durable store in one turn and TRIGGERS a harmful action on a later turn or for a different reader; persistence amplifies blast radius across time/sessions/readers, and self-attested provenance is launderable, so authority must be bound at write time."

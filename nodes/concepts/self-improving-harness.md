@@ -14,6 +14,9 @@ related:
   - [[agent-harness]]
   - [[managed-agent-apis]]
   - [[eval-statistical-significance]]
+  - [[references-recursive-self-improvement]]
+  - [[llm-as-judge]]
+  - [[skill-lifecycle-and-drift]]
 status: living
 created: 2026-07-07
 ---
@@ -53,6 +56,18 @@ The editable surface (prompts, tool configs, harness orchestration code) and the
 ## Frontier & scope
 
 Weng's *prediction* (not established): near-term recursive self-improvement is "unlikely to start as a model rewriting its weights" — it will be harness-level first, possibly *later* internalized into weights while the tool/context interface persists. Joint harness+weight loops (SIA, arXiv:2605.27276) are frontier-experimental with author-flagged confounds. A broader `agent-harness` umbrella (the static harness definition + OS analogy, parenting [agent-control-loop](../topics/agent-control-loop.md) / [context-engineering](../topics/context-engineering.md)) is a natural future node; this concept stays focused on the *self-improvement* loop.
+
+## What the 2026 RSI literature adds
+
+A fan-out on 2026-09-28 read about 45 papers on agent-level recursive self-improvement; sources and numbers are in [references-recursive-self-improvement](../references/references-recursive-self-improvement.md). Five claims change how the propose-evaluate-accept loop above should be run.
+
+1. **The acceptor decides, not the proposer.** "Keep it if the score went up" is adaptive multiple testing; one study measured **30–42% false commits** under it, and a strict held-out keep-better gate was what kept another loop from ever underperforming its base. Loops also select updates that fall short of the best candidates they generated.
+2. **The acceptance signal must be out of the agent's reach.** Self-authored tests stay green while deployment degrades, self-graded memories inflate on the agent's own mistakes, an evolved metric can collapse to always-pass and still train skills, and a poisoned benchmark can steer future versions. This is the loop-level case of the evidence-channel rule in [llm-as-judge](llm-as-judge.md).
+3. **In-distribution gains overstate.** One regularized loop reports **+14.1** on the split it evolved against and **+4.7** out of distribution. Evidence aggregated across tasks generalizes better than edits from a single failure.
+4. **Persisted artifacts contaminate forward and resist rollback.** Skill pools degrade past a size threshold, extraction launders poisoned intent, and removing a bad source leaves its descendants. Admission is pre-commit or it is nothing — see [skill-lifecycle-and-drift](skill-lifecycle-and-drift.md) and [memory-poisoning](memory-poisoning.md).
+5. **Proposers fabricate failures.** A proposer shown only legal episodes invented a failure and a guardrail for it in 15 of 60 runs, and add-only loops keep such phantoms.
+
+The graph's rule, synthesized across these: **treat each accepted self-edit as a deploy.** Require a failure an oracle can reproduce, a paired comparison against the incumbent on held-out instances under a sequential test rather than a single score delta, a protected-case regression set, and a gate the loop has no permission to edit.
 
 ## Pitfalls
 

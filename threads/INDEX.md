@@ -13,6 +13,7 @@ nav_exclude: true
 > here to learn the material, start from the topics in the [README](../README.md)
 > instead. Use this only to trace *why* a particular node says what it says.
 
+- 2026-09-28 · [meta] [2026-09-28-rsi-fanout](2026-09-28-rsi-fanout.md) — fan-out on recursive self-improvement for agents: ~45 papers verified at the abstract, one new reading list, and a new section in self-improving-harness — the acceptor, not the proposer, decides whether the loop improves.
 - 2026-09-27 · [eval] [2026-09-27-industry-trend-catchup](2026-09-27-industry-trend-catchup.md) — 9-day arXiv scan (2026-09-17 → 09-26): fourteen nodes edited. The week's theme is self-written evidence — judges read the agent's log, agents delete their traces, and duplicating agents report success.
 - 2026-09-18 · [eval] [2026-09-18-industry-trend-catchup](2026-09-18-industry-trend-catchup.md) — 7-day arXiv scan (2026-09-12 → 09-18): six nodes edited. A judge reading agents' own conclusions lands below chance; the prose channel under-reports state the structured channel records; and the volume method itself turned out to be biased by announcement lag.
 - 2026-09-12 · [meta] [2026-09-12-turn-outcome-signal](2026-09-12-turn-outcome-signal.md) — a product gate defined as 'terminal outcome, no user action' has no stored field to key on — landing the action-class enum as the named deterministic proxy, with the next user turn as its backtest.

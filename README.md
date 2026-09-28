@@ -287,11 +287,12 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-ontology-llm-agents](nodes/references/references-ontology-llm-agents.md) — verified primary sources for the ontology-grounded-agent cluster — KG-RAG, LLM ontology engineering, autoformalization+solvers, temporal-KG memory, SHACL/OWL, MCP/A2A.
 - [references-prompt-attribution](nodes/references/references-prompt-attribution.md) — verified sources for measuring prompt effectiveness — context-attribution methods (which span caused which output), population-level ablation and sensitivity studies, and the confounds that make naive measurement unfaithful.
 - [references-prompt-optimization](nodes/references/references-prompt-optimization.md) — verified primary sources for automatic prompt optimization — the token-search → text-gradient → program-optimizer lineage, the 2026 work on credit assignment, cost and GEPA's failure modes, plus the field survey.
+- [references-recursive-self-improvement](nodes/references/references-recursive-self-improvement.md) — verified reading list on recursive self-improvement for agents, sorted by the question each paper answers: who accepts an edit, what it overfits to, who grades the grader, and what persists.
 - [references-task-agent-design](nodes/references/references-task-agent-design.md) — verified primary sources grounding the agent cluster — ReAct, Reflexion, Toolformer, Tree of Thoughts, MetaGPT, and Anthropic's effective-agents guidance.
 - [references-template-rendered-output](nodes/references/references-template-rendered-output.md) — what's verifiable about template-rendered output in production — Rasa (mechanism confirmed), Ikki (architecture confirmed, outcomes refuted), and why most 'structured output' systems don't qualify.
 
 ---
-<sub>Provenance: 31 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
+<sub>Provenance: 32 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
 
 <!-- END GENERATED -->
 

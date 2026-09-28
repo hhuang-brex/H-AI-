@@ -1,7 +1,7 @@
 {
   "generated": "2026-09-28",
-  "node_count": 195,
-  "edge_count": 1560,
+  "node_count": 197,
+  "edge_count": 1583,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -866,6 +866,35 @@
         "references-multi-turn-agent-eval",
         "references-eval-reading-list",
         "references-agent-skill-authoring"
+      ]
+    },
+    {
+      "id": "2026-09-28-rsi-fanout",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-09-28-rsi-fanout.md",
+      "title": "Thread \u2014 Recursive Self-Improvement Fan-Out (2026-09-28)",
+      "summary": "fan-out on recursive self-improvement for agents: ~45 papers verified at the abstract, one new reading list, and a new section in self-improving-harness \u2014 the acceptor, not the proposer, decides whether the loop improves.",
+      "tags": [
+        "meta",
+        "research",
+        "fan-out",
+        "rsi",
+        "self-improvement",
+        "harness",
+        "safety"
+      ],
+      "status": "snapshot",
+      "created": "2026-09-28",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "references-recursive-self-improvement",
+        "self-improving-harness",
+        "skill-lifecycle-and-drift",
+        "memory-poisoning",
+        "llm-as-judge",
+        "2026-09-27-industry-trend-catchup"
       ]
     },
     {
@@ -3393,7 +3422,8 @@
         "tool-result-grounding",
         "adversarial-eval",
         "multi-agent-delegation",
-        "agent-native-memory-framework"
+        "agent-native-memory-framework",
+        "references-recursive-self-improvement"
       ]
     },
     {
@@ -4564,6 +4594,41 @@
       ]
     },
     {
+      "id": "references-recursive-self-improvement",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-recursive-self-improvement.md",
+      "title": "References \u2014 Recursive Self-Improvement for Agents",
+      "summary": "verified reading list on recursive self-improvement for agents, sorted by the question each paper answers: who accepts an edit, what it overfits to, who grades the grader, and what persists.",
+      "tags": [
+        "rsi",
+        "self-improvement",
+        "harness",
+        "evaluation",
+        "safety",
+        "skills",
+        "reading-list",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-09-28",
+      "clusters": [],
+      "source_thread": "2026-09-28-rsi-fanout",
+      "related": [
+        "self-improving-harness",
+        "skill-lifecycle-and-drift",
+        "memory-poisoning",
+        "llm-as-judge",
+        "eval-statistical-significance",
+        "adaptive-eval-budget",
+        "action-authority",
+        "decision-audit-trail",
+        "harness-as-hyperparameter",
+        "offline-prompt-optimization",
+        "references-harness-evaluation"
+      ]
+    },
+    {
       "id": "references-task-agent-design",
       "type": "reference",
       "kind": null,
@@ -4883,7 +4948,10 @@
         "multi-agent-delegation",
         "agent-harness",
         "managed-agent-apis",
-        "eval-statistical-significance"
+        "eval-statistical-significance",
+        "references-recursive-self-improvement",
+        "llm-as-judge",
+        "skill-lifecycle-and-drift"
       ]
     },
     {
@@ -4991,7 +5059,8 @@
         "prompt-injection-and-isolation",
         "action-authority",
         "llm-observability",
-        "references-agent-skill-authoring"
+        "references-agent-skill-authoring",
+        "references-recursive-self-improvement"
       ]
     },
     {
@@ -7019,6 +7088,36 @@
     {
       "from": "2026-09-27-industry-trend-catchup",
       "to": "step-budget-and-runaway-control",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-28-rsi-fanout",
+      "to": "2026-09-27-industry-trend-catchup",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-28-rsi-fanout",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-28-rsi-fanout",
+      "to": "memory-poisoning",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-28-rsi-fanout",
+      "to": "references-recursive-self-improvement",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-28-rsi-fanout",
+      "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-28-rsi-fanout",
+      "to": "skill-lifecycle-and-drift",
       "kind": "related"
     },
     {
@@ -10443,6 +10542,11 @@
     },
     {
       "from": "memory-poisoning",
+      "to": "references-recursive-self-improvement",
+      "kind": "related"
+    },
+    {
+      "from": "memory-poisoning",
       "to": "tool-result-grounding",
       "kind": "related"
     },
@@ -11962,6 +12066,66 @@
       "kind": "related"
     },
     {
+      "from": "references-recursive-self-improvement",
+      "to": "2026-09-28-rsi-fanout",
+      "kind": "source-thread"
+    },
+    {
+      "from": "references-recursive-self-improvement",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "references-recursive-self-improvement",
+      "to": "adaptive-eval-budget",
+      "kind": "related"
+    },
+    {
+      "from": "references-recursive-self-improvement",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "references-recursive-self-improvement",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "references-recursive-self-improvement",
+      "to": "harness-as-hyperparameter",
+      "kind": "related"
+    },
+    {
+      "from": "references-recursive-self-improvement",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "references-recursive-self-improvement",
+      "to": "memory-poisoning",
+      "kind": "related"
+    },
+    {
+      "from": "references-recursive-self-improvement",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "references-recursive-self-improvement",
+      "to": "references-harness-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "references-recursive-self-improvement",
+      "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "references-recursive-self-improvement",
+      "to": "skill-lifecycle-and-drift",
+      "kind": "related"
+    },
+    {
       "from": "references-task-agent-design",
       "to": "agent-control-loop",
       "kind": "related"
@@ -12263,6 +12427,11 @@
     },
     {
       "from": "self-improving-harness",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "self-improving-harness",
       "to": "llm-evaluation",
       "kind": "related"
     },
@@ -12279,6 +12448,16 @@
     {
       "from": "self-improving-harness",
       "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "self-improving-harness",
+      "to": "references-recursive-self-improvement",
+      "kind": "related"
+    },
+    {
+      "from": "self-improving-harness",
+      "to": "skill-lifecycle-and-drift",
       "kind": "related"
     },
     {
@@ -12449,6 +12628,11 @@
     {
       "from": "skill-lifecycle-and-drift",
       "to": "references-agent-skill-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "skill-lifecycle-and-drift",
+      "to": "references-recursive-self-improvement",
       "kind": "related"
     },
     {
