@@ -88,6 +88,12 @@ Its case study is the useful part, because the headline improvement hid three re
 
 *Scope:* one controlled internal agent at one marketplace, anonymous model configurations, 50 questions. Cite the methodology and the failure shape, not the percentages as benchmarks.
 
+## Next-turn scores do not predict workflow success
+
+Shape 3 above is a component test, and a 2026 study shows what happens when it is read as a proxy for shape 2. *When Better Turns Do Not Make Better Agents* ([arXiv:2609.21187](https://arxiv.org/abs/2609.21187), REALM Workshop @ EMNLP 2026) scores next-action prediction against **gold interaction history** for pre-SFT and SFT Qwen3 (4B, 14B) and Gemma 3 (4B, 12B) on multi-turn customer-support workflows. SFT improved text-turn success, and next-turn success rose for **every** model. None of the four SFT models succeeded under holistic workflow evaluation; **strict trajectory completion peaked at 10.4%**. The authors recommend reporting text quality, local action correctness, tool execution, and end-to-end completion separately.
+
+The graph's reading: gold-history evaluation is teacher forcing. It never lets an early error compound, which is precisely the failure [multi-turn drift](#multi-turn-drift) is about. Keep next-turn cases as cheap regression tests on a single decision, and never let their trend stand in for autonomous-run success.
+
 ## References
 
 - Anthropic, *Building Effective Agents* — [references-eval-reading-list](../references/references-eval-reading-list.md)

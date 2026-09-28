@@ -11,6 +11,8 @@ related:
   - [[decision-audit-trail]]
   - [[goal-decomposition]]
   - [[context-compaction]]
+  - [[idempotency-keys]]
+  - [[schema-vs-validator]]
 status: living
 created: 2026-06-11
 ---
@@ -47,6 +49,21 @@ This also makes run state the natural output of [context-compaction](context-com
 ## Version the schema
 
 Run state outlives deploys. A run checkpointed under v1 may resume under v2 with a changed plan shape. Version the state schema and handle migration (or refuse to resume incompatible versions cleanly) — an unversioned state model silently corrupts on the first breaking deploy.
+
+## Shown, told, or enforced
+
+Persisting the state does not make the model obey it. *How Strongly Should Task State Influence an LLM Agent?* ([arXiv:2609.25686](https://arxiv.org/abs/2609.25686), 2026-09-22) fixes the task rules, the model, and paired episodes, and varies only how strongly task state reaches the agent:
+
+| Rung | Mechanism | Finding |
+|---|---|---|
+| Shown | raw transcript, or an exact checklist | displaying accurate state is unreliable |
+| Self-kept | an unverified ledger the agent writes itself | **beats** an accurate checklist it is shown |
+| Told | per-turn directives from a state machine compiled from the brief, advanced only by execution receipts | helps in proportion to the model's obedience |
+| Enforced | a gate that refuses state-violating actions | needs no obedience; bounded by the state's correctness and by the matcher mapping requests to steps |
+
+On τ²-bench airline, the gate raised a 235B agent's pass^1 from **0.39 to 0.54** and did nothing for a 35B agent that rarely violated the policy. On PM-Bench, where acting depends on recognizing a cue rather than on state, showing the record was best, and enforcing the matcher's judgement dropped the 35B agent below its raw transcript. The authors' rule: **enforce when failures are state-decidable and frequent**, and expect enforcement to hurt when the gate's own judgement is wrong.
+
+Two things to take into this node's design. Advance the plan's per-step status on **execution receipts**, not on the model's claim that a step is done — the same distrust as [idempotency-keys](idempotency-keys.md). And gate only the state-decidable subset of steps. The self-kept ledger is a working aid for the model, never the record of truth; that stays in the [decision-audit-trail](decision-audit-trail.md).
 
 ## Pitfalls
 

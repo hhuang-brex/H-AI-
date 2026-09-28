@@ -11,6 +11,7 @@ related:
   - [[stop-and-yield-conditions]]
   - [[tool-use-design]]
   - [[turn-outcome-signal]]
+  - [[decision-audit-trail]]
 status: living
 created: 2026-06-11
 ---
@@ -47,12 +48,24 @@ A gate that says "Proceed? (y/n)" without stating exactly what will happen train
 
 If the user's approval is ambiguous ("ok I guess", a non-answer, silence), treat it as *not confirmed* for irreversible actions. The asymmetry from [stop-and-yield-conditions](stop-and-yield-conditions.md) holds: the cost of acting on a non-approval dwarfs the cost of asking once more.
 
+## Approval covers the invocation, not its closure (2026)
+
+Echoing specifics is necessary, but the specifics are usually the *entry call*. *Agent Approval Laundering* ([arXiv:2609.28586](https://arxiv.org/abs/2609.28586), 2026-09-23) names the gap: approval interfaces bind the human decision to a command or tool call, while the tool executes the **transitive workflow** that call activates — an install runs lifecycle hooks and writes files, an MCP call exercises network authority. The durable record then names the entry and omits the effects.
+
+Two results make it a design constraint rather than a hygiene note:
+
+- **An information limit.** Identical policy-visible fields can require different effect-specific decisions, so no policy that reads only the record can be both safe and permissive. More metadata narrows the gap without closing it: across 111 approval/trace pairs, residual unrecorded effects fell from **40** (explicit fields) to **17** (command semantics) to **13** (decision-time metadata).
+- **The fix binds a prediction before authorization.** Commit a frozen, source-backed prediction of the workflow's effect boundary with the approval. On 17 prespecified holdout workflows the predictions reached **0.926 macro recall and 0.941 macro precision**, and binding them cut residual effects from **10 to 3**. It ships as a Claude Code PreToolUse hook that carries the record through the permission path without auto-approving.
+
+For a conversing task agent, the confirm prompt should echo the *effects* ("this books the room, sends three invites, and charges the card on file"), and the [decision-audit-trail](decision-audit-trail.md) should store that predicted set beside what actually happened so residuals are findable.
+
 ## Pitfalls
 
 - **Gate everything.** Confirmations on reads and reversible drafts; users learn to rubber-stamp, and the gate stops protecting anything.
 - **Vague confirms.** "Proceed?" without the specifics — approval theater.
 - **Prompt-only gates.** Relying on the model to remember to ask; enforce at the tool layer.
 - **Confirm that loses state.** Approving, then the agent restarts the task — see [interrupt-and-resume](interrupt-and-resume.md).
+- **Confirming the command, not its effects.** The user approves the entry call; the workflow does more. Echo and record the predicted effect set.
 - **Treating weak assent as approval** for irreversible actions.
 
 ## References

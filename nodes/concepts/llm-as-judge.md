@@ -9,6 +9,8 @@ related:
   - [[agent-eval-case-study]]
   - [[layered-defense-pipeline]]
   - [[agent-trajectory-eval]]
+  - [[decision-audit-trail]]
+  - [[escalation-handoff]]
 status: living
 created: 2026-06-05
 summary: "calibration, bias, multi-vote, cascading."
@@ -93,6 +95,25 @@ Two honest complications the paper reports itself, both of which this graph shou
 - **Deleting the conclusion field is not free.** Where the upstream suggestion was *correct*, the same deletion costs accuracy (70.5% → 55.7%). The net effect is governed by upstream reliability, so this is a *conditional* design rule, not a universal one.
 
 The generalization: **an accountability layer needs evidence sufficiently independent of the conclusions it verifies.** A judge fed the agent's own summary of what happened is not an independent check — it is a relay, and it will ratify a wrong conclusion 94% of the time. This is the concrete mechanism behind the graph's "deterministic verification layer the judge cannot override": the layer must read *different bytes*, not the same bytes more carefully. See [decision-audit-trail](decision-audit-trail.md) for what the raw record has to retain to make that possible, and [escalation-handoff](escalation-handoff.md) — the same layer named an innocent party in **34.4% and 62.6%** of clean episodes where any agent raised a false alarm, which is a false-escalation budget, not a rounding error.
+
+## The judge's evidence channel must be one the subject cannot write (2026)
+
+The section above ends on "read different bytes." Papers from the week of 2026-09-17 → 09-25 show what happens when a verifier reads bytes the thing under test wrote, and they converge on one fix.
+
+| Paper | What the verifier also read | Effect |
+|---|---|---|
+| *Don't Read the Log* ([arXiv:2609.28564](https://arxiv.org/abs/2609.28564)) | the agent's execution trace, beside fixed video frames | a trace reporting a successful tool call made three open-weight Qwen-VL judges accept **78–90%** of failed clips, up from **7–19%** with no text |
+| *Forgeable Confirmation* ([arXiv:2609.24200](https://arxiv.org/abs/2609.24200)) | response content the attacker controls | **9 of 15** confirmation mechanisms forgeable; forgeability predicted *entirely* by whether the decision reads attacker-controlled data |
+
+Details that change what you build:
+
+- **An instruction does not fix it.** Telling the judge to "use only the frames" did not remove the effect. Frontier closed judges were essentially unmoved on the same clips, so this is learned trust in tool logs rather than task difficulty — test your own judge with a contradicting trace instead of assuming immunity.
+- **No adversary is needed.** In a repair loop, an honest planner that always regenerates ended at a judge pass rate of **1.00** against a human-labelled **0.28**. A cheap checker that wrote its verdict into the trace **laundered its errors into the stronger final judge (0.69 false accepts)** — which is exactly the cheap-then-expensive cascade in the table above, built wrong.
+- **"Use a deterministic rule" is not the fix; the channel is.** Rules were *cheaper* to forge than eight open-weight LLM judges (failing at **2%** attacker-controlled content against a median **50%**), and routing between a rule and an AI judge raised forgery to **99%**. Moving the decisive evidence to a channel the attacker cannot write cut attack success from **97% to 0%**, and an explicit *escalate* verdict recovered the lost sensitivity. The forgeability prediction, fixed before any attack, separated 16 held-out mechanisms exactly and was **99.9%** accurate over 12,203 public scanner templates. It fails when the scanned host is itself the adversary.
+
+**Multi-vote buys less independence than it looks.** *Agreement Overstates Evidence* ([arXiv:2609.22512](https://arxiv.org/abs/2609.22512)) measures a mean pairwise error correlation of **0.21** across ten judges, so ten judges carry about as much information as **3.5 independent ones**; dependence is *stronger* among high-accuracy frontier judges, **including across providers**. In up to **28%** of comparisons, ignoring shared errors produced a significant system difference that vanished once they were accounted for. This qualifies both the "3× majority" move and the heterogeneous-recheck table above: different-family is a hypothesis about independence, and a small trusted labelled set is how you check it and pick the voting rule before applying it. The same correlation caps cascades: a cheap typed classifier's most confident errors were repeated by nearly all LLM judges, so a cascade gained **at most 1.5 points** over the best single judge (2.0 with oracle thresholds) while costing 29–325× less ([arXiv:2609.29769](https://arxiv.org/abs/2609.29769)). A second group reports a confident-accept cascade retaining 99% of its comparator's accuracy ([arXiv:2609.26550](https://arxiv.org/abs/2609.26550)); both hold — a cascade buys cost, not accuracy, when errors correlate.
+
+The graph's generalization, not stated by any one source: **list a verifier's inputs by who can write them.** Anything the subject writes — its trace, its summary, its tool-call status, an upstream checker's verdict — is advisory at most, and the verdict of record must rest on a channel the subject cannot touch. See [decision-audit-trail](decision-audit-trail.md) for the logging side of the same rule.
 
 ## References
 

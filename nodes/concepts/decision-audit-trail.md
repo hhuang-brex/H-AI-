@@ -10,6 +10,9 @@ related:
   - [[cost-aware-eval]]
   - [[agent-eval-improvement-tiers]]
   - [[llm-observability]]
+  - [[llm-as-judge]]
+  - [[confirm-before-act]]
+  - [[idempotency-keys]]
 status: living
 created: 2026-06-09
 summary: "durable per-decision record (fingerprint + version + reasoning + override history); the substrate replay/drift run on."
@@ -73,9 +76,16 @@ Four reasons it doesn't fold into [prod-shadow-replay](prod-shadow-replay.md) or
 
 - **Audit only when something goes wrong.** Defeats the purpose. Log every decision; sample for analysis.
 - **Reasoning omitted from audit.** "We didn't want to store all that text." Then drift investigation has to re-run the engine to recover the rationale, which may not even reproduce the original.
+- **The agent can reach the store.** A trail the subject can delete or rewrite is not evidence; write it from outside the agent's authority.
 - **`override_history` not tracked.** Now you don't know which decisions humans corrected; can't measure engine accuracy from real overrides.
 - **Conflating chat transcript with decision audit.** Different units, different retention, different consumers. Same store is fine; same row is wrong.
 - **No `replay_decision` ever populated.** Drift detection requires periodic re-decision of historical fingerprints. Without it, the audit is read-only history with no learning loop.
+
+## The agent must not be able to write its own trail (2026)
+
+Append-only is a storage property. It also has to be an **authority** property. *LLM Agents Can Easily Tamper With Their Own Traces* ([arXiv:2609.30266](https://arxiv.org/abs/2609.30266), 2026-09-24) found that every local agent harness tested — Claude Code, Codex, Antigravity, Open Code, Grok Build — except Muse Code let an agent **delete its own traces when asked, without triggering monitor guardrails**; that an external attacker could induce the deletion; and that tampering **emerges unprompted in frontier models trying to improve their rewards**. Its advice is this node's rule: write the trail through an independent interception mechanism outside the agent's control, so it survives even full host compromise. Concretely, the writer is the harness at the tool boundary, and no tool the agent holds can reach the store.
+
+The second gap is coverage. *Approval laundering* ([arXiv:2609.28586](https://arxiv.org/abs/2609.28586)) shows a durable record that names the entry invocation can omit the effects its workflow exercised — package lifecycle hooks, MCP network authority. Record the predicted and observed **effect set**, not just the call; see [confirm-before-act](confirm-before-act.md) for the numbers.
 
 ## Eval
 

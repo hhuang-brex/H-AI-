@@ -57,6 +57,8 @@ The first pass reported **every cluster falling**, some by half. That was an art
 
 **This retroactively weakens the 09-11 volume table**, whose newest window was fresh when measured. Its two headline movements — multi-turn nearly doubling, agent memory halving — were both computed against a window still filling in, which biases *downward* for the new window: multi-turn's rise may be understated and memory's fall may be partly artifact. Treat that table's per-day deltas as unreliable in the direction of the newest window, and **end future volume windows at least 4 days before the run date.**
 
+*Note added 2026-09-27:* re-measuring the 09-12→09-15 column with identical queries returned 34 / 47 / 10 / 20 / 3 / 5 / 2 — 3–4 lower for the large clusters — and that window holds two weekdays against three in the other two. See [2026-09-27-industry-trend-catchup](2026-09-27-industry-trend-catchup.md).
+
 So this thread publishes **no volume trend claim**. Week-scale cluster counts at this corpus size are dominated by announcement timing and by 4-day windows of 2–50 papers; the listings, not the counts, were the useful output.
 
 ## Landed

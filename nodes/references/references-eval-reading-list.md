@@ -61,6 +61,15 @@ Curated for senior engineers building agentic systems. URLs verified 2026-06-05.
 - 🔑 **Challenges in Red Teaming AI Systems** — Anthropic, 2024. https://www.anthropic.com/news/challenges-in-red-teaming-ai-systems
 - 🔑 **Advancing Red Teaming with People and AI** — OpenAI, 2024. https://openai.com/index/advancing-red-teaming-with-people-and-ai/
 
+## (h) Measurement validity — added 2026-09-27
+
+arXiv ids fetch-confirmed 2026-09-27. All are preprints or workshop papers, author-reported.
+
+- **Attack Success Rate Is Not a Number: On Measurement Validity in Agentic AI Security Evaluation** — Pathade, Pawar, Patil, 2026-09-21. https://arxiv.org/abs/2609.25173 — A full-text meta-analysis of **259** agentic-security papers: most report neither variance nor repeated runs for the headline metric (**58%** in a hand-coded sample of 50; **65.3%** by automated coding), only **30.9%** disclose enough about decoding to tell whether evaluation was stochastic, and of 64 papers using an LLM judge, **29.7%** report any human-agreement check. On a 100-instance benchmark the minimum detectable difference at conventional power is **18.2 pp**, and two defenses 5 points apart are mis-ranked by a single run about **21%** of the time. Ships a ten-item reporting checklist. Pairs with [eval-statistical-significance](../concepts/eval-statistical-significance.md).
+- **Measuring the Serving Stack Instead of the Model: Hidden Confounds in Local Tool-Use Evaluation** — Tang, Zheng, 2026-09-22 (REALM @ EMNLP 2026). https://arxiv.org/abs/2609.26693 — In Ollama the default tool request is gated per model by a static template flag, so some models are rejected before inference; a harness that did not keep rejection and retry exhaustion as structured failure metadata scored them as **0%** tool-call fidelity. Turn-pooled and per-instance estimates differed by up to about **55 points**. Treat the serving layer as part of the protocol — see [harness-as-hyperparameter](../concepts/harness-as-hyperparameter.md).
+- **Agreement Overstates Evidence: Error Dependence in LLM Judge Consensus** — Hossain, Yousefi, Lim, 2026-09-18. https://arxiv.org/abs/2609.22512 — Ten judges with mean pairwise error correlation 0.21 are worth about 3.5 independent ones. Summarized in [llm-as-judge](../concepts/llm-as-judge.md).
+- **LLJ Cards: Best practices for the Use of LLMs as Judges** — Chehbouni, Medjdoub, Carichon, Farnadi, Cheung, 2026-09-21. https://arxiv.org/abs/2609.24516 — A reporting framework drawn from measurement theory for LLM-judge evaluations. The abstract reports no empirical results; use it as a checklist, not evidence.
+
 ## Top four for an IAF-shaped system
 
 1. Anthropic — *Statistical Approach to Model Evaluations*

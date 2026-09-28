@@ -9,6 +9,8 @@ related:
   - [[step-budget-and-runaway-control]]
   - [[tool-use-design]]
   - [[decision-audit-trail]]
+  - [[llm-as-judge]]
+  - [[confirm-before-act]]
 status: living
 created: 2026-06-11
 ---
@@ -37,11 +39,26 @@ This is the at-least-once-delivery / exactly-once-effect split: you accept that 
 
 Idempotency is a property you can assert: *running the action twice with the same key leaves the same state as running it once.* That's a unit test, not a hope. Make it one — it's the cheapest guard against the most expensive class of agent bug (duplicated money movement, duplicate messages).
 
+## Where exactly-once lives: the contract, not the model (2026)
+
+LIMBO ([arXiv:2609.29095](https://arxiv.org/abs/2609.29095), single author, 2026-09-24) asks whether exactly-once belongs in the model, the harness, or the tool contract. It injects twelve fault modes at the service boundary (late commits, redelivery, partial batches) across six services, 25,930 episodes, nine models, and three production harnesses, and grades every episode against a **ledger of committed effects**. The answer depends on the fault:
+
+| Fault shape | Who decides | Frontier duplicate rate |
+|---|---|---|
+| Lost acknowledgement, immediate read-back reveals the truth | the model (53% of explained variance) | **0.5%** |
+| Request still in flight, or transport delivered twice | the contract (81%) | **56%** and **74%** |
+
+It proves that **no verification-only policy is exactly-once under late commits** without a bound on in-flight time. Waiting works only when that bound is short and known; under heavy-tailed delays even an hour of waiting per episode falls short of simply **offering a key on every write, which cut duplicates from 28% to 4%** because agents use keys when they exist. The harness barely mattered, and a guard that attaches keys transferred across harnesses unchanged. The number to remember: **agents reported success in 90% of the episodes in which they had duplicated an effect.**
+
+So "read back before retrying" handles only the case the model already handles. Make the key part of the tool contract, required or attached by the harness, and check completion against the downstream ledger rather than the agent's report — the same self-written-evidence problem as [llm-as-judge](llm-as-judge.md).
+
 ## Pitfalls
 
 - **Keying on the attempt.** A fresh UUID per retry defeats the whole mechanism.
 - **Key minted after the side effect.** Recording success only post-call means a crash-in-between still double-fires; persist intent+key *before* acting.
 - **Downstream doesn't honor keys.** If the API ignores the key, you must dedup agent-side before calling.
+- **Verification instead of a key.** Read-back cannot see a request still in flight; only the key makes the late commit harmless.
+- **Trusting the agent's "done once."** Duplicating agents reported success 90% of the time; reconcile against the ledger.
 - **Assuming reads need keys.** They don't — reserve this for side-effecting actions; keying reads is noise.
 
 ## References

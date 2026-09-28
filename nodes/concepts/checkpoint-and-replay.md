@@ -9,6 +9,7 @@ related:
   - [[crash-recovery-consistency]]
   - [[idempotency-keys]]
   - [[prod-shadow-replay]]
+  - [[golden-snapshot-eval]]
 status: living
 created: 2026-06-11
 ---
@@ -39,6 +40,12 @@ On resume you load the last run-state checkpoint and **re-assemble** the working
 | **Eval-replay** ([prod-shadow-replay](prod-shadow-replay.md)) | Re-run past inputs against a new model/prompt to measure drift | Side effects mocked/disabled by design |
 
 Resume-replay continues real work; eval-replay re-scores history with effects off. Same word, opposite stance on side effects — keep them separate in code (a "replay mode" flag that means both is a bug factory).
+
+### A third meaning: cut-point replay as a regression test
+
+Chronicle ([arXiv:2609.20625](https://arxiv.org/abs/2609.20625), 2026-09-17) sits between the two. It records a run at its **non-deterministic boundaries** — model calls and state-reading tools — as immutable envelopes. *Cut-point replay* serves a chosen subset of boundaries from the record and runs the rest live with new code, turning a recorded incident into a CI regression test. On six recorded failures with simulated model boundaries, recording cost **23 µs per crossing**, full replay made zero model calls and was bit-stable across 20 repetitions, and cut-point tests failed on faulty code and passed on guarded and benign changes for all six. In a mutation study, cut-point tests caught **every** mutant that let the recorded unsafe action through, while a baseline stubbing every boundary with the same assertion caught **none**.
+
+This does not blur the table above. Recorded boundaries are served, never re-fired, so side effects stay off as in eval-replay, while the code under test runs live. Scope is six incidents with simulated model boundaries, author-reported.
 
 ## Checkpoint atomicity
 

@@ -75,6 +75,12 @@ Worth knowing so you can tell which objections are real:
 - **Budget predictability** — organizational, not statistical: dynamic reps make CI spend a random variable.
 - **The gate encodes a loss function only you have** — the honest one. What a false ship costs versus a false block is domain knowledge no vendor can supply, which is why they hand you a threshold instead of a decision. It argues for *you* automating this, not for nobody automating it.
 
+## A production data point: the best estimator was not the one deployed
+
+*Efficient Benchmarking in Production* ([arXiv:2609.21267](https://arxiv.org/abs/2609.21267), 2026-09-18) is first-hand deployment experience from a production analytics agent with tens of thousands of monthly active users. Over **574 historical benchmark runs** split chronologically into calibration and held-out periods, it compares random sampling, historical caching, fixed representative subsets, and IRT adaptive testing. Multidimensional 2PL adaptive testing gave the best fidelity: **200 questions, 38.5% of a full run, at 1.03 pp mean absolute error**. The team nevertheless deployed **difficulty-stratified fixed subsets** for operational simplicity. Those transferred without recalibration to five other agent families and stayed stable with calibration windows as short as one day.
+
+This is the layer split above, chosen in production: a fixed stratified subset is auditable, so it can be the gate of record, and IRT's margin over it did not pay for its operational cost. One company, self-reported.
+
 ## Pitfalls
 
 - **Confusing early stopping with peeking.** Stopping under a confidence sequence is valid; stopping when a *t*-test looks good is not. The machinery is the difference.

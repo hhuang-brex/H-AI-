@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-18",
-  "node_count": 194,
-  "edge_count": 1531,
+  "generated": "2026-09-28",
+  "node_count": 195,
+  "edge_count": 1560,
   "nodes": [
     {
       "id": "2026-06-05-eval-analysis",
@@ -828,6 +828,47 @@
       ]
     },
     {
+      "id": "2026-09-27-industry-trend-catchup",
+      "type": "thread",
+      "kind": null,
+      "path": "threads/2026-09-27-industry-trend-catchup.md",
+      "title": "Thread \u2014 Industry Trend Catch-Up (2026-09-17 \u2192 2026-09-26)",
+      "summary": "9-day arXiv scan (2026-09-17 \u2192 09-26): fourteen nodes edited. The week's theme is self-written evidence \u2014 judges read the agent's log, agents delete their traces, and duplicating agents report success.",
+      "tags": [
+        "meta",
+        "research",
+        "trend-scan",
+        "eval",
+        "judge",
+        "execution-safety",
+        "audit",
+        "idempotency",
+        "memory",
+        "state"
+      ],
+      "status": "snapshot",
+      "created": "2026-09-27",
+      "clusters": [],
+      "source_thread": null,
+      "related": [
+        "2026-09-18-industry-trend-catchup",
+        "llm-as-judge",
+        "idempotency-keys",
+        "decision-audit-trail",
+        "confirm-before-act",
+        "agent-trajectory-eval",
+        "checkpoint-and-replay",
+        "adaptive-eval-budget",
+        "run-state-model",
+        "self-improving-harness",
+        "memory-poisoning",
+        "step-budget-and-runaway-control",
+        "references-multi-turn-agent-eval",
+        "references-eval-reading-list",
+        "references-agent-skill-authoring"
+      ]
+    },
+    {
       "id": "action-authority",
       "type": "concept",
       "kind": null,
@@ -1586,7 +1627,8 @@
         "run-state-model",
         "crash-recovery-consistency",
         "idempotency-keys",
-        "prod-shadow-replay"
+        "prod-shadow-replay",
+        "golden-snapshot-eval"
       ]
     },
     {
@@ -1709,7 +1751,8 @@
         "action-authority",
         "stop-and-yield-conditions",
         "tool-use-design",
-        "turn-outcome-signal"
+        "turn-outcome-signal",
+        "decision-audit-trail"
       ]
     },
     {
@@ -2033,7 +2076,10 @@
         "prod-shadow-replay",
         "cost-aware-eval",
         "agent-eval-improvement-tiers",
-        "llm-observability"
+        "llm-observability",
+        "llm-as-judge",
+        "confirm-before-act",
+        "idempotency-keys"
       ]
     },
     {
@@ -2792,7 +2838,9 @@
         "interrupt-and-resume",
         "step-budget-and-runaway-control",
         "tool-use-design",
-        "decision-audit-trail"
+        "decision-audit-trail",
+        "llm-as-judge",
+        "confirm-before-act"
       ]
     },
     {
@@ -3053,7 +3101,9 @@
         "cost-aware-eval",
         "agent-eval-case-study",
         "layered-defense-pipeline",
-        "agent-trajectory-eval"
+        "agent-trajectory-eval",
+        "decision-audit-trail",
+        "escalation-handoff"
       ]
     },
     {
@@ -4713,7 +4763,9 @@
         "checkpoint-and-replay",
         "decision-audit-trail",
         "goal-decomposition",
-        "context-compaction"
+        "context-compaction",
+        "idempotency-keys",
+        "schema-vs-validator"
       ]
     },
     {
@@ -5218,7 +5270,10 @@
         "stop-and-yield-conditions",
         "cost-aware-eval",
         "action-execution-safety",
-        "llm-observability"
+        "llm-observability",
+        "context-compaction",
+        "mcp-tool-layer",
+        "prompt-injection-and-isolation"
       ]
     },
     {
@@ -6892,6 +6947,81 @@
       "kind": "related"
     },
     {
+      "from": "2026-09-27-industry-trend-catchup",
+      "to": "2026-09-18-industry-trend-catchup",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-27-industry-trend-catchup",
+      "to": "adaptive-eval-budget",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-27-industry-trend-catchup",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-27-industry-trend-catchup",
+      "to": "checkpoint-and-replay",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-27-industry-trend-catchup",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-27-industry-trend-catchup",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-27-industry-trend-catchup",
+      "to": "idempotency-keys",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-27-industry-trend-catchup",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-27-industry-trend-catchup",
+      "to": "memory-poisoning",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-27-industry-trend-catchup",
+      "to": "references-agent-skill-authoring",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-27-industry-trend-catchup",
+      "to": "references-eval-reading-list",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-27-industry-trend-catchup",
+      "to": "references-multi-turn-agent-eval",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-27-industry-trend-catchup",
+      "to": "run-state-model",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-27-industry-trend-catchup",
+      "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "2026-09-27-industry-trend-catchup",
+      "to": "step-budget-and-runaway-control",
+      "kind": "related"
+    },
+    {
       "from": "action-authority",
       "to": "domain-chatbot-design",
       "kind": "related"
@@ -8053,6 +8183,11 @@
     },
     {
       "from": "checkpoint-and-replay",
+      "to": "golden-snapshot-eval",
+      "kind": "related"
+    },
+    {
+      "from": "checkpoint-and-replay",
       "to": "idempotency-keys",
       "kind": "related"
     },
@@ -8169,6 +8304,11 @@
     {
       "from": "confirm-before-act",
       "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "confirm-before-act",
+      "to": "decision-audit-trail",
       "kind": "related"
     },
     {
@@ -8588,12 +8728,27 @@
     },
     {
       "from": "decision-audit-trail",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "decision-audit-trail",
       "to": "cost-aware-eval",
       "kind": "related"
     },
     {
       "from": "decision-audit-trail",
       "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "decision-audit-trail",
+      "to": "idempotency-keys",
+      "kind": "related"
+    },
+    {
+      "from": "decision-audit-trail",
+      "to": "llm-as-judge",
       "kind": "related"
     },
     {
@@ -9523,12 +9678,22 @@
     },
     {
       "from": "idempotency-keys",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "idempotency-keys",
       "to": "decision-audit-trail",
       "kind": "related"
     },
     {
       "from": "idempotency-keys",
       "to": "interrupt-and-resume",
+      "kind": "related"
+    },
+    {
+      "from": "idempotency-keys",
+      "to": "llm-as-judge",
       "kind": "related"
     },
     {
@@ -9774,6 +9939,16 @@
     {
       "from": "llm-as-judge",
       "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-judge",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-judge",
+      "to": "escalation-handoff",
       "kind": "related"
     },
     {
@@ -11982,6 +12157,16 @@
       "kind": "related"
     },
     {
+      "from": "run-state-model",
+      "to": "idempotency-keys",
+      "kind": "related"
+    },
+    {
+      "from": "run-state-model",
+      "to": "schema-vs-validator",
+      "kind": "related"
+    },
+    {
       "from": "safety-rails-domain-specific",
       "to": "action-authority",
       "kind": "related"
@@ -12658,12 +12843,27 @@
     },
     {
       "from": "step-budget-and-runaway-control",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "step-budget-and-runaway-control",
       "to": "cost-aware-eval",
       "kind": "related"
     },
     {
       "from": "step-budget-and-runaway-control",
       "to": "llm-observability",
+      "kind": "related"
+    },
+    {
+      "from": "step-budget-and-runaway-control",
+      "to": "mcp-tool-layer",
+      "kind": "related"
+    },
+    {
+      "from": "step-budget-and-runaway-control",
+      "to": "prompt-injection-and-isolation",
       "kind": "related"
     },
     {
