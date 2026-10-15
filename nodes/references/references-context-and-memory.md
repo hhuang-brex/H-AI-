@@ -9,6 +9,7 @@ related:
   - [[memory-retrieval]]
   - [[memory-consolidation-and-forgetting]]
   - [[memory-types-taxonomy]]
+  - [[just-in-time-context]]
 status: living
 created: 2026-06-12
 ---
@@ -37,6 +38,24 @@ The scientific grounding for the context cluster ([context-engineering](../topic
 
 - **Generative Agents: Interactive Simulacra of Human Behavior** — Park, O'Brien, Cai, Morris, Liang, Bernstein (2023). https://arxiv.org/abs/2304.03442 — Verified from the abstract: an architecture that stores a complete experience record in natural language, *synthesizes memories into higher-level reflections over time*, and *retrieves them dynamically* to plan behavior. This grounds the consolidation/reflection idea in [memory-consolidation-and-forgetting](../concepts/memory-consolidation-and-forgetting.md) and the memory-stream framing in [agent-memory](../topics/agent-memory.md).
   - **Caveat (honest sourcing):** the specific recency × importance × relevance retrieval-scoring formula that [memory-retrieval](../concepts/memory-retrieval.md) attributes to "the generative-agents line of work" is widely associated with this paper but I could **not** confirm it from the abstract this session (the full-text PDF exceeded the fetch limit; no HTML mirror resolved). Treat the three-factor formula as community-attributed-to-this-paper, pending full-text verification — verify against §"Memory and Retrieval" of the PDF before citing the formula externally.
+
+## Just-in-time context — added 2026-10-15
+
+Backs [just-in-time-context](../concepts/just-in-time-context.md). Every source below was fetched on 2026-10-15; arXiv entries were confirmed at the abstract page only, and their numbers are author-reported.
+
+- **Effective context engineering for AI agents** — Rajasekaran, Dixon, Ryan, Hadfield, Anthropic Applied AI (2025-09-29). https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents — Names the just-in-time strategy: hold lightweight identifiers and load data at runtime with tools, in contrast to embedding-based pre-inference retrieval. Gives the Claude Code hybrid (`CLAUDE.md` up front, `glob`/`grep` just in time) and states the cost: runtime exploration is slower than precomputed retrieval. Vendor engineering post; mechanism, not measurement.
+- **General Agentic Memory via Deep Research (GAM)** — Yan, Li, Qian, Lu, Liu (2025-11-23). https://arxiv.org/abs/2511.18423 — Frames memory as just-in-time compilation: a lightweight memory plus a complete page-store, and a researcher that builds context per request.
+- **Just-In-Time Agent Memory with Runtime Agentic Research (JAM)** — Yan, Li, Qian, Lu, Li, Liu (2026-09-28). https://arxiv.org/abs/2609.34385 — Names the ahead-of-time vs just-in-time split and trains the researcher; beats AOT memory systems on the reported benchmarks.
+- **Beyond Semantic Similarity: Direct Corpus Interaction** — Li, Zhang, Wei, Lu, Nie + others (2026-05-03). https://arxiv.org/abs/2605.05242 — Raw-corpus search with terminal tools and no index beat sparse, dense, and reranking baselines on several BRIGHT and BEIR sets.
+- **Is Grep All You Need? How Agent Harnesses Reshape Agentic Search** — Sen, Kasturi, Lumer, Gulati, Subbiah (2026-05-14). https://arxiv.org/abs/2605.15184 — `grep` generally beat vector retrieval on 116 LongMemEval questions, but harness and result format moved the score as much.
+- **BM25 Wins at Scale** — Wang, Xu, Wang, Du, Zeng + others (v3 2026-07-31). https://arxiv.org/abs/2607.26497 — Across 28 nested corpus tiers, a file-system agent led only at small sizes, spent 39× the query tokens, and lost to BM25 past about 10 million corpus tokens.
+- **Deep Agentic Search for Repository-Level Code QA** — Oskooei, Ilci, Kayim, Uzun + others (2026-08-02). https://arxiv.org/abs/2608.01507 — Semantic search 65.2% vs grep-by-subagent 46.2% on SWE-QA; 41.8% of agentic failures occurred at the planner–subagent hand-off.
+- **SEEDS: Preview-Guided Evidence Admission for Search Agents** — Liu, Xu, Fan, Sun, Tan (2026-10-09). https://arxiv.org/abs/2610.12932 — Separates retrieving a candidate from admitting it to the reasoning context.
+- **DTOC: Dynamic Tool Output Compression** — Chaturvedi, Bhattacharya, Gopalkrishnan + others (2026-08-06; Discovery Science 2026). https://arxiv.org/abs/2609.26121 — Placeholders with on-demand restoration; disable-only compression degraded performance, reversible compression did not.
+- **CADOC: Cache-Aware Dynamic Object Context** — Yao, Zhou, Xu (2026-09-29). https://arxiv.org/abs/2609.37012 — Batches replacements to preserve prefix-cache reuse; about 40% lower input cost near full-context performance.
+- **FlowState: Execution State as Memory** — Li, Li, Wang + others (v2 2026-10-08). https://arxiv.org/abs/2609.34565 — Typed state nodes with references to raw observations, revealed progressively; 40–43% fewer tokens with higher success than full context.
+- **TipsWarm: Retaining Helpful Warm Tips in Agent Context** — Liang, Li, Zeng, Lau, Hu (2026-09-26). https://arxiv.org/abs/2609.32339 — Load-on-demand skills arrive too late; a small budgeted always-present pool won on three benchmarks.
+- **An Empirical Cost Attribution of Context-Compression Gateways** — Chen, Shi (2026-08-19). https://arxiv.org/abs/2609.22114 — In a production gateway, each on-demand recall re-sends exactly the segment compressed away, so heavy recall spends the saving back.
 
 ## How to read this list against the clusters
 

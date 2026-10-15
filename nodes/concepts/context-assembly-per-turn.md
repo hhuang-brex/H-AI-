@@ -10,6 +10,7 @@ related:
   - [[perceive-reason-act-loop]]
   - [[recency-bias-prompt-design]]
   - [[domain-knowledge-injection]]
+  - [[just-in-time-context]]
 status: living
 created: 2026-06-11
 ---
@@ -50,6 +51,7 @@ The practical test of good assembly: you can dump, for any turn, the exact list 
 - **Append-only transcript.** The default that quietly breaks at scale; resend cost grows with length.
 - **Static tool block at full size.** Shipping all 40 tools every turn when 5 are relevant — see [tool-selection-and-routing](tool-selection-and-routing.md).
 - **Unselected history.** Dumping all prior turns instead of the relevant ones; buries the signal.
+- **Assembling payloads the turn may not need.** A reference plus a fetch tool often beats the payload itself — see [just-in-time-context](just-in-time-context.md).
 - **Knowledge stuffed once at the top.** Injecting all domain facts up front rather than retrieving per-turn — see [domain-knowledge-injection](domain-knowledge-injection.md).
 
 ## References
