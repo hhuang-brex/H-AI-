@@ -18,6 +18,9 @@ related:
   - [[harness-token-economics]]
   - [[text-to-sql-retrieval]]
   - [[references-context-and-memory]]
+  - [[references-just-in-time-context]]
+  - [[mcp-tool-layer]]
+  - [[code-execution-sandbox-pattern]]
 status: living
 created: 2026-10-15
 ---
@@ -41,6 +44,18 @@ The memory literature calls the two poles **ahead-of-time (AOT)** and **just-in-
 
 The hybrid is the production default. Claude Code drops `CLAUDE.md` into context up front and uses `glob` and `grep` to fetch files just in time, which the post says sidesteps "stale indexing and complex syntax trees." The post's own guidance is that the right balance depends on the task, and to "do the simplest thing that works."
 
+## Three things you can load just in time
+
+The 2026-10-16 fan-out ([references-just-in-time-context](../references/references-just-in-time-context.md)) shows the pattern applies to three different payloads, each with its own shipped mechanism.
+
+| Payload | Mechanism | Example numbers (self-reported) |
+|---|---|---|
+| **Data** | Hold ids and paths; read with tools; filter large results in code before they reach the model | A 10,000-row sheet filtered to five rows in a sandbox (Anthropic, *Code execution with MCP*) |
+| **Tool definitions** | `defer_loading` plus a search tool; keep 3–5 hot tools loaded | ~77K → ~8.7K tokens before work begins, and MCP-eval accuracy 49% → 74% (Anthropic, *Advanced tool use*). Retrieved descriptions: 43.13% vs 13.62% selection accuracy ([2505.03275](https://arxiv.org/abs/2505.03275)) |
+| **The agent's own history** | Evict with a restorable stub; fault back in on demand | 21.8% of 4.45M production input tokens was structural waste; a paging proxy cut live context up to 93% ([2603.09023](https://arxiv.org/abs/2603.09023)) |
+
+Tool definitions are the cheapest place to start, because the mechanism is shipped and the definitions are pure overhead until a tool is chosen — see [tool-selection-and-routing](tool-selection-and-routing.md).
+
 ## When it wins, and when it loses
 
 The evidence is two-sided. All numbers are author-reported.
@@ -58,6 +73,8 @@ The evidence is two-sided. All numbers are author-reported.
 
 The graph's reading of the table: **JIT wins when the corpus is small or changing, when exact matches matter, and when the relevant slice cannot be predicted before the turn. Ranked retrieval wins when the corpus is large and stable and the question is read-only.** The strongest combination in the scaling study was ranked discovery first, agentic reasoning after — "agentic reasoning works best after ranked discovery rather than in place of it."
 
+**Progressive disclosure has measured limits.** A controlled study found the gain near zero when a strong harness already navigates well, decisive only once the corpus spans many documents, and **a second routing level never helped** ([2607.17598](https://arxiv.org/abs/2607.17598)). A preregistered wiki ablation found a capable agent skipped the catalog entirely and read the right page directly ([2607.04576](https://arxiv.org/abs/2607.04576)). Use one level of summaries, not a tree.
+
 ## For a conversing task agent
 
 The canonical agent here has three kinds of context, and they want different policies. This split is the graph's synthesis, not any one source's.
@@ -73,10 +90,11 @@ The canonical agent here has three kinds of context, and they want different pol
 - **Exploration as the default for everything.** Runtime exploration is slower than reading precomputed results, and an agent without good guidance "can waste context by misusing tools, chasing dead-ends." Measure tokens per correct answer, not tokens per turn.
 - **Irreversible eviction.** If a placeholder cannot be expanded back to the original, compression becomes data loss. Keep the original addressable.
 - **Silent hand-off failure.** Delegating the search to a subagent protects the main window but adds a lossy summary step; that was the single largest failure class on repository QA. Check the subagent's return against the question — see [subagent-context-isolation](subagent-context-isolation.md).
+- **Swapping tools mid-session.** Adding or removing tool definitions changes the cached prefix and leaves stale references in history; Manus masks tool logits instead, and Anthropic's tool search appends discovered tools inline so the prefix is untouched.
 - **Breaking the prompt cache.** Every edit to earlier history invalidates the cached prefix. Batch evictions instead of editing every turn (CADOC), and keep volatile JIT reads in the tail — see [harness-token-economics](harness-token-economics.md).
 - **Recall that spends the saving back.** In a production gateway, each recall re-sends exactly the segment just compressed away, so heavy recall erodes the cumulative saving one segment at a time ([2609.22114](https://arxiv.org/abs/2609.22114)).
 - **Unaudited identifiers.** A model-chosen path or id is untrusted input to a tool. Validate it like any other argument — see [tool-result-grounding](tool-result-grounding.md).
 
 ## References
 
-Primary framing: Anthropic, *Effective context engineering for AI agents* (2025-09-29). Empirical sources are listed in [references-context-and-memory](../references/references-context-and-memory.md); all arXiv ids were fetch-confirmed on 2026-10-15 at the abstract page, and no full texts were read. Siblings: [context-assembly-per-turn](context-assembly-per-turn.md) decides what goes in, [context-compaction](context-compaction.md) shrinks what stays, and [domain-knowledge-injection](domain-knowledge-injection.md) covers the other ways knowledge enters the prompt.
+Primary framing: Anthropic, *Effective context engineering for AI agents* (2025-09-29). The fan-out of posts, docs, and papers is in [references-just-in-time-context](../references/references-just-in-time-context.md), with the first sources in [references-context-and-memory](../references/references-context-and-memory.md). All arXiv ids were fetch-confirmed at the abstract page on 2026-10-15 and 2026-10-16; no full texts were read. Siblings: [context-assembly-per-turn](context-assembly-per-turn.md) decides what goes in, [context-compaction](context-compaction.md) shrinks what stays, and [domain-knowledge-injection](domain-knowledge-injection.md) covers the other ways knowledge enters the prompt.

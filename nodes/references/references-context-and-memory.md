@@ -10,6 +10,7 @@ related:
   - [[memory-consolidation-and-forgetting]]
   - [[memory-types-taxonomy]]
   - [[just-in-time-context]]
+  - [[references-just-in-time-context]]
 status: living
 created: 2026-06-12
 ---
@@ -56,6 +57,8 @@ Backs [just-in-time-context](../concepts/just-in-time-context.md). Every source 
 - **FlowState: Execution State as Memory** — Li, Li, Wang + others (v2 2026-10-08). https://arxiv.org/abs/2609.34565 — Typed state nodes with references to raw observations, revealed progressively; 40–43% fewer tokens with higher success than full context.
 - **TipsWarm: Retaining Helpful Warm Tips in Agent Context** — Liang, Li, Zeng, Lau, Hu (2026-09-26). https://arxiv.org/abs/2609.32339 — Load-on-demand skills arrive too late; a small budgeted always-present pool won on three benchmarks.
 - **An Empirical Cost Attribution of Context-Compression Gateways** — Chen, Shi (2026-08-19). https://arxiv.org/abs/2609.22114 — In a production gateway, each on-demand recall re-sends exactly the segment compressed away, so heavy recall spends the saving back.
+
+The wider fan-out — vendor posts, docs, tool retrieval, progressive disclosure, and restorable eviction — is in [references-just-in-time-context](references-just-in-time-context.md).
 
 ## How to read this list against the clusters
 
