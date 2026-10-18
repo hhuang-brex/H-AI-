@@ -17,6 +17,8 @@ related:
   - [[references-recursive-self-improvement]]
   - [[llm-as-judge]]
   - [[skill-lifecycle-and-drift]]
+  - [[recursive-self-improvement]]
+  - [[references-rsi-2026-10]]
 status: living
 created: 2026-07-07
 ---
@@ -68,6 +70,15 @@ A fan-out on 2026-09-28 read about 45 papers on agent-level recursive self-impro
 5. **Proposers fabricate failures.** A proposer shown only legal episodes invented a failure and a guardrail for it in 15 of 60 runs, and add-only loops keep such phantoms.
 
 The graph's rule, synthesized across these: **treat each accepted self-edit as a deploy.** Require a failure an oracle can reproduce, a paired comparison against the incumbent on held-out instances under a sequential test rather than a single score delta, a protected-case regression set, and a gate the loop has no permission to edit.
+
+## What the 2026-10 pass changes
+
+From [references-rsi-2026-10](../references/references-rsi-2026-10.md); the topic entry point is [recursive-self-improvement](../topics/recursive-self-improvement.md).
+
+- **Report against a matched baseline and the no-update band.** Harness evolution failed to beat simple test-time scaling on Terminal-Bench 2.1 under matched budgets, and a model that never updated still moved 5 to 12.5 points between seeds. A gain smaller than that band is not evidence.
+- **Make the gate paired and per-item.** Aggregate-score gates admit edits that break already-solved items; per-item paired tests and certified reuse of the evaluation set drove regressions and false promotions to 0% in two studies.
+- **Diagnose before choosing the lever.** Edit the harness for process failures — loops, blocked calls, exhausted budgets — and train weights for content failures.
+- **Re-validate after the world changes.** Stale scores kept unsafe programs running in 22 of 48 histories after a new dependency arrived, and individually safe updates combined into unsafe ones. Re-score the incumbent on current conditions, not only the candidate.
 
 ## Pitfalls
 

@@ -22,6 +22,7 @@ related:
   - [[self-improving-harness]]
   - [[agent-harness]]
   - [[reflection-loop-taxonomy]]
+  - [[recursive-self-improvement]]
 status: living
 created: 2026-06-11
 ---
@@ -50,6 +51,7 @@ The conversation-design topics ([domain-chatbot-design](domain-chatbot-design.md
 - **Sideways:** the loop calls tools ([tool-use-design](tool-use-design.md)) and follows plans ([task-planning](task-planning.md)). A loop with no plan is reactive; a plan with no loop is a static script.
 - **Observability:** every loop iteration is a span. [llm-observability](../concepts/llm-observability.md) and [decision-audit-trail](../concepts/decision-audit-trail.md) are how you reconstruct why a loop did what it did — essential, because loop bugs are invisible in the final output.
 - **Eval:** the loop's *trajectory* (not just its final answer) is what you score. See [agent-trajectory-eval](../concepts/agent-trajectory-eval.md).
+- **Improving the loop itself:** [recursive-self-improvement](recursive-self-improvement.md) is the outer loop that edits this one — prompts, skills, harness code — and lives or dies by its acceptance gate.
 
 ## The one rule
 
