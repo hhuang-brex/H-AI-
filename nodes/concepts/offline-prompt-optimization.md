@@ -18,6 +18,7 @@ related:
   - [[worked-example-gepa-mechanism]]
   - [[eval-statistical-significance]]
   - [[references-prompt-optimization]]
+  - [[recursive-self-improvement]]
 status: living
 created: 2026-06-15
 summary: "improve an agent skill by searching prompt space offline, scored end-to-end by the real agent — not hand-tuning."

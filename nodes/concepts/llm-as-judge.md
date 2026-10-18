@@ -11,6 +11,7 @@ related:
   - [[agent-trajectory-eval]]
   - [[decision-audit-trail]]
   - [[escalation-handoff]]
+  - [[recursive-self-improvement]]
 status: living
 created: 2026-06-05
 summary: "calibration, bias, multi-vote, cascading."

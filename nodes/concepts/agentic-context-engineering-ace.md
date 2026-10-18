@@ -15,6 +15,7 @@ related:
   - [[prompt-component-attribution]]
   - [[skill-text-authoring]]
   - [[references-prompt-optimization]]
+  - [[recursive-self-improvement]]
 status: living
 created: 2026-06-16
 summary: "optimize the context-as-playbook itself (generate/reflect/curate, delta updates) — the structural counterpart to optimizing instruction prose."

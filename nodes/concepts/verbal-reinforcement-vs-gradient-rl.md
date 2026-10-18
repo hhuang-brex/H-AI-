@@ -9,6 +9,7 @@ related:
   - [[llm-evaluation]]
   - [[llm-as-judge]]
   - [[references-prompt-optimization]]
+  - [[recursive-self-improvement]]
 status: living
 created: 2026-06-16
 summary: "the distinction between gradient RL (weights move) and verbal/in-context reinforcement (text moves) — and why eval-driven skill-rewriting is the latter."
