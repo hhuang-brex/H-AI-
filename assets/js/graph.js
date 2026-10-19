@@ -15,12 +15,21 @@
     concept:   "#a5b4fc", // indigo — the body of the graph
     project:   "#fbbf24", // amber — built things
     reference: "#f472b6", // pink — external pointers
-    thread:    "#64748b", // slate — provenance (hidden by default)
   };
-  const DEFAULT_HIDDEN_TYPES = ["thread"];
+  const DEFAULT_HIDDEN_TYPES = [];
 
   const MAX_NEIGHBORS_SHOWN = 14;
   const ZOOM_STEP = 1.45;
+  const LAYOUT = { name: "fcose", quality: "default", animate: false, nodeRepulsion: 6000, idealEdgeLength: 60 };
+  // Positions are cached per browser, keyed by the graph's signature. fcose is
+  // randomised, so without this the map reshuffled on every visit, and the
+  // layout was also the single longest task on page load.
+  const POS_KEY = "hai-graph-layout-v1";
+  // fcose settles into a roughly round cluster; a wide viewport then shows it as a
+  // disc with empty bands either side. The layout is stretched along one axis to
+  // the viewport's shape, capped so edges don't visibly skew.
+  const MAX_STRETCH = 1.7;
+  const FIT_PAD = 24;
 
   // pure: node `path` (e.g. nodes/concepts/x.md) -> site URL (/baseurl/nodes/concepts/x.html)
   function nodeUrl(path, baseurl) {
@@ -61,6 +70,67 @@
   // a bloom; cytoscape gives one underlay, so the size carries the emphasis.
   function glowPad(deg) {
     return 3 + Math.min(Math.max(deg || 0, 0), 24) * 0.42;
+  }
+
+  // pure: degree -> node diameter. Precomputed into data() so the stylesheet
+  // uses plain data mappers; function mappers defeat cytoscape's style cache.
+  function sizeFor(deg) {
+    return 9 + Math.min(Math.max(deg || 0, 0), 18);
+  }
+
+  // pure: {nodes, edges} -> short signature of the exact graph. A cached layout
+  // is only reused for the graph it was computed on.
+  function graphSig(all) {
+    const s = all.nodes.map(function (n) { return n.data.id; }).sort().join("\n") + "\n#\n" +
+              all.edges.map(function (e) { return e.data.id; }).sort().join("\n");
+    let h = 5381;
+    for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0;
+    return (h >>> 0).toString(36) + "." + all.nodes.length + "." + all.edges.length;
+  }
+
+  // pure: neighbour positions + index -> a start point for a node that is being
+  // shown for the first time: the neighbours' centroid, fanned out on a golden
+  // angle so siblings seeded at the same centroid don't stack. null if no neighbours.
+  function seedPosition(pts, i) {
+    if (!pts || !pts.length) return null;
+    let x = 0, y = 0;
+    for (const p of pts) { x += p.x; y += p.y; }
+    const a = (i || 0) * 2.39996, r = 16;
+    return { x: x / pts.length + r * Math.cos(a), y: y / pts.length + r * Math.sin(a) };
+  }
+
+  // pure: layout box + viewport box -> horizontal scale factor that brings the
+  // layout's aspect ratio to the viewport's, clamped to [1/max, max]. Below 1 it
+  // narrows x, which after a uniform fit reads as stretching y (portrait screens).
+  function aspectScale(bw, bh, vw, vh, max) {
+    if (!(bw > 0 && bh > 0 && vw > 0 && vh > 0)) return 1;
+    const k = (vw / vh) / (bw / bh);
+    return Math.min(max, Math.max(1 / max, k));
+  }
+
+  // pure: layout box + target area + zoom limits -> {zoom, pan} that centres the
+  // box in the area. cy.fit only takes a uniform padding, so it can't keep the
+  // graph out from under the floating panel.
+  function fitViewport(bb, area, minZ, maxZ) {
+    const z = Math.min(maxZ, Math.max(minZ, Math.min(area.w / bb.w, area.h / bb.h)));
+    return { zoom: z, pan: {
+      x: area.x + (area.w - bb.w * z) / 2 - bb.x1 * z,
+      y: area.y + (area.h - bb.h * z) / 2 - bb.y1 * z } };
+  }
+
+  // pure: {nodes, edges} -> Map id -> Set of neighbour ids, in one pass. The
+  // detail card used to rescan every edge and node per click.
+  function adjacency(all) {
+    const m = new Map();
+    for (const n of (all.nodes || [])) m.set(n.data.id, new Set());
+    for (const e of (all.edges || [])) {
+      const a = e.data.source, b = e.data.target;
+      if (a === b) continue;
+      if (!m.has(a)) m.set(a, new Set());
+      if (!m.has(b)) m.set(b, new Set());
+      m.get(a).add(b); m.get(b).add(a);
+    }
+    return m;
   }
 
   // pure: {nodes, edges} + id -> Set of adjacent node ids. Kept out of cytoscape
@@ -107,7 +177,12 @@
       deg[e.data.source] = (deg[e.data.source] || 0) + 1;
       deg[e.data.target] = (deg[e.data.target] || 0) + 1;
     }
-    for (const n of nodes) { n.data.deg = deg[n.data.id] || 0; }
+    for (const n of nodes) {
+      const d = deg[n.data.id] || 0;
+      n.data.deg = d;
+      n.data.size = sizeFor(d);
+      n.data.glow = glowPad(d);
+    }
     return { nodes, edges };
   }
 
@@ -133,6 +208,26 @@
     const nb = neighborIds(el, "a");
     console.assert(nb.size === 1 && nb.has("b"), "neighborIds finds b");
     console.assert(neighborIds(el, "zz").size === 0, "neighborIds unknown id is empty");
+    const adj = adjacency(el);
+    console.assert(adj.get("a").has("b") && adj.get("b").has("a") && adj.get("a").size === 1, "adjacency is symmetric");
+    console.assert(el.nodes[0].data.size === sizeFor(1) && el.nodes[0].data.glow === glowPad(1), "buildElements precomputes size/glow");
+    console.assert(sizeFor(0) === 9 && sizeFor(1000) === sizeFor(18), "sizeFor clamps");
+    const rev = { nodes: el.nodes.slice().reverse(), edges: el.edges.slice().reverse() };
+    console.assert(graphSig(el) === graphSig(rev), "graphSig ignores order");
+    const more = { nodes: el.nodes, edges: el.edges.concat([{ data: { id: "e_a|a2" } }]) };
+    console.assert(graphSig(el) !== graphSig(more), "graphSig changes with the graph");
+    const sp = seedPosition([{ x: 0, y: 0 }, { x: 10, y: 20 }], 0);
+    console.assert(Math.abs(sp.x - 21) < 1e-9 && Math.abs(sp.y - 10) < 1e-9, "seedPosition centroid + offset");
+    console.assert(seedPosition([], 0) === null, "seedPosition with no neighbours is null");
+    const s0 = seedPosition([{ x: 0, y: 0 }], 0), s1 = seedPosition([{ x: 0, y: 0 }], 1);
+    console.assert(s0.x !== s1.x || s0.y !== s1.y, "seedPosition fans siblings out");
+    console.assert(aspectScale(100, 100, 200, 100, 3) === 2, "aspectScale widens for a wide viewport");
+    console.assert(aspectScale(100, 100, 100, 200, 3) === 0.5, "aspectScale narrows for a tall viewport");
+    console.assert(aspectScale(100, 100, 1000, 100, 1.7) === 1.7, "aspectScale clamps");
+    console.assert(aspectScale(0, 100, 200, 100, 3) === 1, "aspectScale degenerate box is identity");
+    const fv = fitViewport({ x1: 0, y1: 0, w: 100, h: 50 }, { x: 10, y: 10, w: 200, h: 200 }, 0.1, 10);
+    console.assert(fv.zoom === 2 && fv.pan.x === 10 && fv.pan.y === 60, "fitViewport centres the box in the area");
+    console.assert(fitViewport({ x1: 0, y1: 0, w: 100, h: 50 }, { x: 0, y: 0, w: 200, h: 200 }, 0.1, 1.5).zoom === 1.5, "fitViewport respects maxZoom");
     console.log("graph.js self-check OK");
   }
 
@@ -140,6 +235,11 @@
   let hiddenTypes = new Set(DEFAULT_HIDDEN_TYPES);
   let selectedId = null;
   let labelFrame = 0;
+  let lastFloor = -1;
+  let adj = new Map();      // id -> Set(neighbour id), built once per load
+  let byId = new Map();     // id -> element definition
+  let sig = "";             // graphSig of the loaded graph
+  const placed = new Set(); // ids that have a real position (laid out or cached)
 
   const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -148,7 +248,7 @@
   function cytoStyle() {
     const typeSelectors = Object.keys(TYPE_COLORS).map(function (t) {
       return { selector: 'node[type = "' + t + '"]', style: {
-        "background-color": TYPE_COLORS[t], "border-color": TYPE_COLORS[t] } };
+        "background-color": TYPE_COLORS[t], "border-color": TYPE_COLORS[t], "underlay-color": TYPE_COLORS[t] } };
     });
     return [
       { selector: "node", style: {
@@ -159,13 +259,12 @@
           "text-outline-color": "#05060a", "text-outline-width": 2.2,
           "min-zoomed-font-size": 9,
           "border-width": 4, "border-opacity": 0.14,
-          // the halo: one underlay ring, sized by degree
-          "underlay-color": function (ele) { return typeColor(ele.data("type")); },
+          // the halo: one underlay ring, sized by degree (colour set per type below)
           "underlay-opacity": 0.13,
-          "underlay-padding": function (ele) { return glowPad(ele.data("deg")); },
+          "underlay-padding": "data(glow)",
           "underlay-shape": "ellipse",
-          "width": function (ele) { return 9 + Math.min(ele.data("deg") || 0, 18); },
-          "height": function (ele) { return 9 + Math.min(ele.data("deg") || 0, 18); } } },
+          "width": "data(size)",
+          "height": "data(size)" } },
       { selector: "edge", style: {
           "width": 0.5, "line-color": "#94a3b8", "curve-style": "straight", "opacity": 0.12 } },
       ...typeSelectors,
@@ -182,14 +281,128 @@
           "border-width": 2.5, "border-opacity": 0.95, "border-color": "#f8fafc",
           "underlay-opacity": 0.5 } },
       { selector: 'node[status = "archived"]', style: { "opacity": 0.55 } },
+      // filtered-out types stay in the graph (and keep their positions) but aren't
+      // drawn; cytoscape hides their edges with them
+      { selector: "node.gone", style: { "display": "none" } },
     ];
   }
 
-  function visibleElements(all) {
-    const nodes = all.nodes.filter(function (n) { return !hiddenTypes.has(n.data.type); });
-    const ids = new Set(nodes.map(function (n) { return n.data.id; }));
-    const edges = all.edges.filter(function (e) { return ids.has(e.data.source) && ids.has(e.data.target); });
-    return nodes.concat(edges);
+  // --- layout -----------------------------------------------------------------
+  function shownNodes() { return cy.nodes().not(".gone"); }
+  function shownElements() { const ns = shownNodes(); return ns.union(ns.edgesWith(ns)); }
+
+  // Stretch the shown layout along x to the viewport's shape (see MAX_STRETCH).
+  // Applied to every placed node, hidden ones included, so a type toggled back on
+  // lands in the same frame. Idempotent: a layout already matching is left alone.
+  function shownBox() { return shownNodes().boundingBox({ includeLabels: false }); }
+
+  // The part of the viewport the graph should occupy: all of it, minus the
+  // floating panel's column when the screen is wide enough for both side by side.
+  // On narrow screens the panel overlays the map instead (and starts collapsed).
+  function fitArea() {
+    const w = cy.width(), h = cy.height();
+    const bar = document.getElementById("graph-toolbar");
+    let left = 0;
+    if (bar && w >= 900 && !bar.classList.contains("collapsed")) {
+      left = Math.max(0, bar.getBoundingClientRect().right - cy.container().getBoundingClientRect().left);
+    }
+    // and keep the bottom strip clear for the zoom pill (32px tall, 10-16px up)
+    const pill = 44;
+    return { x: left + FIT_PAD, y: FIT_PAD, w: Math.max(1, w - left - 2 * FIT_PAD), h: Math.max(1, h - 2 * FIT_PAD - pill) };
+  }
+
+  function fitShown(animate) {
+    const bb = shownBox();
+    if (!(bb.w > 0 && bb.h > 0)) { cy.fit(shownNodes(), FIT_PAD); return; }
+    const v = fitViewport(bb, fitArea(), cy.minZoom(), cy.maxZoom());
+    if (animate && !reduceMotion) cy.animate(v, { duration: 300 }); else cy.viewport(v);
+  }
+
+  // fcose leaves disconnected components wherever repulsion pushed them (its
+  // packing needs another extension), so a two-node island could sit a screen
+  // away and shrink the whole fit. Stack the small ones down the main cluster's
+  // right edge, starting a new column when one runs past its bottom.
+  function tuckComponents() {
+    const comps = shownElements().components().sort(function (a, b) { return b.nodes().length - a.nodes().length; });
+    if (comps.length < 2) return;
+    const main = comps[0].nodes().boundingBox({ includeLabels: false });
+    const gap = 36;
+    let x = main.x2 + gap, y = main.y1, colW = 0;
+    comps.slice(1).forEach(function (c) {
+      const b = c.nodes().boundingBox({ includeLabels: false });
+      if (y > main.y1 && y + b.h > main.y2) { x += colW + gap; y = main.y1; colW = 0; }
+      const dx = x - b.x1, dy = y - b.y1;
+      c.nodes().forEach(function (n) { n.position({ x: n.position("x") + dx, y: n.position("y") + dy }); });
+      y += b.h + gap;
+      colW = Math.max(colW, b.w);
+    });
+  }
+
+  function stretchToViewport() {
+    const bb = shownBox();
+    const area = fitArea();
+    const k = aspectScale(bb.w, bb.h, area.w, area.h, MAX_STRETCH);
+    if (Math.abs(k - 1) < 0.04) return false;
+    const cx = (bb.x1 + bb.x2) / 2;
+    cy.batch(function () {
+      cy.nodes().forEach(function (n) {
+        if (!placed.has(n.id())) return;
+        n.position("x", cx + (n.position("x") - cx) * k);
+      });
+    });
+    return true;
+  }
+
+  function loadPositions() {
+    try {
+      const v = JSON.parse(localStorage.getItem(POS_KEY) || "null");
+      return v && v.sig === sig && v.pos ? v.pos : null;
+    } catch (e) { return null; }
+  }
+
+  function savePositions() {
+    try {
+      const pos = {};
+      cy.nodes().forEach(function (n) {
+        if (!placed.has(n.id())) return;
+        const p = n.position();
+        pos[n.id()] = [Math.round(p.x * 10) / 10, Math.round(p.y * 10) / 10];
+      });
+      localStorage.setItem(POS_KEY, JSON.stringify({ sig: sig, pos: pos }));
+    } catch (e) { /* storage full or blocked: the layout just isn't remembered */ }
+  }
+
+  // Show or hide one node type. Hiding is a class flip, so the map doesn't move.
+  // Showing a type for the first time seeds each newcomer beside its neighbours
+  // and lets fcose fit them in with every already-placed node pinned, instead of
+  // re-laying out (and reshuffling) the whole graph.
+  function setTypeHidden(t, hide) {
+    deselect();
+    const ns = cy.nodes('[type = "' + t + '"]');
+    if (hide) { ns.addClass("gone"); return; }
+    ns.removeClass("gone");
+    const fresh = ns.filter(function (n) { return !placed.has(n.id()); });
+    if (!fresh.length) return;
+    const bb = shownNodes().difference(fresh).boundingBox();
+    const mid = { x: (bb.x1 + bb.x2) / 2 || 0, y: (bb.y1 + bb.y2) / 2 || 0 };
+    const pinned = [];
+    cy.batch(function () {
+      fresh.forEach(function (n, i) {
+        const pts = n.neighborhood("node").filter(function (m) { return placed.has(m.id()) && !m.hasClass("gone"); })
+          .map(function (m) { return m.position(); });
+        n.position(seedPosition(pts, i) || seedPosition([mid], i));
+      });
+    });
+    shownNodes().forEach(function (n) {
+      if (placed.has(n.id())) pinned.push({ nodeId: n.id(), position: { x: n.position("x"), y: n.position("y") } });
+    });
+    fresh.forEach(function (n) { placed.add(n.id()); });
+    const lay = shownElements().layout(Object.assign({}, LAYOUT, {
+      randomize: false, fit: false, fixedNodeConstraint: pinned,
+      animate: !reduceMotion, animationDuration: 450,
+    }));
+    lay.one("layoutstop", savePositions);
+    lay.run();
   }
 
   // --- emphasis -------------------------------------------------------------
@@ -219,9 +432,13 @@
     if (n && n.length) spotlight(n, true); else { selectedId = null; clearEmphasis(); }
   }
 
+  // Labels depend only on zoom tier and degree, so the pass over every node runs
+  // when the tier changes, not on every zoom frame.
   function applyLabelPolicy() {
     if (!cy) return;
     const floor = labelFloor(cy.zoom());
+    if (floor === lastFloor) return;
+    lastFloor = floor;
     cy.batch(function () {
       cy.nodes().forEach(function (n) {
         n.toggleClass("lbl-off", (n.data("deg") || 0) < floor);
@@ -235,9 +452,9 @@
   }
 
   // --- detail card ----------------------------------------------------------
-  function detailHtml(d, all) {
-    const nbrs = Array.from(neighborIds(all, d.id))
-      .map(function (id) { return all.nodes.find(function (n) { return n.data.id === id; }); })
+  function detailHtml(d) {
+    const nbrs = Array.from(adj.get(d.id) || [])
+      .map(function (id) { return byId.get(id); })
       .filter(Boolean)
       .filter(function (n) { return !hiddenTypes.has(n.data.type); })
       .sort(function (a, b) { return (b.data.deg || 0) - (a.data.deg || 0); });
@@ -268,7 +485,7 @@
   function showDetail(all, node) {
     const card = document.getElementById("cy-detail");
     if (!card) return;
-    card.innerHTML = detailHtml(node.data(), all);
+    card.innerHTML = detailHtml(node.data());
     card.hidden = false;
     card.querySelector(".cy-detail-close").addEventListener("click", function () { deselect(); });
     card.querySelectorAll(".cy-nbr").forEach(function (b) {
@@ -338,19 +555,47 @@
         if (!b) return;
         if (b.dataset.act === "in") zoomBy(ZOOM_STEP);
         else if (b.dataset.act === "out") zoomBy(1 / ZOOM_STEP);
-        else { deselect(); cy.animate({ fit: { padding: 40 } }, { duration: reduceMotion ? 0 : 300 }); }
+        else {
+          deselect();
+          if (stretchToViewport()) savePositions();
+          fitShown(true);
+        }
       });
     }
   }
 
   function render(all) {
+    sig = graphSig(all);
+    adj = adjacency(all);
+    byId = new Map(all.nodes.map(function (n) { return [n.data.id, n]; }));
+    placed.clear();
+    lastFloor = -1;
+    const cached = loadPositions() || {};
+    const nodes = all.nodes.map(function (n) {
+      const el = { data: n.data, classes: hiddenTypes.has(n.data.type) ? "gone" : "" };
+      const p = cached[n.data.id];
+      if (p) { el.position = { x: p[0], y: p[1] }; placed.add(n.data.id); }
+      return el;
+    });
     cy = cytoscape({
       container: document.getElementById("cy"),
-      elements: visibleElements(all),
+      elements: nodes.concat(all.edges),
       style: cytoStyle(),
-      layout: { name: "fcose", quality: "default", animate: false, nodeRepulsion: 6000, idealEdgeLength: 60 },
+      layout: { name: "preset", fit: false },
       wheelSensitivity: 0.2,
     });
+    const shown = shownNodes();
+    const cachedAll = shown.length && shown.every(function (n) { return placed.has(n.id()); });
+    if (!cachedAll) {
+      placed.clear();
+      shownElements().layout(Object.assign({}, LAYOUT, { fit: false })).run();
+      tuckComponents();
+      shown.forEach(function (n) { placed.add(n.id()); });
+    }
+    // A cached layout may have been stretched for a different window; restretch
+    // to this one (cheap, and a no-op when the shape already matches).
+    if (stretchToViewport() || !cachedAll) savePositions();
+    fitShown(false);
 
     // tooltip (plain div — no extra dependency)
     let tip = document.getElementById("cy-tip");
@@ -368,7 +613,7 @@
     });
     cy.on("mousemove", function (e) {
       var oe = e.originalEvent;
-      if (!oe) return;
+      if (!oe || tip.style.display !== "block") return;
       tip.style.left = (oe.clientX + 14) + "px";
       tip.style.top = (oe.clientY + 14) + "px";
     });
@@ -399,13 +644,6 @@
     return cy;
   }
 
-  function rerender(all) {
-    deselect();
-    cy.json({ elements: visibleElements(all) });
-    cy.layout({ name: "fcose", animate: false, nodeRepulsion: 6000, idealEdgeLength: 60 }).run();
-    applyLabelPolicy();
-  }
-
   function buildToolbar(all) {
     const bar = document.getElementById("graph-toolbar");
     if (!bar) return;
@@ -420,12 +658,24 @@
         '<span class="cy-chip-label">' + t + '</span>' +
         '<span class="cy-chip-count">' + (counts[t] || 0) + '</span></button>';
     }).join("");
+    // Collapsible: on a phone the open panel covers a third of the map.
+    const collapsed = !!(window.matchMedia && window.matchMedia("(max-width: 640px)").matches);
+    bar.classList.toggle("collapsed", collapsed);
     bar.innerHTML =
-      '<div class="cy-panel-head">the graph</div>' +
+      '<button class="cy-panel-head" type="button" aria-expanded="' + !collapsed + '" aria-controls="cy-panel-body">' +
+        'the graph<span class="cy-caret" aria-hidden="true"></span></button>' +
+      '<div class="cy-panel-body" id="cy-panel-body">' +
       '<div class="cy-legend">' + chips + '</div>' +
       '<input id="cy-search" class="cy-search" type="search" placeholder="search nodes…" aria-label="search nodes">' +
       '<div class="cy-stats">' + all.nodes.length + ' nodes · ' + all.edges.length + ' links</div>' +
-      '<div class="cy-hint">click a node for details · ⌘-click opens it</div>';
+      '<div class="cy-hint">click a node for details · ⌘-click opens it</div>' +
+      '</div>';
+
+    bar.querySelector(".cy-panel-head").addEventListener("click", function (e) {
+      const nowCollapsed = bar.classList.toggle("collapsed");
+      e.currentTarget.setAttribute("aria-expanded", String(!nowCollapsed));
+      if (cy) fitShown(true); // the panel's column is reclaimed or given back
+    });
 
     bar.querySelectorAll(".cy-chip").forEach(function (chip) {
       chip.addEventListener("click", function () {
@@ -434,7 +684,8 @@
         if (nowOn) hiddenTypes.delete(t); else hiddenTypes.add(t);
         chip.classList.toggle("off", !nowOn);
         chip.setAttribute("aria-pressed", String(nowOn));
-        rerender(all);
+        setTypeHidden(t, !nowOn);
+        if (search.value.trim()) applySearch();
       });
     });
 
@@ -444,7 +695,7 @@
       if (!q) { restoreEmphasis(); return; }
       cy.batch(function () {
         cy.elements().addClass("dim").removeClass("hi");
-        const match = cy.nodes().filter(function (n) {
+        const match = shownNodes().filter(function (n) {
           return (n.data("label") || "").toLowerCase().indexOf(q) !== -1 ||
                  (n.data("id") || "").toLowerCase().indexOf(q) !== -1;
         });
@@ -455,7 +706,7 @@
     search.addEventListener("input", applySearch);
     search.addEventListener("keydown", function (e) {
       if (e.key === "Enter") {
-        const m = cy.nodes(".hi");
+        const m = cy.nodes(".hi").not(".gone");
         if (m.length === 1) select(all, m[0].id(), true);
         else if (m.length) cy.fit(m, 50);
       }
@@ -466,6 +717,11 @@
       if (document.activeElement === search && search.value) { search.value = ""; applySearch(); return; }
       deselect();
     });
+  }
+
+  function doneLoading() {
+    const el = document.querySelector(".cy-loading");
+    if (el) el.remove();
   }
 
   function init() {
@@ -480,11 +736,13 @@
     }).then(function (graph) {
       const all = buildElements(graph, baseurl);
       window.__graphAll = all;
-      buildToolbar(all);
+      buildToolbar(all); // before render: the fit reads the panel's size and state
       render(all);
       buildChrome(all);
+      doneLoading();
     }).catch(function (err) {
       console.error("graph: load failed", err);
+      doneLoading();
       mount.innerHTML = '<p style="padding:1rem">Graph couldn\'t load. ' +
         '<a href="' + (baseurl || "") + '/overview/">Browse as a list →</a></p>';
     });
@@ -496,7 +754,8 @@
 
   // expose for harness/console
   window.__graph = {
-    nodeUrl, esc, clip, glowPad, labelFloor, neighborIds, buildElements, selfCheck,
+    nodeUrl, esc, clip, glowPad, sizeFor, labelFloor, neighborIds, adjacency, graphSig, seedPosition, aspectScale, fitViewport,
+    buildElements, selfCheck,
     render, init, TYPE_COLORS, DEFAULT_HIDDEN_TYPES,
     select: function (id, center) { return select(window.__graphAll, id, center); },
     deselect,

@@ -159,7 +159,7 @@ html[data-theme="hai-dark"] {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Index lists (/overview/, threads/INDEX) — link is the object, summary is meta
+// Index lists (/overview/) — link is the object, summary is meta
 // ─────────────────────────────────────────────────────────────────────────────
 .main-content ul li,
 .main-content ol li { color: var(--h-muted); }
@@ -395,3 +395,16 @@ body:has(#cy) .main-content h1:first-of-type {
 }
 body:has(#cy) .breadcrumb-nav { display: none; }
 body:has(#cy) .main-content > p.graph-intro { max-width: 62ch; }
+
+// The theme caps .main at $content-width (50rem) and centres it, which on a wide
+// screen left the graph ~750px wide with a gutter of nothing beside it. On the
+// graph page only, pin the sidebar to its base width and let the column run to
+// the window edge. Prose pages keep the reading measure.
+@media (min-width: 50rem) {
+  body:has(#cy) .main { max-width: none; }
+}
+@media (min-width: 66.5rem) {
+  body:has(#cy) .side-bar { width: 16.5rem; }
+  body:has(#cy) .side-bar + .main { margin-left: 16.5rem; }
+}
+body:has(#cy) .main-content > p.graph-intro { margin-bottom: 0.7rem; }

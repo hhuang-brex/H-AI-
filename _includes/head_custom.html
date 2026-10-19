@@ -17,3 +17,4 @@
   } catch (e) { /* fail open to the default light scheme */ }
 })();
 </script>
+{% if page.layout == "graph" %}<link rel="preload" href="{{ '/graph.json' | relative_url }}" as="fetch" type="application/json" crossorigin="anonymous">{% endif %}

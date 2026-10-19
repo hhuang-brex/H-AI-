@@ -39,9 +39,25 @@ html[data-theme="hai-dark"] .graph-intro .gi-num { color: #5eead4; }
 }
 #cy {
   width: 100%;
-  height: 78vh;
+  /* fill the window below the header (3.75rem), the page gutter (2rem top and
+     bottom) and the one-to-two line intro, instead of a flat 78vh that ignored them */
+  height: calc(100vh - 12.5rem);
+  height: calc(100svh - 12.5rem);
   min-height: 460px;
   background: radial-gradient(125% 120% at 50% 28%, var(--cy-ink-1) 0%, var(--cy-ink-0) 72%);
+}
+
+/* shown until graph.js has data and a layout; sits over the empty viewport */
+.cy-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  color: var(--cy-muted);
+  font: 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.08em;
+  pointer-events: none;
 }
 
 /* --- floating instrument panel (legend === filter) --- */
@@ -62,12 +78,30 @@ html[data-theme="hai-dark"] .graph-intro .gi-num { color: #5eead4; }
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 .cy-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin: 0 0 9px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  text-align: left;
   color: var(--cy-muted);
-  margin-bottom: 9px;
+  cursor: pointer;
 }
+.cy-panel-head:hover { color: var(--cy-text); }
+.cy-caret::after { content: "\25BE"; letter-spacing: 0; font-size: 11px; }
+/* collapsed: just the head, as a small pill; the map gets the space back */
+#graph-toolbar.collapsed { width: auto; padding: 8px 12px; }
+#graph-toolbar.collapsed .cy-panel-head { margin-bottom: 0; }
+#graph-toolbar.collapsed .cy-panel-body { display: none; }
+#graph-toolbar.collapsed .cy-caret::after { content: "\25B8"; }
 .cy-legend { display: flex; flex-direction: column; gap: 1px; }
 
 .cy-chip {
@@ -311,6 +345,7 @@ html[data-theme="hai-dark"] .graph-intro .gi-num { color: #5eead4; }
 }
 
 /* accessibility: visible keyboard focus */
+.cy-panel-head:focus-visible,
 .cy-chip:focus-visible,
 .cy-search:focus-visible,
 .cy-nbr:focus-visible,
