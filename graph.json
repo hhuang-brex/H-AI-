@@ -1,7 +1,7 @@
 {
   "generated": "2026-10-18",
   "node_count": 169,
-  "edge_count": 1421,
+  "edge_count": 1424,
   "nodes": [
     {
       "id": "action-authority",
@@ -102,7 +102,8 @@
         "harness-as-hyperparameter",
         "prompt-component-attribution",
         "live-traffic-eval",
-        "references-adaptive-eval"
+        "references-adaptive-eval",
+        "recursive-self-improvement"
       ]
     },
     {
@@ -1565,7 +1566,8 @@
         "harness-as-hyperparameter",
         "agent-trajectory-eval",
         "llm-as-judge",
-        "references-prompt-attribution"
+        "references-prompt-attribution",
+        "recursive-self-improvement"
       ]
     },
     {
@@ -4197,7 +4199,8 @@
         "action-authority",
         "llm-observability",
         "references-agent-skill-authoring",
-        "references-recursive-self-improvement"
+        "references-recursive-self-improvement",
+        "recursive-self-improvement"
       ]
     },
     {
@@ -5384,6 +5387,11 @@
     {
       "from": "adaptive-eval-budget",
       "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "adaptive-eval-budget",
+      "to": "recursive-self-improvement",
       "kind": "related"
     },
     {
@@ -7489,6 +7497,11 @@
     {
       "from": "eval-statistical-significance",
       "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "eval-statistical-significance",
+      "to": "recursive-self-improvement",
       "kind": "related"
     },
     {
@@ -10949,6 +10962,11 @@
     {
       "from": "skill-lifecycle-and-drift",
       "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "skill-lifecycle-and-drift",
+      "to": "recursive-self-improvement",
       "kind": "related"
     },
     {

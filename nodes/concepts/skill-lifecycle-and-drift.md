@@ -17,6 +17,7 @@ related:
   - [[llm-observability]]
   - [[references-agent-skill-authoring]]
   - [[references-recursive-self-improvement]]
+  - [[recursive-self-improvement]]
 status: living
 created: 2026-09-11
 ---

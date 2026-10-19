@@ -14,6 +14,7 @@ related:
   - [[prompt-component-attribution]]
   - [[live-traffic-eval]]
   - [[references-adaptive-eval]]
+  - [[recursive-self-improvement]]
 status: living
 created: 2026-08-31
 ---

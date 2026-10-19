@@ -14,6 +14,7 @@ related:
   - [[agent-trajectory-eval]]
   - [[llm-as-judge]]
   - [[references-prompt-attribution]]
+  - [[recursive-self-improvement]]
 status: living
 created: 2026-08-06
 ---
