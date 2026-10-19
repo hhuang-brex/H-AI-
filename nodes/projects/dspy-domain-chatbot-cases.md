@@ -13,7 +13,6 @@ related:
 status: snapshot
 created: 2026-06-09
 summary: "verified DSPy domain-chatbot success examples (JetBlue, Dr.Copilot, etc.; 2026-06-09 snapshot)."
-source-thread: [[2026-06-09-dspy-domain-chatbot-research]]
 ---
 
 # DSPy Domain-Chatbot Cases — Verified Snapshot
@@ -116,4 +115,4 @@ The original DSPy paper (https://arxiv.org/abs/2310.03714) contains **no chatbot
 
 ## Methodology
 
-Sourced via fan-out web search across the official DSPy site, Databricks engineering blog, arXiv, and primary company blogs. Each claim was 3-vote adversarially verified (kill on 2/3 refute). Claims with split votes are flagged as *reported* rather than *established*. See [2026-06-09-dspy-domain-chatbot-research](../../threads/2026-06-09-dspy-domain-chatbot-research.md) for the full research thread.
+Sourced via fan-out web search across the official DSPy site, Databricks engineering blog, arXiv, and primary company blogs. Each claim was 3-vote adversarially verified (kill on 2/3 refute). Claims with split votes are flagged as *reported* rather than *established*.

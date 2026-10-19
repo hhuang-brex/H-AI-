@@ -16,7 +16,6 @@ related:
   - [[references-adaptive-eval]]
 status: living
 created: 2026-08-31
-source-thread: [[2026-08-31-adaptive-eval-fanout]]
 ---
 
 # Adaptive Eval Budget

@@ -4,7 +4,6 @@ type: project
 kind: spec
 tags: [meta, knowledge-graph, tooling, build, index, automation, spec]
 related:
-  - [[2026-06-11-knowledge-graph-organization-review]]
 status: proposal
 created: 2026-06-11
 summary: Eliminate README index drift by deriving the index, threads rollup, and a graph.json artifact from frontmatter via `tools/build-graph.py`.
@@ -223,5 +222,4 @@ The wiki-link-to-markdown body converter (currently inline in commit scripts) st
 
 ## Cross-links
 
-- [2026-06-11-knowledge-graph-organization-review](../../threads/2026-06-11-knowledge-graph-organization-review.md) — the review thread that surfaced the audit findings driving this spec.
 - The script reads node files of every existing type; see `AGENTS.md` for the canonical schema.

@@ -2,8 +2,8 @@
 """Build the knowledge-graph index for the H-AI- repo.
 
 Reads frontmatter from every node, emits ``graph.json``, regenerates the
-README index between ``BEGIN GENERATED`` / ``END GENERATED`` markers, and
-writes ``threads/INDEX.md``. Warnings go to stderr; exit code is always 0.
+README index between ``BEGIN GENERATED`` / ``END GENERATED`` markers.
+Warnings go to stderr; exit code is always 0.
 
 Run from anywhere::
 
@@ -20,12 +20,13 @@ from datetime import date
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-NODE_ROOTS = ["nodes/topics", "nodes/concepts", "nodes/projects", "nodes/references", "threads"]
+NODE_ROOTS = ["nodes/topics", "nodes/concepts", "nodes/projects", "nodes/references"]
 SKIP_FILES = {"README.md", "AGENTS.md", "INDEX.md"}
 
 WIKI_RE = re.compile(r"\[\[([a-z0-9][a-z0-9-]*)\]\]")
 H1_RE = re.compile(r"^#\s+(.+?)\s*$", re.MULTILINE)
 
+ALLOWED_TYPES = {"topic", "concept", "project", "reference"}
 ALLOWED_KINDS = {"spec", "plan", "snapshot", "worked-example", "product"}
 KIND_ORDER = ["spec", "plan", "snapshot", "worked-example", "product"]
 KIND_LABEL = {
@@ -35,12 +36,6 @@ KIND_LABEL = {
     "worked-example": "Worked examples",
     "product": "Products",
 }
-
-CLUSTER_TAGS = [
-    "sms", "eval", "output-design", "domain-chatbot", "task-agent",
-    "reasoning", "observability", "pagination", "meta", "text-eot",
-    "operator-trust", "knowledge-graph",
-]
 
 BEGIN_MARK = "<!-- BEGIN GENERATED: rebuilt by `python tools/build-graph.py`. Do not edit by hand. -->"
 END_MARK = "<!-- END GENERATED -->"
@@ -58,7 +53,6 @@ class Node:
     created: str | None
     kind: str | None
     related: list[str]
-    source_thread: str | None
     clusters: list[str] = field(default_factory=list)
 
 
@@ -122,7 +116,6 @@ def parse_node(p: Path) -> Node | None:
         created=str(fm.get("created")) if fm.get("created") else None,
         kind=fm.get("kind"),
         related=related,
-        source_thread=_extract_id(fm.get("source-thread")),
     )
 
 
@@ -157,7 +150,7 @@ def parse_frontmatter(fm: str) -> dict[str, object]:
             cur_key = k
             cur_list = []
         elif v.startswith("[[") and v.endswith("]]"):
-            # Wiki-link scalar (e.g., source-thread: [[2026-06-09-foo]]) — keep as string.
+            # Wiki-link scalar (e.g., key: [[some-node-id]]) — keep as string.
             out[k] = v
             cur_key = None
             cur_list = None
@@ -192,6 +185,8 @@ def validate(nodes: list[Node]) -> None:
     for n in nodes:
         if not n.summary:
             warn(f"missing-summary: {n.id}")
+        if n.type not in ALLOWED_TYPES:
+            warn(f"unknown-type: {n.id} ({n.type!r})")
         if n.type == "project":
             if not n.kind:
                 warn(f"missing-kind: {n.id}")
@@ -202,8 +197,6 @@ def validate(nodes: list[Node]) -> None:
         for r in n.related:
             if r not in by_id:
                 warn(f"dangling-edge: {n.id} -> [[{r}]]")
-        if n.source_thread and n.source_thread not in by_id:
-            warn(f"dangling-source-thread: {n.id} -> [[{n.source_thread}]]")
         if n.type == "concept":
             for cluster in n.clusters:
                 if cluster not in n.related:
@@ -227,8 +220,6 @@ def emit_graph_json(nodes: list[Node]) -> tuple[int, int]:
     for n in nodes:
         for r in n.related:
             edges.append({"from": n.id, "to": r, "kind": "related"})
-        if n.source_thread:
-            edges.append({"from": n.id, "to": n.source_thread, "kind": "source-thread"})
     out = {
         "generated": date.today().isoformat(),
         "node_count": len(nodes),
@@ -238,7 +229,7 @@ def emit_graph_json(nodes: list[Node]) -> tuple[int, int]:
                 "id": n.id, "type": n.type, "kind": n.kind, "path": n.path,
                 "title": n.title, "summary": n.summary, "tags": n.tags,
                 "status": n.status, "created": n.created,
-                "clusters": n.clusters, "source_thread": n.source_thread,
+                "clusters": n.clusters,
                 "related": n.related,
             }
             for n in sorted(nodes, key=lambda x: x.id)
@@ -247,13 +238,6 @@ def emit_graph_json(nodes: list[Node]) -> tuple[int, int]:
     }
     (REPO / "graph.json").write_text(json.dumps(out, indent=2) + "\n")
     return len(nodes), len(edges)
-
-
-def primary_tag(tags: list[str]) -> str:
-    for c in CLUSTER_TAGS:
-        if c in tags:
-            return c
-    return tags[0] if tags else "other"
 
 
 def render_index(nodes: list[Node]) -> str:
@@ -308,21 +292,6 @@ def render_index(nodes: list[Node]) -> str:
             out.append(f"- [{n.id}]({n.path}) — {n.summary or ''}")
         out.append("")
 
-    threads = sorted(
-        [n for n in nodes if n.type == "thread"],
-        key=lambda x: x.created or "",
-        reverse=True,
-    )
-    # Threads are provenance (how a node came to be), not a learning entry point.
-    # Deliberately de-emphasized: a single pointer, not a highlighted list, so a
-    # newcomer is steered to topics/concepts rather than conversation history.
-    out.append("---")
-    out.append(
-        f"<sub>Provenance: {len(threads)} dated research/design threads record how "
-        f"these nodes came to be. They are process history, not a starting point — "
-        f"see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>"
-    )
-    out.append("")
     return "\n".join(out)
 
 
@@ -338,38 +307,6 @@ def regenerate_readme(nodes: list[Node]) -> None:
     readme.write_text(f"{pre}{BEGIN_MARK}\n{body}\n{END_MARK}{post}")
 
 
-def emit_threads_index(nodes: list[Node]) -> int:
-    threads = sorted(
-        [n for n in nodes if n.type == "thread"],
-        key=lambda x: x.created or "",
-        reverse=True,
-    )
-    out = [
-        "---",
-        "title: Threads (provenance archive)",
-        "nav_order: 99",
-        "nav_exclude: true",
-        "---",
-        "",
-        "# Threads — provenance archive",
-        "",
-        "> Auto-generated by `tools/build-graph.py`. Do not edit by hand.",
-        ">",
-        "> **This is process history, not a learning path.** These dated threads record",
-        "> how the graph's nodes came to be (research runs, design sessions). If you're",
-        "> here to learn the material, start from the topics in the [README](../README.md)",
-        "> instead. Use this only to trace *why* a particular node says what it says.",
-        "",
-    ]
-    for n in threads:
-        prefix = primary_tag(n.tags)
-        fname = Path(n.path).name
-        out.append(f"- {n.created} · [{prefix}] [{n.id}]({fname}) — {n.summary or ''}")
-    out.append("")
-    (REPO / "threads/INDEX.md").write_text("\n".join(out))
-    return len(threads)
-
-
 def main() -> int:
     paths = discover()
     nodes = [n for n in (parse_node(p) for p in paths) if n is not None]
@@ -377,11 +314,7 @@ def main() -> int:
     validate(nodes)
     n_nodes, n_edges = emit_graph_json(nodes)
     regenerate_readme(nodes)
-    n_threads = emit_threads_index(nodes)
-    print(
-        f"built graph.json ({n_nodes} nodes, {n_edges} edges); "
-        f"regenerated README index; wrote threads/INDEX.md ({n_threads} threads)"
-    )
+    print(f"built graph.json ({n_nodes} nodes, {n_edges} edges); regenerated README index")
     return 0
 
 

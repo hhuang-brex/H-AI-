@@ -16,7 +16,6 @@ related:
   - [[references-context-and-memory]]
 status: living
 created: 2026-08-06
-source-thread: [[2026-08-06-multi-turn-eval-survey-fanout]]
 ---
 
 # References — Multi-Turn Conversational Agent Evaluation

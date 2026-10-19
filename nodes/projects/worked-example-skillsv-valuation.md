@@ -15,7 +15,6 @@ related:
   - [[references-prompt-attribution]]
 status: snapshot
 created: 2026-08-30
-source-thread: [[2026-08-30-skillsv-fanout]]
 ---
 
 # Worked Example — SkillSV, Walked Through

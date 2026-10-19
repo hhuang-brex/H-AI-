@@ -12,7 +12,6 @@ related:
   - [[multi-agent-delegation]]
 status: living
 created: 2026-08-02
-source-thread: [[2026-07-20-agent-harness-research]]
 ---
 
 # References — Harness & Fan-Out Orchestration
@@ -47,4 +46,4 @@ The concept (dynamic workflows) shows fan-out orchestration *shipping*; the two 
 
 ## Verification note
 
-`claude.com` is a living page and may evolve; the GitHub repo is a moving artifact (pin a commit if citing a specific line count or benchmark number); arXiv IDs are stable but the 2026 IDs are beyond the assistant knowledge cutoff and were hand-fetched on 2026-08-02 (concept + both papers) and 2026-07-20 (projects, per [[2026-07-20-agent-harness-research]]). Re-verify before citing externally.
+`claude.com` is a living page and may evolve; the GitHub repo is a moving artifact (pin a commit if citing a specific line count or benchmark number); arXiv IDs are stable but the 2026 IDs are beyond the assistant knowledge cutoff and were hand-fetched on 2026-08-02 (concept + both papers) and 2026-07-20 (projects). Re-verify before citing externally.

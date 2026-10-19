@@ -29,7 +29,7 @@ Each node is an **engineering distillation** — a reusable decision with its fa
 ```yaml
 ---
 id: kebab-case-slug                    # required; matches filename
-type: topic | concept | project | reference | thread   # required
+type: topic | concept | project | reference   # required
 kind: spec | plan | snapshot | worked-example | product   # required when type: project
 tags: [string, ...]                    # required; lowercase, kebab-case
 summary: <one-line ≤200 chars>         # required; the index entry's description
@@ -37,7 +37,6 @@ related:                               # required (may be empty)
   - [[other-node-id]]
 status: living | snapshot | proposal | archived  # required
 created: YYYY-MM-DD                    # required
-source-thread: [[thread-id]]           # optional; for nodes derived from a thread
 ---
 ```
 
@@ -49,7 +48,6 @@ source-thread: [[thread-id]]           # optional; for nodes derived from a thre
 | `concept` | `nodes/concepts/` | Reusable pattern, idea, technique | Definition → mechanics → pitfalls → references. |
 | `project` | `nodes/projects/` | Project-specific snapshot, spec, plan, worked example, or product spec | Distinguished by the `kind` field. Body shape varies by kind — see below. |
 | `reference` | `nodes/references/` | External posts/papers reading list | Annotated link list. |
-| `thread` | `threads/` | Conversation summary, dated `YYYY-MM-DD-slug.md` | Goal → outputs → key insights. |
 
 ### `kind` (projects only)
 
@@ -59,11 +57,11 @@ source-thread: [[thread-id]]           # optional; for nodes derived from a thre
 | `plan` | Sequenced implementation of a spec | Tasks with steps, files, commits. |
 | `snapshot` | Point-in-time state of a real system | What it is → current state → known issues → see-also. |
 | `worked-example` | Code walkthrough with primary-source fidelity | Setup → annotated code → why it works → caveats. |
-| `product` | End-to-end product spec synthesized from threads | Problem → architecture → workflow → tradeoffs. |
+| `product` | End-to-end product spec synthesized from research | Problem → architecture → workflow → tradeoffs. |
 
 ### `summary`
 
-A single line, ≤200 characters. Appears next to every node link in `README.md` and `threads/INDEX.md`. Keep it concrete: what is this node *for*? Avoid restating the title.
+A single line, ≤200 characters. Appears next to every node link in `README.md`. Keep it concrete: what is this node *for*? Avoid restating the title.
 
 ### Status guide
 
@@ -89,7 +87,6 @@ Two link forms with different purposes — both supported, used in different pla
 | Where | Form | Purpose |
 |---|---|---|
 | Frontmatter `related:` | `[[id]]` (wiki-link) | Machine-readable edge list. Stable across folder moves; graph indexers consume this. |
-| Frontmatter `source-thread:` | `[[id]]` | Same — edge list. |
 | Body prose | `[id](relative/path.md)` (markdown link) | Navigable on github.com directly. No Obsidian/Foam extension required. |
 
 Rules:
@@ -114,9 +111,8 @@ Rules:
 2. Choose `id` — kebab-case, distinctive enough to be globally unique.
 3. Write frontmatter first (including `summary`); let it force you to commit to type/tags/relations. Use `[[id]]` form in `related:`.
 4. Draft body. Cross-link aggressively to existing nodes using `[id](relative/path.md)` markdown links.
-5. Run `/usr/bin/python3 tools/build-graph.py` — regenerates the README index, `threads/INDEX.md`, and `graph.json`. Read the warnings on stderr; fix anything surprising.
-6. If the node was derived from a conversation, also create or update a `thread` node and set `source-thread:`.
-7. `git add` your node + the regenerated artifacts (`README.md`, `graph.json`, `threads/INDEX.md`). Commit.
+5. Run `/usr/bin/python3 tools/build-graph.py` — regenerates the README index and `graph.json`. Read the warnings on stderr; fix anything surprising.
+6. `git add` your node + the regenerated artifacts (`README.md`, `graph.json`). Commit.
 
 ## Workflow for editing a node
 
@@ -129,6 +125,7 @@ Rules:
 - Secrets, tokens, internal Brex IDs that can't be cited externally.
 - Code snippets long enough to belong in a real repo — link instead.
 - Conversational scaffolding ("as we discussed…"). Capture the conclusion, not the process.
+- Conversation or research-session summaries. Put the conclusion in the node it changes; git history records how it got there.
 
 ## Optional: extending the schema
 

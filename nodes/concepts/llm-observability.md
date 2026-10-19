@@ -16,7 +16,6 @@ related:
 status: living
 created: 2026-06-10
 summary: "debugging \"why did the model respond this way?\" — what frontier APIs actually return (mostly summaries), platform feature reality, OTel state."
-source-thread: [[2026-06-10-llm-observability-research]]
 ---
 
 # LLM Observability — Debugging "Why Did the Model Respond This Way?"

@@ -13,7 +13,6 @@ related:
   - [[grounding-and-citation]]
 status: living
 created: 2026-08-06
-source-thread: [[2026-08-06-prompt-attribution-research]]
 ---
 
 # References — Prompt Attribution & Effectiveness Measurement

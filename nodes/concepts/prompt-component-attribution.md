@@ -22,7 +22,6 @@ related:
   - [[references-prompt-attribution]]
 status: living
 created: 2026-08-06
-source-thread: [[2026-08-06-prompt-attribution-research]]
 ---
 
 # Prompt Component Attribution

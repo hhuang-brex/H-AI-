@@ -13,7 +13,6 @@ related:
   - [[llm-evaluation]]
 status: living
 created: 2026-08-31
-source-thread: [[2026-08-31-adaptive-eval-fanout]]
 ---
 
 # References — Adaptive Eval Budgeting

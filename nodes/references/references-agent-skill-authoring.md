@@ -17,7 +17,6 @@ related:
   - [[action-execution-safety]]
 status: living
 created: 2026-08-08
-source-thread: [[2026-08-08-skill-text-authoring-fanout]]
 ---
 
 # References — Agent Skill Authoring

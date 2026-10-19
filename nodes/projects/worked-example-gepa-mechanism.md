@@ -15,7 +15,6 @@ related:
   - [[references-prompt-optimization]]
 status: snapshot
 created: 2026-08-30
-source-thread: [[2026-08-30-gepa-dspy-fanout]]
 ---
 
 # Worked Example — GEPA, Walked Through

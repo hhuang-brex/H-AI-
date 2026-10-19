@@ -15,7 +15,6 @@ related:
 status: proposal
 created: 2026-06-10
 summary: "handle users splitting one thought across multiple SMS messages; 3-layer detection (regex / Haiku classifier / dynamic timeout) with 10 edge cases."
-source-thread: [[2026-06-10-sms-message-buffering-research]]
 ---
 
 # SMS Message Buffering — Design Spec
@@ -390,7 +389,7 @@ Total: ~17 dev-days for the full surface. Items 1–4 alone (~10 days) handle th
 
 ## Existing implementations (prior art on GitHub)
 
-A follow-up GitHub-specific research pass (see [2026-06-10-github-buffering-references](../../threads/2026-06-10-github-buffering-references.md)) found exactly **one clean open-source reference** for inbound message buffering on chat channels, plus one in-flight design proposal worth reading.
+A follow-up GitHub-specific research pass found exactly **one clean open-source reference** for inbound message buffering on chat channels, plus one in-flight design proposal worth reading.
 
 ### `mozilla-ai/clawbolt` — the closest existing reference
 
@@ -435,7 +434,7 @@ The hybrid wait + abort design is the synthesis. This spec adopts it explicitly.
 
 - **TurnGPT** (Ekstedt & Skantze, EMNLP 2020 Findings) — https://github.com/ErikEkstedt/TurnGPT — MIT, 69 stars, last pushed 2024-05-18. GPT-2 / DialoGPT-small base with a custom `SpokenDialogTokenizer` that adds a `<ts>` turn-shift token (id 50257) and an optional projection head modeling turn-shift probability over the next N tokens. Operates on text input — verbatim from the README: *"we focus on text as is commonly acquired when implementing an SDS … all text should be lower-case and certain punctations should be filtered out, text as commonly returned from ASR services."*
 
-  **What this means for the spec's L2 classifier**: the architectural concept (text-input semantic EOT classifier) is **not novel**. TurnGPT demonstrated it at EMNLP 2020. What this spec contributes around L2 is (a) the chat-channel application — TurnGPT targets spoken-dialog systems, not SMS bursts; (b) the production deployment choice — pretrained-LLM forced tool-call (no fine-tune, day-one shippable, ~$0.0001/inbound) vs. TurnGPT's fine-tuned LM with projection head (free runtime, requires hosting); (c) the composition with forward-reference detection, announced-content mode, and intent-edit handling — none of which TurnGPT addresses. The HF Hub `turn-detection` tag also surfaces additional text-input classifiers (TEN_Turn_Detection, livekit/turn-detector, several language-specific fine-tunes); these were salvaged from a stalled research workflow but **could not be third-party-verified** from the network where this spec was authored. See [2026-06-11-text-eot-classifier-salvage](../../threads/2026-06-11-text-eot-classifier-salvage.md). Treat the HF list as a follow-up to verify when adopting the spec.
+  **What this means for the spec's L2 classifier**: the architectural concept (text-input semantic EOT classifier) is **not novel**. TurnGPT demonstrated it at EMNLP 2020. What this spec contributes around L2 is (a) the chat-channel application — TurnGPT targets spoken-dialog systems, not SMS bursts; (b) the production deployment choice — pretrained-LLM forced tool-call (no fine-tune, day-one shippable, ~$0.0001/inbound) vs. TurnGPT's fine-tuned LM with projection head (free runtime, requires hosting); (c) the composition with forward-reference detection, announced-content mode, and intent-edit handling — none of which TurnGPT addresses. The HF Hub `turn-detection` tag also surfaces additional text-input classifiers (TEN_Turn_Detection, livekit/turn-detector, several language-specific fine-tunes); these were salvaged from a stalled research workflow but **could not be third-party-verified** from the network where this spec was authored. Treat the HF list as a follow-up to verify when adopting the spec.
 
 ## References (verified primary sources)
 

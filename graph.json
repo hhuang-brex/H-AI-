@@ -1,902 +1,8 @@
 {
-  "generated": "2026-09-28",
-  "node_count": 197,
-  "edge_count": 1583,
+  "generated": "2026-10-18",
+  "node_count": 169,
+  "edge_count": 1421,
   "nodes": [
-    {
-      "id": "2026-06-05-eval-analysis",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-05-eval-analysis.md",
-      "title": "Thread \u2014 Agent Eval Analysis (2026-06-05)",
-      "summary": "origin of the eval nodes.",
-      "tags": [
-        "eval",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-05",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "agent-eval-case-study",
-        "agent-eval-improvement-tiers",
-        "references-eval-reading-list"
-      ]
-    },
-    {
-      "id": "2026-06-07-forced-tool-call-fan-out",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-07-forced-tool-call-fan-out.md",
-      "title": "Thread \u2014 Forced Tool-Call Fan-Out (2026-06-07)",
-      "summary": "origin of the output-design nodes.",
-      "tags": [
-        "output",
-        "schema",
-        "design",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-07",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "llm-output-design",
-        "forced-tool-call-output",
-        "output-surface-taxonomy",
-        "schema-vs-validator",
-        "streaming-vs-structured",
-        "hard-surface-irrevocability"
-      ]
-    },
-    {
-      "id": "2026-06-08-domain-chatbot-fan-out",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-08-domain-chatbot-fan-out.md",
-      "title": "Thread \u2014 Domain Chatbot Conversation Design Fan-Out (2026-06-08)",
-      "summary": "origin of the conversation-design nodes.",
-      "tags": [
-        "chatbot",
-        "conversation-design",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-08",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "domain-chatbot-design",
-        "intent-and-disambiguation",
-        "grounding-and-citation",
-        "action-authority",
-        "escalation-handoff",
-        "scope-and-refusal",
-        "conversation-memory",
-        "domain-knowledge-injection",
-        "persona-tone-compliance",
-        "repair-and-clarification",
-        "turn-taking-and-proactivity",
-        "safety-rails-domain-specific"
-      ]
-    },
-    {
-      "id": "2026-06-08-domain-chatbot-research",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-08-domain-chatbot-research.md",
-      "title": "Thread \u2014 Domain Chatbot Design Research (2026-06-08)",
-      "summary": "verified reading-list research thread.",
-      "tags": [
-        "chatbot",
-        "research",
-        "reading-list",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-08",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "references-domain-chatbot-design",
-        "domain-chatbot-design",
-        "references-eval-reading-list"
-      ]
-    },
-    {
-      "id": "2026-06-08-sms-multi-thread-fan-out",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-08-sms-multi-thread-fan-out.md",
-      "title": "Thread \u2014 SMS Multi-Thread Chatbot Fan-Out (2026-06-08)",
-      "summary": "origin of the SMS multi-thread nodes.",
-      "tags": [
-        "sms",
-        "chatbot",
-        "multi-thread",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-08",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "sms-multi-thread-chatbot",
-        "flat-channel-thread-tracking",
-        "async-conversation-pacing",
-        "message-segmentation-160",
-        "thread-disambiguation-prompts",
-        "sms-context-windowing",
-        "sms-state-machine",
-        "sms-recovery-and-reentry"
-      ]
-    },
-    {
-      "id": "2026-06-09-chatbot-pagination-research",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-09-chatbot-pagination-research.md",
-      "title": "Thread \u2014 Chatbot Pagination Research (2026-06-09)",
-      "summary": "deep-research on chatbot pagination UX + technical patterns.",
-      "tags": [
-        "chatbot",
-        "pagination",
-        "research",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-09",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "chatbot-pagination",
-        "truncated-pyramid-results",
-        "paginated-tool-contract",
-        "code-execution-sandbox-pattern",
-        "references-chatbot-pagination"
-      ]
-    },
-    {
-      "id": "2026-06-09-dspy-domain-chatbot-research",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-09-dspy-domain-chatbot-research.md",
-      "title": "Thread \u2014 DSPy Domain-Chatbot Success Examples (2026-06-09)",
-      "summary": "deep-research on documented DSPy chatbot case studies.",
-      "tags": [
-        "dspy",
-        "chatbot",
-        "research",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-09",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "dspy-domain-chatbot-cases",
-        "domain-chatbot-design",
-        "references-domain-chatbot-design"
-      ]
-    },
-    {
-      "id": "2026-06-09-ikki-forced-tool-calling",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-09-ikki-forced-tool-calling.md",
-      "title": "Thread \u2014 Audit Against Ikki's \"Forced Tool Calling in Production Chatbots\" (2026-06-09)",
-      "summary": "audit against Ikki's \\\"Forced Tool Calling in Production Chatbots\\\" post.",
-      "tags": [
-        "chatbot",
-        "forced-tool-call",
-        "templates",
-        "layered-defense",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-09",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "template-rendered-output",
-        "layered-defense-pipeline",
-        "forced-tool-call-output",
-        "llm-as-judge",
-        "references-domain-chatbot-design"
-      ]
-    },
-    {
-      "id": "2026-06-09-operator-trust-injection",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-09-operator-trust-injection.md",
-      "title": "Thread \u2014 Operator-Trust Injection (2026-06-09)",
-      "summary": "adding operator-trust-injection + recency-bias-prompt-design from Anthropic-engineer-recommended patterns.",
-      "tags": [
-        "chatbot",
-        "prompt-engineering",
-        "operator-trust",
-        "anthropic",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-09",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "operator-trust-injection",
-        "recency-bias-prompt-design",
-        "domain-knowledge-injection",
-        "layered-defense-pipeline"
-      ]
-    },
-    {
-      "id": "2026-06-09-reasoning-mode-research",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-09-reasoning-mode-research.md",
-      "title": "Thread \u2014 Reasoning Mode Research (2026-06-09)",
-      "summary": "deep-research on prompted `<reasoning>` vs. native thinking APIs.",
-      "tags": [
-        "reasoning",
-        "thinking",
-        "prompting",
-        "research",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-09",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "native-thinking-vs-prompted-reasoning",
-        "operator-trust-injection",
-        "forced-tool-call-output",
-        "decision-engine-contract"
-      ]
-    },
-    {
-      "id": "2026-06-09-spender-agent-ea-workflow",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-09-spender-agent-ea-workflow.md",
-      "title": "Thread \u2014 Spender Agent / EA Workflow Synthesis (2026-06-09)",
-      "summary": "first-principles synthesis from IAF-1611 root-cause to the spender-agent product spec.",
-      "tags": [
-        "task-agent",
-        "expense-documentation",
-        "ea-workflow",
-        "spender-agent",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-09",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "spender-agent",
-        "task-agent-pattern",
-        "decision-engine-contract",
-        "forced-tool-call-output",
-        "sms-multi-thread-chatbot"
-      ]
-    },
-    {
-      "id": "2026-06-09-task-agent-pattern",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-09-task-agent-pattern.md",
-      "title": "Thread \u2014 Task-Agent Pattern Fan-Out (2026-06-09)",
-      "summary": "origin of the task-agent-pattern cluster.",
-      "tags": [
-        "task-agent",
-        "decision-engine",
-        "fan-out",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-09",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "task-agent-pattern",
-        "decision-engine-contract",
-        "engine-vs-conversation-routing",
-        "decision-audit-trail",
-        "task-agent-pattern-fanout"
-      ]
-    },
-    {
-      "id": "2026-06-10-github-buffering-references",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-10-github-buffering-references.md",
-      "title": "Thread \u2014 GitHub Prior Art for Message Buffering (2026-06-10)",
-      "summary": "GitHub prior art for chatbot message buffering (clawbolt, Chatwoot, LiveKit).",
-      "tags": [
-        "sms",
-        "message-buffering",
-        "github",
-        "prior-art",
-        "research",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-10",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "sms-message-buffering-spec",
-        "sms-message-buffering-plan",
-        "2026-06-10-sms-message-buffering-research"
-      ]
-    },
-    {
-      "id": "2026-06-10-llm-observability-research",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-10-llm-observability-research.md",
-      "title": "Thread \u2014 LLM Observability Research (2026-06-10)",
-      "summary": "deep-research on \\\"why did the model respond this way?\\\" debugging workflow.",
-      "tags": [
-        "observability",
-        "debugging",
-        "audit",
-        "otel",
-        "research",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-10",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "llm-observability",
-        "decision-audit-trail",
-        "native-thinking-vs-prompted-reasoning",
-        "cost-aware-eval",
-        "prod-shadow-replay"
-      ]
-    },
-    {
-      "id": "2026-06-10-reasoning-rationale-research",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-10-reasoning-rationale-research.md",
-      "title": "Thread \u2014 Why Read Model Reasoning? (2026-06-10)",
-      "summary": "deep-research on faithfulness, alignment-faking, scheming evaluations \u2014 the *why* for instrumenting reasoning.",
-      "tags": [
-        "reasoning",
-        "observability",
-        "faithfulness",
-        "alignment",
-        "research",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-10",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "cot-as-forensic-artifact",
-        "worked-example-anthropic-thinking",
-        "worked-example-openai-responses",
-        "llm-observability"
-      ]
-    },
-    {
-      "id": "2026-06-10-sms-message-buffering-research",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-10-sms-message-buffering-research.md",
-      "title": "Thread \u2014 SMS Message Buffering Research (2026-06-10)",
-      "summary": "origin of the SMS message buffering spec; voice-AI EOT pattern as architectural reference.",
-      "tags": [
-        "sms",
-        "message-buffering",
-        "end-of-turn",
-        "research",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-10",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "sms-message-buffering-spec",
-        "sms-multi-thread-chatbot",
-        "sms-state-machine",
-        "forced-tool-call-output"
-      ]
-    },
-    {
-      "id": "2026-06-11-chatting-task-agent-buildout",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-11-chatting-task-agent-buildout.md",
-      "title": "Thread \u2014 Chatting Task Agent Build-Out (2026-06-11)",
-      "summary": "the 7-pass /loop build-out that added the agent spine (8 topics, ~30 concepts, 1 worked example, 2 eval concepts) for building a chatting task agent.",
-      "tags": [
-        "meta",
-        "agent",
-        "task-agent",
-        "knowledge-graph",
-        "build-out",
-        "loop",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-11",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "agent-control-loop",
-        "tool-use-design",
-        "task-planning",
-        "context-engineering",
-        "human-in-the-loop-control",
-        "action-execution-safety",
-        "agent-state-persistence",
-        "multi-agent-delegation",
-        "worked-example-chatting-task-agent"
-      ]
-    },
-    {
-      "id": "2026-06-11-knowledge-graph-organization-review",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-11-knowledge-graph-organization-review.md",
-      "title": "Thread \u2014 Knowledge Graph Organization Review (2026-06-11)",
-      "summary": "audit of this repo as a knowledge graph; origin of the index-builder spec.",
-      "tags": [
-        "meta",
-        "knowledge-graph",
-        "organization",
-        "audit",
-        "tooling",
-        "build",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-11",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "knowledge-graph-index-builder-spec"
-      ]
-    },
-    {
-      "id": "2026-06-11-text-eot-classifier-salvage",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-06-11-text-eot-classifier-salvage.md",
-      "title": "Thread \u2014 Text EOT Classifier Salvage (2026-06-11)",
-      "summary": "text-EOT classifier salvage from a stalled deep-research workflow; TurnGPT verified, HF entries blocked by Brex SSO.",
-      "tags": [
-        "text-eot",
-        "classifier",
-        "github",
-        "huggingface",
-        "prior-art",
-        "research",
-        "salvaged",
-        "thread"
-      ],
-      "status": "archived",
-      "created": "2026-06-11",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "sms-message-buffering-spec",
-        "sms-message-buffering-plan",
-        "2026-06-10-github-buffering-references",
-        "2026-06-10-sms-message-buffering-research"
-      ]
-    },
-    {
-      "id": "2026-07-20-agent-harness-research",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-07-20-agent-harness-research.md",
-      "title": "Thread \u2014 Agent-Harness Research Fan-Out (2026-07-20)",
-      "summary": "fan-out research to refresh agent-harness.md: 29 fetch-verified anchors, 6 deepenings (convergence-as-spectrum, async gap, debate\u2192trilemma), 3 candidate nodes.",
-      "tags": [
-        "meta",
-        "research",
-        "fan-out",
-        "agent-harness",
-        "gap-analysis",
-        "harness"
-      ],
-      "status": "snapshot",
-      "created": "2026-07-20",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "agent-harness",
-        "self-improving-harness",
-        "background-agent-execution",
-        "harness-as-hyperparameter",
-        "managed-agent-apis",
-        "agent-control-loop",
-        "action-execution-safety",
-        "llm-evaluation",
-        "references-task-agent-design"
-      ]
-    },
-    {
-      "id": "2026-08-06-multi-turn-eval-survey-fanout",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-08-06-multi-turn-eval-survey-fanout.md",
-      "title": "Thread \u2014 Multi-Turn Agent Eval Survey Fan-Out (2026-08-06)",
-      "summary": "fan-out of the ~250-source multi-turn agent evaluation survey (arXiv:2503.22458 v2): taxonomies extracted from LaTeX source, 8 anchors verified, 3 concept deepenings, 5 citation defects recorded.",
-      "tags": [
-        "meta",
-        "research",
-        "fan-out",
-        "eval",
-        "multi-turn",
-        "memory",
-        "planner"
-      ],
-      "status": "snapshot",
-      "created": "2026-08-06",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "references-multi-turn-agent-eval",
-        "agent-trajectory-eval",
-        "memory-types-taxonomy",
-        "reflection-loop-taxonomy",
-        "llm-evaluation",
-        "agent-memory"
-      ]
-    },
-    {
-      "id": "2026-08-06-prompt-attribution-research",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-08-06-prompt-attribution-research.md",
-      "title": "Thread \u2014 Measuring Prompt Effectiveness (2026-08-05 \u2192 2026-08-06)",
-      "summary": "research on measuring prompt effectiveness \u2014 which sentence causes which output; 20 fetch-verified sources, 2 new concept nodes, 1 reference node, and the resolution of a dangling edge.",
-      "tags": [
-        "meta",
-        "research",
-        "prompt",
-        "attribution",
-        "eval",
-        "statistics"
-      ],
-      "status": "snapshot",
-      "created": "2026-08-06",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "prompt-component-attribution",
-        "eval-statistical-significance",
-        "references-prompt-attribution",
-        "references-prompt-optimization",
-        "offline-prompt-optimization",
-        "cot-as-forensic-artifact",
-        "llm-evaluation"
-      ]
-    },
-    {
-      "id": "2026-08-08-skill-text-authoring-fanout",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-08-08-skill-text-authoring-fanout.md",
-      "title": "Thread \u2014 Skill-Text Authoring Fan-Out (2026-08-08)",
-      "summary": "fan-out on improving LLM skill text: Anthropic's authoring guidance + 9 verified 2026 agent-skills papers, one new concept, one reference node, three deepenings, one provenance check.",
-      "tags": [
-        "meta",
-        "research",
-        "fan-out",
-        "skills",
-        "authoring",
-        "eval"
-      ],
-      "status": "snapshot",
-      "created": "2026-08-08",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "skill-text-authoring",
-        "references-agent-skill-authoring",
-        "agent-skills-progressive-disclosure",
-        "agentic-context-engineering-ace",
-        "offline-prompt-optimization",
-        "prompt-component-attribution"
-      ]
-    },
-    {
-      "id": "2026-08-18-industry-trend-catchup",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-08-18-industry-trend-catchup.md",
-      "title": "Thread \u2014 Industry Trend Catch-Up (2026-08-08 \u2192 2026-08-18)",
-      "summary": "10-day arXiv trend scan (2026-08-08 \u2192 08-18): cluster volumes, 11 verified papers, 4 landings \u2014 task-order variance, CAPO, TRACE, TRUSS.",
-      "tags": [
-        "meta",
-        "research",
-        "trend-scan",
-        "eval",
-        "skills",
-        "memory",
-        "security"
-      ],
-      "status": "snapshot",
-      "created": "2026-08-18",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "eval-statistical-significance",
-        "self-improving-harness",
-        "live-traffic-eval",
-        "skill-text-authoring",
-        "references-prompt-optimization",
-        "references-prompt-attribution",
-        "references-agent-skill-authoring"
-      ]
-    },
-    {
-      "id": "2026-08-30-gepa-dspy-fanout",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-08-30-gepa-dspy-fanout.md",
-      "title": "Thread \u2014 GEPA / DSPy Fan-Out (2026-08-30)",
-      "summary": "fan-out from GEPA read at source: what the abstract omits (Pareto ablation, budget anatomy, two trace types, merge's negative result, cross-model transfer) plus its verified lineage and one contested claim.",
-      "tags": [
-        "meta",
-        "research",
-        "fan-out",
-        "gepa",
-        "dspy",
-        "optimizer",
-        "pareto"
-      ],
-      "status": "snapshot",
-      "created": "2026-08-30",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "worked-example-gepa-mechanism",
-        "offline-prompt-optimization",
-        "verbal-reinforcement-vs-gradient-rl",
-        "cost-aware-eval",
-        "references-prompt-optimization"
-      ]
-    },
-    {
-      "id": "2026-08-30-skillsv-fanout",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-08-30-skillsv-fanout.md",
-      "title": "Thread \u2014 SkillSV Fan-Out (2026-08-30)",
-      "summary": "fan-out from SkillSV (arXiv:2608.04562) read at source: one worked-example node, its optimizer and Shapley lineages verified and distributed, plus two sources that could not be verified.",
-      "tags": [
-        "meta",
-        "research",
-        "fan-out",
-        "skills",
-        "attribution",
-        "shapley",
-        "valuation"
-      ],
-      "status": "snapshot",
-      "created": "2026-08-30",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "worked-example-skillsv-valuation",
-        "prompt-component-attribution",
-        "skill-text-authoring",
-        "offline-prompt-optimization",
-        "references-prompt-optimization",
-        "references-prompt-attribution"
-      ]
-    },
-    {
-      "id": "2026-08-31-adaptive-eval-fanout",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-08-31-adaptive-eval-fanout.md",
-      "title": "Thread \u2014 Adaptive Eval Budget Fan-Out (2026-08-31)",
-      "summary": "fan-out on adaptive eval budgeting: seven verified sources across anytime-valid stopping, best-arm allocation, and psychometrics; one new concept and one new reference node.",
-      "tags": [
-        "meta",
-        "research",
-        "fan-out",
-        "eval",
-        "statistics",
-        "bandit",
-        "psychometrics"
-      ],
-      "status": "snapshot",
-      "created": "2026-08-31",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "adaptive-eval-budget",
-        "references-adaptive-eval",
-        "eval-statistical-significance",
-        "cost-aware-eval",
-        "worked-example-gepa-mechanism"
-      ]
-    },
-    {
-      "id": "2026-09-11-industry-trend-catchup",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-09-11-industry-trend-catchup.md",
-      "title": "Thread \u2014 Industry Trend Catch-Up (2026-08-19 \u2192 2026-09-11)",
-      "summary": "24-day arXiv trend scan (2026-08-19 \u2192 09-11): cluster volumes normalized per day, 2 new nodes, 12 edited \u2014 should a skill load at all, skills go stale in silence, and the judge stops being trusted.",
-      "tags": [
-        "meta",
-        "research",
-        "trend-scan",
-        "skills",
-        "eval",
-        "security",
-        "multi-turn"
-      ],
-      "status": "snapshot",
-      "created": "2026-09-11",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "skill-injection-decision",
-        "skill-lifecycle-and-drift",
-        "agent-skills-progressive-disclosure",
-        "skill-text-authoring",
-        "agent-trajectory-eval",
-        "llm-as-judge",
-        "eval-statistical-significance",
-        "harness-as-hyperparameter",
-        "offline-prompt-optimization",
-        "prompt-component-attribution",
-        "simulated-user-eval",
-        "prompt-injection-and-isolation",
-        "references-agent-skill-authoring",
-        "references-harness-evaluation",
-        "references-prompt-optimization",
-        "references-multi-turn-agent-eval",
-        "references-prompt-attribution"
-      ]
-    },
-    {
-      "id": "2026-09-12-turn-outcome-signal",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-09-12-turn-outcome-signal.md",
-      "title": "Thread \u2014 The No-Action Gate Needs a Stored Field",
-      "summary": "a product gate defined as 'terminal outcome, no user action' has no stored field to key on \u2014 landing the action-class enum as the named deterministic proxy, with the next user turn as its backtest.",
-      "tags": [
-        "meta",
-        "research",
-        "conversation",
-        "instrumentation",
-        "output-contract"
-      ],
-      "status": "snapshot",
-      "created": "2026-09-12",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "turn-outcome-signal",
-        "turn-taking-and-proactivity",
-        "confirm-before-act",
-        "escalation-handoff",
-        "live-traffic-eval",
-        "forced-tool-call-output"
-      ]
-    },
-    {
-      "id": "2026-09-18-industry-trend-catchup",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-09-18-industry-trend-catchup.md",
-      "title": "Thread \u2014 Industry Trend Catch-Up (2026-09-12 \u2192 2026-09-18)",
-      "summary": "7-day arXiv scan (2026-09-12 \u2192 09-18): six nodes edited. A judge reading agents' own conclusions lands below chance; the prose channel under-reports state the structured channel records; and the volume method itself turned out to be biased by announcement lag.",
-      "tags": [
-        "meta",
-        "research",
-        "trend-scan",
-        "eval",
-        "judge",
-        "skills",
-        "multi-turn",
-        "instrumentation"
-      ],
-      "status": "snapshot",
-      "created": "2026-09-18",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "llm-as-judge",
-        "turn-outcome-signal",
-        "agent-trajectory-eval",
-        "cost-aware-eval",
-        "skill-lifecycle-and-drift",
-        "decision-audit-trail",
-        "escalation-handoff",
-        "adaptive-eval-budget",
-        "references-agent-skill-authoring",
-        "references-multi-turn-agent-eval"
-      ]
-    },
-    {
-      "id": "2026-09-27-industry-trend-catchup",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-09-27-industry-trend-catchup.md",
-      "title": "Thread \u2014 Industry Trend Catch-Up (2026-09-17 \u2192 2026-09-26)",
-      "summary": "9-day arXiv scan (2026-09-17 \u2192 09-26): fourteen nodes edited. The week's theme is self-written evidence \u2014 judges read the agent's log, agents delete their traces, and duplicating agents report success.",
-      "tags": [
-        "meta",
-        "research",
-        "trend-scan",
-        "eval",
-        "judge",
-        "execution-safety",
-        "audit",
-        "idempotency",
-        "memory",
-        "state"
-      ],
-      "status": "snapshot",
-      "created": "2026-09-27",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "2026-09-18-industry-trend-catchup",
-        "llm-as-judge",
-        "idempotency-keys",
-        "decision-audit-trail",
-        "confirm-before-act",
-        "agent-trajectory-eval",
-        "checkpoint-and-replay",
-        "adaptive-eval-budget",
-        "run-state-model",
-        "self-improving-harness",
-        "memory-poisoning",
-        "step-budget-and-runaway-control",
-        "references-multi-turn-agent-eval",
-        "references-eval-reading-list",
-        "references-agent-skill-authoring"
-      ]
-    },
-    {
-      "id": "2026-09-28-rsi-fanout",
-      "type": "thread",
-      "kind": null,
-      "path": "threads/2026-09-28-rsi-fanout.md",
-      "title": "Thread \u2014 Recursive Self-Improvement Fan-Out (2026-09-28)",
-      "summary": "fan-out on recursive self-improvement for agents: ~45 papers verified at the abstract, one new reading list, and a new section in self-improving-harness \u2014 the acceptor, not the proposer, decides whether the loop improves.",
-      "tags": [
-        "meta",
-        "research",
-        "fan-out",
-        "rsi",
-        "self-improvement",
-        "harness",
-        "safety"
-      ],
-      "status": "snapshot",
-      "created": "2026-09-28",
-      "clusters": [],
-      "source_thread": null,
-      "related": [
-        "references-recursive-self-improvement",
-        "self-improving-harness",
-        "skill-lifecycle-and-drift",
-        "memory-poisoning",
-        "llm-as-judge",
-        "2026-09-27-industry-trend-catchup"
-      ]
-    },
     {
       "id": "action-authority",
       "type": "concept",
@@ -916,9 +22,9 @@
       "clusters": [
         "domain-chatbot-design",
         "human-in-the-loop-control",
+        "recursive-self-improvement",
         "tool-use-design"
       ],
-      "source_thread": null,
       "related": [
         "human-in-the-loop-control",
         "tool-use-design",
@@ -927,7 +33,8 @@
         "forced-tool-call-output",
         "safety-rails-domain-specific",
         "intent-and-disambiguation",
-        "prompt-injection-and-isolation"
+        "prompt-injection-and-isolation",
+        "recursive-self-improvement"
       ]
     },
     {
@@ -948,7 +55,6 @@
       "status": "living",
       "created": "2026-06-11",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "execution-invariant-testing",
         "worked-example-chatting-task-agent",
@@ -983,9 +89,9 @@
       "status": "living",
       "created": "2026-08-31",
       "clusters": [
-        "llm-evaluation"
+        "llm-evaluation",
+        "recursive-self-improvement"
       ],
-      "source_thread": "2026-08-31-adaptive-eval-fanout",
       "related": [
         "eval-statistical-significance",
         "cost-aware-eval",
@@ -1017,7 +123,6 @@
       "clusters": [
         "llm-evaluation"
       ],
-      "source_thread": null,
       "related": [
         "multi-agent-delegation",
         "llm-evaluation",
@@ -1046,7 +151,6 @@
       "clusters": [
         "tool-use-design"
       ],
-      "source_thread": null,
       "related": [
         "tool-use-design",
         "dsl-vs-code-vs-tool-calls",
@@ -1075,7 +179,6 @@
       "status": "living",
       "created": "2026-06-11",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "references-task-agent-design",
         "worked-example-chatting-task-agent",
@@ -1094,7 +197,8 @@
         "llm-observability",
         "self-improving-harness",
         "agent-harness",
-        "reflection-loop-taxonomy"
+        "reflection-loop-taxonomy",
+        "recursive-self-improvement"
       ]
     },
     {
@@ -1112,7 +216,6 @@
       "status": "snapshot",
       "created": "2026-06-05",
       "clusters": [],
-      "source_thread": "2026-06-05-eval-analysis",
       "related": [
         "llm-evaluation",
         "test-pyramid-llm",
@@ -1139,7 +242,6 @@
       "status": "proposal",
       "created": "2026-06-05",
       "clusters": [],
-      "source_thread": "2026-06-05-eval-analysis",
       "related": [
         "agent-eval-case-study",
         "test-pyramid-llm",
@@ -1170,7 +272,6 @@
       "clusters": [
         "llm-evaluation"
       ],
-      "source_thread": null,
       "related": [
         "llm-evaluation",
         "eval-dataset-quality",
@@ -1201,7 +302,6 @@
       "status": "living",
       "created": "2026-07-10",
       "clusters": [],
-      "source_thread": "2026-07-20-agent-harness-research",
       "related": [
         "references-task-agent-design",
         "agent-control-loop",
@@ -1238,7 +338,6 @@
       "status": "living",
       "created": "2026-06-12",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "context-storage-and-hydration",
         "context-engineering",
@@ -1286,7 +385,6 @@
       "clusters": [
         "agent-memory"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "memory-types-taxonomy",
@@ -1316,7 +414,6 @@
       "clusters": [
         "context-engineering"
       ],
-      "source_thread": null,
       "related": [
         "context-engineering",
         "tool-use-design",
@@ -1350,7 +447,6 @@
       "status": "living",
       "created": "2026-06-11",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "context-storage-and-hydration",
         "agent-memory",
@@ -1385,7 +481,6 @@
         "llm-evaluation",
         "task-planning"
       ],
-      "source_thread": null,
       "related": [
         "task-planning",
         "llm-evaluation",
@@ -1416,9 +511,9 @@
       "status": "living",
       "created": "2026-06-16",
       "clusters": [
-        "context-engineering"
+        "context-engineering",
+        "recursive-self-improvement"
       ],
-      "source_thread": null,
       "related": [
         "context-engineering",
         "offline-prompt-optimization",
@@ -1431,7 +526,8 @@
         "self-improving-harness",
         "prompt-component-attribution",
         "skill-text-authoring",
-        "references-prompt-optimization"
+        "references-prompt-optimization",
+        "recursive-self-improvement"
       ]
     },
     {
@@ -1454,7 +550,6 @@
       "clusters": [
         "agent-memory"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "memory-retrieval",
@@ -1482,7 +577,6 @@
       "clusters": [
         "sms-multi-thread-chatbot"
       ],
-      "source_thread": null,
       "related": [
         "sms-multi-thread-chatbot",
         "sms-state-machine",
@@ -1514,7 +608,6 @@
         "agent-harness",
         "multi-agent-delegation"
       ],
-      "source_thread": null,
       "related": [
         "agent-harness",
         "managed-agent-apis",
@@ -1550,7 +643,6 @@
       "clusters": [
         "agent-memory"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "ontology-grounded-agent",
@@ -1585,7 +677,6 @@
       "clusters": [
         "agent-memory"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "ontology-grounded-agent",
@@ -1617,7 +708,6 @@
       "status": "living",
       "created": "2026-06-09",
       "clusters": [],
-      "source_thread": "2026-06-09-chatbot-pagination-research",
       "related": [
         "domain-chatbot-design",
         "llm-output-design",
@@ -1650,7 +740,6 @@
       "clusters": [
         "agent-state-persistence"
       ],
-      "source_thread": null,
       "related": [
         "agent-state-persistence",
         "run-state-model",
@@ -1679,7 +768,6 @@
       "clusters": [
         "chatbot-pagination"
       ],
-      "source_thread": null,
       "related": [
         "chatbot-pagination",
         "paginated-tool-contract",
@@ -1709,7 +797,6 @@
       "clusters": [
         "llm-evaluation"
       ],
-      "source_thread": null,
       "related": [
         "llm-evaluation",
         "simulated-user-eval",
@@ -1743,7 +830,6 @@
       "clusters": [
         "agent-memory"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "memory-consolidation-and-forgetting",
@@ -1772,7 +858,6 @@
       "clusters": [
         "human-in-the-loop-control"
       ],
-      "source_thread": null,
       "related": [
         "action-execution-safety",
         "human-in-the-loop-control",
@@ -1803,14 +888,14 @@
       "clusters": [
         "context-engineering"
       ],
-      "source_thread": null,
       "related": [
         "context-storage-and-hydration",
         "context-engineering",
         "context-budget-allocation",
         "perceive-reason-act-loop",
         "recency-bias-prompt-design",
-        "domain-knowledge-injection"
+        "domain-knowledge-injection",
+        "just-in-time-context"
       ]
     },
     {
@@ -1833,7 +918,6 @@
       "clusters": [
         "context-engineering"
       ],
-      "source_thread": null,
       "related": [
         "references-context-and-memory",
         "context-engineering",
@@ -1863,7 +947,6 @@
       "clusters": [
         "context-engineering"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "context-engineering",
@@ -1892,7 +975,6 @@
       "status": "living",
       "created": "2026-06-11",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "references-context-and-memory",
         "context-storage-and-hydration",
@@ -1912,7 +994,8 @@
         "skill-text-authoring",
         "skill-injection-decision",
         "skill-lifecycle-and-drift",
-        "text-to-sql-retrieval"
+        "text-to-sql-retrieval",
+        "just-in-time-context"
       ]
     },
     {
@@ -1939,7 +1022,6 @@
         "agent-state-persistence",
         "context-engineering"
       ],
-      "source_thread": null,
       "related": [
         "agent-state-persistence",
         "context-engineering",
@@ -1973,7 +1055,6 @@
         "domain-chatbot-design",
         "sms-multi-thread-chatbot"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "agent-state-persistence",
@@ -2003,7 +1084,6 @@
         "chatbot-pagination",
         "llm-evaluation"
       ],
-      "source_thread": null,
       "related": [
         "chatbot-pagination",
         "llm-evaluation",
@@ -2035,7 +1115,6 @@
       "clusters": [
         "llm-output-design"
       ],
-      "source_thread": "2026-06-10-reasoning-rationale-research",
       "related": [
         "llm-output-design",
         "llm-observability",
@@ -2068,7 +1147,6 @@
       "clusters": [
         "agent-state-persistence"
       ],
-      "source_thread": null,
       "related": [
         "agent-state-persistence",
         "checkpoint-and-replay",
@@ -2095,9 +1173,9 @@
       "created": "2026-06-09",
       "clusters": [
         "agent-state-persistence",
+        "recursive-self-improvement",
         "task-agent-pattern"
       ],
-      "source_thread": null,
       "related": [
         "agent-state-persistence",
         "task-agent-pattern",
@@ -2108,7 +1186,8 @@
         "llm-observability",
         "llm-as-judge",
         "confirm-before-act",
-        "idempotency-keys"
+        "idempotency-keys",
+        "recursive-self-improvement"
       ]
     },
     {
@@ -2132,7 +1211,6 @@
         "task-agent-pattern",
         "task-planning"
       ],
-      "source_thread": null,
       "related": [
         "task-planning",
         "agent-control-loop",
@@ -2160,7 +1238,6 @@
       "status": "living",
       "created": "2026-06-08",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "llm-output-design",
         "llm-evaluation",
@@ -2201,7 +1278,6 @@
       "clusters": [
         "task-agent-pattern"
       ],
-      "source_thread": null,
       "related": [
         "task-agent-pattern",
         "ontology-grounded-agent",
@@ -2236,7 +1312,6 @@
         "context-engineering",
         "domain-chatbot-design"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "context-engineering",
@@ -2269,7 +1344,6 @@
       "clusters": [
         "action-execution-safety"
       ],
-      "source_thread": null,
       "related": [
         "action-execution-safety",
         "confirm-before-act",
@@ -2299,7 +1373,6 @@
       "clusters": [
         "tool-use-design"
       ],
-      "source_thread": null,
       "related": [
         "tool-use-design",
         "forced-tool-call-output",
@@ -2329,7 +1402,6 @@
       "status": "snapshot",
       "created": "2026-06-09",
       "clusters": [],
-      "source_thread": "2026-06-09-dspy-domain-chatbot-research",
       "related": [
         "domain-chatbot-design",
         "references-domain-chatbot-design",
@@ -2359,7 +1431,6 @@
         "multi-agent-delegation",
         "task-agent-pattern"
       ],
-      "source_thread": null,
       "related": [
         "multi-agent-delegation",
         "task-agent-pattern",
@@ -2390,7 +1461,6 @@
         "domain-chatbot-design",
         "multi-agent-delegation"
       ],
-      "source_thread": null,
       "related": [
         "multi-agent-delegation",
         "domain-chatbot-design",
@@ -2420,7 +1490,6 @@
       "clusters": [
         "llm-evaluation"
       ],
-      "source_thread": null,
       "related": [
         "llm-evaluation",
         "eval-dataset-quality",
@@ -2452,7 +1521,6 @@
       "clusters": [
         "llm-evaluation"
       ],
-      "source_thread": null,
       "related": [
         "llm-evaluation",
         "llm-as-judge",
@@ -2484,9 +1552,9 @@
       "status": "living",
       "created": "2026-08-06",
       "clusters": [
-        "llm-evaluation"
+        "llm-evaluation",
+        "recursive-self-improvement"
       ],
-      "source_thread": "2026-08-06-prompt-attribution-research",
       "related": [
         "llm-evaluation",
         "eval-dataset-quality",
@@ -2523,7 +1591,6 @@
         "agent-state-persistence",
         "llm-evaluation"
       ],
-      "source_thread": null,
       "related": [
         "llm-evaluation",
         "action-execution-safety",
@@ -2553,7 +1620,6 @@
       "clusters": [
         "agent-memory"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "agentic-context-engineering-ace",
@@ -2582,7 +1648,6 @@
       "clusters": [
         "sms-multi-thread-chatbot"
       ],
-      "source_thread": null,
       "related": [
         "context-storage-and-hydration",
         "sms-multi-thread-chatbot",
@@ -2614,7 +1679,6 @@
         "task-agent-pattern",
         "tool-use-design"
       ],
-      "source_thread": null,
       "related": [
         "references-template-rendered-output",
         "tool-use-design",
@@ -2649,7 +1713,6 @@
       "clusters": [
         "task-planning"
       ],
-      "source_thread": null,
       "related": [
         "references-task-agent-design",
         "task-planning",
@@ -2676,7 +1739,6 @@
       "clusters": [
         "llm-evaluation"
       ],
-      "source_thread": null,
       "related": [
         "llm-evaluation",
         "test-pyramid-llm",
@@ -2704,7 +1766,6 @@
       "clusters": [
         "domain-chatbot-design"
       ],
-      "source_thread": null,
       "related": [
         "domain-chatbot-design",
         "domain-knowledge-injection",
@@ -2733,7 +1794,6 @@
         "llm-output-design",
         "sms-multi-thread-chatbot"
       ],
-      "source_thread": null,
       "related": [
         "action-execution-safety",
         "human-in-the-loop-control",
@@ -2764,7 +1824,6 @@
       "clusters": [
         "agent-harness"
       ],
-      "source_thread": "2026-07-20-agent-harness-research",
       "related": [
         "agent-harness",
         "self-improving-harness",
@@ -2797,7 +1856,6 @@
       "clusters": [
         "agent-harness"
       ],
-      "source_thread": null,
       "related": [
         "agent-harness",
         "cost-aware-eval",
@@ -2827,7 +1885,6 @@
       "status": "living",
       "created": "2026-06-11",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "simulated-user-eval",
         "worked-example-chatting-task-agent",
@@ -2861,7 +1918,6 @@
       "clusters": [
         "action-execution-safety"
       ],
-      "source_thread": null,
       "related": [
         "action-execution-safety",
         "interrupt-and-resume",
@@ -2890,7 +1946,6 @@
       "clusters": [
         "domain-chatbot-design"
       ],
-      "source_thread": null,
       "related": [
         "domain-chatbot-design",
         "repair-and-clarification",
@@ -2918,7 +1973,6 @@
       "clusters": [
         "agent-memory"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "complementary-learning-systems",
@@ -2950,7 +2004,6 @@
         "agent-state-persistence",
         "human-in-the-loop-control"
       ],
-      "source_thread": null,
       "related": [
         "agent-state-persistence",
         "action-execution-safety",
@@ -2960,6 +2013,47 @@
         "decision-audit-trail",
         "step-budget-and-runaway-control",
         "background-agent-execution"
+      ]
+    },
+    {
+      "id": "just-in-time-context",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/just-in-time-context.md",
+      "title": "Just-in-Time Context",
+      "summary": "keep lightweight references in the window and load the data behind them with tools only when a turn needs it; when that beats precomputed retrieval, when it loses, and how to make it reversible.",
+      "tags": [
+        "agent",
+        "context",
+        "retrieval",
+        "progressive-disclosure",
+        "agentic-search",
+        "token-budget",
+        "engineering-excellence"
+      ],
+      "status": "living",
+      "created": "2026-10-15",
+      "clusters": [
+        "context-engineering"
+      ],
+      "related": [
+        "context-engineering",
+        "context-assembly-per-turn",
+        "context-budget-allocation",
+        "context-compaction",
+        "context-storage-and-hydration",
+        "domain-knowledge-injection",
+        "memory-retrieval",
+        "agent-skills-progressive-disclosure",
+        "skill-injection-decision",
+        "subagent-context-isolation",
+        "tool-result-grounding",
+        "harness-token-economics",
+        "text-to-sql-retrieval",
+        "references-context-and-memory",
+        "references-just-in-time-context",
+        "mcp-tool-layer",
+        "code-execution-sandbox-pattern"
       ]
     },
     {
@@ -2981,10 +2075,8 @@
       "status": "proposal",
       "created": "2026-06-11",
       "clusters": [],
-      "source_thread": null,
       "related": [
-        "knowledge-graph-index-builder-spec",
-        "2026-06-11-knowledge-graph-organization-review"
+        "knowledge-graph-index-builder-spec"
       ]
     },
     {
@@ -3006,10 +2098,7 @@
       "status": "proposal",
       "created": "2026-06-11",
       "clusters": [],
-      "source_thread": null,
-      "related": [
-        "2026-06-11-knowledge-graph-organization-review"
-      ]
+      "related": []
     },
     {
       "id": "layered-defense-pipeline",
@@ -3030,7 +2119,6 @@
       "clusters": [
         "llm-output-design"
       ],
-      "source_thread": null,
       "related": [
         "references-template-rendered-output",
         "llm-output-design",
@@ -3063,7 +2151,6 @@
       "clusters": [
         "llm-evaluation"
       ],
-      "source_thread": null,
       "related": [
         "llm-evaluation",
         "prod-shadow-replay",
@@ -3096,7 +2183,6 @@
       "clusters": [
         "task-planning"
       ],
-      "source_thread": null,
       "related": [
         "task-planning",
         "ontology-grounded-agent",
@@ -3121,9 +2207,9 @@
       "status": "living",
       "created": "2026-06-05",
       "clusters": [
-        "llm-evaluation"
+        "llm-evaluation",
+        "recursive-self-improvement"
       ],
-      "source_thread": null,
       "related": [
         "llm-evaluation",
         "test-pyramid-llm",
@@ -3132,7 +2218,8 @@
         "layered-defense-pipeline",
         "agent-trajectory-eval",
         "decision-audit-trail",
-        "escalation-handoff"
+        "escalation-handoff",
+        "recursive-self-improvement"
       ]
     },
     {
@@ -3151,7 +2238,6 @@
       "status": "living",
       "created": "2026-06-05",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "simulated-user-eval",
         "execution-invariant-testing",
@@ -3199,7 +2285,6 @@
         "agent-control-loop",
         "llm-output-design"
       ],
-      "source_thread": "2026-06-10-llm-observability-research",
       "related": [
         "agent-control-loop",
         "llm-output-design",
@@ -3230,7 +2315,6 @@
       "status": "living",
       "created": "2026-06-07",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "llm-evaluation",
         "forced-tool-call-output",
@@ -3271,7 +2355,6 @@
       "clusters": [
         "agent-harness"
       ],
-      "source_thread": null,
       "related": [
         "agent-harness",
         "agent-control-loop",
@@ -3307,7 +2390,6 @@
       "clusters": [
         "tool-use-design"
       ],
-      "source_thread": null,
       "related": [
         "tool-use-design",
         "tool-schema-design",
@@ -3341,7 +2423,6 @@
       "clusters": [
         "agent-memory"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "memory-types-taxonomy",
@@ -3374,7 +2455,6 @@
       "clusters": [
         "agent-memory"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "agent-native-memory-framework",
@@ -3407,9 +2487,9 @@
       "created": "2026-07-12",
       "clusters": [
         "action-execution-safety",
-        "agent-memory"
+        "agent-memory",
+        "recursive-self-improvement"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "action-execution-safety",
@@ -3423,7 +2503,8 @@
         "adversarial-eval",
         "multi-agent-delegation",
         "agent-native-memory-framework",
-        "references-recursive-self-improvement"
+        "references-recursive-self-improvement",
+        "recursive-self-improvement"
       ]
     },
     {
@@ -3446,7 +2527,6 @@
       "clusters": [
         "agent-memory"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "memory-types-taxonomy",
@@ -3478,7 +2558,6 @@
       "clusters": [
         "agent-memory"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "memory-consolidation-and-forgetting",
@@ -3510,7 +2589,6 @@
       "clusters": [
         "sms-multi-thread-chatbot"
       ],
-      "source_thread": null,
       "related": [
         "sms-multi-thread-chatbot",
         "forced-tool-call-output",
@@ -3537,7 +2615,6 @@
       "clusters": [
         "human-in-the-loop-control"
       ],
-      "source_thread": null,
       "related": [
         "human-in-the-loop-control",
         "interrupt-and-resume",
@@ -3564,7 +2641,6 @@
       "status": "living",
       "created": "2026-06-11",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "references-task-agent-design",
         "worked-example-chatting-task-agent",
@@ -3599,7 +2675,6 @@
       "clusters": [
         "llm-output-design"
       ],
-      "source_thread": "2026-06-09-reasoning-mode-research",
       "related": [
         "llm-output-design",
         "forced-tool-call-output",
@@ -3628,9 +2703,9 @@
       "status": "living",
       "created": "2026-06-15",
       "clusters": [
-        "llm-evaluation"
+        "llm-evaluation",
+        "recursive-self-improvement"
       ],
-      "source_thread": null,
       "related": [
         "llm-evaluation",
         "llm-as-judge",
@@ -3646,7 +2721,8 @@
         "worked-example-skillsv-valuation",
         "worked-example-gepa-mechanism",
         "eval-statistical-significance",
-        "references-prompt-optimization"
+        "references-prompt-optimization",
+        "recursive-self-improvement"
       ]
     },
     {
@@ -3669,7 +2745,6 @@
       "clusters": [
         "llm-output-design"
       ],
-      "source_thread": null,
       "related": [
         "llm-output-design",
         "schema-vs-validator",
@@ -3699,7 +2774,6 @@
       "clusters": [
         "task-agent-pattern"
       ],
-      "source_thread": null,
       "related": [
         "task-agent-pattern",
         "domain-event-task-ontology",
@@ -3732,7 +2806,6 @@
       "clusters": [
         "agent-memory"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "ontology-grounded-agent",
@@ -3768,7 +2841,6 @@
       "clusters": [
         "domain-chatbot-design"
       ],
-      "source_thread": null,
       "related": [
         "domain-chatbot-design",
         "domain-knowledge-injection",
@@ -3801,7 +2873,6 @@
         "task-agent-pattern",
         "tool-use-design"
       ],
-      "source_thread": null,
       "related": [
         "tool-use-design",
         "task-agent-pattern",
@@ -3831,7 +2902,6 @@
       "clusters": [
         "chatbot-pagination"
       ],
-      "source_thread": null,
       "related": [
         "chatbot-pagination",
         "truncated-pyramid-results",
@@ -3861,7 +2931,6 @@
       "clusters": [
         "agent-memory"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "associative-memory-and-attention",
@@ -3889,7 +2958,6 @@
       "clusters": [
         "agent-control-loop"
       ],
-      "source_thread": null,
       "related": [
         "references-task-agent-design",
         "agent-control-loop",
@@ -3919,7 +2987,6 @@
       "clusters": [
         "domain-chatbot-design"
       ],
-      "source_thread": null,
       "related": [
         "domain-chatbot-design",
         "scope-and-refusal",
@@ -3946,7 +3013,6 @@
       "clusters": [
         "task-planning"
       ],
-      "source_thread": null,
       "related": [
         "references-task-agent-design",
         "task-planning",
@@ -3977,7 +3043,6 @@
       "status": "snapshot",
       "created": "2026-07-10",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "context-engineering",
         "agent-harness",
@@ -4019,7 +3084,6 @@
       "clusters": [
         "agent-memory"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "memory-retrieval",
@@ -4051,7 +3115,6 @@
       "clusters": [
         "llm-evaluation"
       ],
-      "source_thread": null,
       "related": [
         "llm-evaluation",
         "test-pyramid-llm",
@@ -4079,7 +3142,6 @@
         "context-engineering",
         "llm-evaluation"
       ],
-      "source_thread": "2026-08-06-prompt-attribution-research",
       "related": [
         "offline-prompt-optimization",
         "agentic-context-engineering-ace",
@@ -4120,7 +3182,6 @@
       "clusters": [
         "action-execution-safety"
       ],
-      "source_thread": null,
       "related": [
         "action-execution-safety",
         "action-authority",
@@ -4160,7 +3221,6 @@
       "clusters": [
         "agent-memory"
       ],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "agent-native-memory-framework",
@@ -4195,13 +3255,50 @@
       "clusters": [
         "domain-chatbot-design"
       ],
-      "source_thread": null,
       "related": [
         "domain-chatbot-design",
         "operator-trust-injection",
         "conversation-memory",
         "domain-knowledge-injection",
         "layered-defense-pipeline"
+      ]
+    },
+    {
+      "id": "recursive-self-improvement",
+      "type": "topic",
+      "kind": null,
+      "path": "nodes/topics/recursive-self-improvement.md",
+      "title": "Recursive Self-Improvement",
+      "summary": "entry point for agents that edit their own prompts, skills, memory, or harness code: what the loop is, why the acceptance gate decides the outcome, and where to read next.",
+      "tags": [
+        "rsi",
+        "self-improvement",
+        "harness",
+        "evaluation",
+        "safety",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-10-18",
+      "clusters": [],
+      "related": [
+        "self-improving-harness",
+        "references-recursive-self-improvement",
+        "references-rsi-2026-10",
+        "agent-harness",
+        "agent-control-loop",
+        "offline-prompt-optimization",
+        "agentic-context-engineering-ace",
+        "verbal-reinforcement-vs-gradient-rl",
+        "skill-lifecycle-and-drift",
+        "memory-poisoning",
+        "llm-as-judge",
+        "eval-statistical-significance",
+        "adaptive-eval-budget",
+        "action-authority",
+        "decision-audit-trail",
+        "llm-evaluation",
+        "action-execution-safety"
       ]
     },
     {
@@ -4222,7 +3319,6 @@
       "status": "living",
       "created": "2026-08-31",
       "clusters": [],
-      "source_thread": "2026-08-31-adaptive-eval-fanout",
       "related": [
         "adaptive-eval-budget",
         "eval-statistical-significance",
@@ -4252,7 +3348,6 @@
       "status": "living",
       "created": "2026-08-08",
       "clusters": [],
-      "source_thread": "2026-08-08-skill-text-authoring-fanout",
       "related": [
         "skill-text-authoring",
         "agent-skills-progressive-disclosure",
@@ -4286,7 +3381,6 @@
       "status": "living",
       "created": "2026-06-09",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "chatbot-pagination",
         "truncated-pyramid-results",
@@ -4312,13 +3406,14 @@
       "status": "living",
       "created": "2026-06-12",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "context-engineering",
         "agent-memory",
         "memory-retrieval",
         "memory-consolidation-and-forgetting",
-        "memory-types-taxonomy"
+        "memory-types-taxonomy",
+        "just-in-time-context",
+        "references-just-in-time-context"
       ]
     },
     {
@@ -4340,7 +3435,6 @@
       "status": "living",
       "created": "2026-06-08",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "domain-chatbot-design",
         "sms-multi-thread-chatbot",
@@ -4369,7 +3463,6 @@
       "status": "living",
       "created": "2026-06-05",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "llm-evaluation",
         "test-pyramid-llm",
@@ -4399,7 +3492,6 @@
       "status": "living",
       "created": "2026-08-02",
       "clusters": [],
-      "source_thread": "2026-07-20-agent-harness-research",
       "related": [
         "eval-statistical-significance",
         "agent-harness",
@@ -4407,6 +3499,38 @@
         "background-agent-execution",
         "self-improving-harness",
         "multi-agent-delegation"
+      ]
+    },
+    {
+      "id": "references-just-in-time-context",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-just-in-time-context.md",
+      "title": "References \u2014 Just-in-Time Context",
+      "summary": "verified fan-out on just-in-time context: the vendor posts and docs that define it, the retrieval lineage it descends from, and the papers that measure where it beats or loses to loading up front.",
+      "tags": [
+        "context",
+        "just-in-time",
+        "retrieval",
+        "tool-search",
+        "progressive-disclosure",
+        "agentic-search",
+        "reading-list"
+      ],
+      "status": "living",
+      "created": "2026-10-16",
+      "clusters": [],
+      "related": [
+        "just-in-time-context",
+        "references-context-and-memory",
+        "tool-selection-and-routing",
+        "agent-skills-progressive-disclosure",
+        "context-compaction",
+        "subagent-context-isolation",
+        "code-execution-sandbox-pattern",
+        "harness-token-economics",
+        "mcp-tool-layer",
+        "references-model-context-protocol"
       ]
     },
     {
@@ -4428,7 +3552,6 @@
       "status": "living",
       "created": "2026-06-19",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "agent-memory",
         "associative-memory-and-attention",
@@ -4459,7 +3582,6 @@
       "status": "living",
       "created": "2026-08-02",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "mcp-tool-layer",
         "tool-use-design",
@@ -4487,7 +3609,6 @@
       "status": "living",
       "created": "2026-08-06",
       "clusters": [],
-      "source_thread": "2026-08-06-multi-turn-eval-survey-fanout",
       "related": [
         "llm-evaluation",
         "agent-trajectory-eval",
@@ -4519,7 +3640,6 @@
       "status": "living",
       "created": "2026-07-03",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "ontology-grounded-agent",
         "domain-event-task-ontology",
@@ -4548,7 +3668,6 @@
       "status": "living",
       "created": "2026-08-06",
       "clusters": [],
-      "source_thread": "2026-08-06-prompt-attribution-research",
       "related": [
         "prompt-component-attribution",
         "eval-statistical-significance",
@@ -4578,7 +3697,6 @@
       "status": "living",
       "created": "2026-08-05",
       "clusters": [],
-      "source_thread": "2026-08-06-prompt-attribution-research",
       "related": [
         "offline-prompt-optimization",
         "agentic-context-engineering-ace",
@@ -4613,7 +3731,6 @@
       "status": "living",
       "created": "2026-09-28",
       "clusters": [],
-      "source_thread": "2026-09-28-rsi-fanout",
       "related": [
         "self-improving-harness",
         "skill-lifecycle-and-drift",
@@ -4626,6 +3743,36 @@
         "harness-as-hyperparameter",
         "offline-prompt-optimization",
         "references-harness-evaluation"
+      ]
+    },
+    {
+      "id": "references-rsi-2026-10",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-rsi-2026-10.md",
+      "title": "References \u2014 Recursive Self-Improvement, October 2026",
+      "summary": "second RSI fan-out: verified lineage from Weng's harness post, the Darwin G\u00f6del Machine write-up, and 2026-09-26 \u2192 10-17 papers on gates, baselines, harness-vs-weights, and safety.",
+      "tags": [
+        "rsi",
+        "self-improvement",
+        "harness",
+        "evaluation",
+        "safety",
+        "reading-list",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-10-18",
+      "clusters": [],
+      "related": [
+        "recursive-self-improvement",
+        "references-recursive-self-improvement",
+        "self-improving-harness",
+        "llm-as-judge",
+        "eval-statistical-significance",
+        "skill-lifecycle-and-drift",
+        "action-authority",
+        "harness-as-hyperparameter"
       ]
     },
     {
@@ -4647,7 +3794,6 @@
       "status": "living",
       "created": "2026-06-11",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "agent-control-loop",
         "tool-use-design",
@@ -4675,7 +3821,6 @@
       "status": "living",
       "created": "2026-06-13",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "template-rendered-output",
         "forced-tool-call-output",
@@ -4703,7 +3848,6 @@
       "clusters": [
         "agent-control-loop"
       ],
-      "source_thread": null,
       "related": [
         "agent-control-loop",
         "verbal-self-correction",
@@ -4733,7 +3877,6 @@
       "clusters": [
         "domain-chatbot-design"
       ],
-      "source_thread": null,
       "related": [
         "domain-chatbot-design",
         "intent-and-disambiguation",
@@ -4761,7 +3904,6 @@
       "clusters": [
         "multi-agent-delegation"
       ],
-      "source_thread": null,
       "related": [
         "multi-agent-delegation",
         "subagent-context-isolation",
@@ -4791,7 +3933,6 @@
       "clusters": [
         "action-execution-safety"
       ],
-      "source_thread": null,
       "related": [
         "action-execution-safety",
         "idempotency-keys",
@@ -4820,7 +3961,6 @@
       "clusters": [
         "agent-state-persistence"
       ],
-      "source_thread": null,
       "related": [
         "context-storage-and-hydration",
         "agent-memory",
@@ -4852,7 +3992,6 @@
       "clusters": [
         "domain-chatbot-design"
       ],
-      "source_thread": null,
       "related": [
         "domain-chatbot-design",
         "scope-and-refusal",
@@ -4881,7 +4020,6 @@
       "clusters": [
         "llm-output-design"
       ],
-      "source_thread": null,
       "related": [
         "llm-output-design",
         "forced-tool-call-output",
@@ -4908,7 +4046,6 @@
       "clusters": [
         "domain-chatbot-design"
       ],
-      "source_thread": null,
       "related": [
         "domain-chatbot-design",
         "grounding-and-citation",
@@ -4935,9 +4072,9 @@
       "created": "2026-07-07",
       "clusters": [
         "agent-control-loop",
-        "agent-harness"
+        "agent-harness",
+        "recursive-self-improvement"
       ],
-      "source_thread": null,
       "related": [
         "agent-control-loop",
         "agentic-context-engineering-ace",
@@ -4951,7 +4088,9 @@
         "eval-statistical-significance",
         "references-recursive-self-improvement",
         "llm-as-judge",
-        "skill-lifecycle-and-drift"
+        "skill-lifecycle-and-drift",
+        "recursive-self-improvement",
+        "references-rsi-2026-10"
       ]
     },
     {
@@ -4976,7 +4115,6 @@
         "human-in-the-loop-control",
         "llm-evaluation"
       ],
-      "source_thread": null,
       "related": [
         "llm-evaluation",
         "agent-trajectory-eval",
@@ -5008,7 +4146,6 @@
       "clusters": [
         "context-engineering"
       ],
-      "source_thread": "2026-09-11-industry-trend-catchup",
       "related": [
         "context-engineering",
         "agent-skills-progressive-disclosure",
@@ -5044,9 +4181,9 @@
       "status": "living",
       "created": "2026-09-11",
       "clusters": [
-        "context-engineering"
+        "context-engineering",
+        "recursive-self-improvement"
       ],
-      "source_thread": "2026-09-11-industry-trend-catchup",
       "related": [
         "context-engineering",
         "agent-skills-progressive-disclosure",
@@ -5083,7 +4220,6 @@
       "clusters": [
         "context-engineering"
       ],
-      "source_thread": "2026-08-08-skill-text-authoring-fanout",
       "related": [
         "agent-skills-progressive-disclosure",
         "skill-injection-decision",
@@ -5123,7 +4259,6 @@
         "context-engineering",
         "sms-multi-thread-chatbot"
       ],
-      "source_thread": null,
       "related": [
         "context-engineering",
         "sms-multi-thread-chatbot",
@@ -5151,7 +4286,6 @@
       "status": "proposal",
       "created": "2026-06-10",
       "clusters": [],
-      "source_thread": "2026-06-10-sms-message-buffering-research",
       "related": [
         "sms-message-buffering-spec",
         "sms-state-machine",
@@ -5178,7 +4312,6 @@
       "status": "proposal",
       "created": "2026-06-10",
       "clusters": [],
-      "source_thread": "2026-06-10-sms-message-buffering-research",
       "related": [
         "sms-multi-thread-chatbot",
         "sms-state-machine",
@@ -5207,7 +4340,6 @@
       "status": "living",
       "created": "2026-06-08",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "domain-chatbot-design",
         "llm-output-design",
@@ -5241,7 +4373,6 @@
       "clusters": [
         "sms-multi-thread-chatbot"
       ],
-      "source_thread": null,
       "related": [
         "sms-multi-thread-chatbot",
         "flat-channel-thread-tracking",
@@ -5270,7 +4401,6 @@
       "clusters": [
         "sms-multi-thread-chatbot"
       ],
-      "source_thread": null,
       "related": [
         "sms-multi-thread-chatbot",
         "flat-channel-thread-tracking",
@@ -5297,7 +4427,6 @@
       "status": "proposal",
       "created": "2026-06-09",
       "clusters": [],
-      "source_thread": "2026-06-09-spender-agent-ea-workflow",
       "related": [
         "task-agent-pattern",
         "decision-engine-contract",
@@ -5333,7 +4462,6 @@
         "action-execution-safety",
         "agent-control-loop"
       ],
-      "source_thread": null,
       "related": [
         "agent-control-loop",
         "stop-and-yield-conditions",
@@ -5365,7 +4493,6 @@
         "agent-control-loop",
         "human-in-the-loop-control"
       ],
-      "source_thread": null,
       "related": [
         "human-in-the-loop-control",
         "agent-control-loop",
@@ -5394,7 +4521,6 @@
       "clusters": [
         "llm-output-design"
       ],
-      "source_thread": null,
       "related": [
         "llm-output-design",
         "forced-tool-call-output",
@@ -5421,7 +4547,6 @@
       "clusters": [
         "multi-agent-delegation"
       ],
-      "source_thread": null,
       "related": [
         "multi-agent-delegation",
         "when-to-delegate",
@@ -5448,7 +4573,6 @@
       "status": "living",
       "created": "2026-06-09",
       "clusters": [],
-      "source_thread": "2026-06-09-task-agent-pattern",
       "related": [
         "multi-agent-delegation",
         "agent-state-persistence",
@@ -5487,7 +4611,6 @@
       "status": "archived",
       "created": "2026-06-09",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "domain-chatbot-design",
         "llm-output-design",
@@ -5513,7 +4636,6 @@
       "status": "living",
       "created": "2026-06-11",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "references-task-agent-design",
         "worked-example-chatting-task-agent",
@@ -5547,7 +4669,6 @@
       "clusters": [
         "llm-output-design"
       ],
-      "source_thread": null,
       "related": [
         "references-template-rendered-output",
         "llm-output-design",
@@ -5576,7 +4697,6 @@
       "clusters": [
         "llm-evaluation"
       ],
-      "source_thread": null,
       "related": [
         "llm-evaluation",
         "llm-as-judge",
@@ -5606,7 +4726,6 @@
       "clusters": [
         "context-engineering"
       ],
-      "source_thread": null,
       "related": [
         "context-engineering",
         "domain-knowledge-injection",
@@ -5636,7 +4755,6 @@
       "clusters": [
         "sms-multi-thread-chatbot"
       ],
-      "source_thread": null,
       "related": [
         "sms-multi-thread-chatbot",
         "flat-channel-thread-tracking",
@@ -5664,7 +4782,6 @@
       "clusters": [
         "tool-use-design"
       ],
-      "source_thread": null,
       "related": [
         "tool-use-design",
         "tool-schema-design",
@@ -5694,7 +4811,6 @@
       "clusters": [
         "tool-use-design"
       ],
-      "source_thread": null,
       "related": [
         "references-task-agent-design",
         "tool-use-design",
@@ -5724,7 +4840,6 @@
       "clusters": [
         "tool-use-design"
       ],
-      "source_thread": null,
       "related": [
         "references-task-agent-design",
         "tool-use-design",
@@ -5732,7 +4847,9 @@
         "tool-result-grounding",
         "intent-and-disambiguation",
         "recency-bias-prompt-design",
-        "mcp-tool-layer"
+        "mcp-tool-layer",
+        "just-in-time-context",
+        "references-just-in-time-context"
       ]
     },
     {
@@ -5752,7 +4869,6 @@
       "status": "living",
       "created": "2026-06-11",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "references-task-agent-design",
         "worked-example-chatting-task-agent",
@@ -5789,7 +4905,6 @@
       "clusters": [
         "chatbot-pagination"
       ],
-      "source_thread": null,
       "related": [
         "chatbot-pagination",
         "paginated-tool-contract",
@@ -5818,7 +4933,6 @@
         "domain-chatbot-design",
         "llm-output-design"
       ],
-      "source_thread": "2026-09-12-turn-outcome-signal",
       "related": [
         "domain-chatbot-design",
         "llm-output-design",
@@ -5853,7 +4967,6 @@
       "clusters": [
         "domain-chatbot-design"
       ],
-      "source_thread": null,
       "related": [
         "domain-chatbot-design",
         "repair-and-clarification",
@@ -5882,7 +4995,6 @@
       "clusters": [
         "task-agent-pattern"
       ],
-      "source_thread": null,
       "related": [
         "task-agent-pattern",
         "engine-vs-conversation-routing",
@@ -5911,16 +5023,17 @@
       "status": "living",
       "created": "2026-06-16",
       "clusters": [
-        "llm-evaluation"
+        "llm-evaluation",
+        "recursive-self-improvement"
       ],
-      "source_thread": null,
       "related": [
         "offline-prompt-optimization",
         "agentic-context-engineering-ace",
         "verbal-self-correction",
         "llm-evaluation",
         "llm-as-judge",
-        "references-prompt-optimization"
+        "references-prompt-optimization",
+        "recursive-self-improvement"
       ]
     },
     {
@@ -5942,7 +5055,6 @@
       "clusters": [
         "llm-evaluation"
       ],
-      "source_thread": null,
       "related": [
         "verbal-reinforcement-vs-gradient-rl",
         "offline-prompt-optimization",
@@ -5972,7 +5084,6 @@
       "clusters": [
         "multi-agent-delegation"
       ],
-      "source_thread": null,
       "related": [
         "multi-agent-delegation",
         "subagent-context-isolation",
@@ -5998,7 +5109,6 @@
       "status": "living",
       "created": "2026-06-10",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "cot-as-forensic-artifact",
         "llm-observability",
@@ -6025,7 +5135,6 @@
       "status": "snapshot",
       "created": "2026-06-11",
       "clusters": [],
-      "source_thread": "2026-06-11-chatting-task-agent-buildout",
       "related": [
         "simulated-user-eval",
         "execution-invariant-testing",
@@ -6060,7 +5169,6 @@
       "status": "snapshot",
       "created": "2026-08-30",
       "clusters": [],
-      "source_thread": "2026-08-30-gepa-dspy-fanout",
       "related": [
         "offline-prompt-optimization",
         "verbal-reinforcement-vs-gradient-rl",
@@ -6089,7 +5197,6 @@
       "status": "living",
       "created": "2026-06-10",
       "clusters": [],
-      "source_thread": null,
       "related": [
         "cot-as-forensic-artifact",
         "llm-observability",
@@ -6116,7 +5223,6 @@
       "status": "snapshot",
       "created": "2026-08-30",
       "clusters": [],
-      "source_thread": "2026-08-30-skillsv-fanout",
       "related": [
         "prompt-component-attribution",
         "skill-text-authoring",
@@ -6131,996 +5237,6 @@
   ],
   "edges": [
     {
-      "from": "2026-06-05-eval-analysis",
-      "to": "agent-eval-case-study",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-05-eval-analysis",
-      "to": "agent-eval-improvement-tiers",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-05-eval-analysis",
-      "to": "references-eval-reading-list",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-07-forced-tool-call-fan-out",
-      "to": "forced-tool-call-output",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-07-forced-tool-call-fan-out",
-      "to": "hard-surface-irrevocability",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-07-forced-tool-call-fan-out",
-      "to": "llm-output-design",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-07-forced-tool-call-fan-out",
-      "to": "output-surface-taxonomy",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-07-forced-tool-call-fan-out",
-      "to": "schema-vs-validator",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-07-forced-tool-call-fan-out",
-      "to": "streaming-vs-structured",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-domain-chatbot-fan-out",
-      "to": "action-authority",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-domain-chatbot-fan-out",
-      "to": "conversation-memory",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-domain-chatbot-fan-out",
-      "to": "domain-chatbot-design",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-domain-chatbot-fan-out",
-      "to": "domain-knowledge-injection",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-domain-chatbot-fan-out",
-      "to": "escalation-handoff",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-domain-chatbot-fan-out",
-      "to": "grounding-and-citation",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-domain-chatbot-fan-out",
-      "to": "intent-and-disambiguation",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-domain-chatbot-fan-out",
-      "to": "persona-tone-compliance",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-domain-chatbot-fan-out",
-      "to": "repair-and-clarification",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-domain-chatbot-fan-out",
-      "to": "safety-rails-domain-specific",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-domain-chatbot-fan-out",
-      "to": "scope-and-refusal",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-domain-chatbot-fan-out",
-      "to": "turn-taking-and-proactivity",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-domain-chatbot-research",
-      "to": "domain-chatbot-design",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-domain-chatbot-research",
-      "to": "references-domain-chatbot-design",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-domain-chatbot-research",
-      "to": "references-eval-reading-list",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-sms-multi-thread-fan-out",
-      "to": "async-conversation-pacing",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-sms-multi-thread-fan-out",
-      "to": "flat-channel-thread-tracking",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-sms-multi-thread-fan-out",
-      "to": "message-segmentation-160",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-sms-multi-thread-fan-out",
-      "to": "sms-context-windowing",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-sms-multi-thread-fan-out",
-      "to": "sms-multi-thread-chatbot",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-sms-multi-thread-fan-out",
-      "to": "sms-recovery-and-reentry",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-sms-multi-thread-fan-out",
-      "to": "sms-state-machine",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-08-sms-multi-thread-fan-out",
-      "to": "thread-disambiguation-prompts",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-chatbot-pagination-research",
-      "to": "chatbot-pagination",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-chatbot-pagination-research",
-      "to": "code-execution-sandbox-pattern",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-chatbot-pagination-research",
-      "to": "paginated-tool-contract",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-chatbot-pagination-research",
-      "to": "references-chatbot-pagination",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-chatbot-pagination-research",
-      "to": "truncated-pyramid-results",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-dspy-domain-chatbot-research",
-      "to": "domain-chatbot-design",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-dspy-domain-chatbot-research",
-      "to": "dspy-domain-chatbot-cases",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-dspy-domain-chatbot-research",
-      "to": "references-domain-chatbot-design",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-ikki-forced-tool-calling",
-      "to": "forced-tool-call-output",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-ikki-forced-tool-calling",
-      "to": "layered-defense-pipeline",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-ikki-forced-tool-calling",
-      "to": "llm-as-judge",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-ikki-forced-tool-calling",
-      "to": "references-domain-chatbot-design",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-ikki-forced-tool-calling",
-      "to": "template-rendered-output",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-operator-trust-injection",
-      "to": "domain-knowledge-injection",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-operator-trust-injection",
-      "to": "layered-defense-pipeline",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-operator-trust-injection",
-      "to": "operator-trust-injection",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-operator-trust-injection",
-      "to": "recency-bias-prompt-design",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-reasoning-mode-research",
-      "to": "decision-engine-contract",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-reasoning-mode-research",
-      "to": "forced-tool-call-output",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-reasoning-mode-research",
-      "to": "native-thinking-vs-prompted-reasoning",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-reasoning-mode-research",
-      "to": "operator-trust-injection",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-spender-agent-ea-workflow",
-      "to": "decision-engine-contract",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-spender-agent-ea-workflow",
-      "to": "forced-tool-call-output",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-spender-agent-ea-workflow",
-      "to": "sms-multi-thread-chatbot",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-spender-agent-ea-workflow",
-      "to": "spender-agent",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-spender-agent-ea-workflow",
-      "to": "task-agent-pattern",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-task-agent-pattern",
-      "to": "decision-audit-trail",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-task-agent-pattern",
-      "to": "decision-engine-contract",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-task-agent-pattern",
-      "to": "engine-vs-conversation-routing",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-task-agent-pattern",
-      "to": "task-agent-pattern",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-09-task-agent-pattern",
-      "to": "task-agent-pattern-fanout",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-github-buffering-references",
-      "to": "2026-06-10-sms-message-buffering-research",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-github-buffering-references",
-      "to": "sms-message-buffering-plan",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-github-buffering-references",
-      "to": "sms-message-buffering-spec",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-llm-observability-research",
-      "to": "cost-aware-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-llm-observability-research",
-      "to": "decision-audit-trail",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-llm-observability-research",
-      "to": "llm-observability",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-llm-observability-research",
-      "to": "native-thinking-vs-prompted-reasoning",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-llm-observability-research",
-      "to": "prod-shadow-replay",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-reasoning-rationale-research",
-      "to": "cot-as-forensic-artifact",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-reasoning-rationale-research",
-      "to": "llm-observability",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-reasoning-rationale-research",
-      "to": "worked-example-anthropic-thinking",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-reasoning-rationale-research",
-      "to": "worked-example-openai-responses",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-sms-message-buffering-research",
-      "to": "forced-tool-call-output",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-sms-message-buffering-research",
-      "to": "sms-message-buffering-spec",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-sms-message-buffering-research",
-      "to": "sms-multi-thread-chatbot",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-10-sms-message-buffering-research",
-      "to": "sms-state-machine",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-11-chatting-task-agent-buildout",
-      "to": "action-execution-safety",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-11-chatting-task-agent-buildout",
-      "to": "agent-control-loop",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-11-chatting-task-agent-buildout",
-      "to": "agent-state-persistence",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-11-chatting-task-agent-buildout",
-      "to": "context-engineering",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-11-chatting-task-agent-buildout",
-      "to": "human-in-the-loop-control",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-11-chatting-task-agent-buildout",
-      "to": "multi-agent-delegation",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-11-chatting-task-agent-buildout",
-      "to": "task-planning",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-11-chatting-task-agent-buildout",
-      "to": "tool-use-design",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-11-chatting-task-agent-buildout",
-      "to": "worked-example-chatting-task-agent",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-11-knowledge-graph-organization-review",
-      "to": "knowledge-graph-index-builder-spec",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-11-text-eot-classifier-salvage",
-      "to": "2026-06-10-github-buffering-references",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-11-text-eot-classifier-salvage",
-      "to": "2026-06-10-sms-message-buffering-research",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-11-text-eot-classifier-salvage",
-      "to": "sms-message-buffering-plan",
-      "kind": "related"
-    },
-    {
-      "from": "2026-06-11-text-eot-classifier-salvage",
-      "to": "sms-message-buffering-spec",
-      "kind": "related"
-    },
-    {
-      "from": "2026-07-20-agent-harness-research",
-      "to": "action-execution-safety",
-      "kind": "related"
-    },
-    {
-      "from": "2026-07-20-agent-harness-research",
-      "to": "agent-control-loop",
-      "kind": "related"
-    },
-    {
-      "from": "2026-07-20-agent-harness-research",
-      "to": "agent-harness",
-      "kind": "related"
-    },
-    {
-      "from": "2026-07-20-agent-harness-research",
-      "to": "background-agent-execution",
-      "kind": "related"
-    },
-    {
-      "from": "2026-07-20-agent-harness-research",
-      "to": "harness-as-hyperparameter",
-      "kind": "related"
-    },
-    {
-      "from": "2026-07-20-agent-harness-research",
-      "to": "llm-evaluation",
-      "kind": "related"
-    },
-    {
-      "from": "2026-07-20-agent-harness-research",
-      "to": "managed-agent-apis",
-      "kind": "related"
-    },
-    {
-      "from": "2026-07-20-agent-harness-research",
-      "to": "references-task-agent-design",
-      "kind": "related"
-    },
-    {
-      "from": "2026-07-20-agent-harness-research",
-      "to": "self-improving-harness",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-06-multi-turn-eval-survey-fanout",
-      "to": "agent-memory",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-06-multi-turn-eval-survey-fanout",
-      "to": "agent-trajectory-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-06-multi-turn-eval-survey-fanout",
-      "to": "llm-evaluation",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-06-multi-turn-eval-survey-fanout",
-      "to": "memory-types-taxonomy",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-06-multi-turn-eval-survey-fanout",
-      "to": "references-multi-turn-agent-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-06-multi-turn-eval-survey-fanout",
-      "to": "reflection-loop-taxonomy",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-06-prompt-attribution-research",
-      "to": "cot-as-forensic-artifact",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-06-prompt-attribution-research",
-      "to": "eval-statistical-significance",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-06-prompt-attribution-research",
-      "to": "llm-evaluation",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-06-prompt-attribution-research",
-      "to": "offline-prompt-optimization",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-06-prompt-attribution-research",
-      "to": "prompt-component-attribution",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-06-prompt-attribution-research",
-      "to": "references-prompt-attribution",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-06-prompt-attribution-research",
-      "to": "references-prompt-optimization",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-08-skill-text-authoring-fanout",
-      "to": "agent-skills-progressive-disclosure",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-08-skill-text-authoring-fanout",
-      "to": "agentic-context-engineering-ace",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-08-skill-text-authoring-fanout",
-      "to": "offline-prompt-optimization",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-08-skill-text-authoring-fanout",
-      "to": "prompt-component-attribution",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-08-skill-text-authoring-fanout",
-      "to": "references-agent-skill-authoring",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-08-skill-text-authoring-fanout",
-      "to": "skill-text-authoring",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-18-industry-trend-catchup",
-      "to": "eval-statistical-significance",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-18-industry-trend-catchup",
-      "to": "live-traffic-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-18-industry-trend-catchup",
-      "to": "references-agent-skill-authoring",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-18-industry-trend-catchup",
-      "to": "references-prompt-attribution",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-18-industry-trend-catchup",
-      "to": "references-prompt-optimization",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-18-industry-trend-catchup",
-      "to": "self-improving-harness",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-18-industry-trend-catchup",
-      "to": "skill-text-authoring",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-30-gepa-dspy-fanout",
-      "to": "cost-aware-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-30-gepa-dspy-fanout",
-      "to": "offline-prompt-optimization",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-30-gepa-dspy-fanout",
-      "to": "references-prompt-optimization",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-30-gepa-dspy-fanout",
-      "to": "verbal-reinforcement-vs-gradient-rl",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-30-gepa-dspy-fanout",
-      "to": "worked-example-gepa-mechanism",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-30-skillsv-fanout",
-      "to": "offline-prompt-optimization",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-30-skillsv-fanout",
-      "to": "prompt-component-attribution",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-30-skillsv-fanout",
-      "to": "references-prompt-attribution",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-30-skillsv-fanout",
-      "to": "references-prompt-optimization",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-30-skillsv-fanout",
-      "to": "skill-text-authoring",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-30-skillsv-fanout",
-      "to": "worked-example-skillsv-valuation",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-31-adaptive-eval-fanout",
-      "to": "adaptive-eval-budget",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-31-adaptive-eval-fanout",
-      "to": "cost-aware-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-31-adaptive-eval-fanout",
-      "to": "eval-statistical-significance",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-31-adaptive-eval-fanout",
-      "to": "references-adaptive-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-08-31-adaptive-eval-fanout",
-      "to": "worked-example-gepa-mechanism",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "agent-skills-progressive-disclosure",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "agent-trajectory-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "eval-statistical-significance",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "harness-as-hyperparameter",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "llm-as-judge",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "offline-prompt-optimization",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "prompt-component-attribution",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "prompt-injection-and-isolation",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "references-agent-skill-authoring",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "references-harness-evaluation",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "references-multi-turn-agent-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "references-prompt-attribution",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "references-prompt-optimization",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "simulated-user-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "skill-injection-decision",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "skill-lifecycle-and-drift",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-11-industry-trend-catchup",
-      "to": "skill-text-authoring",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-12-turn-outcome-signal",
-      "to": "confirm-before-act",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-12-turn-outcome-signal",
-      "to": "escalation-handoff",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-12-turn-outcome-signal",
-      "to": "forced-tool-call-output",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-12-turn-outcome-signal",
-      "to": "live-traffic-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-12-turn-outcome-signal",
-      "to": "turn-outcome-signal",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-12-turn-outcome-signal",
-      "to": "turn-taking-and-proactivity",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-18-industry-trend-catchup",
-      "to": "adaptive-eval-budget",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-18-industry-trend-catchup",
-      "to": "agent-trajectory-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-18-industry-trend-catchup",
-      "to": "cost-aware-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-18-industry-trend-catchup",
-      "to": "decision-audit-trail",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-18-industry-trend-catchup",
-      "to": "escalation-handoff",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-18-industry-trend-catchup",
-      "to": "llm-as-judge",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-18-industry-trend-catchup",
-      "to": "references-agent-skill-authoring",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-18-industry-trend-catchup",
-      "to": "references-multi-turn-agent-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-18-industry-trend-catchup",
-      "to": "skill-lifecycle-and-drift",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-18-industry-trend-catchup",
-      "to": "turn-outcome-signal",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-27-industry-trend-catchup",
-      "to": "2026-09-18-industry-trend-catchup",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-27-industry-trend-catchup",
-      "to": "adaptive-eval-budget",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-27-industry-trend-catchup",
-      "to": "agent-trajectory-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-27-industry-trend-catchup",
-      "to": "checkpoint-and-replay",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-27-industry-trend-catchup",
-      "to": "confirm-before-act",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-27-industry-trend-catchup",
-      "to": "decision-audit-trail",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-27-industry-trend-catchup",
-      "to": "idempotency-keys",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-27-industry-trend-catchup",
-      "to": "llm-as-judge",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-27-industry-trend-catchup",
-      "to": "memory-poisoning",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-27-industry-trend-catchup",
-      "to": "references-agent-skill-authoring",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-27-industry-trend-catchup",
-      "to": "references-eval-reading-list",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-27-industry-trend-catchup",
-      "to": "references-multi-turn-agent-eval",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-27-industry-trend-catchup",
-      "to": "run-state-model",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-27-industry-trend-catchup",
-      "to": "self-improving-harness",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-27-industry-trend-catchup",
-      "to": "step-budget-and-runaway-control",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-28-rsi-fanout",
-      "to": "2026-09-27-industry-trend-catchup",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-28-rsi-fanout",
-      "to": "llm-as-judge",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-28-rsi-fanout",
-      "to": "memory-poisoning",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-28-rsi-fanout",
-      "to": "references-recursive-self-improvement",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-28-rsi-fanout",
-      "to": "self-improving-harness",
-      "kind": "related"
-    },
-    {
-      "from": "2026-09-28-rsi-fanout",
-      "to": "skill-lifecycle-and-drift",
-      "kind": "related"
-    },
-    {
       "from": "action-authority",
       "to": "domain-chatbot-design",
       "kind": "related"
@@ -7148,6 +5264,11 @@
     {
       "from": "action-authority",
       "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "action-authority",
+      "to": "recursive-self-improvement",
       "kind": "related"
     },
     {
@@ -7224,11 +5345,6 @@
       "from": "action-execution-safety",
       "to": "worked-example-chatting-task-agent",
       "kind": "related"
-    },
-    {
-      "from": "adaptive-eval-budget",
-      "to": "2026-08-31-adaptive-eval-fanout",
-      "kind": "source-thread"
     },
     {
       "from": "adaptive-eval-budget",
@@ -7387,6 +5503,11 @@
     },
     {
       "from": "agent-control-loop",
+      "to": "recursive-self-improvement",
+      "kind": "related"
+    },
+    {
+      "from": "agent-control-loop",
       "to": "references-task-agent-design",
       "kind": "related"
     },
@@ -7432,11 +5553,6 @@
     },
     {
       "from": "agent-eval-case-study",
-      "to": "2026-06-05-eval-analysis",
-      "kind": "source-thread"
-    },
-    {
-      "from": "agent-eval-case-study",
       "to": "adversarial-eval",
       "kind": "related"
     },
@@ -7474,11 +5590,6 @@
       "from": "agent-eval-case-study",
       "to": "test-pyramid-llm",
       "kind": "related"
-    },
-    {
-      "from": "agent-eval-improvement-tiers",
-      "to": "2026-06-05-eval-analysis",
-      "kind": "source-thread"
     },
     {
       "from": "agent-eval-improvement-tiers",
@@ -7559,11 +5670,6 @@
       "from": "agent-failure-modes",
       "to": "self-improving-harness",
       "kind": "related"
-    },
-    {
-      "from": "agent-harness",
-      "to": "2026-07-20-agent-harness-research",
-      "kind": "source-thread"
     },
     {
       "from": "agent-harness",
@@ -8002,6 +6108,11 @@
     },
     {
       "from": "agentic-context-engineering-ace",
+      "to": "recursive-self-improvement",
+      "kind": "related"
+    },
+    {
+      "from": "agentic-context-engineering-ace",
       "to": "references-prompt-optimization",
       "kind": "related"
     },
@@ -8219,11 +6330,6 @@
       "from": "building-ontology-backed-memory",
       "to": "references-ontology-llm-agents",
       "kind": "related"
-    },
-    {
-      "from": "chatbot-pagination",
-      "to": "2026-06-09-chatbot-pagination-research",
-      "kind": "source-thread"
     },
     {
       "from": "chatbot-pagination",
@@ -8457,6 +6563,11 @@
     },
     {
       "from": "context-assembly-per-turn",
+      "to": "just-in-time-context",
+      "kind": "related"
+    },
+    {
+      "from": "context-assembly-per-turn",
       "to": "perceive-reason-act-loop",
       "kind": "related"
     },
@@ -8583,6 +6694,11 @@
     {
       "from": "context-engineering",
       "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "just-in-time-context",
       "kind": "related"
     },
     {
@@ -8747,11 +6863,6 @@
     },
     {
       "from": "cot-as-forensic-artifact",
-      "to": "2026-06-10-reasoning-rationale-research",
-      "kind": "source-thread"
-    },
-    {
-      "from": "cot-as-forensic-artifact",
       "to": "adversarial-eval",
       "kind": "related"
     },
@@ -8858,6 +6969,11 @@
     {
       "from": "decision-audit-trail",
       "to": "prod-shadow-replay",
+      "kind": "related"
+    },
+    {
+      "from": "decision-audit-trail",
+      "to": "recursive-self-improvement",
       "kind": "related"
     },
     {
@@ -9142,11 +7258,6 @@
     },
     {
       "from": "dspy-domain-chatbot-cases",
-      "to": "2026-06-09-dspy-domain-chatbot-research",
-      "kind": "source-thread"
-    },
-    {
-      "from": "dspy-domain-chatbot-cases",
       "to": "domain-chatbot-design",
       "kind": "related"
     },
@@ -9334,11 +7445,6 @@
       "from": "eval-dataset-quality",
       "to": "prod-shadow-replay",
       "kind": "related"
-    },
-    {
-      "from": "eval-statistical-significance",
-      "to": "2026-08-06-prompt-attribution-research",
-      "kind": "source-thread"
     },
     {
       "from": "eval-statistical-significance",
@@ -9637,11 +7743,6 @@
     },
     {
       "from": "harness-as-hyperparameter",
-      "to": "2026-07-20-agent-harness-research",
-      "kind": "source-thread"
-    },
-    {
-      "from": "harness-as-hyperparameter",
       "to": "agent-control-loop",
       "kind": "related"
     },
@@ -9891,18 +7992,93 @@
       "kind": "related"
     },
     {
-      "from": "knowledge-graph-index-builder-plan",
-      "to": "2026-06-11-knowledge-graph-organization-review",
+      "from": "just-in-time-context",
+      "to": "agent-skills-progressive-disclosure",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "code-execution-sandbox-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "context-assembly-per-turn",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "context-budget-allocation",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "context-storage-and-hydration",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "harness-token-economics",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "mcp-tool-layer",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "memory-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "references-just-in-time-context",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "skill-injection-decision",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "subagent-context-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "text-to-sql-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "tool-result-grounding",
       "kind": "related"
     },
     {
       "from": "knowledge-graph-index-builder-plan",
       "to": "knowledge-graph-index-builder-spec",
-      "kind": "related"
-    },
-    {
-      "from": "knowledge-graph-index-builder-spec",
-      "to": "2026-06-11-knowledge-graph-organization-review",
       "kind": "related"
     },
     {
@@ -10062,6 +8238,11 @@
     },
     {
       "from": "llm-as-judge",
+      "to": "recursive-self-improvement",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-judge",
       "to": "test-pyramid-llm",
       "kind": "related"
     },
@@ -10179,11 +8360,6 @@
       "from": "llm-evaluation",
       "to": "verbal-self-correction",
       "kind": "related"
-    },
-    {
-      "from": "llm-observability",
-      "to": "2026-06-10-llm-observability-research",
-      "kind": "source-thread"
     },
     {
       "from": "llm-observability",
@@ -10542,6 +8718,11 @@
     },
     {
       "from": "memory-poisoning",
+      "to": "recursive-self-improvement",
+      "kind": "related"
+    },
+    {
+      "from": "memory-poisoning",
       "to": "references-recursive-self-improvement",
       "kind": "related"
     },
@@ -10717,11 +8898,6 @@
     },
     {
       "from": "native-thinking-vs-prompted-reasoning",
-      "to": "2026-06-09-reasoning-mode-research",
-      "kind": "source-thread"
-    },
-    {
-      "from": "native-thinking-vs-prompted-reasoning",
       "to": "decision-engine-contract",
       "kind": "related"
     },
@@ -10798,6 +8974,11 @@
     {
       "from": "offline-prompt-optimization",
       "to": "prompt-component-attribution",
+      "kind": "related"
+    },
+    {
+      "from": "offline-prompt-optimization",
+      "to": "recursive-self-improvement",
       "kind": "related"
     },
     {
@@ -11322,11 +9503,6 @@
     },
     {
       "from": "prompt-component-attribution",
-      "to": "2026-08-06-prompt-attribution-research",
-      "kind": "source-thread"
-    },
-    {
-      "from": "prompt-component-attribution",
       "to": "agentic-context-engineering-ace",
       "kind": "related"
     },
@@ -11566,9 +9742,89 @@
       "kind": "related"
     },
     {
-      "from": "references-adaptive-eval",
-      "to": "2026-08-31-adaptive-eval-fanout",
-      "kind": "source-thread"
+      "from": "recursive-self-improvement",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "action-execution-safety",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "adaptive-eval-budget",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "agent-control-loop",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "agent-harness",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "agentic-context-engineering-ace",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "llm-evaluation",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "memory-poisoning",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "offline-prompt-optimization",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "references-recursive-self-improvement",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "references-rsi-2026-10",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "skill-lifecycle-and-drift",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
+      "to": "verbal-reinforcement-vs-gradient-rl",
+      "kind": "related"
     },
     {
       "from": "references-adaptive-eval",
@@ -11604,11 +9860,6 @@
       "from": "references-adaptive-eval",
       "to": "test-pyramid-llm",
       "kind": "related"
-    },
-    {
-      "from": "references-agent-skill-authoring",
-      "to": "2026-08-08-skill-text-authoring-fanout",
-      "kind": "source-thread"
     },
     {
       "from": "references-agent-skill-authoring",
@@ -11697,6 +9948,11 @@
     },
     {
       "from": "references-context-and-memory",
+      "to": "just-in-time-context",
+      "kind": "related"
+    },
+    {
+      "from": "references-context-and-memory",
       "to": "memory-consolidation-and-forgetting",
       "kind": "related"
     },
@@ -11708,6 +9964,11 @@
     {
       "from": "references-context-and-memory",
       "to": "memory-types-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "references-context-and-memory",
+      "to": "references-just-in-time-context",
       "kind": "related"
     },
     {
@@ -11792,11 +10053,6 @@
     },
     {
       "from": "references-harness-evaluation",
-      "to": "2026-07-20-agent-harness-research",
-      "kind": "source-thread"
-    },
-    {
-      "from": "references-harness-evaluation",
       "to": "agent-harness",
       "kind": "related"
     },
@@ -11823,6 +10079,56 @@
     {
       "from": "references-harness-evaluation",
       "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "references-just-in-time-context",
+      "to": "agent-skills-progressive-disclosure",
+      "kind": "related"
+    },
+    {
+      "from": "references-just-in-time-context",
+      "to": "code-execution-sandbox-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "references-just-in-time-context",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "references-just-in-time-context",
+      "to": "harness-token-economics",
+      "kind": "related"
+    },
+    {
+      "from": "references-just-in-time-context",
+      "to": "just-in-time-context",
+      "kind": "related"
+    },
+    {
+      "from": "references-just-in-time-context",
+      "to": "mcp-tool-layer",
+      "kind": "related"
+    },
+    {
+      "from": "references-just-in-time-context",
+      "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "references-just-in-time-context",
+      "to": "references-model-context-protocol",
+      "kind": "related"
+    },
+    {
+      "from": "references-just-in-time-context",
+      "to": "subagent-context-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "references-just-in-time-context",
+      "to": "tool-selection-and-routing",
       "kind": "related"
     },
     {
@@ -11879,11 +10185,6 @@
       "from": "references-model-context-protocol",
       "to": "tool-use-design",
       "kind": "related"
-    },
-    {
-      "from": "references-multi-turn-agent-eval",
-      "to": "2026-08-06-multi-turn-eval-survey-fanout",
-      "kind": "source-thread"
     },
     {
       "from": "references-multi-turn-agent-eval",
@@ -11967,11 +10268,6 @@
     },
     {
       "from": "references-prompt-attribution",
-      "to": "2026-08-06-prompt-attribution-research",
-      "kind": "source-thread"
-    },
-    {
-      "from": "references-prompt-attribution",
       "to": "cot-as-forensic-artifact",
       "kind": "related"
     },
@@ -12004,11 +10300,6 @@
       "from": "references-prompt-attribution",
       "to": "references-prompt-optimization",
       "kind": "related"
-    },
-    {
-      "from": "references-prompt-optimization",
-      "to": "2026-08-06-prompt-attribution-research",
-      "kind": "source-thread"
     },
     {
       "from": "references-prompt-optimization",
@@ -12067,11 +10358,6 @@
     },
     {
       "from": "references-recursive-self-improvement",
-      "to": "2026-09-28-rsi-fanout",
-      "kind": "source-thread"
-    },
-    {
-      "from": "references-recursive-self-improvement",
       "to": "action-authority",
       "kind": "related"
     },
@@ -12122,6 +10408,46 @@
     },
     {
       "from": "references-recursive-self-improvement",
+      "to": "skill-lifecycle-and-drift",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-10",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-10",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-10",
+      "to": "harness-as-hyperparameter",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-10",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-10",
+      "to": "recursive-self-improvement",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-10",
+      "to": "references-recursive-self-improvement",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-10",
+      "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-10",
       "to": "skill-lifecycle-and-drift",
       "kind": "related"
     },
@@ -12452,7 +10778,17 @@
     },
     {
       "from": "self-improving-harness",
+      "to": "recursive-self-improvement",
+      "kind": "related"
+    },
+    {
+      "from": "self-improving-harness",
       "to": "references-recursive-self-improvement",
+      "kind": "related"
+    },
+    {
+      "from": "self-improving-harness",
+      "to": "references-rsi-2026-10",
       "kind": "related"
     },
     {
@@ -12504,11 +10840,6 @@
       "from": "simulated-user-eval",
       "to": "references-multi-turn-agent-eval",
       "kind": "related"
-    },
-    {
-      "from": "skill-injection-decision",
-      "to": "2026-09-11-industry-trend-catchup",
-      "kind": "source-thread"
     },
     {
       "from": "skill-injection-decision",
@@ -12577,11 +10908,6 @@
     },
     {
       "from": "skill-lifecycle-and-drift",
-      "to": "2026-09-11-industry-trend-catchup",
-      "kind": "source-thread"
-    },
-    {
-      "from": "skill-lifecycle-and-drift",
       "to": "action-authority",
       "kind": "related"
     },
@@ -12644,11 +10970,6 @@
       "from": "skill-lifecycle-and-drift",
       "to": "skill-text-authoring",
       "kind": "related"
-    },
-    {
-      "from": "skill-text-authoring",
-      "to": "2026-08-08-skill-text-authoring-fanout",
-      "kind": "source-thread"
     },
     {
       "from": "skill-text-authoring",
@@ -12767,11 +11088,6 @@
     },
     {
       "from": "sms-message-buffering-plan",
-      "to": "2026-06-10-sms-message-buffering-research",
-      "kind": "source-thread"
-    },
-    {
-      "from": "sms-message-buffering-plan",
       "to": "decision-audit-trail",
       "kind": "related"
     },
@@ -12794,11 +11110,6 @@
       "from": "sms-message-buffering-plan",
       "to": "sms-state-machine",
       "kind": "related"
-    },
-    {
-      "from": "sms-message-buffering-spec",
-      "to": "2026-06-10-sms-message-buffering-research",
-      "kind": "source-thread"
     },
     {
       "from": "sms-message-buffering-spec",
@@ -12954,11 +11265,6 @@
       "from": "sms-state-machine",
       "to": "sms-multi-thread-chatbot",
       "kind": "related"
-    },
-    {
-      "from": "spender-agent",
-      "to": "2026-06-09-spender-agent-ea-workflow",
-      "kind": "source-thread"
     },
     {
       "from": "spender-agent",
@@ -13134,11 +11440,6 @@
       "from": "subagent-context-isolation",
       "to": "when-to-delegate",
       "kind": "related"
-    },
-    {
-      "from": "task-agent-pattern",
-      "to": "2026-06-09-task-agent-pattern",
-      "kind": "source-thread"
     },
     {
       "from": "task-agent-pattern",
@@ -13512,12 +11813,22 @@
     },
     {
       "from": "tool-selection-and-routing",
+      "to": "just-in-time-context",
+      "kind": "related"
+    },
+    {
+      "from": "tool-selection-and-routing",
       "to": "mcp-tool-layer",
       "kind": "related"
     },
     {
       "from": "tool-selection-and-routing",
       "to": "recency-bias-prompt-design",
+      "kind": "related"
+    },
+    {
+      "from": "tool-selection-and-routing",
+      "to": "references-just-in-time-context",
       "kind": "related"
     },
     {
@@ -13629,11 +11940,6 @@
       "from": "truncated-pyramid-results",
       "to": "turn-taking-and-proactivity",
       "kind": "related"
-    },
-    {
-      "from": "turn-outcome-signal",
-      "to": "2026-09-12-turn-outcome-signal",
-      "kind": "source-thread"
     },
     {
       "from": "turn-outcome-signal",
@@ -13777,6 +12083,11 @@
     },
     {
       "from": "verbal-reinforcement-vs-gradient-rl",
+      "to": "recursive-self-improvement",
+      "kind": "related"
+    },
+    {
+      "from": "verbal-reinforcement-vs-gradient-rl",
       "to": "references-prompt-optimization",
       "kind": "related"
     },
@@ -13867,11 +12178,6 @@
     },
     {
       "from": "worked-example-chatting-task-agent",
-      "to": "2026-06-11-chatting-task-agent-buildout",
-      "kind": "source-thread"
-    },
-    {
-      "from": "worked-example-chatting-task-agent",
       "to": "action-execution-safety",
       "kind": "related"
     },
@@ -13929,11 +12235,6 @@
       "from": "worked-example-chatting-task-agent",
       "to": "tool-use-design",
       "kind": "related"
-    },
-    {
-      "from": "worked-example-gepa-mechanism",
-      "to": "2026-08-30-gepa-dspy-fanout",
-      "kind": "source-thread"
     },
     {
       "from": "worked-example-gepa-mechanism",
@@ -13999,11 +12300,6 @@
       "from": "worked-example-openai-responses",
       "to": "worked-example-anthropic-thinking",
       "kind": "related"
-    },
-    {
-      "from": "worked-example-skillsv-valuation",
-      "to": "2026-08-30-skillsv-fanout",
-      "kind": "source-thread"
     },
     {
       "from": "worked-example-skillsv-valuation",

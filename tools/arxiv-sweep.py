@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""arxiv-sweep.py — trend-sweep helper for the graph's industry catch-up threads.
+"""arxiv-sweep.py — trend-sweep helper for the graph's industry catch-up sweeps.
 
 Uses arXiv's HTML advanced search, not the Atom API: export.arxiv.org refused
 this client on four attempts across three days (2026-09-11 → 09-18), while the
@@ -86,7 +86,7 @@ def search(terms, d_from, d_to, size=200):
 
 def cited_ids():
     ids = set()
-    for p in list((REPO / "nodes").rglob("*.md")) + list((REPO / "threads").rglob("*.md")):
+    for p in (REPO / "nodes").rglob("*.md"):
         ids.update(re.findall(r"arxiv\.org/abs/(\d{4}\.\d{4,5})", p.read_text(encoding="utf-8")))
     return ids
 

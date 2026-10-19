@@ -21,7 +21,6 @@ related:
   - [[references-harness-evaluation]]
 status: living
 created: 2026-07-10
-source-thread: [[2026-07-20-agent-harness-research]]
 ---
 
 # Agent Harness

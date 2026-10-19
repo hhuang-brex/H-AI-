@@ -17,7 +17,6 @@ related:
   - [[references-harness-evaluation]]
 status: living
 created: 2026-09-28
-source-thread: [[2026-09-28-rsi-fanout]]
 ---
 
 # References — Recursive Self-Improvement for Agents

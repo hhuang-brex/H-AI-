@@ -21,13 +21,12 @@ H-AI-/
 ├── _config.yml            ← Jekyll config (powers the rendered site)
 ├── graph.json             ← machine-readable graph export (auto-generated)
 ├── tools/
-│   └── build-graph.py     ← regenerates README index, threads/INDEX.md, graph.json
-├── nodes/
-│   ├── topics/            ← broad areas; entry points (e.g. llm-evaluation)
-│   ├── concepts/          ← reusable patterns/ideas (e.g. llm-as-judge)
-│   ├── projects/          ← specs, plans, snapshots, worked-examples, products (`kind:` field)
-│   └── references/        ← external posts/papers reading lists
-└── threads/               ← time-stamped conversation summaries (rolled up in INDEX.md)
+│   └── build-graph.py     ← regenerates README index and graph.json
+└── nodes/
+    ├── topics/            ← broad areas; entry points (e.g. llm-evaluation)
+    ├── concepts/          ← reusable patterns/ideas (e.g. llm-as-judge)
+    ├── projects/          ← specs, plans, snapshots, worked-examples, products (`kind:` field)
+    └── references/        ← external posts/papers reading lists
 ```
 
 Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). Body prose uses standard markdown links so navigation works on github.com and on the rendered site. Schema reference and editing rules: [`AGENTS.md`](./AGENTS.md).
@@ -49,6 +48,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [llm-evaluation](nodes/topics/llm-evaluation.md) — measuring whether LLM systems do what they should without bankrupting the team.
 - [llm-output-design](nodes/topics/llm-output-design.md) — how an LLM emits to the world; per-surface decisions.
 - [multi-agent-delegation](nodes/topics/multi-agent-delegation.md) — splitting work across sub-agents — when delegation earns its cost, how to isolate their context, and how to merge results without trusting them blindly.
+- [recursive-self-improvement](nodes/topics/recursive-self-improvement.md) — entry point for agents that edit their own prompts, skills, memory, or harness code: what the loop is, why the acceptance gate decides the outcome, and where to read next.
 - [sms-multi-thread-chatbot](nodes/topics/sms-multi-thread-chatbot.md) — multi-thread chatbot design when the only channel is flat SMS.
 - [task-agent-pattern](nodes/topics/task-agent-pattern.md) — engine-primary framing where chat is one surface among several.
 - [task-planning](nodes/topics/task-planning.md) — turning a goal into an ordered set of actions and adapting when reality diverges from the plan.
@@ -131,6 +131,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [context-storage-and-hydration](nodes/concepts/context-storage-and-hydration.md) — where conversational context lives and how it's loaded per request — the stateless-compute / stateful-store split, keyed per user/conversation, with a DB-of-record plus optional cache tier.
 - [conversation-memory](nodes/concepts/conversation-memory.md) — three horizons; what to remember, what not to.
 - [domain-knowledge-injection](nodes/concepts/domain-knowledge-injection.md) — RAG, prompt-stuffing, structured state, fine-tuning per knowledge type.
+- [just-in-time-context](nodes/concepts/just-in-time-context.md) — keep lightweight references in the window and load the data behind them with tools only when a turn needs it; when that beats precomputed retrieval, when it loses, and how to make it reversible.
 - [prompt-component-attribution](nodes/concepts/prompt-component-attribution.md) — which sentence caused which output — per-instance context attribution vs population-level ablation, the method ladder from leave-one-out to surrogate/Shapley/bandit, and why a per-sentence effect is always conditional.
 - [skill-injection-decision](nodes/concepts/skill-injection-decision.md) — whether to load a skill at all is a measurable decision per (skill, task, model) triple — public-skill injection has been measured as net-negative, so route or invoke as a subagent instead of always-loading, and audit with a length-matched control.
 - [skill-lifecycle-and-drift](nodes/concepts/skill-lifecycle-and-drift.md) — externalizing knowledge into a skill makes its decay invisible — every release invalidates part of a repo skill set, frontier agents cannot reliably repair it, and the artifact's real identity is its dependency closure, not the signed directory.
@@ -207,6 +208,19 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [subagent-context-isolation](nodes/concepts/subagent-context-isolation.md) — giving a sub-agent exactly the scoped context it needs and a compact return contract — so children stay focused and don't leak state back to the parent.
 - [when-to-delegate](nodes/concepts/when-to-delegate.md) — the test for spawning a sub-agent — independent parallelism, context isolation, or adversarial separation — and why most decomposition shouldn't be agents.
 
+**[recursive-self-improvement](nodes/topics/recursive-self-improvement.md)**
+- [action-authority](nodes/concepts/action-authority.md) — what the bot can *do*; tiered authority enforced at the tool layer.
+- [adaptive-eval-budget](nodes/concepts/adaptive-eval-budget.md) — stop paying when the evidence suffices: confidence sequences for valid early stopping, best-arm allocation instead of uniform sampling, and informative-item selection — with a fixed gate of record kept deliberately non-adaptive.
+- [agentic-context-engineering-ace](nodes/concepts/agentic-context-engineering-ace.md) — optimize the context-as-playbook itself (generate/reflect/curate, delta updates) — the structural counterpart to optimizing instruction prose.
+- [decision-audit-trail](nodes/concepts/decision-audit-trail.md) — durable per-decision record (fingerprint + version + reasoning + override history); the substrate replay/drift run on.
+- [eval-statistical-significance](nodes/concepts/eval-statistical-significance.md) — is the delta real? — the variance budget of an LLM eval, paired and multi-prompt designs, effect-vs-spread reporting, and the winner's curse when sweeping many prompt variants.
+- [llm-as-judge](nodes/concepts/llm-as-judge.md) — calibration, bias, multi-vote, cascading.
+- [memory-poisoning](nodes/concepts/memory-poisoning.md) — the persisted/delayed attack on agent memory — untrusted content is WRITTEN into a durable store in one turn and TRIGGERS a harmful action on a later turn or for a different reader; persistence amplifies blast radius across time/sessions/readers, and self-attested provenance is launderable, so authority must be bound at write time.
+- [offline-prompt-optimization](nodes/concepts/offline-prompt-optimization.md) — improve an agent skill by searching prompt space offline, scored end-to-end by the real agent — not hand-tuning.
+- [self-improving-harness](nodes/concepts/self-improving-harness.md) — optimize the code around the model — prompts → context → workflow → harness code → optimizer code — gated by regression tests, with security kept outside the loop; a capable base model is a precondition.
+- [skill-lifecycle-and-drift](nodes/concepts/skill-lifecycle-and-drift.md) — externalizing knowledge into a skill makes its decay invisible — every release invalidates part of a repo skill set, frontier agents cannot reliably repair it, and the artifact's real identity is its dependency closure, not the signed directory.
+- [verbal-reinforcement-vs-gradient-rl](nodes/concepts/verbal-reinforcement-vs-gradient-rl.md) — the distinction between gradient RL (weights move) and verbal/in-context reinforcement (text moves) — and why eval-driven skill-rewriting is the latter.
+
 **[sms-multi-thread-chatbot](nodes/topics/sms-multi-thread-chatbot.md)**
 - [async-conversation-pacing](nodes/concepts/async-conversation-pacing.md) — gaps measured in days; re-anchoring; expiry; nudge policy.
 - [conversation-memory](nodes/concepts/conversation-memory.md) — three horizons; what to remember, what not to.
@@ -281,6 +295,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-domain-chatbot-design](nodes/references/references-domain-chatbot-design.md) — chatbot design reading list (Anthropic, OpenAI, Microsoft Bot Service, Google CDS, Rasa, Voiceflow, Husain, Yan, Hall, Intercom Fin).
 - [references-eval-reading-list](nodes/references/references-eval-reading-list.md) — frontier-lab + practitioner posts on LLM eval (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, …).
 - [references-harness-evaluation](nodes/references/references-harness-evaluation.md) — verified primary sources grounding the agent-harness cluster — the dynamic-workflow concept (agent orchestrates its own fan-out), the minimalist vs rich-taxonomy harness projects, and the papers arguing harness-as-hyperparameter and code-owned enforcement.
+- [references-just-in-time-context](nodes/references/references-just-in-time-context.md) — verified fan-out on just-in-time context: the vendor posts and docs that define it, the retrieval lineage it descends from, and the papers that measure where it beats or loses to loading up front.
 - [references-memory-theory](nodes/references/references-memory-theory.md) — verified primary sources behind the memory-theory cluster — Hopfield/attention, complementary learning systems, catastrophic forgetting, model editing, and experiential learning.
 - [references-model-context-protocol](nodes/references/references-model-context-protocol.md) — verified primary sources grounding mcp-tool-layer, fanned out by category — projects (reference servers, FastMCP, mcp-agent, LangChain adapters), papers (landscape survey, RAG-MCP, two security audits), and blogs (launch, code-execution, Cloudflare Code Mode, writing tools for agents).
 - [references-multi-turn-agent-eval](nodes/references/references-multi-turn-agent-eval.md) — the ~250-source multi-turn conversational agent evaluation survey as a map of the field, with its taxonomies extracted, its citation defects recorded, and eight of its anchor benchmarks verified at the primary source.
@@ -288,11 +303,9 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-prompt-attribution](nodes/references/references-prompt-attribution.md) — verified sources for measuring prompt effectiveness — context-attribution methods (which span caused which output), population-level ablation and sensitivity studies, and the confounds that make naive measurement unfaithful.
 - [references-prompt-optimization](nodes/references/references-prompt-optimization.md) — verified primary sources for automatic prompt optimization — the token-search → text-gradient → program-optimizer lineage, the 2026 work on credit assignment, cost and GEPA's failure modes, plus the field survey.
 - [references-recursive-self-improvement](nodes/references/references-recursive-self-improvement.md) — verified reading list on recursive self-improvement for agents, sorted by the question each paper answers: who accepts an edit, what it overfits to, who grades the grader, and what persists.
+- [references-rsi-2026-10](nodes/references/references-rsi-2026-10.md) — second RSI fan-out: verified lineage from Weng's harness post, the Darwin Gödel Machine write-up, and 2026-09-26 → 10-17 papers on gates, baselines, harness-vs-weights, and safety.
 - [references-task-agent-design](nodes/references/references-task-agent-design.md) — verified primary sources grounding the agent cluster — ReAct, Reflexion, Toolformer, Tree of Thoughts, MetaGPT, and Anthropic's effective-agents guidance.
 - [references-template-rendered-output](nodes/references/references-template-rendered-output.md) — what's verifiable about template-rendered output in production — Rasa (mechanism confirmed), Ikki (architecture confirmed, outcomes refuted), and why most 'structured output' systems don't qualify.
-
----
-<sub>Provenance: 32 dated research/design threads record how these nodes came to be. They are process history, not a starting point — see [`threads/INDEX.md`](threads/INDEX.md) if you need to trace a decision.</sub>
 
 <!-- END GENERATED -->
 
@@ -307,7 +320,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 
 Read [`AGENTS.md`](./AGENTS.md). The short version:
 
-1. Pick the right folder by *type* (topic/concept/project/reference/thread).
+1. Pick the right folder by *type* (topic/concept/project/reference).
 2. Use `kebab-case-slug.md`. The filename is the `id`.
 3. Frontmatter required. `related:` keeps `[[id]]` form for the edge list.
 4. Body is markdown; complete sentences; link with `[id](relative/path.md)`.

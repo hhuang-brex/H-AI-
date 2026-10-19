@@ -5,7 +5,6 @@ kind: plan
 tags: [meta, knowledge-graph, tooling, build, index, automation, plan]
 related:
   - [[knowledge-graph-index-builder-spec]]
-  - [[2026-06-11-knowledge-graph-organization-review]]
 status: proposal
 created: 2026-06-11
 summary: 13-task implementation plan for `tools/build-graph.py`; sequenced as schema backfill → orphan-fix → script build → regeneration.

@@ -19,7 +19,6 @@ related:
   - [[references-recursive-self-improvement]]
 status: living
 created: 2026-09-11
-source-thread: [[2026-09-11-industry-trend-catchup]]
 ---
 
 # Skill Lifecycle & Drift

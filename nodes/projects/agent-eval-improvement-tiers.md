@@ -14,7 +14,6 @@ related:
 status: proposal
 created: 2026-06-05
 summary: "ranked improvement plan for the case study above."
-source-thread: [[2026-06-05-eval-analysis]]
 ---
 
 # Agent Eval — Improvement Tiers

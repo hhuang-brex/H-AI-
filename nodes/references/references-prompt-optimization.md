@@ -17,7 +17,6 @@ related:
   - [[llm-evaluation]]
 status: living
 created: 2026-08-05
-source-thread: [[2026-08-06-prompt-attribution-research]]
 ---
 
 # References — Automatic Prompt Optimization

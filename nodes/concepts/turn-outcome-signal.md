@@ -18,7 +18,6 @@ related:
   - [[references-multi-turn-agent-eval]]
 status: living
 created: 2026-09-12
-source-thread: [[2026-09-12-turn-outcome-signal]]
 ---
 
 # Turn-Outcome Signal

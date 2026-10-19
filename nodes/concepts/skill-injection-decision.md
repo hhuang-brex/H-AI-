@@ -19,7 +19,6 @@ related:
   - [[references-agent-skill-authoring]]
 status: living
 created: 2026-09-11
-source-thread: [[2026-09-11-industry-trend-catchup]]
 ---
 
 # Skill Injection Decision

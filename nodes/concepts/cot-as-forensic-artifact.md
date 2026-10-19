@@ -14,7 +14,6 @@ related:
 status: living
 created: 2026-06-10
 summary: "the *why* behind reasoning instrumentation: CoT is forensic, not explanatory; unfaithful 60–75% of the time yet uniquely surfaces alignment-faking, scheming, situational awareness."
-source-thread: [[2026-06-10-reasoning-rationale-research]]
 ---
 
 # CoT as Forensic Artifact — Why Instrument Reasoning

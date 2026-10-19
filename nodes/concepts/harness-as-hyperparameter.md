@@ -14,7 +14,6 @@ related:
   - [[harness-token-economics]]
 status: living
 created: 2026-07-20
-source-thread: [[2026-07-20-agent-harness-research]]
 ---
 
 # Harness as Hyperparameter
