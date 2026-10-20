@@ -1,7 +1,7 @@
 {
   "generated": "2026-10-19",
-  "node_count": 169,
-  "edge_count": 1428,
+  "node_count": 167,
+  "edge_count": 1427,
   "nodes": [
     {
       "id": "action-authority",
@@ -2058,50 +2058,6 @@
         "code-execution-sandbox-pattern",
         "run-state-model"
       ]
-    },
-    {
-      "id": "knowledge-graph-index-builder-plan",
-      "type": "project",
-      "kind": "plan",
-      "path": "nodes/projects/knowledge-graph-index-builder-plan.md",
-      "title": "Knowledge Graph Index Builder \u2014 Implementation Plan",
-      "summary": "13-task implementation plan for `tools/build-graph.py`; sequenced as schema backfill \u2192 orphan-fix \u2192 script build \u2192 regeneration.",
-      "tags": [
-        "meta",
-        "knowledge-graph",
-        "tooling",
-        "build",
-        "index",
-        "automation",
-        "plan"
-      ],
-      "status": "proposal",
-      "created": "2026-06-11",
-      "clusters": [],
-      "related": [
-        "knowledge-graph-index-builder-spec"
-      ]
-    },
-    {
-      "id": "knowledge-graph-index-builder-spec",
-      "type": "project",
-      "kind": "spec",
-      "path": "nodes/projects/knowledge-graph-index-builder-spec.md",
-      "title": "Knowledge Graph Index Builder \u2014 Spec",
-      "summary": "Eliminate README index drift by deriving the index, threads rollup, and a graph.json artifact from frontmatter via `tools/build-graph.py`.",
-      "tags": [
-        "meta",
-        "knowledge-graph",
-        "tooling",
-        "build",
-        "index",
-        "automation",
-        "spec"
-      ],
-      "status": "proposal",
-      "created": "2026-06-11",
-      "clusters": [],
-      "related": []
     },
     {
       "id": "layered-defense-pipeline",
@@ -8096,11 +8052,6 @@
     {
       "from": "just-in-time-context",
       "to": "tool-result-grounding",
-      "kind": "related"
-    },
-    {
-      "from": "knowledge-graph-index-builder-plan",
-      "to": "knowledge-graph-index-builder-spec",
       "kind": "related"
     },
     {

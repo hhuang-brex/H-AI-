@@ -263,13 +263,11 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 ### Projects — by kind
 
 **Specs**
-- [knowledge-graph-index-builder-spec](nodes/projects/knowledge-graph-index-builder-spec.md) — Eliminate README index drift by deriving the index, threads rollup, and a graph.json artifact from frontmatter via `tools/build-graph.py`.
 - [sms-message-buffering-spec](nodes/projects/sms-message-buffering-spec.md) — handle users splitting one thought across multiple SMS messages; 3-layer detection (regex / Haiku classifier / dynamic timeout) with 10 edge cases.
 - [task-agent-pattern-fanout](nodes/projects/task-agent-pattern-fanout.md) — engine-primary framing where chat is one surface among several.
 
 **Plans**
 - [agent-eval-improvement-tiers](nodes/projects/agent-eval-improvement-tiers.md) — ranked improvement plan for the case study above.
-- [knowledge-graph-index-builder-plan](nodes/projects/knowledge-graph-index-builder-plan.md) — 13-task implementation plan for `tools/build-graph.py`; sequenced as schema backfill → orphan-fix → script build → regeneration.
 - [sms-message-buffering-plan](nodes/projects/sms-message-buffering-plan.md) — 7-piece implementation plan for the spec above.
 
 **Snapshots**
