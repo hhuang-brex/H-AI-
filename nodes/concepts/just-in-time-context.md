@@ -21,6 +21,7 @@ related:
   - [[references-just-in-time-context]]
   - [[mcp-tool-layer]]
   - [[code-execution-sandbox-pattern]]
+  - [[run-state-model]]
 status: living
 created: 2026-10-15
 ---
@@ -84,6 +85,8 @@ The canonical agent here has three kinds of context, and they want different pol
 | Operating rules, persona, the few constraints that must never be missed | **Up front, every turn** | A rule the model must ask for is a rule it will skip. TipsWarm's finding is the general case. |
 | The user's records — transactions, calendar, documents, prior threads | **Just in time, by id** | Large, changing, and only a slice is relevant per turn. Hold ids and summaries; fetch on need. |
 | Large reference corpora — policy manuals, product catalogs | **Ranked retrieval first, then JIT reads** | Past millions of tokens, agentic exploration alone loses to BM25. |
+
+**Greedy fetching is the failure mode of unguided exploration.** A study comparing human and agent analysts on large codebases found that humans revisit functions and follow local structure, while strong agents "jump across the binary, retrieve information broadly, and rarely return to inspected code" — a behavior the authors call *greedy fetching* ([2610.14960](https://arxiv.org/abs/2610.14960), fetched 2026-10-19). Across 4,000 real programs it saturated the context window on larger targets. Two details carry over to any agent that explores by reading: agents given richer, higher-level representations "fetch less without losing understanding," and the authors conclude that scaling needs "better navigation, selective retrieval, and persistent analysis state, not merely larger context windows." Give an exploring agent a summary layer to navigate by and a place to write what it has already learned — see [run-state-model](run-state-model.md).
 
 ## Pitfalls
 

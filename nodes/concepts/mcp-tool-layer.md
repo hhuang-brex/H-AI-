@@ -13,6 +13,8 @@ related:
   - [[agent-skills-progressive-disclosure]]
   - [[managed-agent-apis]]
   - [[references-model-context-protocol]]
+  - [[skill-injection-decision]]
+  - [[just-in-time-context]]
 status: living
 created: 2026-07-10
 summary: "the Model Context Protocol as the de-facto tool-interop standard — what it standardizes (JSON-RPC primitives + transport), the current 2025-11-25 spec, the stateless work that lives only in draft, and the client-side MUSTs an agent consuming external MCP servers must enforce."
@@ -88,6 +90,22 @@ Keep the strength honest: **HITL consent before tool invocation is a *principle*
 | [paginated-tool-contract](paginated-tool-contract.md) | opaque `cursor`/`nextCursor`, server-set page size, invalid cursor → `-32602`. *Precision:* `page_size`/`filter`/`total_count` are **Anthropic authoring conventions, not MCP** — MCP standardizes only the cursor |
 | [code-execution-sandbox-pattern](code-execution-sandbox-pattern.md) | the wire beneath large results (MCP's *security* sandbox of local servers ≠ that node's *context-saving* sandbox) |
 | [agent-skills-progressive-disclosure](agent-skills-progressive-disclosure.md) | list/discovery + Resources/Prompts = the protocol-level analogue of surfacing capability on demand |
+
+## A server that wraps tools the agent can already run (2026)
+
+An MCP server earns its cost when it exposes something the agent cannot reach otherwise: a remote API, credentials it must not hold, or state that lives elsewhere. When it only wraps command-line tools the agent can already call from a shell, it adds tool definitions to the context and a layer of indirection for no new capability.
+
+One measured case, from the agent-tooling ecosystem around reverse-engineering software. The `leanrea` project ([README](https://github.com/aicodeking/leanrea), fetched 2026-10-19) replaced a large MCP server with a single 8 KB skill file that tells the agent which existing command to run. Its own benchmark reports:
+
+| Arm | Wall time | Cost | Score |
+|---|---|---|---|
+| Skill file only | 388 s | $2.17 | 74/75 |
+| MCP server plus its skill | 627 s | $3.36 | 75/75 |
+| No skill | — | — | 67/75 |
+
+That is 38% less time and 35% lower cost at near-equal accuracy, and the author puts the context cost of a trivial prompt at 400.7k tokens with the server versus 34.5k without. **Treat it as one data point:** the author is a competing project, and the README states "Only 3 reps per cell, one model, one machine." It also concedes the plain model was "already good at this" — the skill beat no skill by a smaller margin than it beat the server.
+
+The graph's reading: before adding an MCP server, ask whether it provides access or only description. Description belongs in a skill ([skill-injection-decision](skill-injection-decision.md)); access belongs in a tool. Tool search narrows the gap by deferring definitions ([just-in-time-context](just-in-time-context.md)), but the indirection remains.
 
 ## New primitives worth naming (candidate future nodes)
 

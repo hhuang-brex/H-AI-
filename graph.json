@@ -1,7 +1,7 @@
 {
-  "generated": "2026-10-18",
+  "generated": "2026-10-19",
   "node_count": 169,
-  "edge_count": 1424,
+  "edge_count": 1428,
   "nodes": [
     {
       "id": "action-authority",
@@ -2055,7 +2055,8 @@
         "references-context-and-memory",
         "references-just-in-time-context",
         "mcp-tool-layer",
-        "code-execution-sandbox-pattern"
+        "code-execution-sandbox-pattern",
+        "run-state-model"
       ]
     },
     {
@@ -2402,7 +2403,9 @@
         "code-execution-sandbox-pattern",
         "agent-skills-progressive-disclosure",
         "managed-agent-apis",
-        "references-model-context-protocol"
+        "references-model-context-protocol",
+        "skill-injection-decision",
+        "just-in-time-context"
       ]
     },
     {
@@ -4161,7 +4164,8 @@
         "tool-selection-and-routing",
         "when-to-delegate",
         "eval-statistical-significance",
-        "references-agent-skill-authoring"
+        "references-agent-skill-authoring",
+        "mcp-tool-layer"
       ]
     },
     {
@@ -8071,6 +8075,11 @@
     },
     {
       "from": "just-in-time-context",
+      "to": "run-state-model",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
       "to": "skill-injection-decision",
       "kind": "related"
     },
@@ -8556,6 +8565,11 @@
     },
     {
       "from": "mcp-tool-layer",
+      "to": "just-in-time-context",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tool-layer",
       "to": "managed-agent-apis",
       "kind": "related"
     },
@@ -8572,6 +8586,11 @@
     {
       "from": "mcp-tool-layer",
       "to": "references-model-context-protocol",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tool-layer",
+      "to": "skill-injection-decision",
       "kind": "related"
     },
     {
@@ -10882,6 +10901,11 @@
     {
       "from": "skill-injection-decision",
       "to": "harness-token-economics",
+      "kind": "related"
+    },
+    {
+      "from": "skill-injection-decision",
+      "to": "mcp-tool-layer",
       "kind": "related"
     },
     {

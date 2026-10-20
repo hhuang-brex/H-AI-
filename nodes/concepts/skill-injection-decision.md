@@ -17,6 +17,7 @@ related:
   - [[when-to-delegate]]
   - [[eval-statistical-significance]]
   - [[references-agent-skill-authoring]]
+  - [[mcp-tool-layer]]
 status: living
 created: 2026-09-11
 ---
@@ -66,6 +67,10 @@ One authoring consequence transfers directly: within *helpful* skills, **anti-pa
 **Subagent invocation** is the option that inverts the usual assumption. Loading skill instructions into the main context "becomes increasingly brittle" as task horizons grow, because reasoning quality degrades as information accumulates; invoking the skill package as a subagent spawns a fresh window per subtask instead. Subagent execution **outperformed in-context skill execution when the package exposes a clear input-output contract and its instructions encode the procedural knowledge needed to fulfill that contract** — the cost being extra coordination tokens between parent and child ([arXiv:2609.09233](https://arxiv.org/abs/2609.09233); no numbers in the abstract, no venue yet). See [subagent-context-isolation](subagent-context-isolation.md) and [when-to-delegate](when-to-delegate.md).
 
 The design rule that falls out: **an I/O contract is what makes a skill delegable.** A skill written as a contract ("given a filled dispute record, return the decision plus rationale") can run isolated; one written as ambient advice cannot, and must pay context rent.
+
+## A skill can replace a server, not only a prompt
+
+The alternatives above all assume the choice is skill versus no skill. A fourth comparison matters when an MCP server exists only to wrap command-line tools: a short skill that names the right existing command can match it at lower cost. One author-reported benchmark found 38% less time and 35% lower cost at near-equal accuracy — see [mcp-tool-layer](mcp-tool-layer.md) for the numbers and their small-sample caveats.
 
 ## Measuring it without a pass/fail blind spot
 

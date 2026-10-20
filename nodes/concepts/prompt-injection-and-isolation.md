@@ -88,6 +88,10 @@ Three 2026 results make the skill/harness row above concrete, and they escalate.
 
 Consistent with this node's thesis: scanning skill *text* is Tier 4. The controls that hold are architectural — pin the closure rather than the directory ([skill-lifecycle-and-drift](skill-lifecycle-and-drift.md)), refuse scope-shaped grants that are actually unbounded ([action-authority](action-authority.md)), and audit the **behavior** a skill induces rather than the prose it contains ([skill-text-authoring](skill-text-authoring.md) step 6).
 
+### Content the agent analyzes is also an input channel
+
+The vectors above are text the agent reads as text. A less obvious one is an artifact the agent was asked to *analyze*. Researchers showed that strings embedded in a program, never executed and harmless to the program, can carry instructions to an LLM agent that later reads its decompiled output, causing it to misreport what the program does ([2605.30667](https://arxiv.org/abs/2605.30667), fetched 2026-10-19). The general lesson: anything an agent inspects — a document, a log, a file it was asked to summarize — must be treated as untrusted data, never as instructions, however technical the context. For a task agent, that includes receipts, uploaded files, and tool output it was told to "just read."
+
 ## The mitigation ladder: architectural > compositional > prompt-level
 
 **Tier 1 — Architectural (the only tier with measured resistance).** Constrain what a compromised agent *can do*, not what it believes.
