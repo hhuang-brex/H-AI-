@@ -1,7 +1,7 @@
 {
   "generated": "2026-10-19",
-  "node_count": 167,
-  "edge_count": 1427,
+  "node_count": 166,
+  "edge_count": 1422,
   "nodes": [
     {
       "id": "action-authority",
@@ -4555,31 +4555,6 @@
         "decision-audit-trail",
         "output-surface-taxonomy",
         "forced-tool-call-output"
-      ]
-    },
-    {
-      "id": "task-agent-pattern-fanout",
-      "type": "project",
-      "kind": "spec",
-      "path": "nodes/projects/task-agent-pattern-fanout.md",
-      "title": "Task-Agent Pattern Fan-Out \u2014 Design Spec",
-      "summary": "engine-primary framing where chat is one surface among several.",
-      "tags": [
-        "task-agent",
-        "decision-engine",
-        "fan-out",
-        "design",
-        "proposal"
-      ],
-      "status": "archived",
-      "created": "2026-06-09",
-      "clusters": [],
-      "related": [
-        "domain-chatbot-design",
-        "llm-output-design",
-        "llm-evaluation",
-        "forced-tool-call-output",
-        "output-surface-taxonomy"
       ]
     },
     {
@@ -11522,31 +11497,6 @@
     {
       "from": "task-agent-pattern",
       "to": "user-intent-to-task-grounding",
-      "kind": "related"
-    },
-    {
-      "from": "task-agent-pattern-fanout",
-      "to": "domain-chatbot-design",
-      "kind": "related"
-    },
-    {
-      "from": "task-agent-pattern-fanout",
-      "to": "forced-tool-call-output",
-      "kind": "related"
-    },
-    {
-      "from": "task-agent-pattern-fanout",
-      "to": "llm-evaluation",
-      "kind": "related"
-    },
-    {
-      "from": "task-agent-pattern-fanout",
-      "to": "llm-output-design",
-      "kind": "related"
-    },
-    {
-      "from": "task-agent-pattern-fanout",
-      "to": "output-surface-taxonomy",
       "kind": "related"
     },
     {
