@@ -12,6 +12,7 @@ related:
   - [[decision-audit-trail]]
   - [[escalation-handoff]]
   - [[recursive-self-improvement]]
+  - [[system-one-decision-models]]
 status: living
 created: 2026-06-05
 summary: "calibration, bias, multi-vote, cascading."
@@ -115,6 +116,10 @@ Details that change what you build:
 **Multi-vote buys less independence than it looks.** *Agreement Overstates Evidence* ([arXiv:2609.22512](https://arxiv.org/abs/2609.22512)) measures a mean pairwise error correlation of **0.21** across ten judges, so ten judges carry about as much information as **3.5 independent ones**; dependence is *stronger* among high-accuracy frontier judges, **including across providers**. In up to **28%** of comparisons, ignoring shared errors produced a significant system difference that vanished once they were accounted for. This qualifies both the "3× majority" move and the heterogeneous-recheck table above: different-family is a hypothesis about independence, and a small trusted labelled set is how you check it and pick the voting rule before applying it. The same correlation caps cascades: a cheap typed classifier's most confident errors were repeated by nearly all LLM judges, so a cascade gained **at most 1.5 points** over the best single judge (2.0 with oracle thresholds) while costing 29–325× less ([arXiv:2609.29769](https://arxiv.org/abs/2609.29769)). A second group reports a confident-accept cascade retaining 99% of its comparator's accuracy ([arXiv:2609.26550](https://arxiv.org/abs/2609.26550)); both hold — a cascade buys cost, not accuracy, when errors correlate.
 
 The graph's generalization, not stated by any one source: **list a verifier's inputs by who can write them.** Anything the subject writes — its trace, its summary, its tool-call status, an upstream checker's verdict — is advisory at most, and the verdict of record must rest on a channel the subject cannot touch. See [decision-audit-trail](decision-audit-trail.md) for the logging side of the same rule.
+
+## Decision models as first-pass judges
+
+Several of the judges above — Jev and its open replicas — are [system-one-decision-models](system-one-decision-models.md): they return a probability per verdict without generating text, at roughly 1/70 to 1/300 of a frontier judge's cost in the studies summarized there. Match accuracy is not enough to swap one in: in RAG claim verification, a tied decision model admitted 23.2% of unsupported claims against the frontier judge's 14.1%. Compare error types, not just the headline score.
 
 ## References
 

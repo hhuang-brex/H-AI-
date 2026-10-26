@@ -10,6 +10,7 @@ related:
   - [[escalation-handoff]]
   - [[output-surface-taxonomy]]
   - [[scope-and-refusal]]
+  - [[system-one-decision-models]]
 status: living
 created: 2026-06-09
 summary: "when the engine handles vs. when the chat layer handles; the bridge between them."

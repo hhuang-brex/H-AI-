@@ -13,6 +13,7 @@ related:
   - [[llm-as-judge]]
   - [[skill-injection-decision]]
   - [[references-multi-turn-agent-eval]]
+  - [[system-one-decision-models]]
 status: living
 created: 2026-06-05
 summary: "multi-turn, tool sequences, end-state."

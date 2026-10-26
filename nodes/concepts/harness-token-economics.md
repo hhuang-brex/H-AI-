@@ -12,6 +12,7 @@ related:
   - [[self-improving-harness]]
   - [[prince-reliable-agentic-case-study]]
   - [[agent-failure-modes]]
+  - [[system-one-decision-models]]
 status: living
 created: 2026-07-12
 ---

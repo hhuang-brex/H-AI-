@@ -13,6 +13,7 @@ related:
   - [[mcp-tool-layer]]
   - [[just-in-time-context]]
   - [[references-just-in-time-context]]
+  - [[system-one-decision-models]]
 status: living
 created: 2026-06-11
 ---
@@ -44,6 +45,9 @@ The "retrieval over tools" row above is now a server-side primitive. Anthropic's
 A complementary lever for the *round-trip* cost (not selection): **programmatic tool calling** — Claude writes code that invokes tools inside a code-execution container, so intermediate results are filtered *before* entering the context window and N sequential calls collapse into one script. Reported +11% on agentic-search benchmarks at **24% fewer input tokens** ([docs](https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling)). Reach for it when chaining many calls or when intermediate payloads are large.
 
 This is one instance of [just-in-time-context](just-in-time-context.md); the wider fan-out of tool-retrieval papers is in [references-just-in-time-context](../references/references-just-in-time-context.md).
+
+**A decision model can make the routing call itself.** Choosing a tool or route is a single multiple-choice question, which [system-one-decision-models](system-one-decision-models.md) answer in one pass at a fraction of an LLM call. Two cautions from the evidence: the probabilities are relative to the option list you pass, and delegating tool choice without a fitted confidence threshold cost one harness 19 points of task success.
+
 
 ## Disambiguation is mostly a schema job
 

@@ -21,6 +21,7 @@ related:
   - [[decision-audit-trail]]
   - [[output-surface-taxonomy]]
   - [[forced-tool-call-output]]
+  - [[system-one-decision-models]]
 status: living
 created: 2026-06-09
 summary: "engine-primary framing where chat is one surface among several."

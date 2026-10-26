@@ -12,6 +12,7 @@ related:
   - [[tool-use-design]]
   - [[turn-outcome-signal]]
   - [[decision-audit-trail]]
+  - [[system-one-decision-models]]
 status: living
 created: 2026-06-11
 ---

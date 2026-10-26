@@ -11,6 +11,7 @@ related:
   - [[llm-observability]]
   - [[eval-statistical-significance]]
   - [[harness-token-economics]]
+  - [[system-one-decision-models]]
 status: living
 created: 2026-06-05
 summary: "sample-size math and budget assertions."

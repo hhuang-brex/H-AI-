@@ -16,6 +16,7 @@ related:
   - [[native-thinking-vs-prompted-reasoning]]
   - [[llm-observability]]
   - [[cot-as-forensic-artifact]]
+  - [[system-one-decision-models]]
 status: living
 created: 2026-06-07
 summary: "how an LLM emits to the world; per-surface decisions."
@@ -37,6 +38,7 @@ The recurring mistake is choosing one output mechanism for the whole agent. Real
 
 - [forced-tool-call-output](../concepts/forced-tool-call-output.md) — when to force the schema; when free-text is correct.
 - [output-surface-taxonomy](../concepts/output-surface-taxonomy.md) — the meta-practice of classifying surfaces explicitly.
+- [system-one-decision-models](../concepts/system-one-decision-models.md) — skip generation entirely when the output is one choice from a fixed set; a probability per option in one pass.
 - [schema-vs-validator](../concepts/schema-vs-validator.md) — schema-enforced output vs. free-text + post-hoc validator.
 - [streaming-vs-structured](../concepts/streaming-vs-structured.md) — partial-token UX vs. structured output, and why they're at odds.
 - [hard-surface-irrevocability](../concepts/hard-surface-irrevocability.md) — when "send" is unrecoverable, and what that implies.

@@ -197,6 +197,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [output-surface-taxonomy](nodes/concepts/output-surface-taxonomy.md) — classify each surface explicitly; per-surface decisions.
 - [schema-vs-validator](nodes/concepts/schema-vs-validator.md) — schema-enforced output vs. free-text + post-hoc validator.
 - [streaming-vs-structured](nodes/concepts/streaming-vs-structured.md) — token-by-token UX vs. structured output trade-off.
+- [system-one-decision-models](nodes/concepts/system-one-decision-models.md) — models that return a probability per caller-defined option in one forward pass instead of generating text — why they are fast and cheap, where they match LLMs, and where speed stops helping an agent.
 - [template-rendered-output](nodes/concepts/template-rendered-output.md) — stricter sibling: classifier picks a tool, code-owned templates render the reply.
 - [turn-outcome-signal](nodes/concepts/turn-outcome-signal.md) — downstream hooks fire on 'the conversation ended and nothing is owed' — a predicate no transcript stores; name a deterministic action class per turn (recovered from cues to bootstrap, emitted as a required enum to ship) instead of asking a judge whether it was resolved.
 
@@ -240,6 +241,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [forced-tool-call-output](nodes/concepts/forced-tool-call-output.md) — when to force schema vs. let the model write free-text.
 - [ontology-grounded-agent](nodes/concepts/ontology-grounded-agent.md) — when a conversational domain agent should ground on formal/ontological structure — modeling the user's world (events, tasks, activities, entities) so it understands and acts — vs when text + JSON-schema + retrieval suffice.
 - [output-surface-taxonomy](nodes/concepts/output-surface-taxonomy.md) — classify each surface explicitly; per-surface decisions.
+- [system-one-decision-models](nodes/concepts/system-one-decision-models.md) — models that return a probability per caller-defined option in one forward pass instead of generating text — why they are fast and cheap, where they match LLMs, and where speed stops helping an agent.
 - [user-intent-to-task-grounding](nodes/concepts/user-intent-to-task-grounding.md) — turn an under-specified user request — read against the user's activities/context — into an executable task, deciding act-vs-clarify; the bridge from 'what the user is doing/asking' to 'the task the engine runs'.
 
 **[task-planning](nodes/topics/task-planning.md)**
@@ -301,6 +303,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-prompt-optimization](nodes/references/references-prompt-optimization.md) — verified primary sources for automatic prompt optimization — the token-search → text-gradient → program-optimizer lineage, the 2026 work on credit assignment, cost and GEPA's failure modes, plus the field survey.
 - [references-recursive-self-improvement](nodes/references/references-recursive-self-improvement.md) — verified reading list on recursive self-improvement for agents, sorted by the question each paper answers: who accepts an edit, what it overfits to, who grades the grader, and what persists.
 - [references-rsi-2026-10](nodes/references/references-rsi-2026-10.md) — second RSI fan-out: verified lineage from Weng's harness post, the Darwin Gödel Machine write-up, and 2026-09-26 → 10-17 papers on gates, baselines, harness-vs-weights, and safety.
+- [references-system-one-decision-models](nodes/references/references-system-one-decision-models.md) — verified reading list on System One decision models (Jev and open replicas): vendor sources, why they are fast, open reproductions, and the papers that measure accuracy, calibration, agent use, and security.
 - [references-task-agent-design](nodes/references/references-task-agent-design.md) — verified primary sources grounding the agent cluster — ReAct, Reflexion, Toolformer, Tree of Thoughts, MetaGPT, and Anthropic's effective-agents guidance.
 - [references-template-rendered-output](nodes/references/references-template-rendered-output.md) — what's verifiable about template-rendered output in production — Rasa (mechanism confirmed), Ikki (architecture confirmed, outcomes refuted), and why most 'structured output' systems don't qualify.
 

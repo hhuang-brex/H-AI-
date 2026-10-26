@@ -15,6 +15,7 @@ related:
   - [[template-rendered-output]]
   - [[layered-defense-pipeline]]
   - [[agent-trajectory-eval]]
+  - [[system-one-decision-models]]
 status: living
 created: 2026-06-07
 summary: "when to force schema vs. let the model write free-text."
@@ -106,6 +107,10 @@ Worth knowing before you design: **Anthropic extended thinking does NOT support 
 - On OpenAI / DeepSeek the constraint is different — check current docs.
 
 See [native-thinking-vs-prompted-reasoning](native-thinking-vs-prompted-reasoning.md) for the broader trade-off and replacement patterns.
+
+## Sibling: decision models skip generation entirely
+
+When the output is one choice from a fixed set, a [system-one-decision-models](system-one-decision-models.md) model returns a probability per option in one forward pass, with no text to generate or parse. It covers the classify-and-route half of this pattern far more cheaply, but not structured payloads with free-form fields.
 
 ## See also
 

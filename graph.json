@@ -1,7 +1,7 @@
 {
-  "generated": "2026-10-19",
-  "node_count": 166,
-  "edge_count": 1422,
+  "generated": "2026-10-25",
+  "node_count": 168,
+  "edge_count": 1455,
   "nodes": [
     {
       "id": "action-authority",
@@ -492,7 +492,8 @@
         "flat-channel-thread-tracking",
         "llm-as-judge",
         "skill-injection-decision",
-        "references-multi-turn-agent-eval"
+        "references-multi-turn-agent-eval",
+        "system-one-decision-models"
       ]
     },
     {
@@ -867,7 +868,8 @@
         "stop-and-yield-conditions",
         "tool-use-design",
         "turn-outcome-signal",
-        "decision-audit-trail"
+        "decision-audit-trail",
+        "system-one-decision-models"
       ]
     },
     {
@@ -1093,7 +1095,8 @@
         "agent-eval-case-study",
         "llm-observability",
         "eval-statistical-significance",
-        "harness-token-economics"
+        "harness-token-economics",
+        "system-one-decision-models"
       ]
     },
     {
@@ -1220,7 +1223,8 @@
         "template-rendered-output",
         "engine-vs-conversation-routing",
         "decision-audit-trail",
-        "output-surface-taxonomy"
+        "output-surface-taxonomy",
+        "system-one-decision-models"
       ]
     },
     {
@@ -1439,7 +1443,8 @@
         "intent-and-disambiguation",
         "escalation-handoff",
         "output-surface-taxonomy",
-        "scope-and-refusal"
+        "scope-and-refusal",
+        "system-one-decision-models"
       ]
     },
     {
@@ -1693,7 +1698,8 @@
         "hard-surface-irrevocability",
         "template-rendered-output",
         "layered-defense-pipeline",
-        "agent-trajectory-eval"
+        "agent-trajectory-eval",
+        "system-one-decision-models"
       ]
     },
     {
@@ -1866,7 +1872,8 @@
         "managed-agent-apis",
         "self-improving-harness",
         "prince-reliable-agentic-case-study",
-        "agent-failure-modes"
+        "agent-failure-modes",
+        "system-one-decision-models"
       ]
     },
     {
@@ -2178,7 +2185,8 @@
         "agent-trajectory-eval",
         "decision-audit-trail",
         "escalation-handoff",
-        "recursive-self-improvement"
+        "recursive-self-improvement",
+        "system-one-decision-models"
       ]
     },
     {
@@ -2287,7 +2295,8 @@
         "layered-defense-pipeline",
         "native-thinking-vs-prompted-reasoning",
         "llm-observability",
-        "cot-as-forensic-artifact"
+        "cot-as-forensic-artifact",
+        "system-one-decision-models"
       ]
     },
     {
@@ -2643,7 +2652,8 @@
         "decision-engine-contract",
         "domain-knowledge-injection",
         "recency-bias-prompt-design",
-        "llm-observability"
+        "llm-observability",
+        "system-one-decision-models"
       ]
     },
     {
@@ -3158,7 +3168,8 @@
         "mcp-tool-layer",
         "memory-poisoning",
         "skill-lifecycle-and-drift",
-        "agent-skills-progressive-disclosure"
+        "agent-skills-progressive-disclosure",
+        "system-one-decision-models"
       ]
     },
     {
@@ -3734,6 +3745,34 @@
         "skill-lifecycle-and-drift",
         "action-authority",
         "harness-as-hyperparameter"
+      ]
+    },
+    {
+      "id": "references-system-one-decision-models",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-system-one-decision-models.md",
+      "title": "References \u2014 System One Decision Models",
+      "summary": "verified reading list on System One decision models (Jev and open replicas): vendor sources, why they are fast, open reproductions, and the papers that measure accuracy, calibration, agent use, and security.",
+      "tags": [
+        "decision-model",
+        "system-one",
+        "jev",
+        "calibration",
+        "routing",
+        "judge",
+        "reading-list"
+      ],
+      "status": "living",
+      "created": "2026-10-25",
+      "clusters": [],
+      "related": [
+        "system-one-decision-models",
+        "llm-as-judge",
+        "tool-selection-and-routing",
+        "prompt-injection-and-isolation",
+        "agent-trajectory-eval",
+        "cost-aware-eval"
       ]
     },
     {
@@ -4521,6 +4560,46 @@
       ]
     },
     {
+      "id": "system-one-decision-models",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/system-one-decision-models.md",
+      "title": "System One Decision Models",
+      "summary": "models that return a probability per caller-defined option in one forward pass instead of generating text \u2014 why they are fast and cheap, where they match LLMs, and where speed stops helping an agent.",
+      "tags": [
+        "decision-model",
+        "system-one",
+        "typed-output",
+        "calibration",
+        "latency",
+        "cost",
+        "routing",
+        "judge"
+      ],
+      "status": "living",
+      "created": "2026-10-25",
+      "clusters": [
+        "llm-output-design",
+        "task-agent-pattern"
+      ],
+      "related": [
+        "references-system-one-decision-models",
+        "forced-tool-call-output",
+        "decision-engine-contract",
+        "tool-selection-and-routing",
+        "llm-as-judge",
+        "engine-vs-conversation-routing",
+        "native-thinking-vs-prompted-reasoning",
+        "prompt-injection-and-isolation",
+        "confirm-before-act",
+        "agent-trajectory-eval",
+        "cost-aware-eval",
+        "harness-token-economics",
+        "llm-output-design",
+        "task-agent-pattern"
+      ]
+    },
+    {
       "id": "task-agent-pattern",
       "type": "topic",
       "kind": null,
@@ -4554,7 +4633,8 @@
         "engine-vs-conversation-routing",
         "decision-audit-trail",
         "output-surface-taxonomy",
-        "forced-tool-call-output"
+        "forced-tool-call-output",
+        "system-one-decision-models"
       ]
     },
     {
@@ -4787,7 +4867,8 @@
         "recency-bias-prompt-design",
         "mcp-tool-layer",
         "just-in-time-context",
-        "references-just-in-time-context"
+        "references-just-in-time-context",
+        "system-one-decision-models"
       ]
     },
     {
@@ -6001,6 +6082,11 @@
     },
     {
       "from": "agent-trajectory-eval",
+      "to": "system-one-decision-models",
+      "kind": "related"
+    },
+    {
+      "from": "agent-trajectory-eval",
       "to": "task-planning",
       "kind": "related"
     },
@@ -6476,6 +6562,11 @@
     },
     {
       "from": "confirm-before-act",
+      "to": "system-one-decision-models",
+      "kind": "related"
+    },
+    {
+      "from": "confirm-before-act",
       "to": "tool-use-design",
       "kind": "related"
     },
@@ -6801,6 +6892,11 @@
     },
     {
       "from": "cost-aware-eval",
+      "to": "system-one-decision-models",
+      "kind": "related"
+    },
+    {
+      "from": "cost-aware-eval",
       "to": "test-pyramid-llm",
       "kind": "related"
     },
@@ -6947,6 +7043,11 @@
     {
       "from": "decision-engine-contract",
       "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "decision-engine-contract",
+      "to": "system-one-decision-models",
       "kind": "related"
     },
     {
@@ -7257,6 +7358,11 @@
     {
       "from": "engine-vs-conversation-routing",
       "to": "scope-and-refusal",
+      "kind": "related"
+    },
+    {
+      "from": "engine-vs-conversation-routing",
+      "to": "system-one-decision-models",
       "kind": "related"
     },
     {
@@ -7581,6 +7687,11 @@
     },
     {
       "from": "forced-tool-call-output",
+      "to": "system-one-decision-models",
+      "kind": "related"
+    },
+    {
+      "from": "forced-tool-call-output",
       "to": "task-agent-pattern",
       "kind": "related"
     },
@@ -7767,6 +7878,11 @@
     {
       "from": "harness-token-economics",
       "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "harness-token-economics",
+      "to": "system-one-decision-models",
       "kind": "related"
     },
     {
@@ -8191,6 +8307,11 @@
     },
     {
       "from": "llm-as-judge",
+      "to": "system-one-decision-models",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-judge",
       "to": "test-pyramid-llm",
       "kind": "related"
     },
@@ -8412,6 +8533,11 @@
     {
       "from": "llm-output-design",
       "to": "streaming-vs-structured",
+      "kind": "related"
+    },
+    {
+      "from": "llm-output-design",
+      "to": "system-one-decision-models",
       "kind": "related"
     },
     {
@@ -8887,6 +9013,11 @@
     {
       "from": "native-thinking-vs-prompted-reasoning",
       "to": "recency-bias-prompt-design",
+      "kind": "related"
+    },
+    {
+      "from": "native-thinking-vs-prompted-reasoning",
+      "to": "system-one-decision-models",
       "kind": "related"
     },
     {
@@ -9607,6 +9738,11 @@
     {
       "from": "prompt-injection-and-isolation",
       "to": "skill-lifecycle-and-drift",
+      "kind": "related"
+    },
+    {
+      "from": "prompt-injection-and-isolation",
+      "to": "system-one-decision-models",
       "kind": "related"
     },
     {
@@ -10407,6 +10543,36 @@
     {
       "from": "references-rsi-2026-10",
       "to": "skill-lifecycle-and-drift",
+      "kind": "related"
+    },
+    {
+      "from": "references-system-one-decision-models",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "references-system-one-decision-models",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "references-system-one-decision-models",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "references-system-one-decision-models",
+      "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "references-system-one-decision-models",
+      "to": "system-one-decision-models",
+      "kind": "related"
+    },
+    {
+      "from": "references-system-one-decision-models",
+      "to": "tool-selection-and-routing",
       "kind": "related"
     },
     {
@@ -11410,6 +11576,76 @@
       "kind": "related"
     },
     {
+      "from": "system-one-decision-models",
+      "to": "agent-trajectory-eval",
+      "kind": "related"
+    },
+    {
+      "from": "system-one-decision-models",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "system-one-decision-models",
+      "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "system-one-decision-models",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "system-one-decision-models",
+      "to": "engine-vs-conversation-routing",
+      "kind": "related"
+    },
+    {
+      "from": "system-one-decision-models",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "system-one-decision-models",
+      "to": "harness-token-economics",
+      "kind": "related"
+    },
+    {
+      "from": "system-one-decision-models",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "system-one-decision-models",
+      "to": "llm-output-design",
+      "kind": "related"
+    },
+    {
+      "from": "system-one-decision-models",
+      "to": "native-thinking-vs-prompted-reasoning",
+      "kind": "related"
+    },
+    {
+      "from": "system-one-decision-models",
+      "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "system-one-decision-models",
+      "to": "references-system-one-decision-models",
+      "kind": "related"
+    },
+    {
+      "from": "system-one-decision-models",
+      "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "system-one-decision-models",
+      "to": "tool-selection-and-routing",
+      "kind": "related"
+    },
+    {
       "from": "task-agent-pattern",
       "to": "action-execution-safety",
       "kind": "related"
@@ -11482,6 +11718,11 @@
     {
       "from": "task-agent-pattern",
       "to": "output-surface-taxonomy",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "system-one-decision-models",
       "kind": "related"
     },
     {
@@ -11777,6 +12018,11 @@
     {
       "from": "tool-selection-and-routing",
       "to": "references-task-agent-design",
+      "kind": "related"
+    },
+    {
+      "from": "tool-selection-and-routing",
+      "to": "system-one-decision-models",
       "kind": "related"
     },
     {
