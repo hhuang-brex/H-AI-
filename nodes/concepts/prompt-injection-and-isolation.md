@@ -93,6 +93,10 @@ Consistent with this node's thesis: scanning skill *text* is Tier 4. The control
 
 The vectors above are text the agent reads as text. A less obvious one is an artifact the agent was asked to *analyze*. Researchers showed that strings embedded in a program, never executed and harmless to the program, can carry instructions to an LLM agent that later reads its decompiled output, causing it to misreport what the program does ([2605.30667](https://arxiv.org/abs/2605.30667), fetched 2026-10-19). The general lesson: anything an agent inspects — a document, a log, a file it was asked to summarize — must be treated as untrusted data, never as instructions, however technical the context. For a task agent, that includes receipts, uploaded files, and tool output it was told to "just read."
 
+### Typed outputs narrow the attack, they do not end it
+
+Restricting a model to a fixed set of options shrinks what an injection can produce but does not stop it: attacker-controlled context flipped decisions in 81.5% of 228 real applications built on a typed decision model ([2610.18612](https://arxiv.org/abs/2610.18612)). The attacker can only pick among your options, and one of them may be "approve." One design answer is to score the trusted policy separately from the untrusted evidence and cap how far the evidence can move the decision ([2610.34826](https://arxiv.org/abs/2610.34826)). See [system-one-decision-models](system-one-decision-models.md).
+
 ## The mitigation ladder: architectural > compositional > prompt-level
 
 **Tier 1 — Architectural (the only tier with measured resistance).** Constrain what a compromised agent *can do*, not what it believes.

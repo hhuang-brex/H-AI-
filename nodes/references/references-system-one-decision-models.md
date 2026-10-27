@@ -25,6 +25,7 @@ Backs [system-one-decision-models](../concepts/system-one-decision-models.md). E
 | **Introducing System One Models & Jev** — Diogo Almeida, TypeSafe AI (2026-09-15). [link](https://typesafe.ai/blog/introducing-system-one-models-and-jev) | Defines the category; LLMs sample "one token at a time," Jev "generates all outputs in a single query." $0.042/MTok input, output "too cheap to meter," 70–500 ms. Explains its 193.6×/444.6× claims and their biases: workflows built by its own team, frontier answers as reference, and gains "on the higher end of real world gains." |
 | **TypeSafe AI home page** (2026-10-19). [link](https://typesafe.ai) | Training method named "Reinforcement Learning for Calibrated Decisions (RLCD)." Claims "Zero Hallucinations," qualified by telling software to escalate when unconfident. |
 | **Jev docs: Introduction**. [link](https://docs.typesafe.ai/introduction) | Choice, Score, and Noul primitives. "System One models work best when each question asks one specific, well-scoped thing"; decompose questions that "require extended reasoning." |
+| **OpenAI Decisions API** — docs, no date stated (fetched 2026-10-27). [link](https://developers.openai.com/api/docs/guides/decisions) | The same interface from OpenAI: `predicate`, `choice`, `score` question types; up to 400 per request; $0.10/MTok uncached input, output not charged; "about 10x faster than the Responses API." |
 
 ## 2. Independent benchmarks
 
@@ -92,6 +93,32 @@ Backs [system-one-decision-models](../concepts/system-one-decision-models.md). E
 | **Decision Hijacking** — Wu, Lim (2026-09-23). [2609.28613](https://arxiv.org/abs/2609.28613) | Injection shifts probabilities but rarely reaches the attacker's target (1.8% → 3.5% with adaptive attacks). |
 | **Same Attack, Different Judge** — Li et al. (2026-10-13). [2610.17820](https://arxiv.org/abs/2610.17820) | Most robust on rule-based moderation; more exposed on judgment tasks, and flagged 27% of benign requests. |
 | **Poisoned into Action** [2610.15537](https://arxiv.org/abs/2610.15537) · **DICE** [2610.14404](https://arxiv.org/abs/2610.14404) | Schema-valid choices can still trigger bad actions; the adapters around the model are an attack surface too. |
+
+## 9. Lineage — the readout before the product (added 2026-10-27)
+
+| Paper | Contribution |
+|---|---|
+| **Document Ranking with a Pretrained Sequence-to-Sequence Model (monoT5)** — Nogueira, Jiang, Lin (2020). [2003.06713](https://arxiv.org/abs/2003.06713) | Logits of target words "can be interpreted as relevance probabilities for ranking" — the decision readout, five years early. |
+| **Benchmarking Zero-shot Text Classification** — Yin, Hay, Roth (EMNLP 2019). [1909.00161](https://arxiv.org/abs/1909.00161) | Classification with labels unseen in training, via entailment — the "options supplied at call time" setup. |
+| **Calibrate Before Use** — Zhao, Wallace, Feng, Klein, Singh (ICML 2021). [2102.09690](https://arxiv.org/abs/2102.09690) | Answer-position and frequency bias; contextual calibration with a content-free input, up to 30.0 points absolute. |
+| **Language Models (Mostly) Know What They Know** — Kadavath et al., Anthropic (2022). [2207.05221](https://arxiv.org/abs/2207.05221) | Large models are well calibrated on multiple-choice and true/false "in the right format"; P(True) and P(IK). |
+| **Large Language Models Are Not Robust Multiple Choice Selectors** — Zheng et al. (ICLR 2024 spotlight). [2309.03882](https://arxiv.org/abs/2309.03882) | Letter-preference "selection bias" from token priors; PriDe debiasing. |
+| **Look at the Text** — Wang et al. (COLM 2024). [2404.08382](https://arxiv.org/abs/2404.08382) | When first-token probabilities disagree with the text answer, the text answer is more robust. A caution for logit readouts. |
+| **FrugalGPT** — Chen, Zaharia, Zou (2023). [2305.05176](https://arxiv.org/abs/2305.05176) · **RouteLLM** — Ong et al. (v4 2025). [2406.18665](https://arxiv.org/abs/2406.18665) | LLM cascades and routers: up to 98% cost reduction at GPT-4 parity; over 2× savings from strong/weak routing. |
+| **SwiftSage** — Lin et al. (NeurIPS 2023). [2305.17390](https://arxiv.org/abs/2305.17390) · **Dualformer** — Su et al. (v3 2025). [2410.09918](https://arxiv.org/abs/2410.09918) | Fast-and-slow agent designs that predate "System One models": a small fast actor with an LLM planner, and one model trained to run in either mode. |
+
+## 10. New since 2026-10-22 (added 2026-10-27)
+
+| Paper | Finding |
+|---|---|
+| **The Hitchhiker's Guide to System 1 Models** — Roitman, single author (2026-10-24). [2610.33775](https://arxiv.org/abs/2610.33775) | A practitioner survey with a five-family taxonomy: encoder classifiers, reward models, non-autoregressive engines, contrastive models, extraction models. |
+| **System One models Are Not Better Rerankers** — Dinzinger et al. (2026-10-23). [2610.32318](https://arxiv.org/abs/2610.32318) | Decision fine-tuning never beat reranker fine-tuning; up to 9B it added nothing over the untuned model. |
+| **Can System-1-Style Decision Models Replace Dedicated Rerankers in RAG?** — Li, Xie (2026-10-26). [2610.34816](https://arxiv.org/abs/2610.34816) | The default setup fails on long candidate lists; a tuned reranker stays faster and uses far less GPU memory. |
+| **Measure Before You Train** — Lucca, single-user case study (2026-10-23). [2610.32955](https://arxiv.org/abs/2610.32955) | On 739 real emails, logistic regression on ~200 labels had the highest accuracy on every field. |
+| **Commit or Abstain?** — Demir, single author (2026-10-21). [2610.29961](https://arxiv.org/abs/2610.29961) | With the correct holding removed, LLMs still picked one in 38–86% of items; the most cautious decision model, 30%. |
+| **Truncated Reasoning Under a Budget** — Wang et al. (v2 2026-10-24). [2610.25768](https://arxiv.org/abs/2610.25768) | Reading an answer from a cut-off reasoning trace beat forced answering at every budget; 71.3% cost saved at a 0.58-point loss. |
+| **Two Uncertainties Are Not One** — Yadav, single author (2026-10-23). [2610.33258](https://arxiv.org/abs/2610.33258) | On 142,658 comments, AUROC 0.83 was not separable from 13 of 14 frontier models; "confidence" conflates annotator disagreement with decision risk. |
+| **TrustJev** — Xu et al. (2026-10-26). [2610.34826](https://arxiv.org/abs/2610.34826) | Scores trusted policy separately from untrusted evidence and bounds how much the evidence can move the decision. |
 
 ## What failed to verify
 
