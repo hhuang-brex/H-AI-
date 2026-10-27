@@ -12,6 +12,7 @@ related:
   - [[decision-audit-trail]]
   - [[output-surface-taxonomy]]
   - [[system-one-decision-models]]
+  - [[decision-model-deployment]]
 status: living
 created: 2026-06-09
 summary: "layered output (decision + confidence + next-action) as the wire format every surface consumes."

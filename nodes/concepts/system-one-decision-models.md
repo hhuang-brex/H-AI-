@@ -18,6 +18,7 @@ related:
   - [[harness-token-economics]]
   - [[llm-output-design]]
   - [[task-agent-pattern]]
+  - [[decision-model-deployment]]
 status: living
 created: 2026-10-25
 ---
@@ -60,7 +61,7 @@ The speed is structural, not a smaller model:
 
 ## Why it is a big deal
 
-Most of what an agent harness decides is a small multiple-choice question: which tool next, is this retrieved passage relevant, does this input carry an injection, should this run stop. Today each of those costs a full LLM call. A model built for exactly that shape changes the economics of every one of them, and it returns a probability the code can threshold, sort, or escalate on — which a generated "yes" never gave you.
+Most of what an agent harness decides is a small multiple-choice question: which tool next, is this retrieved passage relevant, does this input carry an injection, should this run stop. Today each of those costs a full LLM call. A model built for exactly that shape changes the economics of every one of them, and it returns a probability the code can sort or escalate on — which a generated "yes" never gave you. One caution: the probability ranks options well, but thresholding it does not recover a *set* of correct options; across three vendors, 28–50% of fully correct rankings still gave a correct option less than 1/n ([2610.29217](https://arxiv.org/abs/2610.29217)).
 
 **The capability is not exclusive to Jev.** Open instruction-tuned models read at the answer letter match it without training, and a LoRA fine-tune beat it by about 4 points on its own benchmark ([2610.17205](https://arxiv.org/abs/2610.17205), [2610.02076](https://arxiv.org/abs/2610.02076)). One team replaced a frontier judge costing about $1,000 per pass with a self-hosted readout at roughly 1% of the cost ([2610.29052](https://arxiv.org/abs/2610.29052)). The pattern is portable; the vendor is one implementation.
 
@@ -102,6 +103,8 @@ The graph's rule, synthesized from the above: **use a decision model for leaf de
 Cascades predate decision models: FrugalGPT matched GPT-4 at up to 98% lower cost by learning which model to call per query ([2305.05176](https://arxiv.org/abs/2305.05176)), and RouteLLM cut cost over 2× by routing between a strong and weak model ([2406.18665](https://arxiv.org/abs/2406.18665)). A decision model makes the cheap tier cheaper and gives the router a calibrated number to gate on. One more use: reading the answer out of a *truncated* reasoning trace, which beat forcing an answer at every budget tested and saved 71.3% of cost at a 0.58-point accuracy loss ([2610.25768](https://arxiv.org/abs/2610.25768)).
 
 Fit the escalation threshold on held-out traffic, not in-sample: naive thresholds exceeded the target risk in about half of settings ([2610.19811](https://arxiv.org/abs/2610.19811)). Keep the option list fixed per decision, since the probabilities are relative to it. And measure the agent end to end — cost per delivered outcome, not per call ([cost-aware-eval](cost-aware-eval.md)).
+
+For where to put one in a task agent, how to set thresholds, and what to monitor, see [decision-model-deployment](decision-model-deployment.md).
 
 ## References
 

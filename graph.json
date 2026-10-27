@@ -1,7 +1,7 @@
 {
   "generated": "2026-10-27",
-  "node_count": 168,
-  "edge_count": 1455,
+  "node_count": 169,
+  "edge_count": 1483,
   "nodes": [
     {
       "id": "action-authority",
@@ -869,7 +869,8 @@
         "tool-use-design",
         "turn-outcome-signal",
         "decision-audit-trail",
-        "system-one-decision-models"
+        "system-one-decision-models",
+        "decision-model-deployment"
       ]
     },
     {
@@ -958,7 +959,8 @@
         "decision-audit-trail",
         "agent-control-loop",
         "agent-native-memory-framework",
-        "tool-result-grounding"
+        "tool-result-grounding",
+        "decision-model-deployment"
       ]
     },
     {
@@ -1224,7 +1226,46 @@
         "engine-vs-conversation-routing",
         "decision-audit-trail",
         "output-surface-taxonomy",
-        "system-one-decision-models"
+        "system-one-decision-models",
+        "decision-model-deployment"
+      ]
+    },
+    {
+      "id": "decision-model-deployment",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/decision-model-deployment.md",
+      "title": "Decision-Model Deployment",
+      "summary": "how to put a System One decision model inside a conversing task agent: which decision points to hand it, how to set escalation thresholds, the design rule 'model judges, code enforces', and what to monitor.",
+      "tags": [
+        "decision-model",
+        "system-one",
+        "deployment",
+        "escalation",
+        "calibration",
+        "drift",
+        "task-agent"
+      ],
+      "status": "living",
+      "created": "2026-10-27",
+      "clusters": [
+        "task-agent-pattern"
+      ],
+      "related": [
+        "system-one-decision-models",
+        "references-system-one-decision-models",
+        "escalation-handoff",
+        "intent-and-disambiguation",
+        "confirm-before-act",
+        "stop-and-yield-conditions",
+        "context-compaction",
+        "memory-consolidation-and-forgetting",
+        "tool-selection-and-routing",
+        "llm-as-judge",
+        "eval-statistical-significance",
+        "live-traffic-eval",
+        "decision-engine-contract",
+        "task-agent-pattern"
       ]
     },
     {
@@ -1474,7 +1515,8 @@
         "scope-and-refusal",
         "safety-rails-domain-specific",
         "conversation-memory",
-        "turn-outcome-signal"
+        "turn-outcome-signal",
+        "decision-model-deployment"
       ]
     },
     {
@@ -1572,7 +1614,8 @@
         "agent-trajectory-eval",
         "llm-as-judge",
         "references-prompt-attribution",
-        "recursive-self-improvement"
+        "recursive-self-improvement",
+        "decision-model-deployment"
       ]
     },
     {
@@ -1959,7 +2002,8 @@
         "domain-chatbot-design",
         "repair-and-clarification",
         "scope-and-refusal",
-        "action-authority"
+        "action-authority",
+        "decision-model-deployment"
       ]
     },
     {
@@ -2126,7 +2170,8 @@
         "prince-reliable-agentic-case-study",
         "prompt-component-attribution",
         "cost-aware-eval",
-        "turn-outcome-signal"
+        "turn-outcome-signal",
+        "decision-model-deployment"
       ]
     },
     {
@@ -2186,7 +2231,8 @@
         "decision-audit-trail",
         "escalation-handoff",
         "recursive-self-improvement",
-        "system-one-decision-models"
+        "system-one-decision-models",
+        "decision-model-deployment"
       ]
     },
     {
@@ -2402,7 +2448,8 @@
         "context-compaction",
         "prompt-time-knowledge-capture",
         "references-context-and-memory",
-        "memory-poisoning"
+        "memory-poisoning",
+        "decision-model-deployment"
       ]
     },
     {
@@ -3772,7 +3819,8 @@
         "tool-selection-and-routing",
         "prompt-injection-and-isolation",
         "agent-trajectory-eval",
-        "cost-aware-eval"
+        "cost-aware-eval",
+        "decision-model-deployment"
       ]
     },
     {
@@ -4501,7 +4549,8 @@
         "perceive-reason-act-loop",
         "step-budget-and-runaway-control",
         "turn-taking-and-proactivity",
-        "escalation-handoff"
+        "escalation-handoff",
+        "decision-model-deployment"
       ]
     },
     {
@@ -4596,7 +4645,8 @@
         "cost-aware-eval",
         "harness-token-economics",
         "llm-output-design",
-        "task-agent-pattern"
+        "task-agent-pattern",
+        "decision-model-deployment"
       ]
     },
     {
@@ -4634,7 +4684,8 @@
         "decision-audit-trail",
         "output-surface-taxonomy",
         "forced-tool-call-output",
-        "system-one-decision-models"
+        "system-one-decision-models",
+        "decision-model-deployment"
       ]
     },
     {
@@ -4868,7 +4919,8 @@
         "mcp-tool-layer",
         "just-in-time-context",
         "references-just-in-time-context",
-        "system-one-decision-models"
+        "system-one-decision-models",
+        "decision-model-deployment"
       ]
     },
     {
@@ -6547,6 +6599,11 @@
     },
     {
       "from": "confirm-before-act",
+      "to": "decision-model-deployment",
+      "kind": "related"
+    },
+    {
+      "from": "confirm-before-act",
       "to": "hard-surface-irrevocability",
       "kind": "related"
     },
@@ -6673,6 +6730,11 @@
     {
       "from": "context-compaction",
       "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "context-compaction",
+      "to": "decision-model-deployment",
       "kind": "related"
     },
     {
@@ -7032,6 +7094,11 @@
     },
     {
       "from": "decision-engine-contract",
+      "to": "decision-model-deployment",
+      "kind": "related"
+    },
+    {
+      "from": "decision-engine-contract",
       "to": "engine-vs-conversation-routing",
       "kind": "related"
     },
@@ -7063,6 +7130,76 @@
     {
       "from": "decision-engine-contract",
       "to": "template-rendered-output",
+      "kind": "related"
+    },
+    {
+      "from": "decision-model-deployment",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "decision-model-deployment",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "decision-model-deployment",
+      "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "decision-model-deployment",
+      "to": "escalation-handoff",
+      "kind": "related"
+    },
+    {
+      "from": "decision-model-deployment",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "decision-model-deployment",
+      "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "decision-model-deployment",
+      "to": "live-traffic-eval",
+      "kind": "related"
+    },
+    {
+      "from": "decision-model-deployment",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "decision-model-deployment",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "decision-model-deployment",
+      "to": "references-system-one-decision-models",
+      "kind": "related"
+    },
+    {
+      "from": "decision-model-deployment",
+      "to": "stop-and-yield-conditions",
+      "kind": "related"
+    },
+    {
+      "from": "decision-model-deployment",
+      "to": "system-one-decision-models",
+      "kind": "related"
+    },
+    {
+      "from": "decision-model-deployment",
+      "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "decision-model-deployment",
+      "to": "tool-selection-and-routing",
       "kind": "related"
     },
     {
@@ -7382,6 +7519,11 @@
     },
     {
       "from": "escalation-handoff",
+      "to": "decision-model-deployment",
+      "kind": "related"
+    },
+    {
+      "from": "escalation-handoff",
       "to": "domain-chatbot-design",
       "kind": "related"
     },
@@ -7503,6 +7645,11 @@
     {
       "from": "eval-statistical-significance",
       "to": "cost-aware-eval",
+      "kind": "related"
+    },
+    {
+      "from": "eval-statistical-significance",
+      "to": "decision-model-deployment",
       "kind": "related"
     },
     {
@@ -7977,6 +8124,11 @@
     },
     {
       "from": "intent-and-disambiguation",
+      "to": "decision-model-deployment",
+      "kind": "related"
+    },
+    {
+      "from": "intent-and-disambiguation",
       "to": "domain-chatbot-design",
       "kind": "related"
     },
@@ -8197,6 +8349,11 @@
     },
     {
       "from": "live-traffic-eval",
+      "to": "decision-model-deployment",
+      "kind": "related"
+    },
+    {
+      "from": "live-traffic-eval",
       "to": "eval-dataset-quality",
       "kind": "related"
     },
@@ -8283,6 +8440,11 @@
     {
       "from": "llm-as-judge",
       "to": "decision-audit-trail",
+      "kind": "related"
+    },
+    {
+      "from": "llm-as-judge",
+      "to": "decision-model-deployment",
       "kind": "related"
     },
     {
@@ -8683,6 +8845,11 @@
     {
       "from": "memory-consolidation-and-forgetting",
       "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "memory-consolidation-and-forgetting",
+      "to": "decision-model-deployment",
       "kind": "related"
     },
     {
@@ -10557,6 +10724,11 @@
     },
     {
       "from": "references-system-one-decision-models",
+      "to": "decision-model-deployment",
+      "kind": "related"
+    },
+    {
+      "from": "references-system-one-decision-models",
       "to": "llm-as-judge",
       "kind": "related"
     },
@@ -11502,6 +11674,11 @@
     },
     {
       "from": "stop-and-yield-conditions",
+      "to": "decision-model-deployment",
+      "kind": "related"
+    },
+    {
+      "from": "stop-and-yield-conditions",
       "to": "escalation-handoff",
       "kind": "related"
     },
@@ -11597,6 +11774,11 @@
     },
     {
       "from": "system-one-decision-models",
+      "to": "decision-model-deployment",
+      "kind": "related"
+    },
+    {
+      "from": "system-one-decision-models",
       "to": "engine-vs-conversation-routing",
       "kind": "related"
     },
@@ -11668,6 +11850,11 @@
     {
       "from": "task-agent-pattern",
       "to": "decision-engine-contract",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
+      "to": "decision-model-deployment",
       "kind": "related"
     },
     {
@@ -11988,6 +12175,11 @@
     {
       "from": "tool-schema-design",
       "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "tool-selection-and-routing",
+      "to": "decision-model-deployment",
       "kind": "related"
     },
     {

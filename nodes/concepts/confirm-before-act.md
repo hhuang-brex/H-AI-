@@ -13,6 +13,7 @@ related:
   - [[turn-outcome-signal]]
   - [[decision-audit-trail]]
   - [[system-one-decision-models]]
+  - [[decision-model-deployment]]
 status: living
 created: 2026-06-11
 ---

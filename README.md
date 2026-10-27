@@ -236,6 +236,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 **[task-agent-pattern](nodes/topics/task-agent-pattern.md)**
 - [decision-audit-trail](nodes/concepts/decision-audit-trail.md) — durable per-decision record (fingerprint + version + reasoning + override history); the substrate replay/drift run on.
 - [decision-engine-contract](nodes/concepts/decision-engine-contract.md) — layered output (decision + confidence + next-action) as the wire format every surface consumes.
+- [decision-model-deployment](nodes/concepts/decision-model-deployment.md) — how to put a System One decision model inside a conversing task agent: which decision points to hand it, how to set escalation thresholds, the design rule 'model judges, code enforces', and what to monitor.
 - [domain-event-task-ontology](nodes/concepts/domain-event-task-ontology.md) — model the user's world — entities, events, tasks, activities and their typed relations/states — as a lightweight domain ontology the agent grounds understanding on and acts over; scope it with competency questions.
 - [engine-vs-conversation-routing](nodes/concepts/engine-vs-conversation-routing.md) — when the engine handles vs. when the chat layer handles; the bridge between them.
 - [forced-tool-call-output](nodes/concepts/forced-tool-call-output.md) — when to force schema vs. let the model write free-text.

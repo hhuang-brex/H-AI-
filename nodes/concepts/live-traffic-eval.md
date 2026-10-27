@@ -12,6 +12,7 @@ related:
   - [[prompt-component-attribution]]
   - [[cost-aware-eval]]
   - [[turn-outcome-signal]]
+  - [[decision-model-deployment]]
 status: living
 created: 2026-07-10
 summary: "reference-free scoring of actual production outputs on a cadence to catch live regressions/hallucinations — distinct from prod-shadow-replay and passive observability; pairs with change-triggered dataset evals."

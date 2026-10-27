@@ -10,6 +10,7 @@ related:
   - [[prompt-injection-and-isolation]]
   - [[agent-trajectory-eval]]
   - [[cost-aware-eval]]
+  - [[decision-model-deployment]]
 status: living
 created: 2026-10-25
 ---
@@ -119,6 +120,26 @@ Backs [system-one-decision-models](../concepts/system-one-decision-models.md). E
 | **Truncated Reasoning Under a Budget** — Wang et al. (v2 2026-10-24). [2610.25768](https://arxiv.org/abs/2610.25768) | Reading an answer from a cut-off reasoning trace beat forced answering at every budget; 71.3% cost saved at a 0.58-point loss. |
 | **Two Uncertainties Are Not One** — Yadav, single author (2026-10-23). [2610.33258](https://arxiv.org/abs/2610.33258) | On 142,658 comments, AUROC 0.83 was not separable from 13 of 14 frontier models; "confidence" conflates annotator disagreement with decision risk. |
 | **TrustJev** — Xu et al. (2026-10-26). [2610.34826](https://arxiv.org/abs/2610.34826) | Scores trusted policy separately from untrusted evidence and bounds how much the evidence can move the decision. |
+
+## 11. Deployment inside agents (added 2026-10-27)
+
+Backs [decision-model-deployment](../concepts/decision-model-deployment.md).
+
+| Source | Finding |
+|---|---|
+| **How Jack & Jill Cut Candidate Screening Costs By 88% With Jev** — TypeSafe AI (2026-10-07). [link](https://typesafe.ai/blog/jack-jill-jev-case-study) | Vendor case study: $0.755 → $0.092 per 1,000 candidates, 20.3 s → 10.3 s per role; recall gain "not statistically significant." |
+| **Jev: For the builders AND dreamers** — TypeSafe AI (2026-10-14). [link](https://typesafe.ai/blog/jev-1-14) | jev-1.14.0: "small, subtle improvements," no published numbers; Jev is "less reliable on longer contexts." |
+| **Jarvis** — Wang et al. (2026-10-16). [2610.23804](https://arxiv.org/abs/2610.23804) | "Models judge and code enforces": every choice checked against the current task version before it applies. |
+| **Source-Judged Compaction** — Min, Chen (2026-10-14). [2610.20927](https://arxiv.org/abs/2610.20927) | 83% of failed runs traced to acting on an unsupported summary entry; removing them lifted reliability 2.1–8.9%. |
+| **SOMA** — Qian et al. (2026-10-19). [2610.26793](https://arxiv.org/abs/2610.26793) | A decision model monitoring a reasoning model: up to 36% fewer tokens; abstention 70.5% → 87.2%. |
+| **Suggested Is Not Superseded** — Chen, Le, pre-registered (2026-10-11). [2610.15710](https://arxiv.org/abs/2610.15710) | Binary memory-retirement gate retired 39.2% of only-suggested changes; three-way answer, 15.5%. |
+| **Judges Follow the Reference** — Ma et al. (2026-10-13). [2610.18497](https://arxiv.org/abs/2610.18497) | Judges reject correct values with no visible source; a derived reference lifted AUROC to 98.4–99.6. |
+| **When Multiple Choices Are Correct** — Munot, single author (2026-10-21). [2610.29217](https://arxiv.org/abs/2610.29217) | Across Jev, Liquid d1, and GPT-6 Luna Decisions, thresholds do not recover the correct set. |
+| **From Detection to Decision** — Lan et al. (2026-10-14). [2610.20907](https://arxiv.org/abs/2610.20907) | Prompt-injection gating at a 1% miss target required over 91.8% escalation for every system. |
+| **SHIFT-JEV** — Saeed et al. (2026-10-25). [2610.34329](https://arxiv.org/abs/2610.34329) | A chi-squared test on predicted labels catches 95–99% of class-prior shifts other detectors miss. |
+| **Recalibrating Many Questions with Few Labels** — Li, Yang (2026-10-13). [2610.18488](https://arxiv.org/abs/2610.18488) | Theory: a pooled fit with a per-question correction is near optimal when each question has few labels. |
+| **Jev-DLC** — Feng et al. (2026-10-22). [2610.31521](https://arxiv.org/abs/2610.31521) | Typed corrections stored as compact state: +7.5 points after two feedback events. |
+| **Decision-Informed Information Seeking (DIVA)** — Lee et al. (2026-10-23). [2610.32181](https://arxiv.org/abs/2610.32181) | LLMs keep paying for checks that cannot change the decision; valuing each check by decision impact cut regret 75% in synthetic tests. |
 
 ## What failed to verify
 

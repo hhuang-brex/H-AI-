@@ -7,6 +7,7 @@ related:
   - [[repair-and-clarification]]
   - [[scope-and-refusal]]
   - [[action-authority]]
+  - [[decision-model-deployment]]
 status: living
 created: 2026-06-08
 summary: "turning ambiguous input into actionable intent; clarification vs. assumption."
