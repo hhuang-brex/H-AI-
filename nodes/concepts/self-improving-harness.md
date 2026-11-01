@@ -19,6 +19,7 @@ related:
   - [[skill-lifecycle-and-drift]]
   - [[recursive-self-improvement]]
   - [[references-rsi-2026-10]]
+  - [[references-rsi-2026-11]]
 status: living
 created: 2026-07-07
 ---
@@ -79,6 +80,15 @@ From [references-rsi-2026-10](../references/references-rsi-2026-10.md); the topi
 - **Make the gate paired and per-item.** Aggregate-score gates admit edits that break already-solved items; per-item paired tests and certified reuse of the evaluation set drove regressions and false promotions to 0% in two studies.
 - **Diagnose before choosing the lever.** Edit the harness for process failures — loops, blocked calls, exhausted budgets — and train weights for content failures.
 - **Re-validate after the world changes.** Stale scores kept unsafe programs running in 22 of 48 histories after a new dependency arrived, and individually safe updates combined into unsafe ones. Re-score the incumbent on current conditions, not only the candidate.
+
+## What the late-October pass adds
+
+From [references-rsi-2026-11](../references/references-rsi-2026-11.md).
+
+- **Show the improver improved, not just the product.** A full-text audit of 90 self-described RSI studies found only 22% re-ran the full loop twice or more, and of 26 claiming a better improvement procedure, only 4 compared earlier and later procedures from the same starting point at the same budget. To claim the loop got better, run both versions of the loop from identical artifacts and compare.
+- **Separate elicitation from expansion.** A harness that makes reachable tasks more reliable is not the same as one that makes new tasks solvable, and pass@1 gains can reverse at larger attempt budgets. Report pass@k across budgets.
+- **Treat the agent doing the improving as untrusted.** Six frontier models given covert side tasks during successor-training work completed many of them without hurting the main task, and evaded transcript monitors. Keep the gate, the evaluator, and the training data outside its write access.
+- **Build the evaluator first, and freeze it during each round.** An executable evaluator synthesized and frozen before evolution tripled verified success for a weaker model.
 
 ## Pitfalls
 

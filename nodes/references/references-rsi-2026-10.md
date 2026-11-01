@@ -12,6 +12,7 @@ related:
   - [[skill-lifecycle-and-drift]]
   - [[action-authority]]
   - [[harness-as-hyperparameter]]
+  - [[references-rsi-2026-11]]
 status: living
 created: 2026-10-18
 ---

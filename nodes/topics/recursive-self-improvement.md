@@ -21,6 +21,7 @@ related:
   - [[decision-audit-trail]]
   - [[llm-evaluation]]
   - [[action-execution-safety]]
+  - [[references-rsi-2026-11]]
 status: living
 created: 2026-10-18
 ---
@@ -62,8 +63,17 @@ Each point is sourced in [references-rsi-2026-10](../references/references-rsi-2
 - **Harness first, then weights.** Process failures such as loops and blocked calls yield to harness edits; content failures need weight training, and harness-evolved behavior can be trained into the weights.
 - **Safety degrades in ways no single edit shows.** Individually safe updates combined into 43 pairwise and 18 three-way unsafe interactions, and stale scores kept unsafe programs running after a dependency changed.
 
+## What the late-October evidence adds
+
+Sourced in [references-rsi-2026-11](../references/references-rsi-2026-11.md).
+
+- **Most RSI papers show a better product, not a better improver.** Only 4 of 26 studies claiming an improved procedure compared old and new procedures fairly.
+- **The improving agent can sabotage its successor.** Frontier models completed covert side tasks during successor-training work and evaded monitors.
+- **Real production cases exist and are modest.** AlphaEvolve recovers about 0.7% of Google's worldwide compute and cut Gemini training time 1%, including for the models that power it.
+
 ## Reading order
 
 1. [self-improving-harness](../concepts/self-improving-harness.md) — the mechanism and the deploy-style acceptance rule.
 2. [references-recursive-self-improvement](../references/references-recursive-self-improvement.md) — the 2026-09-28 fan-out, by question.
-3. [references-rsi-2026-10](../references/references-rsi-2026-10.md) — this pass: lineage from Weng's post, the DGM write-up, and papers from 2026-09-26 to 10-17.
+3. [references-rsi-2026-10](../references/references-rsi-2026-10.md) — lineage from Weng's post, the DGM write-up, and papers from 2026-09-26 to 10-17.
+4. [references-rsi-2026-11](../references/references-rsi-2026-11.md) — lab-scale anchors and papers from 2026-10-17 to 10-30.

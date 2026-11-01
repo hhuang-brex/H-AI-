@@ -1,7 +1,7 @@
 {
-  "generated": "2026-10-27",
-  "node_count": 169,
-  "edge_count": 1483,
+  "generated": "2026-10-31",
+  "node_count": 170,
+  "edge_count": 1493,
   "nodes": [
     {
       "id": "action-authority",
@@ -3317,7 +3317,8 @@
         "action-authority",
         "decision-audit-trail",
         "llm-evaluation",
-        "action-execution-safety"
+        "action-execution-safety",
+        "references-rsi-2026-11"
       ]
     },
     {
@@ -3791,7 +3792,37 @@
         "eval-statistical-significance",
         "skill-lifecycle-and-drift",
         "action-authority",
-        "harness-as-hyperparameter"
+        "harness-as-hyperparameter",
+        "references-rsi-2026-11"
+      ]
+    },
+    {
+      "id": "references-rsi-2026-11",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-rsi-2026-11.md",
+      "title": "References \u2014 Recursive Self-Improvement, Late October 2026",
+      "summary": "third RSI fan-out: how often RSI papers show the loop itself improves (rarely), covert sabotage of successor training, elicitation vs expansion, and the lab-scale anchors (AlphaEvolve, autoresearch, AI Scientist, METR).",
+      "tags": [
+        "rsi",
+        "self-improvement",
+        "harness",
+        "evaluation",
+        "safety",
+        "reading-list",
+        "agents"
+      ],
+      "status": "living",
+      "created": "2026-10-31",
+      "clusters": [],
+      "related": [
+        "recursive-self-improvement",
+        "references-rsi-2026-10",
+        "references-recursive-self-improvement",
+        "self-improving-harness",
+        "eval-statistical-significance",
+        "llm-as-judge",
+        "skill-lifecycle-and-drift"
       ]
     },
     {
@@ -4138,7 +4169,8 @@
         "llm-as-judge",
         "skill-lifecycle-and-drift",
         "recursive-self-improvement",
-        "references-rsi-2026-10"
+        "references-rsi-2026-10",
+        "references-rsi-2026-11"
       ]
     },
     {
@@ -10074,6 +10106,11 @@
     },
     {
       "from": "recursive-self-improvement",
+      "to": "references-rsi-2026-11",
+      "kind": "related"
+    },
+    {
+      "from": "recursive-self-improvement",
       "to": "self-improving-harness",
       "kind": "related"
     },
@@ -10704,11 +10741,51 @@
     },
     {
       "from": "references-rsi-2026-10",
+      "to": "references-rsi-2026-11",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-10",
       "to": "self-improving-harness",
       "kind": "related"
     },
     {
       "from": "references-rsi-2026-10",
+      "to": "skill-lifecycle-and-drift",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-11",
+      "to": "eval-statistical-significance",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-11",
+      "to": "llm-as-judge",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-11",
+      "to": "recursive-self-improvement",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-11",
+      "to": "references-recursive-self-improvement",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-11",
+      "to": "references-rsi-2026-10",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-11",
+      "to": "self-improving-harness",
+      "kind": "related"
+    },
+    {
+      "from": "references-rsi-2026-11",
       "to": "skill-lifecycle-and-drift",
       "kind": "related"
     },
@@ -11085,6 +11162,11 @@
     {
       "from": "self-improving-harness",
       "to": "references-rsi-2026-10",
+      "kind": "related"
+    },
+    {
+      "from": "self-improving-harness",
+      "to": "references-rsi-2026-11",
       "kind": "related"
     },
     {
