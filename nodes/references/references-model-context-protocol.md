@@ -8,6 +8,7 @@ related:
   - [[tool-use-design]]
   - [[prompt-injection-and-isolation]]
   - [[managed-agent-apis]]
+  - [[tool-selection-and-routing]]
 status: living
 created: 2026-08-02
 ---
@@ -35,6 +36,34 @@ Primary sources behind [mcp-tool-layer](../concepts/mcp-tool-layer.md). That nod
 - **MCP Safety Audit: LLMs with the Model Context Protocol Allow Major Security Exploits** — Brandon Radosevich & John Halloran (2025-04-02, rev. 2025-04-11). https://arxiv.org/abs/2504.03767 — Demonstrates LLMs manipulated via MCP tools into "malicious code execution, remote access control, and credential theft," and ships **MCPSafetyScanner**, "the first agentic tool to assess the security of an arbitrary MCP server." The concrete exploit demonstration behind the node's insistence that tool descriptions from an untrusted server are attack surface.
 
 - **Enterprise-Grade Security for the Model Context Protocol (MCP): Frameworks and Mitigation Strategies** — Vineeth Sai Narajala & Idan Habler (2025-04-11, rev. 2025-05-02). https://arxiv.org/abs/2504.08623 — Moves from threat theory to **actionable controls**: systematic threat modeling of vectors like tool poisoning, with implementable security patterns for enterprise adopters. Pairs with the survey above as the "what to *do* about it" — the governance layer behind the node's client-side MUST checklist.
+
+## Papers — late October 2026 (verified 2026-11-01)
+
+From an arXiv sweep of 2026-10-15 → 10-31 (about 55 MCP-related titles; 16 opened). Abstract-level only; numbers author-reported.
+
+**Reliability and interface design**
+
+- **Tool-Calling LLM Agents Under Realistic MCP Faults** — Iannillo et al. (NeurIPS 2026 poster). https://arxiv.org/abs/2610.32555 — A fault-injection middleware calibrated on 57,240 issue and PR threads from 1,774 MCP repos. Faults cut task completion from 8.08 to 3.23 out of 10, and "scale does not purchase fault tolerance": the 120B model fared no better than the 20B.
+- **Matched Capabilities, Different Behaviors: MCP and CLI Interfaces** — Shi, Pang, Li (2026-10-25). https://arxiv.org/abs/2610.34298 — Same operations, two interfaces, same runtime: structured divergence in 94.3% of 2,004 paired episodes, propagating through later steps.
+- **GatewayBench** — Zheng, Chen, Li, Li (2026-10-16). https://arxiv.org/abs/2610.23449 — The first benchmark for MCP gateways: 524 tasks, 11,118 real tools from 251 servers, flattened vs hierarchical gateway designs.
+- **AT-AT: Automatic Tool Optimization from Agent Traces** — Ravichandran et al. (2026-10-26). https://arxiv.org/abs/2610.34679 — Improve shared tool descriptions and implementations offline from agents' traces, holding the agents fixed; lowered cost or error rates on three production MCP servers.
+- **Completeness and Cost of Retrieval Structures for Multi-Tool Requests** — Zhang, single author (2026-10-30). https://arxiv.org/abs/2610.41905 — Completeness@10 drops from 0.58–0.67 on single-tool queries to 0.08–0.17 with four or more tools, and retriever rankings reverse between the two.
+- **BRIA: Explore Separately, Adopt Selectively** — Mazhar, Maekawa, Bhutani (2026-10-15). https://arxiv.org/abs/2610.22688 — Investigate candidate tools in isolated branches and adopt only useful results: +14.37 points over MCP-Zero on MCP-Atlas.
+- **MS-Eval** — Ding et al. (2026-10-16). https://arxiv.org/abs/2610.22869 — Delegating to sub-agents in MCP-heavy work "generally raises cost with contingent payoff"; specialized sub-agents work best.
+
+**Security and privacy**
+
+- **My Credentials, Please: Filesystem Capability Laundering** — Huang et al. (2026-10-15). https://arxiv.org/abs/2610.22301 — Across 21,097 servers from nine registries, 787 of 4,806 triaged (16.4%) had filesystem capabilities despite non-filesystem roles; 150 confirmed vulnerable, 13 advisories.
+- **ProbeID: Verifying MCP Tool Identity under Registry Drift** — Chen et al. (2026-10-24). https://arxiv.org/abs/2610.33633 — Copyable descriptions cannot establish which implementation runs; behavioral probes reach 0.956 hit@1 where description routers sit near chance. 7 of 59 real tools changed despite version pins.
+- **Log-To-Leak** — Hu et al. (2026-10-26). https://arxiv.org/abs/2610.36108 — A logging directive in tool metadata: attack success 62.64–100% with task completion largely intact; three defenses left over 55% residual success.
+- **Decode-Time Provenance Binding for MCP** — Yocam et al. (2026-10-22). https://arxiv.org/abs/2610.31974 — Instructions hidden in an image bypass text scanners once a tool decodes them; authenticated trust labels plus taint tracking blocked all 24 adaptive payloads.
+- **Privacy Leakage from Tool-Call Traces** — Duan et al. (2026-10-30). https://arxiv.org/abs/2610.41885 — Tool-call traces alone gave 26.25% profile-inference success against 17.97% from priors; linking sessions raised it further.
+- **Cross-Interface Authorization for Computer-Use Agents** — Zhu, Wang (2026-10-30). https://arxiv.org/abs/2610.41397 — A policy can be the same across interfaces while its enforcement is not; another route can bypass it. Re-verify at commit time.
+- **From Prompt Injection to Persistent Compromise** — Barcha Correia et al. (2026-10-20). https://arxiv.org/abs/2610.28810 — Memory injection persists across sessions on three major assistants, including through MCP-connected resources.
+
+**Governance**
+
+- **From TCP/IP to MCP** — Bucknall, Byrley, Hammond (2026-10-19). https://arxiv.org/abs/2610.26624 — Protocols that defer security accumulate a "security deficit"; MCP and A2A governance is concentrated in few hands. Argument, not measurement.
 
 ## Blogs — announcement and practitioner engineering
 

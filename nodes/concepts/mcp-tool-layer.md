@@ -80,6 +80,17 @@ Client/host-side normative MUSTs (from the *Security Best Practices* living doc 
 
 Keep the strength honest: **HITL consent before tool invocation is a *principle* the spec says it "cannot enforce"** (SHOULD), not a protocol MUST; **least-privilege / scope-minimization is SHOULD**. The only all-caps consent MUST is the one-click-local-launch case. The strongest MUSTs are *server-side* (no token passthrough, non-deterministic session IDs, `Origin` validation) — a consuming agent's leverage is **server selection**: treat them as a trust checklist. The spec's one hook to the poisoning literature: tool descriptions/annotations "should be considered untrusted, unless obtained from a trusted server," and the behavioral hints (`readOnlyHint`, `destructiveHint` [default true], `idempotentHint`, `openWorldHint`) are **advisory only** — authority is enforced at the tool boundary, never read off the annotation (→ [prompt-injection-and-isolation](prompt-injection-and-isolation.md)).
 
+## What the late-October 2026 papers add
+
+Sources in [references-model-context-protocol](../references/references-model-context-protocol.md); abstracts fetched 2026-11-01, numbers author-reported.
+
+- **Plan for tool failure; a bigger model will not absorb it.** Injecting faults drawn from 57,240 real MCP issue threads cut task completion 60%, and a 120B model kept no larger share of its fault-free score than a 20B one. Treat timeouts, errors, and partial results as normal traffic.
+- **The interface changes behavior even when capabilities match.** The same operations exposed through MCP and through a command line produced different success, cost, and recovery in 94.3% of 2,004 paired episodes. Test both before choosing.
+- **Approving a call can grant more than the call.** A local server's process often has broad filesystem access: 16.4% of triaged servers that claimed no filesystem function could reach host files, yielding 13 security advisories. Sandbox local servers to their declared scope.
+- **A tool's description is not its identity.** Over eleven weeks, 7 of 59 real tools changed behavior despite version pins. Probing a tool's responses against a trusted reference catches a swapped implementation; description matching does not.
+- **Tool metadata is an injection channel, and so are traces.** A logging instruction hidden in tool metadata made agents leak the query and responses in 62.6–100% of model-server pairs while the real task still succeeded. Separately, tool-call traces alone let an observer infer user attributes well above chance.
+- **Multi-tool retrieval fails silently.** With four or more required tools, retrievers returned the full set only 8–17% of the time at k = 10, against 58–67% for single-tool queries. Measure whether the *whole* set came back.
+
 ## How MCP maps onto the tool cluster
 
 | Node | MCP instantiates it as… |

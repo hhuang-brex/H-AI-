@@ -1,7 +1,7 @@
 {
-  "generated": "2026-10-31",
+  "generated": "2026-11-01",
   "node_count": 170,
-  "edge_count": 1493,
+  "edge_count": 1494,
   "nodes": [
     {
       "id": "action-authority",
@@ -3606,7 +3606,8 @@
         "mcp-tool-layer",
         "tool-use-design",
         "prompt-injection-and-isolation",
-        "managed-agent-apis"
+        "managed-agent-apis",
+        "tool-selection-and-routing"
       ]
     },
     {
@@ -10477,6 +10478,11 @@
     {
       "from": "references-model-context-protocol",
       "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "references-model-context-protocol",
+      "to": "tool-selection-and-routing",
       "kind": "related"
     },
     {
