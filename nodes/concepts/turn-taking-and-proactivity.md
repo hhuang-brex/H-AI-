@@ -8,6 +8,7 @@ related:
   - [[escalation-handoff]]
   - [[intent-and-disambiguation]]
   - [[turn-outcome-signal]]
+  - [[episode-boundary-detection]]
 status: living
 created: 2026-06-08
 summary: "initiative, long operations, closing."

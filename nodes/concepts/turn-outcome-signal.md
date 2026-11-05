@@ -16,6 +16,7 @@ related:
   - [[llm-observability]]
   - [[llm-as-judge]]
   - [[references-multi-turn-agent-eval]]
+  - [[episode-boundary-detection]]
 status: living
 created: 2026-09-12
 ---
@@ -106,6 +107,8 @@ Searched 2026-09-17 (arXiv, `cs`, abstract fields; 12-month window): **no paper 
 - **Everything else in this space is a benchmark, not a contract.** Clarification and recovery benchmarks measure whether the model *should have* asked; they need a gold action class, which the action-class diagnostic's own authors say is "unknown in deployment."
 
 So the emit-as-enum design remains this graph's recommendation, now with the search that failed to find it recorded rather than assumed. The one query that did return volume — escalation/handoff, 375 hits in 12 months — is almost entirely privilege escalation in the security sense, a vocabulary collision worth knowing before searching it.
+
+**The turn outcome is also the episode's end signal.** A terminal outcome closes a task, which makes this field the strongest input to [episode-boundary-detection](episode-boundary-detection.md): the agent records where an episode ended instead of inferring it later from text similarity.
 
 ## Pitfalls
 

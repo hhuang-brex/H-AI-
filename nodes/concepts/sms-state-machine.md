@@ -9,6 +9,7 @@ related:
   - [[sms-context-windowing]]
   - [[action-authority]]
   - [[conversation-memory]]
+  - [[episode-boundary-detection]]
 status: living
 created: 2026-06-08
 summary: "five states per thread; the durable substrate."

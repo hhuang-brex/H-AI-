@@ -1,7 +1,7 @@
 {
-  "generated": "2026-11-01",
-  "node_count": 170,
-  "edge_count": 1494,
+  "generated": "2026-11-04",
+  "node_count": 172,
+  "edge_count": 1527,
   "nodes": [
     {
       "id": "action-authority",
@@ -960,7 +960,8 @@
         "agent-control-loop",
         "agent-native-memory-framework",
         "tool-result-grounding",
-        "decision-model-deployment"
+        "decision-model-deployment",
+        "episode-boundary-detection"
       ]
     },
     {
@@ -1068,7 +1069,8 @@
         "domain-chatbot-design",
         "domain-knowledge-injection",
         "escalation-handoff",
-        "repair-and-clarification"
+        "repair-and-clarification",
+        "episode-boundary-detection"
       ]
     },
     {
@@ -1489,6 +1491,44 @@
       ]
     },
     {
+      "id": "episode-boundary-detection",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/episode-boundary-detection.md",
+      "title": "Episode Boundary Detection",
+      "summary": "deciding where a unit of work starts and ends inside a continuous conversation \u2014 at turn, topic, task, and session scale \u2014 and why the boundary signal should come from state changes, not text similarity alone.",
+      "tags": [
+        "conversation",
+        "segmentation",
+        "episode",
+        "boundary",
+        "memory",
+        "turn-taking",
+        "task-agent"
+      ],
+      "status": "living",
+      "created": "2026-11-04",
+      "clusters": [
+        "sms-multi-thread-chatbot"
+      ],
+      "related": [
+        "references-episode-boundary-detection",
+        "turn-outcome-signal",
+        "flat-channel-thread-tracking",
+        "thread-disambiguation-prompts",
+        "sms-multi-thread-chatbot",
+        "turn-taking-and-proactivity",
+        "conversation-memory",
+        "memory-consolidation-and-forgetting",
+        "context-compaction",
+        "run-state-model",
+        "sms-state-machine",
+        "stop-and-yield-conditions",
+        "intent-and-disambiguation",
+        "sms-message-buffering-spec"
+      ]
+    },
+    {
       "id": "escalation-handoff",
       "type": "concept",
       "kind": null,
@@ -1704,7 +1744,8 @@
         "thread-disambiguation-prompts",
         "sms-state-machine",
         "sms-context-windowing",
-        "intent-and-disambiguation"
+        "intent-and-disambiguation",
+        "episode-boundary-detection"
       ]
     },
     {
@@ -2003,7 +2044,8 @@
         "repair-and-clarification",
         "scope-and-refusal",
         "action-authority",
-        "decision-model-deployment"
+        "decision-model-deployment",
+        "episode-boundary-detection"
       ]
     },
     {
@@ -2449,7 +2491,8 @@
         "prompt-time-knowledge-capture",
         "references-context-and-memory",
         "memory-poisoning",
-        "decision-model-deployment"
+        "decision-model-deployment",
+        "episode-boundary-detection"
       ]
     },
     {
@@ -3468,6 +3511,34 @@
       ]
     },
     {
+      "id": "references-episode-boundary-detection",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-episode-boundary-detection.md",
+      "title": "References \u2014 Episode Boundary Detection",
+      "summary": "verified papers on detecting where conversational units start and end: end-of-turn detection, dialogue topic segmentation, disentanglement, event-segmentation memory, and multi-session work episodes.",
+      "tags": [
+        "conversation",
+        "segmentation",
+        "episode",
+        "boundary",
+        "memory",
+        "turn-taking",
+        "reading-list"
+      ],
+      "status": "living",
+      "created": "2026-11-04",
+      "clusters": [],
+      "related": [
+        "episode-boundary-detection",
+        "turn-outcome-signal",
+        "flat-channel-thread-tracking",
+        "turn-taking-and-proactivity",
+        "conversation-memory",
+        "references-context-and-memory"
+      ]
+    },
+    {
       "id": "references-eval-reading-list",
       "type": "reference",
       "kind": null,
@@ -4050,7 +4121,8 @@
         "goal-decomposition",
         "context-compaction",
         "idempotency-keys",
-        "schema-vs-validator"
+        "schema-vs-validator",
+        "episode-boundary-detection"
       ]
     },
     {
@@ -4403,7 +4475,8 @@
         "sms-recovery-and-reentry",
         "decision-audit-trail",
         "forced-tool-call-output",
-        "cot-as-forensic-artifact"
+        "cot-as-forensic-artifact",
+        "episode-boundary-detection"
       ]
     },
     {
@@ -4434,7 +4507,8 @@
         "sms-state-machine",
         "sms-recovery-and-reentry",
         "hard-surface-irrevocability",
-        "conversation-memory"
+        "conversation-memory",
+        "episode-boundary-detection"
       ]
     },
     {
@@ -4490,7 +4564,8 @@
         "async-conversation-pacing",
         "sms-context-windowing",
         "action-authority",
-        "conversation-memory"
+        "conversation-memory",
+        "episode-boundary-detection"
       ]
     },
     {
@@ -4583,7 +4658,8 @@
         "step-budget-and-runaway-control",
         "turn-taking-and-proactivity",
         "escalation-handoff",
-        "decision-model-deployment"
+        "decision-model-deployment",
+        "episode-boundary-detection"
       ]
     },
     {
@@ -4862,7 +4938,8 @@
         "flat-channel-thread-tracking",
         "intent-and-disambiguation",
         "message-segmentation-160",
-        "repair-and-clarification"
+        "repair-and-clarification",
+        "episode-boundary-detection"
       ]
     },
     {
@@ -5049,7 +5126,8 @@
         "agent-trajectory-eval",
         "llm-observability",
         "llm-as-judge",
-        "references-multi-turn-agent-eval"
+        "references-multi-turn-agent-eval",
+        "episode-boundary-detection"
       ]
     },
     {
@@ -5076,7 +5154,8 @@
         "repair-and-clarification",
         "escalation-handoff",
         "intent-and-disambiguation",
-        "turn-outcome-signal"
+        "turn-outcome-signal",
+        "episode-boundary-detection"
       ]
     },
     {
@@ -6772,6 +6851,11 @@
     },
     {
       "from": "context-compaction",
+      "to": "episode-boundary-detection",
+      "kind": "related"
+    },
+    {
+      "from": "context-compaction",
       "to": "tool-result-grounding",
       "kind": "related"
     },
@@ -6933,6 +7017,11 @@
     {
       "from": "conversation-memory",
       "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "conversation-memory",
+      "to": "episode-boundary-detection",
       "kind": "related"
     },
     {
@@ -7541,6 +7630,76 @@
       "kind": "related"
     },
     {
+      "from": "episode-boundary-detection",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "episode-boundary-detection",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "episode-boundary-detection",
+      "to": "flat-channel-thread-tracking",
+      "kind": "related"
+    },
+    {
+      "from": "episode-boundary-detection",
+      "to": "intent-and-disambiguation",
+      "kind": "related"
+    },
+    {
+      "from": "episode-boundary-detection",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "episode-boundary-detection",
+      "to": "references-episode-boundary-detection",
+      "kind": "related"
+    },
+    {
+      "from": "episode-boundary-detection",
+      "to": "run-state-model",
+      "kind": "related"
+    },
+    {
+      "from": "episode-boundary-detection",
+      "to": "sms-message-buffering-spec",
+      "kind": "related"
+    },
+    {
+      "from": "episode-boundary-detection",
+      "to": "sms-multi-thread-chatbot",
+      "kind": "related"
+    },
+    {
+      "from": "episode-boundary-detection",
+      "to": "sms-state-machine",
+      "kind": "related"
+    },
+    {
+      "from": "episode-boundary-detection",
+      "to": "stop-and-yield-conditions",
+      "kind": "related"
+    },
+    {
+      "from": "episode-boundary-detection",
+      "to": "thread-disambiguation-prompts",
+      "kind": "related"
+    },
+    {
+      "from": "episode-boundary-detection",
+      "to": "turn-outcome-signal",
+      "kind": "related"
+    },
+    {
+      "from": "episode-boundary-detection",
+      "to": "turn-taking-and-proactivity",
+      "kind": "related"
+    },
+    {
       "from": "escalation-handoff",
       "to": "action-authority",
       "kind": "related"
@@ -7793,6 +7952,11 @@
     {
       "from": "flat-channel-thread-tracking",
       "to": "context-storage-and-hydration",
+      "kind": "related"
+    },
+    {
+      "from": "flat-channel-thread-tracking",
+      "to": "episode-boundary-detection",
       "kind": "related"
     },
     {
@@ -8163,6 +8327,11 @@
     {
       "from": "intent-and-disambiguation",
       "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "intent-and-disambiguation",
+      "to": "episode-boundary-detection",
       "kind": "related"
     },
     {
@@ -8883,6 +9052,11 @@
     {
       "from": "memory-consolidation-and-forgetting",
       "to": "decision-model-deployment",
+      "kind": "related"
+    },
+    {
+      "from": "memory-consolidation-and-forgetting",
+      "to": "episode-boundary-detection",
       "kind": "related"
     },
     {
@@ -10316,6 +10490,36 @@
       "kind": "related"
     },
     {
+      "from": "references-episode-boundary-detection",
+      "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "references-episode-boundary-detection",
+      "to": "episode-boundary-detection",
+      "kind": "related"
+    },
+    {
+      "from": "references-episode-boundary-detection",
+      "to": "flat-channel-thread-tracking",
+      "kind": "related"
+    },
+    {
+      "from": "references-episode-boundary-detection",
+      "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "references-episode-boundary-detection",
+      "to": "turn-outcome-signal",
+      "kind": "related"
+    },
+    {
+      "from": "references-episode-boundary-detection",
+      "to": "turn-taking-and-proactivity",
+      "kind": "related"
+    },
+    {
       "from": "references-eval-reading-list",
       "to": "adversarial-eval",
       "kind": "related"
@@ -11022,6 +11226,11 @@
     },
     {
       "from": "run-state-model",
+      "to": "episode-boundary-detection",
+      "kind": "related"
+    },
+    {
+      "from": "run-state-model",
       "to": "goal-decomposition",
       "kind": "related"
     },
@@ -11522,6 +11731,11 @@
     },
     {
       "from": "sms-message-buffering-spec",
+      "to": "episode-boundary-detection",
+      "kind": "related"
+    },
+    {
+      "from": "sms-message-buffering-spec",
       "to": "flat-channel-thread-tracking",
       "kind": "related"
     },
@@ -11558,6 +11772,11 @@
     {
       "from": "sms-multi-thread-chatbot",
       "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "sms-multi-thread-chatbot",
+      "to": "episode-boundary-detection",
       "kind": "related"
     },
     {
@@ -11643,6 +11862,11 @@
     {
       "from": "sms-state-machine",
       "to": "conversation-memory",
+      "kind": "related"
+    },
+    {
+      "from": "sms-state-machine",
+      "to": "episode-boundary-detection",
       "kind": "related"
     },
     {
@@ -11763,6 +11987,11 @@
     {
       "from": "stop-and-yield-conditions",
       "to": "decision-model-deployment",
+      "kind": "related"
+    },
+    {
+      "from": "stop-and-yield-conditions",
+      "to": "episode-boundary-detection",
       "kind": "related"
     },
     {
@@ -12172,6 +12401,11 @@
     },
     {
       "from": "thread-disambiguation-prompts",
+      "to": "episode-boundary-detection",
+      "kind": "related"
+    },
+    {
+      "from": "thread-disambiguation-prompts",
       "to": "flat-channel-thread-tracking",
       "kind": "related"
     },
@@ -12427,6 +12661,11 @@
     },
     {
       "from": "turn-outcome-signal",
+      "to": "episode-boundary-detection",
+      "kind": "related"
+    },
+    {
+      "from": "turn-outcome-signal",
       "to": "escalation-handoff",
       "kind": "related"
     },
@@ -12473,6 +12712,11 @@
     {
       "from": "turn-taking-and-proactivity",
       "to": "domain-chatbot-design",
+      "kind": "related"
+    },
+    {
+      "from": "turn-taking-and-proactivity",
+      "to": "episode-boundary-detection",
       "kind": "related"
     },
     {

@@ -12,6 +12,7 @@ related:
   - [[decision-audit-trail]]
   - [[forced-tool-call-output]]
   - [[cot-as-forensic-artifact]]
+  - [[episode-boundary-detection]]
 status: proposal
 created: 2026-06-10
 summary: "handle users splitting one thought across multiple SMS messages; 3-layer detection (regex / Haiku classifier / dynamic timeout) with 10 edge cases."

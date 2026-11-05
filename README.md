@@ -225,6 +225,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 **[sms-multi-thread-chatbot](nodes/topics/sms-multi-thread-chatbot.md)**
 - [async-conversation-pacing](nodes/concepts/async-conversation-pacing.md) — gaps measured in days; re-anchoring; expiry; nudge policy.
 - [conversation-memory](nodes/concepts/conversation-memory.md) — three horizons; what to remember, what not to.
+- [episode-boundary-detection](nodes/concepts/episode-boundary-detection.md) — deciding where a unit of work starts and ends inside a continuous conversation — at turn, topic, task, and session scale — and why the boundary signal should come from state changes, not text similarity alone.
 - [flat-channel-thread-tracking](nodes/concepts/flat-channel-thread-tracking.md) — picking the right thread without thread metadata; cheap-to-expensive detection ladder.
 - [hard-surface-irrevocability](nodes/concepts/hard-surface-irrevocability.md) — irrevocable output channels as a first-class category.
 - [message-segmentation-160](nodes/concepts/message-segmentation-160.md) — character limits, encoding switches, MMS/RCS fallback.
@@ -293,6 +294,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [references-chatbot-pagination](nodes/references/references-chatbot-pagination.md) — pagination reading list (Anthropic Writing Tools / Code Execution, MCP cursor spec, NN/g UX patterns).
 - [references-context-and-memory](nodes/references/references-context-and-memory.md) — verified empirical sources behind the context and memory clusters — lost-in-the-middle, context rot, RAG, MemGPT, and generative agents.
 - [references-domain-chatbot-design](nodes/references/references-domain-chatbot-design.md) — chatbot design reading list (Anthropic, OpenAI, Microsoft Bot Service, Google CDS, Rasa, Voiceflow, Husain, Yan, Hall, Intercom Fin).
+- [references-episode-boundary-detection](nodes/references/references-episode-boundary-detection.md) — verified papers on detecting where conversational units start and end: end-of-turn detection, dialogue topic segmentation, disentanglement, event-segmentation memory, and multi-session work episodes.
 - [references-eval-reading-list](nodes/references/references-eval-reading-list.md) — frontier-lab + practitioner posts on LLM eval (Anthropic, OpenAI, Husain, Yan, Carter, Shankar, …).
 - [references-harness-evaluation](nodes/references/references-harness-evaluation.md) — verified primary sources grounding the agent-harness cluster — the dynamic-workflow concept (agent orchestrates its own fan-out), the minimalist vs rich-taxonomy harness projects, and the papers arguing harness-as-hyperparameter and code-owned enforcement.
 - [references-just-in-time-context](nodes/references/references-just-in-time-context.md) — verified fan-out on just-in-time context: the vendor posts and docs that define it, the retrieval lineage it descends from, and the papers that measure where it beats or loses to loading up front.

@@ -14,6 +14,7 @@ related:
   - [[sms-recovery-and-reentry]]
   - [[hard-surface-irrevocability]]
   - [[conversation-memory]]
+  - [[episode-boundary-detection]]
 status: living
 created: 2026-06-08
 summary: "multi-thread chatbot design when the only channel is flat SMS."

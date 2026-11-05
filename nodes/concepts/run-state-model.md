@@ -13,6 +13,7 @@ related:
   - [[context-compaction]]
   - [[idempotency-keys]]
   - [[schema-vs-validator]]
+  - [[episode-boundary-detection]]
 status: living
 created: 2026-06-11
 ---

@@ -8,6 +8,7 @@ related:
   - [[scope-and-refusal]]
   - [[action-authority]]
   - [[decision-model-deployment]]
+  - [[episode-boundary-detection]]
 status: living
 created: 2026-06-08
 summary: "turning ambiguous input into actionable intent; clarification vs. assumption."

@@ -9,6 +9,7 @@ related:
   - [[sms-state-machine]]
   - [[sms-context-windowing]]
   - [[intent-and-disambiguation]]
+  - [[episode-boundary-detection]]
 status: living
 created: 2026-06-08
 summary: "picking the right thread without thread metadata; cheap-to-expensive detection ladder."
@@ -69,6 +70,10 @@ The acknowledgment at medium is the cheap insurance: if the bot guessed wrong, t
 - **Acknowledgment correctness** — at medium confidence, assert the bot prefixes the response with the thread it picked.
 - **Disambiguation trigger** — at low confidence, assert the bot asks rather than guesses. Tied to [intent-and-disambiguation](intent-and-disambiguation.md).
 - **Adversarial cases** — user replies that lexically match thread B but actually concern thread A (a real failure mode). Catch by including these in the dataset, not by hoping.
+
+## Related: where a thread starts and stops
+
+Picking the right thread assumes threads have edges. Deciding where a task begins and ends inside one stream — at turn, topic, task, and session scale — is covered in [episode-boundary-detection](episode-boundary-detection.md).
 
 ## See also
 

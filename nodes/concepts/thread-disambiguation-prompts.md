@@ -8,6 +8,7 @@ related:
   - [[intent-and-disambiguation]]
   - [[message-segmentation-160]]
   - [[repair-and-clarification]]
+  - [[episode-boundary-detection]]
 status: living
 created: 2026-06-08
 summary: "how to ask \"which thread?\" in 160 chars."
