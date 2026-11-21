@@ -15,9 +15,11 @@ related:
   - [[references-model-context-protocol]]
   - [[skill-injection-decision]]
   - [[just-in-time-context]]
+  - [[confirm-before-act]]
+  - [[run-state-model]]
 status: living
 created: 2026-07-10
-summary: "the Model Context Protocol as the de-facto tool-interop standard — what it standardizes (JSON-RPC primitives + transport), the current 2025-11-25 spec, the stateless work that lives only in draft, and the client-side MUSTs an agent consuming external MCP servers must enforce."
+summary: "the Model Context Protocol as the de-facto tool-interop standard — what it standardizes, the current stateless 2026-07-28 spec, the client-side MUSTs, and what 2026 papers show about failures and security."
 ---
 
 # MCP Tool Layer
@@ -54,17 +56,23 @@ At the model layer these are **identical** — the LLM always emits a *tool call
 
 Two things stay identical either way: the model-side JSON-Schema contract, and that a **result is untrusted data, not instructions** ([tool-result-grounding](tool-result-grounding.md)). Choose native for owned/trusted/latency-sensitive capability; MCP when interop/reuse beats latency and you accept a trust boundary.
 
-## Current spec version: 2025-11-25
+## Current spec version: 2026-07-28
 
-The current protocol version is **2025-11-25**, superseding **2025-06-18** (a common stale belief — including this node's origin brief — is that 2025-06-18 is current; it is not). Two facts: version strings are `YYYY-MM-DD` marking the last *backwards-incompatible* change (not semver); revisions are labelled only **Draft / Current / Final** — **there is no "RC" tier in MCP**, so any "MCP RC" reference is a category error. Notable 2025-11-25 additions: experimental **Tasks** (durable/pollable requests, SEP-1686), URL-mode elicitation (SEP-1036), JSON Schema 2020-12 as default dialect (SEP-1613), input-validation failures routed to Tool Execution Errors for model self-correction (SEP-1303). *(SEP numbers are changelog-verified; the changelog's SEP↔PR pairings look transposed, so treat specific PR numbers as unverified.)*
+The current protocol version is **2026-07-28**, released as stable on 2026-07-28 after a release candidate on 2026-05-29; it supersedes **2025-11-25** ([versioning](https://modelcontextprotocol.io/specification/versioning), [changelog](https://modelcontextprotocol.io/specification/2026-07-28/changelog), fetched 2026-11-20). Version strings are `YYYY-MM-DD` marking the last backwards-incompatible change. *Correction: an earlier version of this node said MCP had no release-candidate tier and that 2026-07-28 was an unshipped target. Both were wrong; the project published a 2026-07-28 RC and then the stable release.*
 
-## The stateless direction — confirmed scope only
+**MCP is now stateless at the protocol level.** The changes a task-agent builder must know:
 
-The current *published* protocol is **stateful** (initialize handshake, capability negotiation, server-initiated features) — that's what you build against today.
+| Change | What it means for you |
+|---|---|
+| No `initialize` handshake; version and client capabilities travel in every request's `_meta` (SEP-2575) | No per-connection setup to keep alive. A mandatory `server/discover` call returns versions, capabilities, and identity. |
+| No protocol sessions or `Mcp-Session-Id` header (SEP-2567) | State that spans calls goes in "explicit, server-minted handles passed as ordinary tool arguments." Store those handles in your [run-state-model](run-state-model.md). |
+| Server-initiated requests replaced by **multi round-trip requests** (SEP-2322) | The server returns `input_required` with `inputRequests`, and the client retries the original call with answers. Elicitation and confirmation prompts now flow through this. |
+| Tasks moved to an extension, `io.modelcontextprotocol/tasks` (SEP-2663) | Long-running work is polled with `tasks/get`. |
+| `tools/list` SHOULD return a fixed order; list results carry `ttlMs` and `cacheScope` (SEP-2549) | Stable order protects the prompt cache — see [harness-token-economics](harness-token-economics.md). |
+| Credentials bound to the issuing authorization server; clients MUST check `iss` (SEP-2352, SEP-2468) | Never reuse a token with another server. |
+| Deprecated: Roots, Sampling, Logging, the HTTP+SSE transport, and Dynamic Client Registration | Still work during a 12-month window; plan migrations. |
 
-- **No shipped "stateless mode."** In Streamable HTTP, session management is *optional* — a server MAY assign a session ID. Statelessness is a *deployment posture*, not a spec toggle. SEP-1699 (2025-11-25) lets servers drop SSE streams so clients poll/reconnect — a scalability affordance, not stateless mode.
-- **A genuinely stateless protocol exists only in the DRAFT**: SEP-2575 "Make MCP Stateless" (merged to draft 2026-05-11) moves protocol metadata into the message body; SEP-2322 "Multi Round-Trip Requests (MRTR)" (merged 2026-05-06) is the stateless replacement for server-initiated requests (the server response carries `inputRequests`; the *client* drives the follow-up).
-- **As of 2026-07-10 there is no dated stateless release** — tracking issues open, SDK support partial. A "2026-07-28 stateless RC" is an unshipped future target (and MCP has no RC tier).
+**Release cadence is now fixed.** Starting with **2027-03-30**, specs ship on the last Tuesday of March and September, and proposals that miss a cutoff move to the next release ([release-cycle post](https://blog.modelcontextprotocol.io/posts/mcp-release-cycle/), 2026-11-11). Which features land in 2027-03-30 is not yet published; an early file upload/download extension was announced 2026-11-10.
 
 ## What an MCP-consuming task agent MUST enforce
 
@@ -90,6 +98,14 @@ Sources in [references-model-context-protocol](../references/references-model-co
 - **A tool's description is not its identity.** Over eleven weeks, 7 of 59 real tools changed behavior despite version pins. Probing a tool's responses against a trusted reference catches a swapped implementation; description matching does not.
 - **Tool metadata is an injection channel, and so are traces.** A logging instruction hidden in tool metadata made agents leak the query and responses in 62.6–100% of model-server pairs while the real task still succeeded. Separately, tool-call traces alone let an observer infer user attributes well above chance.
 - **Multi-tool retrieval fails silently.** With four or more required tools, retrievers returned the full set only 8–17% of the time at k = 10, against 58–67% for single-tool queries. Measure whether the *whole* set came back.
+
+## What the November 2026 papers add
+
+From [references-model-context-protocol](../references/references-model-context-protocol.md); abstracts fetched 2026-11-20.
+
+- **Destructive tools mostly have no human gate.** In a sample of the official registry, an estimated 90% of destructive tools had no server-side confirmation, and 32 of 41 popular hosts and SDKs had no default approval step. Enforce approval in your own host for anything not annotated read-only — see [confirm-before-act](confirm-before-act.md).
+- **Writing code against tools beat calling them directly.** Across 12 servers and up to 1,958 distractor tools, code mode cut tokens 70–90%; adding a tool-preselecting router in front of it did not help significantly.
+- **Defenses live in the model, not the framework.** Across 12 agent frameworks, nine sat within 23–26% attack success, and none implemented an intentional defense against tool poisoning.
 
 ## How MCP maps onto the tool cluster
 

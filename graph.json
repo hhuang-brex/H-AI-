@@ -1,7 +1,7 @@
 {
   "generated": "2026-11-20",
   "node_count": 173,
-  "edge_count": 1541,
+  "edge_count": 1545,
   "nodes": [
     {
       "id": "action-authority",
@@ -2437,7 +2437,7 @@
       "kind": null,
       "path": "nodes/concepts/mcp-tool-layer.md",
       "title": "MCP Tool Layer",
-      "summary": "the Model Context Protocol as the de-facto tool-interop standard \u2014 what it standardizes (JSON-RPC primitives + transport), the current 2025-11-25 spec, the stateless work that lives only in draft, and the client-side MUSTs an agent consuming external MCP servers must enforce.",
+      "summary": "the Model Context Protocol as the de-facto tool-interop standard \u2014 what it standardizes, the current stateless 2026-07-28 spec, the client-side MUSTs, and what 2026 papers show about failures and security.",
       "tags": [
         "agent",
         "tool-use",
@@ -2464,7 +2464,9 @@
         "managed-agent-apis",
         "references-model-context-protocol",
         "skill-injection-decision",
-        "just-in-time-context"
+        "just-in-time-context",
+        "confirm-before-act",
+        "run-state-model"
       ]
     },
     {
@@ -3713,7 +3715,9 @@
         "tool-use-design",
         "prompt-injection-and-isolation",
         "managed-agent-apis",
-        "tool-selection-and-routing"
+        "tool-selection-and-routing",
+        "confirm-before-act",
+        "run-state-model"
       ]
     },
     {
@@ -9046,6 +9050,11 @@
     },
     {
       "from": "mcp-tool-layer",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tool-layer",
       "to": "just-in-time-context",
       "kind": "related"
     },
@@ -9067,6 +9076,11 @@
     {
       "from": "mcp-tool-layer",
       "to": "references-model-context-protocol",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tool-layer",
+      "to": "run-state-model",
       "kind": "related"
     },
     {
@@ -10776,6 +10790,11 @@
     },
     {
       "from": "references-model-context-protocol",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "references-model-context-protocol",
       "to": "managed-agent-apis",
       "kind": "related"
     },
@@ -10787,6 +10806,11 @@
     {
       "from": "references-model-context-protocol",
       "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "references-model-context-protocol",
+      "to": "run-state-model",
       "kind": "related"
     },
     {

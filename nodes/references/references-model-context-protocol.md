@@ -9,6 +9,8 @@ related:
   - [[prompt-injection-and-isolation]]
   - [[managed-agent-apis]]
   - [[tool-selection-and-routing]]
+  - [[confirm-before-act]]
+  - [[run-state-model]]
 status: living
 created: 2026-08-02
 ---
@@ -65,6 +67,31 @@ From an arXiv sweep of 2026-10-15 → 10-31 (about 55 MCP-related titles; 16 ope
 
 - **From TCP/IP to MCP** — Bucknall, Byrley, Hammond (2026-10-19). https://arxiv.org/abs/2610.26624 — Protocols that defer security accumulate a "security deficit"; MCP and A2A governance is concentrated in few hands. Argument, not measurement.
 
+## The 2026-07-28 specification and release cycle (verified 2026-11-20)
+
+- **2026-07-28 changelog** — modelcontextprotocol.io. https://modelcontextprotocol.io/specification/2026-07-28/changelog — The stateless revision: no handshake, no protocol sessions, multi round-trip requests, tasks as an extension, cacheable list results, issuer-bound credentials, and a deprecation policy with a 12-month window.
+- **Versioning** — modelcontextprotocol.io. https://modelcontextprotocol.io/specification/versioning — Names 2026-07-28 as current; versions are declared per request in `_meta`.
+- **GitHub releases** — https://github.com/modelcontextprotocol/modelcontextprotocol/releases — `2026-07-28 RC` (pre-release, 2026-05-29) and `2026-07-28` (stable, 2026-07-28).
+- **A More Predictable Release Cycle for MCP** — Delimarsky, Soria Parra (2026-11-11). https://blog.modelcontextprotocol.io/posts/mcp-release-cycle/ — Six-month cadence; next version 2027-03-30. The process is SEP-3398, not read here.
+- **Exploring File Uploads and Downloads in MCP** — Delimarsky, St. Charles (2026-11-10), on https://blog.modelcontextprotocol.io/ — An early extension for moving files between clients and tools.
+
+## Papers — November 2026 (verified 2026-11-20)
+
+From an arXiv sweep of 2026-10-31 → 11-19 (about 75 MCP-related titles; 12 opened). Abstract-level only.
+
+- **When Neither Side Confirms: Destructive Tool Approval Across MCP Servers and Hosts** — Yao et al. (2026-11-02). https://arxiv.org/abs/2611.02527 — About 90% of destructive tools in a registry sample lack server-side confirmation; 32 of 41 hosts and SDKs have no default approval step; four of five low-cost models executed an injected deletion in 479 of 960 runs.
+- **Beyond Plain MCP: Do Decision Models and Code Mode Make Tool Use Cheaper and Faster?** — Rai, single author, preregistered (2026-11-14). https://arxiv.org/abs/2611.19123 — Code mode cut tokens 70–90%; return-shape hints in stubs swung success up to 39.5 points; a decision-model router in front added nothing significant.
+- **MCP Tool Poisoning in Agentic AI Frameworks** — Shaikh, Montaruli (v2 2026-11-09). https://arxiv.org/abs/2611.03555 — 9,720 cells across 12 frameworks and 18 models: 22.9% attack success, 12.1% of those confirmed exfiltration; "no framework implements intentional defense."
+- **When Tool Names Are Not Identities: Provider Misbinding** — Anbiaee, Dadkhah, Ghorbani (2026-11-16). https://arxiv.org/abs/2611.21577 — An attacker running only another MCP server can capture requests through name collisions plus matching descriptions and schemas.
+- **Signed, Sealed, Leaked** — Aun et al. (2026-11-04). https://arxiv.org/abs/2611.06585 — A legitimately signed tool leaked data to an allowed destination past a runtime defense in every trial; signing proves the publisher, not the behavior.
+- **Reversibility Classes for AI Agent Actions** — Waghmare, Sufi (2026-11-17). https://arxiv.org/abs/2611.22075 — A five-level undo vocabulary over 536 tools on 20 servers; native annotations disagreed with the registry for 118 of 481 tools.
+- **Checking Retry Transparency in Agent Tools** — Jiapeng Li, Microsoft (2026-11-11). https://arxiv.org/abs/2611.23307 — A successful retry does not guarantee the earlier attempt is harmless; checks tools' idempotence claims against effect contracts.
+- **MCPHallu** — Jiang et al. (2026-11-05). https://arxiv.org/abs/2611.07689 — 358 tasks on 36 production servers, each built to trigger one failure type: branch collapse, unreachable goal, tool misuse, or context forgetting.
+- **ShadowBench-MCP** — Al-Masri, Yang (2026-11-09). https://arxiv.org/abs/2611.11720 — Efficiency-first routing skipped safety tools 26.7% of the time; policy-aware routing cut shadow invocations 85.7%.
+- **Tracing MCP Security Vulnerabilities** — He, Patel, Wang (2026-11-08). https://arxiv.org/abs/2611.11104 — Of 24 validated MCP CVEs, 87.5% were Critical or High; injection and path traversal dominate.
+- **MCP-Eco** — Tounoussi et al. (2026-11-04). https://arxiv.org/abs/2611.06897 — A linked dataset of 78,302 server projects and 16,165 consuming repositories.
+- **Where Does MCP Security End?** — Krakauer, Schaad (2026-11-02). https://arxiv.org/abs/2611.02611 — Maps the OWASP MCP Top 10 to server, gateway, and protocol tiers.
+
 ## Blogs — announcement and practitioner engineering
 
 - **Introducing the Model Context Protocol** — Anthropic (2024-11-25; protocol by David Soria Parra & Justin Spahr-Summers). https://www.anthropic.com/news/model-context-protocol — The launch that open-sourced MCP as "a new standard for connecting AI assistants to the systems where data lives," replacing fragmented custom integrations with one protocol. Open-sourced three things at once: the **spec + SDKs**, local server support in Claude Desktop, and the pre-built server repo above. The origin datum for the node's "de-facto tool-interop standard" claim — cite it for *provenance and intent*, and the spec/changelog (not this post) for anything version-specific, since the node's current protocol version (2025-11-25) is several revisions past this announcement.
@@ -77,7 +104,7 @@ From an arXiv sweep of 2026-10-15 → 10-31 (about 55 MCP-related titles; 16 ope
 
 ## How to read this list against the node
 
-The node tracks the **live spec** (2025-11-25, draft stateless work in SEP-2575/2322) and normative client MUSTs; these references are the *stable substrate under it*. **Projects** show MCP shipping across server and client sides and multiple ecosystems (and the reference servers signal their own "educational, not production" caveat); **papers** supply the lifecycle + threat taxonomy and the exploit demonstrations the node's trust-boundary treatment compresses; **blogs** run from provenance (the launch) through practitioner tool-design to the code-execution turn — where two vendors (Anthropic, Cloudflare) independently conclude that at scale the model should *write code against* MCP rather than call it directly. Where node and sources diverge, the node is newer by design — it deliberately corrects the "2025-06-18 is current" and "there's an RC tier" errors that predate or postdate these sources.
+The node tracks the **live spec** (2026-07-28, stateless since SEP-2575/2322) and normative client MUSTs; these references are the *stable substrate under it*. **Projects** show MCP shipping across server and client sides and multiple ecosystems (and the reference servers signal their own "educational, not production" caveat); **papers** supply the lifecycle + threat taxonomy and the exploit demonstrations the node's trust-boundary treatment compresses; **blogs** run from provenance (the launch) through practitioner tool-design to the code-execution turn — where two vendors (Anthropic, Cloudflare) independently conclude that at scale the model should *write code against* MCP rather than call it directly. Where node and sources diverge, the node is newer by design — it deliberately corrects the "2025-06-18 is current" and "there's an RC tier" errors that predate or postdate these sources.
 
 ## Verification note
 
