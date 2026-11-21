@@ -13,6 +13,7 @@ related:
   - [[prince-reliable-agentic-case-study]]
   - [[agent-failure-modes]]
   - [[system-one-decision-models]]
+  - [[references-context-management-2026-11]]
 status: living
 created: 2026-07-12
 ---

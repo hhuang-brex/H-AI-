@@ -11,6 +11,7 @@ related:
   - [[memory-types-taxonomy]]
   - [[just-in-time-context]]
   - [[references-just-in-time-context]]
+  - [[references-context-management-2026-11]]
 status: living
 created: 2026-06-12
 ---

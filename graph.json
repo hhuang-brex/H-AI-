@@ -1,7 +1,7 @@
 {
-  "generated": "2026-11-04",
-  "node_count": 172,
-  "edge_count": 1527,
+  "generated": "2026-11-20",
+  "node_count": 173,
+  "edge_count": 1541,
   "nodes": [
     {
       "id": "action-authority",
@@ -899,7 +899,8 @@
         "perceive-reason-act-loop",
         "recency-bias-prompt-design",
         "domain-knowledge-injection",
-        "just-in-time-context"
+        "just-in-time-context",
+        "references-context-management-2026-11"
       ]
     },
     {
@@ -928,7 +929,8 @@
         "context-assembly-per-turn",
         "context-compaction",
         "cost-aware-eval",
-        "step-budget-and-runaway-control"
+        "step-budget-and-runaway-control",
+        "references-context-management-2026-11"
       ]
     },
     {
@@ -961,7 +963,8 @@
         "agent-native-memory-framework",
         "tool-result-grounding",
         "decision-model-deployment",
-        "episode-boundary-detection"
+        "episode-boundary-detection",
+        "references-context-management-2026-11"
       ]
     },
     {
@@ -1001,7 +1004,8 @@
         "skill-injection-decision",
         "skill-lifecycle-and-drift",
         "text-to-sql-retrieval",
-        "just-in-time-context"
+        "just-in-time-context",
+        "references-context-management-2026-11"
       ]
     },
     {
@@ -1957,7 +1961,8 @@
         "self-improving-harness",
         "prince-reliable-agentic-case-study",
         "agent-failure-modes",
-        "system-one-decision-models"
+        "system-one-decision-models",
+        "references-context-management-2026-11"
       ]
     },
     {
@@ -2149,7 +2154,8 @@
         "references-just-in-time-context",
         "mcp-tool-layer",
         "code-execution-sandbox-pattern",
-        "run-state-model"
+        "run-state-model",
+        "references-context-management-2026-11"
       ]
     },
     {
@@ -3476,6 +3482,35 @@
         "memory-consolidation-and-forgetting",
         "memory-types-taxonomy",
         "just-in-time-context",
+        "references-just-in-time-context",
+        "references-context-management-2026-11"
+      ]
+    },
+    {
+      "id": "references-context-management-2026-11",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-context-management-2026-11.md",
+      "title": "References \u2014 Context Management, November 2026",
+      "summary": "verified papers from 2026-10-15 to 11-19 on context management for agents: what compaction costs, why shorter context can cost more under caching, what context rot really is, and lossless alternatives to summarizing.",
+      "tags": [
+        "context",
+        "compaction",
+        "prompt-caching",
+        "kv-cache",
+        "context-rot",
+        "reading-list"
+      ],
+      "status": "living",
+      "created": "2026-11-20",
+      "clusters": [],
+      "related": [
+        "context-engineering",
+        "context-compaction",
+        "context-budget-allocation",
+        "just-in-time-context",
+        "harness-token-economics",
+        "references-context-and-memory",
         "references-just-in-time-context"
       ]
     },
@@ -6780,6 +6815,11 @@
       "kind": "related"
     },
     {
+      "from": "context-assembly-per-turn",
+      "to": "references-context-management-2026-11",
+      "kind": "related"
+    },
+    {
       "from": "context-budget-allocation",
       "to": "context-assembly-per-turn",
       "kind": "related"
@@ -6802,6 +6842,11 @@
     {
       "from": "context-budget-allocation",
       "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "context-budget-allocation",
+      "to": "references-context-management-2026-11",
       "kind": "related"
     },
     {
@@ -6852,6 +6897,11 @@
     {
       "from": "context-compaction",
       "to": "episode-boundary-detection",
+      "kind": "related"
+    },
+    {
+      "from": "context-compaction",
+      "to": "references-context-management-2026-11",
       "kind": "related"
     },
     {
@@ -6922,6 +6972,11 @@
     {
       "from": "context-engineering",
       "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "references-context-management-2026-11",
       "kind": "related"
     },
     {
@@ -8221,6 +8276,11 @@
     },
     {
       "from": "harness-token-economics",
+      "to": "references-context-management-2026-11",
+      "kind": "related"
+    },
+    {
+      "from": "harness-token-economics",
       "to": "self-improving-harness",
       "kind": "related"
     },
@@ -8467,6 +8527,11 @@
     {
       "from": "just-in-time-context",
       "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "references-context-management-2026-11",
       "kind": "related"
     },
     {
@@ -10441,6 +10506,46 @@
     },
     {
       "from": "references-context-and-memory",
+      "to": "references-context-management-2026-11",
+      "kind": "related"
+    },
+    {
+      "from": "references-context-and-memory",
+      "to": "references-just-in-time-context",
+      "kind": "related"
+    },
+    {
+      "from": "references-context-management-2026-11",
+      "to": "context-budget-allocation",
+      "kind": "related"
+    },
+    {
+      "from": "references-context-management-2026-11",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "references-context-management-2026-11",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "references-context-management-2026-11",
+      "to": "harness-token-economics",
+      "kind": "related"
+    },
+    {
+      "from": "references-context-management-2026-11",
+      "to": "just-in-time-context",
+      "kind": "related"
+    },
+    {
+      "from": "references-context-management-2026-11",
+      "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "references-context-management-2026-11",
       "to": "references-just-in-time-context",
       "kind": "related"
     },

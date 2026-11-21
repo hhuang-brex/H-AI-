@@ -14,6 +14,7 @@ related:
   - [[tool-result-grounding]]
   - [[decision-model-deployment]]
   - [[episode-boundary-detection]]
+  - [[references-context-management-2026-11]]
 status: living
 created: 2026-06-11
 ---
@@ -52,6 +53,15 @@ A safe rule: compaction may lossily summarize *narrative*, but *constraints, com
 ## Compaction has a failure mode evals must catch
 
 Summarization is itself an LLM call that can hallucinate, drop, or distort. A compaction that quietly invents a "fact" or omits a constraint corrupts every downstream turn. Treat the compactor as a component with its own correctness bar — golden-snapshot checks on "does the summary preserve the stated constraints?" are cheap insurance. The bug is invisible in any single turn and only shows up as gradual drift, which makes it exactly the kind of thing to test deterministically.
+
+## What the 2026-11 measurements show
+
+From [references-context-management-2026-11](../references/references-context-management-2026-11.md); numbers are author-reported.
+
+- **LLM summaries lose most specific details.** Compared against continuing with full history, LLM summaries kept at most 16.0% of recurring details, against 79.1% for mechanical extraction, and damaged 5–64% of otherwise solved tasks. Extract identifiers, paths, numbers, and constraints mechanically; let the model summarize only narrative.
+- **Answer accuracy will not tell you what was lost.** A reader can answer correctly from a summary that dropped evidence; the best models kept all required evidence in only 61.6–66.8% of cases. Test the compactor on evidence it must keep, not on downstream QA alone.
+- **Compression can change behavior, not just content.** Encoder-based compression weakened refusals even when reconstruction was faithful. Re-run safety cases after any compaction change.
+- **Prefer a lossless record with search over a better summary.** Keeping an append-only log of the full history and letting the agent search it scored 95–97% on a recall benchmark, against at most 21% for lossy methods. Keep the raw record; compact only the working view.
 
 ## Pitfalls
 

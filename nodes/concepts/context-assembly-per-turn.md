@@ -11,6 +11,7 @@ related:
   - [[recency-bias-prompt-design]]
   - [[domain-knowledge-injection]]
   - [[just-in-time-context]]
+  - [[references-context-management-2026-11]]
 status: living
 created: 2026-06-11
 ---

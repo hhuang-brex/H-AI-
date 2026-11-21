@@ -10,6 +10,7 @@ related:
   - [[context-compaction]]
   - [[cost-aware-eval]]
   - [[step-budget-and-runaway-control]]
+  - [[references-context-management-2026-11]]
 status: living
 created: 2026-06-11
 ---
@@ -46,6 +47,14 @@ Silent truncation at the API boundary (the platform drops the overflow for you) 
 ## Budget is a cost lever, not just a fit constraint
 
 Tokens are the bill and the clock. Tightening allocations isn't only about fitting the window — a leaner prompt is cheaper and faster on every single turn, multiplied across every iteration of every run. The same sample-size/cost reasoning as [cost-aware-eval](cost-aware-eval.md) applies: measure tokens-per-run and treat regressions as bugs. This is the per-prompt sibling of the per-run ceiling in [step-budget-and-runaway-control](step-budget-and-runaway-control.md).
+
+## Under prompt caching, shorter can cost more
+
+Most providers bill cached input at a fraction of fresh input, often a tenth. Across 20,000 coding-agent runs, **removing old observations raised total cost 38–116% under a tenth-price cache**, though the same method saved 19–36% without one, because every edit to earlier history forces the rest to be re-sent uncached ([2611.22238](https://arxiv.org/abs/2611.22238)). Shorter prompts can also make the agent take more steps. Measure cost per completed task with cached and uncached tokens counted separately, and prefer appending to the tail over editing the middle — see [harness-token-economics](harness-token-economics.md). Caching bugs mostly "fail silently" ([2610.34817](https://arxiv.org/abs/2610.34817)), so track the cache-hit rate as a metric.
+
+**Context rot is competition, not length.** On small models, neutral filler cost nothing up to 32K tokens, while statements shaped like the evidence dropped retrieval accuracy to 0.16–0.33 ([2611.04169](https://arxiv.org/abs/2611.04169)). Evict near-duplicates and superseded values first; old but unrelated content matters less.
+
+**Check what reaches the model, not just the window size.** In one agent the window was under 6% full, yet a third of tool results were cut by fixed-length JSON slicing before the model saw them ([2610.36114](https://arxiv.org/abs/2610.36114)). Truncate structured output by field, never by character count.
 
 ## Pitfalls
 

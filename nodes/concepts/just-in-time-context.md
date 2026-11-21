@@ -22,6 +22,7 @@ related:
   - [[mcp-tool-layer]]
   - [[code-execution-sandbox-pattern]]
   - [[run-state-model]]
+  - [[references-context-management-2026-11]]
 status: living
 created: 2026-10-15
 ---
