@@ -14,6 +14,7 @@ related:
   - [[harness-token-economics]]
   - [[mcp-tool-layer]]
   - [[references-model-context-protocol]]
+  - [[manus-context-engineering]]
 status: living
 created: 2026-10-16
 ---

@@ -11,6 +11,7 @@ related:
   - [[result-aggregation-and-trust]]
   - [[skill-injection-decision]]
   - [[agent-skills-progressive-disclosure]]
+  - [[manus-context-engineering]]
 status: living
 created: 2026-06-11
 ---

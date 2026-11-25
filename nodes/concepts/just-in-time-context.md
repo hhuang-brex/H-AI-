@@ -23,6 +23,7 @@ related:
   - [[code-execution-sandbox-pattern]]
   - [[run-state-model]]
   - [[references-context-management-2026-11]]
+  - [[manus-context-engineering]]
 status: living
 created: 2026-10-15
 ---

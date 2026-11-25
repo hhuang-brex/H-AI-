@@ -15,6 +15,7 @@ related:
   - [[decision-model-deployment]]
   - [[episode-boundary-detection]]
   - [[references-context-management-2026-11]]
+  - [[manus-context-engineering]]
 status: living
 created: 2026-06-11
 ---

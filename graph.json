@@ -1,7 +1,7 @@
 {
   "generated": "2026-11-24",
-  "node_count": 176,
-  "edge_count": 1611,
+  "node_count": 177,
+  "edge_count": 1637,
   "nodes": [
     {
       "id": "action-authority",
@@ -318,7 +318,8 @@
         "harness-token-economics",
         "background-agent-execution",
         "harness-as-hyperparameter",
-        "references-harness-evaluation"
+        "references-harness-evaluation",
+        "manus-context-engineering"
       ]
     },
     {
@@ -969,7 +970,8 @@
         "tool-result-grounding",
         "decision-model-deployment",
         "episode-boundary-detection",
-        "references-context-management-2026-11"
+        "references-context-management-2026-11",
+        "manus-context-engineering"
       ]
     },
     {
@@ -1010,7 +1012,8 @@
         "skill-lifecycle-and-drift",
         "text-to-sql-retrieval",
         "just-in-time-context",
-        "references-context-management-2026-11"
+        "references-context-management-2026-11",
+        "manus-context-engineering"
       ]
     },
     {
@@ -1044,7 +1047,8 @@
         "run-state-model",
         "agent-memory",
         "agent-native-memory-framework",
-        "checkpoint-and-replay"
+        "checkpoint-and-replay",
+        "manus-context-engineering"
       ]
     },
     {
@@ -1969,7 +1973,8 @@
         "agent-failure-modes",
         "system-one-decision-models",
         "references-context-management-2026-11",
-        "uber-agent-skills-at-scale"
+        "uber-agent-skills-at-scale",
+        "manus-context-engineering"
       ]
     },
     {
@@ -2162,7 +2167,8 @@
         "mcp-tool-layer",
         "code-execution-sandbox-pattern",
         "run-state-model",
-        "references-context-management-2026-11"
+        "references-context-management-2026-11",
+        "manus-context-engineering"
       ]
     },
     {
@@ -2438,6 +2444,46 @@
         "agent-state-persistence",
         "self-improving-harness",
         "background-agent-execution"
+      ]
+    },
+    {
+      "id": "manus-context-engineering",
+      "type": "project",
+      "kind": "snapshot",
+      "path": "nodes/projects/manus-context-engineering.md",
+      "title": "Manus Context Engineering",
+      "summary": "How Manus manages agent context, 2025\u20132026: KV-cache-first design, masked tools, restorable compaction, filesystem memory, isolated sub-agents, and what changed as the harness was rebuilt.",
+      "tags": [
+        "context-engineering",
+        "kv-cache",
+        "compaction",
+        "subagents",
+        "filesystem-memory",
+        "harness",
+        "case-study"
+      ],
+      "status": "snapshot",
+      "created": "2026-11-24",
+      "clusters": [],
+      "related": [
+        "context-engineering",
+        "agent-harness",
+        "context-compaction",
+        "context-storage-and-hydration",
+        "just-in-time-context",
+        "harness-token-economics",
+        "subagent-context-isolation",
+        "multi-agent-delegation",
+        "tool-selection-and-routing",
+        "agent-skills-progressive-disclosure",
+        "code-execution-sandbox-pattern",
+        "forced-tool-call-output",
+        "plan-execute-replan",
+        "context-budget-allocation",
+        "step-budget-and-runaway-control",
+        "experiential-memory-substrates",
+        "uber-agent-skills-at-scale",
+        "references-just-in-time-context"
       ]
     },
     {
@@ -3750,7 +3796,8 @@
         "code-execution-sandbox-pattern",
         "harness-token-economics",
         "mcp-tool-layer",
-        "references-model-context-protocol"
+        "references-model-context-protocol",
+        "manus-context-engineering"
       ]
     },
     {
@@ -4850,7 +4897,8 @@
         "context-assembly-per-turn",
         "result-aggregation-and-trust",
         "skill-injection-decision",
-        "agent-skills-progressive-disclosure"
+        "agent-skills-progressive-disclosure",
+        "manus-context-engineering"
       ]
     },
     {
@@ -6085,6 +6133,11 @@
     },
     {
       "from": "agent-harness",
+      "to": "manus-context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "agent-harness",
       "to": "multi-agent-delegation",
       "kind": "related"
     },
@@ -7065,6 +7118,11 @@
     },
     {
       "from": "context-compaction",
+      "to": "manus-context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "context-compaction",
       "to": "references-context-management-2026-11",
       "kind": "related"
     },
@@ -7126,6 +7184,11 @@
     {
       "from": "context-engineering",
       "to": "just-in-time-context",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "manus-context-engineering",
       "kind": "related"
     },
     {
@@ -7206,6 +7269,11 @@
     {
       "from": "context-storage-and-hydration",
       "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "context-storage-and-hydration",
+      "to": "manus-context-engineering",
       "kind": "related"
     },
     {
@@ -8440,6 +8508,11 @@
     },
     {
       "from": "harness-token-economics",
+      "to": "manus-context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "harness-token-economics",
       "to": "prince-reliable-agentic-case-study",
       "kind": "related"
     },
@@ -8686,6 +8759,11 @@
     {
       "from": "just-in-time-context",
       "to": "harness-token-economics",
+      "kind": "related"
+    },
+    {
+      "from": "just-in-time-context",
+      "to": "manus-context-engineering",
       "kind": "related"
     },
     {
@@ -9216,6 +9294,96 @@
     {
       "from": "managed-agent-apis",
       "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "agent-harness",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "agent-skills-progressive-disclosure",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "code-execution-sandbox-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "context-budget-allocation",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "context-compaction",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "context-storage-and-hydration",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "experiential-memory-substrates",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "harness-token-economics",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "just-in-time-context",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "multi-agent-delegation",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "plan-execute-replan",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "references-just-in-time-context",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "step-budget-and-runaway-control",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "subagent-context-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "tool-selection-and-routing",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
+      "to": "uber-agent-skills-at-scale",
       "kind": "related"
     },
     {
@@ -11090,6 +11258,11 @@
     },
     {
       "from": "references-just-in-time-context",
+      "to": "manus-context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "references-just-in-time-context",
       "to": "mcp-tool-layer",
       "kind": "related"
     },
@@ -12561,6 +12734,11 @@
     {
       "from": "subagent-context-isolation",
       "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "subagent-context-isolation",
+      "to": "manus-context-engineering",
       "kind": "related"
     },
     {

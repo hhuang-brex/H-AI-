@@ -11,6 +11,7 @@ related:
   - [[agent-memory]]
   - [[agent-native-memory-framework]]
   - [[checkpoint-and-replay]]
+  - [[manus-context-engineering]]
 status: living
 created: 2026-06-12
 ---

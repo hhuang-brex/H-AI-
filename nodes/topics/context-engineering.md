@@ -25,6 +25,7 @@ related:
   - [[text-to-sql-retrieval]]
   - [[just-in-time-context]]
   - [[references-context-management-2026-11]]
+  - [[manus-context-engineering]]
 status: living
 created: 2026-06-11
 ---
@@ -64,6 +65,7 @@ The frame: treat the context window as a **managed budget**, not an append log. 
 - **Deciding whether to load it at all:** [skill-injection-decision](../concepts/skill-injection-decision.md) — injection is measurable and not reliably positive, so route, delegate to a sub-agent, or inject, and audit the choice with a length-matched control.
 - **Keeping loaded capability true:** [skill-lifecycle-and-drift](../concepts/skill-lifecycle-and-drift.md) — the artifact that externalizes your conventions also makes their decay invisible.
 - **What the 2026-11 measurements changed:** [references-context-management-2026-11](../references/references-context-management-2026-11.md) — LLM summaries keep at most about a sixth of specific details; trimming history can *raise* cost under prompt caching; and context rot comes from look-alike content competing for attention, not from length itself.
+- **A production case:** [manus-context-engineering](../projects/manus-context-engineering.md) — how Manus designs around the KV cache, compacts by file path before summarizing, and gives each batch item its own sub-agent.
 
 ## The one rule
 

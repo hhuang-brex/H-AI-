@@ -19,6 +19,7 @@ related:
   - [[background-agent-execution]]
   - [[harness-as-hyperparameter]]
   - [[references-harness-evaluation]]
+  - [[manus-context-engineering]]
 status: living
 created: 2026-07-10
 ---
