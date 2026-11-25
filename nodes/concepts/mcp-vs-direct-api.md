@@ -17,6 +17,10 @@ related:
   - [[prompt-injection-and-isolation]]
   - [[references-model-context-protocol]]
   - [[tool-use-design]]
+  - [[skill-lifecycle-and-drift]]
+  - [[run-state-model]]
+  - [[background-agent-execution]]
+  - [[agent-skills-progressive-disclosure]]
 status: living
 created: 2026-11-24
 ---
@@ -46,6 +50,28 @@ At the model layer the two are identical: the model emits a tool call with a nam
 - **The harness matters more than the interface.** On one git task across seven agent scaffoldings, two with no MCP support finished every run through the command line and were 5–28× cheaper than the scaffoldings that support MCP ([2608.08654](https://arxiv.org/abs/2608.08654)). A separate study found identical capabilities behaved differently through MCP versus a CLI in 94.3% of paired episodes ([mcp-tool-layer](mcp-tool-layer.md)).
 - **Loading many tool definitions is the main cost.** Context use grows with every registered tool, so real deployments expose only a fraction of an organization's APIs ([2605.05247](https://arxiv.org/abs/2605.05247)). OpenAPI itself is verbose for a model: a compact format cut tokens 85.5% versus OpenAPI YAML across five production specs ([2602.18541](https://arxiv.org/abs/2602.18541)).
 - **Security risks differ in kind, not just in degree.** Across 3,250 attack scenarios, in-process function calling had a higher overall attack success rate (73.5% vs 62.6%), but MCP had more model-side exposure such as prompt injection ([2507.06323](https://arxiv.org/abs/2507.06323), 2025 preprint).
+
+## Skills, tasks, and elicitation move MCP up the stack
+
+By late 2026 an MCP server can supply more than actions: skills (public beta in Claude), long-running tasks through the Tasks extension, and pauses to ask the user through elicitation ([announcement](https://claude.com/resources/articles/skills-over-mcp-tasks-and-more), 2026-11-24). Anthropic's framing is that Claude can treat a server "more like it works with another agent."
+
+| Agent layer | Before | Now |
+|---|---|---|
+| Knowledge | Tool names, descriptions, schemas | Plus skills — procedures that load only when needed |
+| Planning | The agent works out how to combine tools | Skills spell out the procedure; a task can run a whole agent loop server-side |
+| Action | One call, one result, and the agent waits | A task returns a handle; the agent keeps working and polls with `tasks/get` |
+| Human approval | Only the host decides whether to ask | The server can pause a call for user input |
+| State | Protocol sessions | Removed in 2026-07-28; state travels as server-issued handles, task handles included |
+
+The graph's reading of what this means for a builder — not a claim the sources make:
+
+- **The trust boundary widens.** A third-party server now puts instructions (skills) into your context and can prompt your user. All of it is untrusted text ([prompt-injection-and-isolation](prompt-injection-and-isolation.md)).
+- **Behavior can change without you changing anything.** Skills update with the server, so re-run evals when a server you depend on updates ([skill-lifecycle-and-drift](skill-lifecycle-and-drift.md)).
+- **The loop must handle waiting.** Store task handles in the [run-state-model](run-state-model.md) and decide what the agent does while a task runs ([background-agent-execution](background-agent-execution.md)).
+- **Approval is split, and gaps fall between the halves.** About 90% of destructive tools lack server-side confirmation and 32 of 41 hosts don't ask by default ([2611.02527](https://arxiv.org/abs/2611.02527)). Keep your own gate for irreversible actions.
+- **The case for MCP strengthens for vendor services.** A server shipping skills, tasks, and confirmations is far more than a thin wrapper. For a service you own that only your agent calls, a direct tool is still simpler.
+
+Support varies by client: the features are in the open spec, but each host implements them separately.
 
 ## The decision
 

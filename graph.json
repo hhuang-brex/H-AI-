@@ -1,7 +1,7 @@
 {
   "generated": "2026-11-24",
   "node_count": 175,
-  "edge_count": 1588,
+  "edge_count": 1592,
   "nodes": [
     {
       "id": "action-authority",
@@ -2511,7 +2511,11 @@
         "confirm-before-act",
         "prompt-injection-and-isolation",
         "references-model-context-protocol",
-        "tool-use-design"
+        "tool-use-design",
+        "skill-lifecycle-and-drift",
+        "run-state-model",
+        "background-agent-execution",
+        "agent-skills-progressive-disclosure"
       ]
     },
     {
@@ -9248,6 +9252,16 @@
     },
     {
       "from": "mcp-vs-direct-api",
+      "to": "agent-skills-progressive-disclosure",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "background-agent-execution",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
       "to": "code-execution-sandbox-pattern",
       "kind": "related"
     },
@@ -9284,6 +9298,16 @@
     {
       "from": "mcp-vs-direct-api",
       "to": "references-model-context-protocol",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "run-state-model",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "skill-lifecycle-and-drift",
       "kind": "related"
     },
     {
