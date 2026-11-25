@@ -1,7 +1,7 @@
 {
   "generated": "2026-11-24",
   "node_count": 176,
-  "edge_count": 1610,
+  "edge_count": 1611,
   "nodes": [
     {
       "id": "action-authority",
@@ -2474,7 +2474,8 @@
         "confirm-before-act",
         "idempotency-keys",
         "turn-outcome-signal",
-        "references-model-context-protocol"
+        "references-model-context-protocol",
+        "tool-use-design"
       ]
     },
     {
@@ -9275,6 +9276,11 @@
     {
       "from": "mcp-tasks-long-running-tools",
       "to": "stop-and-yield-conditions",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tasks-long-running-tools",
+      "to": "tool-use-design",
       "kind": "related"
     },
     {

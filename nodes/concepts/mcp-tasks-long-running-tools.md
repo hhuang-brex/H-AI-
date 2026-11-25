@@ -17,6 +17,7 @@ related:
   - [[idempotency-keys]]
   - [[turn-outcome-signal]]
   - [[references-model-context-protocol]]
+  - [[tool-use-design]]
 status: living
 created: 2026-11-24
 ---
