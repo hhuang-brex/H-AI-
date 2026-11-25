@@ -1,7 +1,7 @@
 {
   "generated": "2026-11-24",
-  "node_count": 175,
-  "edge_count": 1592,
+  "node_count": 176,
+  "edge_count": 1610,
   "nodes": [
     {
       "id": "action-authority",
@@ -625,7 +625,8 @@
         "harness-token-economics",
         "llm-observability",
         "when-to-delegate",
-        "uber-agent-skills-at-scale"
+        "uber-agent-skills-at-scale",
+        "mcp-tasks-long-running-tools"
       ]
     },
     {
@@ -2440,6 +2441,43 @@
       ]
     },
     {
+      "id": "mcp-tasks-long-running-tools",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/mcp-tasks-long-running-tools.md",
+      "title": "MCP Tasks: Long-Running Tool Calls",
+      "summary": "The MCP Tasks extension for tool calls that take minutes or need user input mid-flight: the handle-and-poll contract, its lifecycle and security rules, and what a conversing agent must do while it waits.",
+      "tags": [
+        "mcp",
+        "tasks",
+        "async",
+        "long-running",
+        "tool-use",
+        "state",
+        "human-in-the-loop"
+      ],
+      "status": "living",
+      "created": "2026-11-24",
+      "clusters": [
+        "tool-use-design"
+      ],
+      "related": [
+        "mcp-tool-layer",
+        "mcp-vs-direct-api",
+        "background-agent-execution",
+        "run-state-model",
+        "interrupt-and-resume",
+        "crash-recovery-consistency",
+        "async-conversation-pacing",
+        "stop-and-yield-conditions",
+        "step-budget-and-runaway-control",
+        "confirm-before-act",
+        "idempotency-keys",
+        "turn-outcome-signal",
+        "references-model-context-protocol"
+      ]
+    },
+    {
       "id": "mcp-tool-layer",
       "type": "concept",
       "kind": null,
@@ -2475,7 +2513,8 @@
         "just-in-time-context",
         "confirm-before-act",
         "run-state-model",
-        "mcp-vs-direct-api"
+        "mcp-vs-direct-api",
+        "mcp-tasks-long-running-tools"
       ]
     },
     {
@@ -2515,7 +2554,8 @@
         "skill-lifecycle-and-drift",
         "run-state-model",
         "background-agent-execution",
-        "agent-skills-progressive-disclosure"
+        "agent-skills-progressive-disclosure",
+        "mcp-tasks-long-running-tools"
       ]
     },
     {
@@ -3769,7 +3809,8 @@
         "tool-selection-and-routing",
         "confirm-before-act",
         "run-state-model",
-        "mcp-vs-direct-api"
+        "mcp-vs-direct-api",
+        "mcp-tasks-long-running-tools"
       ]
     },
     {
@@ -5162,7 +5203,8 @@
         "action-authority",
         "output-surface-taxonomy",
         "mcp-tool-layer",
-        "mcp-vs-direct-api"
+        "mcp-vs-direct-api",
+        "mcp-tasks-long-running-tools"
       ]
     },
     {
@@ -6543,6 +6585,11 @@
     {
       "from": "background-agent-execution",
       "to": "managed-agent-apis",
+      "kind": "related"
+    },
+    {
+      "from": "background-agent-execution",
+      "to": "mcp-tasks-long-running-tools",
       "kind": "related"
     },
     {
@@ -9171,6 +9218,71 @@
       "kind": "related"
     },
     {
+      "from": "mcp-tasks-long-running-tools",
+      "to": "async-conversation-pacing",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tasks-long-running-tools",
+      "to": "background-agent-execution",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tasks-long-running-tools",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tasks-long-running-tools",
+      "to": "crash-recovery-consistency",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tasks-long-running-tools",
+      "to": "idempotency-keys",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tasks-long-running-tools",
+      "to": "interrupt-and-resume",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tasks-long-running-tools",
+      "to": "mcp-tool-layer",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tasks-long-running-tools",
+      "to": "mcp-vs-direct-api",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tasks-long-running-tools",
+      "to": "references-model-context-protocol",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tasks-long-running-tools",
+      "to": "run-state-model",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tasks-long-running-tools",
+      "to": "step-budget-and-runaway-control",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tasks-long-running-tools",
+      "to": "stop-and-yield-conditions",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tasks-long-running-tools",
+      "to": "turn-outcome-signal",
+      "kind": "related"
+    },
+    {
       "from": "mcp-tool-layer",
       "to": "agent-skills-progressive-disclosure",
       "kind": "related"
@@ -9193,6 +9305,11 @@
     {
       "from": "mcp-tool-layer",
       "to": "managed-agent-apis",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tool-layer",
+      "to": "mcp-tasks-long-running-tools",
       "kind": "related"
     },
     {
@@ -9278,6 +9395,11 @@
     {
       "from": "mcp-vs-direct-api",
       "to": "just-in-time-context",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "mcp-tasks-long-running-tools",
       "kind": "related"
     },
     {
@@ -11028,6 +11150,11 @@
     {
       "from": "references-model-context-protocol",
       "to": "managed-agent-apis",
+      "kind": "related"
+    },
+    {
+      "from": "references-model-context-protocol",
+      "to": "mcp-tasks-long-running-tools",
       "kind": "related"
     },
     {
@@ -12978,6 +13105,11 @@
     {
       "from": "tool-use-design",
       "to": "forced-tool-call-output",
+      "kind": "related"
+    },
+    {
+      "from": "tool-use-design",
+      "to": "mcp-tasks-long-running-tools",
       "kind": "related"
     },
     {

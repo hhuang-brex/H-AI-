@@ -12,6 +12,7 @@ related:
   - [[confirm-before-act]]
   - [[run-state-model]]
   - [[mcp-vs-direct-api]]
+  - [[mcp-tasks-long-running-tools]]
 status: living
 created: 2026-08-02
 ---
@@ -128,3 +129,8 @@ The node tracks the **live spec** (2026-07-28, stateless since SEP-2575/2322) an
 ## Verification note
 
 All GitHub repos and Anthropic/Cloudflare pages are living artifacts and will evolve (pin a commit for any star-count or line-count claim); the arXiv IDs are stable (2503.23278 v3 2025-10-07; 2505.03275 v1 2025-05-06; 2504.03767 v2 2025-04-11; 2504.08623 v2 2025-05-02). All ten sources were fetched and confirmed on 2026-08-02. Re-verify before citing externally; for any protocol-version claim, go to the MCP spec changelog, not these entries.
+
+## Tasks extension (verified 2026-11-24)
+
+- [Tasks overview](https://modelcontextprotocol.io/extensions/tasks/overview), [ext-tasks repo and 2026-07-28 schema](https://github.com/modelcontextprotocol/ext-tasks), and [spec site](https://tasks.extensions.modelcontextprotocol.io) — the handle-and-poll contract; distilled in [mcp-tasks-long-running-tools](../concepts/mcp-tasks-long-running-tools.md).
+- Async-agent research, abstracts only, author-reported: AsyncTool [2605.27995](https://arxiv.org/abs/2605.27995), SentinelBench [2606.05342](https://arxiv.org/abs/2606.05342), PASTE [2603.18897](https://arxiv.org/abs/2603.18897), TomasuLLM [2609.38201](https://arxiv.org/abs/2609.38201), FaaS MCP orchestration [2601.14735](https://arxiv.org/abs/2601.14735).

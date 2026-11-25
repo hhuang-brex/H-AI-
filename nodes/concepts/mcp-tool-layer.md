@@ -18,6 +18,7 @@ related:
   - [[confirm-before-act]]
   - [[run-state-model]]
   - [[mcp-vs-direct-api]]
+  - [[mcp-tasks-long-running-tools]]
 status: living
 created: 2026-07-10
 summary: "the Model Context Protocol as the de-facto tool-interop standard — what it standardizes, the current stateless 2026-07-28 spec, the client-side MUSTs, and what 2026 papers show about failures and security."
@@ -140,7 +141,7 @@ The graph's reading: before adding an MCP server, ask whether it provides access
 ## New primitives worth naming (candidate future nodes)
 
 - **Elicitation** — server-initiated structured user input mid-call: **form mode** (flat primitives; servers MUST NOT request secrets) and **URL mode** (SEP-1036, pushes sensitive input out-of-band). A protocol-level HITL primitive — strong candidate for its own node cross-linking [confirm-before-act](confirm-before-act.md).
-- **Tasks** (SEP-1686, *experimental*) — durable/pollable long-running requests; widens the session-enumeration threat surface.
+- **Tasks** — now the `io.modelcontextprotocol/tasks` extension (SEP-2663); covered in [mcp-tasks-long-running-tools](mcp-tasks-long-running-tools.md).
 
 ## See also
 

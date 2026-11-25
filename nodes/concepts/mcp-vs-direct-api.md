@@ -21,6 +21,7 @@ related:
   - [[run-state-model]]
   - [[background-agent-execution]]
   - [[agent-skills-progressive-disclosure]]
+  - [[mcp-tasks-long-running-tools]]
 status: living
 created: 2026-11-24
 ---

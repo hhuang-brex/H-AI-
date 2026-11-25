@@ -17,6 +17,7 @@ related:
   - [[llm-observability]]
   - [[when-to-delegate]]
   - [[uber-agent-skills-at-scale]]
+  - [[mcp-tasks-long-running-tools]]
 status: living
 created: 2026-07-12
 ---
