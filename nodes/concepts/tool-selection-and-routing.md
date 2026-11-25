@@ -15,6 +15,7 @@ related:
   - [[references-just-in-time-context]]
   - [[system-one-decision-models]]
   - [[decision-model-deployment]]
+  - [[mcp-vs-direct-api]]
 status: living
 created: 2026-06-11
 ---

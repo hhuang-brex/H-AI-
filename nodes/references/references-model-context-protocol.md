@@ -11,6 +11,7 @@ related:
   - [[tool-selection-and-routing]]
   - [[confirm-before-act]]
   - [[run-state-model]]
+  - [[mcp-vs-direct-api]]
 status: living
 created: 2026-08-02
 ---
@@ -91,6 +92,24 @@ From an arXiv sweep of 2026-10-31 → 11-19 (about 75 MCP-related titles; 12 ope
 - **Tracing MCP Security Vulnerabilities** — He, Patel, Wang (2026-11-08). https://arxiv.org/abs/2611.11104 — Of 24 validated MCP CVEs, 87.5% were Critical or High; injection and path traversal dominate.
 - **MCP-Eco** — Tounoussi et al. (2026-11-04). https://arxiv.org/abs/2611.06897 — A linked dataset of 78,302 server projects and 16,165 consuming repositories.
 - **Where Does MCP Security End?** — Krakauer, Schaad (2026-11-02). https://arxiv.org/abs/2611.02611 — Maps the OWASP MCP Top 10 to server, gateway, and protocol tiers.
+
+## MCP versus direct REST APIs (verified 2026-11-24)
+
+Backs [mcp-vs-direct-api](../concepts/mcp-vs-direct-api.md). Abstract-level only; numbers author-reported.
+
+- **MCP architecture overview** — modelcontextprotocol.io. https://modelcontextprotocol.io/docs/learn/architecture — Hosts, clients, and servers; a JSON-RPC data layer over stdio or Streamable HTTP; tools, resources, prompts, and elicitation. "MCP is a stateless protocol."
+- **From REST to MCP: An Empirical Study of API Wrapping** — Mastouri et al. (v4 2026-04-06). https://arxiv.org/abs/2507.16044 — 88.6% of 116 official servers are REST-backed; 92% are bare wrappers; a median of 19% of operations exposed.
+- **Making OpenAPI Documentation Agent-Ready** — Rocha Lima et al. (EASE 2026). https://arxiv.org/abs/2605.14312 — 2,450 documentation and REST smells across 600 production endpoints exposed through MCP.
+- **MCP Error Messages Written for Developers Hurt the Most Capable Agents Most** — Xu, Wu (v2 2026-09-29). https://arxiv.org/abs/2609.35381 — Developer-facing error steps cut recovery; naming a server tool raised it from 45% to 84%.
+- **The Scaffolding Matters More Than the Interface** — Alier Forment et al. (2026-08-09). https://arxiv.org/abs/2608.08654 — CLI-only scaffoldings were 5–28× cheaper than MCP-supporting ones on one git task.
+- **DADL** — Dunkel, single author (2026-05-04). https://arxiv.org/abs/2605.05247 — One YAML file per REST API interpreted at runtime instead of a server per integration.
+- **LAPIS** — Garcia, single author (2026-02-20). https://arxiv.org/abs/2602.18541 — An API spec format for models: 85.5% fewer tokens than OpenAPI YAML.
+- **Scaling LLM Agent Tool Access: The MCP Gateway** — Li et al. (ACM SIGOPS 2026). https://arxiv.org/abs/2607.15593 — A cloud gateway that converts 315 OpenAPI services and handles access control and routing.
+- **DeltaMCP** — Pujara, Zhu, Chen (2026-05-27). https://arxiv.org/abs/2605.28148 — Regenerates only the affected tools when an OpenAPI spec changes.
+- **ToolContractGate** — Gupta, single author (2026-10-22). https://arxiv.org/abs/2610.33108 — Binds each OpenAPI-derived tool to a versioned contract and blocks drift.
+- **Comparative Vulnerability Assessment of LLM Agent Deployment Paradigms** — Gasmi et al. (2025-07-08). https://arxiv.org/abs/2507.06323 — 73.5% attack success for function calling vs 62.6% for MCP, with different risk profiles.
+- **MCP Bridge** — Ahmadi, Sharif, Banad (v3 2026-03-10). https://arxiv.org/abs/2504.08999 — A REST proxy in front of MCP servers, for clients that can't run stdio.
+- **A Survey of Agent Interoperability Protocols** — Ehtesham et al. (v2 2025-05-23). https://arxiv.org/abs/2505.02279 — MCP, ACP, A2A, and ANP compared.
 
 ## Blogs — announcement and practitioner engineering
 

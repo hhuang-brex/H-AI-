@@ -11,6 +11,7 @@ related:
   - [[forced-tool-call-output]]
   - [[schema-vs-validator]]
   - [[mcp-tool-layer]]
+  - [[mcp-vs-direct-api]]
 status: living
 created: 2026-06-11
 ---

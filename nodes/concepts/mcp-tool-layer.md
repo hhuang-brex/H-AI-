@@ -17,6 +17,7 @@ related:
   - [[just-in-time-context]]
   - [[confirm-before-act]]
   - [[run-state-model]]
+  - [[mcp-vs-direct-api]]
 status: living
 created: 2026-07-10
 summary: "the Model Context Protocol as the de-facto tool-interop standard — what it standardizes, the current stateless 2026-07-28 spec, the client-side MUSTs, and what 2026 papers show about failures and security."
@@ -54,7 +55,7 @@ At the model layer these are **identical** — the LLM always emits a *tool call
 | Trust | trusted | **trust boundary** — the description is model-visible & mutable → [prompt-injection-and-isolation](prompt-injection-and-isolation.md) |
 | Payoff | low latency, tight coupling | plug in *any* MCP server without bespoke glue; + resources/prompts/elicitation |
 
-Two things stay identical either way: the model-side JSON-Schema contract, and that a **result is untrusted data, not instructions** ([tool-result-grounding](tool-result-grounding.md)). Choose native for owned/trusted/latency-sensitive capability; MCP when interop/reuse beats latency and you accept a trust boundary.
+Two things stay identical either way: the model-side JSON-Schema contract, and that a **result is untrusted data, not instructions** ([tool-result-grounding](tool-result-grounding.md)). Choose native for owned/trusted/latency-sensitive capability; MCP when interop/reuse beats latency and you accept a trust boundary. The full decision, with evidence, is in [mcp-vs-direct-api](mcp-vs-direct-api.md).
 
 ## Current spec version: 2026-07-28
 

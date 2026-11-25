@@ -1,7 +1,7 @@
 {
   "generated": "2026-11-24",
-  "node_count": 174,
-  "edge_count": 1568,
+  "node_count": 175,
+  "edge_count": 1588,
   "nodes": [
     {
       "id": "action-authority",
@@ -778,7 +778,8 @@
         "paginated-tool-contract",
         "truncated-pyramid-results",
         "domain-knowledge-injection",
-        "cost-aware-eval"
+        "cost-aware-eval",
+        "mcp-vs-direct-api"
       ]
     },
     {
@@ -2473,7 +2474,44 @@
         "skill-injection-decision",
         "just-in-time-context",
         "confirm-before-act",
-        "run-state-model"
+        "run-state-model",
+        "mcp-vs-direct-api"
+      ]
+    },
+    {
+      "id": "mcp-vs-direct-api",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/mcp-vs-direct-api.md",
+      "title": "MCP vs a Direct API",
+      "summary": "when to reach a service through an MCP server versus calling its REST API directly from your own tool: what MCP adds on top of an API, what it costs, and why most MCP servers are thin API wrappers.",
+      "tags": [
+        "mcp",
+        "rest",
+        "openapi",
+        "tool-use",
+        "interop",
+        "architecture"
+      ],
+      "status": "living",
+      "created": "2026-11-24",
+      "clusters": [
+        "tool-use-design"
+      ],
+      "related": [
+        "mcp-tool-layer",
+        "tool-schema-design",
+        "tool-result-grounding",
+        "paginated-tool-contract",
+        "code-execution-sandbox-pattern",
+        "tool-selection-and-routing",
+        "just-in-time-context",
+        "idempotency-keys",
+        "action-authority",
+        "confirm-before-act",
+        "prompt-injection-and-isolation",
+        "references-model-context-protocol",
+        "tool-use-design"
       ]
     },
     {
@@ -3726,7 +3764,8 @@
         "managed-agent-apis",
         "tool-selection-and-routing",
         "confirm-before-act",
-        "run-state-model"
+        "run-state-model",
+        "mcp-vs-direct-api"
       ]
     },
     {
@@ -5019,7 +5058,8 @@
         "grounding-and-citation",
         "perceive-reason-act-loop",
         "prompt-injection-and-isolation",
-        "mcp-tool-layer"
+        "mcp-tool-layer",
+        "mcp-vs-direct-api"
       ]
     },
     {
@@ -5048,7 +5088,8 @@
         "tool-result-grounding",
         "forced-tool-call-output",
         "schema-vs-validator",
-        "mcp-tool-layer"
+        "mcp-tool-layer",
+        "mcp-vs-direct-api"
       ]
     },
     {
@@ -5081,7 +5122,8 @@
         "just-in-time-context",
         "references-just-in-time-context",
         "system-one-decision-models",
-        "decision-model-deployment"
+        "decision-model-deployment",
+        "mcp-vs-direct-api"
       ]
     },
     {
@@ -5115,7 +5157,8 @@
         "agent-as-compiler",
         "action-authority",
         "output-surface-taxonomy",
-        "mcp-tool-layer"
+        "mcp-tool-layer",
+        "mcp-vs-direct-api"
       ]
     },
     {
@@ -6711,6 +6754,11 @@
     {
       "from": "code-execution-sandbox-pattern",
       "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "code-execution-sandbox-pattern",
+      "to": "mcp-vs-direct-api",
       "kind": "related"
     },
     {
@@ -9145,6 +9193,11 @@
     },
     {
       "from": "mcp-tool-layer",
+      "to": "mcp-vs-direct-api",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-tool-layer",
       "to": "paginated-tool-contract",
       "kind": "related"
     },
@@ -9185,6 +9238,71 @@
     },
     {
       "from": "mcp-tool-layer",
+      "to": "tool-use-design",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "code-execution-sandbox-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "idempotency-keys",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "just-in-time-context",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "mcp-tool-layer",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "paginated-tool-contract",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "references-model-context-protocol",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "tool-result-grounding",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "tool-schema-design",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
+      "to": "tool-selection-and-routing",
+      "kind": "related"
+    },
+    {
+      "from": "mcp-vs-direct-api",
       "to": "tool-use-design",
       "kind": "related"
     },
@@ -10891,6 +11009,11 @@
     {
       "from": "references-model-context-protocol",
       "to": "mcp-tool-layer",
+      "kind": "related"
+    },
+    {
+      "from": "references-model-context-protocol",
+      "to": "mcp-vs-direct-api",
       "kind": "related"
     },
     {
@@ -12680,6 +12803,11 @@
     },
     {
       "from": "tool-result-grounding",
+      "to": "mcp-vs-direct-api",
+      "kind": "related"
+    },
+    {
+      "from": "tool-result-grounding",
       "to": "perceive-reason-act-loop",
       "kind": "related"
     },
@@ -12706,6 +12834,11 @@
     {
       "from": "tool-schema-design",
       "to": "mcp-tool-layer",
+      "kind": "related"
+    },
+    {
+      "from": "tool-schema-design",
+      "to": "mcp-vs-direct-api",
       "kind": "related"
     },
     {
@@ -12751,6 +12884,11 @@
     {
       "from": "tool-selection-and-routing",
       "to": "mcp-tool-layer",
+      "kind": "related"
+    },
+    {
+      "from": "tool-selection-and-routing",
+      "to": "mcp-vs-direct-api",
       "kind": "related"
     },
     {
@@ -12821,6 +12959,11 @@
     {
       "from": "tool-use-design",
       "to": "mcp-tool-layer",
+      "kind": "related"
+    },
+    {
+      "from": "tool-use-design",
+      "to": "mcp-vs-direct-api",
       "kind": "related"
     },
     {

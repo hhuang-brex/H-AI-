@@ -8,6 +8,7 @@ related:
   - [[truncated-pyramid-results]]
   - [[domain-knowledge-injection]]
   - [[cost-aware-eval]]
+  - [[mcp-vs-direct-api]]
 status: living
 created: 2026-06-09
 summary: "keep large rows out of model context entirely."
