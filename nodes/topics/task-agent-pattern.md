@@ -23,6 +23,7 @@ related:
   - [[forced-tool-call-output]]
   - [[system-one-decision-models]]
   - [[decision-model-deployment]]
+  - [[semantic-context-layer]]
 status: living
 created: 2026-06-09
 summary: "engine-primary framing where chat is one surface among several."

@@ -10,6 +10,7 @@ related:
   - [[domain-event-task-ontology]]
   - [[decision-engine-contract]]
   - [[references-ontology-llm-agents]]
+  - [[semantic-context-layer]]
 status: living
 created: 2026-07-03
 ---

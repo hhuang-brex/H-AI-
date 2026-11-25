@@ -26,6 +26,7 @@ related:
   - [[just-in-time-context]]
   - [[references-context-management-2026-11]]
   - [[manus-context-engineering]]
+  - [[semantic-context-layer]]
 status: living
 created: 2026-06-11
 ---
@@ -66,6 +67,7 @@ The frame: treat the context window as a **managed budget**, not an append log. 
 - **Keeping loaded capability true:** [skill-lifecycle-and-drift](../concepts/skill-lifecycle-and-drift.md) — the artifact that externalizes your conventions also makes their decay invisible.
 - **What the 2026-11 measurements changed:** [references-context-management-2026-11](../references/references-context-management-2026-11.md) — LLM summaries keep at most about a sixth of specific details; trimming history can *raise* cost under prompt caching; and context rot comes from look-alike content competing for attention, not from length itself.
 - **A production case:** [manus-context-engineering](../projects/manus-context-engineering.md) — how Manus designs around the KV cache, compacts by file path before summarizing, and gives each batch item its own sub-agent.
+- **Domain meaning as a lookup:** [semantic-context-layer](../concepts/semantic-context-layer.md) — ontologies, knowledge graphs, and data contracts help when they hold private semantics the agent fetches on demand, and often don't when they hold public facts.
 
 ## The one rule
 

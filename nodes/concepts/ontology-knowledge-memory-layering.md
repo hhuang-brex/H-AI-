@@ -16,6 +16,7 @@ related:
   - [[memory-consolidation-and-forgetting]]
   - [[references-ontology-llm-agents]]
   - [[references-context-and-memory]]
+  - [[semantic-context-layer]]
 status: living
 created: 2026-07-13
 ---

@@ -12,6 +12,7 @@ related:
   - [[domain-knowledge-injection]]
   - [[agent-native-memory-framework]]
   - [[references-ontology-llm-agents]]
+  - [[semantic-context-layer]]
 status: living
 created: 2026-07-03
 ---
@@ -38,6 +39,8 @@ An ontology gives the agent a **shared vocabulary** across the user's utterance,
 
 - **Construction/maintenance cost.** Someone must build and keep the ontology/graph correct as the domain drifts; almost no study measures this total cost of ownership vs a pure-LLM agent (it's what actually decides adoption).
 - **The LLM boundary.** Grounding is not a hallucination cure — given *correct* structure, LLMs still misread graph topology (arXiv:2512.09148), and LLMs are weak at *building* the formal layer (axiom identification ~F1 0.13). Structure helps the agent *act*; it does not make the LLM sound.
+
+For the 2026 evidence on *which* uses of structure raise accuracy — private semantics served as a lookup tool, action gating, supersession — and which don't, see [semantic-context-layer](semantic-context-layer.md).
 
 ## Pitfalls
 

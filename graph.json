@@ -1,7 +1,7 @@
 {
-  "generated": "2026-11-24",
-  "node_count": 177,
-  "edge_count": 1637,
+  "generated": "2026-11-25",
+  "node_count": 179,
+  "edge_count": 1671,
   "nodes": [
     {
       "id": "action-authority",
@@ -695,7 +695,8 @@
         "memory-retrieval",
         "agent-native-memory-framework",
         "memory-graph-topology",
-        "references-ontology-llm-agents"
+        "references-ontology-llm-agents",
+        "semantic-context-layer"
       ]
     },
     {
@@ -1013,7 +1014,8 @@
         "text-to-sql-retrieval",
         "just-in-time-context",
         "references-context-management-2026-11",
-        "manus-context-engineering"
+        "manus-context-engineering",
+        "semantic-context-layer"
       ]
     },
     {
@@ -2483,7 +2485,8 @@
         "step-budget-and-runaway-control",
         "experiential-memory-substrates",
         "uber-agent-skills-at-scale",
-        "references-just-in-time-context"
+        "references-just-in-time-context",
+        "semantic-context-layer"
       ]
     },
     {
@@ -2666,7 +2669,8 @@
         "memory-retrieval",
         "memory-consolidation-and-forgetting",
         "domain-knowledge-injection",
-        "references-context-and-memory"
+        "references-context-and-memory",
+        "semantic-context-layer"
       ]
     },
     {
@@ -2956,7 +2960,8 @@
         "ontology-grounded-agent",
         "domain-event-task-ontology",
         "decision-engine-contract",
-        "references-ontology-llm-agents"
+        "references-ontology-llm-agents",
+        "semantic-context-layer"
       ]
     },
     {
@@ -2987,7 +2992,8 @@
         "ontology-as-validator-shacl",
         "domain-knowledge-injection",
         "agent-native-memory-framework",
-        "references-ontology-llm-agents"
+        "references-ontology-llm-agents",
+        "semantic-context-layer"
       ]
     },
     {
@@ -3023,7 +3029,8 @@
         "memory-retrieval",
         "memory-consolidation-and-forgetting",
         "references-ontology-llm-agents",
-        "references-context-and-memory"
+        "references-context-and-memory",
+        "semantic-context-layer"
       ]
     },
     {
@@ -3895,6 +3902,32 @@
       ]
     },
     {
+      "id": "references-ontology-agents-2026-11",
+      "type": "reference",
+      "kind": null,
+      "path": "nodes/references/references-ontology-agents-2026-11.md",
+      "title": "References: Ontology and Knowledge Graphs for Agents, 2026-11",
+      "summary": "arXiv sources, July\u2013November 2026, on when ontologies, knowledge graphs, and semantic layers improve agents, and when they don't; abstracts verified 2026-11-25.",
+      "tags": [
+        "ontology",
+        "knowledge-graph",
+        "semantic-layer",
+        "graphrag",
+        "data-agent",
+        "governance"
+      ],
+      "status": "snapshot",
+      "created": "2026-11-25",
+      "clusters": [],
+      "related": [
+        "semantic-context-layer",
+        "references-ontology-llm-agents",
+        "ontology-grounded-agent",
+        "building-ontology-backed-memory",
+        "memory-graph-topology"
+      ]
+    },
+    {
       "id": "references-ontology-llm-agents",
       "type": "reference",
       "kind": null,
@@ -3918,7 +3951,8 @@
         "user-intent-to-task-grounding",
         "llm-as-autoformalizer-plus-solver",
         "bitemporal-fact-invalidation-memory",
-        "ontology-as-validator-shacl"
+        "ontology-as-validator-shacl",
+        "semantic-context-layer"
       ]
     },
     {
@@ -4424,6 +4458,50 @@
         "recursive-self-improvement",
         "references-rsi-2026-10",
         "references-rsi-2026-11"
+      ]
+    },
+    {
+      "id": "semantic-context-layer",
+      "type": "concept",
+      "kind": null,
+      "path": "nodes/concepts/semantic-context-layer.md",
+      "title": "Semantic Context Layer",
+      "summary": "When an ontology, knowledge graph, or semantic layer actually makes an agent smarter: 2026 evidence says private semantics served as a queryable tool win, and structure for its own sake often doesn't.",
+      "tags": [
+        "ontology",
+        "knowledge-graph",
+        "semantic-layer",
+        "context-engineering",
+        "data-agent",
+        "governance",
+        "tool-use"
+      ],
+      "status": "living",
+      "created": "2026-11-25",
+      "clusters": [
+        "context-engineering",
+        "task-agent-pattern"
+      ],
+      "related": [
+        "ontology-grounded-agent",
+        "ontology-knowledge-memory-layering",
+        "building-ontology-backed-memory",
+        "ontology-as-validator-shacl",
+        "domain-event-task-ontology",
+        "memory-graph-topology",
+        "text-to-sql-retrieval",
+        "domain-knowledge-injection",
+        "just-in-time-context",
+        "action-authority",
+        "confirm-before-act",
+        "prompt-injection-and-isolation",
+        "tool-schema-design",
+        "memory-consolidation-and-forgetting",
+        "manus-context-engineering",
+        "references-ontology-agents-2026-11",
+        "references-ontology-llm-agents",
+        "context-engineering",
+        "task-agent-pattern"
       ]
     },
     {
@@ -4978,7 +5056,8 @@
         "output-surface-taxonomy",
         "forced-tool-call-output",
         "system-one-decision-models",
-        "decision-model-deployment"
+        "decision-model-deployment",
+        "semantic-context-layer"
       ]
     },
     {
@@ -5095,7 +5174,8 @@
         "plan-execute-replan",
         "grounding-and-citation",
         "prompt-time-knowledge-capture",
-        "prince-reliable-agentic-case-study"
+        "prince-reliable-agentic-case-study",
+        "semantic-context-layer"
       ]
     },
     {
@@ -6772,6 +6852,11 @@
       "kind": "related"
     },
     {
+      "from": "building-ontology-backed-memory",
+      "to": "semantic-context-layer",
+      "kind": "related"
+    },
+    {
       "from": "chatbot-pagination",
       "to": "code-execution-sandbox-pattern",
       "kind": "related"
@@ -7204,6 +7289,11 @@
     {
       "from": "context-engineering",
       "to": "references-context-management-2026-11",
+      "kind": "related"
+    },
+    {
+      "from": "context-engineering",
+      "to": "semantic-context-layer",
       "kind": "related"
     },
     {
@@ -9368,6 +9458,11 @@
     },
     {
       "from": "manus-context-engineering",
+      "to": "semantic-context-layer",
+      "kind": "related"
+    },
+    {
+      "from": "manus-context-engineering",
       "to": "step-budget-and-runaway-control",
       "kind": "related"
     },
@@ -9714,6 +9809,11 @@
     {
       "from": "memory-graph-topology",
       "to": "references-context-and-memory",
+      "kind": "related"
+    },
+    {
+      "from": "memory-graph-topology",
+      "to": "semantic-context-layer",
       "kind": "related"
     },
     {
@@ -10102,6 +10202,11 @@
       "kind": "related"
     },
     {
+      "from": "ontology-as-validator-shacl",
+      "to": "semantic-context-layer",
+      "kind": "related"
+    },
+    {
       "from": "ontology-grounded-agent",
       "to": "agent-native-memory-framework",
       "kind": "related"
@@ -10134,6 +10239,11 @@
     {
       "from": "ontology-grounded-agent",
       "to": "references-ontology-llm-agents",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-grounded-agent",
+      "to": "semantic-context-layer",
       "kind": "related"
     },
     {
@@ -10199,6 +10309,11 @@
     {
       "from": "ontology-knowledge-memory-layering",
       "to": "references-ontology-llm-agents",
+      "kind": "related"
+    },
+    {
+      "from": "ontology-knowledge-memory-layering",
+      "to": "semantic-context-layer",
       "kind": "related"
     },
     {
@@ -11417,6 +11532,31 @@
       "kind": "related"
     },
     {
+      "from": "references-ontology-agents-2026-11",
+      "to": "building-ontology-backed-memory",
+      "kind": "related"
+    },
+    {
+      "from": "references-ontology-agents-2026-11",
+      "to": "memory-graph-topology",
+      "kind": "related"
+    },
+    {
+      "from": "references-ontology-agents-2026-11",
+      "to": "ontology-grounded-agent",
+      "kind": "related"
+    },
+    {
+      "from": "references-ontology-agents-2026-11",
+      "to": "references-ontology-llm-agents",
+      "kind": "related"
+    },
+    {
+      "from": "references-ontology-agents-2026-11",
+      "to": "semantic-context-layer",
+      "kind": "related"
+    },
+    {
       "from": "references-ontology-llm-agents",
       "to": "bitemporal-fact-invalidation-memory",
       "kind": "related"
@@ -11439,6 +11579,11 @@
     {
       "from": "references-ontology-llm-agents",
       "to": "ontology-grounded-agent",
+      "kind": "related"
+    },
+    {
+      "from": "references-ontology-llm-agents",
+      "to": "semantic-context-layer",
       "kind": "related"
     },
     {
@@ -12064,6 +12209,101 @@
     {
       "from": "self-improving-harness",
       "to": "verbal-reinforcement-vs-gradient-rl",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "action-authority",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "building-ontology-backed-memory",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "confirm-before-act",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "domain-event-task-ontology",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "domain-knowledge-injection",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "just-in-time-context",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "manus-context-engineering",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "memory-consolidation-and-forgetting",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "memory-graph-topology",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "ontology-as-validator-shacl",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "ontology-grounded-agent",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "ontology-knowledge-memory-layering",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "prompt-injection-and-isolation",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "references-ontology-agents-2026-11",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "references-ontology-llm-agents",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "task-agent-pattern",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "text-to-sql-retrieval",
+      "kind": "related"
+    },
+    {
+      "from": "semantic-context-layer",
+      "to": "tool-schema-design",
       "kind": "related"
     },
     {
@@ -12918,6 +13158,11 @@
     },
     {
       "from": "task-agent-pattern",
+      "to": "semantic-context-layer",
+      "kind": "related"
+    },
+    {
+      "from": "task-agent-pattern",
       "to": "system-one-decision-models",
       "kind": "related"
     },
@@ -13089,6 +13334,11 @@
     {
       "from": "text-to-sql-retrieval",
       "to": "prompt-time-knowledge-capture",
+      "kind": "related"
+    },
+    {
+      "from": "text-to-sql-retrieval",
+      "to": "semantic-context-layer",
       "kind": "related"
     },
     {

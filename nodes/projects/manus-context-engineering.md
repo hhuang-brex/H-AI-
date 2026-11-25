@@ -23,6 +23,7 @@ related:
   - [[experiential-memory-substrates]]
   - [[uber-agent-skills-at-scale]]
   - [[references-just-in-time-context]]
+  - [[semantic-context-layer]]
 status: snapshot
 created: 2026-11-24
 ---

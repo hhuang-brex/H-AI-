@@ -10,6 +10,7 @@ related:
   - [[llm-as-autoformalizer-plus-solver]]
   - [[bitemporal-fact-invalidation-memory]]
   - [[ontology-as-validator-shacl]]
+  - [[semantic-context-layer]]
 status: living
 created: 2026-07-03
 ---

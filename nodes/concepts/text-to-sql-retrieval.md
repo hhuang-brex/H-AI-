@@ -10,6 +10,7 @@ related:
   - [[grounding-and-citation]]
   - [[prompt-time-knowledge-capture]]
   - [[prince-reliable-agentic-case-study]]
+  - [[semantic-context-layer]]
 status: living
 created: 2026-07-10
 summary: "natural-language→SQL over a structured store as a retrieval modality beside RAG — with its guardrail bundle: dynamic schema selection, dynamic few-shot, SELECT-only, record cap, bounded self-correcting retry."

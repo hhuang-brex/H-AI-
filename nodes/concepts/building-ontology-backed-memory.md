@@ -15,6 +15,7 @@ related:
   - [[agent-native-memory-framework]]
   - [[memory-graph-topology]]
   - [[references-ontology-llm-agents]]
+  - [[semantic-context-layer]]
 status: living
 created: 2026-07-14
 ---

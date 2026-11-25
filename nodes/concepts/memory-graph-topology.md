@@ -11,6 +11,7 @@ related:
   - [[memory-consolidation-and-forgetting]]
   - [[domain-knowledge-injection]]
   - [[references-context-and-memory]]
+  - [[semantic-context-layer]]
 status: living
 created: 2026-07-05
 ---
