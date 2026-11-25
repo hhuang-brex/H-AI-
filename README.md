@@ -277,6 +277,7 @@ Frontmatter `related:` is the machine-readable edge list (uses `[[id]]` form). B
 - [agent-eval-case-study](nodes/projects/agent-eval-case-study.md) — generalized agent platform eval system (2026-06-05 snapshot).
 - [dspy-domain-chatbot-cases](nodes/projects/dspy-domain-chatbot-cases.md) — verified DSPy domain-chatbot success examples (JetBlue, Dr.Copilot, etc.; 2026-06-09 snapshot).
 - [prince-reliable-agentic-case-study](nodes/projects/prince-reliable-agentic-case-study.md) — Bayer/Thoughtworks PRINCE — a shipped, peer-reviewed production agentic-RAG + Text-to-SQL system; field validation that reliability = context engineering + harness engineering.
+- [uber-agent-skills-at-scale](nodes/projects/uber-agent-skills-at-scale.md) — Uber's account of running 5,000+ agent skills at 1M invocations a month: tiered review, per-skill telemetry, with-and-without ablation evals, an agent-filed friction log, and where the cost savings came from.
 
 **Worked examples**
 - [worked-example-anthropic-thinking](nodes/projects/worked-example-anthropic-thinking.md) — Python code: capturing reasoning, signature continuity, forced-tool-call constraint, hidden billing.

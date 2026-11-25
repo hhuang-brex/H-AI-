@@ -14,6 +14,7 @@ related:
   - [[recursive-self-improvement]]
   - [[system-one-decision-models]]
   - [[decision-model-deployment]]
+  - [[uber-agent-skills-at-scale]]
 status: living
 created: 2026-06-05
 summary: "calibration, bias, multi-vote, cascading."

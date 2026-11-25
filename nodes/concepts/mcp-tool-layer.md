@@ -134,6 +134,8 @@ That is 38% less time and 35% lower cost at near-equal accuracy, and the author 
 
 The graph's reading: before adding an MCP server, ask whether it provides access or only description. Description belongs in a skill ([skill-injection-decision](skill-injection-decision.md)); access belongs in a tool. Tool search narrows the gap by deferring definitions ([just-in-time-context](just-in-time-context.md)), but the indirection remains.
 
+**Servers now ship skills, tasks, and confirmation prompts in Claude.** As of 2026-11-24, MCP servers can deliver skills alongside tools (public beta), run long-running work through the Tasks extension, and pause for user input through elicitation — for example, Supabase confirming destructive SQL and GitHub requiring the repo name before deletion ([announcement](https://claude.com/resources/articles/skills-over-mcp-tasks-and-more)). Anthropic reports over 700 million monthly SDK downloads and over 10,000 connectors for Claude. See [agent-skills-progressive-disclosure](agent-skills-progressive-disclosure.md).
+
 ## New primitives worth naming (candidate future nodes)
 
 - **Elicitation** — server-initiated structured user input mid-call: **form mode** (flat primitives; servers MUST NOT request secrets) and **URL mode** (SEP-1036, pushes sensitive input out-of-band). A protocol-level HITL primitive — strong candidate for its own node cross-linking [confirm-before-act](confirm-before-act.md).

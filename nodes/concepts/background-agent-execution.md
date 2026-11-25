@@ -16,6 +16,7 @@ related:
   - [[harness-token-economics]]
   - [[llm-observability]]
   - [[when-to-delegate]]
+  - [[uber-agent-skills-at-scale]]
 status: living
 created: 2026-07-12
 ---

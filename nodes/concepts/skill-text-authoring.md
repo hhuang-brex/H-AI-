@@ -20,6 +20,7 @@ related:
   - [[dry-run-and-preview]]
   - [[worked-example-skillsv-valuation]]
   - [[references-agent-skill-authoring]]
+  - [[uber-agent-skills-at-scale]]
 status: living
 created: 2026-08-08
 ---

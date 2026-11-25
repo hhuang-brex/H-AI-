@@ -18,6 +18,7 @@ related:
   - [[eval-statistical-significance]]
   - [[references-agent-skill-authoring]]
   - [[mcp-tool-layer]]
+  - [[uber-agent-skills-at-scale]]
 status: living
 created: 2026-09-11
 ---

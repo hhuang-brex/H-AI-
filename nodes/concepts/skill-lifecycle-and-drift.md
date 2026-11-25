@@ -18,6 +18,7 @@ related:
   - [[references-agent-skill-authoring]]
   - [[references-recursive-self-improvement]]
   - [[recursive-self-improvement]]
+  - [[uber-agent-skills-at-scale]]
 status: living
 created: 2026-09-11
 ---

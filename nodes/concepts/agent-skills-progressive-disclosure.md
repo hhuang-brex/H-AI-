@@ -15,6 +15,8 @@ related:
   - [[skill-injection-decision]]
   - [[skill-lifecycle-and-drift]]
   - [[references-agent-skill-authoring]]
+  - [[uber-agent-skills-at-scale]]
+  - [[mcp-tool-layer]]
 status: living
 created: 2026-06-21
 ---
@@ -48,6 +50,14 @@ The load-bearing idea. Instructions enter the window in stages, each gated on ne
 | **3. Execution** | Bundled files / scripts referenced by the body | On demand, as the instructions call for them — and code can *run* without its source ever entering context |
 
 Because only the tiny metadata is always-resident, an agent can keep many skills "on hand with only a small context footprint," and bundled context that the agent reads-or-executes lazily is effectively unbounded. (Verified 2026-06-21: [Anthropic — Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills); [agentskills.io](https://agentskills.io).)
+
+## Skills can now arrive through MCP servers
+
+As of 2026-11-24, MCP servers can **ship skills alongside their tools and resources** in Claude, in public beta ([announcement](https://claude.com/resources/articles/skills-over-mcp-tasks-and-more), fetched 2026-11-24). The split it draws: skills carry "domain knowledge," tools are "actions Claude can take," and resources are "context Claude can pull in." Tool metadata says what a server can do but not "how to handle specific use cases," and a server-shipped skill fills that gap while still loading "only when it's needed." Skills "update with the server," so there is nothing separate to install. Early examples come from Shopify, HubSpot, and Atlassian.
+
+Two consequences for a builder. A skill now has two delivery paths — a folder you install, or a server you connect — so the review and pinning rules in [skill-lifecycle-and-drift](skill-lifecycle-and-drift.md) apply to MCP servers too: a server update can change a skill without you touching anything. And a third-party server's skill is untrusted text entering your context, the same surface as tool metadata in [mcp-tool-layer](mcp-tool-layer.md).
+
+For a production account of running thousands of skills, see [uber-agent-skills-at-scale](../projects/uber-agent-skills-at-scale.md).
 
 ## Why this is a context-engineering pattern, not a packaging detail
 

@@ -13,6 +13,7 @@ related:
   - [[forced-tool-call-output]]
   - [[cot-as-forensic-artifact]]
   - [[prompt-component-attribution]]
+  - [[uber-agent-skills-at-scale]]
 status: living
 created: 2026-06-10
 summary: "debugging \"why did the model respond this way?\" — what frontier APIs actually return (mostly summaries), platform feature reality, OTel state."

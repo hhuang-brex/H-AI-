@@ -15,6 +15,8 @@ related:
   - [[references-prompt-attribution]]
   - [[tool-selection-and-routing]]
   - [[action-execution-safety]]
+  - [[uber-agent-skills-at-scale]]
+  - [[mcp-tool-layer]]
 status: living
 created: 2026-08-08
 ---
@@ -114,3 +116,10 @@ arXiv ids fetch-confirmed 2026-09-27.
 
 - **Evaluating Agent Skills for Version-Specific Plugin Migration: A Retrospective Study** — Beiming Liu, Haihao Li, Minjie Chen + others (2026-09-24). https://arxiv.org/abs/2609.30120 — A shipped plugin-upgrade skill raised mean recorded reward from **93.83 to 98.75** (+4.92, 95% task-bootstrap interval [0.31, 10.86]), but the gain sat mostly in **one task** and eight task pairs were at ceiling. Tracing every criterion decision to its contract exposed grading errors favoring *either* arm; correcting the reviewed decisions kept the point estimate positive while moving its interval to or across zero, and re-grading with two other judge families gave gains of **10.63 and 6.09** (κ 0.64 and 0.72). A skill's measured lift can be smaller than its judge variance; tie aggregate reward to contract-level evidence before trusting it. Backs [skill-injection-decision](../concepts/skill-injection-decision.md).
 - **HEXIS: Compiling Skills into Extended Finite State Machines** — Minghao Li (2026-09-24). https://arxiv.org/abs/2609.30123 — Separates a skill's knowledge from its control flow: clauses become per-state local instructions, and explicit transitions choose the next operation, so prescribed steps cannot be silently skipped. Updates are accepted only after static checks **and replay of every previously accepted trace**. Reported **+16.1 pp** average success over Skill + ReAct across four benchmarks and four executors, with 38.4–88.9% fewer execution tokens for one model. Single author. The "enforced" rung of [run-state-model](../concepts/run-state-model.md), applied to skills.
+
+## Skills in production and over MCP — added 2026-11-24
+
+Both pages fetched 2026-11-24. Vendor and company self-reports, not independently verified.
+
+- **How Uber Evals 1 Million Agent Skill Invocations a Month** — Andrew Mager, Jason Varbedain, Uday Kiran Medisetty, Uber (2026-11-23). https://www.uber.com/us/en/blog/optimizing-ubers-agent-skills/ — More than 5,000 skills and 1 million monthly invocations across four agents. Tiered review, content-free telemetry, a skill-text linter, an agent-filed friction log, and with-and-without ablation judged blind. Evals passing 70–90% of runs can beat ones that always pass. Summarized in [uber-agent-skills-at-scale](../projects/uber-agent-skills-at-scale.md).
+- **MCP servers can now ship skills, run tasks, and more with Claude** — Anthropic (2026-11-24). https://claude.com/resources/articles/skills-over-mcp-tasks-and-more — Skills delivered through MCP servers in public beta, loaded only when needed and updated with the server. Also covers the Tasks extension, elicitation, and upcoming file uploads.

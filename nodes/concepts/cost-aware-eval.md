@@ -12,6 +12,7 @@ related:
   - [[eval-statistical-significance]]
   - [[harness-token-economics]]
   - [[system-one-decision-models]]
+  - [[uber-agent-skills-at-scale]]
 status: living
 created: 2026-06-05
 summary: "sample-size math and budget assertions."
