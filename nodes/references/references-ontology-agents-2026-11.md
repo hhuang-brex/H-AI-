@@ -45,6 +45,19 @@ Sources for [semantic-context-layer](../concepts/semantic-context-layer.md). Thi
 | [2610.08082](https://arxiv.org/abs/2610.08082) — *POLAR* | Reversibility ontology improves 8 of 18 cells; AACL-IJCNLP 2026 Findings |
 | [2506.06331](https://arxiv.org/abs/2506.06331) — *Unbiased Evaluation Framework for GraphRAG* | Gains much more moderate than reported (v2, 2026-08-13) |
 
+## Vendor documentation (fetched 2026-11-25)
+
+| Source | What it confirms |
+|---|---|
+| [Palantir Ontology overview](https://www.palantir.com/docs/foundry/ontology/overview/) | Semantic vs kinetic elements; no page date shown |
+| [Palantir Chatbot Studio tools](https://www.palantir.com/docs/foundry/chatbot-studio/tools/) | Action, object-query, function, command, and clarification tools; optional user confirmation for actions |
+| [Snowflake semantic views](https://docs.snowflake.com/en/user-guide/views-semantic/overview) and [YAML spec](https://docs.snowflake.com/en/user-guide/views-semantic/semantic-view-yaml-spec) | Semantic view as an agent tool; synonyms, sample values, verified queries |
+| [dbt-mcp README](https://github.com/dbt-labs/dbt-mcp) and [dbt MCP docs](https://docs.getdbt.com/docs/dbt-ai/about-mcp) | Semantic Layer tool names; remote server is a read-only access layer |
+| [Graphiti overview](https://help.getzep.com/graphiti/getting-started/overview) | Episodes, bi-temporal edges, hybrid retrieval without LLM reranking |
+| [Microsoft GraphRAG docs](https://microsoft.github.io/graphrag/) | Indexing pipeline and query modes; recommends prompt tuning |
+
+**Failed to verify:** Palantir's "Ontology augmented generation" page returned 404 at `/docs/foundry/architecture-center/ontology-augmented-generation/`, and the AIP overview does not describe how permissions apply to LLM actions. The dbt docs list the Administrative API as both self-hosted-only and remote-supported. The Snowflake spec never states that these fields improve accuracy, only "higher-quality results."
+
 ## Read but not used
 
 - [2611.09282](https://arxiv.org/abs/2611.09282) — ontology-defined conversation strategy for job-interview practice, with fine-tuning. Relevant to conversation design but has no comparative number in the abstract.

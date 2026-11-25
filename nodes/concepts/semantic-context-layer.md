@@ -58,6 +58,24 @@ All results are author-reported from arXiv abstracts, read 2026-11-25.
 | **A reversibility guardrail trades away task success.** Only 8 of 18 model–domain cells improved; stronger agents often regressed. | [2610.08082](https://arxiv.org/abs/2610.08082) |
 | **Reported GraphRAG gains shrink under fair evaluation.** With unbiased questions and grading, gains were "much more moderate than reported." | [2506.06331](https://arxiv.org/abs/2506.06331) |
 
+## How vendors ship it
+
+Product docs, fetched 2026-11-25. These describe mechanisms, not measured results.
+
+| Product | What the layer holds | How the agent reaches it |
+|---|---|---|
+| [Palantir Foundry Ontology](https://www.palantir.com/docs/foundry/ontology/overview/) | "Semantic elements (objects, properties, links) and kinetic elements (actions, functions, dynamic security)" | [Chatbot Studio tools](https://www.palantir.com/docs/foundry/chatbot-studio/tools/): an object-query tool scoped to configured types, an action tool that "execute[s] an ontology edit," function tools, and a request-clarification tool. Actions can "run automatically or … after confirmation from the user." |
+| [Snowflake semantic views](https://docs.snowflake.com/en/user-guide/views-semantic/overview) | Logical tables, relationships, facts, dimensions, metrics; the [YAML spec](https://docs.snowflake.com/en/user-guide/views-semantic/semantic-view-yaml-spec) adds synonyms, sample values, and verified question–SQL pairs | Added "as a tool on an agent"; the agent "reads the information captured in the semantic view definition and generates the SQL." With `is_enum`, "the model only chooses from those values when filtering." |
+| [dbt MCP server](https://github.com/dbt-labs/dbt-mcp) | Metrics, dimensions, entities, saved queries | MCP tools: `list_metrics`, `get_dimensions`, `get_dimension_values`, `query_metrics`, `get_metrics_compiled_sql`. The remote server is read-only. |
+| [Graphiti](https://help.getzep.com/graphiti/getting-started/overview) (Zep) | A temporal knowledge graph built from episodes, with custom entity types | Hybrid search (vector, BM25, graph traversal) "with no LLM-in-the-loop reranking"; conflicts resolved by "temporal edge invalidation" |
+| [Microsoft GraphRAG](https://microsoft.github.io/graphrag/) | Entities, relationships, claims, and community summaries extracted from text | Global, local, DRIFT, and basic search modes. The docs warn that out-of-the-box use "may not yield the best possible results." |
+
+Three shared design choices line up with the research above:
+
+- **The layer is a tool, not a prompt.** Every product exposes it as callable tools or a queryable object.
+- **Actions sit next to meaning.** Palantir puts write actions in the ontology itself, with an optional confirmation step, which is the action-gating job in the first table.
+- **Valid values are first-class.** Snowflake's enumerated sample values and dbt's `get_dimension_values` stop the model inventing filter values, the same failure the process-graph paper fixed with code lists.
+
 ## The pattern
 
 The graph's synthesis from both tables:
